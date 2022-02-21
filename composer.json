@@ -13,7 +13,8 @@
 		"typo3/cms-belog": "^11.5",
 		"typo3/cms-lowlevel": "^11.5",
 		"typo3/cms-scheduler": "^11.5",
-		"typo3/cms-setup": "^11.5"
+		"typo3/cms-setup": "^11.5",
+        "twbs/bootstrap": "<6"
 	},
 	"extra": {
 		"branch-alias": {
