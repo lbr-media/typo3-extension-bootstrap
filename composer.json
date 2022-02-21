@@ -1,0 +1,53 @@
+{
+    "name": "lbrmedia/typo3.extension.bootstrap",
+    "type": "typo3-cms-extension",
+    "description": "Bootstrap Package",
+    "license": "GPL-2.0-or-later",
+    "keywords": [
+        "TYPO3 CMS",
+        "bootstrap",
+        "responsive",
+        "frontend",
+        "theme",
+        "web"
+    ],
+    "homepage": "https://github.com/lbr-media/typo3.extension.bootstrap/",
+    "authors": [
+        {
+            "name": "Marcel Briefs",
+            "email": "mb@lbrmedia.de",
+            "homepage": "http://lbrmedia.de/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.1",
+        "typo3/cms-backend": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-core": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-extbase": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-extensionmanager": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-fluid": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-frontend": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-install": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-rte-ckeditor": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-seo": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3fluid/fluid": "^2.5.2"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.0.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "bootstrap",
+            "web-dir": ".build/public"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "LBRmedia\\Bootstrap\\": "Classes"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+        ],
+}
