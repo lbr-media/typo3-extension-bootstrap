@@ -1,0 +1,8 @@
+config {
+    concatenateCss = {$plugin.tx_bootstrap.concatenateCss}
+    compressCss = {$plugin.tx_bootstrap.compressCss}
+}
+
+page.includeCSS {
+    bootstrap = fileadmin/bootstrap/assets/css/bootstrap.min.css
+}

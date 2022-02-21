@@ -1,0 +1,47 @@
+# new ckeditor
+lib.parseFunc.tags.a {
+    // innerWrap.cObject = CASE
+    // innerWrap.cObject {
+    //     key.data = parameters:class
+    //     default = TEXT
+    //     default.value = |
+
+    //     // add span tag to links with icons
+    //     link-phone = TEXT
+    //     link-phone.value = <span>|</span>
+    //     link-email = TEXT
+    //     link-email.value = <span>|</span>
+
+    //     // add arrow to button
+    //     // btn-outline-primary = TEXT
+    //     // btn-outline-primary.value = |<span data-icon="button-arrow"></span>
+    //     btn-outline-secondary = TEXT
+    //     btn-outline-secondary.value = |<span data-icon="button-arrow"></span>
+    //     // btn-outline-light = TEXT
+    //     // btn-outline-light.value = |<span data-icon="button-arrow"></span>
+    //     // btn-outline-dark = TEXT
+    //     // btn-outline-dark.value = |<span data-icon="button-arrow"></span>
+    // }
+
+    # add btn-class to bootstrap buttons
+    typolink {
+        ATagParams.cObject = CASE
+        ATagParams.cObject {
+            key.data = parameters:class
+            default = TEXT
+            default.data = parameters:allParams
+
+            btn-black = TEXT
+            btn-black.value = class="btn btn-black"
+            btn-white = TEXT
+            btn-white.value = class="btn btn-white"
+            btn-outline-black = TEXT
+            btn-outline-black.value = class="btn btn-outline-black"
+            btn-outline-white = TEXT
+            btn-outline-white.value = class="btn btn-outline-white"
+        }
+    }
+}
+
+# Copy the above function to other important places
+lib.parseFunc_RTE.tags.a < lib.parseFunc.tags.a

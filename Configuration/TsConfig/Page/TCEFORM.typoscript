@@ -1,0 +1,55 @@
+lib.colors {
+    primary = primary (blau)
+    secondary = secondary (grau)
+    success = success (grün)
+    info = info (hellblau)
+    warning = warning (orange)
+    danger = danger (rot)
+    light = light (hellgrau)
+    dark = dark (dunkelgrau)
+}
+
+lib.backgroundColors {
+    bg-primary = primary (blau)
+    bg-secondary = secondary (grau)
+    bg-success = success (grün)
+    bg-info = info (hellblau)
+    bg-warning = warning (orange)
+    bg-danger = danger (rot)
+    bg-light = light (hellgrau)
+    bg-dark = dark (dunkelgrau)
+}
+    
+lib.textColors {
+    text-primary = primary (blau)
+    text-secondary = secondary (grau)
+    text-success = success (grün)
+    text-info = info (hellblau)
+    text-warning = warning (orange)
+    text-danger = danger (rot)
+    text-light = light (hellgrau)
+    text-dark = dark (dunkelgrau)
+}
+
+lib.appHeaderLayout {
+    display-1 = Display 1
+    display-2 = Display 2
+    display-3 = Display 3
+    display-4 = Display 4
+    display-5 = Display 5
+    display-6 = Display 6
+    h1 = Überschrift 1
+    h2 = Überschrift 2
+    h3 = Überschrift 3
+    h4 = Überschrift 4
+    h5 = Überschrift 5
+    h6 = Überschrift 6
+    lead = Lead
+}
+
+lib.predefinedHeader {
+    20 = Unterstrichen
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/Page/TCEFORM.pages.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/Page/TCEFORM.tt_content.typoscript">

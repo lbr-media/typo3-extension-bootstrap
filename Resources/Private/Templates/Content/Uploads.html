@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{files}">
+        <ul class="ce-uploads row grid-ml--neg grid-mt--neg justify-content-center">
+            <f:for each="{files}" as="file" iteration="fileIterator">
+                <li class="col col-lg-3 grid-pl grid-pt">
+                    <a href="{file.publicUrl}" class="text-decoration-none text-center"{f:if(condition:data.target,then:' target="{data.target}"')}{f:if(condition:file.title, then: ' title="{file.title}"')}>
+                        <span class="d-flex justify-content-center"><span class="col-6 col-sm-3 col-lg-12 ce-uploads-icon"><f:render section="_Icon" /></span></span>
+                        <span class="h2 d-block mb-0 container--space-before-extra-small">{f:if(condition: file.properties.title, then: file.properties.title, else: file.name) -> f:format.htmlspecialchars()}</span>
+                        <f:if condition="{file.properties.description}"><span class="d-block container--space-before-extra-small">{file.properties.description -> f:format.nl2br()}</span></f:if>
+                    </a>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+
+</f:section>
+
+<f:section name="_Icon"><f:spaceless>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255.901" height="255.752" viewBox="0 0 255.901 255.752">
+        <defs>
+          <clipPath id="clip-path">
+            <path d="M0,214.436H255.9V-41.317H0Z" transform="translate(0 41.317)" fill="none"/>
+          </clipPath>
+        </defs>
+        <g transform="translate(-829 -3077.317)">
+          <g transform="translate(829 3118.634)">
+            <g transform="translate(0 -41.317)" clip-path="url(#clip-path)">
+              <g transform="translate(3.318 3.312)">
+                <path d="M85.038,1.692A124.7,124.7,0,1,0,114.206-.326" transform="translate(16.385 0.326)" fill="none" stroke="#000" stroke-width="0.5"/>
+              </g>
+            </g>
+          </g>
+          <line y2="173" transform="translate(963.5 3080.5)" fill="none" stroke="#000" stroke-width="0.5"/>
+          <line x2="57" transform="translate(923.1 3212.85) rotate(45)" fill="none" stroke="#000" stroke-width="0.5"/>
+          <line x2="57" transform="translate(1003.905 3212.85) rotate(135)" fill="none" stroke="#000" stroke-width="0.5"/>
+        </g>
+      </svg>
+</f:spaceless></f:section>
+</html>

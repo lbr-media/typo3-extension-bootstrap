@@ -1,0 +1,173 @@
+TCEFORM.tt_content {
+    header_link.disabled = 1
+    // subheader.disabled = 1
+    sectionIndex.disabled = 1
+    // media.disabled = 0
+    date.disabled = 1
+
+    header_layout {
+        altLabels {
+            0 = Standard (<H1>)
+            1 = <H1>
+            2 = <H2>
+            3 = <H3>
+            4 = <H4>
+            5 = <H5>
+            6 = <H6>
+        }
+        removeItems = 5
+    }
+
+    tx_bootstrap_background_color {
+        // disabled = 1
+        addItems < lib.backgroundColors
+    }
+
+    tx_bootstrap_text_color {
+        // disabled = 1
+        addItems < lib.textColors
+    }
+
+    tx_bootstrap_header_layout {
+        // disabled = 1
+        addItems < lib.appHeaderLayout
+    }
+
+    tx_bootstrap_header_color {
+        addItems < lib.textColors
+    }
+
+    tx_bootstrap_header_predefined {
+        disabled = 0
+    }
+
+    tx_bootstrap_header_icon {
+        disabled = 0
+    }
+
+    header_position {
+        // disabled = 1
+        removeItems = left,center,right
+        addItems {
+            text-start = links
+            text-end = rechts
+            text-center = zentriert
+        }
+    }
+
+    /*
+    Reduce content types to the needed ones
+    all standard CTypes:
+    header, text, textpic, image, textmedia
+    bullets, table, uploads
+    menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages
+    form_formframework, felogin_login
+    shortcut, div, list, html
+    */
+    # CType.removeItems = textpic, image, textmedia, bullets, table, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, form_formframework, shortcut, div
+
+    // layout
+    layout.disabled = 1
+    frame_class {
+        disabled = 0
+        label = Rahmen: außen
+        removeItems = ruler-before, ruler-after, indent, indent-left, indent-right, none
+        addItems {
+            container = Container 100% XS
+            container-sm = Container 100% XS
+            container-md = Container 100% XS-SM
+            container-lg = Container 100% XS-MD
+            container-xl = Container 100% XS-LG
+            container-xxl = Container 100% XS-XL
+            container-fluid = Container 100% XS-XXL
+        }
+    }
+
+    tx_bootstrap_inner_frame_class {
+        disabled = 1
+        // addItems {
+        //     text-small-center = Text zentriert nur bei schmalen Endgeräten
+        // }
+        // keepItems = 
+    }
+
+    // media adjustments
+    imagewidth.disabled = 1
+    imageheight.disabled = 1
+    imageborder.disabled = 1
+
+    // gallery settings
+    imageorient.disabled = 1
+    imagecols.disabled = 1
+
+    // behavior
+    image_zoom.disabled = 1
+
+    // links
+    linkToTop.disabled = 1
+
+    // language
+    sys_language_uid.disabled = 1
+
+    // access
+    // fe_group.disabled = 1
+    fe_login_mode.disabled = 1
+    editlock.disabled = 1
+
+    // categories
+    categories.disabled = 1
+
+    // notes
+    rowDescription.disabled = 1
+    tx_bootstrap_section_index_header.disabled = 1
+
+    // disabled some fields for content element uploads
+    target.types.uploads.disabled = 1
+    filelink_size.types.uploads.disabled = 1
+    uploads_description.types.uploads.disabled = 1
+    uploads_type.types.uploads.disabled = 1
+
+    // configuration for content element div
+    // add inner_frame_class for the several styles
+    frame_class.types.div {
+        disabled = 1
+    }
+    // tx_bootstrap_inner_frame_class.types.div {
+    //     disabled = 0
+    //     addItems {
+    //         div--red-bear = Icon: rot, Bär
+    //         div--red-feather-large = Icon: rot, Feder, groß
+    //         div--red-feather-small = Icon: rot, Feder, klein
+    //         div--dark-feather-polygon = Polygon-Icon: dunkel, Feder
+    //         div--dark-bed-polygon = Polygon-Icon: dunkel, Bett
+    //         div--dark-group-polygon = Polygon-Icon: dunkel, Gruppe
+    //         div--dark-hat-polygon = Polygon-Icon: dunkel, Hut
+    //         div--dark-winnetou-polygon = Polygon-Icon: dunkel, Winnetou auf Pferd
+    //         div--dark-ornament = Ornament: dunkel
+    //         div--light-ornament = Ornament: hell
+    //     }
+    //     // keepItems = div-line-green, div-line-green-vertical, div-line-green-bold, div-line-green-bolder
+    // }
+    // tx_bootstrap_additional_styles.types.div {
+    //     disabled = 1
+    // }
+}
+
+// enable frame_class/container for layout homepage
+// [page["backend_layout"] == 'pagets__Homepage']
+// TCEFORM.tt_content {
+//     frame_class {
+//         disabled = 0
+//         label = Rahmen: außen
+//         removeItems = ruler-before, ruler-after, indent, indent-left, indent-right, none
+//         addItems {
+//             // container = container
+//             // container-sm = container-sm
+//             // container-md = container-md
+//             // container-lg = container-lg
+//             container-xl = Zentrieren auf Inhaltsbereich
+//             container-max = Zentrieren (Maximal 1920px)
+//         }
+//     }
+// }
+// [end]

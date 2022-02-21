@@ -1,0 +1,40 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    title = Bilder-Slider
+    description = Automatisch überblendete Bilder
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{images -> f:count()}">
+            <div class="page__header__images" data-app-toggle="page-header-images">
+                <f:for each="{images}" as="image">
+                    <picture><f:render section="_Image" arguments="{image:image}" /></picture>
+                </f:for>
+                <f:if condition="{link1}&&{link1_text}">
+                    <div class="page__header__images__link page__header__images__link--1">
+                        <f:link.typolink parameter="{link1}" class="{link1_type} d-block">{link1_text}</f:link.typolink>
+                    </div>
+                </f:if>
+                <f:if condition="{link2}&&{link2_text}">
+                    <div class="page__header__images__link page__header__images__link--2">
+                        <f:link.typolink parameter="{link2}" class="{link2_type} d-block">{link2_text}</f:link.typolink>
+                    </div>
+                </f:if>
+            </div>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Image"><f:spaceless>
+        <source media="(max-width: 575.98px)" srcset="{f:uri.image(image:image, cropVariant:'std', maxWidth:580)} 1x, {f:uri.image(image:image, cropVariant:'std', maxWidth:960)} 2x">
+        <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="{f:uri.image(image:image, cropVariant:'sm', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'sm', maxWidth:1440)} 2x">
+        <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="{f:uri.image(image:image, cropVariant:'md', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'md', maxWidth:1440)} 2x">
+        <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="{f:uri.image(image:image, cropVariant:'lg', maxWidth:1440)}">
+        <source media="(min-width: 1200px)" srcset="{f:uri.image(image:image, cropVariant:'xl', maxWidth:1440)}">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{image.alternative}" title="{image.title}">
+    </f:spaceless></f:section>
+</html>

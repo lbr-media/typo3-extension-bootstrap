@@ -1,0 +1,33 @@
+config.pageTitleProviders {
+    record {
+        provider = TYPO3\CMS\Core\PageTitle\RecordPageTitleProvider
+    }
+    seo {
+        provider = TYPO3\CMS\Seo\PageTitle\SeoTitlePageTitleProvider
+        before = record
+    }
+    bootstrap {
+        provider = LBRmedia\Bootstrap\PageTitle\PageTitleProvider
+        before = seo
+    }
+}
+
+/*
+When seo_title is empty this two content objects (prefix and suffix) will be rendered before and after the title.
+This works only with LBRmedia\Bootstrap\PageTitle\PageTitleProvider
+*/
+config.seo_title_is_empty {
+    // prefix = TEXT
+    // prefix {
+    //     value = Foo
+    //     noTrimWrap = ^^ | ^
+    //     noTrimWrap.splitChar = ^
+    // }
+
+    suffix = TEXT
+    suffix {
+        value = Bootstrap
+        noTrimWrap = ^ - ^^
+        noTrimWrap.splitChar = ^
+    }
+}

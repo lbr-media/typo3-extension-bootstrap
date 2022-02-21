@@ -1,0 +1,2 @@
+# cat=tx_bootstrap/bootstrap/a; type=int; label=PID for method getTcaCropVariantsOverride() to tell where the pageTSconfig with the cropVariants is stored
+tcaCropVariantsOverridePid = 1

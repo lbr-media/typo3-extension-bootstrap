@@ -1,0 +1,22 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+    <f:if condition="{item.spacer}">
+        <f:then>
+            <span class="nav-link spacer"  title="{item.title}">{item.title}</span>
+        </f:then>
+        <f:else if="{item.current}">
+            <a href="{item.link}" class="nav-link active current" target="{item.target}" title="{item.title}">{item.title}</a>
+        </f:else>
+        <f:else if="{item.active}">
+            <a href="{item.link}" class="nav-link active" target="{item.target}" title="{item.title}">{item.title}</a>
+        </f:else>
+        <f:else>
+            <a href="{item.link}" class="nav-link inactive" target="{item.target}" title="{item.title}">{item.title}</a>
+        </f:else>
+    </f:if>
+</f:section>
+
+</html>

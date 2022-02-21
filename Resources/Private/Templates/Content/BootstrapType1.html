@@ -1,0 +1,32 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<!--
+title = Überschrift + Text | Bild
+description = Auf der linken Seite die Überschrift und einen Text (66%). Auf der rechten Seite ein Bild (33%).
+-->
+<f:layout name="WithoutHeader" />
+
+<f:section name="Main"><f:spaceless>
+    <div class="container-indent-left">
+        <div class="row grid-ml--neg align-items-end">
+            <div class="col-md-10 col-lg-7 grid-pl">
+                <f:if condition="{data.header}">
+                    <div class="container-bootstrap_type1__header grid-mb">
+                        <f:render section="Header" optional="true">
+                            <f:render partial="Header/All" arguments="{_all}" />
+                        </f:render>
+                    </div>
+                </f:if>
+                <f:if condition="{bodytext}">{bodytext -> f:format.html()}</f:if>
+            </div>
+            <div class="col-sm-7 col-lg-5 grid-pt grid-pl">
+                <f:if condition="{image}"><f:render partial="DeviceImage" section="Small" arguments="{image:image}" /></f:if>
+            </div>
+        </div>
+    </div>
+</f:spaceless></f:section>
+
+</html>

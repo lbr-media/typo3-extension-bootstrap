@@ -1,0 +1,30 @@
+plugin.tx_bootstrap {
+    view {
+        templateRootPath = EXT:bootstrap/Resources/Private/Templates/
+        partialRootPath = EXT:bootstrap/Resources/Private/Partials/
+        layoutRootPath = EXT:bootstrap/Resources/Private/Layouts/
+    }
+    
+    no_cache = 0
+    concatenateCss = 1
+    compressCss = 1
+    concatenateJs = 1
+    compressJs = 1
+
+    rootPageId = 1
+}
+
+[applicationContext == "Development"]
+plugin.tx_bootstrap {    
+    no_cache = 1
+    concatenateCss = 0
+    compressCss = 0
+    concatenateJs = 0
+    compressJs = 0
+}
+[END]
+
+/*
+Include extensions
+*/
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Plugins/tx_cookieconsent.constants.typoscript">

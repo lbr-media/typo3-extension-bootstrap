@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sDEFAULT>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Einstellungen</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="layout">
+                        <value index="TCEforms">
+                            <label>Darstellung</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">erstes Bild links</numIndex>
+                                        <numIndex index="1">first_image_left</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">erstes Bild rechts</numIndex>
+                                        <numIndex index="1">first_image_right</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>first_image_left</default>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sDEFAULT>
+    </sheets>
+</T3FlexForms>

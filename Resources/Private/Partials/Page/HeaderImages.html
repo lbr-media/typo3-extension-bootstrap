@@ -1,0 +1,33 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    @param array {header_images}
+    -->
+    <f:section name="Default"><f:spaceless>
+        <f:if condition="{header_images -> f:count()}">
+            <div class="container container--wide">
+                <div class="page__header__images" data-app-toggle="page-header-images">
+                    <f:for each="{header_images}" as="image">
+                        <picture><f:render section="_Image" arguments="{image:image}" /></picture>
+                    </f:for>
+                    <f:link.page pageUid="8" class="page__header__images__header-link no-hyphens font-weight-medium">
+                        <span class="label label--top">Exklusive Gesamtkonzepte<br />für individuelle Orte</span>
+                        <span class="label label--bottom text-center text-uppercase">Vereinbaren Sie einen<br class="d-none d-xl-inline-block" /> persönlichen Beratungstermin</span>
+                    </f:link.page>
+                </div>
+            </div>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Image"><f:spaceless>
+        <source media="(max-width: 575.98px)" srcset="{f:uri.image(image:image, cropVariant:'pages_media_xs', maxWidth:480)}">
+        <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="{f:uri.image(image:image, cropVariant:'pages_media_sm', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'pages_media_sm', maxWidth:1440)} 2x">
+        <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="{f:uri.image(image:image, cropVariant:'pages_media_md', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'pages_media_md', maxWidth:1440)} 2x">
+        <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="{f:uri.image(image:image, cropVariant:'pages_media_lg', maxWidth:1440)}">
+        <source media="(min-width: 1200px)" srcset="{f:uri.image(image:image, cropVariant:'pages_media_xl', maxWidth:1920)}">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{image.alternative}" title="{image.title}">
+    </f:spaceless></f:section>
+</html>

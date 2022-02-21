@@ -1,0 +1,65 @@
+/*
+Add special content elements for this project
+*/
+mod.wizards.newContentElement.wizardItems.common2 {
+    header = Zusätzlich
+    elements {
+        bootstrap_type1 {
+            iconIdentifier = bootstrap_type1
+            title = Überschrift + Text | Bild
+            description = Auf der linken Seite die Überschrift und einen Text (66%). Auf der rechten Seite ein Bild (33%).
+            tt_content_defValues {
+                CType = bootstrap_type1
+            }
+        }
+        bootstrap_type2 {
+            iconIdentifier = bootstrap_type2
+            title = Bild(er)
+            description = Eine Spalte mit Bild(ern).
+            tt_content_defValues {
+                CType = bootstrap_type2
+            }
+        }
+        bootstrap_type3 {
+            iconIdentifier = bootstrap_type3
+            title = Bilder-Slider
+            description = Automatisch überblendete Bilder
+            tt_content_defValues {
+                CType = bootstrap_type3
+            }
+        }
+        bootstrap_type4 {
+            iconIdentifier = bootstrap_type4
+            title = Versetzte Bilder
+            description = Links/rechts versetzt angeordnete Bilder mit der Möglichkeit Links im Bild als Button zu setzen. Der Bild-Titel wird als Überschrift ausgegeben.
+            tt_content_defValues {
+                CType = bootstrap_type4
+            }
+        }
+        bootstrap_type5 {
+            iconIdentifier = bootstrap_type5
+            title = Bild + Text | Text + Bild
+            description = Zwei Spalten: links Bild oben + Text unten; rechts Text oben Bild unten.
+            tt_content_defValues {
+                CType = bootstrap_type5
+            }
+        }
+        bootstrap_type6 {
+            iconIdentifier = bootstrap_type5
+            title = Team-Mitglieder
+            description = Eine Liste von Team-Mitgliedern.
+            tt_content_defValues {
+                CType = bootstrap_type6
+            }
+        }
+        bootstrap_type7 {
+            iconIdentifier = bootstrap_type7
+            title = Text | Text
+            description = Zwei Spalten Text
+            tt_content_defValues {
+                CType = bootstrap_type7
+            }
+        }
+    }
+    show := addToList(bootstrap_type1,bootstrap_type2,bootstrap_type3,bootstrap_type4,bootstrap_type5,bootstrap_type6,bootstrap_type7)
+}

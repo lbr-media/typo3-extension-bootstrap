@@ -1,0 +1,24 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    title = Text | Text
+    description = Zwei Spalten Text
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <div class="overflow-hidden">
+            <div class="row grid-ml--neg grid-mt--neg">
+                <div class="col-sm-6 grid-pl grid-pt">
+                    {bodytext1 -> f:format.html()}
+                </div>
+                <div class="col-sm-6 grid-pl grid-pt">
+                    {bodytext2 -> f:format.html()}
+                </div>
+            </div>
+        </div>
+    </f:spaceless></f:section>
+</html>

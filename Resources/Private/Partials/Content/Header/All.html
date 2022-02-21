@@ -1,0 +1,20 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+    <f:spaceless>
+        <f:if condition="{data.header_layout} != 100">
+            <f:if condition="{data.header} || {data.subheader} || {data.date}">
+                <bs:Header
+                    contentElementData="{data}"
+                    headerSubheaderPattern="###TAG_START######HEADER###<small class=\"d-block text-muted\">###SUBHEADER###</small>###TAG_END###"
+                    />
+                
+                <f:render partial="Header/Date" arguments="{
+                    date: data.date,
+                    positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" />
+            </f:if>
+        </f:if>
+    </f:spaceless>
+</html>
+

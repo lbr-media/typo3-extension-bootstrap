@@ -1,0 +1,190 @@
+
+# aspect ratios for images
+lib.allowedAspectRatios {
+    NaN {
+        title = frei
+        value = 0.0
+    }
+    21:10 {
+        title = 21:10
+        value = 2.1
+    }
+    21:9 {
+        title = 21:9
+        value = 2.3333
+    }
+    16:10 {
+        title = 16:10
+        value = 1.6
+    }
+    16:9 {
+        title = 16:9
+        value = 1.77777
+    }
+    9:16 {
+        title = 9:16
+        value = 0.5625
+    }
+    3:4 {
+        title = 3:4
+        value = 0.75
+    }
+    4:3 {
+        title = 4:3
+        value = 1.3333
+    }
+    2:3 {
+        title = 2:3
+        value = 0.66666
+    }
+    3:2 {
+        title = 3:2
+        value = 1.5
+    }
+    5:7 {
+        title = 5:7
+        value = 0.71428571
+    }
+    7:5 {
+        title = 7:5
+        value = 1.4
+    }
+    4:5 {
+        title = 4:5
+        value = 0.8
+    }
+    5:4 {
+        title = 5:4
+        value = 1.25
+    }
+    1:2 {
+        title = 1:2
+        value = 0.5
+    }
+    2:1 {
+        title = 2:1
+        value = 2
+    }
+    1:1 {
+        title = 1:1
+        value = 1
+    }
+}
+
+lib.allowedAspectRatiosSocialMedia {
+    NaN {
+        title = frei
+        value = 0.0
+    }
+    120:63 {
+        title = 1.91:1 (Facebook)
+        value = 1.91
+    }
+    2:1 {
+        title = 2:1
+        value = 2
+    }
+    1:1 {
+        title = 1:1
+        value = 1
+    }
+}
+
+
+# add aspect ratios
+TCEFORM.sys_file_reference.crop.config.cropVariants {
+    # Standard
+    default {
+        title = Standard
+        selectedRatio = NaN
+        allowedAspectRatios < lib.allowedAspectRatios
+    }
+
+    std {
+        title = Standard (<576px)
+        selectedRatio = NaN
+        allowedAspectRatios < lib.allowedAspectRatios
+    }
+
+    sm < .std
+    sm.title = Klein (>=576px)
+
+    md < .std
+    md.title = Medium (>=768px)
+
+    lg < .std
+    lg.title = Groß (>=992px)
+
+    xl < .std
+    xl.title = Sehr groß (>=1200px)
+
+    xxl < .std
+    xxl.title = Extra groß (>=1400px)
+
+    # and a ligtbox
+    lightbox < .std
+    lightbox.title = Lightbox
+
+    # and for page previous/next navigation
+    navigation < .std
+    navigation.title = Navigation
+    navigation.selectedRatio = 1:1
+
+    # Social media tags
+    social {
+        title = Social Media
+        selectedRatio = NaN
+        allowedAspectRatios < lib.allowedAspectRatiosSocialMedia
+    }
+}
+
+/*
+add aspect ratios for pages.media
+*/
+
+lib.allowedAspectRatiosPagesMedia {
+    NaN {
+        title = frei
+        value = 0.0
+    }
+    9:16 {
+        title = XS (9:16)
+        value = 0.5625
+    }
+    16:9 {
+        title = SM-XL (16:9)
+        value = 1.77777
+    }
+}
+
+TCEFORM.sys_file_reference.crop.config.cropVariants {
+    pages_media_xs < .default
+    pages_media_xs.title = Smartphone (XS)
+    pages_media_xs.selectedRatio = 9:16
+    pages_media_xs.allowedAspectRatios < lib.allowedAspectRatiosPagesMedia
+
+    pages_media_sm < .default
+    pages_media_sm.title = Smartphone Querformat (SM)
+    pages_media_sm.selectedRatio = 16:9
+    pages_media_sm.allowedAspectRatios < lib.allowedAspectRatiosPagesMedia
+
+    pages_media_md < .default
+    pages_media_md.title = Tablet (MD)
+    pages_media_md.selectedRatio = 16:9
+    pages_media_md.allowedAspectRatios < lib.allowedAspectRatiosPagesMedia
+
+    pages_media_lg < .default
+    pages_media_lg.title = Tablet Querformat oder kleiner Laptop (LG)
+    pages_media_lg.selectedRatio = 16:9
+    pages_media_lg.allowedAspectRatios < lib.allowedAspectRatiosPagesMedia
+
+    pages_media_xl < .default
+    pages_media_xl.title = Desktop (XL)
+    pages_media_xl.selectedRatio = 16:9
+    pages_media_xl.allowedAspectRatios < lib.allowedAspectRatiosPagesMedia
+
+    pages_media_xxl < .default
+    pages_media_xxl.title = Desktop (XXL)
+    pages_media_xxl.selectedRatio = 16:9
+    pages_media_xxl.allowedAspectRatios < lib.allowedAspectRatiosPagesMedia
+}

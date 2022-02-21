@@ -1,0 +1,216 @@
+# Load default processing options
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  #- { resource: "EXT:rte_ckeditor_fontawesome/Configuration/RTE/PluginFA5.yaml" }
+
+# Allow s and u tag
+processing:
+  allowTags:
+    - s
+    - del
+    - u
+    - i
+    - small
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  externalPlugins:
+    typo3link: { resource: "EXT:rte_ckeditor/Resources/Public/JavaScript/Plugins/typo3link.js", route: "rteckeditor_wizard_browse_links" }
+    # This is a plugin, found here: https://github.com/ufdada/quicktable
+    quicktable: { resource: "EXT:rte_ckeditor/Resources/Public/JavaScript/Plugins/quicktable/plugin.js" }
+
+  config:
+    contentsCss: 
+      #- "EXT:app/vendor/components/font-awesome/css/all.min.css"
+      - "../fileadmin/bootstrap/assets/css/bootstrap.min.css"
+    # will be overridden by the record (if a language is set)
+    defaultContentLanguage: "de"
+    defaultLanguage: "de"
+    # Allow any class or any data attribute in any tag
+    extraAllowedContent: "*(*)[data-*]"
+    height: 500
+    width: "auto"
+    toolbar: "Basic"
+    uiColor: "#EEEEEE"
+    removeDialogTabs: "image:advanced;link:advanced"
+    # Ensure that special characters are not converted to HTML entities
+    entities_latin: false
+    entities: false
+    resize_enabled: true
+    resize_dir: 'both'
+    resize_maxWidth: 750
+    resize_minWidth: 400
+
+    # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
+    stylesSet:
+      # Alignments
+      # - { name: "Ausrichtung: oben", element: ['td', 'th'], attributes: { 'class': 'align-top' }}
+      # - { name: "Ausrichtung: mittig", element: ['td', 'th'], attributes: { 'class': 'align-middle' }}
+      # - { name: "Ausrichtung: unten", element: ['td', 'th'], attributes: { 'class': 'align-bottom' }}
+      
+      # Fonts
+      # - { name: "Schrift Fließtext (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-bodytext' }}
+      # - { name: "Schrift Fließtext (Inline)", element: "span", attributes: { 'class': 'font-bodytext' }}
+      # - { name: "Schrift Überschrift (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-header' }}
+      # - { name: "Schrift Überschrift (Inline)", element: "span", attributes: { 'class': 'font-header' }}
+
+      # Fonts weights
+      - { name: "fett", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-bold' }}
+      # - { name: "fetter", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-bolder' }}
+      - { name: "normal", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-normal' }}
+      # - { name: "dünn", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-light' }}
+      # - { name: "dünner", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-lighter' }}
+      # - { name: "Monospace", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-monospace' }}
+      - { name: "fett", element: ["span"], attributes: { 'class': 'font-weight-bold' }}
+      # - { name: "fetter", element: ["span"], attributes: { 'class': 'font-weight-bolder' }}
+      - { name: "normal", element: ["span"], attributes: { 'class': 'font-weight-normal' }}
+      # - { name: "dünn", element: ["span"], attributes: { 'class': 'font-weight-light' }}
+      # - { name: "dünner", element: ["span"], attributes: { 'class': 'font-weight-lighter' }}
+      # - { name: "Monospace", element: ["span"], attributes: { 'class': 'text-monospace' }}
+
+      - { name: "GROSSBUCHTABEN (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-uppercase' }}
+      #- { name: "kleinbuchstaben (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'transform-uppercase' }}
+      #- { name: "Kapitälchen (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'transform-capitalize' }}
+      - { name: "Mischsatz (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'transform-none' }}
+      - { name: "-durchgestrichen- (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'line-through' }}
+      - { name: "GROSSBUCHTABEN (Inline)", element: "span", attributes: { 'class': 'text-uppercase' }}
+      #- { name: "kleinbuchstaben (Inline)", element: "span", attributes: { 'class': 'transform-uppercase' }}
+      - { name: "Mischsatz (Inline)", element: "span", attributes: { 'class': 'transform-none' }}
+      - { name: "-durchgestrichen- (Inline)", element: "span", attributes: { 'class': 'line-through' }}
+
+      # Colors
+      - { name: "Pink (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-primary' }}
+      - { name: "Pink (Inline)", element: "span", attributes: { 'class': 'text-primary' }}
+      - { name: "Grün (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-secondary' }}
+      - { name: "Grün (Inline)", element: "span", attributes: { 'class': 'text-secondary' }}
+      - { name: "Schwarz (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-black' }}
+      - { name: "Schwarz (Inline)", element: "span", attributes: { 'class': 'text-black' }}
+      # - { name: "Grau: dunkel (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-dark' }}
+      # - { name: "Grau: dunkel (Inline)", element: "span", attributes: { 'class': 'text-dark' }}
+      - { name: "Grau: mittel (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-middle' }}
+      - { name: "Grau: mittel (Inline)", element: "span", attributes: { 'class': 'text-middle' }}
+      # - { name: "Grau: hell (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-light' }}
+      # - { name: "Grau: hell (Inline)", element: "span", attributes: { 'class': 'text-light' }}
+      - { name: "Weiß (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-white' }}
+      - { name: "Weiß (Inline)", element: "span", attributes: { 'class': 'text-white' }}
+      # - { name: "Reset (soft)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-muted' }}
+      # - { name: "Reset (soft)", element: "span", attributes: { 'class': 'text-muted' }}
+
+      # Sizes
+      - { name: "Überschrift 1 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'h1' }}
+      - { name: "Überschrift 1 (Inline)", element: "span", attributes: { 'class': 'h1' }}
+      - { name: "Überschrift 2 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'h2' }}
+      - { name: "Überschrift 2 (Inline)", element: "span", attributes: { 'class': 'h2' }}
+      - { name: "Überschrift 3 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'h3' }}
+      - { name: "Überschrift 3 (Inline)", element: "span", attributes: { 'class': 'h3' }}
+      - { name: "Überschrift 4 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'h4' }}
+      - { name: "Überschrift 4 (Inline)", element: "span", attributes: { 'class': 'h4' }}
+      #- { name: "Display 1 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'display-1' }}
+      #- { name: "Display 1 (Inline)", element: "span", attributes: { 'class': 'display-1' }}
+      #- { name: "Display 2 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'display-2' }}
+      #- { name: "Display 2 (Inline)", element: "span", attributes: { 'class': 'display-2' }}
+      #- { name: "Display 3 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'display-3' }}
+      #- { name: "Display 3 (Inline)", element: "span", attributes: { 'class': 'display-3' }}
+      #- { name: "Display 4 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'display-4' }}
+      #- { name: "Display 4 (Inline)", element: "span", attributes: { 'class': 'display-4' }}
+      - { name: "Kleiner (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-size-sm' }}
+      - { name: "Kleiner (Inline)", element: "span", attributes: { 'class': 'font-size-sm' }}
+      # - { name: "Größer (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-size-lg' }}
+      # - { name: "Größer (Inline)", element: "span", attributes: { 'class': 'font-size-lg' }}
+      # - { name: "Lead (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'lead' }}
+      # - { name: "Lead (Inline)", element: "span", attributes: { 'class': 'lead' }}
+
+      # List styles
+      #- { name: 'UL ', element: 'ol', attributes: { 'class': 'ul-style2' } }
+      #- { name: 'No UL Bullets', element: 'ul', attributes: { 'class': 'no-bullet' } }
+
+    format_tags: "h1;h2;h3;h4;p;pre"
+
+    toolbarGroups:
+      - { name: 'document', groups: [ 'mode', 'document', 'doctools' ] }
+      - { name: 'clipboard', groups: [ 'clipboard', 'undo' ] }
+      - { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
+      - { name: 'forms', groups: [ 'forms' ] }
+      - '/'
+      - { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
+      #- { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph', 'ckeditor_fa5' ] }
+      - { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] }
+      - { name: 'links', groups: [ 'links' ] }
+      - { name: 'insert', groups: [ 'insert' ] }
+      - '/'
+      - { name: 'styles', groups: [ 'styles' ] }
+      - { name: 'colors', groups: [ 'colors' ] }
+      - { name: 'tools', groups: [ 'tools' ] }
+      - { name: 'others', groups: [ 'others' ] }
+      - { name: 'about', groups: [ 'about' ] }
+
+    #removeButtons: 'Bold,Italic,Save,NewPage,Preview,Print,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Language,Anchor,Image,Flash,Smiley,PageBreak,Iframe,Font,FontSize'
+    removeButtons: "Scayt"
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - find
+      - wordcount
+
+    removePlugins:
+      - image
+      - bidi
+
+buttons:
+  link:
+    relAttribute:
+      enabled: false
+    targetSelector:
+      disabled: false
+    properties:
+      class:
+        allowedClasses: 'text-decoration-none,btn-black,btn-white,btn-outline-black,btn-outline-white'
+      title:
+        readOnly: false
+    #page:
+    #  properties:
+    #    class:
+    #      default: 'colored-bold'
+    #file:
+    #  properties:
+    #    class:
+    #      default: 'colored-bold'
+    #folder:
+    #  properties:
+    #    class:
+    #      default: 'colored-bold'
+    #url:
+    #  properties:
+    #    class:
+    #      default: 'colored-bold'
+    #mail:
+    #  properties:
+    #    class:
+    #      default: 'envelope'
+
+#classesAnchor:
+#  linkMail:
+#    class: 'envelope'
+#    type: 'mail'
+#    titleText: 'Eine Email schreiben'
+
+# set the names of the link classes
+classes:
+  text-decoration-none:
+    name: "Nicht unterstrichen"
+  btn-black:
+    name: "Button: Schwarz"
+  btn-white:
+    name: "Button: Weiß"
+  btn-outline-black:
+    name: "Button: Schwarzer Rand"
+  btn-outline-white:
+    name: "Button: Weißer Rand"
+

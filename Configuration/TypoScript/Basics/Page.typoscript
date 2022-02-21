@@ -1,0 +1,81 @@
+######################
+# Create page-Object #
+######################
+
+page = PAGE
+page {
+    typeNum = 0
+
+    meta {
+        X-UA-Compatible = IE=edge
+        X-UA-Compatible.attribute = http-equiv
+        #date.data = date:U
+        #date.strftime = %Y-%m-%d
+        expires = 0
+        revisit-after = 14 days
+        #revisit-after.httpEquivalent = 1
+        #isFamilyFriendly = True
+        #isFamilyFriendly.attribute = itemprop
+        viewport = width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes
+        author = 
+        #abstract = 
+        #page-topic = 
+        classification = 
+        copyright = 
+        robots = index, follow
+        distribution = global
+        audience = all
+        cache-control = no-cache
+        rating = general
+        #creator = 
+        #identifier.data = site:base
+        format-detection = telephone=no
+    }
+}
+
+/*
+Set doctype and change html tag
+*/
+config {
+    doctype = html5
+    htmlTag_stdWrap >
+    htmlTag_stdWrap {
+        cObject = USER
+        cObject {
+            userFunc = LBRmedia\Bootstrap\UserFunc\Tag->html
+            additionalAttributes {
+                #x-ms-format-detection = none
+            }
+            additionalClasses {
+                10 = no-js
+                // 20 = h-100
+                30 = env-production
+            }
+            additionalClassCObject = TEXT
+            additionalClassCObject {
+                data = pagelayout
+                split {
+                    token = pagets__
+                }
+                wrap = page-layout-|
+            }
+        }
+    }
+}
+
+[applicationContext == "Development"]
+config.htmlTag_stdWrap.cObject.additionalClasses.30 = env-development
+[END]
+
+/*
+change body tag
+*/
+page.bodyTag >
+page.bodyTagCObject = USER
+page.bodyTagCObject {
+    userFunc = LBRmedia\Bootstrap\UserFunc\Tag->body
+    // additionalAttributes {
+    //     // get 100% height viewport
+    //     class = d-flex flex-column min-vh-100
+    // }
+}

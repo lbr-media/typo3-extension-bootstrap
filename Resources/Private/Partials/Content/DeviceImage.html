@@ -1,0 +1,115 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <f:section name="Small"><f:spaceless>
+        <f:if condition="{image.description}">
+            <f:then>
+                <figure>
+                    <f:render section="_Picture" arguments="{image:image, image_section:'_ImageSmall'}" />
+                    <figcaption>
+                        {image.description -> f:format.nl2br()}
+                    </figcaption>
+                </figure>
+            </f:then>
+            <f:else>
+                <f:render section="_Picture" arguments="{image:image, image_section:'_ImageSmall'}" />
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="Middle"><f:spaceless>
+        <f:if condition="{image.description}">
+            <f:then>
+                <figure>
+                    <f:render section="_Picture" arguments="{image:image, image_section:'_ImageMiddle'}" />
+                    <figcaption>
+                        {image.description -> f:format.nl2br()}
+                    </figcaption>
+                </figure>
+            </f:then>
+            <f:else>
+                <f:render section="_Picture" arguments="{image:image, image_section:'_ImageMiddle'}" />
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="Large"><f:spaceless>
+        <f:if condition="{image.description}">
+            <f:then>
+                <figure>
+                    <f:render section="_Picture" arguments="{image:image, image_section:'_ImageLarge'}" />
+                    <figcaption>
+                        {image.description -> f:format.nl2br()}
+                    </figcaption>
+                </figure>
+            </f:then>
+            <f:else>
+                <f:render section="_Picture" arguments="{image:image, image_section:'_ImageLarge'}" />
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="Small"><f:spaceless>
+        <f:if condition="{image.description}">
+            <f:then>
+                <figure>
+                    <f:render section="_Picture" arguments="{image:image, image_section:'_ImageSmall'}" />
+                    <figcaption>
+                        {image.description -> f:format.nl2br()}
+                    </figcaption>
+                </figure>
+            </f:then>
+            <f:else>
+                <f:render section="_Picture" arguments="{image:image, image_section:'_ImageSmall'}" />
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Picture"><f:spaceless>
+        <f:if condition="{image.link}">
+            <f:then>
+                <f:link.typolink parameter="{image.link}">
+                    <picture>
+                        <f:render section="{image_section}" arguments="{image:image}" />
+                    </picture>
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <picture>
+                    <f:render section="{image_section}" arguments="{image:image}" />
+                </picture>
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_ImageSmall"><f:spaceless>
+        <source media="(max-width: 575.98px)" srcset="{f:uri.image(image:image, cropVariant:'std', maxWidth:580)} 1x, {f:uri.image(image:image, cropVariant:'std', maxWidth:960)} 2x">
+        <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="{f:uri.image(image:image, cropVariant:'sm', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'sm', maxWidth:1440)} 2x">
+        <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="{f:uri.image(image:image, cropVariant:'md', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'md', maxWidth:1440)} 2x">
+        <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="{f:uri.image(image:image, cropVariant:'lg', maxWidth:1440)}">
+        <source media="(min-width: 1200px)" srcset="{f:uri.image(image:image, cropVariant:'xl', maxWidth:1920)}">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{image.alternative}" {f:if(condition:image.title, then:' title="{image.title}"')}>
+    </f:spaceless></f:section>
+
+    <f:section name="_ImageMiddle"><f:spaceless>
+        <source media="(max-width: 575.98px)" srcset="{f:uri.image(image:image, cropVariant:'std', maxWidth:580)} 1x, {f:uri.image(image:image, cropVariant:'std', maxWidth:960)} 2x">
+        <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="{f:uri.image(image:image, cropVariant:'sm', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'sm', maxWidth:1440)} 2x">
+        <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="{f:uri.image(image:image, cropVariant:'md', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'md', maxWidth:1440)} 2x">
+        <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="{f:uri.image(image:image, cropVariant:'lg', maxWidth:1440)}">
+        <source media="(min-width: 1200px)" srcset="{f:uri.image(image:image, cropVariant:'xl', maxWidth:1920)}">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{image.alternative}" {f:if(condition:image.title, then:' title="{image.title}"')}>
+    </f:spaceless></f:section>
+
+    <f:section name="_ImageLarge"><f:spaceless>
+        <source media="(max-width: 575.98px)" srcset="{f:uri.image(image:image, cropVariant:'std', maxWidth:580)} 1x, {f:uri.image(image:image, cropVariant:'std', maxWidth:960)} 2x">
+        <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="{f:uri.image(image:image, cropVariant:'sm', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'sm', maxWidth:1440)} 2x">
+        <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="{f:uri.image(image:image, cropVariant:'md', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'md', maxWidth:1440)} 2x">
+        <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="{f:uri.image(image:image, cropVariant:'lg', maxWidth:1440)}">
+        <source media="(min-width: 1200px)" srcset="{f:uri.image(image:image, cropVariant:'xl', maxWidth:1920)}">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{image.alternative}" {f:if(condition:image.title, then:' title="{image.title}"')}>
+    </f:spaceless></f:section>
+
+
+</html>

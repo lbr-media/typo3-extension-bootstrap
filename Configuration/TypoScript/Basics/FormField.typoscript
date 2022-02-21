@@ -1,0 +1,147 @@
+/*
+Settings for additional fields in tt_content
+*/
+plugin.tx_bootstrap.settings.form.element {
+    TextMediaPositions {
+        default = 
+        left = links
+        right = rechts
+        none = zentriert über dem Text
+    }
+
+    /*
+    label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContent->additionalStyles()
+    value = key in AdditionalStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\CTypeFrameViewHelper->render()
+    outerWrap = 
+    innerWrap = 
+    additionalClass = 
+    additionalAttributes {}
+    additionalOuterClass = 
+    additionalOuterAttributes {}
+    */
+    AdditionalStyles {
+        10 {
+            label = Einzug links
+            value = 10
+            innerWrap = <div class="container-indent-left">|</div>
+        }
+        12 {
+            label = Einzug rechts
+            value = 12
+            innerWrap = <div class="container-indent-right">|</div>
+        }
+
+        20 {
+            label = Einzug links + schmaler Inhalt
+            value = 20
+            innerWrap = <div class="container-indent-left"><div class="row grid-ml--neg"><div class="col-sm-10 col-md-9 col-lg-7 grid-pl">|</div></div></div>
+        }
+
+        30 {
+            label = Starker Einzug links mit Linie + schmaler Inhalt
+            value = 30
+            innerWrap = <div class="row justify-content-center"><div class="col-10 col-sm-9 col-md-6 col-lg-5"><div class="container-indent-left-large-line">|</div></div></div>
+        }
+    }
+
+    /*
+    label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->predefinedHeader()
+    value = key in PredefinedHeader which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
+    outerWrap = [OUTER_WRAP_1]<headline class="[CLASSES]">[LINK_START][ICON1][TEXT][ICON2][LINK_END]</headline>[OUTER_WRAP_2]
+    innerWrap = <headline class="[CLASSES]">[LINK_START][INNER_WRAP_1][ICON1][TEXT][ICON2][INNER_WRAP_2][LINK_END]</headline>
+    additionalClass = <headline class="[CLASSES] [ADDITIONAL_CLASS]">[LINK_START][ICON1][TEXT][ICON2][LINK_END]</headline>
+    */
+    PredefinedHeader {
+        10 {
+            label = Normal
+            value = 10
+            outerWrap = 
+            innerWrap = 
+            additionalClass = h--default
+        }
+        20 {
+            label = Unterstrichen
+            value = 20
+            outerWrap = 
+            innerWrap = 
+            additionalClass = h--line
+        }
+    }
+
+    /*
+    label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->additionalHeaderStyles()
+    value = key in AdditionalHeaderStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
+    outerWrap = [OUTER_WRAP_1]<headline class="[CLASSES]">[LINK_START][ICON1][TEXT][ICON1][LINK_END]</headline>[OUTER_WRAP_2]
+    innerWrap = <headline class="[CLASSES]">[LINK_START][INNER_WRAP_1][ICON1][TEXT][ICON1][INNER_WRAP_2][LINK_END]</headline>
+    additionalClass = <headline class="[CLASSES] [ADDITIONAL_CLASS]">[LINK_START][ICON2][TEXT][ICON2][LINK_END]</headline>
+    */
+    AdditionalHeaderStyles {
+        // 10 {
+        //     label = VERSALIEN
+        //     value = 10
+        //     outerWrap = 
+        //     innerWrap = 
+        //     additionalClass = text-uppercase
+        // }
+
+        5 {
+            label = Einzug
+            value = 5
+            additionalClass = header-indent
+        }
+        7 {
+            label = Einzug mit Linie
+            value = 7
+            additionalClass = header-indent-line
+        }
+        9 {
+            label = Linie
+            value = 9
+            additionalClass = header-line
+        }
+
+        10 {
+            label = VERSALIEN
+            value = 10
+            additionalClass = text-uppercase
+        }
+        20 {
+            label = Mischsatz
+            value = 20
+            additionalClass = text-transform-none
+        }
+        30 {
+            label = kursiv
+            value = 30
+            innerWrap = <em>|</em>
+        }
+        60 {
+            label = durchgestrichen
+            value = 60
+            innerWrap = <del>|</del>
+        }
+        70 {
+            label = kein Abstand unten
+            value = 70
+            additionalClass = mb-0
+        }
+        // 70 {
+        //     label = Monospace
+        //     outerWrap = 
+        //     value = 70
+        //     innerWrap = 
+        //     additionalClass = text-monospace
+        // }
+        80 {
+            label = mehr Abstand unten
+            value = 80
+            additionalClass = container--space-after-extra-small
+        }
+        90 {
+            label = Fließtext-Stärke
+            value = 90
+            additionalClass = font-weight-light
+        }
+    }
+}
+

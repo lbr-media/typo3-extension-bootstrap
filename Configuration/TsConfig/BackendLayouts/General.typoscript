@@ -1,0 +1,50 @@
+mod {
+    web_layout {
+        BackendLayouts {
+            Homepage {
+                title = Startseite
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Inhalt
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            Standard {
+                title = Standard
+                config {
+                    backend_layout {
+                        colCount = 3
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Hauptinhalt
+                                        colPos = 0
+                                        colspan = 2
+                                    }
+                                    2 {
+                                        name = Inhalt Seite
+                                        colPos = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

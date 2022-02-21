@@ -1,0 +1,21 @@
+/*
+include all the basics
+*/
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/General.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Page.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/HeaderData.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/TemplatePaths.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Fluidtemplate.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Stylesheets.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/JavaScript.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/PageTitleProvider.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/FormField.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/ContentElements.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/lib.parseFunc.typoscript">
+
+/*
+Include extensions
+*/
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Plugins/tx_seo.typoscript">
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Plugins/tx_cookieconsent.setup.typoscript">

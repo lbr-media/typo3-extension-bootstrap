@@ -1,0 +1,48 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    title = Team-Mitglieder
+    description = Eine Liste von Team-Mitgliedern.
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{teamMembers -> f:count()}">
+
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{teamMembers -> f:count()}">
+            <div data-app-toggle="offset-images">
+                <f:for each="{teamMembers}" as="teamMember">
+                    <div class="team-member offset-image">
+                        <f:if condition="{teamMember.portrait}">
+                            <f:render section="_Portrait" arguments="{teamMember:teamMember}" />
+                        </f:if>
+                        <h3 class="h2 mb-0 no-hyphens">{teamMember.name}</h3>
+                        <f:if condition="{teamMember.description}">
+                            <div class="pt-3">{teamMember.description -> f:format.html()}</div>
+                        </f:if>
+                    </div>
+                </f:for>
+                <div class="clear"></div>
+            </div>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Portrait"><f:spaceless>
+        <f:variable name="image" value="{teamMember.portrait}" />
+        <picture>
+            <source media="(max-width: 575.98px)" srcset="{f:uri.image(image:image, cropVariant:'xs', maxWidth:480)}">
+            <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="{f:uri.image(image:image, cropVariant:'sm', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'sm', maxWidth:1440)} 2x">
+            <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="{f:uri.image(image:image, cropVariant:'md', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'md', maxWidth:1440)} 2x">
+            <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="{f:uri.image(image:image, cropVariant:'lg', maxWidth:1440)}">
+            <source media="(min-width: 1200px)" srcset="{f:uri.image(image:image, cropVariant:'xl', maxWidth:1440)}">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{teamMember.name}" title="{teamMember.name}">
+        </picture>
+    </f:spaceless></f:section>
+</html>

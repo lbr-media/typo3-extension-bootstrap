@@ -1,0 +1,56 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    title = Bild(er)
+    description = Eine Spalte mit Bild(ern).
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{images -> f:count()}==1">
+            <f:then>
+                <f:render partial="ImageHeader" section="Default" arguments="{header:images.0.properties.tx_bootstrap_header}" />
+                <f:render section="_Picture" arguments="{image:images.0}" />
+            </f:then>
+            <f:else if="{images -> f:count()} > 1">
+                <div class="overflow-hidden">
+                    <div class="grid-mt--neg">
+                        <f:for each="{images}" as="image">
+                            <div class="grid-pt">
+                                <f:render partial="ImageHeader" section="Default" arguments="{header:image.properties.tx_bootstrap_header}" />
+                                <f:render section="_Picture" arguments="{image:image}" />
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Picture"><f:spaceless>
+        <f:if condition="{image.link}">
+            <f:then>
+                <div class="button-in-image">
+                    <picture><f:render section="_Image" arguments="{image:image}" /></picture>
+                    <f:link.typolink parameter="{image.link}" class="btn btn-black">{f:if(condition:image.properties.tx_bootstrap_link_text, then:image.properties.tx_bootstrap_link_text, else:'mehr erfahren')}</f:link.typolink>
+                </div>
+            </f:then>
+            <f:else>
+                <picture><f:render section="_Image" arguments="{image:image}" /></picture>
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Image"><f:spaceless>
+        <source media="(max-width: 575.98px)" srcset="{f:uri.image(image:image, cropVariant:'xs', maxWidth:480)}">
+        <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="{f:uri.image(image:image, cropVariant:'sm', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'sm', maxWidth:1440)} 2x">
+        <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="{f:uri.image(image:image, cropVariant:'md', maxWidth:960)} 1x, {f:uri.image(image:image, cropVariant:'md', maxWidth:1440)} 2x">
+        <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="{f:uri.image(image:image, cropVariant:'lg', maxWidth:1440)}">
+        <source media="(min-width: 1200px)" srcset="{f:uri.image(image:image, cropVariant:'xl', maxWidth:1440)}">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{image.alternative}" title="{image.title}">
+    </f:spaceless></f:section>
+
+</html>

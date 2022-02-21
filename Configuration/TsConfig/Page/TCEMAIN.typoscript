@@ -1,0 +1,20 @@
+TCEMAIN {
+    # copy and translation
+    translateToMessage =
+    table {
+        pages {
+            disableHideAtCopy = 1
+        }
+        tt_content {
+            disableHideAtCopy = 1
+        }
+    }
+
+    # Standard-Backend-Gruppe beim Erstellen einer Seite.
+    permissions {
+        groupid = 1
+        user = show,editcontent,edit,delete,new
+        group = show,editcontent,edit,delete,new
+        everybody = 
+    }
+}

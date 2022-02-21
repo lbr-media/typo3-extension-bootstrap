@@ -1,0 +1,28 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  LBRmedia\Bootstrap\:
+    resource: '../Classes/*'
+
+  # add event listener (previously known as hooks) for tt_content
+  LBRmedia\Bootstrap\Listener\TCA\TtContent\Columns:
+    tags:
+      - name: event.listener
+        identifier: 'mab-bootstrap-listener-tca-ttcontent-columns'
+        event: TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent
+  LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement:
+    tags:
+      - name: event.listener
+        identifier: 'mab-bootstrap-listener-tca-ttcontent-newcontentelement'
+        event: TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent
+        after: 'mab-bootstrap-listener-tca-ttcontent-columns'
+
+  # dependency injection of classes which could not use @Inject
+  LBRmedia\Bootstrap\DataProcessing\VariousProcessor:
+    public: true
+    arguments:
+      $fileRepository: '@TYPO3\CMS\Core\Resource\FileRepository'
+      $teamMemberRepository: '@LBRmedia\Bootstrap\Domain\Repository\TeamMemberRepository'

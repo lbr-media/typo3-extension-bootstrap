@@ -1,0 +1,33 @@
+# Extension
+plugin.tx_bootstrap.view {
+    standaloneTemplateRootPath = {$plugin.tx_bootstrap.view.templateRootPath}
+    templateRootPaths.0 = {$plugin.tx_bootstrap.view.templateRootPath}
+    partialRootPaths.0 = {$plugin.tx_bootstrap.view.partialRootPath}
+    layoutRootPaths.0 = {$plugin.tx_bootstrap.view.layoutRootPath}
+}
+
+# Page
+page.10 {
+    layoutRootPaths {
+        10 = {$plugin.tx_bootstrap.view.layoutRootPath}Page/
+    }
+    partialRootPaths {
+        10 = {$plugin.tx_bootstrap.view.partialRootPath}Page/
+    }
+    templateRootPaths {
+        10 = {$plugin.tx_bootstrap.view.templateRootPath}Page/
+    }
+}
+
+# Content
+lib.contentElement {
+    layoutRootPaths {
+        10 = {$plugin.tx_bootstrap.view.layoutRootPath}Content/
+    }
+    partialRootPaths {
+        10 = {$plugin.tx_bootstrap.view.partialRootPath}Content/
+    }
+    templateRootPaths {
+        10 = {$plugin.tx_bootstrap.view.templateRootPath}Content/
+    }
+}

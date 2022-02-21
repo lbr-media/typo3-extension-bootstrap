@@ -1,0 +1,46 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    title = Bild + Text | Text + Bild
+    description = Zwei Spalten: links Bild oben + Text unten; rechts Text oben Bild unten.
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <div class="overflow-hidden">
+            <div class="row grid-ml--neg grid-mt--neg">
+                <div class="col-sm-6 grid-pl grid-pt">
+                    <div class="row grid-mt--neg">
+                        <f:if condition="{image1}">
+                            <div class="col-12 grid-pt">
+                                <f:render partial="DeviceImage" section="Middle" arguments="{image:image1}" />
+                            </div>
+                        </f:if>
+                        <f:if condition="{bodytext1}">
+                            <div class="col-12 grid-pt">
+                                {bodytext1 -> f:format.html()}
+                            </div>
+                        </f:if>
+                    </div>
+                </div>
+                <div class="col-sm-6 grid-pl grid-pt">
+                    <div class="row grid-mt--neg">
+                        <f:if condition="{bodytext2}">
+                            <div class="col-12 grid-pt order-1 order-sm-0">
+                                {bodytext2 -> f:format.html()}
+                            </div>
+                        </f:if>
+                        <f:if condition="{image2}">
+                            <div class="col-12 grid-pt order-0 order-sm-1">
+                                <f:render partial="DeviceImage" section="Middle" arguments="{image:image2}" />
+                            </div>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:spaceless></f:section>
+</html>

@@ -1,0 +1,112 @@
+#admPanel {
+#	enable.edit = 0
+#	enable.info = 0
+#}
+
+
+
+options {
+    pageTree {
+        # PID im Seitenbaum anzeigen
+        showPageIdWithTitle = 1
+        
+        # UID der Wurzel-Seite im Seitenbaum bei interner Link-Erstellung
+        altElementBrowserMountPoints = 1
+        
+        # Kompletter Pfad zur Datenbankfreigabe
+        showPathAboveMounts = 0
+        
+        # Navigationstitel statt Seitentitel
+        #showNavTitle = 1
+        
+        # Kontextmenu mit linker Maustaste ausschalten
+        #disableIconLinkToContextmenu = 1
+        
+        # Filter ausblenden
+        hideFilter = 1
+        
+        # Namen des Domain Datensatzes im Seitentitel
+        showDomainNameWithTitle = 0
+        
+        # Seiten in Toolbar für neue Seite
+        # Standard: 1, 6, 4, 7, 3, 254, 255, 199
+        #doktypesToShowInNewPageDragArea = 
+    }
+
+    # Makes sure the clipboard doesn't clear:
+    saveClipboard = 0
+
+    # Reduces the amount of clipboards from 4 to 1:
+    clipboardNumberPads = 1
+
+    # Kommaseparierte Liste von Elementen, die nicht im Kontext Menü verfügbar sein sollen:
+    # view, disable, enable, edit, info, history, new, cut, copy, pasteInto, pasteAfter, delete, mountAsTreeroot, expandBranch, collapseBranch
+    #contextMenu.table.pages.disableItems = 
+
+    # Import und Export ausblenden
+    contextMenu.table {
+        #virtual_root.items {
+        #    9100 = DIVIDER
+        #    9200 = DIVIDER
+        #}
+            
+        #pages_root.items {
+        #    9100 = DIVIDER
+        #    9200 = DIVIDER
+        #}
+            
+        #pages.items.1000 {
+        #	9100 = DIVIDER
+        #	9200 = DIVIDER
+        #}
+    }
+
+    # cache
+    clearCache {
+        pages = 1
+        all = 0
+        system = 0
+    }
+
+    # RTE
+    RTESmallWidth = 800
+    RTESmallHeight = 800
+}
+
+setup.defaults {
+    titleLen = 80
+    thumbnailsByDefault = 1
+    edit_RTE = 1
+    copyLevels = 10
+    recursiveDelete = 10
+    noOnChangeAlertInTypeFields = 0
+    navFrameWidth = 150
+    startModule = web_list
+    neverHideAtCopy = 1
+}
+
+# Overridden User value
+setup.override {
+    startModule = list
+    edit_docModuleUpload = 0
+}
+
+TCAdefaults {
+    pages {
+        backend_layout = pagets__Standard
+        hidden = 0
+    }
+
+    tt_content {
+        imagecols = 1
+        sectionIndex = 0
+    }
+
+    be_users {
+        file_permissions =
+    }
+
+    be_groups {
+        file_permissions =
+    }
+}

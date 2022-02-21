@@ -1,0 +1,141 @@
+/*
+General settings for all pages
+*/
+TCEFORM.pages {
+    // = = Allgemein = = 
+    subtitle.disabled = 1
+
+    // = = SEO = =
+    // seo_title.disabled = 1
+    // description.disabled = 1
+    // no_index.disabled = 1
+    // no_follow.disabled = 1
+    // canonical_link.disabled = 1
+    // sitemap_changefreq.disabled = 1
+    // sitemap_priority.disabled = 1
+
+    // = = Soziale Medien = =
+    // og_title.disabled = 1
+    // og_description.disabled = 1
+    // og_image.disabled = 1
+    // twitter_title.disabled = 1
+    // twitter_description.disabled = 1
+    // twitter_image.disabled = 1
+    // twitter_card.disabled = 1
+
+    // = = Metadaten = =
+    // abstract.disabled = 1
+    // keywords.disabled = 1
+    // lastUpdated.disabled = 1
+    author.disabled = 1
+    author_email.disabled = 1
+    
+    // = = Erscheinungsbild = =
+    layout.disabled = 1
+    newUntil.disabled = 1
+    // backend_layout.disabled = 1
+    backend_layout.label = Layout (nur für diese Seite)
+    // backend_layout_next_level.disabled = 1
+    backend_layout_next_level.label = Layout (für Unterseiten dieser Seite)
+    content_from_pid.disabled = 1
+
+    // = = Verhalten = =
+    // target.disabled = 1
+    cache_timeout.disabled = 1
+    cache_tags.disabled = 1
+    is_siteroot.disabled = 1
+    no_search.disabled = 1
+    php_tree_stop.disabled = 1
+    module.disabled = 1
+
+    // = = Ressourcen = =
+    // media.disabled = 1
+    tsconfig_includes.disabled = 1
+    TSconfig.disabled = 1
+
+    // = = Sprache = =
+    l18n_cfg.disabled = 1
+
+    // = = Zugriff = =
+    // hidden.disabled = 1
+    // nav_hide.disabled = 1
+    // starttime.disabled = 1
+    // endtime.disabled = 1
+    extendToSubpages.disabled = 1
+    fe_group.disabled = 1
+    fe_login_mode.disabled = 1
+    editlock.disabled = 1
+
+    // = = Kategorien = =
+    categories.disabled = 1
+
+    // = = Hinweise = =
+    rowDescription.disabled = 1
+    // rowDescription.label = Beschreibung (Wird in der Seitenübersicht ausgegeben)
+}
+
+/*
+re-enable some fields for admins
+*/
+[backend.user.isAdmin]
+TCEFORM.pages {
+    is_siteroot.disabled = 0
+    tsconfig_includes.disabled = 0
+    TSconfig.disabled = 0
+    module.disabled = 0
+}
+[global]
+
+/*
+shortcut / Verweis
+*/
+[page["doktype"] == 4]
+TCEFORM.pages {
+    abstract.disabled = 1
+    author.disabled = 1
+    author_email.disabled = 1
+    lastUpdated.disabled = 1
+    newUntil.disabled = 1
+    backend_layout.disabled = 1
+    backend_layout_next_level.disabled = 1
+    no_search.disabled = 1
+    rowDescription.disabled = 1
+    media.disabled = 1
+    is_siteroot.disabled = 1
+}
+[global]
+
+/*
+Trennzeichen für Menü
+*/
+[page["doktype"] == 199]
+TCEFORM.pages {
+    backend_layout.disabled = 1
+    backend_layout_next_level.disabled = 1
+}
+[global]
+
+/*
+Link zu externer URL
+*/
+[page["doktype"] == 3]
+TCEFORM.pages {
+    abstract.disabled = 1
+    lastUpdated.disabled = 1
+    backend_layout.disabled = 1
+    backend_layout_next_level.disabled = 1
+    is_siteroot.disabled = 1
+    media.disabled = 1
+}
+[global]
+
+/*
+Ordner
+*/
+[page["doktype"] == 254]
+TCEFORM.pages {
+    backend_layout.disabled = 1
+    backend_layout_next_level.disabled = 1
+    media.disabled = 1
+}
+[global]

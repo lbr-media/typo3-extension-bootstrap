@@ -1,0 +1,195 @@
+lib.pagelayout = TEXT
+lib.pagelayout {
+    data = pagelayout
+    split {
+        token = pagets__
+    }
+}
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    templateName < lib.pagelayout
+
+    settings < plugin.tx_bootstrap.settings
+
+    variables {
+        pagelayout < lib.pagelayout
+
+        /*
+        Contents
+        */
+        content_main < styles.content.get
+        content_main.wrap = <!--TYPO3SEARCH_begin-->|<!--TYPO3SEARCH_end-->
+
+        content_aside < styles.content.get
+        content_aside.select.where = {#colPos}=1
+
+        /*
+        Brand
+        */
+        # header_brand = COA
+        # header_brand {
+        #     stdWrap.typolink {
+        #         parameter = 1
+        #         ATagParams = class="page__header__brand"
+        #         title = DUGGAN Küche + Einrichtung
+        #     }
+
+        #     10 = SVG
+        #     10 {
+        #         src = assets/gfx/Logo_Duggan.svg
+        #         renderMode = inline
+        #         stdWrap.wrap = <span class="page__header__brand__gfx page__header__brand__gfx--name">|</span>
+        #     }
+
+        #     20 = SVG
+        #     20 {
+        #         src = assets/gfx/Logo_KuechePlusEinrichtung.svg
+        #         renderMode = inline
+        #         stdWrap.wrap = <span class="page__header__brand__gfx page__header__brand__gfx--addition">|</span>
+        #     }
+        # }
+        header_brand = TEXT
+        header_brand.value = Brand
+
+        /*
+        Copyright text in footer section
+        */
+        footer_copyright = COA
+        footer_copyright {
+            wrap = <div class="page__footer__copyright">|</div>
+
+            10 = TEXT
+            10 {
+                data = date:U
+                strftime = %Y
+                noTrimWrap = |© 2020–| |
+            }
+
+            20 = TEXT
+            20 {
+                value = Duggan Küchen und Einrichtungs GmbH
+            }
+        }
+
+        footer_creator = COA
+        footer_creator {
+            wrap = <div class="page__footer__creator">|</div>
+            10 = TEXT
+            10 {
+                value = © Design und Konzeption von
+                noTrimWrap = || |
+            }
+
+            20 = TEXT
+            20 {
+                value = Benkler &amp; Benkler
+                typolink.parameter = http://benkler.com _blank
+                typolink.ATagParams = class="text-decoration-none text-white"
+            }
+        }
+    }
+
+    dataProcessing {
+        /*
+        Main navigation (full tree)
+        */
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            special = directory
+            special.value = 1
+            levels = 2
+            as = header_menu_main
+        }
+
+        /*
+        Header images (slider)
+        */
+        20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        20 {
+            references.fieldName = media
+            references.table = pages
+            as = header_images
+        }
+
+        /*
+        Navigation "Projekte"
+        */
+        300 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        300 {
+            special = list
+            special.value = 2
+            levels = 1
+            includeSpacer = 1
+            as = footer_menu_projects_label
+        }
+
+        305 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        305 {
+            special = directory
+            special.value = 2
+            levels = 1
+            as = footer_menu_projects
+        }
+
+        /*
+        Navigation "Portfolio"
+        */
+        310 < .300
+        310 {
+            special.value = 3
+            as = footer_menu_portfolio_label
+        }
+
+        315 < .305
+        315 {
+            special.value = 3
+            as = footer_menu_portfolio
+        }
+
+        /*
+        Navigation "Über Duggan"
+        */
+        320 < .300
+        320 {
+            special.value = 7
+            as = footer_menu_brand_label
+        }
+
+        325 < .305
+        325 {
+            special.value = 7
+            as = footer_menu_brand
+        }
+
+        /*
+        Navigation "Kontakt"
+        */
+        330 < .300
+        330 {
+            special.value = 8
+            as = footer_menu_contact_label
+        }
+
+        335 < .305
+        335 {
+            special.value = 8
+            as = footer_menu_contact
+        }
+
+        /*
+        Navigation "Rechtliches"
+        */
+        340 < .300
+        340 {
+            special.value = 18
+            as = footer_menu_legal_label
+        }
+
+        345 < .305
+        345 {
+            special.value = 18
+            as = footer_menu_legal
+        }
+    }
+}

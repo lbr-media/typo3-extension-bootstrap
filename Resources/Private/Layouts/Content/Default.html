@@ -1,0 +1,9 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers" data-namespace-typo3-fluid="true">
+<bs:CTypeFrame contentElementData="{data}"><f:spaceless>
+    <f:render section="Before" optional="true"><f:render partial="DropIn/Before/All" arguments="{_all}" /></f:render>
+    <f:render section="Header" optional="true"><f:render partial="Header/All" arguments="{_all}" /></f:render>
+    </f:spaceless><f:render section="Main" optional="true" /><f:spaceless>
+    <f:render section="Footer" optional="true"><f:render partial="Footer/All" arguments="{_all}" /></f:render>
+    <f:render section="After" optional="true"><f:render partial="DropIn/After/All" arguments="{_all}" /></f:render>
+</f:spaceless></bs:CTypeFrame>
+</html>

@@ -1,0 +1,24 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+    <main id="content" class="page__body page__body--homepage">
+        {content_main -> f:format.raw()}
+    </main>
+</f:section>
+
+<f:section name="TwoColumns">
+    <main id="content" class="page__body page__body--default">
+        <div class="page__columns">
+            <div class="page__columns__column page__columns__column--main">
+                {content_main -> f:format.raw()}
+            </div>
+            <div class="page__columns__column page__columns__column--aside">
+                {content_aside -> f:format.raw()}
+            </div>
+        </div>
+    </main>
+</f:section>
+
+</html>

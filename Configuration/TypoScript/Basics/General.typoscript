@@ -1,0 +1,56 @@
+
+#######################
+# Basic configuration #
+#######################
+
+# config.baseURL = {$plugin.tx_bootstrap.production.baseURL}
+# config.absRefPrefix = {$plugin.tx_bootstrap.production.absRefPrefix}
+# [applicationContext == "Development"]
+# config.baseURL = {$plugin.tx_bootstrap.development.baseURL}
+# config.absRefPrefix = {$plugin.tx_bootstrap.development.absRefPrefix}
+# [END]
+
+PAGE_TARGET =
+config {
+    disablePrefixComment = 1
+    meaningfulTempFilePrefix = 100
+    renderCharset = utf-8
+    disableImgBorderAttr = 1
+    contentObjectExceptionHandler = 0
+
+    # Spam emails
+    spamProtectEmailAddresses = 3
+    spamProtectEmailAddresses_atSubst = <span>&#064;</span>
+
+    # Links & content sharing across domains
+    #typolinkEnableLinksAcrossDomains = 1
+    #typolinkCheckRootline = 1
+    #content_from_pid_allowOutsideDomain = 1
+    uniqueLinkVars = 1
+
+    # Cache
+    no_cache = {$plugin.tx_bootstrap.no_cache}
+    debug = {$plugin.tx_bootstrap.no_cache}
+    #  cache_clearAtMidnight = 1
+    #  cache_period = 21600
+    // sendCacheHeaders = 1
+
+    # Additional Header-Comment
+#made with -`ღ´- by benkler.com:
+//     headerComment (
+
+ 
+//                  _                 ___   ___ ___  __ 
+//                 (_)               |__ \ / _ \__ \/_ |
+//  ___ _   _ _ __  ___  __ _______     ) | | | | ) || |
+// / __| | | | '_ \| \ \/ /|_  / __|   / /| | | |/ / | |
+// \__ \ |_| | | | | |>  <  / /\__ \  / /_| |_| / /_ | |
+// |___/\__,_|_| |_|_/_/\_\/___|___/ |____|\___/____||_|
+// )
+}
+
+plugin.tx_bootstrap {
+    settings {
+        rootPageId = {$plugin.tx_bootstrap.rootPageId}
+    }
+}

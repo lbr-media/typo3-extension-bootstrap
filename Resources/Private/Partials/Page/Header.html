@@ -1,0 +1,23 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    Default header
+    -->
+    <f:section name="Default"><f:spaceless>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <f:link.page pageUid="{settings.rootPageId}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                {header_brand -> f:format.raw()}
+            </f:link.page>
+        
+            <ul class="nav nav-pills">
+                <f:render partial="Navigation/Tree" section="Default" arguments="{items:header_menu_main}" />
+            </ul>
+            </header>
+        </div>
+        <f:comment><f:render partial="HeaderImages" section="Default" arguments="{_all}" /></f:comment>
+    </f:spaceless></f:section>
+</html>
