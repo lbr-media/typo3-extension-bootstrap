@@ -1,34 +1,53 @@
 {
-	"name": "lbr-media/app-distribution-test",
-	"type": "typo3-cms-extension",
-	"description": "Distribution package for this site",
-	"license": "GPL-2.0-or-later",
-	"require": {
-		"php": ">=7.4.1",
-		"typo3/cms-core": "^11.5",
-		"typo3/cms-tstemplate": "^11.5"
-	},
-	"require-dev": {
-		"helhum/typo3-console": "^7.0.2",
-		"typo3/cms-belog": "^11.5",
-		"typo3/cms-lowlevel": "^11.5",
-		"typo3/cms-scheduler": "^11.5",
-		"typo3/cms-setup": "^11.5"
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "0.0.x-dev"
-		},
-		"typo3/cms": {
-			"extension-key": "app",
-			"web-dir": ".build/public"
-		}
-	},
-	"autoload": {
-		"psr-4": {
-			"MAB\\App\\": "Classes"
-		}
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "name": "lbrmedia/typo3-extension-bootstrap",
+    "type": "typo3-cms-extension",
+    "description": "Bootstrap Package",
+    "license": "GPL-2.0-or-later",
+    "keywords": [
+        "TYPO3 CMS",
+        "bootstrap",
+        "responsive",
+        "frontend",
+        "theme",
+        "web"
+    ],
+    "homepage": "https://github.com/lbr-media/typo3-extension-bootstrap/",
+    "authors": [
+        {
+            "name": "Marcel Briefs",
+            "email": "mb@lbrmedia.de",
+            "homepage": "http://lbrmedia.de/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.1",
+        "typo3/cms-backend": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-core": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-extbase": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-extensionmanager": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-fluid": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-frontend": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-install": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-rte-ckeditor": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3/cms-seo": "^10.4 || ^11.5 || 11.*.*@dev",
+        "typo3fluid/fluid": "^2.5.2",
+        "twbs/bootstrap": "~5"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "bootstrap",
+            "web-dir": ".build/public"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "LBRmedia\\Bootstrap\\": "Classes"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
