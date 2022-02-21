@@ -45,7 +45,7 @@ class BootstrapTextMediaGrid implements NewContentElementInterface
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['std', 'sm', 'md', 'lg', 'xl', 'xxl']),
+                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
                                     ],
                                 ],
                             ],

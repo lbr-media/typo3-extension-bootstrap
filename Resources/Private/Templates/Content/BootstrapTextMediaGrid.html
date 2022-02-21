@@ -9,7 +9,6 @@ Text & Medien (Raster)
 <f:layout name="WithoutHeader" />
 
 <f:section name="Main"><f:spaceless>
-    {_all -> f:debug()}
     <f:if condition="{grid.header_position}=='above_all'">
         <f:render section="Header" optional="true">
             <f:render partial="Header/All" arguments="{_all}" />

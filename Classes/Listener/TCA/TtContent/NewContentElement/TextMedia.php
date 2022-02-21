@@ -14,7 +14,7 @@ class TextMedia implements NewContentElementInterface
         /*
          * Set default cropVariants for field assets in content element textmedia
          */
-        $GLOBALS['TCA']['tt_content']['types']['textmedia']['columnsOverrides']['assets']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = BootstrapGeneralUtility::getTcaCropVariantsOverride(['std', 'sm', 'md', 'lg', 'xl']);
+        $GLOBALS['TCA']['tt_content']['types']['textmedia']['columnsOverrides']['assets']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']);
 
         /*
          * Add FlexForm to textmedia

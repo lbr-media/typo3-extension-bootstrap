@@ -192,7 +192,7 @@ plugin.tx_bootstrap.settings.form.element {
         center = zentriert
         between = aufgeteilt 1
         around = aufgeteilt 2
-        stretch = gestreckt
+        evenly = gleichmäßig
     }
 
     BootstrapAlignSelf {

@@ -46,7 +46,7 @@ class BootstrapType3 implements NewContentElementInterface
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['std', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
                                     ],
                                 ],
                             ],

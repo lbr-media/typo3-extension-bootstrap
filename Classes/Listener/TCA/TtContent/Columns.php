@@ -181,7 +181,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['std', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
                                     ],
                                 ],
                             ],
@@ -210,7 +210,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['std', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
                                     ],
                                 ],
                             ],

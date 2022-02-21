@@ -87,7 +87,6 @@ class FlexFormProcessor implements DataProcessorInterface
             ' ',
             [
                 'row',
-                'no-gutters',
                 BootstrapUtility::getAlignmentClasses($xmlArray['align_items'], 'align-items-'),
                 BootstrapUtility::getAlignmentClasses($xmlArray['justify_content'], 'justify-content-'),
             ]
@@ -106,7 +105,7 @@ class FlexFormProcessor implements DataProcessorInterface
         }
 
         // device_order
-        if (isset($xmlArray['device_order']) && 4 === substr_count($xmlArray['device_order'], ';')) {
+        if (isset($xmlArray['device_order']) && 5 === substr_count($xmlArray['device_order'], ';')) {
             $orderClasses = BootstrapUtility::getGridDeviceOrderClasses($xmlArray['device_order']);
             if ($orderClasses['text']) {
                 $xmlArray['col_text_classes'] .= ' ' . $orderClasses['text'];
@@ -145,7 +144,6 @@ class FlexFormProcessor implements DataProcessorInterface
             ' ',
             [
                 'row',
-                'no-gutters',
                 BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
                 BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
             ]

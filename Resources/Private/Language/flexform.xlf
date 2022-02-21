@@ -92,7 +92,7 @@
             <trans-unit id="textmedia.sTEXT.align_self">
                 <source>Ausrichtung: vertikal</source>
             </trans-unit>
-            <trans-unit id="textmedia.space_inner.std">
+            <trans-unit id="textmedia.space_inner.xs">
                 <source>Abstand innen: Standard</source>
             </trans-unit>
             <trans-unit id="textmedia.space_inner.sm">
@@ -107,7 +107,7 @@
             <trans-unit id="textmedia.space_inner.xl">
                 <source>Abstand innen: Extra groß</source>
             </trans-unit>
-            <trans-unit id="textmedia.space_outer.std">
+            <trans-unit id="textmedia.space_outer.xs">
                 <source>Abstand außen: Standard</source>
             </trans-unit>
             <trans-unit id="textmedia.space_outer.sm">
@@ -180,7 +180,10 @@
                 <source>Bildbreite in %: LG (992-1199)</source>
             </trans-unit>
             <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_xl">
-                <source>Bildbreite in %: XL (1200-*px)</source>
+                <source>Bildbreite in %: XL (1200-1399px)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_xxl">
+                <source>Bildbreite in %: XXL (1400-*px)</source>
             </trans-unit>
 
         </body>

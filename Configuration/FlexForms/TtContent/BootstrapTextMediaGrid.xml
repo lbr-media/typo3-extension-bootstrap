@@ -34,7 +34,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapDeviceOrder</elementConfiguration>
                             </config>
                         </value>
@@ -77,7 +77,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapColumns</elementConfiguration>
                             </config>
                         </value>
@@ -88,7 +88,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapColumns</elementConfiguration>
                             </config>
                         </value>
@@ -99,7 +99,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
                             </config>
                         </value>
@@ -110,7 +110,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
                             </config>
                         </value>
@@ -121,7 +121,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapAlignItems</elementConfiguration>
                             </config>
                         </value>
@@ -132,7 +132,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapJustifyContent</elementConfiguration>
                             </config>
                         </value>
@@ -154,14 +154,14 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapAlignSelf</elementConfiguration>
                             </config>
                         </value>
                     </field>
-                    <field index="space_inner_std">
+                    <field index="space_inner_xs">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.std</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xs</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -227,14 +227,14 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapAlignSelf</elementConfiguration>
                             </config>
                         </value>
                     </field>
-                    <field index="space_inner_std">
+                    <field index="space_inner_xs">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.std</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xs</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -309,7 +309,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapColumns</elementConfiguration>
                             </config>
                         </value>
@@ -320,7 +320,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
                             </config>
                         </value>
@@ -331,7 +331,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
                             </config>
                         </value>
@@ -342,7 +342,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapAlignItems</elementConfiguration>
                             </config>
                         </value>
@@ -353,7 +353,7 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;</default>
+                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapJustifyContent</elementConfiguration>
                             </config>
                         </value>
@@ -444,6 +444,24 @@
                     <field index="width_xl">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_xl</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_xxl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_xxl</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>

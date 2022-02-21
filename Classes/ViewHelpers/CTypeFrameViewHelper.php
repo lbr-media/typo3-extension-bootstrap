@@ -158,11 +158,11 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
         // prepare frame_class
         $frameClass = '';
         if ('default' !== $data['frame_class']) {
-            if ('container-' === substr($data['frame_class'], 0, 10)) {
-                $frameClass = 'container '.$data['frame_class'];
-            } else {
+            // if ('container-' === substr($data['frame_class'], 0, 10)) {
+            //     $frameClass = 'container '.$data['frame_class'];
+            // } else {
                 $frameClass = $data['frame_class'];
-            }
+            // }
         }
 
         // background-color class

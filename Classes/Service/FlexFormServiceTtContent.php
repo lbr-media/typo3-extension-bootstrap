@@ -45,7 +45,7 @@ class FlexFormServiceTtContent extends FlexFormService implements FlexFormServic
             'media' => [
                 'align_self' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['align_self']['vDEF'], 'string', ';;;;;'),
                 'space_inner' => [
-                    'std' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_std']['vDEF'], 'string', ';;;;;;'),
+                    'xs' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_xs']['vDEF'], 'string', ';;;;;;'),
                     'sm' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_sm']['vDEF'], 'string', ';;;;;;'),
                     'md' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_md']['vDEF'], 'string', ';;;;;;'),
                     'lg' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_lg']['vDEF'], 'string', ';;;;;;'),
@@ -59,12 +59,13 @@ class FlexFormServiceTtContent extends FlexFormService implements FlexFormServic
                     'md' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_md']['vDEF'], 'int', 100),
                     'lg' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_lg']['vDEF'], 'int', 100),
                     'xl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xl']['vDEF'], 'int', 100),
+                    'xxl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xxl']['vDEF'], 'int', 100),
                 ],
             ],
             'text' => [
                 'align_self' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['align_self']['vDEF'], 'string', ';;;;;'),
                 'space_inner' => [
-                    'std' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_std']['vDEF'], 'string', ';;;;;;'),
+                    'xs' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_xs']['vDEF'], 'string', ';;;;;;'),
                     'sm' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_sm']['vDEF'], 'string', ';;;;;;'),
                     'md' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_md']['vDEF'], 'string', ';;;;;;'),
                     'lg' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_lg']['vDEF'], 'string', ';;;;;;'),

@@ -55,43 +55,43 @@ class BootstrapDevicesElement extends \TYPO3\CMS\Backend\Form\Element\AbstractFo
         $html[] = '<div class="form-wizards-element">';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-xs">XS:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-std">';
-        $html[] = implode(LF, $options);
-        $html[] = '</select>';
-        $html[] = '</div>';
-
-        $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-sm">SM:</label>';
+        $html[] = '<label for="'.$selectId.'-xs">XS</label>';
         $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-xs">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-md">MD:</label>';
+        $html[] = '<label for="'.$selectId.'-sm">SM</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-sm">';
+        $html[] = implode(LF, $options);
+        $html[] = '</select>';
+        $html[] = '</div>';
+
+        $html[] = '<div class="form-control-inline-element">';
+        $html[] = '<label for="'.$selectId.'-md">MD</label>';
         $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-md">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-lg">LG:</label>';
+        $html[] = '<label for="'.$selectId.'-lg">LG</label>';
         $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-lg">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-xl">XL:</label>';
+        $html[] = '<label for="'.$selectId.'-xl">XL</label>';
         $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-xl">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-xxl">XXL:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-xl">';
+        $html[] = '<label for="'.$selectId.'-xxl">XXL</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-xxl">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';

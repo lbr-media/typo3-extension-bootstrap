@@ -100,33 +100,33 @@ TCEFORM.sys_file_reference.crop.config.cropVariants {
         allowedAspectRatios < lib.allowedAspectRatios
     }
 
-    std {
+    xs {
         title = Standard (<576px)
         selectedRatio = NaN
         allowedAspectRatios < lib.allowedAspectRatios
     }
 
-    sm < .std
+    sm < .xs
     sm.title = Klein (>=576px)
 
-    md < .std
+    md < .xs
     md.title = Medium (>=768px)
 
-    lg < .std
+    lg < .xs
     lg.title = Groß (>=992px)
 
-    xl < .std
+    xl < .xs
     xl.title = Sehr groß (>=1200px)
 
-    xxl < .std
+    xxl < .xs
     xxl.title = Extra groß (>=1400px)
 
     # and a ligtbox
-    lightbox < .std
+    lightbox < .xs
     lightbox.title = Lightbox
 
     # and for page previous/next navigation
-    navigation < .std
+    navigation < .xs
     navigation.title = Navigation
     navigation.selectedRatio = 1:1
 

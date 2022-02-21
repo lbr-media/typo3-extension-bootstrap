@@ -4,7 +4,6 @@ namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
 use LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility as PictureUtilty;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
@@ -49,18 +48,6 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
     protected $objectManager = null;
 
     /**
-     * return \TYPO3\CMS\Extbase\Object\ObjectManager $objectManager.
-     */
-    protected function getObjectManager(): ObjectManager
-    {
-        if (null === $this->objectManager) {
-            $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        }
-
-        return $this->objectManager;
-    }
-
-    /**
      * return \LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility $pictureUtility.
      */
     protected function getPictureUtility(): PictureUtilty
@@ -85,7 +72,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('alt', 'string', 'alt attribute', false, '');
         $this->registerArgument('additionalParams', 'array', '', false, []);
         $this->registerArgument('additionalImgTagParams', 'array', '', false, []);
-        $this->registerArgument('displayWidth', 'array', 'array with keys std, sm, md, lg, xl and xxl with percent values of the full window width', false, []);
+        $this->registerArgument('displayWidth', 'array', 'array with keys xs, sm, md, lg, xl and xxl with percent values of the full window width', false, []);
     }
 
     /**
@@ -130,8 +117,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
              * Check for SVG image
              */
             if ('svg' === strtolower($file->getProperty('extension'))) {
-                $imgTag = $this->getObjectManager->get(TagBuilder::class);
-                $imgTag->setTagName('img');
+                $imgTag = new TagBuilder("img");
                 $imgTag->forceClosingTag(false);
                 $imgTag->addAttribute('src', $file->getPublicUrl());
                 $imgTag->addAttribute('alt', $alt ? $alt : $file->getProperty('alternative'));
@@ -170,8 +156,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
             $pictureContent = [];
             if (count($sources)) {
                 foreach ($sources as $device => $source) {
-                    $sourceTag = $this->getObjectManager()->get(TagBuilder::class);
-                    $sourceTag->setTagName('source');
+                    $sourceTag = new TagBuilder('source');
                     $sourceTag->forceClosingTag(false);
                     $sourceTag->addAttribute('media', $source['media']);
                     $sourceTag->addAttribute('srcset', $source['source']);
@@ -180,8 +165,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
             }
 
             // build fallback image and tag
-            $imgTag = $this->getObjectManager()->get(TagBuilder::class);
-            $imgTag->setTagName('img');
+            $imgTag = new TagBuilder('img');
             $imgTag->forceClosingTag(false);
             //$imgTag->addAttribute("src", $this->getImageSource($defaultImage, 768));
             $imgTag->addAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');

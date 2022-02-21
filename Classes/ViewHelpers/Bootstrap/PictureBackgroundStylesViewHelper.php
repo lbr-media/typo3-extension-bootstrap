@@ -46,7 +46,7 @@ class PictureBackgroundStylesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelpe
         $this->registerArgument('file', 'object', 'The original FileReference with some alternative images', true);
         $this->registerArgument('id', 'string', 'css selector', true, '');
         $this->registerArgument('position', 'string', 'Place the styles in \'head\' tag or \'inline\'?', false, 'head');
-        $this->registerArgument('displayWidth', 'array', 'array with keys std, sm, md, lg and xl with percent values of the full window width', false, []);
+        $this->registerArgument('displayWidth', 'array', 'array with keys xs, sm, md, lg and xl with percent values of the full window width', false, []);
     }
 
     /**

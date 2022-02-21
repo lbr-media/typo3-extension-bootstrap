@@ -29,7 +29,7 @@ class BootstrapPictureBackgroundStyles
      *
      * @param object $file                  The original FileReference with some alternative images
      * @param string $cssSelector           The Selector for the background image
-     * @param array  $displayWidthArguments array with keys std, sm, md, lg and xl with percent values of the full window width
+     * @param array  $displayWidthArguments array with keys xs, sm, md, lg and xl with percent values of the full window width
      *
      * @return string HTML Style-Tag
      *
@@ -58,7 +58,7 @@ class BootstrapPictureBackgroundStyles
 
             // build smartphone image
             // also build default image
-            $styles[] = $cssSelector." { background-image:url('".$this->getImageSource('std')."' ); }";
+            $styles[] = $cssSelector." { background-image:url('".$this->getImageSource('xs')."' ); }";
 
             // build tablet image
             $styles[] = '@media screen and (min-width: 576px) { '.$cssSelector." { background-image:url('".$this->getImageSource('sm')."'); } }";

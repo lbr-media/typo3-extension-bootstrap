@@ -6,7 +6,6 @@ use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Service\ImageService;
 
 class GeneralPictureUtility
@@ -97,19 +96,10 @@ class GeneralPictureUtility
         return $this->image;
     }
 
-    public function getObjectManager(): ObjectManager
-    {
-        if (null === $this->objectManager) {
-            $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        }
-
-        return $this->objectManager;
-    }
-
     public function getImageService(): ImageService
     {
         if (null === $this->imageService) {
-            $this->imageService = $this->getObjectManager()->get(ImageService::class);
+            $this->imageService = GeneralUtility::makeInstance(ImageService::class);
         }
 
         return $this->imageService;
@@ -126,7 +116,7 @@ class GeneralPictureUtility
     /**
      * Returns the displayWidth for one device.
      */
-    public function getDisplayWidth($device): int
+    public function getDisplayWidth($device): float
     {
         return $this->displayWidths[$device];
     }
@@ -134,7 +124,7 @@ class GeneralPictureUtility
     /**
      * Sets a display width for a device,.
      */
-    public function setDisplayWidth(string $device, int $width): self
+    public function setDisplayWidth(string $device, float $width): self
     {
         $this->displayWidths[$device] = $width;
 
@@ -144,7 +134,7 @@ class GeneralPictureUtility
     /**
      * Fetches the cropVariants from image/fileReference and builds an array for the devices.
      *
-     * @param string $cropVariantToForce If this key is set (std, sm,md...) the cropVariant of this key is used for all
+     * @param string $cropVariantToForce If this key is set (xs, sm,md...) the cropVariant of this key is used for all
      */
     public function initializeCropVariantsProcessingInstructions(string $cropVariantToForce = ''): self
     {

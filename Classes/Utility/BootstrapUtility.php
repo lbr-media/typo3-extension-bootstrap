@@ -98,7 +98,7 @@ class BootstrapUtility
 
     /**
      * @param array $margins [
-     *                       'std' => 'left;right;horizontal;top;bottom;vertical;all',
+     *                       'xs' => 'left;right;horizontal;top;bottom;vertical;all',
      *                       'sm' => ';;;;;;',
      *                       'md' => ';;;;;;',
      *                       'lg' => ';;;;;;',
@@ -113,7 +113,7 @@ class BootstrapUtility
 
     /**
      * @param array $paddings [
-     *                        'std' => 'left;right;horizontal;top;bottom;vertical;all',
+     *                        'xs' => 'left;right;horizontal;top;bottom;vertical;all',
      *                        'sm' => ';;;',
      *                        'md' => ';;;',
      *                        'lg' => ';;;',
@@ -128,7 +128,7 @@ class BootstrapUtility
 
     /**
      * @param array $spaces [
-     *                      'std' => 'left;right;horizontal;top;bottom;vertical;all',
+     *                      'xs' => 'left;right;horizontal;top;bottom;vertical;all',
      *                      'sm' => ';;;',
      *                      'md' => ';;;',
      *                      'lg' => ';;;',
@@ -154,7 +154,7 @@ class BootstrapUtility
         ];
         foreach (array_keys(self::DEVICES) as $device) {
             if (isset($spaces[$device]) && $spaces[$device]) {
-                $finalDevice = 'std' === $device ? '' : $device.'-';
+                $finalDevice = 'xs' === $device ? '' : $device.'-';
 
                 $values = explode(';', $spaces[$device]);
 
@@ -217,13 +217,9 @@ class BootstrapUtility
 
     /**
      * Generates classes for grid elements to get equal space between columns.
-     * <div class="row {negative [left|top]-margin classes}">
-     *      <div class="col {positive [left|top]-padding classes}">
-     *      <div class="col {positive [left|top]-padding classes}">
-     * </div>.
-     *
-     * @param string $spaceX Five number values from 0 to 5 for the devices "std;sm;md;lg;xl"
-     * @param string $spaceY Five number values from 0 to 5 for the devices "std;sm;md;lg;xl"
+     * 
+     * @param string $spaceX Six integer values for the devices "xs;sm;md;lg;xl;xxl"
+     * @param string $spaceY Six integer values for the devices "xs;sm;md;lg;xl;xxl"
      */
     public static function getGridSpaceXYClasses(string $spaceX, string $spaceY): array
     {
@@ -236,15 +232,6 @@ class BootstrapUtility
             foreach (self::DEVICE_INFIXES as $pos => $device) {
                 if (isset($spaces[$pos]) && is_numeric($spaces[$pos])) {
                     $rowClasses[] = 'gx-'.$device.$spaces[$pos];
-                    // // add negative space to row
-                    // if (0 === (int) $spaces[$pos]) {
-                    //     $rowClasses[] = 'ml-'.$device.$spaces[$pos];
-                    // } else {
-                    //     $rowClasses[] = 'ml-'.$device.'n'.$spaces[$pos];
-                    // }
-
-                    // add positive space to col
-                    // $colClasses[] = 'pl-'.$device.$spaces[$pos];
                 }
             }
         }
@@ -254,15 +241,6 @@ class BootstrapUtility
             foreach (self::DEVICE_INFIXES as $pos => $device) {
                 if (isset($spaces[$pos]) && is_numeric($spaces[$pos])) {
                     $rowClasses[] = 'gy-'.$device.$spaces[$pos];
-                    // // add negative space to row
-                    // if (0 === (int) $spaces[$pos]) {
-                    //     $rowClasses[] = 'mt-'.$device.$spaces[$pos];
-                    // } else {
-                    //     $rowClasses[] = 'mt-'.$device.'n'.$spaces[$pos];
-                    // }
-
-                    // add positive space to col
-                    // $colClasses[] = 'pt-'.$device.$spaces[$pos];
                 }
             }
         }
@@ -281,7 +259,7 @@ class BootstrapUtility
      *      <div class="col-media col order-[0|1]">
      * </div>.
      *
-     * @param string $orderClasses Five string values either "", "text_media" or "media_text" for the devices "std;sm;md;lg;xl"
+     * @param string $orderClasses Five string values either "", "text_media" or "media_text" for the devices "xs;sm;md;lg;xl"
      */
     public static function getGridDeviceOrderClasses(string $orderClasses): array
     {
@@ -308,7 +286,7 @@ class BootstrapUtility
     }
 
     /**
-     * @param string $floats Five string values (left|none|right) for the devices "std;sm;md;lg;xl"
+     * @param string $floats Five string values (left|none|right) for the devices "xs;sm;md;lg;xl"
      */
     public static function getFloatClasses(string $floats): string
     {
@@ -335,10 +313,10 @@ class BootstrapUtility
     }
 
     /**
-     * @param string $widths   Five int values from 1 to 12 for the devices "std;sm;md;lg;xl"
-     * @param string $floats   Five string values (left|none|right) for the devices "std;sm;md;lg;xl"
-     * @param string $spaces_x Five int values from 1 to 15(?) for the devices "std;sm;md;lg;xl"
-     * @param string $spaces_y Five int values from 1 to 15(?) for the devices "std;sm;md;lg;xl"
+     * @param string $widths   Five int values from 1 to 12 for the devices "xs;sm;md;lg;xl"
+     * @param string $floats   Five string values (left|none|right) for the devices "xs;sm;md;lg;xl"
+     * @param string $spaces_x Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl"
+     * @param string $spaces_y Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl"
      */
     public static function getFloatMediaSizeClasses(string $widths, string $floats, string $spaces_x, string $spaces_y): string
     {
