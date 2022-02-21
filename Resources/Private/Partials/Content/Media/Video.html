@@ -1,0 +1,123 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:app="http://typo3.org/ns/MAB/App/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    Render Vimeo-Video from a extension file ressource.
+    @param {object} file
+    @param {string} title
+    @param {string} alternative
+    @param {string} description
+    @param {string} id
+    @param {string} additionalClasses
+    -->
+    <f:section name="Vimeo">
+        <f:variable name="videoUrl" value="{app:ExternalVideoUrl(file:file)}" />
+        <f:if condition="{videoUrl}">
+            <f:if condition="{description}">
+                <f:then>
+                    <figure class="figure-video ce-external-video{f:if(condition:additionalClasses, then:' {additionalClasses}')}">
+                        <div class="text-center py-7 py-md-9 bg-light p-3 position-relative">
+                            <a href="{videoUrl}" target="_blank" title="VIMEO-Video &quot;{file.title}&quot; in einem neuen Fenster öffnen" class="btn btn-white font-weight-normal stretched-link py-3 px-4 px-lg-5">Externer Link zu VIMEO</a>
+                        </div>
+                        <figcaption>{description -> f:format.nl2br()}</figcaption>
+                    </figure>
+                </f:then>
+                <f:else>
+                    <div class="figure-video ce-external-video{f:if(condition:additionalClasses, then:' {additionalClasses}')}">
+                        <div class="text-center py-7 py-md-9 bg-light p-3 position-relative">
+                            <a href="{videoUrl}" target="_blank" title="VIMEO-Video &quot;{file.title}&quot; in einem neuen Fenster öffnen" class="btn btn-white font-weight-normal stretched-link py-3 px-4 px-lg-5">Externer Link zu VIMEO</a>
+                        </div>
+                    </div>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:section>
+
+    <!--
+    Link YouTube-Video from a extension file ressource.
+    @param {object} file
+    @param {string} title
+    @param {string} alternative
+    @param {string} description
+    @param {string} id
+    @param {string} additionalClasses
+    -->
+    <f:section name="Youtube">
+        <f:variable name="videoUrl" value="{app:ExternalVideoUrl(file:file)}" />
+        <f:if condition="{videoUrl}">
+            <f:if condition="{description}">
+                <f:then>
+                    <figure class="figure-video ce-external-video{f:if(condition:additionalClasses, then:' {additionalClasses}')}">
+                        <div class="text-center py-7 py-md-9 bg-light p-3 position-relative">
+                            <a href="{videoUrl}" target="_blank" title="YouTube-Video &quot;{file.title}&quot; in einem neuen Fenster öffnen" class="btn btn-white font-weight-normal stretched-link py-3 px-4 px-lg-5">Externer Link zu YouTube</a>
+                        </div>
+                        <figcaption>{description -> f:format.nl2br()}</figcaption>
+                    </figure>
+                </f:then>
+                <f:else>
+                    <div class="figure-video ce-external-video{f:if(condition:additionalClasses, then:' {additionalClasses}')}">
+                        <div class="text-center py-7 py-md-9 bg-light p-3 position-relative">
+                            <a href="{videoUrl}" target="_blank" title="YouTube-Video &quot;{file.title}&quot; in einem neuen Fenster öffnen" class="btn btn-white font-weight-normal stretched-link py-3 px-4 px-lg-5">Externer Link zu YouTube</a>
+                        </div>
+                    </div>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:section>
+
+    <!--
+    Render local video from a extension file ressource.
+    @param {object} file
+    @param {string} title
+    @param {string} alternative
+    @param {string} description
+    @param {string} id
+    @param {string} additionalClasses
+    -->
+    <f:section name="Default">
+        <f:if condition="{description}">
+            <f:then>
+                <figure class="figure-video ce-internal-video{f:if(condition:additionalClasses, then:' {additionalClasses}')}">
+                    <div class="embed-responsive embed-responsive-16by9 bg-dark" id="{f:if(condition:id, then:id, else:'embedded-video-{file.uid}')}">
+                        <f:media
+                            class="embed-responsive-item"
+                            file="{file}"
+                            alt="{alternative}"
+                            title="{file.title}"
+                            additionalConfig="{
+                                showinfo:1,
+                                muted:file.properties.autoplay,
+                                loop:file.properties.autoplay
+                            }"
+                            additionalAttributes="{
+                                poster:'assets/gfx/video_poster.jpg'
+                            }" />
+                    </div>
+                    <figcaption>{description -> f:format.nl2br()}</figcaption>
+                </figure>
+            </f:then>
+            <f:else>
+                <div class="figure-video ce-internal-video{f:if(condition:additionalClasses, then:' {additionalClasses}')}">
+                    <div class="embed-responsive embed-responsive-16by9 bg-dark" id="{f:if(condition:id, then:id, else:'embedded-video-{file.uid}')}">
+                        <f:media
+                            class="embed-responsive-item"
+                            file="{file}"
+                            alt="{alternative}"
+                            title="{file.title}"
+                            additionalConfig="{
+                                showinfo:1,
+                                muted:file.properties.autoplay,
+                                loop:file.properties.autoplay
+                            }"
+                            additionalAttributes="{
+                                poster:'assets/gfx/video_poster.jpg'
+                            }" />
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
+    </f:section>
+    
+</html>

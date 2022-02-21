@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sOUTER>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="order">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.order</label>
+                            <config>
+                                <type>radio</type>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.order.text_media</numIndex>
+                                        <numIndex index="1">text_media</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.order.media_text</numIndex>
+                                        <numIndex index="1">media_text</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>text_media</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="device_order">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.device_order</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapDeviceOrder</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="header_position">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position</label>
+                            <config>
+                                <type>radio</type>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.above_all</numIndex>
+                                        <numIndex index="1">above_all</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.text</numIndex>
+                                        <numIndex index="1">text</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.media</numIndex>
+                                        <numIndex index="1">media</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>above_all</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="overflow_hidden">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.overflow-hidden</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="col_text">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.col_text</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapColumns</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="col_media">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.col_media</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapColumns</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_y">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.space_y</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_x">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.space_x</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="align_items">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.align_items</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapAlignItems</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="justify_content">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.justify_content</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapJustifyContent</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sOUTER>
+        <sTEXT>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sTEXT.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sTEXT.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="align_self">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sTEXT.align_self</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapAlignSelf</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_std">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.std</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_sm">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.sm</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_md">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.md</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_lg">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.lg</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_xl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xl</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sTEXT>
+        <sMEDIA>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIA.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIA.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="align_self">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIA.align_self</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapAlignSelf</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_std">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.std</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_sm">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.sm</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_md">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.md</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_lg">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.lg</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_xl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xl</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sMEDIA>
+        <sMEDIAITEM>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="image_zoom">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:image_zoom</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="col">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.col</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapColumns</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_y">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.space_y</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_x">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.space_x</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="align_items">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.align_items</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapAlignItems</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="justify_content">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.justify_content</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;</default>
+                                <elementConfiguration>BootstrapJustifyContent</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sMEDIAITEM>
+        <sMEDIAOPTIMIZING>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="width_xs">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_xs</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_sm">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_sm</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_md">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_md</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_lg">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_lg</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_xl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_xl</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sMEDIAOPTIMIZING>
+    </sheets>
+</T3FlexForms>

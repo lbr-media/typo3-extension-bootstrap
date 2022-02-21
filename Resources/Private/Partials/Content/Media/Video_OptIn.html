@@ -1,0 +1,56 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:mab="http://typo3.org/ns/MAB/Mab/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    Render Vimeo-Video from a extension file ressource.
+    @param {object} file
+    @param {string} title
+    @param {string} alternative
+    @param {string} description
+    @param {string} id
+    @param {string} additionalClasses
+    -->
+    <f:section name="Vimeo">
+        <figure class="figure figure--video figure--video-vimeo d-block {additionalClasses}">
+            <div class="embed-responsive embed-responsive-16by9" data-toggle="video-opt-in" data-video="{f:media(class:'embed-responsive-item', file:file, alt:alternative, title:title, additionalConfig:'{showinfo:1}') -> f:format.urlencode()}" data-service="vimeo"></div>
+            <f:if condition="{description}"><figcaption class="figure-caption">{description -> f:format.nl2br()}</figcaption></f:if>
+        </figure>
+    </f:section>
+
+    <!--
+    Render YouTube-Video from a extension file ressource.
+    @param {object} file
+    @param {string} title
+    @param {string} alternative
+    @param {string} description
+    @param {string} id
+    @param {string} additionalClasses
+    -->
+    <f:section name="Youtube">
+        <figure class="figure figure--video figure--video-youtube d-block {additionalClasses}">
+            <div class="embed-responsive embed-responsive-16by9" data-toggle="video-opt-in" data-video="{f:media(class:'embed-responsive-item', file:file, alt:alternative, title:title, additionalConfig:'{showinfo:1}') -> f:format.urlencode()}" data-service="youtube"></div>
+            <f:if condition="{description}"><figcaption class="figure-caption">{description -> f:format.nl2br()}</figcaption></f:if>
+        </figure>
+    </f:section>
+
+    <!--
+    Render local video from a extension file ressource.
+    @param {object} file
+    @param {string} title
+    @param {string} alternative
+    @param {string} description
+    @param {string} id
+    @param {string} additionalClasses
+    -->
+    <f:section name="Default">
+        <figure class="figure figure--video figure--video-default d-block {additionalClasses}">
+            <div class="embed-responsive embed-responsive-16by9" id="{f:if(condition:id, then:id, else:'embedded-video-{file.uid}')}">
+                <f:media class="embed-responsive-item" file="{file}" alt="{alternative}" title="{title}" additionalConfig="{showinfo:1}" />
+            </div>
+            <f:if condition="{description}"><figcaption class="figure-caption">{description -> f:format.nl2br()}</figcaption></f:if>
+        </figure>
+    </f:section>
+    
+</html>

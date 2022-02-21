@@ -143,5 +143,145 @@ plugin.tx_bootstrap.settings.form.element {
             additionalClass = font-weight-light
         }
     }
+
+    BootstrapDeviceOrder {
+        default = 
+        text_media = Text - Medien
+        media_text = Medien - Text
+    }
+
+    BootstrapColumns {
+        default = 
+        auto = auto
+        1 = 1/12
+        2 = 2/12
+        3 = 3/12 (25%)
+        4 = 4/12 (33%)
+        5 = 5/12
+        6 = 6/12 (50%)
+        7 = 7/12
+        8 = 8/12 (66%)
+        9 = 9/12 (75%)
+        10 = 10/12
+        11 = 11/12
+        12 = 12/12 (100%)
+    }
+
+    BootstrapJustifyContent {
+        default =
+        start = links
+        end = rechts
+        center = zentriert
+        between = aufgeteilt 1
+        around = aufgeteilt 2
+    }
+
+    BootstrapAlignItems {
+        default = 
+        start = oben
+        end = unten
+        center = mittig
+        baseline = Grundlinie
+        stretch = gestreckt
+    }
+
+    BootstrapAlignContent {
+        default =
+        start = links
+        end = rechts
+        center = zentriert
+        between = aufgeteilt 1
+        around = aufgeteilt 2
+        stretch = gestreckt
+    }
+
+    BootstrapAlignSelf {
+        default =
+        auto = auto 
+        start = oben
+        end = unten
+        center = mittig
+        baseline = Grundlinie
+        stretch = gestreckt
+    }
+
+    BootstrapPaddingSpaces {
+        default = 
+        0 = 0
+        1 = 1
+        2 = 2
+        3 = 3
+        4 = 4
+        5 = 5
+        6 = 6
+        7 = 7
+        8 = 8
+        9 = 9
+        10 = 10
+        11 = 11
+        12 = 12
+        13 = 13
+        14 = 14
+        15 = 15
+        auto = auto
+    }
+
+    BootstrapMarginSpaces {
+        default = 
+        n5 = -5
+        n4 = -4
+        n3 = -3
+        n2 = -2
+        n1 = -1
+        0 = 0
+        1 = 1
+        2 = 2
+        3 = 3
+        4 = 4
+        5 = 5
+        6 = 6
+        7 = 7
+        8 = 8
+        9 = 9
+        10 = 10
+        11 = 11
+        12 = 12
+        13 = 13
+        14 = 14
+        15 = 15
+        auto = auto
+    }
+
+    BootstrapGridSpaceY {
+        default =
+        0 = kein Abstand
+        1 = 1
+        2 = 2
+        3 = 3
+        4 = 4
+        5 = 5
+        6 = 6
+        7 = 7
+        8 = 8
+        9 = 9
+        10 = 10
+    }
+    BootstrapGridelementsGridSpaceY < .BootstrapGridSpaceY
+
+    BootstrapGridSpaceX {
+        default =
+        0 = kein Abstand
+        1 = 1
+        2 = 2
+        3 = 3
+        4 = 4
+        5 = 5
+        6 = 6
+        7 = 7
+        8 = 8
+        9 = 9
+        10 = 10
+    }
+    BootstrapGridelementsGridSpaceX < .BootstrapGridSpaceX
 }
 

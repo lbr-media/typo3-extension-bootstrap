@@ -1,0 +1,10 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+<figure class="figure figure--audio{grid.mediaitem.figure_classes}">
+    <div class="audio-embed"><f:render partial="Media/Rendering/Audio" arguments="{file: file, dimensions: dimensions, settings: settings}" /></div>
+    <f:if condition="{file.description}">
+        <figcaption class="{grid.mediaitem.figcaption_classes}">{file.description}</figcaption>
+    </f:if>
+</figure>
+</html>

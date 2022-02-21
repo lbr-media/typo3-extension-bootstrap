@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:switch expression="{file.extension}">
+    <f:case value="youtube">
+        <f:render partial="Media/Video" section="Youtube" arguments="{file:file, title:'file.title', alternative:file.alternative, description:file.description}" />
+    </f:case>
+    <f:case value="vimeo">
+        <f:render partial="Media/Video" section="Vimeo" arguments="{file:file, title:'file.title', alternative:file.alternative, description:file.description}" />
+    </f:case>
+    <f:defaultCase>
+        <f:render partial="Media/Video" section="Default" arguments="{file:file, title:'file.title', alternative:file.alternative, description:file.description}" />
+    </f:defaultCase>
+</f:switch>
+</html>

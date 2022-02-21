@@ -25,6 +25,7 @@ class NewContentElement
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType5',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType6',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType7',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTextMediaGrid',
     ];
 
     protected $tcaService = null;

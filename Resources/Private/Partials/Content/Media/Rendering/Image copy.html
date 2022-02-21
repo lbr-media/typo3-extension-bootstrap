@@ -1,0 +1,13 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:app="http://typo3.org/ns/MAB/App/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+<f:variable name="displayWidth" value="{
+    std:grid.mediaoptimizing.width.xs,
+    sm:grid.mediaoptimizing.width.sm,
+    md:grid.mediaoptimizing.width.md,
+    lg:grid.mediaoptimizing.width.lg,
+    xl:grid.mediaoptimizing.width.xl
+}" />
+{app:Bootstrap.Picture(file:file, displayWidth:displayWidth, additionalImgTagParams:'{class:grid.mediaitem.img_classes}')}
+</html>

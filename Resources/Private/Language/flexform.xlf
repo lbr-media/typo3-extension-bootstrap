@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-09-02T08:47:07Z" product-name="bootstrap">
+        <header />
+        <body>
+            
+            <!-- FlexForms/TtContent/TextMedia.xml-->
+            <trans-unit id="textmedia.sOUTER.sheetTitle">
+                <source>Basics</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sOUTER.sheetDescription">
+                <source>"Äußere" Einstellungen komplett für Text- und Medienbereich.</source>
+            </trans-unit>
+            <trans-unit id="textmedia.order">
+                <source>Standard-Reihenfolge (und tatsächliche Reihenfolge im Quellcode)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.order.text_media">
+                <source>erst Text dann Medien</source>
+            </trans-unit>
+            <trans-unit id="textmedia.order.media_text">
+                <source>erst Medien dann Text</source>
+            </trans-unit>
+            <trans-unit id="textmedia.device_order">
+                <source>Endgeräteabhängige Reihenfolge (überschreibt vorherigen Parameter)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.header_position">
+                <source>Position der Überschrift</source>
+            </trans-unit>
+            <trans-unit id="textmedia.header_position.above_all">
+                <source>Vor Text und Medien</source>
+            </trans-unit>
+            <trans-unit id="textmedia.header_position.text">
+                <source>Im Textbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.header_position.media">
+                <source>Im Medienbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.overflow-hidden">
+                <source>Überstehendes verbergen? (sinnvoll z.B. bei Schatten oder zu großen Innenabständen)</source>
+            </trans-unit>
+
+            <trans-unit id="textmedia.media_position">
+                <source>Position der Medien</source>
+            </trans-unit>
+            <trans-unit id="textmedia.media_size">
+                <source>Breite des Medien-Bereichs</source>
+            </trans-unit>
+
+            <trans-unit id="textmedia.sGENERAL.space_y">
+                <source>Abstand zwischen Text- und Medien-Bereich: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sGENERAL.space_x">
+                <source>Abstand zwischen Text- und Medien-Bereich: horizontal </source>
+            </trans-unit>
+            
+            <trans-unit id="textmedia.col_text">
+                <source>Rastergröße Textbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.col_media">
+                <source>Rastergröße Medienbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sOUTER.space_y">
+                <source>Abstand zwischen den Rasterelementen: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sOUTER.space_x">
+                <source>Abstand zwischen den Rasterelementen: horizontal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sOUTER.align_items">
+                <source>Ausrichtung der Rasterelemente: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sOUTER.justify_content">
+                <source>Ausrichtung der Rasterelemente: horizontal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sTEXT.sheetTitle">
+                <source>Textbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sTEXT.sheetDescription">
+                <source>Einstellungen nur für den Textbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.text_color">
+                <source>Text: Farbe</source>
+            </trans-unit>
+            <trans-unit id="textmedia.device_text_alignment">
+                <source>Text: Ausrichtung</source>
+            </trans-unit>
+            <trans-unit id="textmedia.background_color">
+                <source>Hintergrundfarbe</source>
+            </trans-unit>
+            <trans-unit id="textmedia.border">
+                <source>Rand und Schatten</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sTEXT.align_self">
+                <source>Ausrichtung: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_inner.std">
+                <source>Abstand innen: Standard</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_inner.sm">
+                <source>Abstand innen: Klein</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_inner.md">
+                <source>Abstand innen: Mittel</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_inner.lg">
+                <source>Abstand innen: Groß</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_inner.xl">
+                <source>Abstand innen: Extra groß</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_outer.std">
+                <source>Abstand außen: Standard</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_outer.sm">
+                <source>Abstand außen: Klein</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_outer.md">
+                <source>Abstand außen: Mittel</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_outer.lg">
+                <source>Abstand außen: Groß</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_outer.xl">
+                <source>Abstand außen: Extra groß</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIA.sheetTitle">
+                <source>Medienbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIA.sheetDescription">
+                <source>Einstellungen nur für den Medienbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIA.align_self">
+                <source>Ausrichtung: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.sheetTitle">
+                <source>Einzelne Medien</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.sheetDescription">
+                <source>Einstellungen für die einzelnen Medienelemente</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.col">
+                <source>Rasterbreite einzelnes Medienelement</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.space_y">
+                <source>Abstand zwischen den Medienelementen: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.space_x">
+                <source>Abstand zwischen den Medienelementen: horizontal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.align_items">
+                <source>Ausrichtung der Medienelemente: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.justify_content">
+                <source>Ausrichtung der Medienelemente: horizontal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.text_color">
+                <source>Farbe der Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.background_color">
+                <source>Hintergrundfarbe einzelnes Medienelement</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAITEM.space_inner_img">
+                <source>Abstand zwischen Medienelement und Rand</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.sheetTitle">
+                <source>Bildoptimierung</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.sheetDescription">
+                <source>Das CMS kann nicht wissen, wie groß die Bilder tatsächlich ausgegeben werden. Es geht erstmal von 100% Fensterbreite aus, um keine zu kleinen Bilder zu erstellen. Hier kann man die wirkliche Größe pro Endgerät angeben, um passende Bilder generieren zu lassen und somit Speicherbedarf und Ladezeiten der Seite zu optimieren.</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_xs">
+                <source>Bildbreite in %: XS (0-576px)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_sm">
+                <source>Bildbreite in %: SM (576-767px)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_md">
+                <source>Bildbreite in %: MD (768-991px)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_lg">
+                <source>Bildbreite in %: LG (992-1199)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_xl">
+                <source>Bildbreite in %: XL (1200-*px)</source>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>
