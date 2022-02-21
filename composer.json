@@ -14,7 +14,7 @@
 		"typo3/cms-lowlevel": "^11.5",
 		"typo3/cms-scheduler": "^11.5",
 		"typo3/cms-setup": "^11.5",
-        "twbs/bootstrap": "<6"
+		"twbs/bootstrap": "^5.1"
 	},
 	"extra": {
 		"branch-alias": {
