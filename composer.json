@@ -1,5 +1,5 @@
 {
-    "name": "lbrmedia/typo3.extension.bootstrap",
+    "name": "lbrmedia/typo3-extension-bootstrap",
     "type": "typo3-cms-extension",
     "description": "Bootstrap Package",
     "license": "GPL-2.0-or-later",
@@ -11,7 +11,7 @@
         "theme",
         "web"
     ],
-    "homepage": "https://github.com/lbr-media/typo3.extension.bootstrap/",
+    "homepage": "https://github.com/lbr-media/typo3-extension-bootstrap/",
     "authors": [
         {
             "name": "Marcel Briefs",
