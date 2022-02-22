@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\DataProcessing;
 
 /*
@@ -23,7 +25,8 @@ use LBRmedia\Bootstrap\Service\FlexFormServiceTtContent;
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
 
 /**
- * Class for data processing for various content elements which use the extra fields defined in this extension.
+ * Class for data processing for various content elements which use the flexform field tx_bootstap_flexform.
+ * Converts the flexform data into useable values in fluid template.
  */
 class FlexFormProcessor implements DataProcessorInterface
 {
@@ -70,15 +73,15 @@ class FlexFormProcessor implements DataProcessorInterface
 
         switch ($type) {
             case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID;
-            $processedData["grid"] = self::processTextMediaGrid($xmlArray);
-            break;
+                $processedData["grid"] = self::processTextMediaGrid($xmlArray);
+                break;
         }
-
 
         return $processedData;
     }
 
-    protected static function processTextMediaGrid($xmlArray):array {
+    protected static function processTextMediaGrid($xmlArray): array
+    {
         $spaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['space_x'], $xmlArray['space_y']);
         $xmlArray['row_space_classes'] = $spaceClasses['row'];
         $xmlArray['col_space_classes'] = $spaceClasses['col'];

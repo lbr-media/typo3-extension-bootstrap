@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
 use LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility as PictureUtilty;
@@ -160,7 +162,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
                     $sourceTag->forceClosingTag(false);
                     $sourceTag->addAttribute('media', $source['media']);
                     $sourceTag->addAttribute('srcset', $source['source']);
-                    $pictureContent[] = '<!--'.$device.' cdw:'.$this->getPictureUtility()->getDisplayWidth($device).'px -->'.$sourceTag->render();
+                    $pictureContent[] = '<!--' . $device . ' cdw:' . $this->getPictureUtility()->getDisplayWidth($device) . 'px -->' . $sourceTag->render();
                 }
             }
 
@@ -207,12 +209,12 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
 
         // build 1x source
         $sources = [
-            $this->getPictureUtility()->getImageSource($device, $targetWidth).' 1x',
+            $this->getPictureUtility()->getImageSource($device, $targetWidth) . ' 1x',
         ];
 
         // build 2x source
         if ($targetWidth * 2 <= 575 * 4) {
-            $sources[] = $this->getPictureUtility()->getImageSource($device, $targetWidth * 2).' 2x';
+            $sources[] = $this->getPictureUtility()->getImageSource($device, $targetWidth * 2) . ' 2x';
         }
 
         // build 3x source

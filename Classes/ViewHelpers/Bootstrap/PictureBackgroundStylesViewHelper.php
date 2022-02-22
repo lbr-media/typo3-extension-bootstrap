@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
 use LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureBackgroundStyles as PictureBackgroundStyles;
@@ -74,17 +76,17 @@ class PictureBackgroundStylesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelpe
                 $styleTag->addAttribute('scoped', null);
 
                 // add styles to style-tag
-                $styleTag->setContent("\n".$styles."\n");
+                $styleTag->setContent("\n" . $styles . "\n");
 
                 return $styleTag->render();
             } else {
                 $pageRenderer = $this->getObjectManager()->get(PageRenderer::class);
-                $pageRenderer->addCssInlineBlock($this->arguments['id'].': background_image', $styles);
+                $pageRenderer->addCssInlineBlock($this->arguments['id'] . ': background_image', $styles);
 
                 return '';
             }
         } catch (\Exception $e) {
-            return '<!--'.$e->getMessage().'-->';
+            return '<!--' . $e->getMessage() . '-->';
         }
     }
 }

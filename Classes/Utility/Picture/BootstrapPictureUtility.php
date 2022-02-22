@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\Utility\Picture;
 
 class BootstrapPictureUtility extends GeneralPictureUtility
@@ -53,10 +55,7 @@ class BootstrapPictureUtility extends GeneralPictureUtility
     ];
 
     /**
-     * Undocumented function.
-     *
-     * @param array $displayWidthArgument
-     *                                    array with keys xs, sm, md, lg and xl with percent values of the full window width
+     * @param array $displayWidthArgument array with keys xs, sm, md, lg and xl with percent values of the full window width of each device.
      */
     public function overwriteDisplayWidthsWithViewHelperArgument(array $displayWidthArgument): self
     {

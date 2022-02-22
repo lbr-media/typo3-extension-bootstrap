@@ -62,6 +62,9 @@ class GeneralUtility
         return $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'];
     }
 
+    /**
+     * Filters and returns all cropVariants by the given one (enables only the given one).
+     */
     public static function getTcaCropVariantsOverride(array $enabledCropVariants): array
     {
         $pageTsConfig = BackendUtility::getPagesTSconfig(self::getTcaCropVariantsOverridePid());

@@ -1,15 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\Form\Element;
 
 use LBRmedia\Bootstrap\Service\FlexFormService;
+use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
 
 /**
  * This is rendered for type=text, renderType=allEdges.
  */
-class AllEdgesElement extends \TYPO3\CMS\Backend\Form\Element\AbstractFormElement
+class AllEdgesElement extends AbstractFormElement
 {
     /**
      * Render single element.
@@ -34,18 +37,18 @@ class AllEdgesElement extends \TYPO3\CMS\Backend\Form\Element\AbstractFormElemen
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
         $pluginSettings = $flexFormService->getPluginSettings();
 
-        if (!isset($pluginSettings[$config['elementConfiguration'].'.']) || !is_array($pluginSettings[$config['elementConfiguration'].'.'])) {
-            throw new \Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.'.$config['elementConfiguration'].' in TsConfig!', 1495437999);
+        if (!isset($pluginSettings[$config['elementConfiguration'] . '.']) || !is_array($pluginSettings[$config['elementConfiguration'] . '.'])) {
+            throw new \Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.' . $config['elementConfiguration'] . ' in TsConfig!', 1495437999);
         }
-        $elementConfiguration = $pluginSettings[$config['elementConfiguration'].'.'];
+        $elementConfiguration = $pluginSettings[$config['elementConfiguration'] . '.'];
 
         if (!is_array($elementConfiguration)) {
-            throw new \Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element '.$config['elementConfiguration'].' in TsSetup!', 1495438665);
+            throw new \Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element ' . $config['elementConfiguration'] . ' in TsSetup!', 1495438665);
         }
 
         $options = [];
         foreach ($elementConfiguration as $key => $value) {
-            $options[] = '<option value="'.$key.'">'.$value.'</option>';
+            $options[] = '<option value="' . $key . '">' . $value . '</option>';
         }
 
         $html = [];
@@ -55,58 +58,58 @@ class AllEdgesElement extends \TYPO3\CMS\Backend\Form\Element\AbstractFormElemen
         $html[] = '<div class="form-wizards-element">';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-left">links:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-left">';
+        $html[] = '<label for="' . $selectId . '-left">links:</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="' . $selectId . '-left">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-right">rechts:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-right">';
+        $html[] = '<label for="' . $selectId . '-right">rechts:</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="' . $selectId . '-right">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-right">links + rechts:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-horizontal">';
+        $html[] = '<label for="' . $selectId . '-right">links + rechts:</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="' . $selectId . '-horizontal">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-top">oben:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-top">';
+        $html[] = '<label for="' . $selectId . '-top">oben:</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="' . $selectId . '-top">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-bottom">unten:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-bottom">';
+        $html[] = '<label for="' . $selectId . '-bottom">unten:</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="' . $selectId . '-bottom">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-top">oben + unten:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-vertical">';
+        $html[] = '<label for="' . $selectId . '-top">oben + unten:</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="' . $selectId . '-vertical">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<div class="form-control-inline-element">';
-        $html[] = '<label for="'.$selectId.'-top">alle Seiten:</label>';
-        $html[] = '<select class="form-control form-control-adapt" id="'.$selectId.'-all">';
+        $html[] = '<label for="' . $selectId . '-top">alle Seiten:</label>';
+        $html[] = '<select class="form-control form-control-adapt" id="' . $selectId . '-all">';
         $html[] = implode(LF, $options);
         $html[] = '</select>';
         $html[] = '</div>';
 
         $html[] = '<input type="hidden"';
-        $html[] = ' name="'.htmlspecialchars($this->data['parameterArray']['itemFormElName']).'"';
-        $html[] = ' id="'.$selectId.'-hidden"';
-        $html[] = ' value="'.trim(htmlspecialchars($itemFormElValue)).'"';
+        $html[] = ' name="' . htmlspecialchars($this->data['parameterArray']['itemFormElName']) . '"';
+        $html[] = ' id="' . $selectId . '-hidden"';
+        $html[] = ' value="' . trim(htmlspecialchars($itemFormElValue)) . '"';
         $html[] = '/>';
         $html[] = '</div>';
         $html[] = '</div>';
@@ -120,7 +123,7 @@ class AllEdgesElement extends \TYPO3\CMS\Backend\Form\Element\AbstractFormElemen
                     'function(AllEdgesElement) {',
                     '  require([\'jquery\'], function($) {',
                     '    $(function() {',
-                    '      AllEdgesElement.initialize('.GeneralUtility::quoteJSvalue($selectId).');',
+                    '      AllEdgesElement.initialize(' . GeneralUtility::quoteJSvalue($selectId) . ');',
                     '    });',
                     '  });',
                     '}',

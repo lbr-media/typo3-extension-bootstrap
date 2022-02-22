@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;

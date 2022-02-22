@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\Service;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -43,7 +45,7 @@ class FlexFormService
         return $this->pluginSettings;
     }
 
-    
+
 
     /**
      * @param string $xmlString
@@ -68,7 +70,7 @@ class FlexFormService
      *
      * @return mixed
      */
-    protected function getFlexformValue($pointer, $type = 'string', $defaultValue = '')
+    protected function getFlexformValue($pointer, string $type = 'string', $defaultValue = '')
     {
         if (!isset($pointer)) {
             return $defaultValue;
@@ -76,15 +78,15 @@ class FlexFormService
         switch ($type) {
             case 'string':
                 return (string) $pointer;
-            break;
+                break;
             case 'boolean':
             case 'bool':
                 return (bool) $pointer;
-            break;
+                break;
             case 'integer':
             case 'int':
                 return (int) $pointer;
-            break;
+                break;
         }
 
         return $pointer;

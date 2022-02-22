@@ -43,7 +43,7 @@ class BootstrapUtility
 
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             if (isset($e[$pos]) && $e[$pos]) {
-                $classes[] = 'col-'.$device.$e[$pos];
+                $classes[] = 'col-' . $device . $e[$pos];
             }
         }
 
@@ -66,7 +66,7 @@ class BootstrapUtility
 
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             if (isset($e[$pos]) && is_numeric($e[$pos])) {
-                $classes[] = 'p'.$directionInfix.'-'.$device.$e[$pos];
+                $classes[] = 'p' . $directionInfix . '-' . $device . $e[$pos];
             }
         }
 
@@ -74,7 +74,7 @@ class BootstrapUtility
     }
 
     /**
-     * @param string $margins        Semicolon divided string for xs, sm, md, lg, xl
+     * @param string $margins        Semicolon divided string for xs, sm, md, lg, xl, xxl
      * @param string $directionInfix just an empty string for all directions or the other bootstrap directions like x, y, l, t, r, b
      */
     public static function getDeviceMarginClasses(string $margins, string $directionInfix = ''): string
@@ -89,7 +89,7 @@ class BootstrapUtility
 
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             if (isset($e[$pos]) && is_numeric($e[$pos])) {
-                $classes[] = 'm'.$directionInfix.'-'.$device.$e[$pos];
+                $classes[] = 'm' . $directionInfix . '-' . $device . $e[$pos];
             }
         }
 
@@ -98,13 +98,13 @@ class BootstrapUtility
 
     /**
      * @param array $margins [
-     *                       'xs' => 'left;right;horizontal;top;bottom;vertical;all',
-     *                       'sm' => ';;;;;;',
-     *                       'md' => ';;;;;;',
-     *                       'lg' => ';;;;;;',
-     *                       'xl' => ';;;;;;',
-     *                       'xxl' => ';;;;;;',
-     *                       ]
+     *     'xs' => 'left;right;horizontal;top;bottom;vertical;all',
+     *     'sm' => ';;;;;;',
+     *     'md' => ';;;;;;',
+     *     'lg' => ';;;;;;',
+     *     'xl' => ';;;;;;',
+     *     'xxl' => ';;;;;;',
+     * ]
      */
     public static function getMarginClasses(array $margins): string
     {
@@ -113,13 +113,13 @@ class BootstrapUtility
 
     /**
      * @param array $paddings [
-     *                        'xs' => 'left;right;horizontal;top;bottom;vertical;all',
-     *                        'sm' => ';;;',
-     *                        'md' => ';;;',
-     *                        'lg' => ';;;',
-     *                        'xl' => ';;;',
-     *                        'xxl' => ';;;',
-     *                        ]
+     *     'xs' => 'left;right;horizontal;top;bottom;vertical;all',
+     *     'sm' => ';;;',
+     *     'md' => ';;;',
+     *     'lg' => ';;;',
+     *     'xl' => ';;;',
+     *     'xxl' => ';;;',
+     * ]
      */
     public static function getPaddingClasses(array $paddings): string
     {
@@ -128,13 +128,13 @@ class BootstrapUtility
 
     /**
      * @param array $spaces [
-     *                      'xs' => 'left;right;horizontal;top;bottom;vertical;all',
-     *                      'sm' => ';;;',
-     *                      'md' => ';;;',
-     *                      'lg' => ';;;',
-     *                      'xl' => ';;;',
-     *                      'xxl' => ';;;',
-     *                      ]
+     *    'xs' => 'left;right;horizontal;top;bottom;vertical;all',
+     *    'sm' => ';;;',
+     *    'md' => ';;;',
+     *    'lg' => ';;;',
+     *    'xl' => ';;;',
+     *    'xxl' => ';;;',
+     * ]
      */
     public static function getSpaceClasses(array $spaces, string $prefix): string
     {
@@ -154,7 +154,7 @@ class BootstrapUtility
         ];
         foreach (array_keys(self::DEVICES) as $device) {
             if (isset($spaces[$device]) && $spaces[$device]) {
-                $finalDevice = 'xs' === $device ? '' : $device.'-';
+                $finalDevice = 'xs' === $device ? '' : $device . '-';
 
                 $values = explode(';', $spaces[$device]);
 
@@ -164,7 +164,7 @@ class BootstrapUtility
                     }
                     $value = $values[$key];
                     if ('' !== $value && 'default' !== $value) {
-                        $classes[] = $prefix.$class.'-'.$finalDevice.$value;
+                        $classes[] = $prefix . $class . '-' . $finalDevice . $value;
                     }
                 }
             }
@@ -176,7 +176,7 @@ class BootstrapUtility
     /**
      * @param string $borderOptions border-class;border-color-class;rounded-class;shadow-class
      */
-    public static function getBorderOptionClasses($borderOptions): string
+    public static function getBorderOptionClasses(string $borderOptions): string
     {
         if (!trim($borderOptions)) {
             return '';
@@ -194,7 +194,7 @@ class BootstrapUtility
     }
 
     /**
-     * @param string $alignments Semicolon separated list of values: xs;sm;md;lg;xl => left;right;;center;
+     * @param string $alignments Semicolon separated list of values: xs;sm;md;lg;xl;xxl => left;right;;center;
      * @param string $prefix     Something like 'text-', 'justify-content-' or 'align-items-'
      */
     public static function getAlignmentClasses(string $alignments, string $prefix): string
@@ -208,7 +208,7 @@ class BootstrapUtility
 
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             if (isset($e[$pos]) && $e[$pos]) {
-                $classes[] = $prefix.$device.$e[$pos];
+                $classes[] = $prefix . $device . $e[$pos];
             }
         }
 
@@ -231,7 +231,7 @@ class BootstrapUtility
             $spaces = explode(';', $spaceX);
             foreach (self::DEVICE_INFIXES as $pos => $device) {
                 if (isset($spaces[$pos]) && is_numeric($spaces[$pos])) {
-                    $rowClasses[] = 'gx-'.$device.$spaces[$pos];
+                    $rowClasses[] = 'gx-' . $device . $spaces[$pos];
                 }
             }
         }
@@ -240,7 +240,7 @@ class BootstrapUtility
             $spaces = explode(';', $spaceY);
             foreach (self::DEVICE_INFIXES as $pos => $device) {
                 if (isset($spaces[$pos]) && is_numeric($spaces[$pos])) {
-                    $rowClasses[] = 'gy-'.$device.$spaces[$pos];
+                    $rowClasses[] = 'gy-' . $device . $spaces[$pos];
                 }
             }
         }
@@ -259,7 +259,7 @@ class BootstrapUtility
      *      <div class="col-media col order-[0|1]">
      * </div>.
      *
-     * @param string $orderClasses Five string values either "", "text_media" or "media_text" for the devices "xs;sm;md;lg;xl"
+     * @param string $orderClasses Five string values either "", "text_media" or "media_text" for the devices "xs;sm;md;lg;xl;xxl"
      */
     public static function getGridDeviceOrderClasses(string $orderClasses): array
     {
@@ -270,11 +270,11 @@ class BootstrapUtility
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             if (isset($deviceOrders[$pos])) {
                 if ('text_media' === $deviceOrders[$pos]) {
-                    $textClasses[] = ' order-'.$device.'0';
-                    $mediaClasses[] = ' order-'.$device.'1';
+                    $textClasses[] = ' order-' . $device . '0';
+                    $mediaClasses[] = ' order-' . $device . '1';
                 } elseif ('media_text' === $deviceOrders[$pos]) {
-                    $textClasses[] = ' order-'.$device.'1';
-                    $mediaClasses[] = ' order-'.$device.'0';
+                    $textClasses[] = ' order-' . $device . '1';
+                    $mediaClasses[] = ' order-' . $device . '0';
                 }
             }
         }
@@ -286,7 +286,7 @@ class BootstrapUtility
     }
 
     /**
-     * @param string $floats Five string values (left|none|right) for the devices "xs;sm;md;lg;xl"
+     * @param string $floats Five string values (left|none|right) for the devices "xs;sm;md;lg;xl;xxl"
      */
     public static function getFloatClasses(string $floats): string
     {
@@ -300,11 +300,11 @@ class BootstrapUtility
 
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             if (isset($e[$pos]) && $e[$pos]) {
-                $classes[] = 'float-'.$device.$e[$pos];
+                $classes[] = 'float-' . $device . $e[$pos];
                 if ('left' === $e[$pos] || 'right' === $e[$pos]) {
-                    $classes[] = 'd-'.$device.'block';
+                    $classes[] = 'd-' . $device . 'block';
                 } else {
-                    $classes[] = 'd-'.$device.'inline-block';
+                    $classes[] = 'd-' . $device . 'inline-block';
                 }
             }
         }
@@ -313,10 +313,10 @@ class BootstrapUtility
     }
 
     /**
-     * @param string $widths   Five int values from 1 to 12 for the devices "xs;sm;md;lg;xl"
-     * @param string $floats   Five string values (left|none|right) for the devices "xs;sm;md;lg;xl"
-     * @param string $spaces_x Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl"
-     * @param string $spaces_y Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl"
+     * @param string $widths   Five int values from 1 to 12 for the devices "xs;sm;md;lg;xl;xxl"
+     * @param string $floats   Five string values (left|none|right) for the devices "xs;sm;md;lg;xl;xxl"
+     * @param string $spaces_x Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl;xxl"
+     * @param string $spaces_y Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl;xxl"
      */
     public static function getFloatMediaSizeClasses(string $widths, string $floats, string $spaces_x, string $spaces_y): string
     {
@@ -344,12 +344,12 @@ class BootstrapUtility
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             // add width classes
             if (isset($w[$pos]) && $w[$pos]) {
-                $classes[] = 'float-size-'.$device.$w[$pos];
+                $classes[] = 'float-size-' . $device . $w[$pos];
             }
 
             // add space_y classes
             if (isset($y[$pos]) && is_numeric($y[$pos])) {
-                $classes[] = 'mb-'.$device.$y[$pos];
+                $classes[] = 'mb-' . $device . $y[$pos];
             }
 
             if (isset($f[$pos]) && $f[$pos]) {
@@ -359,14 +359,14 @@ class BootstrapUtility
             // add space_x classes
             if (isset($x[$pos]) && is_numeric($x[$pos])) {
                 if ('left' === $lastFloat) {
-                    $classes[] = 'mr-'.$device.$x[$pos];
-                    $classes[] = 'ml-'.$device.'0';
+                    $classes[] = 'mr-' . $device . $x[$pos];
+                    $classes[] = 'ml-' . $device . '0';
                 } elseif ('right' === $lastFloat) {
-                    $classes[] = 'ml-'.$device.$x[$pos];
-                    $classes[] = 'mr-'.$device.'0';
+                    $classes[] = 'ml-' . $device . $x[$pos];
+                    $classes[] = 'mr-' . $device . '0';
                 } else {
                     // none
-                    $classes[] = 'mx-'.$device.$x[$pos];
+                    $classes[] = 'mx-' . $device . $x[$pos];
                 }
             }
         }

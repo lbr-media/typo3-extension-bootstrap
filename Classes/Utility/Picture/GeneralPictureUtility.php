@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\Utility\Picture;
 
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
@@ -134,7 +136,7 @@ class GeneralPictureUtility
     /**
      * Fetches the cropVariants from image/fileReference and builds an array for the devices.
      *
-     * @param string $cropVariantToForce If this key is set (xs, sm,md...) the cropVariant of this key is used for all
+     * @param string $cropVariantToForce If this key is set (xs, sm, md...) the cropVariant of this key is used for all
      */
     public function initializeCropVariantsProcessingInstructions(string $cropVariantToForce = ''): self
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // Prevent Script from being called directly
 defined('TYPO3') or die();
 

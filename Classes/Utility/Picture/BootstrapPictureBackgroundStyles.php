@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\Utility\Picture;
 
 use LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility as PictureUtility;
@@ -25,7 +27,7 @@ class BootstrapPictureBackgroundStyles
     }
 
     /**
-     * Creates an picture-tag with some sources related to the alternative images append as child of a FileReference.
+     * Creates a picture-tag with some sources related to the alternative images append as child of a FileReference.
      *
      * @param object $file                  The original FileReference with some alternative images
      * @param string $cssSelector           The Selector for the background image
@@ -56,27 +58,26 @@ class BootstrapPictureBackgroundStyles
 
             $styles = [];
 
-            // build smartphone image
-            // also build default image
-            $styles[] = $cssSelector." { background-image:url('".$this->getImageSource('xs')."' ); }";
+            // build XS image
+            $styles[] = $cssSelector . " { background-image:url('" . $this->getImageSource('xs') . "' ); }";
 
-            // build tablet image
-            $styles[] = '@media screen and (min-width: 576px) { '.$cssSelector." { background-image:url('".$this->getImageSource('sm')."'); } }";
+            // build SM image
+            $styles[] = '@media (min-width: 576px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('sm') . "'); } }";
 
-            // build laptop image
-            $styles[] = '@media screen and (min-width: 768px) { '.$cssSelector." { background-image:url('".$this->getImageSource('md')."'); } }";
+            // build MD image
+            $styles[] = '@media (min-width: 768px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('md') . "'); } }";
 
-            // build default image
-            $styles[] = '@media screen and (min-width: 992px) { '.$cssSelector." { background-image:url('".$this->getImageSource('lg')."'); } }";
+            // build LG image
+            $styles[] = '@media (min-width: 992px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('lg') . "'); } }";
 
-            // build desktop image
-            $styles[] = '@media screen and (min-width: 1200px) { '.$cssSelector." { background-image:url('".$this->getImageSource('xl')."'); } }";
+            // build XL image
+            $styles[] = '@media (min-width: 1200px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('xl') . "'); } }";
 
-            // build desktop image
-            $styles[] = '@media screen and (min-width: 1400px) { '.$cssSelector." { background-image:url('".$this->getImageSource('xxl')."'); } }";
+            // build XXL image
+            $styles[] = '@media (min-width: 1400px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('xxl') . "'); } }";
 
             // add styles to style-tag
-            return implode($styles);
+            return implode("", $styles);
         } catch (\Exception $e) {
             return '';
         }

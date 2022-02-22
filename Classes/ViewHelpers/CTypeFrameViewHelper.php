@@ -10,7 +10,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
 /**
- * Builds main headlines in content elements while using fields header, subheader, header_layout, tx_bootstrap_header_layout, header_position and header_link.
+ * Builds the main frame elements for content elements.
  *
  * Examples
  * ========
