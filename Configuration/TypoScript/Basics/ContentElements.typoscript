@@ -91,6 +91,19 @@ tt_content {
             }
         }
     }
+    uploads =< lib.contentElement
+    uploads {
+        templateName = Uploads
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+                collections.field = file_collections
+                sorting.field = filelink_sorting
+                sorting.direction.field = filelink_sorting_direction
+            }
+        }
+    }
     bootstrap_textmediafloat =< lib.contentElement
     bootstrap_textmediafloat {
         templateName = BootstrapTextMediaFloat
