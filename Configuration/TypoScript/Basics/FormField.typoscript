@@ -4,9 +4,25 @@ Settings for additional fields in tt_content
 plugin.tx_bootstrap.settings.form.element {
     TextMediaPositions {
         default = 
-        left = links
-        right = rechts
+        start = links
+        end = rechts
         none = zentriert über dem Text
+    }
+
+    TextMediaSizes {
+        default = 
+        1 = 1/12
+        2 = 2/12
+        3 = 3/12 (25%)
+        4 = 4/12 (33%)
+        5 = 5/12
+        6 = 6/12 (50%)
+        7 = 7/12
+        8 = 8/12 (66%)
+        9 = 9/12 (75%)
+        10 = 10/12
+        11 = 11/12
+        12 = 12/12 (100%)
     }
 
     /*
@@ -83,23 +99,6 @@ plugin.tx_bootstrap.settings.form.element {
         //     innerWrap = 
         //     additionalClass = text-uppercase
         // }
-
-        5 {
-            label = Einzug
-            value = 5
-            additionalClass = header-indent
-        }
-        7 {
-            label = Einzug mit Linie
-            value = 7
-            additionalClass = header-indent-line
-        }
-        9 {
-            label = Linie
-            value = 9
-            additionalClass = header-line
-        }
-
         10 {
             label = VERSALIEN
             value = 10
@@ -125,22 +124,10 @@ plugin.tx_bootstrap.settings.form.element {
             value = 70
             additionalClass = mb-0
         }
-        // 70 {
-        //     label = Monospace
-        //     outerWrap = 
-        //     value = 70
-        //     innerWrap = 
-        //     additionalClass = text-monospace
-        // }
         80 {
-            label = mehr Abstand unten
+            label = größerer Abstand unten
             value = 80
-            additionalClass = container--space-after-extra-small
-        }
-        90 {
-            label = Fließtext-Stärke
-            value = 90
-            additionalClass = font-weight-light
+            additionalClass = mb-3 mb-md-4 mb-xl-5
         }
     }
 
@@ -213,16 +200,16 @@ plugin.tx_bootstrap.settings.form.element {
         3 = 3
         4 = 4
         5 = 5
-        6 = 6
-        7 = 7
-        8 = 8
-        9 = 9
-        10 = 10
-        11 = 11
-        12 = 12
-        13 = 13
-        14 = 14
-        15 = 15
+        # 6 = 6
+        # 7 = 7
+        # 8 = 8
+        # 9 = 9
+        # 10 = 10
+        # 11 = 11
+        # 12 = 12
+        # 13 = 13
+        # 14 = 14
+        # 15 = 15
         auto = auto
     }
 
@@ -239,16 +226,16 @@ plugin.tx_bootstrap.settings.form.element {
         3 = 3
         4 = 4
         5 = 5
-        6 = 6
-        7 = 7
-        8 = 8
-        9 = 9
-        10 = 10
-        11 = 11
-        12 = 12
-        13 = 13
-        14 = 14
-        15 = 15
+        # 6 = 6
+        # 7 = 7
+        # 8 = 8
+        # 9 = 9
+        # 10 = 10
+        # 11 = 11
+        # 12 = 12
+        # 13 = 13
+        # 14 = 14
+        # 15 = 15
         auto = auto
     }
 
@@ -260,11 +247,11 @@ plugin.tx_bootstrap.settings.form.element {
         3 = 3
         4 = 4
         5 = 5
-        6 = 6
-        7 = 7
-        8 = 8
-        9 = 9
-        10 = 10
+        # 6 = 6
+        # 7 = 7
+        # 8 = 8
+        # 9 = 9
+        # 10 = 10
     }
     BootstrapGridelementsGridSpaceY < .BootstrapGridSpaceY
 
@@ -276,11 +263,11 @@ plugin.tx_bootstrap.settings.form.element {
         3 = 3
         4 = 4
         5 = 5
-        6 = 6
-        7 = 7
-        8 = 8
-        9 = 9
-        10 = 10
+        # 6 = 6
+        # 7 = 7
+        # 8 = 8
+        # 9 = 9
+        # 10 = 10
     }
     BootstrapGridelementsGridSpaceX < .BootstrapGridSpaceX
 

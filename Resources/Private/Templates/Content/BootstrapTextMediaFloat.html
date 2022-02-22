@@ -1,0 +1,42 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<!--
+Text & Medien (fließend)
+-->
+<f:layout name="WithoutHeader" />
+
+<f:section name="Main"><f:spaceless>
+    <f:if condition="{grid.header_position}=='above_all'">
+        <f:render section="Header" optional="true">
+            <f:render partial="Header/All" arguments="{_all}" />
+        </f:render>
+    </f:if>
+    <f:if condition="{files -> f:count()} || {data.bodytext}">
+        <div class="clearfix text-center">
+            <f:if condition="{files -> f:count()}"><f:render section="Media" arguments="{_all}" /></f:if>
+            <f:if condition="{data.bodytext}"><f:render section="Text" arguments="{_all}" /></f:if>
+        </div>
+    </f:if>
+</f:spaceless></f:section>
+
+<f:section name="Text">
+    <div class="container-textmedia__text text-start">
+        <f:if condition="{grid.header_position}=='text'">
+            <f:render section="Header" optional="true">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:render>
+        </f:if>
+        <f:format.html>{data.bodytext}</f:format.html>
+    </div>
+</f:section>
+
+<f:section name="Media"><f:spaceless>
+    <div class="container-textmedia__media {grid.float_classes} {grid.media_size_classes} {grid.space_x_classes} {grid.space_y_classes}">
+        <f:render partial="Media/Gallery" arguments="{_all}" />
+    </div>
+</f:spaceless></f:section>
+
+</html>

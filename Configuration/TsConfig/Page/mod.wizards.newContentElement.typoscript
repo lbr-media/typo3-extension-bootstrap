@@ -68,6 +68,14 @@ mod.wizards.newContentElement.wizardItems.common2 {
                 CType = bootstrap_textmediagrid
             }
         }
+        bootstrap_textmediafloat {
+            iconIdentifier = bootstrap_textmediafloat
+            title = Text & Medien (fließend)
+            description = Medienelement, der mit Text umflossen wird.
+            tt_content_defValues {
+                CType = bootstrap_textmediafloat
+            }
+        }
     }
-    show := addToList(bootstrap_type1,bootstrap_type2,bootstrap_type3,bootstrap_type4,bootstrap_type5,bootstrap_type6,bootstrap_type7,bootstrap_textmediagrid)
+    show := addToList(bootstrap_type1,bootstrap_type2,bootstrap_type3,bootstrap_type4,bootstrap_type5,bootstrap_type6,bootstrap_type7,bootstrap_textmediagrid,bootstrap_textmediafloat)
 }

@@ -16,6 +16,36 @@ tt_content {
     header {
         templateName = Header
     }
+    bootstrap_textmediagrid =< lib.contentElement
+    bootstrap_textmediagrid {
+        templateName = BootstrapTextMediaGrid
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = assets
+            }
+
+            20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
+            20 {
+                type = TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID
+            }
+        }
+    }
+    bootstrap_textmediafloat =< lib.contentElement
+    bootstrap_textmediafloat {
+        templateName = BootstrapTextMediaFloat
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = assets
+            }
+
+            20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
+            20 {
+                type = TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT
+            }
+        }
+    }
     bootstrap_type1 =< lib.contentElement
     bootstrap_type1 {
         templateName = BootstrapType1
@@ -65,19 +95,5 @@ tt_content {
             1 = LBRmedia\Bootstrap\DataProcessing\VariousProcessor
         }
     }
-    bootstrap_textmediagrid =< lib.contentElement
-    bootstrap_textmediagrid {
-        templateName = BootstrapTextMediaGrid
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references.fieldName = assets
-            }
-
-            20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
-            20 {
-                type = TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID
-            }
-        }
-    }
+    
 }

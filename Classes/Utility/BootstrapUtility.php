@@ -301,7 +301,7 @@ class BootstrapUtility
         foreach (self::DEVICE_INFIXES as $pos => $device) {
             if (isset($e[$pos]) && $e[$pos]) {
                 $classes[] = 'float-' . $device . $e[$pos];
-                if ('left' === $e[$pos] || 'right' === $e[$pos]) {
+                if ('start' === $e[$pos] || 'end' === $e[$pos]) {
                     $classes[] = 'd-' . $device . 'block';
                 } else {
                     $classes[] = 'd-' . $device . 'inline-block';
@@ -358,12 +358,12 @@ class BootstrapUtility
 
             // add space_x classes
             if (isset($x[$pos]) && is_numeric($x[$pos])) {
-                if ('left' === $lastFloat) {
-                    $classes[] = 'mr-' . $device . $x[$pos];
-                    $classes[] = 'ml-' . $device . '0';
-                } elseif ('right' === $lastFloat) {
-                    $classes[] = 'ml-' . $device . $x[$pos];
-                    $classes[] = 'mr-' . $device . '0';
+                if ('start' === $lastFloat) {
+                    $classes[] = 'me-' . $device . $x[$pos];
+                    $classes[] = 'ms-' . $device . '0';
+                } elseif ('end' === $lastFloat) {
+                    $classes[] = 'ms-' . $device . $x[$pos];
+                    $classes[] = 'me-' . $device . '0';
                 } else {
                     // none
                     $classes[] = 'mx-' . $device . $x[$pos];

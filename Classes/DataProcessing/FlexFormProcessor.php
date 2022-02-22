@@ -60,27 +60,33 @@ class FlexFormProcessor implements DataProcessorInterface
             case "TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID":
                 $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID;
                 break;
+            case "TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT":
+                $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT;
+                break;
         }
 
-        try {
+        // try {
             // get the configuration from flexform
             /** @var FlexFormServiceTtContent $flexFormService */
             $flexFormService = GeneralUtility::makeInstance(FlexFormServiceTtContent::class);
             $xmlArray = $flexFormService->getConfiguration($processedData['data']['tx_bootstrap_flexform'], $type);
-        } catch (Exception $e) {
-            return $processedData;
-        }
+        // } catch (Exception $e) {
+        //     return $processedData;
+        // }
 
         switch ($type) {
             case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID;
-                $processedData["grid"] = self::processTextMediaGrid($xmlArray);
+                $processedData["grid"] = self::processBootstrapTextMediaGrid($xmlArray);
+                break;
+            case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT;
+                $processedData["grid"] = self::processBootstrapTextMediaFloat($xmlArray);
                 break;
         }
 
         return $processedData;
     }
 
-    protected static function processTextMediaGrid($xmlArray): array
+    protected static function processBootstrapTextMediaGrid($xmlArray): array
     {
         $spaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['space_x'], $xmlArray['space_y']);
         $xmlArray['row_space_classes'] = $spaceClasses['row'];
@@ -157,6 +163,37 @@ class FlexFormProcessor implements DataProcessorInterface
 
         // the image
         $xmlArray['mediaitem']['img_classes'] = 'img-fluid';
+
+        return $xmlArray;
+    }
+
+    protected static function processBootstrapTextMediaFloat($xmlArray): array
+    {
+        $xmlArray['float_classes'] = BootstrapUtility::getFloatClasses($xmlArray['media_position']);
+        $xmlArray['media_size_classes'] = BootstrapUtility::getFloatMediaSizeClasses($xmlArray['media_size'], $xmlArray['media_position'], $xmlArray['space_x'], $xmlArray['space_y']);
+
+        // mediaitem
+        $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
+        $xmlArray['mediaitem']['row_space_classes'] = $mediaSpaceClasses['row'];
+        $xmlArray['mediaitem']['col_space_classes'] = $mediaSpaceClasses['col'];
+
+        // container for all media items
+        $xmlArray['mediaitem']['row_classes'] = implode(
+            ' ',
+            [
+                'row',
+                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
+                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
+            ]
+        );
+
+        // a media item columne
+        $xmlArray['mediaitem']['col_classes'] = BootstrapUtility::getColClasses($xmlArray['mediaitem']['col']);
+
+        // the image
+        $xmlArray['mediaitem']['img_classes'] = 'img-fluid';
+
+        debug($xmlArray);
 
         return $xmlArray;
     }

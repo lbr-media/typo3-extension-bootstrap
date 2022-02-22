@@ -294,7 +294,7 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
-                    <field index="image_zoom">
+                    <!--<field index="image_zoom">
                         <value index="TCEforms">
                             <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:image_zoom</label>
                             <config>
@@ -302,7 +302,7 @@
                                 <default>0</default>
                             </config>
                         </value>
-                    </field>
+                    </field>-->
                     <field index="col">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.col</label>

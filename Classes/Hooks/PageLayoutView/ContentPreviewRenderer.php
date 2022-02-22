@@ -89,6 +89,14 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
                 }
                 break;
+            case 'bootstrap_textmediafloat':
+                if ($record['assets']) {
+                    $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'assets'), $record) . '<br />';
+                }
+                if ($record['bodytext']) {
+                    $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
+                }
+                break;
             default:
                 return parent::renderPageModulePreviewContent($item);
         }

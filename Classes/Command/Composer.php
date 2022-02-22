@@ -35,7 +35,8 @@ class Composer
         "vendor/twbs/bootstrap/dist/css/bootstrap.min.css" => self::CSS_DIR,
         "vendor/twbs/bootstrap/dist/css/bootstrap.min.css.map" => self::CSS_DIR,
         "vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js" => self::JS_DIR,
-        "vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js.map" => self::JS_DIR
+        "vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js.map" => self::JS_DIR,
+        "public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/bootstrap_textmediafloat.css" => self::CSS_DIR
     ];
 
     /**

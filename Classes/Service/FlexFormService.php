@@ -9,10 +9,8 @@ use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 
 class FlexFormService
 {
-    /**
-     * @var string
-     */
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID = 'TtContentBootstrapTextMediaGrid';
+    const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT = 'TtContentBootstrapTextMediaFloat';
 
     /**
      * Array with the flexform configuration converted from XML string.
