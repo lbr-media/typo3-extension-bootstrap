@@ -11,8 +11,28 @@ include all the basics
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/JavaScript.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/PageTitleProvider.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/FormField.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/ContentElements.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/lib.parseFunc.typoscript">
+
+
+/*
+Content elements
+*/
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/General.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/Header.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/Text.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/Table.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/Bullets.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/Uploads.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapTextMediaFloat.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapTextMediaGrid.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType1.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType2.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType3.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType4.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType5.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType6.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType7.typoscript">
+
 
 /*
 Include extensions

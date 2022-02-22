@@ -1,0 +1,9 @@
+tt_content {
+    bootstrap_type6 =< lib.contentElement
+    bootstrap_type6 {
+        templateName = BootstrapType6
+        dataProcessing {
+            1 = LBRmedia\Bootstrap\DataProcessing\VariousProcessor
+        }
+    }
+}

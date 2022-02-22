@@ -1,0 +1,6 @@
+tt_content {
+    header =< lib.contentElement
+    header {
+        templateName = Header
+    }
+}
