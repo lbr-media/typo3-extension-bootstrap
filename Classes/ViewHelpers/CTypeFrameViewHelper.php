@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
+use Exception;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
@@ -62,6 +63,19 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
      */
     protected $additionalOuterAttributes = [];
 
+    protected $pluginSettings = null;
+
+    protected function getPluginSettings(): array
+    {
+        if ($this->pluginSettings !== null) {
+            return $this->pluginSettings;
+        }
+
+        $this->pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
+
+        return $this->pluginSettings;
+    }
+
     /**
      * @var array
      */
@@ -90,18 +104,18 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
         $content = $this->arguments['content'] ? $this->arguments['content'] : $this->renderChildren();
 
         if ('none' === $data['frame_class']) {
-            return '<div id="c'.$data['uid'].'"></div>'.$content;
+            return '<div id="c' . $data['uid'] . '"></div>' . $content;
         }
 
         // AdditionalStyles
         if ($data['tx_bootstrap_additional_styles']) {
             // get the TS setup
-            $pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
+            $pluginSettings = $this->getPluginSettings();
             $additionalStyles = explode(',', $data['tx_bootstrap_additional_styles']);
             if (isset($pluginSettings['AdditionalStyles.']) && count($additionalStyles)) {
                 foreach ($additionalStyles as $key) {
-                    if (isset($pluginSettings['AdditionalStyles.'][$key.'.'])) {
-                        $this->prepareAdditionals($pluginSettings['AdditionalStyles.'][$key.'.']);
+                    if (isset($pluginSettings['AdditionalStyles.'][$key . '.'])) {
+                        $this->prepareAdditionals($pluginSettings['AdditionalStyles.'][$key . '.']);
                     }
                 }
 
@@ -126,28 +140,44 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
         // basic container class
         if ('list' === $data['CType'] && $data['list_type']) {
             // additional class when it is a plugin
-            $this->classesList[] = 'container-list container-list--'.$data['list_type'];
+            $this->classesList[] = 'container-list container-list--' . $data['list_type'];
         } elseif ('gridelements_pi1' === $data['CType'] && $data['tx_gridelements_backend_layout']) {
             // additional class when it is a gridelement
-            $this->classesList[] = 'container-grid container-grid--'.$data['tx_gridelements_backend_layout'];
+            $this->classesList[] = 'container-grid container-grid--' . $data['tx_gridelements_backend_layout'];
         } else {
             // default class for normal CTypes
-            $this->classesList[] = 'container-'.$data['CType'];
+            $this->classesList[] = 'container-' . $data['CType'];
         }
 
         // layout class
         if ($data['layout']) {
-            $this->classesList[] = 'container--layout-'.$data['layout'];
+            $this->classesList[] = 'container--layout-' . $data['layout'];
         }
 
         // space before class
         if ($data['space_before_class']) {
-            $this->classesList[] = 'container--space-before-'.$data['space_before_class'];
+            if (!isset($this->getPluginSettings()["SpaceBeforeClassReplacements."]) || !is_array($this->getPluginSettings()["SpaceBeforeClassReplacements."])) {
+                throw new Exception("Cannot find a configuration in plugin.tx_bootstrap.settings.form.element.SpaceBeforeClassReplacements", 1645511421);
+            }
+
+            if (array_key_exists($data['space_before_class'], $this->getPluginSettings()["SpaceBeforeClassReplacements."])) {
+                $this->classesList[] = $this->getPluginSettings()["SpaceBeforeClassReplacements."][$data['space_before_class']];
+            } else {
+                $this->classesList[] = 'container--space-before-' . $data['space_before_class'];
+            }
         }
 
         // space after class
         if ($data['space_after_class']) {
-            $this->classesList[] = 'container--space-after-'.$data['space_after_class'];
+            if (!isset($this->getPluginSettings()["SpaceAfterClassReplacements."]) || !is_array($this->getPluginSettings()["SpaceAfterClassReplacements."])) {
+                throw new Exception("Cannot find a configuration in plugin.tx_bootstrap.settings.form.element.SpaceAfterClassReplacements", 1645511422);
+            }
+
+            if (array_key_exists($data['space_after_class'], $this->getPluginSettings()["SpaceAfterClassReplacements."])) {
+                $this->classesList[] = $this->getPluginSettings()["SpaceAfterClassReplacements."][$data['space_after_class']];
+            } else {
+                $this->classesList[] = 'container--space-after-' . $data['space_after_class'];
+            }
         }
 
         // text color class
@@ -161,7 +191,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
             // if ('container-' === substr($data['frame_class'], 0, 10)) {
             //     $frameClass = 'container '.$data['frame_class'];
             // } else {
-                $frameClass = $data['frame_class'];
+            $frameClass = $data['frame_class'];
             // }
         }
 
@@ -206,7 +236,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
             // generate outer div with classes
             $outerTag = new TagBuilder('div');
             $outerTag->forceClosingTag(true);
-            $outerTag->addAttribute('id', 'c'.$data['uid']); // set id to outer classes element instead to the main tag
+            $outerTag->addAttribute('id', 'c' . $data['uid']); // set id to outer classes element instead to the main tag
             if (count($this->classesOuterList)) {
                 $outerTag->addAttribute('class', BootstrapGeneralUtility::cleanCssClassesString($this->classesOuterList));
             }
@@ -216,7 +246,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
             $outerTag->setContent($tagHtml);
             $tagHtml = $outerTag->render();
         } else {
-            $mainTag->addAttribute('id', 'c'.$data['uid']);
+            $mainTag->addAttribute('id', 'c' . $data['uid']);
             $tagHtml = $mainTag->render();
 
             // include outerWrap after all inner stuff
@@ -224,20 +254,20 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
         }
 
         // return and build tag and prepend localized id
-        return (isset($data['_LOCALIZED_UID']) && $data['_LOCALIZED_UID'] ? '<div id="c'.$data['_LOCALIZED_UID'].'"></div>' : '').$tagHtml;
+        return (isset($data['_LOCALIZED_UID']) && $data['_LOCALIZED_UID'] ? '<div id="c' . $data['_LOCALIZED_UID'] . '"></div>' : '') . $tagHtml;
     }
 
     protected function renderInnerWrap(string &$content): void
     {
         if (count($this->innerWrap['before'])) {
-            $content = implode('', $this->innerWrap['before']).$content.implode('', array_reverse($this->innerWrap['after']));
+            $content = implode('', $this->innerWrap['before']) . $content . implode('', array_reverse($this->innerWrap['after']));
         }
     }
 
     protected function renderOuterWrap(string &$content): void
     {
         if (count($this->outerWrap['before'])) {
-            $content = implode('', $this->outerWrap['before']).$content.implode('', array_reverse($this->outerWrap['after']));
+            $content = implode('', $this->outerWrap['before']) . $content . implode('', array_reverse($this->outerWrap['after']));
         }
     }
 

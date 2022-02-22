@@ -283,5 +283,26 @@ plugin.tx_bootstrap.settings.form.element {
         10 = 10
     }
     BootstrapGridelementsGridSpaceX < .BootstrapGridSpaceX
+
+    /*
+    Replacements for tt_content.space_before_class and tt_content.space_after_class.
+    If the replacement is not defined a container class like `container--space-before- + tt_content.space_before_class` will be set.
+    Used in CTypeFrameViewHelper.
+    */
+    SpaceBeforeClassReplacements {
+        extra-small = mt-3
+        small = mt-4
+        medium = mt-5
+        large = mt-6
+        extra-large = mt-7
+    }
+
+    SpaceAfterClassReplacements {
+        extra-small = mb-3
+        small = mb-4
+        medium = mb-5
+        large = mb-6
+        extra-large = mb-7
+    }
 }
 
