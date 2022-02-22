@@ -193,8 +193,6 @@ class FlexFormProcessor implements DataProcessorInterface
         // the image
         $xmlArray['mediaitem']['img_classes'] = 'img-fluid';
 
-        debug($xmlArray);
-
         return $xmlArray;
     }
 }

@@ -64,8 +64,8 @@ TCEFORM.tt_content {
     form_formframework, felogin_login
     shortcut, div, list, html
     */
-    CType.removeItems = textpic, image
-    # CType.removeItems = textmedia, bullets, table, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, form_formframework, shortcut, div
+    CType.removeItems = textpic, image, textmedia
+    # CType.removeItems = bullets, table, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, form_formframework, shortcut, div
 
     // layout
     layout.disabled = 1
@@ -152,6 +152,35 @@ TCEFORM.tt_content {
     // tx_bootstrap_additional_styles.types.div {
     //     disabled = 1
     // }
+
+    table_class {
+        keepItems = 
+        addItems {
+            table-bordered = Typ: Rahmen
+            table-borderless = Typ: Ohne Rahmen
+            table-striped = Typ: gestreift
+
+            table-sm = Größe: kleiner
+
+            text-start = Ausrichtung: links
+            text-center = Ausrichtung: zentriert
+            text-end = Ausrichtung: rechts
+            align-top = Ausrichtung: oben
+            align-middle = Ausrichtung: mittig
+            align-bottom = Ausrichtung: unten
+
+            table-primary = Farbe: primary (blau)
+            table-secondary = Farbe: secondary (grau)
+            table-success = Farbe: success (grün)
+            table-info = Farbe: info (hellblau)
+            table-warning = Farbe: warning (orange)
+            table-danger = Farbe: danger (rot)
+            table-light = Farbe: light (hellgrau)
+            table-dark = Farbe: dark (dunkelgrau)
+
+            table-hover = Effekt: Hover
+        }
+    }
 }
 
 // enable frame_class/container for layout homepage

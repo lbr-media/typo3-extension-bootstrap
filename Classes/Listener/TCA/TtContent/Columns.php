@@ -292,6 +292,12 @@ class Columns
         $GLOBALS['TCA']['tt_content']['columns']['header']['config']['cols'] = 20;
         $GLOBALS['TCA']['tt_content']['columns']['header']['config']['rows'] = 3;
 
+
+        /**
+         * CType=table
+         */
+        $GLOBALS['TCA']['tt_content']['columns']['table_class']['config']['renderType'] = 'selectMultipleSideBySide';
+
         // restore TCA
         $event->setTca($GLOBALS['TCA']);
     }

@@ -2,6 +2,7 @@
 # Table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (
+    table_class varchar(255) DEFAULT '' NOT NULL,
     tx_bootstrap_header_layout varchar(48) DEFAULT '' NOT NULL,
     tx_bootstrap_header_color varchar(48) DEFAULT '' NOT NULL,
     tx_bootstrap_header_predefined varchar(48) DEFAULT '' NOT NULL,
