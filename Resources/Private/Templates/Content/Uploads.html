@@ -6,39 +6,75 @@
         <ul class="list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 align-items-stretch">
             <f:for each="{files}" as="file" iteration="fileIterator">
                 <li class="col">
-                    <div class="card h-100 position-relative">
-                        <div class="row g-0 h-100">
-                            <div class="col-md-4">
-                                <div class="ps-3 py-3">
-                                    <f:render section="SVGIcon" arguments="{data:data, file:file}" />
+                    <f:switch expression="{data.uploads_type}">
+                        <f:case value="0">
+                            <f:comment><!-- Nur Dateiname --></f:comment>
+                            <div class="card h-100 position-relative">
+                                <f:render section="_Body" arguments="{_all}" />
+                            </div>
+                        </f:case>
+                        <f:case value="1">
+                            <f:comment><!-- Dateiname und Dateierweiterungssymbol --></f:comment>
+                            <div class="card h-100 position-relative">
+                                <div class="row g-0 h-100">
+                                    <div class="col-3">
+                                        <div class="ps-3 py-3">
+                                            <f:render section="_SVGIcon" arguments="{data:data, file:file}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-9 h-100">
+                                        <f:render section="_Body" arguments="{_all}" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-8 h-100">
-                                <div class="card-body h-100 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <h5 class="card-title">{f:if(condition: file.properties.title, then: file.properties.title, else: file.name) -> f:format.htmlspecialchars()}</h5>
-                                        <f:if condition="{file.properties.description}">
-                                            <p class="card-text">{file.properties.description -> f:format.nl2br()}</p>
-                                        </f:if>
-                                        
+                        </f:case>
+                        <f:case value="2">
+                            <f:comment><!-- Dateiname und Vorschaubild (wenn möglich) --></f:comment>
+                            <div class="card h-100 position-relative">
+                                <div class="row g-0 h-100">
+                                    <div class="col-3">
+                                        <div class="ps-3 py-3">
+                                            <f:if condition="{file.extension}=='jpg'||{file.extension}=='jpeg'||{file.extension}=='png'||{file.extension}=='gif'">
+                                                <f:then>
+                                                    <f:media file="{file}" width="150" alt="{file.properties.alternative}" class="img-fluid rounded" />
+                                                </f:then>
+                                                <f:else>
+                                                    <f:render section="_SVGIcon" arguments="{data:data, file:file}" />
+                                                </f:else>
+                                            </f:if>
+                                        </div>
                                     </div>
-                                    <div class="mt-2 text-end">
-                                        <small class="text-muted text-uppercase d-block mb-1">{file.extension}, <f:format.bytes value="{file.properties.size}" /></small>
-                                        <a href="{file.publicUrl}" class="btn btn-primary btn-sm stretched-link"{f:if(condition:data.target,then:' target="{data.target}"')}{f:if(condition:file.title, then: ' title="{file.title}"')}>download</a>
+                                    <div class="col-9 h-100">
+                                        <f:render section="_Body" arguments="{_all}" />
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                      </div>
+                        </f:case>
+                    </f:switch>
                 </li>
             </f:for>
         </ul>
     </f:if>
-
 </f:section>
 
-<f:section name="SVGIcon"><f:spaceless>
-    <svg xmlns="http://www.w3.org/2000/svg" width="226" height="318" viewBox="0 0 226 318" class="img-fluid rounded-start">
+<f:section name="_Body"><f:spaceless>
+    <div class="card-body h-100 d-flex flex-column justify-content-between">
+        <div>
+            <h5 class="card-title">{f:if(condition: file.properties.title, then: file.properties.title, else: file.name) -> f:format.htmlspecialchars()}</h5>
+            <f:if condition="{data.uploads_description}&&{file.properties.description}">
+                <p class="card-text">{file.properties.description -> f:format.nl2br()}</p>
+            </f:if>
+            
+        </div>
+        <div class="mt-2 d-flex justify-content-between align-items-center">
+            <small class="text-muted text-uppercase">{file.extension}<f:if condition="{data.filelink_size}">, <f:format.bytes value="{file.properties.size}" /></f:if></small>
+            <a href="{file.publicUrl}" class="btn btn-primary btn-sm stretched-link"{f:if(condition:data.target,then:' target="{data.target}"')}{f:if(condition:file.title, then: ' title="{file.title}"')}>download</a>
+        </div>
+    </div>
+</f:spaceless></f:section>
+
+<f:section name="_SVGIcon"><f:spaceless>
+    <svg xmlns="http://www.w3.org/2000/svg" width="226" height="318" viewBox="0 0 226 318" class="img-fluid">
         <g transform="translate(-12431 17200)">
             <g transform="translate(12569.598 -17026.459) rotate(90)">
                 <path d="M102.96,22.686h0a2.166,2.166,0,0,0-.663-1.524L76.849-2.04a2.272,2.272,0,0,0-2.326-.327,2.017,2.017,0,0,0-1.257,1.92V14.4H-9.443a2.1,2.1,0,0,0-2.128,2.118V29.248a2.1,2.1,0,0,0,2.128,2.118H73.266V46.213a2.124,2.124,0,0,0,3.583,1.524L102.3,24.279a2.331,2.331,0,0,0,.663-1.594" transform="translate(-130.232 2.549)" style="fill:currentColor" />
@@ -50,7 +86,7 @@
         </g>
         <text text-anchor="middle" style="font-size: 300%; fill:currentColor">
             <tspan y="210" x="113" style="font-weight: bold; text-transform: uppercase;">{file.extension}</tspan>
-            <tspan y="275" x="113"><f:format.bytes value="{file.properties.size}" /></tspan>
+            <f:if condition="{data.filelink_size}"><tspan y="275" x="113"><f:format.bytes value="{file.properties.size}" /></tspan></f:if>
         </text>
     </svg>
 </f:spaceless></f:section>

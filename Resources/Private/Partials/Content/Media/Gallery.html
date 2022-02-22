@@ -4,7 +4,7 @@
     data-namespace-typo3-fluid="true"><f:spaceless>
     <f:if condition="{files->f:count()}">
         <f:if condition="{grid.mediaitem.row_space_classes}"><div class="overflow-hidden"></f:if>
-        <div class="ce-gallery {grid.mediaitem.row_classes} {grid.mediaitem.row_space_classes}">
+        <div class="{grid.mediaitem.row_classes} {grid.mediaitem.row_space_classes}">
             <f:for each="{files}" as="media">
                 <div class="{grid.mediaitem.col_classes} {grid.mediaitem.col_space_classes}">
                     <f:if condition="{grid.mediaitem.item_classes}">

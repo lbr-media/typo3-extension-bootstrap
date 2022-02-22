@@ -26,12 +26,12 @@ Content elements
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapTextMediaFloat.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapTextMediaGrid.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType1.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType2.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapMediaGrid.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType3.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType4.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType5.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType6.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType7.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapTwoColumnsText.typoscript">
 
 
 /*

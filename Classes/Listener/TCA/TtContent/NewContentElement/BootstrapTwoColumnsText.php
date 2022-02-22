@@ -7,7 +7,7 @@ namespace LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement;
 use LBRmedia\Bootstrap\Service\TcaService;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-class BootstrapType7 implements NewContentElementInterface
+class BootstrapTwoColumnsText implements NewContentElementInterface
 {
     public static function addPlugin(TcaService $tcaService): void
     {
@@ -15,15 +15,15 @@ class BootstrapType7 implements NewContentElementInterface
         ExtensionManagementUtility::addPlugin(
             [
                 'Text | Text',
-                'bootstrap_type7',
-                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type7.svg',
+                'bootstrap_twocolumnstext',
+                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_twocolumnstext.svg',
             ],
             'CType',
             'bootstrap'
         );
 
         // Configure TCA
-        $GLOBALS['TCA']['tt_content']['types']['bootstrap_type7'] = [
+        $GLOBALS['TCA']['tt_content']['types']['bootstrap_twocolumnstext'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['text']['showitem'])
                 ->addShowitemAfter(implode(',', [
                     '--div--;Links',
@@ -36,6 +36,6 @@ class BootstrapType7 implements NewContentElementInterface
         ];
 
         // Icon in backend page view
-        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_type7'] = 'bootstrap_type7';
+        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_twocolumnstext'] = 'bootstrap_twocolumnstext';
     }
 }

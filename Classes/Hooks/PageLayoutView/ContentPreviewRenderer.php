@@ -27,9 +27,9 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
                 }
                 break;
-            case "bootstrap_type2":
-                if ($record['image']) {
-                    $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
+            case "bootstrap_imagegrid":
+                if ($record['assets']) {
+                    $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'assets'), $record) . '<br />';
                 }
                 break;
             case 'bootstrap_type3':
@@ -61,7 +61,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
             case 'bootstrap_type6':
                 $out .= $record['tx_bootstrap_teammember'] . " Einträge";
                 break;
-            case 'bootstrap_type7':
+            case 'bootstrap_twocolumnstext':
                 $out .= "<strong>Links:</strong><br />";
                 if ($record['tx_bootstrap_bodytext1']) {
                     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext1']), $record) . '<br />';

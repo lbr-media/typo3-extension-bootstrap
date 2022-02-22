@@ -141,11 +141,6 @@ class VariousProcessor implements DataProcessorInterface
                     new VariousProperty('image', 'file', 'image', null, 'object'),
                 ];
                 break;
-            case 'bootstrap_type2':
-                $this->properties = [
-                    new VariousProperty('images', 'files', 'image', [], 'array'),
-                ];
-                break;
             case 'bootstrap_type3':
                 $this->properties = [
                     new VariousProperty('images', 'files', 'image', [], 'array'),
@@ -176,12 +171,6 @@ class VariousProcessor implements DataProcessorInterface
                     new VariousProperty('teamMembers', 'extbase', 'tt_content_uid', [], 'array', [
                         'extbaseType' => 'TeamMember',
                     ]),
-                ];
-                break;
-            case 'bootstrap_type7':
-                $this->properties = [
-                    new VariousProperty('bodytext1', 'data', 'tx_bootstrap_bodytext1', '', 'string'),
-                    new VariousProperty('bodytext2', 'data', 'tx_bootstrap_bodytext2', '', 'string'),
                 ];
                 break;
         }

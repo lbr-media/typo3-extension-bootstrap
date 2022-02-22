@@ -12,12 +12,12 @@ mod.wizards.newContentElement.wizardItems.common2 {
                 CType = bootstrap_type1
             }
         }
-        bootstrap_type2 {
-            iconIdentifier = bootstrap_type2
-            title = Bild(er)
-            description = Eine Spalte mit Bild(ern).
+        bootstrap_mediagrid {
+            iconIdentifier = bootstrap_mediagrid
+            title = Medien-Raster
+            description = Bilder oder Videos in Raster-Elementen
             tt_content_defValues {
-                CType = bootstrap_type2
+                CType = bootstrap_mediagrid
             }
         }
         bootstrap_type3 {
@@ -52,12 +52,12 @@ mod.wizards.newContentElement.wizardItems.common2 {
                 CType = bootstrap_type6
             }
         }
-        bootstrap_type7 {
-            iconIdentifier = bootstrap_type7
+        bootstrap_twocolumnstext {
+            iconIdentifier = bootstrap_twocolumnstext
             title = Text | Text
             description = Zwei Spalten Text
             tt_content_defValues {
-                CType = bootstrap_type7
+                CType = bootstrap_twocolumnstext
             }
         }
         bootstrap_textmediagrid {
@@ -77,5 +77,5 @@ mod.wizards.newContentElement.wizardItems.common2 {
             }
         }
     }
-    show := addToList(bootstrap_type1,bootstrap_type2,bootstrap_type3,bootstrap_type4,bootstrap_type5,bootstrap_type6,bootstrap_type7,bootstrap_textmediagrid,bootstrap_textmediafloat)
+    show := addToList(bootstrap_type1,bootstrap_mediagrid,bootstrap_type3,bootstrap_type4,bootstrap_type5,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
 }

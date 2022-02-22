@@ -9,9 +9,9 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type1.svg',
     ],
-    'bootstrap_type2' => [
+    'bootstrap_mediagrid' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type2.svg',
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_mediagrid.svg',
     ],
     'bootstrap_type3' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
@@ -29,9 +29,9 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type6.svg',
     ],
-    'bootstrap_type7' => [
+    'bootstrap_twocolumnstext' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type7.svg',
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_twocolumnstext.svg',
     ],
     'bootstrap_textmediagrid' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,

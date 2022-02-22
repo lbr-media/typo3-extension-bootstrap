@@ -1,0 +1,6 @@
+tt_content {
+    bootstrap_twocolumnstext =< lib.contentElement
+    bootstrap_twocolumnstext {
+        templateName = BootstrapTwoColumnsText
+    }
+}

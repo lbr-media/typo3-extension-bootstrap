@@ -1,0 +1,17 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    title = Medien-Raster
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{files -> f:count()}">
+            <f:render partial="Media/Gallery" arguments="{_all}" />
+        </f:if>
+    </f:spaceless></f:section>
+
+</html>

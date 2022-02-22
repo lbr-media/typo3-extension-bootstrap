@@ -17,14 +17,14 @@ use TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent;
 class NewContentElement
 {
     const NEW_CONTENT_ELEMENT_CLASSES = [
-        // '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\TextMedia',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\TextMedia',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType1',
-        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType2',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapMediaGrid',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType3',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType4',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType5',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType6',
-        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType7',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTwoColumnsText',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTextMediaGrid',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTextMediaFloat',
     ];

@@ -5,43 +5,39 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement;
 
 use LBRmedia\Bootstrap\Service\TcaService;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-class BootstrapTextMediaGrid implements NewContentElementInterface
+class BootstrapMediaGrid implements NewContentElementInterface
 {
     public static function addPlugin(TcaService $tcaService): void
     {
         // Add content element
         ExtensionManagementUtility::addPlugin(
             [
-                'Text & Medien (Raster)',
-                'bootstrap_textmediagrid',
-                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_textmediagrid.svg',
+                'Medien-Raster',
+                'bootstrap_mediagrid',
+                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_mediagrid.svg',
             ],
             'CType',
             'bootstrap'
         );
 
         // Add flexform
-        $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_flexform']['config']['ds']['*,bootstrap_textmediagrid'] = 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml';
+        $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_flexform']['config']['ds']['*,bootstrap_mediagrid'] = 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapMediaGrid.xml';
 
         // Configure TCA
-        $GLOBALS['TCA']['tt_content']['types']['bootstrap_textmediagrid'] = [
-            'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'])
+        $GLOBALS['TCA']['tt_content']['types']['bootstrap_mediagrid'] = [
+            'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['image']['showitem'])
                 ->addShowitemAfter('tx_bootstrap_flexform', 'frames')
-                ->removeShowitems(['mediaAdjustments', 'gallerySettings', 'imagelinks'])
+                ->addShowitemAfter('assets', 'image')
+                ->removeShowitems(['bodytext', 'image', 'mediaAdjustments', 'gallerySettings', 'imagelinks'])
                 ->getShowitemsString(),
             'columnsOverrides' => [
-                'bodytext' => [
-                    'config' => [
-                        'enableRichtext' => true,
-                    ],
-                ],
                 'assets' => [
                     'config' => [
                         'minitems' => 1,
-                        'maxitems' => 10,
+                        'maxitems' => 30,
                         'overrideChildTca' => [
                             'columns' => [
                                 'crop' => [
@@ -57,6 +53,6 @@ class BootstrapTextMediaGrid implements NewContentElementInterface
         ];
 
         // Icon in backend page view
-        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_textmediagrid'] = 'bootstrap_textmediagrid';
+        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_mediagrid'] = 'bootstrap_mediagrid';
     }
 }

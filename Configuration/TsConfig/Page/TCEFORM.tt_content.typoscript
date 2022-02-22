@@ -1,9 +1,9 @@
 TCEFORM.tt_content {
-    header_link.disabled = 1
+    # header_link.disabled = 1
     // subheader.disabled = 1
-    sectionIndex.disabled = 1
+    # sectionIndex.disabled = 1
     // media.disabled = 0
-    date.disabled = 1
+    # date.disabled = 1
 
     header_layout {
         altLabels {
@@ -13,23 +13,21 @@ TCEFORM.tt_content {
             3 = <H3>
             4 = <H4>
             5 = <H5>
-            6 = <H6>
         }
-        removeItems = 5
+        # addItems {
+        #     6 = <H6>
+        # }
     }
 
     tx_bootstrap_background_color {
-        // disabled = 1
         addItems < lib.backgroundColors
     }
 
     tx_bootstrap_text_color {
-        // disabled = 1
         addItems < lib.textColors
     }
 
     tx_bootstrap_header_layout {
-        // disabled = 1
         addItems < lib.appHeaderLayout
     }
 
@@ -85,24 +83,24 @@ TCEFORM.tt_content {
     }
 
     tx_bootstrap_inner_frame_class {
-        disabled = 1
-        // addItems {
-        //     text-small-center = Text zentriert nur bei schmalen Endgeräten
-        // }
-        // keepItems = 
+        disabled = 0
+        keepItems = 
+        addItems {
+            text-small-center = Text zentriert nur bei schmalen Endgeräten
+        }
     }
 
     // media adjustments
-    imagewidth.disabled = 1
-    imageheight.disabled = 1
-    imageborder.disabled = 1
+    # imagewidth.disabled = 1
+    # imageheight.disabled = 1
+    # imageborder.disabled = 1
 
     // gallery settings
-    imageorient.disabled = 1
-    imagecols.disabled = 1
+    # imageorient.disabled = 1
+    # imagecols.disabled = 1
 
     // behavior
-    image_zoom.disabled = 1
+    # image_zoom.disabled = 1
 
     // links
     linkToTop.disabled = 1
@@ -121,12 +119,6 @@ TCEFORM.tt_content {
     // notes
     rowDescription.disabled = 1
     tx_bootstrap_section_index_header.disabled = 1
-
-    // disabled some fields for content element uploads
-    target.types.uploads.disabled = 1
-    filelink_size.types.uploads.disabled = 1
-    uploads_description.types.uploads.disabled = 1
-    uploads_type.types.uploads.disabled = 1
 
     // configuration for content element div
     // add inner_frame_class for the several styles

@@ -30,6 +30,7 @@ class BootstrapTextMediaFloat implements NewContentElementInterface
         $GLOBALS['TCA']['tt_content']['types']['bootstrap_textmediafloat'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'])
                 ->addShowitemAfter('tx_bootstrap_flexform', 'frames')
+                ->removeShowitems(['mediaAdjustments', 'gallerySettings', 'imagelinks'])
                 ->getShowitemsString(),
             'columnsOverrides' => [
                 'bodytext' => [

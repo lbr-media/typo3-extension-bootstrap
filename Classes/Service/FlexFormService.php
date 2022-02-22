@@ -11,6 +11,7 @@ class FlexFormService
 {
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID = 'TtContentBootstrapTextMediaGrid';
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT = 'TtContentBootstrapTextMediaFloat';
+    const TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID = 'TtContentBootstrapMediaGrid';
 
     /**
      * Array with the flexform configuration converted from XML string.
