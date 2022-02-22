@@ -22,12 +22,15 @@ page.10 {
 # Content
 lib.contentElement {
     layoutRootPaths {
-        10 = {$plugin.tx_bootstrap.view.layoutRootPath}Content/
+        0 = EXT:fluid_styled_content/Resources/Private/Layouts/
+        20 = {$plugin.tx_bootstrap.view.layoutRootPath}Content/
     }
     partialRootPaths {
-        10 = {$plugin.tx_bootstrap.view.partialRootPath}Content/
+        0 = EXT:fluid_styled_content/Resources/Private/Partials/
+        20 = {$plugin.tx_bootstrap.view.partialRootPath}Content/
     }
     templateRootPaths {
-        10 = {$plugin.tx_bootstrap.view.templateRootPath}Content/
+        0 = EXT:fluid_styled_content/Resources/Private/Templates/
+        20 = {$plugin.tx_bootstrap.view.templateRootPath}Content/
     }
 }

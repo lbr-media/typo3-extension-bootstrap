@@ -2,7 +2,20 @@
 Content elements
 */
 
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+    templateName = Default
+}
+
 tt_content {
+    text =< lib.contentElement
+    text {
+        templateName = Text
+    }
+    header =< lib.contentElement
+    header {
+        templateName = Header
+    }
     bootstrap_type1 =< lib.contentElement
     bootstrap_type1 {
         templateName = BootstrapType1
