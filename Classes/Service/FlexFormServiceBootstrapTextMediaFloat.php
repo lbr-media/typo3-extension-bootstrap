@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Service;
 
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
+use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use TYPO3\CMS\Core\TypoScript\TypoScriptService;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Flexform configurations for content element bootstrap_textmediafloat.
@@ -51,16 +55,15 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
 
     protected function getConfigurationArray(array $data): array
     {
-        $masonryEnabled = self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger);
-        return [
+        $transformedData = [
             'header_position' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.header_position.vDEF', 'string', 'above_all', $this->logger),
             'media_position' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.media_position.vDEF', 'string', ';;;;;', $this->logger),
             'media_size' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.media_size.vDEF', 'string', ';;;;;', $this->logger),
             'space_x' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_x.vDEF', 'string', ';;;;;', $this->logger),
             'space_y' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),
             'media' => [
-                'masonry_enabled' => $masonryEnabled,
-                'masonry_data_masonry_attribute' => $masonryEnabled ? ' data-masonry=\'{"percentPosition":true}\'' : "",
+                'masonry_enabled' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger),
+                'masonry_data_masonry_attribute' => "",
             ],
             'mediaitem' => [
                 'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
@@ -81,5 +84,32 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
                 ],
             ],
         ];
+
+        /**
+         * Process presets which overrides some/all settings
+         */
+        $presets = self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.presets.vDEF', 'string', '', $this->logger);
+        if ($presets) {
+            $ts = BootstrapGeneralUtility::getFullTypoScript();
+            if (isset($ts['tt_content.']['bootstrap_textmediafloat.']['flexform_presets.']) && is_array($ts['tt_content.']['bootstrap_textmediafloat.']['flexform_presets.'])) {
+                /** @var TypoScriptService $typoScriptService */
+                $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
+                $plainTS = $typoScriptService->convertTypoScriptArrayToPlainArray($ts['tt_content.']['bootstrap_textmediafloat.']['flexform_presets.']);
+
+                $keys = GeneralUtility::trimExplode(",", $presets, true);
+                foreach ($keys as $key) {
+                    $ts = BootstrapGeneralUtility::getFullTypoScript();
+                    if (isset($plainTS[$key]['configuration']) && is_array($plainTS[$key]['configuration'])) {
+                        ArrayUtility::mergeRecursiveWithOverrule($transformedData, $plainTS[$key]['configuration'], false, true, true);
+                    }
+                }
+            }
+        }
+
+        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled'] 
+            ? ' data-masonry=\'{"percentPosition":true}\''
+            : "";
+
+        return $transformedData;
     }
 }

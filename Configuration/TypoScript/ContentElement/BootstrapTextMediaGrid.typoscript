@@ -10,5 +10,103 @@ tt_content {
 
             20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
         }
+
+        flexform_presets {
+            # all_settings {
+            #     label = Preset Example
+            #     configuration {
+            #         order = text_media
+            #         header_position = above_all
+            #         device_order = ;;;;;
+            #         overflow_hidden = 1
+            #         col_text = ;;;;;
+            #         col_media = ;;;;;
+            #         space_y = 3;;;;;
+            #         space_x = 3;;;;;
+            #         align_items = ;;;;;
+            #         justify_content = ;;;;;
+            #         media {
+            #             masonry_enabled = 1
+            #             align_self = ;;;;;
+            #             space_inner {
+            #                 xs = ;;;;;;
+            #                 sm = ;;;;;;
+            #                 md = ;;;;;;
+            #                 lg = ;;;;;;
+            #                 xl = ;;;;;;
+            #                 xxl = ;;;;;;
+            #             }
+            #         }
+            #         mediaoptimizing {
+            #             width {
+            #                 xs = 100
+            #                 sm = 100
+            #                 md = 100
+            #                 lg = 100
+            #                 xl = 100
+            #                 xxl = 100
+            #             }
+            #         }
+            #         text {
+            #             align_self = ;;;;;
+            #             space_inner {
+            #                 xs = ;;;;;;
+            #                 sm = ;;;;;;
+            #                 md = ;;;;;;
+            #                 lg = ;;;;;;
+            #                 xl = ;;;;;;
+            #                 xxl = ;;;;;;
+            #             }
+            #         }
+            #         mediaitem {
+            #             image_zoom = 0
+            #             col = ;;;;;
+            #             space_y = ;;;;;
+            #             space_x = ;;;;;
+            #             align_items = ;;;;;
+            #             justify_content = ;;;;;
+            #         }
+            #     }
+            # }
+
+            10 {
+                label = Standard-Abstände zwischen Text und Medien
+                configuration {
+                    space_y = 3;;4;;;
+                    space_x = 3;;4;;;
+                }
+            }
+            20 {
+                label = Standard-Abstände zwischen Medien
+                configuration {
+                    mediaitem {
+                        space_y = 3;;4;;;
+                        space_x = 3;;4;;;
+                    }
+                }
+            }
+            30 {
+                label = Aufteilung: 50% Text, 50% Medien (ab SM)
+                configuration {
+                    col_text = ;6;;;;
+                    col_media = ;6;;;;
+                }
+            }
+            40 {
+                label = Aufteilung: 50% Text, 50% Medien (ab MD)
+                configuration {
+                    col_text = ;;6;;;
+                    col_media = ;;6;;;
+                }
+            }
+            50 {
+                label = Medien-Raster: zweispaltig
+                configuration {
+                    mediaitem {
+                        col = 6;;;;;
+                    }
+                }
+            }
+        }
     }
 }

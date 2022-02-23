@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Service;
 
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
+use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use TYPO3\CMS\Core\TypoScript\TypoScriptService;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Flexform configurations for content element bootstrap_textmediagrid.
@@ -103,8 +107,7 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
 
     protected function getConfigurationArray(array $data): array
     {
-        $masonryEnabled = self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger);
-        return [
+        $transformedData = [
             'order' => self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.order.vDEF', 'string', 'text_media', $this->logger),
             'header_position' => self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.header_position.vDEF', 'string', 'above_all', $this->logger),
             'device_order' => self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.device_order.vDEF', 'string', ';;;;;', $this->logger),
@@ -116,8 +119,8 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
             'align_items' => self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.align_items.vDEF', 'string', ';;;;;', $this->logger),
             'justify_content' => self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.justify_content.vDEF', 'string', ';;;;;', $this->logger),
             'media' => [
-                'masonry_enabled' => $masonryEnabled,
-                'masonry_data_masonry_attribute' => $masonryEnabled ? ' data-masonry=\'{"percentPosition":true}\'' : "", $this->logger,
+                'masonry_enabled' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger),
+                'masonry_data_masonry_attribute' => "",
                 'align_self' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.align_self.vDEF', 'string', ';;;;;', $this->logger),
                 'space_inner' => [
                     'xs' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;', $this->logger),
@@ -125,6 +128,7 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
                     'md' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_md.vDEF', 'string', ';;;;;;', $this->logger),
                     'lg' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_lg.vDEF', 'string', ';;;;;;', $this->logger),
                     'xl' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xl.vDEF', 'string', ';;;;;;', $this->logger),
+                    'xxl' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xxl.vDEF', 'string', ';;;;;;', $this->logger),
                 ],
             ],
             'mediaoptimizing' => [
@@ -156,5 +160,32 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
                 'justify_content' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.justify_content.vDEF', 'string', ';;;;;', $this->logger),
             ],
         ];
+
+        /**
+         * Process presets which overrides some/all settings
+         */
+        $presets = self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.presets.vDEF', 'string', '', $this->logger);
+        if ($presets) {
+            $ts = BootstrapGeneralUtility::getFullTypoScript();
+            if (isset($ts['tt_content.']['bootstrap_textmediagrid.']['flexform_presets.']) && is_array($ts['tt_content.']['bootstrap_textmediagrid.']['flexform_presets.'])) {
+                /** @var TypoScriptService $typoScriptService */
+                $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
+                $plainTS = $typoScriptService->convertTypoScriptArrayToPlainArray($ts['tt_content.']['bootstrap_textmediagrid.']['flexform_presets.']);
+
+                $keys = GeneralUtility::trimExplode(",", $presets, true);
+                foreach ($keys as $key) {
+                    $ts = BootstrapGeneralUtility::getFullTypoScript();
+                    if (isset($plainTS[$key]['configuration']) && is_array($plainTS[$key]['configuration'])) {
+                        ArrayUtility::mergeRecursiveWithOverrule($transformedData, $plainTS[$key]['configuration'], false, true, true);
+                    }
+                }
+            }
+        }
+
+        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled'] 
+            ? ' data-masonry=\'{"percentPosition":true}\''
+            : "";
+        
+        return $transformedData;
     }
 }

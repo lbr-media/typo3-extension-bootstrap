@@ -84,16 +84,6 @@ class GeneralUtility
     }
 
     /**
-     * Returns the TypoScript configuration in path: plugin.tx_bootstrap.settings.form.element as array.
-     */
-    public static function getFormElementPluginSettings(): array
-    {
-        $settings = self::getConfigurationManager()->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
-
-        return isset($settings['plugin.']['tx_bootstrap.']['settings.']['form.']['element.']) ? $settings['plugin.']['tx_bootstrap.']['settings.']['form.']['element.'] : [];
-    }
-
-    /**
      * Saves the form data into a logfile.
      *
      * @throws Exception
@@ -126,6 +116,24 @@ class GeneralUtility
     {
         return Typo3GeneralUtility::makeInstance(ConfigurationManager::class);
         // return Typo3GeneralUtility::makeInstance(ObjectManager::class)->get(ConfigurationManagerInterface::class);
+    }
+
+    /**
+     * Returns the TypoScript configuration in path: plugin.tx_bootstrap.settings.form.element as array.
+     */
+    public static function getFormElementPluginSettings(): array
+    {
+        $settings = self::getFullTypoScript();
+
+        return isset($settings['plugin.']['tx_bootstrap.']['settings.']['form.']['element.']) ? $settings['plugin.']['tx_bootstrap.']['settings.']['form.']['element.'] : [];
+    }
+
+    /**
+     * Returns the full TypoScript configuration
+     */
+    public static function getFullTypoScript(): array
+    {
+        return self::getConfigurationManager()->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
     }
 
     /**

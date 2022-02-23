@@ -8,6 +8,18 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
+                    <field index="presets">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <itemsProcFunc>LBRmedia\Bootstrap\UserFunc\Tca\TtContent->itemsProcFunc</itemsProcFunc>
+                                <CType>bootstrap_textmediafloat</CType>
+                            </config>
+                        </value>
+                    </field>
                     <field index="header_position">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position</label>

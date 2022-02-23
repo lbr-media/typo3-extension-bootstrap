@@ -10,5 +10,75 @@ tt_content {
 
             20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
         }
+
+        flexform_presets {
+            # all_settings {
+            #     label = Preset Example
+            #     configuration {
+            #         media {
+            #             masonry_enabled = 1
+            #         }
+            #         mediaitem {
+            #             image_zoom = 0
+            #             col = ;;;;;
+            #             space_y = ;;;;;
+            #             space_x = ;;;;;
+            #             align_items = ;;;;;
+            #             justify_content = ;;;;;
+            #         }
+            #         mediaoptimizing {
+            #             width {
+            #                 xs = 100
+            #                 sm = 100
+            #                 md = 100
+            #                 lg = 100
+            #                 xl = 100
+            #                 xxl = 100
+            #             }
+            #         }
+            #     }
+            # }
+
+            10 {
+                label = Standard-Abstände
+                configuration {
+                    mediaitem {
+                        space_y = 3;;4;;;
+                        space_x = 3;;4;;;
+                    }
+                }
+            }
+            20 {
+                label = Raster: 2
+                configuration {
+                    mediaitem {
+                        col = 6;;;;;
+                    }
+                }
+            }
+            30 {
+                label = Raster: 2 XS, 3 MD, 4 XL
+                configuration {
+                    mediaitem {
+                        col = 6;;4;3;;
+                    }
+                }
+            }
+            40 {
+                label = Optimierung: 2 XS, 3 MD, 4 XL
+                configuration {
+                    mediaoptimizing {
+                        width {
+                            xs = 50
+                            sm = 50
+                            md = 33
+                            lg = 25
+                            xl = 25
+                            xxl = 25
+                        }
+                    }
+                }
+            }
+        }
     }
 }

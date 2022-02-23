@@ -9,6 +9,18 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
+                    <field index="presets">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <itemsProcFunc>LBRmedia\Bootstrap\UserFunc\Tca\TtContent->itemsProcFunc</itemsProcFunc>
+                                <CType>bootstrap_mediagrid</CType>
+                            </config>
+                        </value>
+                    </field>
                     <field index="image_zoom">
                         <value index="TCEforms">
                             <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:image_zoom</label>

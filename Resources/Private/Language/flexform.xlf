@@ -195,6 +195,13 @@
             <trans-unit id="sACCORDION.keep_open">
                 <source>Geöffnet lassen beim Öffnen von anderen Accordion-Elemente</source>
             </trans-unit>
+
+            <trans-unit id="presets">
+                <source>Voreinstellungen</source>
+            </trans-unit>
+            <trans-unit id="presets.description">
+                <source>Voreinstellungen fassen einzelne oder mehrere Einstellungen zusammen.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
