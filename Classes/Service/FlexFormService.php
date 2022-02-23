@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Service;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class FlexFormService
+class FlexFormService implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+    
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID = 'TtContentBootstrapTextMediaGrid';
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT = 'TtContentBootstrapTextMediaFloat';
     const TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID = 'TtContentBootstrapMediaGrid';
@@ -60,6 +64,8 @@ class FlexFormService
         }
     }
 
+    
+
     /**
      * Helper function to get one value out of the flexform data.
      *
@@ -69,9 +75,9 @@ class FlexFormService
      *
      * @return mixed
      */
-    protected function getFlexformValue($pointer, string $type = 'string', $defaultValue = '')
+    protected function getFlexformValue(string $pointer, string $type = 'string', $defaultValue = '')
     {
-        if (!isset($pointer)) {
+        if (trim($pointer) === "") {
             return $defaultValue;
         }
         switch ($type) {
@@ -89,5 +95,23 @@ class FlexFormService
         }
 
         return $pointer;
+    }
+
+    /**
+     * Helper function to get a value from the flexform array.
+     */
+    protected function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '')
+    {
+        $parts = explode(".", $path);
+        foreach ($parts as $part) {
+            if (isset($data[$part])) {
+                $data = $data[$part];
+            } else {
+                $this->logger->error("Cannot get path in flexform data: ".$path);
+                return null;
+            }
+        }
+
+        return $this->getFlexformValue($data, $type, $defaultValue);
     }
 }

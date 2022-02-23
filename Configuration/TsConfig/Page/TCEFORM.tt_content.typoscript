@@ -90,35 +90,23 @@ TCEFORM.tt_content {
         }
     }
 
-    // media adjustments
-    # imagewidth.disabled = 1
-    # imageheight.disabled = 1
-    # imageborder.disabled = 1
-
-    // gallery settings
-    # imageorient.disabled = 1
-    # imagecols.disabled = 1
-
-    // behavior
-    # image_zoom.disabled = 1
-
     // links
-    linkToTop.disabled = 1
+    // linkToTop.disabled = 1
 
     // language
-    sys_language_uid.disabled = 1
+    // sys_language_uid.disabled = 1
 
     // access
     // fe_group.disabled = 1
-    fe_login_mode.disabled = 1
-    editlock.disabled = 1
+    // fe_login_mode.disabled = 1
+    // editlock.disabled = 1
 
     // categories
-    categories.disabled = 1
+    // categories.disabled = 1
 
     // notes
-    rowDescription.disabled = 1
-    tx_bootstrap_section_index_header.disabled = 1
+    // rowDescription.disabled = 1
+    // tx_bootstrap_section_index_header.disabled = 1
 
     // configuration for content element div
     // add inner_frame_class for the several styles
@@ -173,6 +161,12 @@ TCEFORM.tt_content {
             table-hover = Effekt: Hover
         }
     }
+
+    // disable image zoom on flexforms
+    tx_bootstrap_flexform.bootstrap_textmediagrid.sMEDIA.image_zoom.disabled = 1
+    tx_bootstrap_flexform.bootstrap_textmediafloat.sMEDIA.image_zoom.disabled = 1
+    tx_bootstrap_flexform.bootstrap_mediagrid.sMEDIA.image_zoom.disabled = 1
+
 }
 
 // enable frame_class/container for layout homepage

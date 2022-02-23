@@ -27,7 +27,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
                 }
                 break;
-            case "bootstrap_imagegrid":
+            case "bootstrap_mediagrid":
                 if ($record['assets']) {
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'assets'), $record) . '<br />';
                 }
@@ -126,8 +126,8 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
         $info = [];
         $record = $item->getRecord();
 
-        // `CType` and `list_type`is the only difference to the parent class` method: 
-        $this->getProcessedValue($item, 'CType,list_type,starttime,endtime,fe_group,space_before_class,space_after_class', $info);
+        // `CType`, `list_type` and `frame_class` are the only differences to the parent class` method: 
+        $this->getProcessedValue($item, 'CType,list_type,starttime,endtime,fe_group,frame_class,space_before_class,space_after_class', $info);
 
         if (!empty($GLOBALS['TCA']['tt_content']['ctrl']['descriptionColumn']) && !empty($record[$GLOBALS['TCA']['tt_content']['ctrl']['descriptionColumn']])) {
             $info[] = htmlspecialchars($record[$GLOBALS['TCA']['tt_content']['ctrl']['descriptionColumn']]);

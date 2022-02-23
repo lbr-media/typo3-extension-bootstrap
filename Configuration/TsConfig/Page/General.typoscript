@@ -5,7 +5,7 @@ RTE.default.preset = BOOTSTRAP
 
 # allowed new tables
 #[treeLevel = 1,2,3,4,5,6]
-mod.web_list.allowedNewTables = tt_content,pages,sys_note,sys_file_collection
+// mod.web_list.allowedNewTables = tt_content,pages,sys_note,sys_file_collection
 #[global]
 
 # default language

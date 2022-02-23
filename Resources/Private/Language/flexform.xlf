@@ -122,70 +122,72 @@
             <trans-unit id="textmedia.space_outer.xl">
                 <source>Abstand außen: Extra groß</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIA.sheetTitle">
+            <trans-unit id="sMEDIA.sheetTitle">
                 <source>Medienbereich</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIA.sheetDescription">
+            <trans-unit id="sMEDIA.sheetDescription">
                 <source>Einstellungen nur für den Medienbereich</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIA.align_self">
+            <trans-unit id="sMEDIA.align_self">
                 <source>Ausrichtung: vertikal</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.sheetTitle">
+            <trans-unit id="sMEDIAITEM.sheetTitle">
                 <source>Einzelne Medien</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.sheetDescription">
+            <trans-unit id="sMEDIAITEM.sheetDescription">
                 <source>Einstellungen für die einzelnen Medienelemente</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.col">
+            <trans-unit id="sMEDIAITEM.col">
                 <source>Rasterbreite einzelnes Medienelement</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.space_y">
+            <trans-unit id="sMEDIAITEM.space_y">
                 <source>Abstand zwischen den Medienelementen: vertikal</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.space_x">
+            <trans-unit id="sMEDIAITEM.space_x">
                 <source>Abstand zwischen den Medienelementen: horizontal</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.align_items">
+            <trans-unit id="sMEDIAITEM.align_items">
                 <source>Ausrichtung der Medienelemente: vertikal</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.justify_content">
+            <trans-unit id="sMEDIAITEM.justify_content">
                 <source>Ausrichtung der Medienelemente: horizontal</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.text_color">
+            <trans-unit id="sMEDIAITEM.text_color">
                 <source>Farbe der Beschreibung</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.background_color">
+            <trans-unit id="sMEDIAITEM.background_color">
                 <source>Hintergrundfarbe einzelnes Medienelement</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAITEM.space_inner_img">
+            <trans-unit id="sMEDIAITEM.space_inner_img">
                 <source>Abstand zwischen Medienelement und Rand</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.sheetTitle">
+            <trans-unit id="sMEDIAOPTIMIZING.sheetTitle">
                 <source>Bildoptimierung</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.sheetDescription">
+            <trans-unit id="sMEDIAOPTIMIZING.sheetDescription">
                 <source>Das CMS kann nicht wissen, wie groß die Bilder tatsächlich ausgegeben werden. Es geht erstmal von 100% Fensterbreite aus, um keine zu kleinen Bilder zu erstellen. Hier kann man die wirkliche Größe pro Endgerät angeben, um passende Bilder generieren zu lassen und somit Speicherbedarf und Ladezeiten der Seite zu optimieren.</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_xs">
+            <trans-unit id="sMEDIAOPTIMIZING.width_xs">
                 <source>Bildbreite in %: XS (0-576px)</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_sm">
+            <trans-unit id="sMEDIAOPTIMIZING.width_sm">
                 <source>Bildbreite in %: SM (576-767px)</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_md">
+            <trans-unit id="sMEDIAOPTIMIZING.width_md">
                 <source>Bildbreite in %: MD (768-991px)</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_lg">
+            <trans-unit id="sMEDIAOPTIMIZING.width_lg">
                 <source>Bildbreite in %: LG (992-1199)</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_xl">
+            <trans-unit id="sMEDIAOPTIMIZING.width_xl">
                 <source>Bildbreite in %: XL (1200-1399px)</source>
             </trans-unit>
-            <trans-unit id="textmedia.sMEDIAOPTIMIZING.width_xxl">
+            <trans-unit id="sMEDIAOPTIMIZING.width_xxl">
                 <source>Bildbreite in %: XXL (1400-*px)</source>
             </trans-unit>
-
+            <trans-unit id="masonry_enabled">
+                <source>Masonry-Grid aktivieren</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

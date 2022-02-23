@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3FlexForms>
     <sheets>
+        <sMEDIA>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="image_zoom">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:image_zoom</label>
+                            <config>
+                                <type>check</type>
+                                <renderType>checkboxToggle</renderType>
+                                <default>0</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="masonry_enabled">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:masonry_enabled</label>
+                            <config>
+                                <type>check</type>
+                                <renderType>checkboxToggle</renderType>
+                                <default>0</default>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sMEDIA>
         <sMEDIAITEM>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="col">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.col</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.col</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -22,7 +53,7 @@
                     </field>
                     <field index="space_y">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.space_y</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_y</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -33,7 +64,7 @@
                     </field>
                     <field index="space_x">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.space_x</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_x</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -44,7 +75,7 @@
                     </field>
                     <field index="align_items">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.align_items</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.align_items</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -55,7 +86,7 @@
                     </field>
                     <field index="justify_content">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAITEM.justify_content</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.justify_content</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -70,14 +101,14 @@
         <sMEDIAOPTIMIZING>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="width_xs">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_xs</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xs</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -95,7 +126,7 @@
                     </field>
                     <field index="width_sm">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_sm</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_sm</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -113,7 +144,7 @@
                     </field>
                     <field index="width_md">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_md</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_md</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -131,7 +162,7 @@
                     </field>
                     <field index="width_lg">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_lg</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_lg</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -149,7 +180,7 @@
                     </field>
                     <field index="width_xl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_xl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xl</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -167,7 +198,7 @@
                     </field>
                     <field index="width_xxl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sMEDIAOPTIMIZING.width_xxl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xxl</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>

@@ -39,82 +39,90 @@ class FlexFormServiceTtContent extends FlexFormService implements FlexFormServic
 
     protected function getConfigurationArray_BootstrapTextMediaGrid(array $data): array
     {
+        $masonryEnabled = $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false);
         return [
-            'order' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['order']['vDEF'], 'string', 'text_media'),
-            'header_position' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['header_position']['vDEF'], 'string', 'above_all'),
-            'device_order' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['device_order']['vDEF'], 'string', ';;;;;'),
-            'overflow_hidden' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['overflow_hidden']['vDEF'], 'bool', true),
-            'col_text' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['col_text']['vDEF'], 'string', ';;;;;'),
-            'col_media' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['col_media']['vDEF'], 'string', ';;;;;'),
-            'space_y' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['space_y']['vDEF'], 'string', ';;;;;'),
-            'space_x' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['space_x']['vDEF'], 'string', ';;;;;'),
-            'align_items' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['align_items']['vDEF'], 'string', ';;;;;'),
-            'justify_content' => $this->getFlexformValue($data['data']['sOUTER']['lDEF']['justify_content']['vDEF'], 'string', ';;;;;'),
+            'order' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.order.vDEF', 'string', 'text_media'),
+            'header_position' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.header_position.vDEF', 'string', 'above_all'),
+            'device_order' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.device_order.vDEF', 'string', ';;;;;'),
+            'overflow_hidden' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.overflow_hidden.vDEF', 'bool', true),
+            'col_text' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.col_text.vDEF', 'string', ';;;;;'),
+            'col_media' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.col_media.vDEF', 'string', ';;;;;'),
+            'space_y' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.space_y.vDEF', 'string', ';;;;;'),
+            'space_x' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.space_x.vDEF', 'string', ';;;;;'),
+            'align_items' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.align_items.vDEF', 'string', ';;;;;'),
+            'justify_content' => $this->getFlexformValueByPath($data, 'data.sOUTER.lDEF.justify_content.vDEF', 'string', ';;;;;'),
             'media' => [
-                'align_self' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['align_self']['vDEF'], 'string', ';;;;;'),
+                'masonry_enabled' => $masonryEnabled,
+                'masonry_data_masonry_attribute' => $masonryEnabled ? ' data-masonry=\'{"percentPosition":true}\'' : "",
+                'align_self' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.align_self.vDEF', 'string', ';;;;;'),
                 'space_inner' => [
-                    'xs' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_xs']['vDEF'], 'string', ';;;;;;'),
-                    'sm' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_sm']['vDEF'], 'string', ';;;;;;'),
-                    'md' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_md']['vDEF'], 'string', ';;;;;;'),
-                    'lg' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_lg']['vDEF'], 'string', ';;;;;;'),
-                    'xl' => $this->getFlexformValue($data['data']['sMEDIA']['lDEF']['space_inner_xl']['vDEF'], 'string', ';;;;;;'),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;'),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_sm.vDEF', 'string', ';;;;;;'),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_md.vDEF', 'string', ';;;;;;'),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_lg.vDEF', 'string', ';;;;;;'),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xl.vDEF', 'string', ';;;;;;'),
                 ],
             ],
             'mediaoptimizing' => [
                 'width' => [
-                    'xs' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xs']['vDEF'], 'int', 100),
-                    'sm' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_sm']['vDEF'], 'int', 100),
-                    'md' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_md']['vDEF'], 'int', 100),
-                    'lg' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_lg']['vDEF'], 'int', 100),
-                    'xl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xl']['vDEF'], 'int', 100),
-                    'xxl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xxl']['vDEF'], 'int', 100),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xs.vDEF', 'int', 100),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_sm.vDEF', 'int', 100),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_md.vDEF', 'int', 100),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_lg.vDEF', 'int', 100),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xl.vDEF', 'int', 100),
+                    'xxl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100),
                 ],
             ],
             'text' => [
-                'align_self' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['align_self']['vDEF'], 'string', ';;;;;'),
+                'align_self' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.align_self.vDEF', 'string', ';;;;;'),
                 'space_inner' => [
-                    'xs' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_xs']['vDEF'], 'string', ';;;;;;'),
-                    'sm' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_sm']['vDEF'], 'string', ';;;;;;'),
-                    'md' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_md']['vDEF'], 'string', ';;;;;;'),
-                    'lg' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_lg']['vDEF'], 'string', ';;;;;;'),
-                    'xl' => $this->getFlexformValue($data['data']['sTEXT']['lDEF']['space_inner_xl']['vDEF'], 'string', ';;;;;;'),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;'),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_sm.vDEF', 'string', ';;;;;;'),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_md.vDEF', 'string', ';;;;;;'),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_lg.vDEF', 'string', ';;;;;;'),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_xl.vDEF', 'string', ';;;;;;'),
                 ],
             ],
             'mediaitem' => [
-                // 'image_zoom' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['image_zoom']['vDEF'], 'bool', false),
-                'col' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['col']['vDEF'], 'string', ';;;;;'),
-                'space_y' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['space_y']['vDEF'], 'string', ';;;;;'),
-                'space_x' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['space_x']['vDEF'], 'string', ';;;;;'),
-                'align_items' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['align_items']['vDEF'], 'string', ';;;;;'),
-                'justify_content' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['justify_content']['vDEF'], 'string', ';;;;;'),
+                'image_zoom' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false),
+                'col' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;'),
+                'space_y' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;'),
+                'space_x' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_x.vDEF', 'string', ';;;;;'),
+                'align_items' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.align_items.vDEF', 'string', ';;;;;'),
+                'justify_content' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.justify_content.vDEF', 'string', ';;;;;'),
             ],
         ];
     }
 
     protected function getConfigurationArray_BootstrapTextMediaFloat(array $data): array
     {
+        $masonryEnabled = $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false);
         return [
-            'header_position' => $this->getFlexformValue($data['data']['sGENERAL']['lDEF']['header_position']['vDEF'], 'string', 'above_all'),
-            'media_position' => $this->getFlexformValue($data['data']['sGENERAL']['lDEF']['media_position']['vDEF'], 'string', ';;;;;'),
-            'media_size' => $this->getFlexformValue($data['data']['sGENERAL']['lDEF']['media_size']['vDEF'], 'string', ';;;;;'),
-            'space_x' => $this->getFlexformValue($data['data']['sGENERAL']['lDEF']['space_x']['vDEF'], 'string', ';;;;;'),
-            'space_y' => $this->getFlexformValue($data['data']['sGENERAL']['lDEF']['space_y']['vDEF'], 'string', ';;;;;'),
+            'header_position' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.header_position.vDEF', 'string', 'above_all'),
+            'media_position' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.media_position.vDEF', 'string', ';;;;;'),
+            'media_size' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.media_size.vDEF', 'string', ';;;;;'),
+            'space_x' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_x.vDEF', 'string', ';;;;;'),
+            'space_y' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_y.vDEF', 'string', ';;;;;'),
+            'media' => [
+                'masonry_enabled' => $masonryEnabled,
+                'masonry_data_masonry_attribute' => $masonryEnabled ? ' data-masonry=\'{"percentPosition":true}\'' : "",
+            ],
             'mediaitem' => [
-                // 'image_zoom' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['image_zoom']['vDEF'], 'bool', false),
-                'col' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['col']['vDEF'], 'string', ';;;;;'),
-                'space_y' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['space_y']['vDEF'], 'string', ';;;;;'),
-                'space_x' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['space_x']['vDEF'], 'string', ';;;;;'),
-                'align_items' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['align_items']['vDEF'], 'string', ';;;;;'),
-                'justify_content' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['justify_content']['vDEF'], 'string', ';;;;;'),
+                'image_zoom' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false),
+                'col' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;'),
+                'space_y' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;'),
+                'space_x' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_x.vDEF', 'string', ';;;;;'),
+                'align_items' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.align_items.vDEF', 'string', ';;;;;'),
+                'justify_content' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.justify_content.vDEF', 'string', ';;;;;'),
             ],
             'mediaoptimizing' => [
                 'width' => [
-                    'xs' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xs']['vDEF'], 'int', 100),
-                    'sm' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_sm']['vDEF'], 'int', 100),
-                    'md' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_md']['vDEF'], 'int', 100),
-                    'lg' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_lg']['vDEF'], 'int', 100),
-                    'xl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xl']['vDEF'], 'int', 100),
-                    'xxl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xxl']['vDEF'], 'int', 100),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xs.vDEF', 'int', 100),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_sm.vDEF', 'int', 100),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_md.vDEF', 'int', 100),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_lg.vDEF', 'int', 100),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xl.vDEF', 'int', 100),
+                    'xxl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100),
                 ],
             ],
         ];
@@ -122,24 +130,29 @@ class FlexFormServiceTtContent extends FlexFormService implements FlexFormServic
 
     protected function getConfigurationArray_BootstrapMediaGrid(array $data): array
     {
+        $masonryEnabled = $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false);
         return [
-            'mediaoptimizing' => [
-                'width' => [
-                    'xs' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xs']['vDEF'], 'int', 100),
-                    'sm' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_sm']['vDEF'], 'int', 100),
-                    'md' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_md']['vDEF'], 'int', 100),
-                    'lg' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_lg']['vDEF'], 'int', 100),
-                    'xl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xl']['vDEF'], 'int', 100),
-                    'xxl' => $this->getFlexformValue($data['data']['sMEDIAOPTIMIZING']['lDEF']['width_xxl']['vDEF'], 'int', 100),
-                ],
+            'media' => [
+                'masonry_enabled' => $masonryEnabled,
+                'masonry_data_masonry_attribute' => $masonryEnabled ? ' data-masonry=\'{"percentPosition":true}\'' : "",
             ],
             'mediaitem' => [
-                // 'image_zoom' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['image_zoom']['vDEF'], 'bool', false),
-                'col' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['col']['vDEF'], 'string', ';;;;;'),
-                'space_y' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['space_y']['vDEF'], 'string', ';;;;;'),
-                'space_x' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['space_x']['vDEF'], 'string', ';;;;;'),
-                'align_items' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['align_items']['vDEF'], 'string', ';;;;;'),
-                'justify_content' => $this->getFlexformValue($data['data']['sMEDIAITEM']['lDEF']['justify_content']['vDEF'], 'string', ';;;;;'),
+                'image_zoom' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false),
+                'col' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;'),
+                'space_y' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;'),
+                'space_x' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_x.vDEF', 'string', ';;;;;'),
+                'align_items' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.align_items.vDEF', 'string', ';;;;;'),
+                'justify_content' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.justify_content.vDEF', 'string', ';;;;;'),
+            ],
+            'mediaoptimizing' => [
+                'width' => [
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xs.vDEF', 'int', 100),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_sm.vDEF', 'int', 100),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_md.vDEF', 'int', 100),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_lg.vDEF', 'int', 100),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xl.vDEF', 'int', 100),
+                    'xxl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100),
+                ],
             ],
         ];
     }

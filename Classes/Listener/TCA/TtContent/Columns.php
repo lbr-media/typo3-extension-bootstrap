@@ -159,6 +159,9 @@ class Columns
                             </T3DataStructure>
                         ',
                     ],
+                    'search' => [
+                        'andWhere' => '{#CType}=\'list\'',
+                    ],
                 ],
             ],
             'tx_bootstrap_image1' => [

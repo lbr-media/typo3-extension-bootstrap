@@ -8,6 +8,7 @@ config {
 page.includeJSLibs {
     # polyfills
     # polyfills = fileadmin/bootstrap/assets/js/Polyfills.js
+    masonry = fileadmin/bootstrap/assets/js/masonry.pkgd.min.js
 }
 
 page.includeJSFooterlibs {
