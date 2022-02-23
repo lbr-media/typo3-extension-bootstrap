@@ -17,7 +17,7 @@ class AccordionItemRepository extends Repository
      * @var array
      */
     protected $defaultOrderings = [
-        'sorting' => QueryInterface::ORDER_ASCENDING,
+        'sorting' => QueryInterface::ORDER_ASCENDING
     ];
 
     /**

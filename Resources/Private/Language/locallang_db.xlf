@@ -44,8 +44,12 @@
             <trans-unit id="tx_bootstrap_domain_model_accordionitem.opened_on_load">
                 <source>Geöffnet</source>
             </trans-unit>
-            <trans-unit id="tx_bootstrap_domain_model_accordionitem.tt_content_children">
+            <trans-unit id="tx_bootstrap_domain_model_accordionitem.content_elements">
                 <source>Inhaltselemente</source>
+            </trans-unit>
+
+            <trans-unit id="tx_bootstrap_domain_model_contentelement">
+                <source>Inhaltselement</source>
             </trans-unit>
         </body>
     </file>

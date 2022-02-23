@@ -57,6 +57,29 @@ CREATE TABLE sys_file_reference (
 CREATE TABLE tx_bootstrap_domain_model_accordionitem (
     title varchar(255) DEFAULT '' NOT NULL,
     opened_on_load tinyint(1) unsigned NOT NULL default '0',
-    tt_content_children int(11) DEFAULT '0' NOT NULL,
+    content_elements int(11) DEFAULT '0' NOT NULL,
     tt_content_uid int(11) DEFAULT '0' NOT NULL,
+);
+
+#
+# Table structure for table 'tx_bootstrap_domain_model_contentelement'
+#
+CREATE TABLE tx_bootstrap_domain_model_contentelement (
+    header varchar(255) DEFAULT '' NOT NULL,
+	header_position varchar(255) DEFAULT '' NOT NULL,
+    header_layout varchar(30) DEFAULT '0' NOT NULL,
+    header_link varchar(1024) DEFAULT '' NOT NULL,
+    date int(10) unsigned DEFAULT '0' NOT NULL,
+    subheader varchar(255) DEFAULT '' NOT NULL,
+    bodytext mediumtext,
+    assets int(11) unsigned DEFAULT '0' NOT NULL,
+    space_before_class varchar(60) DEFAULT '' NOT NULL,
+    space_after_class varchar(60) DEFAULT '' NOT NULL,
+    tx_bootstrap_header_layout varchar(255) DEFAULT '' NOT NULL,
+    tx_bootstrap_header_predefined varchar(255) DEFAULT '' NOT NULL,
+    tx_bootstrap_header_color varchar(255) DEFAULT '' NOT NULL,
+    tx_bootstrap_header_additional_styles varchar(255) DEFAULT '' NOT NULL,
+    tx_bootstrap_header_icon int(11) DEFAULT '0' NOT NULL,
+    tx_bootstrap_flexform mediumtext,
+    parent_uid int(11) DEFAULT '0' NOT NULL,
 );

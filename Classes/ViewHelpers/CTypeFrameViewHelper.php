@@ -96,15 +96,17 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
     {
         $this->registerArgument('contentElementData', 'array', 'data from content element');
         $this->registerArgument('content', 'string', '');
+        $this->registerArgument('idPattern', 'string', 'String used as pattern in id-attributes.', false, 'c###ID###');
     }
 
     public function render(): string
     {
         $data = $this->arguments['contentElementData'];
         $content = $this->arguments['content'] ? $this->arguments['content'] : $this->renderChildren();
+        $idPattern = $this->arguments['idPattern'];
 
         if ('none' === $data['frame_class']) {
-            return '<div id="c' . $data['uid'] . '"></div>' . $content;
+            return '<div id="' . str_replace("###ID###", (string) $data['uid'], $idPattern) . '"></div>' . $content;
         }
 
         // AdditionalStyles
@@ -236,7 +238,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
             // generate outer div with classes
             $outerTag = new TagBuilder('div');
             $outerTag->forceClosingTag(true);
-            $outerTag->addAttribute('id', 'c' . $data['uid']); // set id to outer classes element instead to the main tag
+            $outerTag->addAttribute('id', str_replace('###ID###', (string) $data['uid'], $idPattern)); // set id to outer classes element instead to the main tag
             if (count($this->classesOuterList)) {
                 $outerTag->addAttribute('class', BootstrapGeneralUtility::cleanCssClassesString($this->classesOuterList));
             }
@@ -246,7 +248,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
             $outerTag->setContent($tagHtml);
             $tagHtml = $outerTag->render();
         } else {
-            $mainTag->addAttribute('id', 'c' . $data['uid']);
+            $mainTag->addAttribute('id', str_replace("###ID###", (string) $data['uid'], $idPattern));
             $tagHtml = $mainTag->render();
 
             // include outerWrap after all inner stuff
@@ -254,7 +256,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
         }
 
         // return and build tag and prepend localized id
-        return (isset($data['_LOCALIZED_UID']) && $data['_LOCALIZED_UID'] ? '<div id="c' . $data['_LOCALIZED_UID'] . '"></div>' : '') . $tagHtml;
+        return (isset($data['_LOCALIZED_UID']) && $data['_LOCALIZED_UID'] ? '<div id="' . str_replace("###ID###", (string) $data['_LOCALIZED_UID'], $idPattern) . '"></div>' : '') . $tagHtml;
     }
 
     protected function renderInnerWrap(string &$content): void

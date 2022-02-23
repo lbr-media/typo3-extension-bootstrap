@@ -10,6 +10,7 @@ return [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'delete' => 'deleted',
+        'hideTable' => true,
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -29,7 +30,7 @@ return [
                 --linebreak--,
                 opened_on_load,
                 --div--;Inhaltselemente,
-                tt_content_children,
+                content_elements,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                 hidden,--palette--;;timeRestriction,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
@@ -94,13 +95,14 @@ return [
                 'default' => 0,
             ],
         ],
-        'tt_content_children' => [
+        'content_elements' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_accordionitem.tt_content_children',
+            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_accordionitem.content_elements',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tt_content',
-                'foreign_field' => 'tx_bootstrap_accordionitem_uid',
+                'foreign_table' => 'tx_bootstrap_domain_model_contentelement',
+                'foreign_field' => 'parent_uid',
+                'foreign_sortby' => 'sorting',
                 'maxitems' => 50,
                 'appearance' => [
                     'levelLinksPosition' => 'both',

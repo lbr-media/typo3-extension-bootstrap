@@ -26,7 +26,7 @@ class AccordionItem extends AbstractEntity
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
      */
-    protected $ttContentChildren = null;
+    protected $contentElements = null;
 
 
     public function getTitle(): string
@@ -47,8 +47,8 @@ class AccordionItem extends AbstractEntity
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
      */
-    public function getTtContentChildren(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getContentElements(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {
-        return $this->ttContentChildren;
+        return $this->contentElements;
     }
 }
