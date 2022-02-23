@@ -9,9 +9,6 @@ tt_content {
             }
 
             20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
-            20 {
-                type = TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID
-            }
         }
     }
 }

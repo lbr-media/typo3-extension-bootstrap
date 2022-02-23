@@ -21,8 +21,10 @@ use Exception;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
-use LBRmedia\Bootstrap\Service\FlexFormServiceTtContent;
-use LBRmedia\Bootstrap\Utility\BootstrapUtility;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapAccordion;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapMediaGrid;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaFloat;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 
 /**
  * Class for data processing for various content elements which use the flexform field tx_bootstap_flexform.
@@ -46,191 +48,34 @@ class FlexFormProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $processedData["grid"] = [];
         if (!trim($processedData['data']['tx_bootstrap_flexform'])) {
             return $processedData;
         }
 
-        if (!isset($processorConfiguration["type"])) {
-            throw new Exception("You have to define a FlexformService::TYPE*", 1645460359);
-        }
-
-        $type = "";
-        switch ($processorConfiguration["type"]) {
-            case "TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID":
-                $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID;
+        $CType = isset($processorConfiguration["CType"]) ? $processorConfiguration["CType"] : $processedData['data']['CType'];
+        switch ($CType) {
+            case "bootstrap_textmediagrid":
+                /** @var FlexFormServiceBootstrapTextMediaGrid $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTextMediaGrid::class);
+                $processedData["grid"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
-            case "TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT":
-                $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT;
+            case "bootstrap_textmediafloat":
+                /** @var FlexFormServiceBootstrapTextMediaFloat $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTextMediaFloat::class);
+                $processedData["grid"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
-            case "TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID":
-                $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID;
+            case "bootstrap_mediagrid":
+                /** @var FlexFormServiceBootstrapMediaGrid $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapMediaGrid::class);
+                $processedData["grid"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
-            case "TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION":
-                $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION;
-                break;
-        }
-
-        // try {
-            // get the configuration from flexform
-            /** @var FlexFormServiceTtContent $flexFormService */
-            $flexFormService = GeneralUtility::makeInstance(FlexFormServiceTtContent::class);
-            $xmlArray = $flexFormService->getConfiguration($processedData['data']['tx_bootstrap_flexform'], $type);
-        // } catch (Exception $e) {
-        //     return $processedData;
-        // }
-
-        switch ($type) {
-            case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID;
-                $processedData["grid"] = self::process_BootstrapTextMediaGrid($xmlArray);
-                break;
-            case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT;
-                $processedData["grid"] = self::process_BootstrapTextMediaFloat($xmlArray);
-                break;
-            case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID;
-                $processedData["grid"] = self::process_BootstrapMediaGrid($xmlArray);
-                break;
-            case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION;
-                $processedData["accordion"] = $xmlArray;
+            case "bootstrap_accordion":
+                /** @var FlexFormServiceBootstrapAccordion $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapAccordion::class);
+                $processedData["accordion"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
         }
 
         return $processedData;
-    }
-
-    protected static function process_BootstrapTextMediaGrid($xmlArray): array
-    {
-        $spaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['space_x'], $xmlArray['space_y']);
-        $xmlArray['row_space_classes'] = $spaceClasses['row'];
-        $xmlArray['col_space_classes'] = $spaceClasses['col'];
-
-        $xmlArray['row_classes'] = implode(
-            ' ',
-            [
-                'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['justify_content'], 'justify-content-'),
-            ]
-        );
-
-        $xmlArray['col_text_classes'] = BootstrapUtility::getColClasses($xmlArray['col_text']);
-        $textAlignSelfClasses = BootstrapUtility::getAlignmentClasses($xmlArray['text']['align_self'], 'align-self-');
-        if (trim($textAlignSelfClasses)) {
-            $xmlArray['col_text_classes'] .= ' ' . $textAlignSelfClasses;
-        }
-
-        $xmlArray['col_media_classes'] = BootstrapUtility::getColClasses($xmlArray['col_media']);
-        $mediaAlignSelfClasses = BootstrapUtility::getAlignmentClasses($xmlArray['media']['align_self'], 'align-self-');
-        if (trim($mediaAlignSelfClasses)) {
-            $xmlArray['col_media_classes'] .= ' ' . $mediaAlignSelfClasses;
-        }
-
-        // device_order
-        if (isset($xmlArray['device_order']) && 5 === substr_count($xmlArray['device_order'], ';')) {
-            $orderClasses = BootstrapUtility::getGridDeviceOrderClasses($xmlArray['device_order']);
-            if ($orderClasses['text']) {
-                $xmlArray['col_text_classes'] .= ' ' . $orderClasses['text'];
-            }
-            if ($orderClasses['media']) {
-                $xmlArray['col_media_classes'] .= ' ' . $orderClasses['media'];
-            }
-        }
-
-        // text
-        $textItemClasses = [];
-
-        $textPaddingClasses = BootstrapUtility::getPaddingClasses($xmlArray['text']['space_inner']);
-        if (trim($textPaddingClasses)) {
-            $textItemClasses[] = $textPaddingClasses;
-        }
-
-        $xmlArray['text']['item_classes'] = count($textItemClasses) ? implode(' ', $textItemClasses) : '';
-
-        // media
-        $mediaItemClasses = [];
-        $mediaPaddingClasses = BootstrapUtility::getPaddingClasses($xmlArray['media']['space_inner']);
-        if (trim($mediaPaddingClasses)) {
-            $mediaItemClasses[] = $mediaPaddingClasses;
-        }
-
-        $xmlArray['media']['item_classes'] = count($mediaItemClasses) ? implode(' ', $mediaItemClasses) : '';
-
-        // mediaitem
-        $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
-        $xmlArray['mediaitem']['row_space_classes'] = $mediaSpaceClasses['row'];
-        $xmlArray['mediaitem']['col_space_classes'] = $mediaSpaceClasses['col'];
-
-        // container for all media items
-        $xmlArray['mediaitem']['row_classes'] = implode(
-            ' ',
-            [
-                'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
-            ]
-        );
-
-        // a media item columne
-        $xmlArray['mediaitem']['col_classes'] = BootstrapUtility::getColClasses($xmlArray['mediaitem']['col']);
-
-        // the image
-        $xmlArray['mediaitem']['img_classes'] = 'img-fluid';
-
-        return $xmlArray;
-    }
-
-    protected static function process_BootstrapTextMediaFloat($xmlArray): array
-    {
-        $xmlArray['float_classes'] = BootstrapUtility::getFloatClasses($xmlArray['media_position']);
-        $xmlArray['media_size_classes'] = BootstrapUtility::getFloatMediaSizeClasses($xmlArray['media_size'], $xmlArray['media_position'], $xmlArray['space_x'], $xmlArray['space_y']);
-
-        // mediaitem
-        $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
-        $xmlArray['mediaitem']['row_space_classes'] = $mediaSpaceClasses['row'];
-        $xmlArray['mediaitem']['col_space_classes'] = $mediaSpaceClasses['col'];
-
-        // container for all media items
-        $xmlArray['mediaitem']['row_classes'] = implode(
-            ' ',
-            [
-                'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
-            ]
-        );
-
-        // a media item columne
-        $xmlArray['mediaitem']['col_classes'] = BootstrapUtility::getColClasses($xmlArray['mediaitem']['col']);
-
-        // the image
-        $xmlArray['mediaitem']['img_classes'] = 'img-fluid';
-
-        return $xmlArray;
-    }
-
-    protected static function process_BootstrapMediaGrid($xmlArray): array
-    {
-        // mediaitem
-        $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
-        $xmlArray['mediaitem']['row_space_classes'] = $mediaSpaceClasses['row'];
-        $xmlArray['mediaitem']['col_space_classes'] = $mediaSpaceClasses['col'];
-
-        // container for all media items
-        $xmlArray['mediaitem']['row_classes'] = implode(
-            ' ',
-            [
-                'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
-            ]
-        );
-
-        // a media item columne
-        $xmlArray['mediaitem']['col_classes'] = BootstrapUtility::getColClasses($xmlArray['mediaitem']['col']);
-
-        // the image
-        $xmlArray['mediaitem']['img_classes'] = 'img-fluid';
-
-        return $xmlArray;
     }
 }

@@ -6,16 +6,13 @@ tt_content {
             10 = LBRmedia\Bootstrap\DataProcessing\AccordionItemProcessor
 
             20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
-            20 {
-                type = TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION
-            }
         }
     }
 }
 
-lib.tt_content_bootstrap_accordion = RECORDS
-lib.tt_content_bootstrap_accordion {
-        source.data = current
-        dontCheckPid = 1
-        tables = tt_content
-}
+# lib.tt_content_bootstrap_accordion = RECORDS
+# lib.tt_content_bootstrap_accordion {
+#         source.data = current
+#         dontCheckPid = 1
+#         tables = tt_content
+# }

@@ -13,10 +13,10 @@ class FlexFormService implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
     
-    const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID = 'TtContentBootstrapTextMediaGrid';
-    const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT = 'TtContentBootstrapTextMediaFloat';
-    const TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID = 'TtContentBootstrapMediaGrid';
-    const TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION = 'TtContentBootstrapAccordion';
+    const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID = 'tt_content_bootstrap_textmediagrid';
+    const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT = 'tt_content_bootstrap_textmediafloat';
+    const TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID = 'tt_content_bootstrap_mediagrid';
+    const TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION = 'tt_content_bootstrap_accordion';
 
     /**
      * Array with the flexform configuration converted from XML string.
@@ -49,8 +49,6 @@ class FlexFormService implements LoggerAwareInterface
         return $this->pluginSettings;
     }
 
-
-
     /**
      * @param string $xmlString
      * @param string $configurationType One of the constants
@@ -65,54 +63,41 @@ class FlexFormService implements LoggerAwareInterface
         }
     }
 
-    
-
-    /**
-     * Helper function to get one value out of the flexform data.
-     *
-     * @param string $pointer
-     * @param string $type
-     * @param mixed  $defaultValue
-     *
-     * @return mixed
-     */
-    protected function getFlexformValue(string $pointer, string $type = 'string', $defaultValue = '')
-    {
-        if (trim($pointer) === "") {
-            return $defaultValue;
-        }
-        switch ($type) {
-            case 'string':
-                return (string) $pointer;
-                break;
-            case 'boolean':
-            case 'bool':
-                return (bool) $pointer;
-                break;
-            case 'integer':
-            case 'int':
-                return (int) $pointer;
-                break;
-        }
-
-        return $pointer;
-    }
-
     /**
      * Helper function to get a value from the flexform array.
      */
-    protected function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '')
+    protected static function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '', $logger = null)
     {
         $parts = explode(".", $path);
         foreach ($parts as $part) {
             if (isset($data[$part])) {
                 $data = $data[$part];
             } else {
-                $this->logger->error("Cannot get path in flexform data: ".$path);
+                if ($logger) {
+                    $logger->error("Cannot get path in flexform data: ".$path);
+                }
                 return null;
             }
         }
 
-        return $this->getFlexformValue($data, $type, $defaultValue);
+        if (trim($data) === "") {
+            return $defaultValue;
+        }
+        
+        switch ($type) {
+            case 'string':
+                return (string) $data;
+                break;
+            case 'boolean':
+            case 'bool':
+                return (bool) $data;
+                break;
+            case 'integer':
+            case 'int':
+                return (int) $data;
+                break;
+        }
+
+        return $data;
     }
 }
