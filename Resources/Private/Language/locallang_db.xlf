@@ -34,6 +34,19 @@
             <trans-unit id="tx_bootstrap_domain_model_teammember.description">
                 <source>Beschreibung</source>
             </trans-unit>
+
+            <trans-unit id="tx_bootstrap_domain_model_accordionitem">
+                <source>Accordion-Element</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_accordionitem.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_accordionitem.opened_on_load">
+                <source>Geöffnet</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_accordionitem.tt_content_children">
+                <source>Inhaltselemente</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

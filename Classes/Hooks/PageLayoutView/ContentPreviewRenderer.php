@@ -42,21 +42,21 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
                 }
                 break;
-            case "bootstrap_type5":
-                $out .= "<strong>Links:</strong><br />";
-                if ($record['tx_bootstrap_image1']) {
-                    $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'tx_bootstrap_image1'), $record) . '<br />';
-                }
-                if ($record['tx_bootstrap_bodytext1']) {
-                    $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext1']), $record) . '<br />';
-                }
-                $out .= "<strong>Rechts:</strong><br />";
-                if ($record['tx_bootstrap_image2']) {
-                    $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'tx_bootstrap_image2'), $record) . '<br />';
-                }
-                if ($record['tx_bootstrap_bodytext2']) {
-                    $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext2']), $record) . '<br />';
-                }
+            case "bootstrap_accordion":
+                // $out .= "<strong>Links:</strong><br />";
+                // if ($record['tx_bootstrap_image1']) {
+                //     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'tx_bootstrap_image1'), $record) . '<br />';
+                // }
+                // if ($record['tx_bootstrap_bodytext1']) {
+                //     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext1']), $record) . '<br />';
+                // }
+                // $out .= "<strong>Rechts:</strong><br />";
+                // if ($record['tx_bootstrap_image2']) {
+                //     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'tx_bootstrap_image2'), $record) . '<br />';
+                // }
+                // if ($record['tx_bootstrap_bodytext2']) {
+                //     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext2']), $record) . '<br />';
+                // }
                 break;
             case 'bootstrap_type6':
                 $out .= $record['tx_bootstrap_teammember'] . " Einträge";

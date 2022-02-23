@@ -21,9 +21,9 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type4.svg',
     ],
-    'bootstrap_type5' => [
+    'bootstrap_accordion' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type5.svg',
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_accordion.svg',
     ],
     'bootstrap_type6' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
@@ -52,6 +52,12 @@ return [
     'tx_bootstrap_domain_model_teammember' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
         'name' => 'user',
+        'additionalClasses' => '',
+        'spinning' => false,
+    ],
+    'tx_bootstrap_domain_model_accordionitem' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
+        'name' => 'folder-o',
         'additionalClasses' => '',
         'spinning' => false,
     ],

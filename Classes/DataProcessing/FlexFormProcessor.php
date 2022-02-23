@@ -66,6 +66,9 @@ class FlexFormProcessor implements DataProcessorInterface
             case "TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID":
                 $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID;
                 break;
+            case "TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION":
+                $type = FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION;
+                break;
         }
 
         // try {
@@ -86,6 +89,9 @@ class FlexFormProcessor implements DataProcessorInterface
                 break;
             case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID;
                 $processedData["grid"] = self::process_BootstrapMediaGrid($xmlArray);
+                break;
+            case FlexFormServiceTtContent::TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION;
+                $processedData["accordion"] = $xmlArray;
                 break;
         }
 

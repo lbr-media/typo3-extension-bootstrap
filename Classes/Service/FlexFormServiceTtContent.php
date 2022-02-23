@@ -34,6 +34,9 @@ class FlexFormServiceTtContent extends FlexFormService implements FlexFormServic
             case self::TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID:
                 return $this->getConfigurationArray_BootstrapMediaGrid($this->data[self::TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID]);
                 break;
+            case self::TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION:
+                return $this->getConfigurationArray_BootstrapAccordion($this->data[self::TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION]);
+                break;
         }
     }
 
@@ -154,6 +157,13 @@ class FlexFormServiceTtContent extends FlexFormService implements FlexFormServic
                     'xxl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100),
                 ],
             ],
+        ];
+    }
+
+    protected function getConfigurationArray_BootstrapAccordion(array $data): array
+    {
+        return [
+            'keep_open' => $this->getFlexformValueByPath($data, 'data.sACCORDION.lDEF.keep_open.vDEF', 'bool', false),
         ];
     }
 }

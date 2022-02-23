@@ -16,6 +16,7 @@ class FlexFormService implements LoggerAwareInterface
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID = 'TtContentBootstrapTextMediaGrid';
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT = 'TtContentBootstrapTextMediaFloat';
     const TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID = 'TtContentBootstrapMediaGrid';
+    const TYPE_TT_CONTENT_BOOTSTRAP_ACCORDION = 'TtContentBootstrapAccordion';
 
     /**
      * Array with the flexform configuration converted from XML string.

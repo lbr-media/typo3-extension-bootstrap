@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sACCORDION>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sACCORDION.sheetTitle</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="keep_open">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sACCORDION.keep_open</label>
+                            <config>
+                                <type>check</type>
+                                <renderType>checkboxToggle</renderType>
+                                <default>0</default>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sACCORDION>
+    </sheets>
+</T3FlexForms>

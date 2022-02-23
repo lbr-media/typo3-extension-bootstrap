@@ -261,6 +261,25 @@ class Columns
                     ],
                 ],
             ],
+            'tx_bootstrap_accordionitems' => [
+                'label' => 'Accordion-Elemente',
+                'config' => [
+                    'type' => 'inline',
+                    'foreign_table' => 'tx_bootstrap_domain_model_accordionitem',
+                    'foreign_field' => 'tt_content_uid',
+                    'maxitems' => 50,
+                    'appearance' => [
+                        'levelLinksPosition' => 'both',
+                        'useSortable' => true,
+                        'showPossibleLocalizationRecords' => false,
+                        'showRemovedLocalizationRecords' => false,
+                        'showSynchronizationLink' => false,
+                        'showAllLocalizationLink' => false,
+                        'collapseAll' => true,
+                        'expandSingle' => true,
+                    ],
+                ],
+            ],
         ];
 
         ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpColumnes);

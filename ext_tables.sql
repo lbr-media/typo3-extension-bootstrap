@@ -18,6 +18,8 @@ CREATE TABLE tt_content (
     tx_bootstrap_bodytext1 text,
     tx_bootstrap_bodytext2 text,
     tx_bootstrap_teammember int(11) DEFAULT '0' NOT NULL,
+    tx_bootstrap_accordionitems int(11) DEFAULT '0' NOT NULL,
+    tx_bootstrap_accordionitem_uid int(11) DEFAULT '0' NOT NULL,
 );
 
 #
@@ -47,4 +49,14 @@ CREATE TABLE tx_bootstrap_domain_model_teammember (
 CREATE TABLE sys_file_reference (
     tx_bootstrap_header varchar(255) DEFAULT '' NOT NULL,
     tx_bootstrap_link_text varchar(255) DEFAULT '' NOT NULL,
+);
+
+#
+# Table structure for table 'tx_bootstrap_domain_model_accordionitem'
+#
+CREATE TABLE tx_bootstrap_domain_model_accordionitem (
+    title varchar(255) DEFAULT '' NOT NULL,
+    opened_on_load tinyint(1) unsigned NOT NULL default '0',
+    tt_content_children int(11) DEFAULT '0' NOT NULL,
+    tt_content_uid int(11) DEFAULT '0' NOT NULL,
 );

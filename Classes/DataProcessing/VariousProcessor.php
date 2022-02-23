@@ -158,14 +158,14 @@ class VariousProcessor implements DataProcessorInterface
                     new VariousProperty('layout', 'flexform', 'layout', 'first_image_left', 'string'),
                 ];
                 break;
-            case 'bootstrap_type5':
-                $this->properties = [
-                    new VariousProperty('image1', 'file', 'tx_bootstrap_image1', null, 'object'),
-                    new VariousProperty('bodytext1', 'data', 'tx_bootstrap_bodytext1', '', 'string'),
-                    new VariousProperty('image2', 'file', 'tx_bootstrap_image2', null, 'object'),
-                    new VariousProperty('bodytext2', 'data', 'tx_bootstrap_bodytext2', '', 'string'),
-                ];
-                break;
+            // case 'bootstrap_accordion':
+            //     $this->properties = [
+            //         new VariousProperty('image1', 'file', 'tx_bootstrap_image1', null, 'object'),
+            //         new VariousProperty('bodytext1', 'data', 'tx_bootstrap_bodytext1', '', 'string'),
+            //         new VariousProperty('image2', 'file', 'tx_bootstrap_image2', null, 'object'),
+            //         new VariousProperty('bodytext2', 'data', 'tx_bootstrap_bodytext2', '', 'string'),
+            //     ];
+            //     break;
             case 'bootstrap_type6':
                 $this->properties = [
                     new VariousProperty('teamMembers', 'extbase', 'tt_content_uid', [], 'array', [

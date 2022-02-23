@@ -188,6 +188,13 @@
             <trans-unit id="masonry_enabled">
                 <source>Masonry-Grid aktivieren</source>
             </trans-unit>
+
+            <trans-unit id="sACCORDION.sheetTitle">
+                <source>Accordion-Einstellungen</source>
+            </trans-unit>
+            <trans-unit id="sACCORDION.keep_open">
+                <source>Geöffnet lassen beim Öffnen von anderen Accordion-Elemente</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

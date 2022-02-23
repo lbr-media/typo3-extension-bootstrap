@@ -1,0 +1,43 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    title = Accordion
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{accordion_items -> f:count}">
+            <f:variable name="id" value="accordion-{data.uid}" />
+            <f:variable name="keepOpenAttribute"><f:if condition="{accordion.keep_open}"><f:else> data-bs-parent="#{id}"</f:else></f:if></f:variable>
+            <div class="accordion" id="{id}">
+                <f:for each="{accordion_items}" as="accordionItem">
+                    <f:render section="_AccordionItem" arguments="{accordionItem:accordionItem, id:id, keepOpenAttribute:keepOpenAttribute}" />
+                </f:for>
+            </div>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_AccordionItem"><f:spaceless>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="{id}-{accordionItem.uid}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{id}-{accordionItem.uid}-collapse" aria-expanded="{f:if(condition:accordionItem.openedOnLoad, then:'true', else:'false')}" aria-controls="{id}-{accordionItem.uid}-collapse">
+                    {accordionItem.title}
+                </button>
+            </h2>
+            <div id="{id}-{accordionItem.uid}-collapse" class="accordion-collapse collapse{f:if(condition:accordionItem.openedOnLoad, then:' show')}" aria-labelledby="{id}-{accordionItem.uid}"{keepOpenAttribute -> f:format.raw()}>
+                <div class="accordion-body">
+                    <f:if condition="{accordionItem.ttContentChildren -> f:count()}">
+                        <f:for each="{accordionItem.ttContentChildren}" as="contentElement">
+                            <f:cObject typoscriptObjectPath="lib.tt_content_bootstrap_accordion" data="{contentElement.uid}" />
+                        </f:for>
+                    </f:if>
+                </div>
+            </div>
+            </div>
+    </f:spaceless></f:section>
+</html>
+
+

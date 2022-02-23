@@ -36,16 +36,16 @@ mod.wizards.newContentElement.wizardItems.common2 {
                 CType = bootstrap_type4
             }
         }
-        bootstrap_type5 {
-            iconIdentifier = bootstrap_type5
-            title = Bild + Text | Text + Bild
-            description = Zwei Spalten: links Bild oben + Text unten; rechts Text oben Bild unten.
+        bootstrap_accordion {
+            iconIdentifier = bootstrap_accordion
+            title = Accordion
+            description = Aufklappelemente
             tt_content_defValues {
-                CType = bootstrap_type5
+                CType = bootstrap_accordion
             }
         }
         bootstrap_type6 {
-            iconIdentifier = bootstrap_type5
+            iconIdentifier = bootstrap_type6
             title = Team-Mitglieder
             description = Eine Liste von Team-Mitgliedern.
             tt_content_defValues {
@@ -77,5 +77,5 @@ mod.wizards.newContentElement.wizardItems.common2 {
             }
         }
     }
-    show := addToList(bootstrap_type1,bootstrap_mediagrid,bootstrap_type3,bootstrap_type4,bootstrap_type5,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
+    show := addToList(bootstrap_type1,bootstrap_mediagrid,bootstrap_type3,bootstrap_type4,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
 }
