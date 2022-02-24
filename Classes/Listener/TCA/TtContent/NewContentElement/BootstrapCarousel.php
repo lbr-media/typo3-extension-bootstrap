@@ -9,26 +9,26 @@ use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-class BootstrapType3 implements NewContentElementInterface
+class BootstrapCarousel implements NewContentElementInterface
 {
     public static function addPlugin(TcaService $tcaService): void
     {
         // Add content element
         ExtensionManagementUtility::addPlugin(
             [
-                'Bilder-Slider',
-                'bootstrap_type3',
-                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type3.svg',
+                'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_carousel',
+                'bootstrap_carousel',
+                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_carousel.svg',
             ],
             'CType',
             'bootstrap'
         );
 
         // Add flexform
-        $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_flexform']['config']['ds']['*,bootstrap_type3'] = 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapType3.xml';
+        $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_flexform']['config']['ds']['*,bootstrap_carousel'] = 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapCarousel.xml';
 
         // Configure TCA
-        $GLOBALS['TCA']['tt_content']['types']['bootstrap_type3'] = [
+        $GLOBALS['TCA']['tt_content']['types']['bootstrap_carousel'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['image']['showitem'])
                 ->addShowitemAfter('tx_bootstrap_flexform', 'frames')
                 ->getShowitemsString(),
@@ -40,13 +40,23 @@ class BootstrapType3 implements NewContentElementInterface
                         'overrideChildTca' => [
                             'types' => [
                                 File::FILETYPE_IMAGE => [
-                                    'showitem' => 'title,alternative,crop,--palette--;;filePalette',
+                                    'showitem' => '
+                                        tx_bootstrap_header,
+                                        --linebreak--,
+                                        title,
+                                        alternative,
+                                        description,
+                                        --linebreak--,
+                                        link,
+                                        tx_bootstrap_link_text,
+                                        crop,
+                                        --palette--;;filePalette',
                                 ],
                             ],
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
                                     ],
                                 ],
                             ],
@@ -57,6 +67,6 @@ class BootstrapType3 implements NewContentElementInterface
         ];
 
         // Icon in backend page view
-        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_type3'] = 'bootstrap_type3';
+        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_carousel'] = 'bootstrap_carousel';
     }
 }

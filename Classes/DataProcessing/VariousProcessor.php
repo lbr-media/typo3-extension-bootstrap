@@ -141,17 +141,17 @@ class VariousProcessor implements DataProcessorInterface
                     new VariousProperty('image', 'file', 'image', null, 'object'),
                 ];
                 break;
-            case 'bootstrap_type3':
-                $this->properties = [
-                    new VariousProperty('images', 'files', 'image', [], 'array'),
-                    new VariousProperty('link1_text', 'flexform', 'link1_text', '', 'string'),
-                    new VariousProperty('link1', 'flexform', 'link1', '', 'string'),
-                    new VariousProperty('link1_type', 'flexform', 'link1_type', 'btn btn-white', 'string'),
-                    new VariousProperty('link2_text', 'flexform', 'link2_text', '', 'string'),
-                    new VariousProperty('link2', 'flexform', 'link2', '', 'string'),
-                    new VariousProperty('link2_type', 'flexform', 'link2_type', 'btn btn-white', 'string'),
-                ];
-                break;
+            // case 'bootstrap_type3':
+            //     $this->properties = [
+            //         new VariousProperty('images', 'files', 'image', [], 'array'),
+            //         new VariousProperty('link1_text', 'flexform', 'link1_text', '', 'string'),
+            //         new VariousProperty('link1', 'flexform', 'link1', '', 'string'),
+            //         new VariousProperty('link1_type', 'flexform', 'link1_type', 'btn btn-white', 'string'),
+            //         new VariousProperty('link2_text', 'flexform', 'link2_text', '', 'string'),
+            //         new VariousProperty('link2', 'flexform', 'link2', '', 'string'),
+            //         new VariousProperty('link2_type', 'flexform', 'link2_type', 'btn btn-white', 'string'),
+            //     ];
+            //     break;
             // case 'bootstrap_tabs':
             //     $this->properties = [
             //         new VariousProperty('images', 'files', 'image', [], 'array'),

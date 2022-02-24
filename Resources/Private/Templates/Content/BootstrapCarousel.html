@@ -1,0 +1,92 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    CType = bootstrap_carousel
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{files -> f:count()}">
+            <div id="carousel-{data.uid}" class="carousel {carousel.animation}{f:if(condition:'{carousel.color_scheme}==\'dark\'', then:' carousel-dark')}" data-bs-ride="{f:if(condition:carousel.autoplay, then:'carousel', else:'false')}" data-bs-interval="{carousel.interval}">
+                <f:if condition="{carousel.indicators}">
+                    <div class="carousel-indicators">
+                        <f:for each="{files}" as="file" iteration="i">
+                            <button type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide-to="{i.index}"{f:if(condition:i.isFirst, then:' class="active" aria-current="true"')} aria-label="Slide {i.cycle}"></button>
+                        </f:for>
+                    </div>
+                </f:if>
+                <div class="carousel-inner">
+                    <f:for each="{files}" as="file" iteration="i">
+                        <f:render section="_CarouselItem" arguments="{_all}" />
+                    </f:for>
+                </div>
+                <f:if condition="{carousel.controls}">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </f:if>
+            </div>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_CarouselItem"><f:spaceless>
+        <f:comment><!--
+        Create figure tag when there should be a figcaption.
+        --></f:comment>
+        <f:if condition="{file.properties.tx_bootstrap_header}||{file.description}||{file.properties.tx_bootstrap_link_text}||{file.properties.copyright}">
+            <f:then><div class="carousel-item{f:if(condition:i.isFirst, then:' active')}{f:if(condition:file.properties.copyright, then:' position-relative')}"><figure class="m-0"></f:then>
+            <f:else><div class="carousel-item{f:if(condition:i.isFirst, then:' active')}{f:if(condition:file.properties.copyright, then:' position-relative')}"></f:else>
+        </f:if>
+
+            <f:if condition="{file.link}&&{file.properties.tx_bootstrap_link_text}==''">
+                <f:then>
+                    <f:comment><!--
+                    Link the whole image when there is no link text.
+                    --></f:comment>
+                    <f:link.typolink parameter="{file.link}">
+                        {bs:Bootstrap.Picture(file:file, additionalImgTagParams:"{class:'d-block w-100'}")}
+                    </f:link.typolink>
+                </f:then>
+                <f:else>
+                    {bs:Bootstrap.Picture(file:file, additionalImgTagParams:"{class:'d-block w-100'}")}
+                </f:else>
+            </f:if>
+
+            <f:if condition="{file.properties.tx_bootstrap_header}||{file.description}||{file.properties.tx_bootstrap_link_text}||{file.properties.copyright}">
+                <figcaption class="carousel-caption d-none d-md-block">
+                    <f:if condition="{file.properties.tx_bootstrap_header}">
+                        <h5>{file.properties.tx_bootstrap_header -> f:format.nl2br()}</h5>
+                    </f:if>
+                    <f:if condition="{file.description}">
+                        <p>{file.description -> f:format.nl2br()}</p>
+                    </f:if>
+                    <f:if condition="{file.properties.tx_bootstrap_link_text}">
+                        <p>
+                            <f:link.typolink parameter="{file.link}" class="btn btn-sm {f:if(condition:'{carousel.color_scheme}==\'dark\'', then:'btn-outline-dark', else:'btn-outline-light')}">{file.properties.tx_bootstrap_link_text}</f:link.typolink>
+                        </p>
+                    </f:if>
+                </figcaption>
+            </f:if>
+
+            <f:if condition="{file.properties.copyright}">
+                <footer>
+                    <small class="figure-copyright">
+                        {file.properties.copyright -> f:format.nl2br()}
+                    </small>
+                </footer>
+            </f:if>
+
+        <f:if condition="{file.properties.tx_bootstrap_header}||{file.description}||{file.properties.tx_bootstrap_link_text}||{file.properties.copyright}">
+            <f:then></figure></div></f:then>
+            <f:else></div></f:else>
+        </f:if>
+</f:spaceless></f:section>
+</html>

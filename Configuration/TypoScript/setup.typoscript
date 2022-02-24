@@ -27,7 +27,7 @@ Content elements
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapTextMediaGrid.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType1.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapMediaGrid.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType3.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapCarousel.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapTabs.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapAccordion.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/ContentElement/BootstrapType6.typoscript">

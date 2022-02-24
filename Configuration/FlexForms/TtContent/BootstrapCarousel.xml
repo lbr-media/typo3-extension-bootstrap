@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sCAROUSEL>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Karussel-Einstellungen</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="animation">
+                        <value index="TCEforms">
+                            <label>Typ</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">slide</numIndex>
+                                        <numIndex index="1">slide</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">fade</numIndex>
+                                        <numIndex index="1">slide carousel-fade</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>slide</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="autoplay">
+                        <value index="TCEforms">
+                            <label>Autoplay</label>
+                            <config>
+                                <type>check</type>
+                                <renderType>checkboxToggle</renderType>
+                                <default>1</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="color_scheme">
+                        <value index="TCEforms">
+                            <label>Farbschema</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">hell</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">dunkel</numIndex>
+                                        <numIndex index="1">dark</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="controls">
+                        <value index="TCEforms">
+                            <label>Buttons</label>
+                            <config>
+                                <type>check</type>
+                                <renderType>checkboxToggle</renderType>
+                                <default>1</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="indicators">
+                        <value index="TCEforms">
+                            <label>Indikatoren</label>
+                            <config>
+                                <type>check</type>
+                                <renderType>checkboxToggle</renderType>
+                                <default>1</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="interval">
+                        <value index="TCEforms">
+                            <label>Interval</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>500</lower>
+                                    <upper>20000</upper>
+                                </range>
+                                <default>2000</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sCAROUSEL>
+    </sheets>
+</T3FlexForms>

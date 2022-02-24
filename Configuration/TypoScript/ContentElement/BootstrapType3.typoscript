@@ -1,9 +1,0 @@
-tt_content {
-    bootstrap_type3 =< lib.contentElement
-    bootstrap_type3 {
-        templateName = BootstrapType3
-        dataProcessing {
-            1 = LBRmedia\Bootstrap\DataProcessing\VariousProcessor
-        }
-    }
-}

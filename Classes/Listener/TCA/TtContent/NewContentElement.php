@@ -19,7 +19,7 @@ class NewContentElement
     const NEW_CONTENT_ELEMENT_CLASSES = [
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType1',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapMediaGrid',
-        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType3',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapCarousel',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTabs',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapAccordion',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType6',

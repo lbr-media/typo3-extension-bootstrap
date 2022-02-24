@@ -37,7 +37,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'assets'), $record) . '<br />';
                 }
                 break;
-            case 'bootstrap_type3':
+            case 'bootstrap_carousel':
                 if ($record['image']) {
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
                 }

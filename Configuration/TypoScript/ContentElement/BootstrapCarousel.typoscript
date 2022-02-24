@@ -1,0 +1,14 @@
+tt_content {
+    bootstrap_carousel =< lib.contentElement
+    bootstrap_carousel {
+        templateName = BootstrapCarousel
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+
+            20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
+        }
+    }
+}

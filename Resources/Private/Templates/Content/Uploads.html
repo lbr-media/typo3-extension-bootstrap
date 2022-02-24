@@ -1,7 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-<f:section name="Main">
 
+<f:layout name="Default" />
+
+<f:section name="Main">
     <f:if condition="{files}">
         <ul class="list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 align-items-stretch">
             <f:for each="{files}" as="file" iteration="fileIterator">

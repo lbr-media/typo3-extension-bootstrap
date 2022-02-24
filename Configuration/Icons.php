@@ -13,9 +13,9 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_mediagrid.svg',
     ],
-    'bootstrap_type3' => [
+    'bootstrap_carousel' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type3.svg',
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_carousel.svg',
     ],
     'bootstrap_tabs' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,

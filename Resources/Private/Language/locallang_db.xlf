@@ -40,6 +40,12 @@
             <trans-unit id="tt_content.CType.bootstrap_twocolumnstext.description">
                 <source>Zwei Spalten Text</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_carousel">
+                <source>Bilder-Slider</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_carousel.description">
+                <source></source>
+            </trans-unit>
 
             <!-- tt_content.div -->
             <trans-unit id="tt_content.div.content_elements">

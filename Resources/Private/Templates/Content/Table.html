@@ -1,7 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-<f:section name="Main">
 
+<f:layout name="Default" />
+
+<f:section name="Main">
     <f:if condition="{table}">
         <div class="table-responsive">
             <table class="table{f:if(condition: table_classes, then: ' {table_classes}')}">
@@ -58,6 +59,5 @@
             </table>
         </div>
     </f:if>
-
 </f:section>
 </html>
