@@ -26,6 +26,7 @@ use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTabs;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaFloat;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapCarousel;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextImage;
 
 /**
  * Class for data processing for various content elements which use the flexform field tx_bootstap_flexform.
@@ -84,6 +85,11 @@ class FlexFormProcessor implements DataProcessorInterface
                 /** @var FlexFormServiceBootstrapCarousel $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapCarousel::class);
                 $processedData["carousel"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                break;
+            case "bootstrap_textimage":
+                /** @var FlexFormServiceBootstrapTextImage $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTextImage::class);
+                $processedData["configuration"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
         }
 

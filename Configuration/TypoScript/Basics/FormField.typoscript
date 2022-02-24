@@ -238,8 +238,8 @@ plugin.tx_bootstrap.settings.form.element {
         # 15 = 15
         auto = auto
     }
-
-    BootstrapGridSpaceY {
+    
+    BootstrapGridSpace {
         default =
         0 = kein Abstand
         1 = 1
@@ -253,23 +253,11 @@ plugin.tx_bootstrap.settings.form.element {
         # 9 = 9
         # 10 = 10
     }
-    BootstrapGridelementsGridSpaceY < .BootstrapGridSpaceY
 
-    BootstrapGridSpaceX {
-        default =
-        0 = kein Abstand
-        1 = 1
-        2 = 2
-        3 = 3
-        4 = 4
-        5 = 5
-        # 6 = 6
-        # 7 = 7
-        # 8 = 8
-        # 9 = 9
-        # 10 = 10
-    }
-    BootstrapGridelementsGridSpaceX < .BootstrapGridSpaceX
+    BootstrapGridSpaceY < .BootstrapGridSpace
+
+    BootstrapGridSpaceX < .BootstrapGridSpace
+
 
     /*
     Replacements for tt_content.space_before_class and tt_content.space_after_class.

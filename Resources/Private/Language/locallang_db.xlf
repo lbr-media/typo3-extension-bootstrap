@@ -35,10 +35,16 @@
                 <source>Text und mehrere Medien aufgeteilt in einem Raster-System. Das flexibelste Element, um Text und Medien zu setzen.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_twocolumnstext">
-                <source>Text | Text</source>
+                <source>Text + Text</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_twocolumnstext.description">
                 <source>Zwei Spalten Text</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textimage">
+                <source>Text + Bild</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textimage.description">
+                <source>Auf der einen Seite eine Überschrift mit Text und auf der anderen Seite ein Bild. Die Reihenfolge kann eingestellt werden. Der Text kann oben oder unten ausgerichtet werden.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel">
                 <source>Bilder-Slider</source>

@@ -1,0 +1,77 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    CType = bootstrap_textimage
+    -->
+    <f:layout name="WithoutHeader" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{configuration.header_position}=='above_all'">
+            <f:render section="Header" optional="true">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:render>
+        </f:if>
+        <div class="row {configuration.space_classes}">
+            <div class="col-md-6 {f:if(condition:'{configuration.order}==\'text_image\'', then:'order-md-0', else:'order-md-1')} align-self-{configuration.text_align}">
+                <f:render section="_Text" arguments="{_all}" />
+            </div>
+            <div class="col-md-6 {f:if(condition:'{configuration.order}==\'text_image\'', then:'order-md-1', else:'order-md-0')} align-self-{configuration.image_align}">
+                <f:render section="_Image" arguments="{_all}" />
+            </div>
+        </div>
+    </f:spaceless></f:section>
+
+    <f:section name="_Text"><f:spaceless>
+        <f:if condition="{configuration.header_position}=='text'">
+            <f:render section="Header" optional="true">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:render>
+        </f:if>
+        <f:if condition="{data.bodytext}">{data.bodytext -> f:format.html()}</f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Image"><f:spaceless>
+        <f:if condition="{configuration.header_position}=='media'">
+            <f:render section="Header" optional="true">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:render>
+        </f:if>
+        <f:if condition="{files.0}">
+            <figure class="container-app_type2__image">
+                <f:if condition="{files.0.properties.copyright}">
+                    <f:then>
+                        <div class="position-relative">
+                            {bs:Bootstrap.Picture(file:files.0, displayWidth:'{
+                                xs:100,
+                                sm:100,
+                                md:50,
+                                lg:50,
+                                xl:50,
+                                xxl:50
+                            }', additionalImgTagParams:"{class:'img-fluid w-100'}")}
+                            <footer>
+                                <small class="figure-copyright">{files.0.properties.copyright -> f:format.nl2br()}</small>
+                            </footer>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        {bs:Bootstrap.Picture(file:files.0, displayWidth:'{
+                            xs:100,
+                            sm:100,
+                            md:50,
+                            lg:50,
+                            xl:50,
+                            xxl:50
+                        }', additionalImgTagParams:"{class:'img-fluid w-100'}")}
+                    </f:else>
+                </f:if>
+                
+                <f:if condition="{files.0.description}"><figcaption>{files.0.description -> f:format.nl2br()}</figcaption></f:if>
+            </figure>
+        </f:if>
+    </f:spaceless></f:section>
+
+</html>

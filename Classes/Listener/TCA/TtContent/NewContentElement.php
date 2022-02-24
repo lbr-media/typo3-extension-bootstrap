@@ -17,7 +17,7 @@ use TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent;
 class NewContentElement
 {
     const NEW_CONTENT_ELEMENT_CLASSES = [
-        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType1',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTextImage',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapMediaGrid',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapCarousel',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTabs',

@@ -4,12 +4,12 @@ Add special content elements for this project
 mod.wizards.newContentElement.wizardItems.common2 {
     header = Zusätzlich
     elements {
-        bootstrap_type1 {
-            iconIdentifier = bootstrap_type1
-            title = Überschrift + Text | Bild
-            description = Auf der linken Seite die Überschrift und einen Text (66%). Auf der rechten Seite ein Bild (33%).
+        bootstrap_textimage {
+            iconIdentifier = bootstrap_textimage
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textimage
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textimage.description
             tt_content_defValues {
-                CType = bootstrap_type1
+                CType = bootstrap_textimage
             }
         }
         bootstrap_mediagrid {
@@ -77,5 +77,5 @@ mod.wizards.newContentElement.wizardItems.common2 {
             }
         }
     }
-    show := addToList(bootstrap_type1,bootstrap_mediagrid,bootstrap_carousel,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
+    show := addToList(bootstrap_textimage,bootstrap_mediagrid,bootstrap_carousel,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
 }

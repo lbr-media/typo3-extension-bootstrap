@@ -7,27 +7,31 @@ namespace LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement;
 use LBRmedia\Bootstrap\Service\TcaService;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\File;
 
-// use TYPO3\CMS\Core\Resource\File;
-
-class BootstrapType1 implements NewContentElementInterface
+class BootstrapTextImage implements NewContentElementInterface
 {
     public static function addPlugin(TcaService $tcaService): void
     {
         // Add content element
         ExtensionManagementUtility::addPlugin(
             [
-                'Überschrift + Text | Bild',
-                'bootstrap_type1',
-                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type1.svg',
+                'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textimage',
+                'bootstrap_textimage',
+                'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_textimage.svg',
             ],
             'CType',
             'bootstrap'
         );
 
+        // Add flexform
+        $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_flexform']['config']['ds']['*,bootstrap_textimage'] = 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextImage.xml';
+
         // Configure TCA
-        $GLOBALS['TCA']['tt_content']['types']['bootstrap_type1'] = [
+        $GLOBALS['TCA']['tt_content']['types']['bootstrap_textimage'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'])
+                ->addShowitemAfter('tx_bootstrap_flexform', 'frames')
+                ->removeShowitems(['mediaAdjustments', 'gallerySettings', 'imagelinks'])
                 ->getShowitemsString(),
             'columnsOverrides' => [
                 'bodytext' => [
@@ -37,18 +41,18 @@ class BootstrapType1 implements NewContentElementInterface
                 ],
                 'image' => [
                     'config' => [
-                        'minitems' => 0,
+                        'minitems' => 1,
                         'maxitems' => 1,
                         'overrideChildTca' => [
-                            // 'types' => [
-                            //     File::FILETYPE_IMAGE => [
-                            //         'showitem' => 'title,alternative,crop,--palette--;;filePalette',
-                            //     ],
-                            // ],
+                            'types' => [
+                                File::FILETYPE_IMAGE => [
+                                    'showitem' => 'title,alternative,--linebreak--,description,--linebreak--,crop,--palette--;;filePalette',
+                                ],
+                            ],
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
                                     ],
                                 ],
                             ],
@@ -59,6 +63,6 @@ class BootstrapType1 implements NewContentElementInterface
         ];
 
         // Icon in backend page view
-        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_type1'] = 'bootstrap_type1';
+        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_textimage'] = 'bootstrap_textimage';
     }
 }

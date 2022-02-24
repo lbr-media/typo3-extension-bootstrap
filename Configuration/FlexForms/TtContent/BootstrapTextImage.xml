@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sGENERAL>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Bild</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="presets">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <itemsProcFunc>LBRmedia\Bootstrap\UserFunc\Tca\TtContent->itemsProcFunc</itemsProcFunc>
+                                <CType>bootstrap_textimage</CType>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="order">
+                        <value index="TCEforms">
+                            <label>Reihenfolge </label>
+                            <description>Auf großen Bildschirmen. Auf kleinen Bildschirmen kommt immer erst der Text und dann das Bild.</description>
+                            <config>
+                                <type>radio</type>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Bild links Text rechts</numIndex>
+                                        <numIndex index="1">image_text</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">Text links Bild rechts</numIndex>
+                                        <numIndex index="1">text_image</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>text_image</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="text_align">
+                        <value index="TCEforms">
+                            <label>Ausrichtung des Textes</label>
+                            <config>
+                                <type>radio</type>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">oben</numIndex>
+                                        <numIndex index="1">start</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">unten</numIndex>
+                                        <numIndex index="1">end</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>start</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="image_align">
+                        <value index="TCEforms">
+                            <label>Ausrichtung des Bildes</label>
+                            <config>
+                                <type>radio</type>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">oben</numIndex>
+                                        <numIndex index="1">start</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">unten</numIndex>
+                                        <numIndex index="1">end</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>start</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="header_position">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position</label>
+                            <config>
+                                <type>radio</type>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.above_all</numIndex>
+                                        <numIndex index="1">above_all</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.text</numIndex>
+                                        <numIndex index="1">text</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.media</numIndex>
+                                        <numIndex index="1">media</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>text</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space">
+                        <value index="TCEforms">
+                            <label>Abstand zwischen Text und Bild</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;;</default>
+                                <elementConfiguration>BootstrapGridSpace</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sGENERAL>
+    </sheets>
+</T3FlexForms>

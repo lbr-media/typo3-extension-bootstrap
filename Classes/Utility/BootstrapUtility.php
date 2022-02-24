@@ -252,6 +252,28 @@ class BootstrapUtility
     }
 
     /**
+     * Generates classes for grid elements to get equal space between columns.
+     * 
+     * @param string $space Six integer values for the devices "xs;sm;md;lg;xl;xxl"
+     */
+    public static function getGridSpaceClasses(string $space): string
+    {
+        // determine space classes
+        $classes = [];
+
+        if ($space) {
+            $spaces = explode(';', $space);
+            foreach (self::DEVICE_INFIXES as $pos => $device) {
+                if (isset($spaces[$pos]) && is_numeric($spaces[$pos])) {
+                    $classes[] = 'g-' . $device . $spaces[$pos];
+                }
+            }
+        }
+
+        return implode(' ', $classes);
+    }
+
+    /**
      * Generates classes for grid elements to set the order.
      * Used in tx_base_flexform_grid in Bootstrap environment.
      * <div class="row">

@@ -24,7 +24,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
         $record = $item->getRecord();
         $out = "";
         switch ($record["CType"]) {
-            case 'bootstrap_type1':
+            case 'bootstrap_textimage':
                 if ($record['image']) {
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
                 }

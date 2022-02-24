@@ -135,12 +135,12 @@ class VariousProcessor implements DataProcessorInterface
     private function _initProperties($processedData): void
     {
         switch ($processedData['data']['CType']) {
-            case 'bootstrap_type1':
-                $this->properties = [
-                    new VariousProperty('bodytext', 'data', 'bodytext', '', 'string'),
-                    new VariousProperty('image', 'file', 'image', null, 'object'),
-                ];
-                break;
+            // case 'bootstrap_type1':
+            //     $this->properties = [
+            //         new VariousProperty('bodytext', 'data', 'bodytext', '', 'string'),
+            //         new VariousProperty('image', 'file', 'image', null, 'object'),
+            //     ];
+            //     break;
             // case 'bootstrap_type3':
             //     $this->properties = [
             //         new VariousProperty('images', 'files', 'image', [], 'array'),

@@ -5,9 +5,9 @@
  */
 return [
     // ... for content elements
-    'bootstrap_type1' => [
+    'bootstrap_textimage' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_type1.svg',
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_textimage.svg',
     ],
     'bootstrap_mediagrid' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
