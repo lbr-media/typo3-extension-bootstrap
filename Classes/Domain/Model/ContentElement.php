@@ -18,81 +18,81 @@ class ContentElement extends AbstractEntity
     /**
      * @var string
      */
-    protected $header = "";
+    public $header = "";
 
     /**
      * @var string
      */
-    protected $headerPosition = "";
+    public $headerPosition = "";
 
     /**
      * @var string
      */
-    protected $headerLayout = "";
+    public $headerLayout = "";
 
     /**
      * @var string
      */
-    protected $headerLink = "";
+    public $headerLink = "";
 
     /**
      * @var int
      */
-    protected $date = 0;
+    public $date = 0;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
-    protected $assets = null;
+    public $assets = null;
 
     /**
      * @var string
      */
-    protected $subheader = "";
+    public $subheader = "";
 
     /**
      * @var string
      */
-    protected $bodytext = "";
+    public $bodytext = "";
 
     /**
      * @var string
      */
-    protected $spaceBeforeClass = "";
+    public $spaceBeforeClass = "";
 
     /**
      * @var string
      */
-    protected $spaceAfterClass = "";
+    public $spaceAfterClass = "";
 
     /**
      * @var string
      */
-    protected $txBootstrapHeaderLayout = "";
+    public $txBootstrapHeaderLayout = "";
 
     /**
      * @var string
      */
-    protected $txBootstrapHeaderPredefined = "";
+    public $txBootstrapHeaderPredefined = "";
 
     /**
      * @var string
      */
-    protected $txBootstrapHeaderColor = "";
+    public $txBootstrapHeaderColor = "";
     /**
      * @var string
      */
-    protected $txBootstrapHeaderAdditionalStyles = "";
+    public $txBootstrapHeaderAdditionalStyles = "";
 
     /**
      * @var string
      */
-    protected $txBootstrapHeaderIcon = "";
+    public $txBootstrapHeaderIcon = "";
 
     /**
      * @var string
      */
-    protected $txBootstrapFlexform = "";
+    public $txBootstrapFlexform = "";
 
     public function getFiles():\TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {

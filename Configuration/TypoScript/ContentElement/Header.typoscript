@@ -1,3 +1,8 @@
+# Header Only:
+# Adds a header only.
+#
+# CType: header
+
 tt_content {
     header =< lib.contentElement
     header {

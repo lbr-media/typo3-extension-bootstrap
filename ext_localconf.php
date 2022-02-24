@@ -9,12 +9,27 @@ call_user_func(
         /**
          * add RTE configuration
          */
-        $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['BOOTSTRAP'] = `EXT:$extKey/Configuration/RichTextEditor/Standard.yaml`;
+        $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['BOOTSTRAP'] = "EXT:$extKey/Configuration/RichTextEditor/Standard.yaml";
 
         /**
          * add User TsConfig
          */
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(`<INCLUDE_TYPOSCRIPT: source="FILE:EXT:$extKey/Configuration/TsConfig/User/General.typoscript">`);
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig("<INCLUDE_TYPOSCRIPT: source=\"FILE:EXT:$extKey/Configuration/TsConfig/User/General.typoscript\">");
+
+        /*
+         * configure plugins
+         */
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            $extKey,
+            'ItemList',
+            [\LBRmedia\Bootstrap\Controller\ItemController::class => 'overview']
+        );
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            $extKey,
+            'ItemDetails',
+            [\LBRmedia\Bootstrap\Controller\ItemController::class => 'details']
+        );
 
         /*
          * Add renderTypes
@@ -35,3 +50,6 @@ call_user_func(
     },
     "bootstrap"
 );
+
+// Define TypoScript as content rendering template
+$GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'bootstrap/Configuration/TypoScript/';

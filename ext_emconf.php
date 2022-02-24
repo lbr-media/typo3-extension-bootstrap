@@ -7,7 +7,6 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '10.4.0-11.5.99',
-            'rte_ckeditor' => '10.4.0-11.5.99',
             'seo' => '10.4.0-11.5.99'
         ],
         'conflicts' => [
@@ -26,6 +25,6 @@ $EM_CONF[$_EXTKEY] = [
     'clearCacheOnLoad' => 1,
     'author' => 'Marcel Briefs',
     'author_email' => 'mb@lbrmedia.de',
-    'author_company' => 'private',
+    'author_company' => 'LBRmedia',
     'version' => '0.0.0-dev',
 ];

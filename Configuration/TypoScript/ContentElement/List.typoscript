@@ -1,0 +1,23 @@
+# General Plugin:
+# This is the default rendering definition for plugins.
+#
+# CType: list
+
+tt_content.list =< lib.contentElement
+tt_content.list {
+    templateName = List
+}
+
+// tt_content.list.20.bootstrap_itemlist = USER
+// tt_content.list.20.bootstrap_itemlist {
+// 	userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+// 	extensionName = Bootstrap
+// 	pluginName = ItemList
+// }
+
+// tt_content.list.20.bootstrap_itemdetails = USER
+// tt_content.list.20.bootstrap_itemdetails {
+// 	userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+// 	extensionName = Bootstrap
+// 	pluginName = ItemDetails
+// }

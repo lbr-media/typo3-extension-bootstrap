@@ -1,3 +1,8 @@
+# File Links:
+# Makes a list of files for download.
+#
+# CType: uploads
+
 tt_content {
     uploads =< lib.contentElement
     uploads {

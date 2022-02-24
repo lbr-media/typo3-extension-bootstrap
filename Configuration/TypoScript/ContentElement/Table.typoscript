@@ -1,3 +1,8 @@
+# Table:
+# A simple table.
+#
+# CType: table
+
 tt_content {
     table =< lib.contentElement
     table {
