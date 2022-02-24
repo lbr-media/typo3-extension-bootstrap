@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_accordionitem',
+        'title' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_tabulatoritem',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -19,7 +19,7 @@ return [
         'sortby' => 'sorting',
         'searchFields' => 'title',
         'typeicon_classes' => [
-            'default' => 'tx_bootstrap_domain_model_accordionitem',
+            'default' => 'tx_bootstrap_domain_model_tabulatoritem',
         ],
     ],
     'types' => [
@@ -28,7 +28,7 @@ return [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 title,
                 --linebreak--,
-                opened_on_load,
+                active,
                 --div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.div.content_elements,
                 content_elements,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
@@ -78,7 +78,7 @@ return [
         ],
         'title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_accordionitem.title',
+            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_tabulatoritem.title',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -86,9 +86,9 @@ return [
                 'eval' => 'trim,required',
             ],
         ],
-        'opened_on_load' => [
+        'active' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_accordionitem.opened_on_load',
+            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_tabulatoritem.active',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -97,11 +97,11 @@ return [
         ],
         'content_elements' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_accordionitem.content_elements',
+            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_tabulatoritem.content_elements',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_bootstrap_domain_model_contentelement',
-                'foreign_field' => 'accordionitem_uid',
+                'foreign_field' => 'tabulatoritem_uid',
                 'foreign_sortby' => 'sorting',
                 'maxitems' => 50,
                 'appearance' => [

@@ -1,0 +1,101 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    Renders LBRmedia\Bootstrap\Domain\Model\ContentElement
+    -->
+    <f:section name="ModelContentElement"><f:spaceless>
+        <f:variable name="data" value="{contentElement.data}" />
+        <f:variable name="files" value="{contentElement.files}" />
+        <f:variable name="grid" value="{contentElement.grid}" />
+        <bs:CTypeFrame contentElementData="{data}" idPattern="{id}-###ID###">
+            <f:render section="Main" arguments="{_all}" />
+        </bs:CTypeFrame>
+    </f:spaceless></f:section>
+
+    <!--
+    The complete content without the wrapper.
+    -->
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{grid.header_position}=='above_all'">
+            <f:render section="Header" optional="true">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:render>
+        </f:if>
+        <f:if condition="{files -> f:count()} || {data.bodytext}">
+            <f:if condition="{grid.overflow_hidden}"><div class="overflow-hidden"></f:if>
+            <div class="{grid.row_classes} {grid.row_space_classes}">
+                <f:switch expression="{grid.order}">
+                    <f:case value="text_media">
+                        <f:if condition="{data.bodytext}"><f:render section="Text" arguments="{_all}" /></f:if>
+                        <f:if condition="{files -> f:count()}"><f:render section="Media" arguments="{_all}" /></f:if>
+                    </f:case>
+                    <f:defaultCase>
+                        <f:if condition="{files -> f:count()}"><f:render section="Media" arguments="{_all}" /></f:if>
+                        <f:if condition="{data.bodytext}"><f:render section="Text" arguments="{_all}" /></f:if>
+                    </f:defaultCase>
+                </f:switch>
+            </div>
+            <f:if condition="{grid.overflow_hidden}"></div></f:if>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <!--
+    Helper for text column
+    -->
+    <f:section name="Text">
+        <div class="{grid.col_text_classes} {grid.col_space_classes}">
+            <f:if condition="{grid.text.item_classes}">
+                <f:then>
+                    <div class="{grid.text.item_classes} h-100">
+                        <f:if condition="{grid.header_position}=='text'">
+                            <f:render section="Header" optional="true">
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </f:render>
+                        </f:if>
+                        <f:format.html>{data.bodytext}</f:format.html>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{grid.header_position}=='text'">
+                        <f:render section="Header" optional="true">
+                            <f:render partial="Header/All" arguments="{_all}" />
+                        </f:render>
+                    </f:if>
+                    <f:format.html>{data.bodytext}</f:format.html>
+                </f:else>
+            </f:if>
+        </div>
+    </f:section>
+
+    <!--
+    Helper for media column
+    -->
+    <f:section name="Media">
+        <div class="{grid.col_media_classes} {grid.col_space_classes}">
+            <f:if condition="{grid.media.item_classes}">
+                <f:then>
+                    <div class="{grid.media.item_classes} h-100">
+                        <f:if condition="{grid.header_position}=='media'">
+                            <f:render section="Header" optional="true">
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </f:render>
+                        </f:if>
+                        <f:render partial="Media/Gallery" arguments="{_all}" />
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{grid.header_position}=='media'">
+                        <f:render section="Header" optional="true">
+                            <f:render partial="Header/All" arguments="{_all}" />
+                        </f:render>
+                    </f:if>
+                    <f:render partial="Media/Gallery" arguments="{_all}" />
+                </f:else>
+            </f:if>
+        </div>
+    </f:section>
+
+</html>

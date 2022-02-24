@@ -42,9 +42,28 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
                 }
                 break;
-            case "bootstrap_type4":
-                if ($record['image']) {
-                    $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
+            case "bootstrap_tabs":
+                if ($record['tx_bootstrap_tabulatoritems']) {
+                    $table = "tx_bootstrap_domain_model_tabulatoritem";
+                    $queryBuilder = $this->getQueryBuilderForTable($table);
+                    $queryBuilder->select('uid', 'title', 'active')
+                        ->from($table)
+                        ->where(
+                            $queryBuilder->expr()->eq(
+                                'tt_content_uid',
+                                $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                            )
+                        )
+                        ->orderBy("sorting", "ASC");
+                    $statement = $queryBuilder->executeQuery();
+                    $list = '<ul>';
+                    while ($row = $statement->fetchAssociative()) {
+                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['active'] ? " (aktiv)" : "")), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
+                    }
+                    $list .= '</ul>';
+                    $out .= $list;
+                } else {
+                    $out .= $this->linkEditContent("keine Tabulator-Elemente", $record);
                 }
                 break;
             case "bootstrap_accordion":

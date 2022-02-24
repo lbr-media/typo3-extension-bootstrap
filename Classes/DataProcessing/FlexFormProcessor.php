@@ -17,12 +17,12 @@ namespace LBRmedia\Bootstrap\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 
-use Exception;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapAccordion;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapMediaGrid;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTabs;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaFloat;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 
@@ -73,6 +73,11 @@ class FlexFormProcessor implements DataProcessorInterface
                 /** @var FlexFormServiceBootstrapAccordion $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapAccordion::class);
                 $processedData["accordion"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                break;
+            case "bootstrap_tabs":
+                /** @var FlexFormServiceBootstrapTabs $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTabs::class);
+                $processedData["tabulator"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
         }
 

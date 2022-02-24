@@ -196,6 +196,43 @@
                 <source>Geöffnet lassen beim Öffnen von anderen Accordion-Elemente</source>
             </trans-unit>
 
+            <trans-unit id="sTABS.sheetTitle">
+                <source>Tabulator-Einstellungen</source>
+            </trans-unit>
+            <trans-unit id="sTABS.layout">
+                <source>Layout</source>
+            </trans-unit>
+            <trans-unit id="sTABS.layout.default">
+                <source>Standard</source>
+            </trans-unit>
+            <trans-unit id="sTABS.layout.buttons_horizontal">
+                <source>Buttons horizontal</source>
+            </trans-unit>
+            <trans-unit id="sTABS.layout.buttons_vertical">
+                <source>Buttons vertikal</source>
+            </trans-unit>
+            <trans-unit id="sTABS.nav_orientation">
+                <source>Navigation: Austrichtung</source>
+            </trans-unit>
+            <trans-unit id="sTABS.nav_orientation.description">
+                <source>Nur bei Layout 'Standard' und 'Buttons horizontal'.</source>
+            </trans-unit>
+            <trans-unit id="sTABS.nav_orientation.default">
+                <source>links</source>
+            </trans-unit>
+            <trans-unit id="sTABS.nav_orientation.justify-content-center">
+                <source>zentriert</source>
+            </trans-unit>
+            <trans-unit id="sTABS.nav_orientation.justify-content-end">
+                <source>rechts</source>
+            </trans-unit>
+            <trans-unit id="sTABS.nav_orientation.nav-fill">
+                <source>aufgeteilt mit selben Zwischenraum</source>
+            </trans-unit>
+            <trans-unit id="sTABS.nav_orientation.nav-justified">
+                <source>aufgeteilt mit selber Button-Breite</source>
+            </trans-unit>
+
             <trans-unit id="presets">
                 <source>Voreinstellungen</source>
             </trans-unit>

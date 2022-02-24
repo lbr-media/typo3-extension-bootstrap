@@ -3,6 +3,108 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2021-03-26T11:15:00Z" product-name="bootstrap">
         <header />
         <body>
+            <!-- tt_content.CType -->
+            <trans-unit id="tt_content.CType.bootstrap_accordion">
+                <source>Accordion</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_accordion.description">
+                <source>Aufklapp-Elemente</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_mediagrid">
+                <source>Medien-Raster</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_mediagrid.description">
+                <source>Bilder oder Videos in Raster-System.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_tabs">
+                <source>Tabulator</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_tabs.description">
+                <source>Tabulator</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textmediafloat">
+                <source>Text &amp; Medien (umfließend)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textmediafloat.description">
+                <source>Medienelemente, die mit Text umflossen werden.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textmediagrid">
+                <source>Text &amp; Medien (Raster)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textmediagrid.description">
+                <source>Text und mehrere Medien aufgeteilt in einem Raster-System. Das flexibelste Element, um Text und Medien zu setzen.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_twocolumnstext">
+                <source>Text | Text</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_twocolumnstext.description">
+                <source>Zwei Spalten Text</source>
+            </trans-unit>
+
+            <!-- tt_content.div -->
+            <trans-unit id="tt_content.div.content_elements">
+                <source>Inhaltselemente</source>
+            </trans-unit>
+
+            <!-- tt_content columns -->
+            <trans-unit id="tt_content.header.description">
+                <source>Nutze | zur Silbentrennung</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_layout">
+                <source>Layout</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_color">
+                <source>Farbe</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_predefined">
+                <source>Variante</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_additional_styles">
+                <source>Weitere Einstellungen</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_icon">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_text_color">
+                <source>Textfarbe</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_background_color">
+                <source>Hintergrundfarbe</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_additional_styles">
+                <source>Weitere Einstellungen</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_inner_frame_class">
+                <source>Rahmen: innen</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_section_index_header">
+                <source>Überschrift</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_image1">
+                <source>Bild</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_image2">
+                <source>Bild</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_bodytext1">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_bodytext2">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_text_color">
+                <source>Variante</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_teammember">
+                <source>Team-Mitglieder</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_accordionitems">
+                <source>Accordion-Elemente</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_tabulatoritems">
+                <source>Tabulator-Elemente</source>
+            </trans-unit>
+
             <trans-unit id="tx_bootstrap_domain_model_item">
                 <source>Item</source>
             </trans-unit>
@@ -45,6 +147,22 @@
                 <source>Geöffnet</source>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_accordionitem.content_elements">
+                <source>Inhaltselemente</source>
+            </trans-unit>
+
+            <trans-unit id="tx_bootstrap_domain_model_tabulatoritem">
+                <source>Tabulator-Element</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.active">
+                <source>Aktiv</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.active.description">
+                <source>Bitte darauf achten, dass nur ein Tabulator-Element aktiv sein darf.</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.content_elements">
                 <source>Inhaltselemente</source>
             </trans-unit>
 

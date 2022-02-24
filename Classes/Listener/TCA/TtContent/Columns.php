@@ -20,7 +20,8 @@ class Columns
          */
         $tmpColumnes = [
             'tx_bootstrap_header_layout' => [
-                'label' => 'Layout',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_layout',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -30,7 +31,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_header_color' => [
-                'label' => 'Farbe',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_color',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -40,7 +42,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_header_predefined' => [
-                'label' => 'Variante',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_predefined',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -48,7 +51,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_header_additional_styles' => [
-                'label' => 'Weitere Einstellungen',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_additional_styles',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectMultipleSideBySide',
@@ -58,7 +62,7 @@ class Columns
             ],
             'tx_bootstrap_header_icon' => [
                 'exclude' => 1,
-                'label' => 'Icon',
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_icon',
                 'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_bootstrap_header_icon',
                     [
@@ -86,7 +90,8 @@ class Columns
                 ),
             ],
             'tx_bootstrap_text_color' => [
-                'label' => 'Textfarbe',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_text_color',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -96,7 +101,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_background_color' => [
-                'label' => 'Hintergrundfarbe',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_background_color',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -106,7 +112,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_additional_styles' => [
-                'label' => 'Weitere Einstellungen',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_additional_styles',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectMultipleSideBySide',
@@ -115,7 +122,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_inner_frame_class' => [
-                'label' => 'Rahmen: innen',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_inner_frame_class',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -125,7 +133,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_section_index_header' => [
-                'label' => 'Überschrift',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_section_index_header',
                 'config' => [
                     'type' => 'text',
                     'rows' => 3,
@@ -133,6 +142,7 @@ class Columns
                 ],
             ],
             'tx_bootstrap_flexform' => [
+                'exclude' => 1,
                 'l10n_display' => 'hideDiff',
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:pi_flexform',
                 'config' => [
@@ -166,7 +176,7 @@ class Columns
             ],
             'tx_bootstrap_image1' => [
                 'exclude' => 1,
-                'label' => 'Bild',
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_image1',
                 'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_bootstrap_image1',
                     [
@@ -195,7 +205,7 @@ class Columns
             ],
             'tx_bootstrap_image2' => [
                 'exclude' => 1,
-                'label' => 'Bild',
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_image2',
                 'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_bootstrap_image2',
                     [
@@ -224,7 +234,7 @@ class Columns
             ],
             'tx_bootstrap_bodytext1' => [
                 'exclude' => 1,
-                'label' => 'Text',
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_bodytext1',
                 'config' => [
                     'type' => 'text',
                     'cols' => 48,
@@ -234,7 +244,7 @@ class Columns
             ],
             'tx_bootstrap_bodytext2' => [
                 'exclude' => 1,
-                'label' => 'Text',
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_bodytext2',
                 'config' => [
                     'type' => 'text',
                     'cols' => 48,
@@ -243,7 +253,8 @@ class Columns
                 ],
             ],
             'tx_bootstrap_teammember' => [
-                'label' => 'Team-Mitglieder',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_teammember',
                 'config' => [
                     'type' => 'inline',
                     'foreign_table' => 'tx_bootstrap_domain_model_teammember',
@@ -262,10 +273,31 @@ class Columns
                 ],
             ],
             'tx_bootstrap_accordionitems' => [
-                'label' => 'Accordion-Elemente',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_accordionitems',
                 'config' => [
                     'type' => 'inline',
                     'foreign_table' => 'tx_bootstrap_domain_model_accordionitem',
+                    'foreign_field' => 'tt_content_uid',
+                    'maxitems' => 50,
+                    'appearance' => [
+                        'levelLinksPosition' => 'both',
+                        'useSortable' => true,
+                        'showPossibleLocalizationRecords' => false,
+                        'showRemovedLocalizationRecords' => false,
+                        'showSynchronizationLink' => false,
+                        'showAllLocalizationLink' => false,
+                        'collapseAll' => false,
+                        'expandSingle' => true,
+                    ],
+                ],
+            ],
+            'tx_bootstrap_tabulatoritems' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_tabulatoritems',
+                'config' => [
+                    'type' => 'inline',
+                    'foreign_table' => 'tx_bootstrap_domain_model_tabulatoritem',
                     'foreign_field' => 'tt_content_uid',
                     'maxitems' => 50,
                     'appearance' => [
@@ -309,14 +341,14 @@ class Columns
          * we need more lines for the title in tt_content.header
          * also add a description
          */
-        $GLOBALS['TCA']['tt_content']['columns']['header']['description'] = 'Nutze | zur Silbentrennung';
+        $GLOBALS['TCA']['tt_content']['columns']['header']['description'] = 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.header.description';
         $GLOBALS['TCA']['tt_content']['columns']['header']['config']['type'] = 'text';
         $GLOBALS['TCA']['tt_content']['columns']['header']['config']['cols'] = 20;
         $GLOBALS['TCA']['tt_content']['columns']['header']['config']['rows'] = 3;
 
-
         /**
          * CType=table
+         * Use more than one class for tables.
          */
         $GLOBALS['TCA']['tt_content']['columns']['table_class']['config']['renderType'] = 'selectMultipleSideBySide';
 

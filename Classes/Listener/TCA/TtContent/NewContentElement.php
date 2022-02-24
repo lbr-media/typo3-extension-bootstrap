@@ -20,7 +20,7 @@ class NewContentElement
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType1',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapMediaGrid',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType3',
-        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType4',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTabs',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapAccordion',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType6',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTwoColumnsText',

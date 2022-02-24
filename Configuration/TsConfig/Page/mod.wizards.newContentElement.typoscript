@@ -14,8 +14,8 @@ mod.wizards.newContentElement.wizardItems.common2 {
         }
         bootstrap_mediagrid {
             iconIdentifier = bootstrap_mediagrid
-            title = Medien-Raster
-            description = Bilder oder Videos in Raster-Elementen
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_mediagrid
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_mediagrid.description
             tt_content_defValues {
                 CType = bootstrap_mediagrid
             }
@@ -28,18 +28,18 @@ mod.wizards.newContentElement.wizardItems.common2 {
                 CType = bootstrap_type3
             }
         }
-        bootstrap_type4 {
-            iconIdentifier = bootstrap_type4
-            title = Versetzte Bilder
-            description = Links/rechts versetzt angeordnete Bilder mit der Möglichkeit Links im Bild als Button zu setzen. Der Bild-Titel wird als Überschrift ausgegeben.
+        bootstrap_tabs {
+            iconIdentifier = bootstrap_tabs
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs.description
             tt_content_defValues {
-                CType = bootstrap_type4
+                CType = bootstrap_tabs
             }
         }
         bootstrap_accordion {
             iconIdentifier = bootstrap_accordion
-            title = Accordion
-            description = Aufklappelemente
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion.description
             tt_content_defValues {
                 CType = bootstrap_accordion
             }
@@ -54,28 +54,28 @@ mod.wizards.newContentElement.wizardItems.common2 {
         }
         bootstrap_twocolumnstext {
             iconIdentifier = bootstrap_twocolumnstext
-            title = Text | Text
-            description = Zwei Spalten Text
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_twocolumnstext
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_twocolumnstext.description
             tt_content_defValues {
                 CType = bootstrap_twocolumnstext
             }
         }
         bootstrap_textmediagrid {
             iconIdentifier = bootstrap_textmediagrid
-            title = Text & Medien (Raster)
-            description = Text und mehrere Medien aufgeteilt in einem Raster-System
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediagrid
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediagrid.description
             tt_content_defValues {
                 CType = bootstrap_textmediagrid
             }
         }
         bootstrap_textmediafloat {
             iconIdentifier = bootstrap_textmediafloat
-            title = Text & Medien (fließend)
-            description = Medienelement, der mit Text umflossen wird.
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediafloat
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediafloat.description
             tt_content_defValues {
                 CType = bootstrap_textmediafloat
             }
         }
     }
-    show := addToList(bootstrap_type1,bootstrap_mediagrid,bootstrap_type3,bootstrap_type4,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
+    show := addToList(bootstrap_type1,bootstrap_mediagrid,bootstrap_type3,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
 }

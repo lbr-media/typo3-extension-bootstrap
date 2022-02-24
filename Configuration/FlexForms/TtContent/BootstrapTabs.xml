@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sTABS>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.sheetTitle</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="layout">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.layout</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.layout.default</numIndex>
+                                        <numIndex index="1">default</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.layout.buttons_horizontal</numIndex>
+                                        <numIndex index="1">buttons_horizontal</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.layout.buttons_vertical</numIndex>
+                                        <numIndex index="1">buttons_vertical</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>default</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="nav_orientation">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.nav_orientation</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.nav_orientation.description</description>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.nav_orientation.default</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.nav_orientation.justify-content-center</numIndex>
+                                        <numIndex index="1">justify-content-center</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.nav_orientation.justify-content-end</numIndex>
+                                        <numIndex index="1">justify-content-end</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.nav_orientation.nav-fill</numIndex>
+                                        <numIndex index="1">nav-fill</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTABS.nav_orientation.nav-justified</numIndex>
+                                        <numIndex index="1">nav-justified</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sTABS>
+    </sheets>
+</T3FlexForms>

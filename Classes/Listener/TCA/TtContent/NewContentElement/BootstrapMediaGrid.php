@@ -15,7 +15,7 @@ class BootstrapMediaGrid implements NewContentElementInterface
         // Add content element
         ExtensionManagementUtility::addPlugin(
             [
-                'Medien-Raster',
+                'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_mediagrid',
                 'bootstrap_mediagrid',
                 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_mediagrid.svg',
             ],

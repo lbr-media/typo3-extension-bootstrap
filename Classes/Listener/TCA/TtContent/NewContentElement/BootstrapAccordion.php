@@ -14,7 +14,7 @@ class BootstrapAccordion implements NewContentElementInterface
         // Add content element
         ExtensionManagementUtility::addPlugin(
             [
-                'Accordion',
+                'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion',
                 'bootstrap_accordion',
                 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_accordion.svg',
             ],

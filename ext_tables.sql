@@ -19,7 +19,7 @@ CREATE TABLE tt_content (
     tx_bootstrap_bodytext2 text,
     tx_bootstrap_teammember int(11) DEFAULT '0' NOT NULL,
     tx_bootstrap_accordionitems int(11) DEFAULT '0' NOT NULL,
-    tx_bootstrap_accordionitem_uid int(11) DEFAULT '0' NOT NULL,
+    tx_bootstrap_tabulatoritems int(11) DEFAULT '0' NOT NULL,
 );
 
 #
@@ -62,6 +62,16 @@ CREATE TABLE tx_bootstrap_domain_model_accordionitem (
 );
 
 #
+# Table structure for table 'tx_bootstrap_domain_model_tabulatoritem'
+#
+CREATE TABLE tx_bootstrap_domain_model_tabulatoritem (
+    title varchar(255) DEFAULT '' NOT NULL,
+    active tinyint(1) unsigned NOT NULL default '0',
+    content_elements int(11) DEFAULT '0' NOT NULL,
+    tt_content_uid int(11) DEFAULT '0' NOT NULL,
+);
+
+#
 # Table structure for table 'tx_bootstrap_domain_model_contentelement'
 #
 CREATE TABLE tx_bootstrap_domain_model_contentelement (
@@ -81,5 +91,6 @@ CREATE TABLE tx_bootstrap_domain_model_contentelement (
     tx_bootstrap_header_additional_styles varchar(255) DEFAULT '' NOT NULL,
     tx_bootstrap_header_icon int(11) DEFAULT '0' NOT NULL,
     tx_bootstrap_flexform mediumtext,
-    parent_uid int(11) DEFAULT '0' NOT NULL,
+    accordionitem_uid int(11) DEFAULT '0' NOT NULL,
+    tabulatoritem_uid int(11) DEFAULT '0' NOT NULL,
 );

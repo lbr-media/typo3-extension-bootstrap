@@ -1,0 +1,11 @@
+tt_content {
+    bootstrap_tabs =< lib.contentElement
+    bootstrap_tabs {
+        templateName = BootstrapTabs
+        dataProcessing {
+            10 = LBRmedia\Bootstrap\DataProcessing\TabulatorItemProcessor
+
+            20 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
+        }
+    }
+}

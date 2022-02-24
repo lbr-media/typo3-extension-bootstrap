@@ -14,7 +14,7 @@ class BootstrapTwoColumnsText implements NewContentElementInterface
         // Add content element
         ExtensionManagementUtility::addPlugin(
             [
-                'Text | Text',
+                'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_twocolumnstext',
                 'bootstrap_twocolumnstext',
                 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_twocolumnstext.svg',
             ],

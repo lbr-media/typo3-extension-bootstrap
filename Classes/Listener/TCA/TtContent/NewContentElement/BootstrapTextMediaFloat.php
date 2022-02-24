@@ -15,7 +15,7 @@ class BootstrapTextMediaFloat implements NewContentElementInterface
         // Add content element
         ExtensionManagementUtility::addPlugin(
             [
-                'Text & Medien (umfließend)',
+                'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediafloat',
                 'bootstrap_textmediafloat',
                 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_textmediafloat.svg',
             ],
