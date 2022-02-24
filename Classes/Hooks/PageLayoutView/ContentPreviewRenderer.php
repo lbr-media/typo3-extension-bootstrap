@@ -51,7 +51,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                 if ($record['tx_bootstrap_accordionitems']) {
                     $table = "tx_bootstrap_domain_model_accordionitem";
                     $queryBuilder = $this->getQueryBuilderForTable($table);
-                    $queryBuilder->select('uid', 'title')
+                    $queryBuilder->select('uid', 'title', 'opened_on_load')
                         ->from($table)
                         ->where(
                             $queryBuilder->expr()->eq(
@@ -63,7 +63,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $statement = $queryBuilder->executeQuery();
                     $list = '<ul>';
                     while ($row = $statement->fetchAssociative()) {
-                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title']), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
+                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['opened_on_load'] ? " (geöffnet)" : " (geschlossen)")), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
                     }
                     $list .= '</ul>';
                     $out .= $list;
