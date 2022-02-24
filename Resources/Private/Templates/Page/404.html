@@ -39,7 +39,9 @@
                 </svg>
             </div>
         </div>
-        <script src="/assets/ts/SvgError.js"></script>
+        <script>
+            !function s(n,o,r){function a(i,t){if(!o[i]){if(!n[i]){var e="function"==typeof require&&require;if(!t&&e)return e(i,!0);if(c)return c(i,!0);throw(e=new Error("Cannot find module '"+i+"'")).code="MODULE_NOT_FOUND",e}e=o[i]={exports:{}},n[i][0].call(e.exports,function(t){return a(n[i][1][t]||t)},e,e.exports,s,n,o,r)}return o[i].exports}for(var c="function"==typeof require&&require,t=0;t<r.length;t++)a(r[t]);return a}({1:[function(t,i,e){function s(){this.svg=null,this.lines=null,this.block=null,this.points=[],this.fontInactiveClass="svgerror__font--inactive",this.timeUnit=400,this.waitTime=1500,this.svg=document.querySelector("#svgerror"),this.lines=this.svg.querySelectorAll(".svgerror__font"),this.block=this.svg.querySelector(".svgerror__block"),this.points=[this.svg.querySelector(".svgerror__point1"),this.svg.querySelector(".svgerror__point2"),this.svg.querySelector(".svgerror__point3")],this.animateLines(),this.animateBlock(),this.animatePoints()}new(s.prototype.animateLines=function(){for(var t=this.waitTime,i=0;i<this.lines.length;i++){switch(this.lines[i].style.display="none",i){case 0:t+=0;break;case 1:case 2:t+=800;break;case 3:t+=300;break;case 4:t+=200;break;case 5:t+=1e3;break;case 6:case 7:t+=200}window.setTimeout(function(t){t.style.display="block"},t,this.lines[i])}},s.prototype.animateBlock=function(){this.block.style.transition="ease-in-out 0.3s";var t=this;window.setInterval(function(){t.block.classList&&t.block.classList.toggle&&t.block.classList.toggle(t.fontInactiveClass)},3*this.timeUnit)},s.prototype.animatePoints=function(){for(var i=this,t=0;t<this.points.length;t++)this.points[t].classList.add(this.fontInactiveClass),window.setTimeout(function(t){t.classList.remove(i.fontInactiveClass)},(t+1)*this.timeUnit,this.points[t]);window.setTimeout(function(){i.animatePoints()},5*this.timeUnit)},s)},{}]},{},[1]);
+        </script>
         <!-- requested url: {request.serverParams.HTTP_HOST}{request.serverParams.REQUEST_URI} -->
     </f:section>
 </html>

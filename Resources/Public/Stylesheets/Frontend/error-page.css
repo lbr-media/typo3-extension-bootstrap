@@ -1,0 +1,87 @@
+html {
+    font-size: 1rem;
+    color: black;
+    background: white;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 400;
+}
+
+a {
+    color: black;
+}
+
+.content--error {
+    margin: 10vw;
+}
+
+@media (min-width: 768px) {
+    .content--error {
+        margin: 75px auto;
+        max-width: 615px;
+    }
+}
+
+#svgerror-wrap {
+    /* get full size of svg in old browsers like IE11 */
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100% / 750 * 678;
+}
+
+#svgerror-wrap svg {
+    position: absolute;
+}
+
+.svgerror__body {
+    fill: #c0c0c0;
+}
+
+.svgerror__stand-bottom {
+    fill: #bbb;
+}
+
+.svgerror__stand {
+    fill: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23777777'/><stop offset='70%' stop-color='%23c0c0c0'/><stop offset='100%' stop-color='%23cccccc'/></linearGradient></svg>#grad") #888;
+}
+
+.svgerror__glass {
+    fill: #333;
+}
+
+.svgerror__screen {
+    fill: #000;
+}
+
+.svgerror__font {
+    font-family: monospace;
+    font-size: 140%;
+    fill: #48c721;
+}
+
+.svgerror__font--inactive {
+    fill: transparent;
+}
+
+.svgerror__name {
+    fill: #429cd7;
+    font-style: italic;
+}
+
+.svgerror__error {
+    fill: orangered;
+}
+
+.svgerror__reflection-line1 {
+    fill: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad") rgba(255, 255, 255, 0.3);
+}
+
+.svgerror__reflection-line2 {
+    fill: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad") rgba(255, 255, 255, 0.3);
+}
+
+.svgerror__logo {
+    font-family: monospace;
+    font-size: 100%;
+    fill: #d8d8d8;
+}
