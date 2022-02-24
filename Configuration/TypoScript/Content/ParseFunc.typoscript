@@ -60,14 +60,54 @@ lib.parseFunc {
                     default = TEXT
                     default.data = parameters:allParams
 
-                    btn-black = TEXT
-                    btn-black.value = class="btn btn-black"
-                    btn-white = TEXT
-                    btn-white.value = class="btn btn-white"
-                    btn-outline-black = TEXT
-                    btn-outline-black.value = class="btn btn-outline-black"
-                    btn-outline-white = TEXT
-                    btn-outline-white.value = class="btn btn-outline-white"
+                    btn-primary = TEXT
+                    btn-primary.value = class="btn btn-primary"
+                    btn-secondary = TEXT
+                    btn-secondary.value = class="btn btn-secondary"
+                    btn-light = TEXT
+                    btn-light.value = class="btn btn-light"
+                    btn-dark = TEXT
+                    btn-dark.value = class="btn btn-dark"
+                    btn-primary-sm = TEXT
+                    btn-primary-sm.value = class="btn btn-primary btn-sm"
+                    btn-secondary-sm = TEXT
+                    btn-secondary-sm.value = class="btn btn-secondary btn-sm"
+                    btn-light-sm = TEXT
+                    btn-light-sm.value = class="btn btn-light btn-sm"
+                    btn-dark-sm = TEXT
+                    btn-dark-sm.value = class="btn btn-dark btn-sm"
+                    btn-primary-lg = TEXT
+                    btn-primary-lg.value = class="btn btn-primary btn-lg"
+                    btn-secondary-lg = TEXT
+                    btn-secondary-lg.value = class="btn btn-secondary btn-lg"
+                    btn-light-lg = TEXT
+                    btn-light-lg.value = class="btn btn-light btn-lg"
+                    btn-dark-lg = TEXT
+                    btn-dark-lg.value = class="btn btn-dark btn-lg"
+                    btn-outline-primary = TEXT
+                    btn-outline-primary.value = class="btn btn-outline-primary"
+                    btn-outline-secondary = TEXT
+                    btn-outline-secondary.value = class="btn btn-outline-secondary"
+                    btn-outline-light = TEXT
+                    btn-outline-light.value = class="btn btn-outline-light"
+                    btn-outline-dark = TEXT
+                    btn-outline-dark.value = class="btn btn-outline-dark"
+                    btn-outline-primary-sm = TEXT
+                    btn-outline-primary-sm.value = class="btn btn-outline-primary btn-sm"
+                    btn-outline-secondary-sm = TEXT
+                    btn-outline-secondary-sm.value = class="btn btn-outline-secondary btn-sm"
+                    btn-outline-light-sm = TEXT
+                    btn-outline-light-sm.value = class="btn btn-outline-light btn-sm"
+                    btn-outline-dark-sm = TEXT
+                    btn-outline-dark-sm.value = class="btn btn-outline-dark btn-sm"
+                    btn-outline-primary-lg = TEXT
+                    btn-outline-primary-lg.value = class="btn btn-outline-primary btn-lg"
+                    btn-outline-secondary-lg = TEXT
+                    btn-outline-secondary-lg.value = class="btn btn-outline-secondary btn-lg"
+                    btn-outline-light-lg = TEXT
+                    btn-outline-light-lg.value = class="btn btn-outline-light btn-lg"
+                    btn-outline-dark-lg = TEXT
+                    btn-outline-dark-lg.value = class="btn btn-outline-dark btn-lg"
                 }
             }
         }

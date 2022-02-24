@@ -22,8 +22,8 @@ editor:
 
   config:
     contentsCss: 
-      #- "EXT:app/vendor/components/font-awesome/css/all.min.css"
-      - "../fileadmin/bootstrap/assets/css/bootstrap.min.css"
+      - "../../fileadmin/bootstrap/assets/css/CKEditor.css"
+      - "../../fileadmin/bootstrap/assets/css/bootstrap.min.css"
     # will be overridden by the record (if a language is set)
     defaultContentLanguage: "de"
     defaultLanguage: "de"
@@ -56,46 +56,33 @@ editor:
       # - { name: "Schrift Überschrift (Inline)", element: "span", attributes: { 'class': 'font-header' }}
 
       # Fonts weights
-      - { name: "fett", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-bold' }}
+      - { name: "fett", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'fw-bold' }}
       # - { name: "fetter", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-bolder' }}
-      - { name: "normal", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-normal' }}
-      # - { name: "dünn", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-light' }}
-      # - { name: "dünner", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-weight-lighter' }}
-      # - { name: "Monospace", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-monospace' }}
-      - { name: "fett", element: ["span"], attributes: { 'class': 'font-weight-bold' }}
-      # - { name: "fetter", element: ["span"], attributes: { 'class': 'font-weight-bolder' }}
-      - { name: "normal", element: ["span"], attributes: { 'class': 'font-weight-normal' }}
-      # - { name: "dünn", element: ["span"], attributes: { 'class': 'font-weight-light' }}
-      # - { name: "dünner", element: ["span"], attributes: { 'class': 'font-weight-lighter' }}
-      # - { name: "Monospace", element: ["span"], attributes: { 'class': 'text-monospace' }}
+      - { name: "normal", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'fw-normal' }}
+      - { name: "Monospace", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-monospace' }}
+      # - { name: "fett", element: ["span"], attributes: { 'class': 'fw-bold' }}
+      # - { name: "normal", element: ["span"], attributes: { 'class': 'fw-normal' }}
+      # - { name: "Monospace", element: ["span"], attributes: { 'class': 'font-monospace' }}
 
       - { name: "GROSSBUCHTABEN (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-uppercase' }}
-      #- { name: "kleinbuchstaben (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'transform-uppercase' }}
-      #- { name: "Kapitälchen (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'transform-capitalize' }}
       - { name: "Mischsatz (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'transform-none' }}
-      - { name: "-durchgestrichen- (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'line-through' }}
+      - { name: "-durchgestrichen- (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-decoration-line-through' }}
       - { name: "GROSSBUCHTABEN (Inline)", element: "span", attributes: { 'class': 'text-uppercase' }}
       #- { name: "kleinbuchstaben (Inline)", element: "span", attributes: { 'class': 'transform-uppercase' }}
       - { name: "Mischsatz (Inline)", element: "span", attributes: { 'class': 'transform-none' }}
-      - { name: "-durchgestrichen- (Inline)", element: "span", attributes: { 'class': 'line-through' }}
+      - { name: "-durchgestrichen- (Inline)", element: "span", attributes: { 'class': 'text-decoration-line-through' }}
 
       # Colors
-      - { name: "Pink (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-primary' }}
-      - { name: "Pink (Inline)", element: "span", attributes: { 'class': 'text-primary' }}
-      - { name: "Grün (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-secondary' }}
-      - { name: "Grün (Inline)", element: "span", attributes: { 'class': 'text-secondary' }}
-      - { name: "Schwarz (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-black' }}
-      - { name: "Schwarz (Inline)", element: "span", attributes: { 'class': 'text-black' }}
-      # - { name: "Grau: dunkel (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-dark' }}
-      # - { name: "Grau: dunkel (Inline)", element: "span", attributes: { 'class': 'text-dark' }}
-      - { name: "Grau: mittel (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-middle' }}
-      - { name: "Grau: mittel (Inline)", element: "span", attributes: { 'class': 'text-middle' }}
-      # - { name: "Grau: hell (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-light' }}
-      # - { name: "Grau: hell (Inline)", element: "span", attributes: { 'class': 'text-light' }}
-      - { name: "Weiß (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-white' }}
-      - { name: "Weiß (Inline)", element: "span", attributes: { 'class': 'text-white' }}
-      # - { name: "Reset (soft)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-muted' }}
-      # - { name: "Reset (soft)", element: "span", attributes: { 'class': 'text-muted' }}
+      - { name: "Primary (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-primary' }}
+      - { name: "Primary (Inline)", element: "span", attributes: { 'class': 'text-primary' }}
+      - { name: "Secondary (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-secondary' }}
+      - { name: "Secondary (Inline)", element: "span", attributes: { 'class': 'text-secondary' }}
+      - { name: "Dark (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-dark' }}
+      - { name: "Dark (Inline)", element: "span", attributes: { 'class': 'text-dark' }}
+      - { name: "Light (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-light' }}
+      - { name: "Light (Inline)", element: "span", attributes: { 'class': 'text-light' }}
+      - { name: "Reset (soft)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'text-muted' }}
+      - { name: "Reset (soft)", element: "span", attributes: { 'class': 'text-muted' }}
 
       # Sizes
       - { name: "Überschrift 1 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'h1' }}
@@ -114,12 +101,12 @@ editor:
       #- { name: "Display 3 (Inline)", element: "span", attributes: { 'class': 'display-3' }}
       #- { name: "Display 4 (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'display-4' }}
       #- { name: "Display 4 (Inline)", element: "span", attributes: { 'class': 'display-4' }}
-      - { name: "Kleiner (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-size-sm' }}
-      - { name: "Kleiner (Inline)", element: "span", attributes: { 'class': 'font-size-sm' }}
+      # - { name: "Kleiner (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-size-sm' }}
+      # - { name: "Kleiner (Inline)", element: "span", attributes: { 'class': 'font-size-sm' }}
       # - { name: "Größer (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'font-size-lg' }}
       # - { name: "Größer (Inline)", element: "span", attributes: { 'class': 'font-size-lg' }}
-      # - { name: "Lead (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'lead' }}
-      # - { name: "Lead (Inline)", element: "span", attributes: { 'class': 'lead' }}
+      - { name: "Lead (Block)", element: ["p", "h1", "h2", "h3", "h4", "h5"], attributes: { 'class': 'lead' }}
+      - { name: "Lead (Inline)", element: "span", attributes: { 'class': 'lead' }}
 
       # List styles
       #- { name: 'UL ', element: 'ol', attributes: { 'class': 'ul-style2' } }
@@ -134,8 +121,8 @@ editor:
       - { name: 'forms', groups: [ 'forms' ] }
       - '/'
       - { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
-      #- { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph', 'ckeditor_fa5' ] }
-      - { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] }
+      - { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph', 'ckeditor_fa5' ] }
+      # - { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] }
       - { name: 'links', groups: [ 'links' ] }
       - { name: 'insert', groups: [ 'insert' ] }
       - '/'
@@ -171,7 +158,33 @@ buttons:
       disabled: false
     properties:
       class:
-        allowedClasses: 'text-decoration-none,btn-black,btn-white,btn-outline-black,btn-outline-white'
+        allowedClasses: '
+          text-decoration-none, 
+          btn-primary,
+          btn-secondary,
+          btn-light,
+          btn-dark,
+          btn-primary-sm,
+          btn-secondary-sm,
+          btn-light-sm,
+          btn-dark-sm,
+          btn-primary-lg,
+          btn-secondary-lg,
+          btn-light-lg,
+          btn-dark-lg,
+          btn-outline-primary,
+          btn-outline-secondary,
+          btn-outline-light,
+          btn-outline-dark,
+          btn-outline-primary-sm,
+          btn-outline-secondary-sm,
+          btn-outline-light-sm,
+          btn-outline-dark-sm,
+          btn-outline-primary-lg,
+          btn-outline-secondary-lg,
+          btn-outline-light-lg,
+          btn-outline-dark-lg
+        '
       title:
         readOnly: false
     #page:
@@ -195,22 +208,62 @@ buttons:
     #    class:
     #      default: 'envelope'
 
-#classesAnchor:
-#  linkMail:
-#    class: 'envelope'
-#    type: 'mail'
-#    titleText: 'Eine Email schreiben'
+classesAnchor:
+ linkMail:
+   class: 'envelope'
+   type: 'mail'
+   titleText: 'Eine Email schreiben'
 
 # set the names of the link classes
 classes:
   text-decoration-none:
     name: "Nicht unterstrichen"
-  btn-black:
-    name: "Button: Schwarz"
-  btn-white:
-    name: "Button: Weiß"
-  btn-outline-black:
-    name: "Button: Schwarzer Rand"
-  btn-outline-white:
-    name: "Button: Weißer Rand"
+  btn-primary:
+    name: "Button: Primary"
+  btn-secondary:
+    name: "Button: Secondary"
+  btn-light:
+    name: "Button: Light"
+  btn-dark:
+    name: "Button: Dark"
+  btn-primary-sm:
+    name: "Button: Primary Small"
+  btn-secondary-sm:
+    name: "Button: Secondary Small"
+  btn-light-sm:
+    name: "Button: Light Small"
+  btn-dark-sm:
+    name: "Button: Dark Small"
+  btn-primary-lg:
+    name: "Button: Primary Large"
+  btn-secondary-lg:
+    name: "Button: Secondary Large"
+  btn-light-lg:
+    name: "Button: Light Large"
+  btn-dark-lg:
+    name: "Button: Dark Large"
+  btn-outline-primary:
+    name: "Button: Outline Primary"
+  btn-outline-secondary:
+    name: "Button: Outline Secondart"
+  btn-outline-light:
+    name: "Button: Outline Light"
+  btn-outline-dark:
+    name: "Button: Outline Dark"
+  btn-outline-primary-sm:
+    name: "Button: Outline Primary Small"
+  btn-outline-secondary-sm:
+    name: "Button: Outline Secondary Small"
+  btn-outline-light-sm:
+    name: "Button: Outline Light Small"
+  btn-outline-dark-sm:
+    name: "Button: Outline Dark Small"
+  btn-outline-primary-lg:
+    name: "Button: Outline Primary Large"
+  btn-outline-secondary-lg:
+    name: "Button: Outline Secondary Large"
+  btn-outline-light-lg:
+    name: "Button: Outline Light Large"
+  btn-outline-dark-lg:
+    name: "Button: Outline Dark Large"
 

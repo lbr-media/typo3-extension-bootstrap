@@ -38,6 +38,7 @@ class Composer
         "vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js.map" => self::JS_DIR,
         // "public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/bootstrap_textmediafloat.css" => self::CSS_DIR,
         // "public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/figure-copyright.css" => self::CSS_DIR,
+        "public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/CKEditor/CKEditor.css" => self::CSS_DIR,
         "public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/masonry.pkgd.min.js" => self::JS_DIR,
     ];
 
