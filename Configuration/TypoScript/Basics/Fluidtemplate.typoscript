@@ -10,6 +10,16 @@ page.10 = FLUIDTEMPLATE
 page.10 {
     templateName < lib.pagelayout
 
+    layoutRootPaths {
+        10 = {$plugin.tx_bootstrap.view.layoutRootPath}Page/
+    }
+    partialRootPaths {
+        10 = {$plugin.tx_bootstrap.view.partialRootPath}Page/
+    }
+    templateRootPaths {
+        10 = {$plugin.tx_bootstrap.view.templateRootPath}Page/
+    }
+
     settings < plugin.tx_bootstrap.settings
 
     variables {

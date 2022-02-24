@@ -5,6 +5,6 @@ config {
 
 page.includeCSS {
     bootstrap = fileadmin/bootstrap/assets/css/bootstrap.min.css
-    bootstrap_textmediafloat = fileadmin/bootstrap/assets/css/bootstrap_textmediafloat.css
-    figure_copyright = fileadmin/bootstrap/assets/css/figure-copyright.css
+    // bootstrap_textmediafloat = fileadmin/bootstrap/assets/css/bootstrap_textmediafloat.css
+    // figure_copyright = fileadmin/bootstrap/assets/css/figure-copyright.css
 }
