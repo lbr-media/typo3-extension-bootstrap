@@ -19,7 +19,7 @@ services:
         identifier: 'mab-bootstrap-listener-tca-ttcontent-newcontentelement'
         event: TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent
         after: 'mab-bootstrap-listener-tca-ttcontent-columns'
-  LBRmedia\Bootstrap\Listener\TCA\Tables:
+  LBRmedia\Bootstrap\Listener\TCA\Tables\Tables:
     tags:
       - name: event.listener
         identifier: 'mab-bootstrap-listener-tca-tables'
