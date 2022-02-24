@@ -46,11 +46,11 @@
             <f:else><div class="carousel-item{f:if(condition:i.isFirst, then:' active')}{f:if(condition:file.properties.copyright, then:' position-relative')}"></f:else>
         </f:if>
 
+            <f:comment><!--
+            Link the whole image when there is no link text.
+            --></f:comment>
             <f:if condition="{file.link}&&{file.properties.tx_bootstrap_link_text}==''">
                 <f:then>
-                    <f:comment><!--
-                    Link the whole image when there is no link text.
-                    --></f:comment>
                     <f:link.typolink parameter="{file.link}">
                         {bs:Bootstrap.Picture(file:file, additionalImgTagParams:"{class:'d-block w-100'}")}
                     </f:link.typolink>
