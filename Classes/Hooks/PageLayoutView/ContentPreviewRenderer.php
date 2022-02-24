@@ -4,6 +4,11 @@ namespace LBRmedia\Bootstrap\Hooks\PageLayoutView;
 
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
+use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
 class ContentPreviewRenderer extends StandardContentPreviewRenderer
 {
@@ -43,20 +48,28 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                 }
                 break;
             case "bootstrap_accordion":
-                // $out .= "<strong>Links:</strong><br />";
-                // if ($record['tx_bootstrap_image1']) {
-                //     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'tx_bootstrap_image1'), $record) . '<br />';
-                // }
-                // if ($record['tx_bootstrap_bodytext1']) {
-                //     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext1']), $record) . '<br />';
-                // }
-                // $out .= "<strong>Rechts:</strong><br />";
-                // if ($record['tx_bootstrap_image2']) {
-                //     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'tx_bootstrap_image2'), $record) . '<br />';
-                // }
-                // if ($record['tx_bootstrap_bodytext2']) {
-                //     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext2']), $record) . '<br />';
-                // }
+                if ($record['tx_bootstrap_accordionitems']) {
+                    $table = "tx_bootstrap_domain_model_accordionitem";
+                    $queryBuilder = $this->getQueryBuilderForTable($table);
+                    $queryBuilder->select('uid', 'title')
+                        ->from($table)
+                        ->where(
+                            $queryBuilder->expr()->eq(
+                                'tt_content_uid',
+                                $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                            )
+                        )
+                        ->orderBy("sorting", "ASC");
+                    $statement = $queryBuilder->executeQuery();
+                    $list = '<ul>';
+                    while ($row = $statement->fetchAssociative()) {
+                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title']), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
+                    }
+                    $list .= '</ul>';
+                    $out .= $list;
+                } else {
+                    $out .= $this->linkEditContent("keine Accordion-Elemente", $record);
+                }
                 break;
             case 'bootstrap_type6':
                 $out .= $record['tx_bootstrap_teammember'] . " Einträge";
@@ -142,5 +155,15 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
         }
 
         return $content;
+    }
+
+    protected function getQueryBuilderForTable($table): QueryBuilder
+    {
+        /** @var \TYPO3\CMS\Core\Database\Query\QueryBuilder $queryBuilder */
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder->getRestrictions()->removeAll()
+            ->add(GeneralUtility::makeInstance(DeletedRestriction::class))
+            ->add(GeneralUtility::makeInstance(WorkspaceRestriction::class, (int)$this->getBackendUser()->workspace));
+        return $queryBuilder;
     }
 }
