@@ -48,7 +48,7 @@ config {
             }
             additionalClasses {
                 10 = no-js
-                // 20 = h-100
+                20 = h-100
                 30 = env-production
             }
             additionalClassCObject = TEXT
@@ -74,8 +74,8 @@ page.bodyTag >
 page.bodyTagCObject = USER
 page.bodyTagCObject {
     userFunc = LBRmedia\Bootstrap\UserFunc\Tag->body
-    // additionalAttributes {
-    //     // get 100% height viewport
-    //     class = d-flex flex-column min-vh-100
-    // }
+    additionalAttributes {
+        // get 100% height viewport
+        class = d-flex flex-column min-vh-100
+    }
 }

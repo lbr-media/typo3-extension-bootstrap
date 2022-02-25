@@ -7,17 +7,22 @@
     Default header
     -->
     <f:section name="Default"><f:spaceless>
-        <div class="container">
-            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <f:link.page pageUid="{settings.rootPageId}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                {header_brand -> f:format.raw()}
-            </f:link.page>
-        
-            <ul class="nav nav-pills">
-                <f:render partial="Navigation/Tree" section="Default" arguments="{items:header_menu_main}" />
-            </ul>
-            </header>
-        </div>
-        <f:comment><f:render partial="HeaderImages" section="Default" arguments="{_all}" /></f:comment>
+        <header class="mb-5 pb-3">
+            <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+                <div class="container-xl">
+                    <f:link.page pageUid="{settings.rootPageId}" class="navbar-brand">
+                        {header_brand -> f:format.raw()}
+                    </f:link.page>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header_navigation" aria-controls="header_navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="header_navigation">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+                            <f:render partial="Navigation/Tree" section="Default" arguments="{items:header_menu_main}" />
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
     </f:spaceless></f:section>
 </html>

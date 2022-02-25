@@ -4,9 +4,9 @@
 
 <f:section name="Default">
     <f:if condition="{items -> f:count()}">
-        <ul>
+        <ul class="list-unstyled{additionalClass}">
             <f:for each="{items}" as="item">
-                <li>
+                <li class="nav-item">
                     <f:render partial="Navigation/Link" section="Default" arguments="{item:item}" />
                 </li>
             </f:for>

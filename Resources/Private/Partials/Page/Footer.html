@@ -3,68 +3,11 @@
     data-namespace-typo3-fluid="true">
 
 <f:section name="Default"><f:spaceless>
-    <footer class="page__footer">
-        <div class="container container--wide">
-            <div class="page__footer__row page__footer__row--menu d-flex">
-                <div class="col">
-                    <f:if condition="{footer_menu_projects -> f:count()}">
-                        <nav class="page__footer__menu page__footer__menu--projects page__footer__menu--vertical"{f:if(condition:footer_menu_projects_label.0, then:' aria-labelledby="footer-menu-projects-label"')}>
-                            <f:if condition="{footer_menu_projects_label.0}">
-                                <div id="footer-menu-projects-label" class="page__footer__menu__label h4"><f:render partial="Navigation/Link" section="Default" arguments="{item:footer_menu_projects_label.0}" /></div>
-                            </f:if>
-                            <f:render partial="Navigation/OneLevel" section="Default" arguments="{items:footer_menu_projects}" />
-                        </nav>
-                    </f:if>
-                </div>
-                <div class="col">
-                    <f:if condition="{footer_menu_portfolio -> f:count()}">
-                        <nav class="page__footer__menu page__footer__menu--portfolio page__footer__menu--vertical"{f:if(condition:footer_menu_portfolio_label.0, then:' aria-labelledby="footer-menu-portfolio-label"')}>
-                            <f:if condition="{footer_menu_portfolio_label.0}">
-                                <div id="footer-menu-portfolio-label" class="page__footer__menu__label h4"><f:render partial="Navigation/Link" section="Default" arguments="{item:footer_menu_portfolio_label.0}" /></div>
-                            </f:if>
-                            <f:render partial="Navigation/OneLevel" section="Default" arguments="{items:footer_menu_portfolio}" />
-                        </nav>
-                    </f:if>
-                </div>
-                <div class="col">
-                    <f:if condition="{footer_menu_brand -> f:count()}">
-                        <nav class="page__footer__menu page__footer__menu--brand page__footer__menu--vertical"{f:if(condition:footer_menu_portfolio_label.0, then:' aria-labelledby="footer-menu-brand-label"')}>
-                            <f:if condition="{footer_menu_brand_label.0}">
-                                <div id="footer-menu-brand-label" class="page__footer__menu__label h4"><f:render partial="Navigation/Link" section="Default" arguments="{item:footer_menu_brand_label.0}" /></div>
-                            </f:if>
-                            <f:render partial="Navigation/OneLevel" section="Default" arguments="{items:footer_menu_brand}" />
-                        </nav>
-                    </f:if>
-                    <f:if condition="{footer_menu_contact -> f:count()}">
-                        <nav class="page__footer__menu page__footer__menu--contact page__footer__menu--vertical"{f:if(condition:footer_menu_portfolio_label.0, then:' aria-labelledby="footer-menu-contact-label"')}>
-                            <f:if condition="{footer_menu_contact_label.0}">
-                                <div id="footer-menu-contact-label" class="page__footer__menu__label h4"><f:render partial="Navigation/Link" section="Default" arguments="{item:footer_menu_contact_label.0}" /></div>
-                            </f:if>
-                            <f:render partial="Navigation/OneLevel" section="Default" arguments="{items:footer_menu_contact}" />
-                        </nav>
-                    </f:if>
-                </div>
-            </div>
+    <footer class="py-3 text-white bg-dark">
+        <div class="container-xl d-flex justify-content-between">
+            {footer_copyright -> f:format.raw()}
+            {footer_creator -> f:format.raw()}
         </div>
-        <div class="container container--wide">
-            <div class="page__footer__row page__footer__row--copyright d-flex">
-                <div class="col col-md-8">
-                    {footer_copyright -> f:format.raw()}
-                </div>
-                <div class="col col-md-4">
-                    <f:if condition="{footer_menu_legal -> f:count()}">
-                        <nav class="page__footer__menu page__footer__menu--legal"{f:if(condition:footer_menu_portfolio_label.0, then:' aria-label="{footer_menu_portfolio_label.0.title}"')}>
-                            <f:render partial="Navigation/OneLevel" section="Default" arguments="{items:footer_menu_legal}" />
-                        </nav>
-                    </f:if>
-                </div>
-            </div>
-        </div>
-        <f:comment><div class="page__footer__row page__footer__row--creator text-white bg-grey">
-            <div class="container container--wide">
-                {footer_creator -> f:format.raw()}
-            </div>
-        </div></f:comment>
     </footer>
 </f:spaceless></f:section>
 

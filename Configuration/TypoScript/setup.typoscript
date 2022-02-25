@@ -1,7 +1,6 @@
 # Extension template paths
 plugin.tx_bootstrap {
     view {
-        // standaloneTemplateRootPath = {$plugin.tx_bootstrap.view.templateRootPath}
         templateRootPaths.0 = {$plugin.tx_bootstrap.view.templateRootPath}
         partialRootPaths.0 = {$plugin.tx_bootstrap.view.partialRootPath}
         layoutRootPaths.0 = {$plugin.tx_bootstrap.view.layoutRootPath}
@@ -13,16 +12,10 @@ plugin.tx_bootstrap {
 
 
 # include all the basics
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/General.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Config.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Page.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/HeaderData.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Fluidtemplate.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Stylesheets.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/JavaScript.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/PageTitleProvider.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/FormField.typoscript">
-
-
-# Include extensions
-# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Plugins/tx_seo.typoscript">
-# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Plugins/tx_cookieconsent.setup.typoscript">

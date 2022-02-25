@@ -3,15 +3,9 @@
 # Basic configuration #
 #######################
 
-# config.baseURL = {$plugin.tx_bootstrap.production.baseURL}
-# config.absRefPrefix = {$plugin.tx_bootstrap.production.absRefPrefix}
-# [applicationContext == "Development"]
-# config.baseURL = {$plugin.tx_bootstrap.development.baseURL}
-# config.absRefPrefix = {$plugin.tx_bootstrap.development.absRefPrefix}
-# [END]
-
 PAGE_TARGET =
 config {
+    baseURL = /
     disablePrefixComment = 1
     meaningfulTempFilePrefix = 100
     renderCharset = utf-8
@@ -23,17 +17,11 @@ config {
     spamProtectEmailAddresses_atSubst = <span>&#064;</span>
 
     # Links & content sharing across domains
-    #typolinkEnableLinksAcrossDomains = 1
-    #typolinkCheckRootline = 1
-    #content_from_pid_allowOutsideDomain = 1
     uniqueLinkVars = 1
 
     # Cache
     no_cache = {$plugin.tx_bootstrap.no_cache}
     debug = {$plugin.tx_bootstrap.no_cache}
-    #  cache_clearAtMidnight = 1
-    #  cache_period = 21600
-    // sendCacheHeaders = 1
 
     # Additional Header-Comment
     headerComment (

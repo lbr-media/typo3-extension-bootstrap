@@ -32,6 +32,9 @@
         "helhum/typo3-console": "^7.0.2",
         "typo3/cms-lowlevel": "^11.5"
     },
+    "suggest": {
+        "lbr-media/typo3-extension-bootstrap-example": "^1.0"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"

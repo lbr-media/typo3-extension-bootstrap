@@ -11,21 +11,21 @@
 <f:section name="_Level">
     <f:if condition="{items -> f:count()}">
         <f:for each="{items}" as="item">
-            <li class="nav-item">
-                <f:if condition="{item.children -> f:count()}">
-                    <f:then>
-                        <f:render partial="Navigation/Link" section="Default" arguments="{item:item}" />
-                        <ul>
-                            <f:render section="_Level" arguments="{items:item.children,parentItem:item}" />
+            <f:if condition="{item.children -> f:count()}">
+                <f:then>
+                    <li class="nav-item dropdown">
+                        <f:render partial="Navigation/Link" section="TreeLink" arguments="{item:item, isDropdownToggle:1, isDropdown:0}" />
+                        <ul class="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="link-{item.data.uid}">
+                            <f:render section="_Level" arguments="{items:item.children,parentItem:item, isDropDown:1}" />
                         </ul>
-                    </f:then>
-                    <f:else>
-                        <f:render partial="Navigation/Link" section="Default" arguments="{item:item}" />
-                    </f:else>
-                </f:if>
-            </li>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li{f:if(condition:isDropdown, else:' class="nav-item"')}>
+                        <f:render partial="Navigation/Link" section="TreeLink" arguments="{item:item, isDropdownToggle:0, isDropdown:isDropdown}" />
+                    </li>
+                </f:else>
+            </f:if>
         </f:for>
     </f:if>
 </f:section>
-
-</html>
