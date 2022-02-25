@@ -6,11 +6,10 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-11.5.99',
-            'seo' => '10.4.0-11.5.99'
+            'typo3' => '11.5.0-11.5.99',
+            'seo' => '11.5.0-11.5.99'
         ],
         'conflicts' => [
-            'css_styled_content' => '*',
             'fluid_styled_content' => '*',
         ],
     ],
@@ -26,5 +25,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Marcel Briefs',
     'author_email' => 'mb@lbrmedia.de',
     'author_company' => 'LBRmedia',
-    'version' => '0.0.0-dev',
+    'version' => '1.0.0',
 ];
