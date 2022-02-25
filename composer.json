@@ -2,7 +2,15 @@
     "name": "lbr-media/typo3-extension-bootstrap",
     "type": "typo3-cms-extension",
     "description": "Twitter Bootstrap package",
+    "homepage": "https://github.com/lbr-media/typo3-extension-bootstrap",
     "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Marcel Briefs",
+            "email": "mb@lbrmedia.de",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": ">=7.4.1",
         "components/jquery": "^3.6",
@@ -26,7 +34,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.0-dev"
+            "dev-master": "1.0.x-dev"
         },
         "typo3/cms": {
             "extension-key": "bootstrap",
@@ -37,7 +45,5 @@
         "psr-4": {
             "LBRmedia\\Bootstrap\\": "Classes"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
