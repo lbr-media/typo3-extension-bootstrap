@@ -26,6 +26,14 @@ services:
         event: TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent
         after: 'mab-bootstrap-listener-tca-ttcontent-newcontentelement'
 
+  # Commands
+  LBRmedia\Bootstrap\Command\UpdateFileadmin:
+    tags:
+      - name: 'console.command'
+        command: 'bootstrap:updatefileadmin'
+        description: 'Copies/updates some files to fileadmin/bootstrap/assets/'
+        hidden: false
+
   # dependency injection of classes which could not use @Inject
   LBRmedia\Bootstrap\DataProcessing\VariousProcessor:
     public: true

@@ -4,12 +4,17 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Command;
 
-use Composer\Script\Event;
+use Symfony\Component\Console\Command\Command;
+// use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use TYPO3\CMS\Core\Core\Environment;
 
 /**
  * Methods which are called by composer.
  */
-class Composer
+class UpdateFileadmin extends Command
 {
     // no trailing slashes!
     const JS_DIR = "public/fileadmin/bootstrap/assets/js";
@@ -43,53 +48,57 @@ class Composer
     ];
 
     /**
-     * Will be executed after `composer install` when a composer.lock file already exists.
+     * Configure the command by defining the name, options and arguments
      */
-    public static function postUpdateCmd(Event $event): void
+    protected function configure()
     {
-        self::createDirectories($event);
-        self::copyFiles($event);
+
+        $this->setHelp('Creates directories:' . LF . implode(LF, self::DIRS) . LF . LF . 'Copies files:' . LF . implode(LF, array_keys(self::FILES)));
     }
 
     /**
-     * Will be executed after `composer update` when a composer.lock file already exists.
+     * Executes the command for showing sys_log entries
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int error code
      */
-    public static function postInstallCmd(Event $event): void
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
-        self::createDirectories($event);
-        self::copyFiles($event);
+        $io = new SymfonyStyle($input, $output);
+        $io->title($this->getDescription());
+
+        self::createDirectories($io);
+        self::copyFiles($io);
+
+        return Command::SUCCESS;
     }
 
-    protected static function getBaseDir(Event $event): string
+    protected static function createDirectories(SymfonyStyle $io): void
     {
-        return dirname($event->getComposer()->getConfig()->get('vendor-dir'));
-    }
-
-    protected static function createDirectories(Event $event): void
-    {
-        $baseDir = self::getBaseDir($event);
+        $baseDir = self::getBaseDir();
         foreach (self::DIRS as $dir) {
             if (!is_dir($baseDir . DIRECTORY_SEPARATOR . $dir)) {
-                echo "creating directory $dir." . PHP_EOL;
+                $io->writeln("creating directory $dir.");
                 mkdir($baseDir . DIRECTORY_SEPARATOR . $dir, 0777, true);
             } else {
-                echo "directory $dir already exists." . PHP_EOL;
+                $io->writeln("directory $dir already exists.");
             }
         }
     }
 
-    protected static function copyFiles(Event $event): void
+    protected static function copyFiles(SymfonyStyle $io): void
     {
-        $baseDir = self::getBaseDir($event);
+        $baseDir = self::getBaseDir();
         foreach (self::FILES as $source => $target) {
             $sourceAbs = $baseDir . DIRECTORY_SEPARATOR . $source;
             if (!is_file($sourceAbs)) {
-                echo "ERROR: cannot copy $source. File does not exist!" . PHP_EOL;
+                $io->writeln("<error>cannot copy $source. File does not exist!</error>");
                 continue;
             }
 
             if (!is_readable($sourceAbs)) {
-                echo "ERROR: cannot copy $source. File is not readable!" . PHP_EOL;
+                $io->writeln("<error>cannot copy $source. File is not readable!</error>");
                 continue;
             }
 
@@ -97,10 +106,15 @@ class Composer
             $filename = $fileinfo["basename"];
 
             if (copy($sourceAbs, $baseDir . DIRECTORY_SEPARATOR . $target . DIRECTORY_SEPARATOR . $filename)) {
-                echo "copy $source to $target$filename." . PHP_EOL;
+                $io->writeln("copy $source to $target$filename.");
             } else {
-                echo "ERROR: cannot copy $source to $target$filename." . PHP_EOL;
+                $io->writeln("<error>cannot copy $source to $target$filename.</error>");
             }
         }
+    }
+
+    protected static function getBaseDir(): string
+    {
+        return Environment::getProjectPath();
     }
 }
