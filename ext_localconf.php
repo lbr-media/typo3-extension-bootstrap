@@ -8,7 +8,7 @@ defined('TYPO3') or die();
 /**
  * add RTE configuration
  */
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['BOOTSTRAP'] = "EXT:bootstral/Configuration/RichTextEditor/Standard.yaml";
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['BOOTSTRAP'] = "EXT:bootstrap/Configuration/RichTextEditor/Standard.yaml";
 
 /**
  * add User TsConfig
