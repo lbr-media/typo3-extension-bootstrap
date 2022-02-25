@@ -6,7 +6,7 @@
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "Marcel Briefs",
+            "name": "Marcel",
             "email": "mb@lbrmedia.de",
             "role": "Developer"
         }
@@ -37,13 +37,18 @@
             "dev-master": "1.0.x-dev"
         },
         "typo3/cms": {
-            "extension-key": "bootstrap",
-            "web-dir": ".build/public"
+            "extension-key": "bootstrap"
         }
     },
     "autoload": {
         "psr-4": {
             "LBRmedia\\Bootstrap\\": "Classes"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true
         }
     }
 }
