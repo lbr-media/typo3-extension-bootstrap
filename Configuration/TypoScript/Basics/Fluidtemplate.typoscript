@@ -42,12 +42,12 @@ page.10 {
         #     stdWrap.typolink {
         #         parameter = 1
         #         ATagParams = class="page__header__brand"
-        #         title = DUGGAN Küche + Einrichtung
+        #         title = Company
         #     }
 
         #     10 = SVG
         #     10 {
-        #         src = assets/gfx/Logo_Duggan.svg
+        #         src = assets/gfx/Logo_Company.svg
         #         renderMode = inline
         #         stdWrap.wrap = <span class="page__header__brand__gfx page__header__brand__gfx--name">|</span>
         #     }
@@ -78,7 +78,7 @@ page.10 {
 
             20 = TEXT
             20 {
-                value = Duggan Küchen und Einrichtungs GmbH
+                value = Company
             }
         }
 
@@ -87,14 +87,14 @@ page.10 {
             wrap = <div class="page__footer__creator">|</div>
             10 = TEXT
             10 {
-                value = © Design und Konzeption von
+                value = © Design and concept by
                 noTrimWrap = || |
             }
 
             20 = TEXT
             20 {
-                value = Benkler &amp; Benkler
-                typolink.parameter = http://benkler.com _blank
+                value = Design Company
+                typolink.parameter = http://example.com _blank
                 typolink.ATagParams = class="text-decoration-none text-white"
             }
         }
@@ -158,7 +158,7 @@ page.10 {
         }
 
         /*
-        Navigation "Über Duggan"
+        Navigation "About"
         */
         320 < .300
         320 {
@@ -173,7 +173,7 @@ page.10 {
         }
 
         /*
-        Navigation "Kontakt"
+        Navigation "Contact"
         */
         330 < .300
         330 {
@@ -188,7 +188,7 @@ page.10 {
         }
 
         /*
-        Navigation "Rechtliches"
+        Navigation "Legals"
         */
         340 < .300
         340 {
