@@ -31,6 +31,8 @@ The basis of the content elements is fluid_styled_content (many are copied from 
 
 ## Install
 
+There is a basic package at https://github.com/lbr-media/typo3-bootstrap-base which also loads a distribution extension. Maybe use it to get an example page with content or follow these steps to get a fresh and empty installation:
+
 ### 1. Install typo3 as usual with composer.
 
 Use `composer create-project "typo3/cms-base-distribution:^11.5" my-new-project` or check the composer helper at https://get.typo3.org/misc/composer/helper.
