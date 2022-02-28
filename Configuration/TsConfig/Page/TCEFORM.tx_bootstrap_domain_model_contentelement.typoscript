@@ -6,4 +6,10 @@ TCEFORM.tx_bootstrap_domain_model_contentelement {
     tx_bootstrap_header_predefined < TCEFORM.tt_content.tx_bootstrap_header_predefined
     tx_bootstrap_header_icon < TCEFORM.tt_content.tx_bootstrap_header_icon
     header_position < TCEFORM.tt_content.header_position
+
+    # flexform
+    # ... disable image_zoom: there is no lightbox component
+    tx_bootstrap_flexform.default.sMEDIA.image_zoom.disabled = 1
+    # ... disable masonry which not works inside accordion
+    tx_bootstrap_flexform.default.sMEDIA.masonry_enabled.disabled = 1
 }
