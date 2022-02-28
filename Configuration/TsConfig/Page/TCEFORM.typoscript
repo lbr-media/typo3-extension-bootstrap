@@ -1,15 +1,15 @@
-lib.colors {
-    primary = primary (blau)
-    secondary = secondary (grau)
-    success = success (grün)
-    info = info (hellblau)
-    warning = warning (orange)
-    danger = danger (rot)
-    light = light (hellgrau)
-    dark = dark (dunkelgrau)
-}
+// lib.bootstrapColors {
+//     primary = primary (blau)
+//     secondary = secondary (grau)
+//     success = success (grün)
+//     info = info (hellblau)
+//     warning = warning (orange)
+//     danger = danger (rot)
+//     light = light (hellgrau)
+//     dark = dark (dunkelgrau)
+// }
 
-lib.backgroundColors {
+lib.bootstrapBackgroundColors {
     bg-primary = primary (blau)
     bg-secondary = secondary (grau)
     bg-success = success (grün)
@@ -20,7 +20,7 @@ lib.backgroundColors {
     bg-dark = dark (dunkelgrau)
 }
     
-lib.textColors {
+lib.bootstrapTextColors {
     text-primary = primary (blau)
     text-secondary = secondary (grau)
     text-success = success (grün)
@@ -31,7 +31,7 @@ lib.textColors {
     text-dark = dark (dunkelgrau)
 }
 
-lib.appHeaderLayout {
+lib.bootstrapHeaderLayout {
     display-1 = Display 1
     display-2 = Display 2
     display-3 = Display 3
@@ -53,3 +53,4 @@ lib.predefinedHeader {
 
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/Page/TCEFORM.pages.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/Page/TCEFORM.tt_content.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/Page/TCEFORM.tx_bootstrap_domain_model_contentelement.typoscript">

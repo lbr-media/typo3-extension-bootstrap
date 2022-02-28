@@ -2,10 +2,10 @@
 General settings for all pages
 */
 TCEFORM.pages {
-    // = = Allgemein = = 
+    # = = Allgemein = = 
     subtitle.disabled = 1
 
-    // = = SEO = =
+    # = = SEO = =
     // seo_title.disabled = 1
     // description.disabled = 1
     // no_index.disabled = 1
@@ -14,7 +14,7 @@ TCEFORM.pages {
     // sitemap_changefreq.disabled = 1
     // sitemap_priority.disabled = 1
 
-    // = = Soziale Medien = =
+    # = = Soziale Medien = =
     // og_title.disabled = 1
     // og_description.disabled = 1
     // og_image.disabled = 1
@@ -23,14 +23,14 @@ TCEFORM.pages {
     // twitter_image.disabled = 1
     // twitter_card.disabled = 1
 
-    // = = Metadaten = =
+    # = = Metadaten = =
     // abstract.disabled = 1
     // keywords.disabled = 1
     // lastUpdated.disabled = 1
     author.disabled = 1
     author_email.disabled = 1
     
-    // = = Erscheinungsbild = =
+    # = = Erscheinungsbild = =
     layout.disabled = 1
     newUntil.disabled = 1
     // backend_layout.disabled = 1
@@ -39,7 +39,7 @@ TCEFORM.pages {
     backend_layout_next_level.label = Layout (für Unterseiten dieser Seite)
     content_from_pid.disabled = 1
 
-    // = = Verhalten = =
+    # = = Verhalten = =
     // target.disabled = 1
     cache_timeout.disabled = 1
     cache_tags.disabled = 1
@@ -48,15 +48,15 @@ TCEFORM.pages {
     php_tree_stop.disabled = 1
     module.disabled = 1
 
-    // = = Ressourcen = =
+    # = = Ressourcen = =
     // media.disabled = 1
     tsconfig_includes.disabled = 1
     TSconfig.disabled = 1
 
-    // = = Sprache = =
+    # = = Sprache = =
     l18n_cfg.disabled = 1
 
-    // = = Zugriff = =
+    # = = Zugriff = =
     // hidden.disabled = 1
     // nav_hide.disabled = 1
     // starttime.disabled = 1
@@ -66,17 +66,14 @@ TCEFORM.pages {
     fe_login_mode.disabled = 1
     editlock.disabled = 1
 
-    // = = Kategorien = =
+    # = = Kategorien = =
     categories.disabled = 1
 
-    // = = Hinweise = =
+    # = = Hinweise = =
     rowDescription.disabled = 1
-    // rowDescription.label = Beschreibung (Wird in der Seitenübersicht ausgegeben)
 }
 
-/*
-re-enable some fields for admins
-*/
+# re-enable some fields for admins
 [backend.user.isAdmin]
 TCEFORM.pages {
     is_siteroot.disabled = 0
@@ -86,9 +83,8 @@ TCEFORM.pages {
 }
 [global]
 
-/*
-shortcut / Verweis
-*/
+
+# shortcut / Verweis
 [page["doktype"] == 4]
 TCEFORM.pages {
     abstract.disabled = 1
@@ -105,9 +101,8 @@ TCEFORM.pages {
 }
 [global]
 
-/*
-Trennzeichen für Menü
-*/
+
+# Trennzeichen für Menü
 [page["doktype"] == 199]
 TCEFORM.pages {
     backend_layout.disabled = 1
@@ -115,9 +110,7 @@ TCEFORM.pages {
 }
 [global]
 
-/*
-Link zu externer URL
-*/
+# Link zu externer URL
 [page["doktype"] == 3]
 TCEFORM.pages {
     abstract.disabled = 1
@@ -129,9 +122,8 @@ TCEFORM.pages {
 }
 [global]
 
-/*
-Ordner
-*/
+
+# Folder/Ordner
 [page["doktype"] == 254]
 TCEFORM.pages {
     backend_layout.disabled = 1

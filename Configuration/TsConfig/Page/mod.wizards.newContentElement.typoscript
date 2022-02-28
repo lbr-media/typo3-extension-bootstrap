@@ -1,6 +1,4 @@
-/*
-Add special content elements for this project
-*/
+# Add special content elements for this project
 mod.wizards.newContentElement.wizardItems.common2 {
     header = Zusätzlich
     elements {

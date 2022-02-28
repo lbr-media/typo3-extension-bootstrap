@@ -1,0 +1,9 @@
+# Copy some settings from tt_content for the content element which is used in tabulator and accordion
+TCEFORM.tx_bootstrap_domain_model_contentelement {
+    header_layout < TCEFORM.tt_content.header_layout
+    tx_bootstrap_header_layout < TCEFORM.tt_content.tx_bootstrap_header_layout
+    tx_bootstrap_header_color < TCEFORM.tt_content.tx_bootstrap_header_color
+    tx_bootstrap_header_predefined < TCEFORM.tt_content.tx_bootstrap_header_predefined
+    tx_bootstrap_header_icon < TCEFORM.tt_content.tx_bootstrap_header_icon
+    header_position < TCEFORM.tt_content.header_position
+}

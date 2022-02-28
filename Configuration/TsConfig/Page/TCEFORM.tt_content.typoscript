@@ -1,10 +1,5 @@
 TCEFORM.tt_content {
-    # header_link.disabled = 1
-    // subheader.disabled = 1
-    # sectionIndex.disabled = 1
-    // media.disabled = 0
-    # date.disabled = 1
-
+    # = = header = =
     header_layout {
         altLabels {
             0 = Standard (<H1>)
@@ -14,25 +9,25 @@ TCEFORM.tt_content {
             4 = <H4>
             5 = <H5>
         }
-        # addItems {
-        #     6 = <H6>
-        # }
+        // addItems {
+        //     6 = <H6>
+        // }
     }
 
     tx_bootstrap_background_color {
-        addItems < lib.backgroundColors
+        addItems < lib.bootstrapBackgroundColors
     }
 
     tx_bootstrap_text_color {
-        addItems < lib.textColors
+        addItems < lib.bootstrapTextColors
     }
 
     tx_bootstrap_header_layout {
-        addItems < lib.appHeaderLayout
+        addItems < lib.bootstrapHeaderLayout
     }
 
     tx_bootstrap_header_color {
-        addItems < lib.textColors
+        addItems < lib.bootstrapTextColors
     }
 
     tx_bootstrap_header_predefined {
@@ -53,19 +48,17 @@ TCEFORM.tt_content {
         }
     }
 
-    /*
-    Reduce content types to the needed ones
-    all standard CTypes:
-    header, text, textpic, image, textmedia
-    bullets, table, uploads
-    menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages
-    form_formframework, felogin_login
-    shortcut, div, list, html
-    */
+    # = = CTYpe = =
+    # Reduce content types to the needed ones.
+    # all default CTypes:
+    # header, text, textpic, image, textmedia
+    # bullets, table, uploads
+    # menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages
+    # form_formframework, felogin_login
+    # shortcut, div, list, html
     CType.removeItems = textpic, image, textmedia
-    # CType.removeItems = bullets, table, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, form_formframework, shortcut, div
 
-    // layout
+    # = = layout = =
     layout.disabled = 1
     frame_class {
         disabled = 0
@@ -90,26 +83,26 @@ TCEFORM.tt_content {
         }
     }
 
-    // links
+    # = = links = =
     // linkToTop.disabled = 1
 
-    // language
+    # = = language = =
     // sys_language_uid.disabled = 1
 
-    // access
+    # = = access = =
     // fe_group.disabled = 1
     // fe_login_mode.disabled = 1
     // editlock.disabled = 1
 
-    // categories
+    # = = categories = =
     // categories.disabled = 1
 
-    // notes
+    # = = notes = =
     // rowDescription.disabled = 1
-    // tx_bootstrap_section_index_header.disabled = 1
 
-    // configuration for content element div
-    // add inner_frame_class for the several styles
+    # = = CType=div = =
+    # configuration for content element div
+    # add inner_frame_class for the several styles
     frame_class.types.div {
         disabled = 1
     }
@@ -133,6 +126,7 @@ TCEFORM.tt_content {
     //     disabled = 1
     // }
 
+    # = = CType=table = =
     table_class {
         keepItems = 
         addItems {
@@ -162,14 +156,15 @@ TCEFORM.tt_content {
         }
     }
 
-    // disable image zoom on flexforms
+    # = = image/assets = =
+    # Disable image zoom on flexforms.
+    # There is no lightbox component at this time.
     tx_bootstrap_flexform.bootstrap_textmediagrid.sMEDIA.image_zoom.disabled = 1
     tx_bootstrap_flexform.bootstrap_textmediafloat.sMEDIA.image_zoom.disabled = 1
     tx_bootstrap_flexform.bootstrap_mediagrid.sMEDIA.image_zoom.disabled = 1
-
 }
 
-// enable frame_class/container for layout homepage
+# enable frame_class/container for layout homepage
 // [page["backend_layout"] == 'pagets__Homepage']
 // TCEFORM.tt_content {
 //     frame_class {

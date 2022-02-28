@@ -10,7 +10,7 @@ TCEMAIN {
         }
     }
 
-    # Standard-Backend-Gruppe beim Erstellen einer Seite.
+    # Default backend group and permissoins
     permissions {
         groupid = 1
         user = show,editcontent,edit,delete,new
