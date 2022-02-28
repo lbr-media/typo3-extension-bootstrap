@@ -7,27 +7,136 @@ The basis of the content elements is fluid_styled_content (many are copied from 
 
 ## Content elements
 
-| Title | Description | 
-| - | - |
-| Accordion | Bootstrap styled Accordion component |
-| Carousel | Bootstrap styled Carousel component with images. |
-| Media grid | Images and videos in an adjustable grid system. Masonry is also provided. |
-| Tabulator | Bootstrap styled Tabulator component |
-| Text + Image | A content element to create fast a grid with one image and text. Positions, space and alignment is adjustable |
-| Text & Media (float) | A text which floats a media grid. Full adjustable grid and floating settings. Some presets are available to the editor. |
-| Text & Media (grid) | A text columns and a media grid columne. Full adjustable grid settings. Some presets are available to the editor. |
-| Two columns text | Create fast two columns text. |
-| Bullets | A list with some Bootstrap-features. |
-| Div | Just a line. |
-| Header | Just a header. All headers of all content elements have extra fields to adjust the needs. |
-| Table | Adjustable with alle the Bootstrap classes. |
-| Uploads | Realized with Bootstrap card component. |
-| HTML | fluid_styled_content |
-| List/Plugin | fluid_styled_content |
-| Menu* | fluid_styled_content |
-| Shortcut | fluid_styled_content |
-| Text | fluid_styled_content |
+### Accordion
+Bootstrap styled Accordion component
 
+One accordion content element has one or many accordion items.  
+Each accordion item may have one or many `Text & media (grid)` content elements.  
+
+#### Settings for all items:
+* keep items open on opening others
+
+#### Settings each item:
+* opened on load
+
+---
+
+### Carousel
+Bootstrap styled Carousel component with images.
+
+#### Settings:
+* animation
+* autoplay
+* color scheme (light, dark)
+* controls
+* indicators
+* interval
+
+#### Image properties:
+* header
+* title
+* alternative
+* description
+* link
+* link text
+* crop (xs-xxl)
+
+---
+
+### Cards
+Bootstrap styled Cards component in a grid system.
+
+#### Settings:
+* Grid:
+    * cols
+    * gutter space x
+    * gutter space y
+    * align x
+    * align y
+* Cards:
+    * image position (above, below, start, end
+    * background color
+    * text color
+    * border color
+    * button color/style
+* Image optimizing (produced size for each device)
+* Presets (configurable for admins)
+
+#### Card-item properties:
+* header
+* title
+* image
+* text
+* link
+* link text
+* footer
+
+---
+
+### Media grid
+Images and videos in an adjustable grid system. Masonry is also provided.
+
+---
+
+### Tabulator
+Bootstrap styled Tabulator component
+
+---
+
+### Text + Image
+A content element to create fast a grid with one image and text. Positions, space and alignment is adjustable
+
+---
+
+### Text & Media (float)
+A text which floats a media grid. Full adjustable grid and floating settings. Some presets are available to the editor.
+
+---
+
+### Text & Media (grid)
+A text columns and a media grid columne. Full adjustable grid settings. Some presets are available to the editor.
+
+---
+
+### Two columns text
+Create fast two columns text.
+
+---
+
+### Bullets
+A list with some Bootstrap-features.
+
+---
+
+### Div
+Just a line.
+
+---
+
+### Header
+Just a header.  
+All headers of all content elements have extra fields to adjust the needs.
+
+---
+
+### Table
+Adjustable with all the Bootstrap table classes.
+
+---
+
+### Uploads
+Realized with Bootstrap card component.
+
+---
+
+### Copied `fluid_styled_content` content elements
+* HTML
+* List/Plugin
+* Menu*
+* Shortcut
+* Text
+
+---
 
 ## Install
 
