@@ -94,7 +94,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                 if ($record['tx_bootstrap_carditems']) {
                     $table = "tx_bootstrap_domain_model_carditem";
                     $queryBuilder = $this->getQueryBuilderForTable($table);
-                    $queryBuilder->select('uid', 'header', 'title', 'opened_on_load')
+                    $queryBuilder->select('uid', 'header', 'title')
                         ->from($table)
                         ->where(
                             $queryBuilder->expr()->eq(
