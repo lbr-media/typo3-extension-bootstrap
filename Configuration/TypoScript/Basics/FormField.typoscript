@@ -1,7 +1,6 @@
-/*
-Settings for additional fields in tt_content
-*/
+# Settings for additional fields in tt_content
 plugin.tx_bootstrap.settings.form.element {
+    # Position of the media container in tt_content.CType=bootstrap_textmediafloat
     TextMediaPositions {
         default = 
         start = links
@@ -9,6 +8,7 @@ plugin.tx_bootstrap.settings.form.element {
         none = zentriert über dem Text
     }
 
+    # Width of the media container in tt_content.CType=bootstrap_textmediafloat
     TextMediaSizes {
         default = 
         1 = 1/12
@@ -25,48 +25,40 @@ plugin.tx_bootstrap.settings.form.element {
         12 = 12/12 (100%)
     }
 
-    /*
-    label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContent->additionalStyles()
-    value = key in AdditionalStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\CTypeFrameViewHelper->render()
-    outerWrap = 
-    innerWrap = 
-    additionalClass = 
-    additionalAttributes {}
-    additionalOuterClass = 
-    additionalOuterAttributes {}
-    */
+    # Configuration used in field tt_content.tx_bootstrap_additional_styles.
+    # When selected the content elements frame element will be modified.
+    # 
+    # Properties:
+    # - label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContent->additionalStyles()
+    # - value = key in AdditionalStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\CTypeFrameViewHelper->render()
+    # - outerWrap = 
+    # - innerWrap = 
+    # - additionalClass = 
+    # - additionalAttributes {}
+    # - additionalOuterClass = 
+    # - additionalOuterAttributes {}
     AdditionalStyles {
         10 {
             label = Einzug links
             value = 10
             innerWrap = <div class="container-indent-left">|</div>
         }
-        12 {
-            label = Einzug rechts
-            value = 12
-            innerWrap = <div class="container-indent-right">|</div>
-        }
-
         20 {
-            label = Einzug links + schmaler Inhalt
+            label = Einzug rechts
             value = 20
-            innerWrap = <div class="container-indent-left"><div class="row grid-ml--neg"><div class="col-sm-10 col-md-9 col-lg-7 grid-pl">|</div></div></div>
-        }
-
-        30 {
-            label = Starker Einzug links mit Linie + schmaler Inhalt
-            value = 30
-            innerWrap = <div class="row justify-content-center"><div class="col-10 col-sm-9 col-md-6 col-lg-5"><div class="container-indent-left-large-line">|</div></div></div>
+            innerWrap = <div class="container-indent-right">|</div>
         }
     }
 
-    /*
-    label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->predefinedHeader()
-    value = key in PredefinedHeader which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
-    outerWrap = [OUTER_WRAP_1]<headline class="[CLASSES]">[LINK_START][ICON1][TEXT][ICON2][LINK_END]</headline>[OUTER_WRAP_2]
-    innerWrap = <headline class="[CLASSES]">[LINK_START][INNER_WRAP_1][ICON1][TEXT][ICON2][INNER_WRAP_2][LINK_END]</headline>
-    additionalClass = <headline class="[CLASSES] [ADDITIONAL_CLASS]">[LINK_START][ICON1][TEXT][ICON2][LINK_END]</headline>
-    */
+    # Configuration used in field tt_content.tx_bootstrap_header_predefined.
+    # When selected the content elements header element will be modified.
+    # 
+    # Properties:
+    # - label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->predefinedHeader()
+    # - value = key in PredefinedHeader which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
+    # - outerWrap = [OUTER_WRAP_1]<headline class="[CLASSES]">[LINK_START][ICON1][TEXT][ICON2][LINK_END]</headline>[OUTER_WRAP_2]
+    # - innerWrap = <headline class="[CLASSES]">[LINK_START][INNER_WRAP_1][ICON1][TEXT][ICON2][INNER_WRAP_2][LINK_END]</headline>
+    # - additionalClass = <headline class="[CLASSES] [ADDITIONAL_CLASS]">[LINK_START][ICON1][TEXT][ICON2][LINK_END]</headline>
     PredefinedHeader {
         10 {
             label = Normal
@@ -84,13 +76,15 @@ plugin.tx_bootstrap.settings.form.element {
         }
     }
 
-    /*
-    label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->additionalHeaderStyles()
-    value = key in AdditionalHeaderStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
-    outerWrap = [OUTER_WRAP_1]<headline class="[CLASSES]">[LINK_START][ICON1][TEXT][ICON1][LINK_END]</headline>[OUTER_WRAP_2]
-    innerWrap = <headline class="[CLASSES]">[LINK_START][INNER_WRAP_1][ICON1][TEXT][ICON1][INNER_WRAP_2][LINK_END]</headline>
-    additionalClass = <headline class="[CLASSES] [ADDITIONAL_CLASS]">[LINK_START][ICON2][TEXT][ICON2][LINK_END]</headline>
-    */
+    # Configuration used in field tt_content.tx_bootstrap_header_additional_styles.
+    # When selected the content elements header element will be modified.
+    # 
+    # Properties:
+    # - label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->additionalHeaderStyles()
+    # - value = key in AdditionalHeaderStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
+    # - outerWrap = [OUTER_WRAP_1]<headline class="[CLASSES]">[LINK_START][ICON1][TEXT][ICON1][LINK_END]</headline>[OUTER_WRAP_2]
+    # - innerWrap = <headline class="[CLASSES]">[LINK_START][INNER_WRAP_1][ICON1][TEXT][ICON1][INNER_WRAP_2][LINK_END]</headline>
+    # - additionalClass = <headline class="[CLASSES] [ADDITIONAL_CLASS]">[LINK_START][ICON2][TEXT][ICON2][LINK_END]</headline>
     AdditionalHeaderStyles {
         // 10 {
         //     label = VERSALIEN
@@ -131,12 +125,15 @@ plugin.tx_bootstrap.settings.form.element {
         }
     }
 
+    # Ordner of text and media for each device in tt_content.CType=bootstrap_textmediagrid
     BootstrapDeviceOrder {
         default = 
         text_media = Text - Medien
         media_text = Medien - Text
     }
 
+    # Selectable column sizes in tt_content.CType=bootstrap_textmediagrid and bootstrap_textmediafloat
+    # Used for media items and for text/media containers.
     BootstrapColumns {
         default = 
         auto = auto
@@ -154,6 +151,7 @@ plugin.tx_bootstrap.settings.form.element {
         12 = 12/12 (100%)
     }
 
+    # Selectable row/flex align classes (horizontal)
     BootstrapJustifyContent {
         default =
         start = links
@@ -163,6 +161,7 @@ plugin.tx_bootstrap.settings.form.element {
         around = aufgeteilt 2
     }
 
+    # Selectable row/flex align items classes (vertical)
     BootstrapAlignItems {
         default = 
         start = oben
@@ -172,6 +171,7 @@ plugin.tx_bootstrap.settings.form.element {
         stretch = gestreckt
     }
 
+    # Selectable row/flex alignment self classes (horizontal)
     BootstrapAlignContent {
         default =
         start = links
@@ -182,6 +182,7 @@ plugin.tx_bootstrap.settings.form.element {
         evenly = gleichmäßig
     }
 
+    # Selectable row/flex alignment self classes (vertical)
     BootstrapAlignSelf {
         default =
         auto = auto 
@@ -192,6 +193,7 @@ plugin.tx_bootstrap.settings.form.element {
         stretch = gestreckt
     }
 
+    # selectable paddings
     BootstrapPaddingSpaces {
         default = 
         0 = 0
@@ -213,6 +215,7 @@ plugin.tx_bootstrap.settings.form.element {
         auto = auto
     }
 
+    # selectable margins
     BootstrapMarginSpaces {
         default = 
         n5 = -5
@@ -239,6 +242,7 @@ plugin.tx_bootstrap.settings.form.element {
         auto = auto
     }
     
+    # selected gutters in row/flex
     BootstrapGridSpace {
         default =
         0 = kein Abstand
@@ -258,12 +262,9 @@ plugin.tx_bootstrap.settings.form.element {
 
     BootstrapGridSpaceX < .BootstrapGridSpace
 
-
-    /*
-    Replacements for tt_content.space_before_class and tt_content.space_after_class.
-    If the replacement is not defined a container class like `container--space-before- + tt_content.space_before_class` will be set.
-    Used in CTypeFrameViewHelper.
-    */
+    # Replacements for tt_content.space_before_class and tt_content.space_after_class.
+    # If the replacement is not defined a container class like `container--space-before- + tt_content.space_before_class` will be set.
+    # Used in CTypeFrameViewHelper.
     SpaceBeforeClassReplacements {
         extra-small = mt-3
         small = mt-4
