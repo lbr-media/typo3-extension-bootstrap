@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
-use LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility as PictureUtilty;
+use LBRmedia\Bootstrap\Utility\BootstrapPictureUtility as PictureUtilty;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
@@ -40,7 +40,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
     protected $image = null;
 
     /**
-     * @var \LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility
+     * @var \LBRmedia\Bootstrap\Utility\BootstrapPictureUtility
      */
     protected $pictureUtility = null;
 
@@ -50,7 +50,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
     protected $objectManager = null;
 
     /**
-     * return \LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility $pictureUtility.
+     * return \LBRmedia\Bootstrap\Utility\BootstrapPictureUtility $pictureUtility.
      */
     protected function getPictureUtility(): PictureUtilty
     {
