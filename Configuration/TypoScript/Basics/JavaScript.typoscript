@@ -9,7 +9,6 @@ config {
 // }
 
 page.includeJSFooterlibs {
-    jquery = fileadmin/bootstrap/assets/js/jquery.min.js
     bootstrap = fileadmin/bootstrap/assets/js/bootstrap.bundle.min.js
     masonry = fileadmin/bootstrap/assets/js/masonry.pkgd.min.js
 }

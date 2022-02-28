@@ -13,7 +13,6 @@
     ],
     "require": {
         "php": ">=7.4.1",
-        "components/jquery": "^3.6",
         "twbs/bootstrap": "^5.1",
         "typo3/cms-backend": "^11.5",
         "typo3/cms-belog": "^11.5",

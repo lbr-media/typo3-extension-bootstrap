@@ -439,7 +439,6 @@ Many thanks to the people of:
 
 * https://typo3.org
 * https://getbootstrap.com
-* https://jquery.com
 * https://masonry.desandro.com
 
 The world would be a sadder place without them.
