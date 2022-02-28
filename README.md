@@ -56,7 +56,7 @@ TCEFORM.tt_content.tx_bootstrap_inner_frame_class.addItems {
 }
 ```
 * _`Additional styles`_ (select multiple)  
-Many styles are selectable for a content element.  
+Many styles are selectable for one content element.  
 Use this to configure modifications like indents, etc.  
 In TypoScript several styles can be configured.  
 You'll find them with the key `plugin.tx_bootstrap.settings.form.element.AdditionalStyles`.  
@@ -126,10 +126,10 @@ The tag that will be generated (`h1` to `h5`).
 The basic css-class that will be used for the tag.
 The default Bootstrap classes from `display-1` to `display-6`, `h1` to `h6` and `lead`.
 * _`Variant`_ or _`Predefined header`_ (select)  
-Only one variant is selectable. Use this to produce some variants of headers.  
+Only one variant is selectable for one headline. Use this to produce some variants of headers.  
 In TypoScript several variants can be configured.  
 You'll find them with the key `plugin.tx_bootstrap.settings.form.element.PredefinedHeader`.  
-Each variant may have these properties:
+Each variant has these properties:
     * `label` (string; required)
     * `value` (int; required; used for reference)
     * `outerWrap` (string)
@@ -149,13 +149,13 @@ plugin.tx_bootstrap.settings.form.element.PredefinedHeader {
 }
 ```
 * _`Color`_ (select; one of the text-{color} classes)
-* _`Position`_ (select; either `start`, `center` or `right`)
+* _`Position`_ (select; either `start`, `center` or `end`)
 * _`Date`_ (Date)
 * _`Additional styles`_ (select multiple)  
-Many styles are selectable for a headline. Use this to configure modifications like uppercase, no space below, etc.
+Many styles are selectable for one headline. Use this to configure modifications like uppercase, no space below, etc.
 In TypoScript several styles can be configured.  
 You'll find them with the key `plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles`.  
-Each variant may have these properties:
+Each variant has these properties:
     * `label` (string; required)
     * `value` (int; required; used for reference)
     * `outerWrap` (string)
@@ -187,7 +187,6 @@ plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles {
 * _`Subheader`_ (string)
 
 ---
-
 
 ### Accordion
 Bootstrap styled Accordion component.  
@@ -433,3 +432,14 @@ CType: `shortcut`
 CType: `text`
 
 ---
+
+## Credits
+
+Many thanks to the people of:
+
+* https://typo3.org
+* https://getbootstrap.com
+* https://jquery.com
+* https://masonry.desandro.com
+
+The world would be a sadder place without them.
