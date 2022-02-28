@@ -49,13 +49,14 @@ class TabulatorItemProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $processedData['tabulator_items'] = [];
+        $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "tabulator_items";
+        $processedData[$as] = [];
         $tabulatorItems = $this->tabulatorItemRepository->findByRelation('tt_content_uid', $processedData['data']['uid']);
         if ($tabulatorItems) {
-            $processedData['tabulator_items'] = $tabulatorItems->toArray();
+            $processedData[$as] = $tabulatorItems->toArray();
 
             $hasActive = false;
-            foreach ($processedData['tabulator_items'] as $tabulatorItem) {
+            foreach ($processedData[$as] as $tabulatorItem) {
                 // disable item when there is already an active tab
                 if ($hasActive && $tabulatorItem->isActive()) {
                     $tabulatorItem->setActive(false);
@@ -68,7 +69,7 @@ class TabulatorItemProcessor implements DataProcessorInterface
             }
 
             if (!$hasActive) {
-                $firstTabulatorItem = reset($processedData['tabulator_items']);
+                $firstTabulatorItem = reset($processedData[$as]);
                 $firstTabulatorItem->setActive(true);
             }
         }

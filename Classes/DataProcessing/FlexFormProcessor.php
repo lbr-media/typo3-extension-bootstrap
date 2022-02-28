@@ -27,6 +27,7 @@ use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaFloat;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapCarousel;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextImage;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapCards;
 
 /**
  * Class for data processing for various content elements which use the flexform field tx_bootstap_flexform.
@@ -59,37 +60,50 @@ class FlexFormProcessor implements DataProcessorInterface
             case "bootstrap_textmediagrid":
                 /** @var FlexFormServiceBootstrapTextMediaGrid $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTextMediaGrid::class);
-                $processedData["grid"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "grid";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
             case "bootstrap_textmediafloat":
                 /** @var FlexFormServiceBootstrapTextMediaFloat $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTextMediaFloat::class);
-                $processedData["grid"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "grid";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
             case "bootstrap_mediagrid":
                 /** @var FlexFormServiceBootstrapMediaGrid $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapMediaGrid::class);
-                $processedData["grid"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "grid";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
             case "bootstrap_accordion":
                 /** @var FlexFormServiceBootstrapAccordion $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapAccordion::class);
-                $processedData["accordion"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "accordion";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
             case "bootstrap_tabs":
                 /** @var FlexFormServiceBootstrapTabs $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTabs::class);
-                $processedData["tabulator"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "tablator";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
             case "bootstrap_carousel":
                 /** @var FlexFormServiceBootstrapCarousel $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapCarousel::class);
-                $processedData["carousel"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "carousel";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
             case "bootstrap_textimage":
                 /** @var FlexFormServiceBootstrapTextImage $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTextImage::class);
-                $processedData["configuration"] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "configuration";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                break;
+            case "bootstrap_cards":
+                /** @var FlexFormServiceBootstrapCards $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapCards::class);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "configuration";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
         }
 

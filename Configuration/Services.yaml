@@ -48,3 +48,7 @@ services:
     public: true
     arguments:
       $tabulatorItemRepository: '@LBRmedia\Bootstrap\Domain\Repository\TabulatorItemRepository'
+  LBRmedia\Bootstrap\DataProcessing\CardItemProcessor:
+    public: true
+    arguments:
+      $cardItemRepository: '@LBRmedia\Bootstrap\Domain\Repository\CardItemRepository'

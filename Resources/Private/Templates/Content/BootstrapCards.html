@@ -1,0 +1,110 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    CType = bootstrap_mediagrid
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main"><f:spaceless>
+        <f:if condition="{card_items -> f:count()}">
+            <f:variable name="displayWidth" value="{
+                xs:configuration.mediaoptimizing.width.xs,
+                sm:configuration.mediaoptimizing.width.sm,
+                md:configuration.mediaoptimizing.width.md,
+                lg:configuration.mediaoptimizing.width.lg,
+                xl:configuration.mediaoptimizing.width.xl,
+                xxl:configuration.mediaoptimizing.width.xxl
+            }" />
+            <f:if condition="{configuration.grid.row_space_classes}"><div class="overflow-hidden"></f:if>
+            <div class="{configuration.grid.row_classes} {configuration.grid.row_space_classes}">
+                <f:for each="{card_items}" as="cardItem">
+                    <div class="{configuration.grid.col_classes} {configuration.grid.col_space_classes}">
+                        <f:render section="_Card" arguments="{_all}" />
+                    </div>
+                </f:for>
+            </div>
+            <f:if condition="{configuration.grid.row_space_classes}"></div></f:if>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_Card"><f:spaceless>
+        <div class="card{f:if(condition:configuration.grid.item_classes, then:' {configuration.grid.item_classes} h-100')}{f:if(condition:configuration.card.bg_color, then:' {configuration.card.bg_color}')}{f:if(condition:configuration.card.text_color, then:' {configuration.card.text_color}')}{f:if(condition:configuration.card.border_color, then:' {configuration.card.border_color}')}">
+            <f:if condition="{cardItem.image}">
+                <f:then>
+                    <f:switch expression="{configuration.card.image_position}">
+                        <f:case value="top">
+                            {bs:Bootstrap.Picture(file:cardItem.image, displayWidth:displayWidth, additionalImgTagParams:"{class:'card-img-top'}")}
+                            <f:render section="_CardHeader" arguments="{_all}" />
+                            <f:render section="_CardBody" arguments="{_all}" />
+                            <f:render section="_CardFooter" arguments="{_all}" />
+                        </f:case>
+                        <f:case value="bottom">
+                            <f:render section="_CardHeader" arguments="{_all}" />
+                            <f:render section="_CardBody" arguments="{_all}" />
+                            <f:render section="_CardFooter" arguments="{_all}" />
+                            {bs:Bootstrap.Picture(file:cardItem.image, displayWidth:displayWidth, additionalImgTagParams:"{class:'card-img-bottom'}")}
+                        </f:case>
+                        <f:case value="start">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    {bs:Bootstrap.Picture(file:cardItem.image, displayWidth:displayWidth, additionalImgTagParams:"{class:'img-fluid rounded-start'}")}
+                                </div>
+                                <div class="col-md-8">
+                                    <f:render section="_CardHeader" arguments="{_all}" />
+                                    <f:render section="_CardBody" arguments="{_all}" />
+                                    <f:render section="_CardFooter" arguments="{_all}" />
+                                </div>
+                            </div>
+                        </f:case>
+                        <f:case value="end">
+                            <div class="row g-0">
+                                <div class="col-md-4 order-md-1">
+                                    {bs:Bootstrap.Picture(file:cardItem.image, displayWidth:displayWidth, additionalImgTagParams:"{class:'img-fluid rounded-end'}")}
+                                </div>
+                                <div class="col-md-8 order-md-0">
+                                    <f:render section="_CardHeader" arguments="{_all}" />
+                                    <f:render section="_CardBody" arguments="{_all}" />
+                                    <f:render section="_CardFooter" arguments="{_all}" />
+                                </div>
+                            </div>
+                        </f:case>
+                    </f:switch>
+                </f:then>
+                <f:else>
+                    <f:render section="_CardHeader" arguments="{_all}" />
+                    <f:render section="_CardBody" arguments="{_all}" />
+                    <f:render section="_CardFooter" arguments="{_all}" />
+                </f:else>
+            </f:if>
+        </div>
+    </f:spaceless></f:section>
+
+    <f:section name="_CardHeader"><f:spaceless>
+        <f:if condition="{cardItem.header}">
+            <div class="card-header">{cardItem.header}</div>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <f:section name="_CardBody"><f:spaceless>
+        <div class="card-body">
+            <f:if condition="{cardItem.title}">
+                <h5 class="card-title">{cardItem.title}</h5>
+            </f:if>
+            <f:if condition="{cardItem.text}">
+                <div class="card-text">{cardItem.text -> f:format.html()}</div>
+            </f:if>
+            <f:if condition="{cardItem.typolink}">
+                <f:link.typolink parameter="{cardItem.typolink}" class="btn {f:if(condition:configuration.card.button_color, then:configuration.card.button_color, else:'btn-primary')} btn-sm stretched-link">{f:if(condition:cardItem.typolinkText, then:cardItem.typolinkText)}</f:link.typolink>
+            </f:if>
+        </div>
+    </f:spaceless></f:section>
+
+    <f:section name="_CardFooter"><f:spaceless>
+       <f:if condition="{cardItem.footer}">
+            <div class="card-footer">{cardItem.footer}</div>
+        </f:if>
+    </f:spaceless></f:section>
+</html>

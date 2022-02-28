@@ -23,3 +23,4 @@ $GLOBALS['TBE_STYLES']['skins']['app'] = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_accordionitem');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_tabulatoritem');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_contentelement');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_carditem');

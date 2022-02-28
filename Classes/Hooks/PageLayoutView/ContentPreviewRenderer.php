@@ -90,6 +90,37 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent("keine Accordion-Elemente", $record);
                 }
                 break;
+            case "bootstrap_cards":
+                if ($record['tx_bootstrap_carditems']) {
+                    $table = "tx_bootstrap_domain_model_carditem";
+                    $queryBuilder = $this->getQueryBuilderForTable($table);
+                    $queryBuilder->select('uid', 'header', 'title', 'opened_on_load')
+                        ->from($table)
+                        ->where(
+                            $queryBuilder->expr()->eq(
+                                'tt_content_uid',
+                                $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                            )
+                        )
+                        ->orderBy("sorting", "ASC");
+                    $statement = $queryBuilder->executeQuery();
+                    $list = '<ul>';
+                    while ($row = $statement->fetchAssociative()) {
+                        $titles = [];
+                        if ($row['header']) {
+                            $titles[] = $row['header'];
+                        }
+                        if ($row['title']) {
+                            $titles[] = $row['title'];
+                        }
+                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(implode(", ", $titles), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
+                    }
+                    $list .= '</ul>';
+                    $out .= $list;
+                } else {
+                    $out .= $this->linkEditContent("keine Card-Elemente", $record);
+                }
+                break;
             case 'bootstrap_type6':
                 $out .= $record['tx_bootstrap_teammember'] . " Einträge";
                 break;

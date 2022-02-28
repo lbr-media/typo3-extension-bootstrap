@@ -20,6 +20,7 @@ CREATE TABLE tt_content (
     tx_bootstrap_teammember int(11) DEFAULT '0' NOT NULL,
     tx_bootstrap_accordionitems int(11) DEFAULT '0' NOT NULL,
     tx_bootstrap_tabulatoritems int(11) DEFAULT '0' NOT NULL,
+    tx_bootstrap_carditems int(11) DEFAULT '0' NOT NULL,
 );
 
 #
@@ -93,4 +94,18 @@ CREATE TABLE tx_bootstrap_domain_model_contentelement (
     tx_bootstrap_flexform mediumtext,
     accordionitem_uid int(11) DEFAULT '0' NOT NULL,
     tabulatoritem_uid int(11) DEFAULT '0' NOT NULL,
+);
+
+#
+# Table structure for table 'tx_bootstrap_domain_model_carditem'
+#
+CREATE TABLE tx_bootstrap_domain_model_carditem (
+    header varchar(255) DEFAULT '' NOT NULL,
+    title varchar(255) DEFAULT '' NOT NULL,
+    image int(11) DEFAULT '0' NOT NULL,
+    text text,
+    typolink varchar(1048) DEFAULT '' NOT NULL,
+    typolink_text varchar(255) DEFAULT '' NOT NULL,
+    footer varchar(255) DEFAULT '' NOT NULL,
+    tt_content_uid int(11) DEFAULT '0' NOT NULL,
 );

@@ -74,6 +74,14 @@ mod.wizards.newContentElement.wizardItems.common2 {
                 CType = bootstrap_textmediafloat
             }
         }
+        bootstrap_cards {
+            iconIdentifier = bootstrap_cards
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_cards
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_cards.description
+            tt_content_defValues {
+                CType = bootstrap_cards
+            }
+        }
     }
-    show := addToList(bootstrap_textimage,bootstrap_mediagrid,bootstrap_carousel,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat)
+    show := addToList(bootstrap_textimage,bootstrap_mediagrid,bootstrap_carousel,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat,bootstrap_cards)
 }

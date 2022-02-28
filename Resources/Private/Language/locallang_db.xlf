@@ -52,6 +52,12 @@
             <trans-unit id="tt_content.CType.bootstrap_carousel.description">
                 <source></source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_cards">
+                <source>Karten</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_cards.description">
+                <source>Bootstrap Cards-Element in einem Grid-System.</source>
+            </trans-unit>
 
             <!-- tt_content.div -->
             <trans-unit id="tt_content.div.content_elements">
@@ -116,6 +122,9 @@
             <trans-unit id="tt_content.tx_bootstrap_tabulatoritems">
                 <source>Tabulator-Elemente</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_carditems">
+                <source>Card-Elemente</source>
+            </trans-unit>
 
             <trans-unit id="tx_bootstrap_domain_model_item">
                 <source>Item</source>
@@ -177,6 +186,32 @@
             <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.content_elements">
                 <source>Inhaltselemente</source>
             </trans-unit>
+
+            <trans-unit id="tx_bootstrap_domain_model_carditem">
+                <source>Card-Element</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.header">
+                <source>Kopfbereich</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.image">
+                <source>Bild</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.typolink">
+                <source>Link</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.typolink_text">
+                <source>Link-Text</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.footer">
+                <source>Fußbereich</source>
+            </trans-unit>
+            
 
             <trans-unit id="tx_bootstrap_domain_model_contentelement">
                 <source>Inhaltselement</source>

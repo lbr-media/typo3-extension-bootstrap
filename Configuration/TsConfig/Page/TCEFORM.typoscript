@@ -31,6 +31,35 @@ lib.bootstrapTextColors {
     text-dark < lib.bootstrapColors.dark
 }
 
+lib.bootstrapBorderColors {
+    border-primary < lib.bootstrapColors.primary
+    border-secondary < lib.bootstrapColors.secondary
+    border-success < lib.bootstrapColors.success
+    border-info < lib.bootstrapColors.info
+    border-warning < lib.bootstrapColors.warning
+    border-danger < lib.bootstrapColors.danger
+    border-light < lib.bootstrapColors.light
+    border-dark < lib.bootstrapColors.dark
+}
+lib.bootstrapButtonColors {
+    btn-primary < lib.bootstrapColors.primary
+    btn-secondary < lib.bootstrapColors.secondary
+    btn-success < lib.bootstrapColors.success
+    btn-info < lib.bootstrapColors.info
+    btn-warning < lib.bootstrapColors.warning
+    btn-danger < lib.bootstrapColors.danger
+    btn-light < lib.bootstrapColors.light
+    btn-dark < lib.bootstrapColors.dark
+    btn-outline-primary = primary outline (blau)
+    btn-outline-secondary = secondary outline (grau)
+    btn-outline-success = success outline (grün)
+    btn-outline-info = info outline (hellblau)
+    btn-outline-warning = warning outline (orange)
+    btn-outline-danger = danger outline (rot)
+    btn-outline-light = light outline (hellgrau)
+    btn-outline-dark = dark outline (dunkelgrau)
+}
+
 lib.bootstrapHeaderLayout {
     display-1 = Display 1
     display-2 = Display 2

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sGENERAL>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Allgemein</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="presets">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <itemsProcFunc>LBRmedia\Bootstrap\UserFunc\Tca\TtContent->itemsProcFunc</itemsProcFunc>
+                                <CType>bootstrap_cards</CType>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sGENERAL>
+        <sGRID>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Raster</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="col">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.col</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;;</default>
+                                <elementConfiguration>BootstrapColumns</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_y">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_y</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>3;;4;;;</default>
+                                <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_x">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_x</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>3;;4;;;</default>
+                                <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="align_items">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.align_items</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;;</default>
+                                <elementConfiguration>BootstrapAlignItems</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="justify_content">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.justify_content</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;;</default>
+                                <elementConfiguration>BootstrapJustifyContent</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sGRID>
+        <sCARD>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Karten</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="image_position">
+                        <value index="TCEforms">
+                            <label>Bild-Position</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">links</numIndex>
+                                        <numIndex index="1">start</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">rechts</numIndex>
+                                        <numIndex index="1">end</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">oben</numIndex>
+                                        <numIndex index="1">top</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4">
+                                        <numIndex index="0">unten</numIndex>
+                                        <numIndex index="1">bottom</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>above</default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="bg_color">
+                        <value index="TCEforms">
+                            <label>Hintergrundfarbe</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Standard</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="text_color">
+                        <value index="TCEforms">
+                            <label>Textfarbe</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Standard</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="border_color">
+                        <value index="TCEforms">
+                            <label>Randfarbe</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Standard</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="button_color">
+                        <value index="TCEforms">
+                            <label>Button-Farbe</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Standard</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sCARD>
+        <sMEDIAOPTIMIZING>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="width_xs">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xs</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_sm">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_sm</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_md">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_md</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_lg">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_lg</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_xl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xl</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="width_xxl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xxl</label>
+                            <config>
+                                <type>input</type>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <default>100</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sMEDIAOPTIMIZING>
+    </sheets>
+</T3FlexForms>

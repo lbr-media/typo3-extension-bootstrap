@@ -41,6 +41,10 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_textmediafloat.svg',
     ],
+    'bootstrap_cards' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_cards.svg',
+    ],
 
     // ... for tables
     'tx_bootstrap_domain_model_item' => [
@@ -62,6 +66,12 @@ return [
         'spinning' => false,
     ],
     'tx_bootstrap_domain_model_tabulatoritem' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
+        'name' => 'folder-o',
+        'additionalClasses' => '',
+        'spinning' => false,
+    ],
+    'tx_bootstrap_domain_model_carditem' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
         'name' => 'folder-o',
         'additionalClasses' => '',

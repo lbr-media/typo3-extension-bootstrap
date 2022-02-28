@@ -19,19 +19,18 @@ namespace LBRmedia\Bootstrap\DataProcessing;
 
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
-use LBRmedia\Bootstrap\Domain\Repository\AccordionItemRepository;
+use LBRmedia\Bootstrap\Domain\Repository\CardItemRepository;
 
-class AccordionItemProcessor implements DataProcessorInterface
+class CardItemProcessor implements DataProcessorInterface
 {
     /**
-     * @var AccordionItemRepository
+     * @var TabulatorItemRepository
      */
-    protected $accordionItemRepository = null;
+    protected $cardItemRepository = null;
 
-    public function __construct(
-        AccordionItemRepository $accordionItemRepository
-    ) {
-        $this->accordionItemRepository = $accordionItemRepository;
+    public function __construct(CardItemRepository $cardItemRepository)
+    {
+        $this->cardItemRepository = $cardItemRepository;
     }
 
     /**
@@ -50,11 +49,11 @@ class AccordionItemProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "accordion_items";
+        $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "card_items";
         $processedData[$as] = [];
-        $accordionItems = $this->accordionItemRepository->findByRelation('tt_content_uid', $processedData['data']['uid']);
-        if ($accordionItems) {
-            $processedData[$as] = $accordionItems->toArray();
+        $cardItems = $this->cardItemRepository->findByRelation('tt_content_uid', $processedData['data']['uid']);
+        if ($cardItems) {
+            $processedData[$as] = $cardItems->toArray();
         }
 
         return $processedData;

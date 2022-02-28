@@ -42,6 +42,7 @@ lib.contentElement {
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Content/CType/BootstrapAccordion.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Content/CType/BootstrapType6.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Content/CType/BootstrapTwoColumnsText.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Content/CType/BootstrapCards.typoscript">
 
 
 # Menu content elements
