@@ -1,6 +1,6 @@
 This extension is based on the Typo3 project which could be found on https://typo3.org and is also GPL.
-It implements the Twitter Bootstrap, which is not part of this software. You'll find it on https://getbootstrap.com with a MIT license.
-For the media grids Masonry is used. You'll find it here on https://masonry.desandro.com with a MIT license. It is also not part of this software.
+It implements the Twitter Bootstrap for the Typo3 back- and frontend. It is not part of this software (it is required and will be loaded by composer). You'll find it on https://getbootstrap.com with a MIT license.
+For the media grids Masonry is used. You'll find it here on https://masonry.desandro.com with a MIT license. It is also not part of this software (it is required and will be loaded by composer).
 
 ---------------------------------
 
