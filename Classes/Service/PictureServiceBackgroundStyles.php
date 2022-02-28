@@ -2,28 +2,27 @@
 
 declare(strict_types=1);
 
-namespace LBRmedia\Bootstrap\Utility;
+namespace LBRmedia\Bootstrap\Service;
 
-use LBRmedia\Bootstrap\Utility\BootstrapPictureUtility as PictureUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class BootstrapPictureBackgroundStyles
+class PictureServiceBackgroundStyles
 {
     /**
-     * @var \LBRmedia\Bootstrap\Utility\BootstrapPictureUtility
+     * @var PictureServiceBootstrap
      */
-    protected $pictureUtility = null;
+    protected $pictureService = null;
 
     /**
-     * return \LBRmedia\Bootstrap\Utility\BootstrapPictureUtility $pictureUtility.
+     * @return PictureServiceBootstrap $pictureUtility.
      */
-    protected function getPictureUtility()
+    protected function getPictureService():PictureServiceBootstrap
     {
-        if (null === $this->pictureUtility) {
-            $this->pictureUtility = GeneralUtility::makeInstance(PictureUtility::class);
+        if (null === $this->pictureService) {
+            $this->pictureService = GeneralUtility::makeInstance(PictureServiceBootstrap::class);
         }
 
-        return $this->pictureUtility;
+        return $this->pictureService;
     }
 
     /**
@@ -47,13 +46,13 @@ class BootstrapPictureBackgroundStyles
             }
 
             // initialize picture utility
-            $this->getPictureUtility()
+            $this->getPictureService()
                 ->setFileReference($file)
                 ->initializeCropVariantsProcessingInstructions();
 
             // determine/override widths by viewhelper argument
             if ($displayWidthArguments) {
-                $this->getPictureUtility()->overwriteDisplayWidthsWithViewHelperArgument($displayWidthArguments);
+                $this->getPictureService()->overwriteDisplayWidthsWithViewHelperArgument($displayWidthArguments);
             }
 
             $styles = [];
@@ -89,11 +88,11 @@ class BootstrapPictureBackgroundStyles
     protected function getImageSource(string $device): string
     {
         $targetWidth = 575;
-        $maxWidth = $this->getPictureUtility()->getDisplayWidth($device);
+        $maxWidth = $this->getPictureService()->getDisplayWidth($device);
         while ($targetWidth < $maxWidth) {
             $targetWidth += 575;
         }
 
-        return $this->getPictureUtility()->getImageSource($device, $targetWidth);
+        return $this->getPictureService()->getImageSource($device, $targetWidth);
     }
 }

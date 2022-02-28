@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
-use LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureBackgroundStyles as PictureBackgroundStyles;
+use LBRmedia\Bootstrap\Service\PictureServiceBackgroundStyles;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
-class PictureBackgroundStylesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+class PictureBackgroundStylesViewHelper extends AbstractViewHelper
 {
     /**
      * Children must not be escaped, to be able to pass {bodytext} directly to it.
@@ -27,20 +27,12 @@ class PictureBackgroundStylesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelpe
     protected $escapeOutput = false;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Object\ObjectManager
+     * @var PictureServiceBackgroundStyles
      */
-    protected $objectManager = null;
+    protected $pictureServiceBackgroundStyles = null;
 
-    /**
-     * return \TYPO3\CMS\Extbase\Object\ObjectManager $objectManager.
-     */
-    protected function getObjectManager(): ObjectManager
-    {
-        if (null === $this->objectManager) {
-            $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        }
-
-        return $this->objectManager;
+    public function __construct(PictureServiceBackgroundStyles $pictureServiceBackgroundStyles) {
+        $this->pictureServiceBackgroundStyles = $pictureServiceBackgroundStyles;
     }
 
     public function initializeArguments(): void
@@ -64,13 +56,11 @@ class PictureBackgroundStylesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelpe
     {
         try {
             // build styles
-            $PictureBackgroundStyles = $this->getObjectManager()->get(PictureBackgroundStyles::class);
-            $styles = $PictureBackgroundStyles->render($this->arguments['file'], $this->arguments['id'], $this->arguments['displayWidth']);
+            $styles = $this->pictureServiceBackgroundStyles->render($this->arguments['file'], $this->arguments['id'], $this->arguments['displayWidth']);
 
             if ('inline' === $this->arguments['position']) {
                 // build style tag
-                $styleTag = $this->getObjectManager()->get(TagBuilder::class);
-                $styleTag->setTagName('style');
+                $styleTag =  new TagBuilder("style");
                 $styleTag->forceClosingTag(true);
                 //$styleTag->addAttribute("type", "text/css");
                 $styleTag->addAttribute('scoped', null);
@@ -80,7 +70,7 @@ class PictureBackgroundStylesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelpe
 
                 return $styleTag->render();
             } else {
-                $pageRenderer = $this->getObjectManager()->get(PageRenderer::class);
+                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
                 $pageRenderer->addCssInlineBlock($this->arguments['id'] . ': background_image', $styles);
 
                 return '';

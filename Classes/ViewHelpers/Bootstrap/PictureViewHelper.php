@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
-use LBRmedia\Bootstrap\Utility\BootstrapPictureUtility as PictureUtilty;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use LBRmedia\Bootstrap\Service\PictureServiceBootstrap;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
@@ -33,32 +32,13 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
     protected $escapeOutput = false;
 
     /**
-     * The image to process.
-     *
-     * @var \TYPO3\CMS\Core\Resource\FileReference
+     * @var PictureServiceBootstrap
      */
-    protected $image = null;
+    protected $pictureService = null;
 
-    /**
-     * @var \LBRmedia\Bootstrap\Utility\BootstrapPictureUtility
-     */
-    protected $pictureUtility = null;
-
-    /**
-     * @var \TYPO3\CMS\Extbase\Object\ObjectManager
-     */
-    protected $objectManager = null;
-
-    /**
-     * return \LBRmedia\Bootstrap\Utility\BootstrapPictureUtility $pictureUtility.
-     */
-    protected function getPictureUtility(): PictureUtilty
-    {
-        if (null === $this->pictureUtility) {
-            $this->pictureUtility = GeneralUtility::makeInstance(PictureUtilty::class);
-        }
-
-        return $this->pictureUtility;
+    public function __construct(PictureServiceBootstrap $pictureService) {
+        $this->pictureService = $pictureService;
+        parent::__construct();
     }
 
     /**
@@ -103,7 +83,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
             $additionalImgTagParams = $this->arguments['additionalImgTagParams'];
 
             // initialize picture utility
-            $this->getPictureUtility()->setFileReference($file);
+            $this->pictureService->setFileReference($file);
 
             /*
              * build picture tag
@@ -140,18 +120,18 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
             }
 
             // calculate/initialize display widths and crop processing instructions
-            $this->getPictureUtility()
+            $this->pictureService
                 ->initializeCropVariantsProcessingInstructions($this->arguments['forceCropVariant']);
 
             // determine/override widths by viewhelper argument
             if ($this->arguments['displayWidth']) {
-                $this->getPictureUtility()->overwriteDisplayWidthsWithViewHelperArgument($this->arguments['displayWidth']);
+                $this->pictureService->overwriteDisplayWidthsWithViewHelperArgument($this->arguments['displayWidth']);
             }
 
             // create sources
             $sources = [];
-            foreach (PictureUtilty::DEVICES as $device) {
-                $sources[$device] = $this->buildSourceTagParams($device, PictureUtilty::MEDIA_QUERIES[$device]);
+            foreach (PictureServiceBootstrap::DEVICES as $device) {
+                $sources[$device] = $this->buildSourceTagParams($device, PictureServiceBootstrap::MEDIA_QUERIES[$device]);
             }
 
             // build source tags
@@ -162,7 +142,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
                     $sourceTag->forceClosingTag(false);
                     $sourceTag->addAttribute('media', $source['media']);
                     $sourceTag->addAttribute('srcset', $source['source']);
-                    $pictureContent[] = '<!--' . $device . ' cdw:' . $this->getPictureUtility()->getDisplayWidth($device) . 'px -->' . $sourceTag->render();
+                    $pictureContent[] = '<!--' . $device . ' cdw:' . $this->pictureService->getDisplayWidth($device) . 'px -->' . $sourceTag->render();
                 }
             }
 
@@ -201,7 +181,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
      */
     protected function buildSourceTagParams(string $device, string $media): array
     {
-        $maxWidth = $this->getPictureUtility()->getDisplayWidth($device);
+        $maxWidth = $this->pictureService->getDisplayWidth($device);
         $targetWidth = 575;
         while ($targetWidth < $maxWidth) {
             $targetWidth += 575;
@@ -209,12 +189,12 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
 
         // build 1x source
         $sources = [
-            $this->getPictureUtility()->getImageSource($device, $targetWidth) . ' 1x',
+            $this->pictureService->getImageSource($device, $targetWidth) . ' 1x',
         ];
 
         // build 2x source
         if ($targetWidth * 2 <= 575 * 4) {
-            $sources[] = $this->getPictureUtility()->getImageSource($device, $targetWidth * 2) . ' 2x';
+            $sources[] = $this->pictureService->getImageSource($device, $targetWidth * 2) . ' 2x';
         }
 
         // build 3x source

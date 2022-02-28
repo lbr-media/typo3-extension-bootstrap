@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LBRmedia\Bootstrap\Utility;
+namespace LBRmedia\Bootstrap\Service;
 
-class BootstrapPictureUtility extends PictureUtility
+class PictureServiceBootstrap extends PictureService
 {
     const DEVICES = [
         'xs',
