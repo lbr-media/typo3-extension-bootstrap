@@ -31,6 +31,7 @@ class BootstrapCarousel implements NewContentElementInterface
         $GLOBALS['TCA']['tt_content']['types']['bootstrap_carousel'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['image']['showitem'])
                 ->addShowitemAfter('tx_bootstrap_flexform', 'frames')
+                ->removeShowitems(['mediaAdjustments', 'gallerySettings', 'imagelinks'])
                 ->getShowitemsString(),
             'columnsOverrides' => [
                 'image' => [
