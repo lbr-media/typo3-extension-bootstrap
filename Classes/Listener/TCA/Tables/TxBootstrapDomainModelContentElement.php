@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Listener\TCA\Tables;
 
 use LBRmedia\Bootstrap\Service\TcaService;
+use LBRmedia\Bootstrap\Utility\PictureUtility;
 
 class TxBootstrapDomainModelContentElement implements TablesInterface {
     public static function process(TcaService $tcaService): void
@@ -125,5 +126,8 @@ class TxBootstrapDomainModelContentElement implements TablesInterface {
                 ],
             ],
         ];
+
+        // Configure TCA
+        $GLOBALS['TCA']['tx_bootstrap_domain_model_contentelement']['columns']['assets']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_BOOTSTRAP);
     }
 }
