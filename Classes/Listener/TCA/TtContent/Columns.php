@@ -326,8 +326,8 @@ class Columns
         ExtensionManagementUtility::addFieldsToPalette(
             'tt_content',
             'headers',
-            'tx_bootstrap_header_additional_styles,--linebreak--,tx_bootstrap_header_icon',
-            'after:header_position'
+            '--linebreak--,tx_bootstrap_header_additional_styles,--linebreak--,tx_bootstrap_header_icon',
+            'after:date'
         );
 
         ExtensionManagementUtility::addFieldsToPalette(
@@ -335,6 +335,14 @@ class Columns
             'frames',
             'tx_bootstrap_inner_frame_class,--linebreak--,tx_bootstrap_additional_styles,--linebreak--,tx_bootstrap_text_color, tx_bootstrap_background_color,--linebreak--',
             'after:frame_class'
+        );
+
+        // add linebreak to CType=table after table_class
+        ExtensionManagementUtility::addFieldsToPalette(
+            'tt_content',
+            'tablelayout',
+            '--linebreak--',
+            'after:table_class'
         );
 
         /*

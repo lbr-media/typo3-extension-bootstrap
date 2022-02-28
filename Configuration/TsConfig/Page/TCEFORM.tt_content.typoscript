@@ -48,7 +48,7 @@ TCEFORM.tt_content {
         }
     }
 
-    # = = CTYpe = =
+    # = = CType = =
     # Reduce content types to the needed ones.
     # all default CTypes:
     # header, text, textpic, image, textmedia
@@ -82,23 +82,6 @@ TCEFORM.tt_content {
             text-small-center = Text zentriert nur bei schmalen Endgeräten
         }
     }
-
-    # = = links = =
-    // linkToTop.disabled = 1
-
-    # = = language = =
-    // sys_language_uid.disabled = 1
-
-    # = = access = =
-    // fe_group.disabled = 1
-    // fe_login_mode.disabled = 1
-    // editlock.disabled = 1
-
-    # = = categories = =
-    // categories.disabled = 1
-
-    # = = notes = =
-    // rowDescription.disabled = 1
 
     # = = CType=div = =
     # configuration for content element div

@@ -1,34 +1,34 @@
-// lib.bootstrapColors {
-//     primary = primary (blau)
-//     secondary = secondary (grau)
-//     success = success (grün)
-//     info = info (hellblau)
-//     warning = warning (orange)
-//     danger = danger (rot)
-//     light = light (hellgrau)
-//     dark = dark (dunkelgrau)
-// }
+lib.bootstrapColors {
+    primary = primary (blau)
+    secondary = secondary (grau)
+    success = success (grün)
+    info = info (hellblau)
+    warning = warning (orange)
+    danger = danger (rot)
+    light = light (hellgrau)
+    dark = dark (dunkelgrau)
+}
 
 lib.bootstrapBackgroundColors {
-    bg-primary = primary (blau)
-    bg-secondary = secondary (grau)
-    bg-success = success (grün)
-    bg-info = info (hellblau)
-    bg-warning = warning (orange)
-    bg-danger = danger (rot)
-    bg-light = light (hellgrau)
-    bg-dark = dark (dunkelgrau)
+    bg-primary < lib.bootstrapColors.primary
+    bg-secondary < lib.bootstrapColors.secondary
+    bg-success < lib.bootstrapColors.success
+    bg-info < lib.bootstrapColors.info
+    bg-warning < lib.bootstrapColors.warning
+    bg-danger < lib.bootstrapColors.danger
+    bg-light < lib.bootstrapColors.light
+    bg-dark < lib.bootstrapColors.dark
 }
     
 lib.bootstrapTextColors {
-    text-primary = primary (blau)
-    text-secondary = secondary (grau)
-    text-success = success (grün)
-    text-info = info (hellblau)
-    text-warning = warning (orange)
-    text-danger = danger (rot)
-    text-light = light (hellgrau)
-    text-dark = dark (dunkelgrau)
+    text-primary < lib.bootstrapColors.primary
+    text-secondary < lib.bootstrapColors.secondary
+    text-success < lib.bootstrapColors.success
+    text-info < lib.bootstrapColors.info
+    text-warning < lib.bootstrapColors.warning
+    text-danger < lib.bootstrapColors.danger
+    text-light < lib.bootstrapColors.light
+    text-dark < lib.bootstrapColors.dark
 }
 
 lib.bootstrapHeaderLayout {

@@ -1,0 +1,206 @@
+# This file may be included in pages tsconfig.
+# It disabled all fields which are not used by this extension.
+
+####### table pages start
+
+# = all pages =
+TCEFORM.pages {
+    # = = Allgemein = =
+    // doktype.disabled = 1
+    // og_title.disabled = 1
+    // slug.disabled = 1
+    // nav_title.disabled = 1
+    subtitle.disabled = 1
+
+    # = = SEO = =
+    // seo_title.disabled = 1
+    // description.disabled = 1
+    // no_index.disabled = 1
+    // no_follow.disabled = 1
+    // canonical_link.disabled = 1
+    // sitemap_changefreq.disabled = 1
+    // sitemap_priority.disabled = 1
+
+    # = = Soziale Medien = =
+    // og_title.disabled = 1
+    // og_description.disabled = 1
+    // og_image.disabled = 1
+    // twitter_title.disabled = 1
+    // twitter_description.disabled = 1
+    // twitter_image.disabled = 1
+    // twitter_card.disabled = 1
+
+    // # = = Metadaten = =
+    // abstract.disabled = 1
+    // keywords.disabled = 1
+    author.disabled = 1
+    author_email.disabled = 1
+    lastUpdated.disabled = 1
+    
+    // # = = Erscheinungsbild = =
+    layout.disabled = 1
+    newUntil.disabled = 1
+    // backend_layout.disabled = 1
+    // backend_layout_next_level.disabled = 1
+    content_from_pid.disabled = 1
+
+    # = = Verhalten = =
+    // target.disabled = 1
+    cache_timeout.disabled = 1
+    cache_tags.disabled = 1
+    is_siteroot.disabled = 1
+    no_search.disabled = 1
+    php_tree_stop.disabled = 1
+    module.disabled = 1
+
+    # = = Ressourcen = =
+    media.disabled = 1
+    tsconfig_includes.disabled = 1
+    TSconfig.disabled = 1
+
+    # = = Sprache = =
+    l18n_cfg.disabled = 1
+
+    # = = Zugriff = =
+    // hidden.disabled = 1
+    // nav_hide.disabled = 1
+    // starttime.disabled = 1
+    // endtime.disabled = 1
+    extendToSubpages.disabled = 1
+    fe_group.disabled = 1
+    fe_login_mode.disabled = 1
+    editlock.disabled = 1
+
+    # = = Kategorien = =
+    categories.disabled = 1
+
+    # = = Hinweise = =
+    rowDescription.disabled = 1
+}
+
+# re-enable some fields for admins
+[backend.user.isAdmin]
+TCEFORM.pages {
+    is_siteroot.disabled = 0
+    tsconfig_includes.disabled = 0
+    TSconfig.disabled = 0
+    module.disabled = 0
+}
+[global]
+
+
+# = shortcut / Verweis =
+[page["doktype"] == 4]
+TCEFORM.pages {
+    abstract.disabled = 1
+    backend_layout.disabled = 1
+    target.disabled = 1
+}
+[global]
+
+
+# Trennzeichen für Menü
+[page["doktype"] == 199]
+TCEFORM.pages {
+    backend_layout.disabled = 1
+}
+[global]
+
+# Link zu externer URL
+[page["doktype"] == 3]
+TCEFORM.pages {
+    abstract.disabled = 1
+    backend_layout.disabled = 1
+    backend_layout_next_level.disabled = 1
+}
+[global]
+
+
+# Folder/Ordner
+[page["doktype"] == 254]
+TCEFORM.pages {
+    backend_layout.disabled = 1
+    backend_layout_next_level.disabled = 1
+}
+[global]
+
+####### table pages end
+
+####### table tt_content start
+
+TCEFORM.tt_content {
+    # = = content element = =
+    // CType.disabled = 1
+    // colPos.disabled = 1
+
+    # = = headers = = 
+    // header.disabled = 1
+    // header_layout.disabled = 1
+    // tx_bootstrap_header_layout.disabled = 1
+    // tx_bootstrap_header_predefined.disabled = 1
+    // tx_bootstrap_header_color.disabled = 1
+    // header_position.disabled = 1
+    // tx_bootstrap_header_additional_styles.disabled = 1
+    // tx_bootstrap_header_icon.disabled = 1
+    // date.disabled = 1
+    // header_link.disabled = 1
+    // subheader.disabled = 1
+
+    # = = bodytext = =
+    // bodytext.disabled = 1
+    // tx_bootstrap_bodytext1.disabled = 1
+    // tx_bootstrap_bodytext2.disabled = 1
+
+    # = = media = =
+    // media.disabled = 1
+    // file_collections.disabled = 1
+    // filelink_sorting.disabled = 1
+    // filelink_sorting_direction.disabled = 1
+    // target.disabled = 1
+    // filelink_size.disabled = 1
+    // uploads_description.disabled = 1
+    // uploads_type.disabled = 1
+    // assets.disabled = 1
+    // image.disabled = 1
+    image_zoom.disabled = 1
+
+    # = = table = =
+    // table_delimiter.disabled = 1
+    // table_enclosure.disabled = 1
+    // table_caption.disabled = 1
+    // cols.disabled = 1
+    // table_class.disabled = 1
+    // table_header_position.disabled = 1
+    // table_tfoot.disabled = 1
+
+    # = = appearance = =
+    // frame_class.disabled = 1
+    tx_bootstrap_inner_frame_class.disabled = 1
+    tx_bootstrap_additional_styles.disabled = 1
+    // tx_bootstrap_text_color.disabled = 1
+    // tx_bootstrap_background_color.disabled = 1
+    // space_before_class.disabled = 1
+    // space_after_class.disabled = 1
+    tx_bootstrap_flexform.disabled = 1
+    // sectionIndex.disabled = 1
+    linkToTop.disabled = 1
+
+    # = = language = =
+    sys_language_uid.disabled = 1
+
+    # = = access = =
+    // hidden.disabled = 1
+    fe_group.disabled = 1
+    fe_login_mode.disabled = 1
+    editlock.disabled = 1
+    // starttime.disabled = 1
+    // endtime.disabled = 1
+
+    # = = categories = =
+    categories.disabled = 1
+
+    # = = notes = =
+    rowDescription.disabled = 1
+}
+
+####### table tt_content end

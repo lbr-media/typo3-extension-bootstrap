@@ -14,6 +14,12 @@ declare(strict_types=1);
     'Backend Layouts'
 );
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    'bootstrap',
+    'Configuration/TsConfig/Page/TCEFORM.DisableUnusedFields.typoscript',
+    'Disable unused fields'
+);
+
 /*
  * set cropVariants and palette to social media images
  */
