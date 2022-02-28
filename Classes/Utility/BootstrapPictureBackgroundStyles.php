@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LBRmedia\Bootstrap\Utility\Picture;
+namespace LBRmedia\Bootstrap\Utility;
 
 use LBRmedia\Bootstrap\Utility\Picture\BootstrapPictureUtility as PictureUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

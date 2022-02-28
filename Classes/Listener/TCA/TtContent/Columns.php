@@ -6,7 +6,7 @@ namespace LBRmedia\Bootstrap\Listener\TCA\TtContent;
 
 use LBRmedia\Bootstrap\UserFunc\TCA\TtContent;
 use LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader;
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use LBRmedia\Bootstrap\Utility\PictureUtility;
 use TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -80,7 +80,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['default']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['default']),
                                     ],
                                 ],
                             ],
@@ -194,7 +194,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
                                     ],
                                 ],
                             ],
@@ -223,7 +223,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
                                     ],
                                 ],
                             ],

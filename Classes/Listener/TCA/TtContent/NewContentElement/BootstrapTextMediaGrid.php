@@ -6,7 +6,7 @@ namespace LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement;
 
 use LBRmedia\Bootstrap\Service\TcaService;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use LBRmedia\Bootstrap\Utility\PictureUtility;
 
 class BootstrapTextMediaGrid implements NewContentElementInterface
 {
@@ -46,7 +46,7 @@ class BootstrapTextMediaGrid implements NewContentElementInterface
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
                                     ],
                                 ],
                             ],

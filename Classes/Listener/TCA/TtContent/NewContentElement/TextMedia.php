@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement;
 
 use LBRmedia\Bootstrap\Service\TcaService;
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use LBRmedia\Bootstrap\Utility\PictureUtility;
 
 class TextMedia implements NewContentElementInterface
 {
@@ -34,7 +34,7 @@ class TextMedia implements NewContentElementInterface
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => BootstrapGeneralUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
                                     ],
                                 ],
                             ],

@@ -2,32 +2,17 @@
 
 declare(strict_types=1);
 
-namespace LBRmedia\Bootstrap\Utility\Picture;
+namespace LBRmedia\Bootstrap\Utility;
 
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileReference;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility as CoreGeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
-class GeneralPictureUtility
+class PictureUtility
 {
-    public static function getTcaCropVariantsOverride(array $enabledCropVariants): array
-    {
-        $pageTsConfig = \TYPO3\CMS\Backend\Utility\BackendUtility::getPagesTSconfig(BootstrapGeneralUtility::getTcaCropVariantsOverridePid());
-        $pageTsConfig_cropVariants = isset($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.']) ? $pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.'] : [];
-
-        $cropVariants = [];
-        if (is_array($pageTsConfig_cropVariants)) {
-            foreach ($pageTsConfig_cropVariants as $cropVariant => $config) {
-                $cropVariant = rtrim($cropVariant, '.');
-                $cropVariants[$cropVariant]['disabled'] = in_array($cropVariant, $enabledCropVariants) ? false : true;
-            }
-        }
-
-        return $cropVariants;
-    }
-
     /**
      * @var array
      */
@@ -61,6 +46,46 @@ class GeneralPictureUtility
      * @var \TYPO3\CMS\Extbase\Service\ImageService
      */
     protected $imageService = null;
+
+    /**
+     * Returns the value of ext_conf_template.txt:tcaCropVariantsOverridePid.
+     */
+    public static function getTcaCropVariantsOverridePid(): int
+    {
+        if (isset($GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'])) {
+            return (int) $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'];
+        }
+
+        $extConf = CoreGeneralUtility::makeInstance(ExtensionConfiguration::class)->get('bootstrap');
+        if (isset($extConf['tcaCropVariantsOverridePid']) && is_numeric($extConf['tcaCropVariantsOverridePid'])) {
+            $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'] = (int) $extConf['tcaCropVariantsOverridePid'];
+        } else {
+            $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'] = 1;
+        }
+
+        return $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'];
+    }
+
+    /**
+     * Filters and returns all cropVariants by the given one (enables only the given one).
+     */
+    public static function getTcaCropVariantsOverride(array $enabledCropVariants): array
+    {
+        $pageTsConfig = BackendUtility::getPagesTSconfig(self::getTcaCropVariantsOverridePid());
+
+        $cropVariants = [];
+        if (
+            isset($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.']) &&
+            is_array($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.'])
+        ) {
+            foreach ($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.'] as $cropVariant => $config) {
+                $cropVariant = rtrim($cropVariant, '.');
+                $cropVariants[$cropVariant]['disabled'] = in_array($cropVariant, $enabledCropVariants) ? false : true;
+            }
+        }
+
+        return $cropVariants;
+    }
 
     /**
      * Get the fileReference to process.
@@ -101,7 +126,7 @@ class GeneralPictureUtility
     public function getImageService(): ImageService
     {
         if (null === $this->imageService) {
-            $this->imageService = GeneralUtility::makeInstance(ImageService::class);
+            $this->imageService = CoreGeneralUtility::makeInstance(ImageService::class);
         }
 
         return $this->imageService;

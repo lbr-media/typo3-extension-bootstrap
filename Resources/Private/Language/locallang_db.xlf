@@ -181,6 +181,37 @@
             <trans-unit id="tx_bootstrap_domain_model_contentelement">
                 <source>Inhaltselement</source>
             </trans-unit>
+
+            <trans-unit id="cropVariants.default">
+                <source>Standard</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.xs">
+                <source>XS (&lt;576px)</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.sm">
+                <source>SM (>=576px)</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.md">
+                <source>MD (>=768px)</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.lg">
+                <source>LG (>=992px)</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.xl">
+                <source>XL (>=1200px)</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.xxl">
+                <source>XXL (>=1400px)</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.lightbox">
+                <source>Lightbox</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.navigation">
+                <source>Navigation</source>
+            </trans-unit>
+            <trans-unit id="cropVariants.social">
+                <source>Social Media</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
