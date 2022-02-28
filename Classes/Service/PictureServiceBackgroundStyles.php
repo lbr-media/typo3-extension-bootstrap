@@ -4,29 +4,12 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Service;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Exception;
 
-class PictureServiceBackgroundStyles
+class PictureServiceBackgroundStyles extends PictureServiceBootstrap
 {
     /**
-     * @var PictureServiceBootstrap
-     */
-    protected $pictureService = null;
-
-    /**
-     * @return PictureServiceBootstrap $pictureUtility.
-     */
-    protected function getPictureService():PictureServiceBootstrap
-    {
-        if (null === $this->pictureService) {
-            $this->pictureService = GeneralUtility::makeInstance(PictureServiceBootstrap::class);
-        }
-
-        return $this->pictureService;
-    }
-
-    /**
-     * Creates a picture-tag with some sources related to the alternative images append as child of a FileReference.
+     * Creates styles for an image with all cropVariants between xs until xxl.
      *
      * @param object $file                  The original FileReference with some alternative images
      * @param string $cssSelector           The Selector for the background image
@@ -36,48 +19,48 @@ class PictureServiceBackgroundStyles
      *
      * @author Marcel Briefs <marcel.briefs@lbrmedia.de>
      */
-    public function render($file, string $cssSelector, $displayWidthArguments = []): string
+    public function render($file, string $cssSelector, array $displayWidthArguments = []): string
     {
         try {
             if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
                 $file = $file->getOriginalResource();
             } elseif (!$file instanceof \TYPO3\CMS\Core\Resource\FileReference) {
-                throw new \Exception('The image file must be an instance of \\TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference or \\TYPO3\\CMS\\Core\\Resource\\FileReference', 1509795323);
+                throw new Exception('The image file must be an instance of \\TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference or \\TYPO3\\CMS\\Core\\Resource\\FileReference', 1509795323);
             }
 
             // initialize picture utility
-            $this->getPictureService()
+            $this->__reset()
                 ->setFileReference($file)
                 ->initializeCropVariantsProcessingInstructions();
 
             // determine/override widths by viewhelper argument
             if ($displayWidthArguments) {
-                $this->getPictureService()->overwriteDisplayWidthsWithViewHelperArgument($displayWidthArguments);
+                $this->overwriteDisplayWidthsWithViewHelperArgument($displayWidthArguments);
             }
 
             $styles = [];
 
             // build XS image
-            $styles[] = $cssSelector . " { background-image:url('" . $this->getImageSource('xs') . "' ); }";
+            $styles[] = $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xs') . "' ); }";
 
             // build SM image
-            $styles[] = '@media (min-width: 576px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('sm') . "'); } }";
+            $styles[] = '@media '.self::MEDIA_QUERIES['sm'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('sm') . "'); } }";
 
             // build MD image
-            $styles[] = '@media (min-width: 768px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('md') . "'); } }";
+            $styles[] = '@media '.self::MEDIA_QUERIES['md'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('md') . "'); } }";
 
             // build LG image
-            $styles[] = '@media (min-width: 992px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('lg') . "'); } }";
+            $styles[] = '@media '.self::MEDIA_QUERIES['lg'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('lg') . "'); } }";
 
             // build XL image
-            $styles[] = '@media (min-width: 1200px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('xl') . "'); } }";
+            $styles[] = '@media '.self::MEDIA_QUERIES['xl'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xl') . "'); } }";
 
             // build XXL image
-            $styles[] = '@media (min-width: 1400px) { ' . $cssSelector . " { background-image:url('" . $this->getImageSource('xxl') . "'); } }";
+            $styles[] = '@media '.self::MEDIA_QUERIES['xxl'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xxl') . "'); } }";
 
             // add styles to style-tag
-            return implode("", $styles);
-        } catch (\Exception $e) {
+            return implode(LF, $styles);
+        } catch (Exception $e) {
             return '';
         }
     }
@@ -85,14 +68,14 @@ class PictureServiceBackgroundStyles
     /**
      * creates an image while pay attention to crop and max-width.
      */
-    protected function getImageSource(string $device): string
+    protected function getBackgroundImageSource(string $device): string
     {
         $targetWidth = 575;
-        $maxWidth = $this->getPictureService()->getDisplayWidth($device);
+        $maxWidth = $this->getDisplayWidth($device);
         while ($targetWidth < $maxWidth) {
             $targetWidth += 575;
         }
 
-        return $this->getPictureService()->getImageSource($device, $targetWidth);
+        return $this->getImageSource($device, $targetWidth);
     }
 }

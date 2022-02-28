@@ -9,7 +9,12 @@ use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Extbase\Service\ImageService;
 
+/**
+ * Creates background styles for an image. 
+ * Uses the cropVariants xs-xxl and creates a style for each media.
+ */
 class PictureBackgroundStylesViewHelper extends AbstractViewHelper
 {
     /**
@@ -31,8 +36,12 @@ class PictureBackgroundStylesViewHelper extends AbstractViewHelper
      */
     protected $pictureServiceBackgroundStyles = null;
 
-    public function __construct(PictureServiceBackgroundStyles $pictureServiceBackgroundStyles) {
-        $this->pictureServiceBackgroundStyles = $pictureServiceBackgroundStyles;
+    // public function __construct(PictureServiceBackgroundStyles $pictureServiceBackgroundStyles) {
+    //     $this->pictureServiceBackgroundStyles = $pictureServiceBackgroundStyles;
+    // }
+    public function __construct(ImageService $imageService) {
+
+        $this->pictureServiceBackgroundStyles = GeneralUtility::makeInstance(PictureServiceBackgroundStyles::class, $imageService);
     }
 
     public function initializeArguments(): void

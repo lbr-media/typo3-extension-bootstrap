@@ -6,7 +6,6 @@ namespace LBRmedia\Bootstrap\Service;
 
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileReference;
-use TYPO3\CMS\Core\Utility\GeneralUtility as CoreGeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
 
 class PictureService
@@ -19,14 +18,14 @@ class PictureService
     /**
      * The fileReference to process.
      *
-     * @var \TYPO3\CMS\Core\Resource\FileReference
+     * @var FileReference
      */
     protected $fileReference = null;
 
     /**
      * The image to process.
      *
-     * @var \TYPO3\CMS\Core\Resource\FileReference
+     * @var FileReference
      */
     protected $image = null;
 
@@ -36,19 +35,28 @@ class PictureService
     public $cropVariantsProcessingInstructions = [];
 
     /**
-     * @var \TYPO3\CMS\Extbase\Object\ObjectManager
-     */
-    protected $objectManager = null;
-
-    /**
-     * @var \TYPO3\CMS\Extbase\Service\ImageService
+     * @var ImageService
      */
     protected $imageService = null;
+
+    public function __construct(ImageService $imageService) {
+        $this->imageService = $imageService;
+        $this->__reset();
+    }
+
+    public function __reset(): self {
+        $this->displayWidths = [];
+        $this->fileReference = null;
+        $this->image = null;
+        $this->cropVariantsProcessingInstructions = [];
+
+        return $this;
+    }
 
     /**
      * Get the fileReference to process.
      *
-     * @return \TYPO3\CMS\Core\Resource\FileReference
+     * @return FileReference
      */
     public function getFileReference()
     {
@@ -58,9 +66,9 @@ class PictureService
     /**
      * Set the fileReference to process.
      *
-     * @param \TYPO3\CMS\Core\Resource\FileReference $fileReference The fileReference to process
+     * @param FileReference $fileReference The fileReference to process
      */
-    public function setFileReference(\TYPO3\CMS\Core\Resource\FileReference $fileReference): self
+    public function setFileReference(FileReference $fileReference): self
     {
         $this->fileReference = $fileReference;
 
@@ -75,19 +83,10 @@ class PictureService
     public function getImage(): ?FileReference
     {
         if (null === $this->image) {
-            $this->image = $this->getImageService()->getImage('', $this->fileReference, true);
+            $this->image = $this->imageService->getImage('', $this->fileReference, true);
         }
 
         return $this->image;
-    }
-
-    public function getImageService(): ImageService
-    {
-        if (null === $this->imageService) {
-            $this->imageService = CoreGeneralUtility::makeInstance(ImageService::class);
-        }
-
-        return $this->imageService;
     }
 
     /**
@@ -153,7 +152,7 @@ class PictureService
         }
 
         // render image
-        $processedImage = $this->getImageService()->applyProcessingInstructions(
+        $processedImage = $this->imageService->applyProcessingInstructions(
             $this->getImage(),
             [
                 'maxWidth' => $maxWidth,
@@ -161,6 +160,6 @@ class PictureService
             ]
         );
 
-        return $this->getImageService()->getImageUri($processedImage);
+        return $this->imageService->getImageUri($processedImage);
     }
 }

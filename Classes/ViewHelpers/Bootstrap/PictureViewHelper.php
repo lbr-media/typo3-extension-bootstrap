@@ -38,6 +38,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
 
     public function __construct(PictureServiceBootstrap $pictureService) {
         $this->pictureService = $pictureService;
+        $this->pictureService->__reset();
         parent::__construct();
     }
 

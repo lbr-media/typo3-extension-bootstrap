@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Service;
 
+use TYPO3\CMS\Extbase\Service\ImageService;
+
 class PictureServiceBootstrap extends PictureService
 {
     const DEVICES = [
@@ -53,6 +55,22 @@ class PictureServiceBootstrap extends PictureService
         'xl' => null,
         'xxl' => null,
     ];
+
+    public function __reset(): self {
+        $this->fileReference = null;
+        $this->image = null;
+        $this->displayWidths = self::DISPLAY_WIDTHS;
+        $this->cropVariantsProcessingInstructions = [
+            'xs' => null,
+            'sm' => null,
+            'md' => null,
+            'lg' => null,
+            'xl' => null,
+            'xxl' => null,
+        ];
+
+        return $this;
+    }
 
     /**
      * @param array $displayWidthArgument array with keys xs, sm, md, lg and xl with percent values of the full window width of each device.
