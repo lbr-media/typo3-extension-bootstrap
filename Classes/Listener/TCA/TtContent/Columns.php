@@ -80,7 +80,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['default']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_DEFAULT),
                                     ],
                                 ],
                             ],
@@ -194,7 +194,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_BOOTSTRAP),
                                     ],
                                 ],
                             ],
@@ -223,7 +223,7 @@ class Columns
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_BOOTSTRAP),
                                     ],
                                 ],
                             ],

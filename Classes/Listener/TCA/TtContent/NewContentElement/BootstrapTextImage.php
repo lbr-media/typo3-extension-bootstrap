@@ -52,7 +52,7 @@ class BootstrapTextImage implements NewContentElementInterface
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
+                                        'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_BOOTSTRAP),
                                     ],
                                 ],
                             ],

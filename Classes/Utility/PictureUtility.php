@@ -10,6 +10,32 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 class PictureUtility
 {
+    const CROP_VARIANTS_BOOTSTRAP = [
+        'xs',
+        'sm',
+        'md',
+        'lg',
+        'xl',
+        'xxl'
+    ];
+    
+    const CROP_VARIANTS_DEFAULT = [
+        'default'
+    ];
+    
+    const CROP_VARIANTS_SOCIAL_MEDIA = [
+        'social'
+    ];
+
+    const CROP_VARIANTS_PAGES_MEDIA = [
+        'pages_media_xs',
+        'pages_media_sm',
+        'pages_media_md',
+        'pages_media_lg',
+        'pages_media_xl',
+        'pages_media_xxl',
+    ];
+
     /**
      * Returns the value of ext_conf_template.txt:tcaCropVariantsOverridePid.
      */

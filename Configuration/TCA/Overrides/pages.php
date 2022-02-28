@@ -22,26 +22,19 @@ $GLOBALS['TCA']['pages']['columns']['og_image']['config']['overrideChildTca']['t
         'showitem' => 'crop,--palette--;;filePalette',
     ],
 ];
-$GLOBALS['TCA']['pages']['columns']['og_image']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(['social']);
+$GLOBALS['TCA']['pages']['columns']['og_image']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(\LBRmedia\Bootstrap\Utility\PictureUtility::CROP_VARIANTS_SOCIAL_MEDIA);
 
 $GLOBALS['TCA']['pages']['columns']['twitter_image']['config']['overrideChildTca']['types'] = [
     \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
         'showitem' => 'crop,--palette--;;filePalette',
     ],
 ];
-$GLOBALS['TCA']['pages']['columns']['twitter_image']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(['social']);
+$GLOBALS['TCA']['pages']['columns']['twitter_image']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(\LBRmedia\Bootstrap\Utility\PictureUtility::CROP_VARIANTS_SOCIAL_MEDIA);
 
 /*
  * Configure the field media
  */
-$GLOBALS['TCA']['pages']['columns']['media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride([
-    'pages_media_xs',
-    'pages_media_sm',
-    'pages_media_md',
-    'pages_media_lg',
-    'pages_media_xl',
-    'pages_media_xxl',
-]);
+$GLOBALS['TCA']['pages']['columns']['media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(\LBRmedia\Bootstrap\Utility\PictureUtility::CROP_VARIANTS_PAGES_MEDIA);
 
 // constrain max items in field media
 $GLOBALS['TCA']['pages']['columns']['media']['config']['maxitems'] = 10;

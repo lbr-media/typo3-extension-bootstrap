@@ -104,7 +104,7 @@ return [
                         'columns' => [
                             'crop' => [
                                 'config' => [
-                                    'cropVariants' => \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(['default']),
+                                    'cropVariants' => \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(\LBRmedia\Bootstrap\Utility\PictureUtility::CROP_VARIANTS_DEFAULT),
                                 ],
                             ],
                         ],
