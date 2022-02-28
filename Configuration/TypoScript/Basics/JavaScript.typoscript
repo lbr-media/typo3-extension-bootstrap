@@ -1,17 +1,15 @@
 config {
     concatenateJs = {$plugin.tx_bootstrap.concatenateJs}
     compressJs = {$plugin.tx_bootstrap.compressJs}
-    #removeDefaultJS = external
-    removeDefaultJS = 1
+    removeDefaultJS = external
 }
 
-page.includeJSLibs {
-    # polyfills
-    # polyfills = fileadmin/bootstrap/assets/js/Polyfills.js
-    masonry = fileadmin/bootstrap/assets/js/masonry.pkgd.min.js
-}
+// page.includeJSLibs {
+//     polyfills = fileadmin/bootstrap/assets/js/Polyfills.js
+// }
 
 page.includeJSFooterlibs {
-    jquery = fileadmin/bootstrap/assets/js/bootstrap.bundle.min.js
-    bootstrap = fileadmin/bootstrap/assets/js/jquery.min.js
+    jquery = fileadmin/bootstrap/assets/js/jquery.min.js
+    bootstrap = fileadmin/bootstrap/assets/js/bootstrap.bundle.min.js
+    masonry = fileadmin/bootstrap/assets/js/masonry.pkgd.min.js
 }
