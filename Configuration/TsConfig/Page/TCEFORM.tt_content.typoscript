@@ -77,7 +77,7 @@ TCEFORM.tt_content {
 
     tx_bootstrap_inner_frame_class {
         disabled = 0
-        keepItems = 
+        // keepItems = 
         addItems {
             text-small-center = Text zentriert nur bei schmalen Endgeräten
         }
