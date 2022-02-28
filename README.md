@@ -45,30 +45,72 @@ Now you should be able to call the frontend of the page.
 All content elements have extra or modified fields.
 
 #### Fields
-* _Frame class_  
-Here you'll find the Bootstrap container* classes.
-* _Inner frame class_  
-Like the frame class but will create an inner div when a value is selected.
-* _Additional styles_  
-Many styles are selectable for a content element. Use this to configure modifications like indents, etc.
+* _`Frame class`_ (select)  
+Here you'll find the Bootstrap container* classes like `container-xl` or `container-float`.
+* _`Inner frame class`_ (select)  
+Like the frame class but will create an inner div around the content when a value is selected.  
+Example:
+``` TypoScript
+TCEFORM.tt_content.tx_bootstrap_inner_frame_class.addItems {
+    my-inner-frame-class = My Label
+}
+```
+* _`Additional styles`_ (select multiple)  
+Many styles are selectable for a content element.  
+Use this to configure modifications like indents, etc.  
 In TypoScript several styles can be configured.  
 You'll find them with the key `plugin.tx_bootstrap.settings.form.element.AdditionalStyles`.  
-Each variant may have these properties:
-    * `label`
-    * `outerWrap`
-    * `innerWrap`
-    * `additionalClass`
-    * `additionalAttributes` (key value pairs)
-    * `additionalOuterClass`
-    * `additionalOuterAttributes` (key value pairs)
-* _Color_
-* _Background color_
-* _Space before_
-* _Space after_
+Each variant has these properties:
+    * `label` (string; required)
+    * `value` (int; required; used for reference)
+    * `outerWrap` (string)
+    * `innerWrap` (string)
+    * `additionalClass` (string)
+    * `additionalAttributes` (array; key value pairs)
+    * `additionalOuterClass` (string)
+    * `additionalOuterAttributes` (array; key value pairs)
 
-The defaults of `space_before_class` and `space_after_class` will be replaced with Bootstrap space classes.  
-You'll find them with the keys `plugin.tx_bootstrap.settings.form.element.SpaceBeforeClassReplacements` and `plugin.tx_bootstrap.settings.form.element.SpaceAfterClassReplacements`. So you don't need extra classes for the space between content elements.
+Example:
+``` TypoScript
+plugin.tx_bootstrap.settings.form.element.AdditionalStyles {
+    10 {
+        label = Indent left
+        value = 10
+        innerWrap = <div class="indent-left-inner">|</div>
+        additionalClass = indent-left
+        additionalAttributes {
+            data-render = indent-left
+        }
+    }
+}
+```
+* _`Color`_ (select; one of the text-{color} classes)
+* _`Background color`_ (select; one of the bg-{color} classes)
+* _`Space before`_ (select; one of the space_before_class')
+* _`Space after`_ (select; one of the space_after_class')
 
+The defaults of `space_before_class` and `space_after_class` will be replaced with Bootstrap space classes. So you don't need extra classes for the space between content elements.
+
+Adjust to your needs:
+``` TypoScript
+plugin.tx_bootstrap.settings.form.element {
+    SpaceBeforeClassReplacements {
+        extra-small = mt-3
+        small = mt-4
+        medium = mt-5
+        large = mt-6
+        extra-large = mt-7
+    }
+
+    SpaceAfterClassReplacements {
+        extra-small = mb-3
+        small = mb-4
+        medium = mb-5
+        large = mb-6
+        extra-large = mb-7
+    }
+}
+```
 
 ---
 
@@ -77,250 +119,317 @@ You'll find them with the keys `plugin.tx_bootstrap.settings.form.element.SpaceB
 All headers of all content elements have extra or modified fields.
 
 #### Fields
-* _Header_
-* _Header layout_ aka _Type_.  
+* _`Header`_ (multiline string)
+* _`Header layout`_ aka _`Type`_ (select)  
 The tag that will be generated (`h1` to `h5`).
-* _Layout_  
+* _`Layout`_ (select)  
 The basic css-class that will be used for the tag.
-The default Bootstrap classes from `display-1` to `display-6`, `h1` to `h6` and `lead`.  
-* _Variant_ or _Predefined header_
-Only one variant is selectable. Use this to produce some variants of headers.
-In TypoScript several variants can be configured. You'll find them with the key `plugin.tx_bootstrap.settings.form.element.PredefinedHeader`.  
+The default Bootstrap classes from `display-1` to `display-6`, `h1` to `h6` and `lead`.
+* _`Variant`_ or _`Predefined header`_ (select)  
+Only one variant is selectable. Use this to produce some variants of headers.  
+In TypoScript several variants can be configured.  
+You'll find them with the key `plugin.tx_bootstrap.settings.form.element.PredefinedHeader`.  
 Each variant may have these properties:
-    * `label`
-    * `outerWrap`
-    * `innerWrap`
-    * `additionalClass`
-* _Color_
-* _Position_ (`start`, `center`, `right`)
-* _Date_
-* _Additional styles_  
+    * `label` (string; required)
+    * `value` (int; required; used for reference)
+    * `outerWrap` (string)
+    * `innerWrap` (string)
+    * `additionalClass` (string)
+
+Example:
+``` TypoScript
+plugin.tx_bootstrap.settings.form.element.PredefinedHeader {
+    10 {
+        label = My fancy headline
+        value = 10
+        outerWrap = <div class="h-fancy border bg-dark text-light rounded">|</div>
+        innerWrap = <span class="h-fancy-inner">|</span>
+        additionalClass = mb-0
+    }
+}
+```
+* _`Color`_ (select; one of the text-{color} classes)
+* _`Position`_ (select; either `start`, `center` or `right`)
+* _`Date`_ (Date)
+* _`Additional styles`_ (select multiple)  
 Many styles are selectable for a headline. Use this to configure modifications like uppercase, no space below, etc.
 In TypoScript several styles can be configured.  
 You'll find them with the key `plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles`.  
 Each variant may have these properties:
-    * `label`
-    * `outerWrap`
-    * `innerWrap`
-    * `additionalClass`
-* _Icon_
-* _Link_
-* _Subheader_
+    * `label` (string; required)
+    * `value` (int; required; used for reference)
+    * `outerWrap` (string)
+    * `innerWrap` (string)
+    * `additionalClass` (string)
+
+Example:
+``` TypoScript
+plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles {
+    10 {
+        label = VERSAL
+        value = 10
+        additionalClass = text-uppercase
+    }
+    20 {
+        label = italic
+        value = 20
+        innerWrap = <em>|</em>
+    }
+    30 {
+        label = -line-through-
+        value = 30
+        innerWrap = <del>|</del>
+    }
+}
+```
+* _`Icon`_ (FAL)
+* _`Link`_ (TypoLink)
+* _`Subheader`_ (string)
 
 ---
 
 
 ### Accordion
-Bootstrap styled Accordion component
+Bootstrap styled Accordion component.  
+CType: `bootstrap_accordion`
 
 One accordion content element has one or many accordion items.  
-Each accordion item may have one or many `Text & media (grid)` content elements.  
+Each accordion item may have one or many `Text & media (grid)` content elements.
 
 #### Settings for all items:
-* _Keep items open on opening other items_
+* _`Keep items open on opening other items`_ (boolean)
 
 #### Settings each item:
-* _Opened on load_
+* _`Opened on load`_ (boolean)
 
 ---
 
 ### Carousel
-Bootstrap styled Carousel component with images.
+Bootstrap styled Carousel component with images.  
+CType: `bootstrap_carousel`
 
 #### Settings:
-* _Animation_ (`slide` or `fade`)
-* _Autoplay_
-* _Color scheme_ (`light`, `dark`)
-* _Show controls_
-* _Show indicators_
-* _Interval_
+* _`Animation`_ (select; either `slide` or `fade`)
+* _`Autoplay`_ (boolean)
+* _`Color scheme`_ (select; either `light`, `dark`)
+* _`Show controls`_ (boolean)
+* _`Show indicators`_ (boolean)
+* _`Interval`_ (int; required; milliseconds)
 
 #### Image properties:
-* _Header_
-* _Title_
-* _Alternative_
-* _Description_
-* _Link_
-* _Link text_
-* _Crop_ (each device from xs to xxl)
+* _`Header`_ (string)
+* _`Title`_ (string)
+* _`Alternative`_ (string)
+* _`Description`_ (multiline string)
+* _`Link`_ (TypoLink)
+* _`Link text`_ (string)
+* _`Crop`_ (each device from xs to xxl)
 
 ---
 
 ### Cards
-Bootstrap styled Cards component in a grid system.
+Bootstrap styled Cards component in a grid system.  
+CType: `bootstrap_cards`
 
 #### Settings:
-* _Presets_
+* _`Presets`_ (select multiple)  
+In TypoScript `tt_content.bootstrap_cards.flexform_presets` one or more settings could be grouped and labeled for selection.
 * Grid:
-    * _Cols_ (each device from xs to xxl)
-    * _Gutter space x_ (each device from xs to xxl)
-    * _Gutter space y_ (each device from xs to xxl)
-    * _Align x_ (each device from xs to xxl)
-    * _Align y_ (each device from xs to xxl)
+    * _`Cols`_ (select; each device from xs to xxl; col* classes)
+    * _`Gutter space x`_ (select; each device from xs to xxl; g-* classes)
+    * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
+    * _`Align x`_ (select; each device from xs to xxl; alignment classes)
+    * _`Align y`_ (select; each device from xs to xxl; alignment classes)
 * Cards:
-    * _Image position_ (`above`, `below`, `start`, `end`)
-    * _Background color_
-    * _Text color_
-    * _Border color_
-    * _Button color/style_
-* _Image optimizing_ (produced percentual window width from xs to xxl)
+    * _`Image position`_ (select; one of `above`, `below`, `start`, `end`)
+    * _`Background color`_ (select; one of the bg-{color} classes)
+    * _`Text color`_ (select; one of the text-{color} classes)
+    * _`Border color`_ (select; one of the border-{color} classes)
+    * _`Button color/style`_ (select; one of the btn-{color} and btn-outline-{color} classes)
+* _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 
 #### Card-item properties:
-* _Header_
-* _Title_
-* _Image_
-* _Text_
-* _Link_
-* _Link text_
-* _Footer_
+* _`Header`_ (string)
+* _`Title`_ (string)
+* _`Image`_ (FAL)
+* _`Text`_ (multiline string, RTE)
+* _`Link`_ (TypoLink)
+* _`Link text`_ (string)
+* _`Footer`_ (string)
 
 ---
 
 ### Media grid
-Images and videos in an adjustable grid system. Masonry is also provided.
+Images and videos in an adjustable grid system. Masonry is also provided.  
+CType: `bootstrap_mediagrid`
 
 #### Settings:
-* _Presets_
-* Use _masonry grid_
+* _`Presets`_ (select multiple)  
+In TypoScript `tt_content.bootstrap_mediagrid.flexform_presets` one or more settings could be grouped and labeled for selection.
+* Use _`masonry grid`_ (boolean)
 * Grid:
-    * _Cols_ (each device from xs to xxl)
-    * _Gutter space x_ (each device from xs to xxl)
-    * _Gutter space y_ (each device from xs to xxl)
-    * _Align x_ (each device from xs to xxl)
-    * _Align y_ (each device from xs to xxl)
-* _Image optimizing_ (produced percentual window width from xs to xxl)
+    * _`Cols`_ (select; each device from xs to xxl; col* classes)
+    * _`Gutter space x`_ (select; each device from xs to xxl; g-* classes)
+    * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
+    * _`Align x`_ (select; each device from xs to xxl; alignment classes)
+    * _`Align y`_ (select; each device from xs to xxl; alignment classes)
+* _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 ---
 
 ### Tabulator
-Bootstrap styled Tabulator component
+Bootstrap styled Tabulator component.  
+CType: `bootstrap_tabs`
 
 One tabulator content element has one or many tabulator items.  
 Each tabulator item may have one or many `Text & media (grid)` content elements.  
 
 #### Settings for all items:
-* _Layout_ (`default`, `pills horizontal`, `pills vertical`)
-* _Navigation alignment_ (only on horizontal)
-    * `start`
-    * `center`
-    * `end`
-    * `nav fill`
-    * `nav justified`
+* _`Layout`_ (select; either `default`, `pills horizontal` or `pills vertical`)
+* _`Navigation alignment`_ (select; only on horizontal; one of `start`, `center`, `end`, `nav fill`, `nav justified`)
 
 #### Settings each item:
-* _active_  
+* _`active`_ (boolean)  
 Only one can be active. The first found with active state is used. If no one is active, the first item is marked as active.
 
 ---
 
 ### Text + Image
-A content element to create fast a grid with one image and text. Positions, space and alignment is adjustable
+A content element to create fast a grid with one image and text. Positions, space and alignment is adjustable.  
+CType: `bootstrap_textimage`
 
-# Settings:
-* _Presets_
-* _Order_ (`first image` or `first text`)
-* _Image alignment_ (`top` or `bottom`)
-* _Text alignment_ (`top` or `bottom`)
-* _Header position_ (`above all`, `above text` or `above image`)
-* _Space between_ text and image (each device from xs to xxl)
+#### Settings:
+* _`Presets`_ (select multiple)  
+In TypoScript `tt_content.bootstrap_textimage.flexform_presets` one or more settings could be grouped and labeled for selection.
+* _`Order`_ (select; either `first image` or `first text`)
+* _`Image alignment`_ (select; either `top` or `bottom`)
+* _`Text alignment`_ (select; either `top` or `bottom`)
+* _`Header position`_ (select; either `above all`, `above text` or `above image`)
+* _`Space between`_ text and image (select; each device from xs to xxl; g-* classes)
 ---
 
 ### Text & Media (float)
-A text which floats a media grid. Full adjustable grid and floating settings. Some presets are available to the editor.
+A text which floats a media grid. Full adjustable grid and floating settings. Some presets are available to the editor.  
+CType: `bootstrap_textmediafloat`
 
 #### Settings:
-* _Presets_
-* _Header position_ (`above all` or `above text`)
+* _`Presets`_ (select multiple)  
+In TypoScript `tt_content.bootstrap_textmediafloat.flexform_presets` one or more settings could be grouped and labeled for selection.
+* _`Header position`_ (`above all` or `above text`)
 * Media area:
-    * _Position_ (`centered above text`, `left` or `right`; each device from xs to xxl)
-    * _Width_ (each device from xs to xxl)
-    * _Space x_ (each device from xs to xxl)
-    * _Space y_ (each device from xs to xxl)
-* _Use masonry grid_
+    * _`Position`_ (select; each device from xs to xxl; either `centered above text`, `left` or `right`)
+    * _`Width`_ (select; each device from xs to xxl; additional float classes)
+    * _`Space x`_ (select; each device from xs to xxl; space classes)
+    * _`Space y`_ (select; each device from xs to xxl; space classes)
+* Use _`masonry grid`_
 * Grid for the media items:
-    * _Cols_ (each device from xs to xxl)
-    * _Gutter space x_ (each device from xs to xxl)
-    * _Gutter space y_ (each device from xs to xxl)
-    * _Align x_ (each device from xs to xxl)
-    * _Align y_ (each device from xs to xxl)
-* _Image optimizing_ (produced percentual window width from xs to xxl)
+    * _`Cols`_ (select; each device from xs to xxl; col* classes)
+    * _`Gutter space x`_ (select; each device from xs to xxl; g-* classes)
+    * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
+    * _`Align x`_ (select; each device from xs to xxl; alignment classes)
+    * _`Align y`_ (select; each device from xs to xxl; alignment classes)
+* _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 ---
 
 ### Text & Media (grid)
-A text column and a media grid column. The most flexible content element.
+A text column and a media grid column. The most flexible content element.  
+CType: `bootstrap_textmediagrid`
 
 #### Settings:
-* _Presets_
-* _Default order_ of text- and media-area (`first image` or `first text`)
-* _Order per each device_ from xs to xxl
-* _Header position_ (`above all`, `above text` or `above media area`)
+* _`Presets`_ (select multiple)  
+In TypoScript `tt_content.bootstrap_textmediagrid.flexform_presets` one or more settings could be grouped and labeled for selection.
+* _`Default order`_ of text- and media-area (select; either `first image` or `first text`)
+* _`Order per each device`_ (select; each device from xs to xxl; either `first image` or `first text`)
+* _`Header position`_ (select; either `above all`, `above text` or `above media area`)
 * Grid for the text- and media-columns:
-    * _Cols text-column_ (each device from xs to xxl)
-    * _Cols media-column_ (each device from xs to xxl)
-    * _Gutter space x_ (each device from xs to xxl)
-    * _Gutter space y_ (each device from xs to xxl)
-    * _Align x_ (each device from xs to xxl)
-    * _Align y_ (each device from xs to xxl)
+    * _`Cols text-column`_ (select; each device from xs to xxl; col* classes)
+    * _`Cols media-column`_ (select; each device from xs to xxl; col* classes)
+    * _`Gutter space x`_ (select; each device from xs to xxl; g-* classes)
+    * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
+    * _`Align x`_ (select; each device from xs to xxl; alignment classes)
+    * _`Align y`_ (select; each device from xs to xxl; alignment classes)
 * Text-column:
-    * _Align self_ (each device from xs to xxl)
-    * _Inner space_ (each device from xs to xl)
+    * _`Align self`_ (select; each device from xs to xxl; alignment classes)
+    * _`Inner space`_ (select; each device from xs to xxl; space classes)
 * Media-column:
-    * _Use masonry grid_
-    * _Align self_ (each device from xs to xxl)
-    * _Inner space_ (each device from xs to xl)
+    * Use _`masonry grid`_
+    * _`Align self`_ (select; each device from xs to xxl; alignment classes)
+    * _`Inner space`_ (select; each device from xs to xxl; space classes)
 * Grid for the media items:
-    * _Cols_ (each device from xs to xxl)
-    * _Gutter space x_ (each device from xs to xxl)
-    * _Gutter space y_ (each device from xs to xxl)
-    * _Align x_ (each device from xs to xxl)
-    * _Align y_ (each device from xs to xxl)
-* _Image optimizing_ (produced percentual window width from xs to xxl)
+    * _`Cols`_ (select; each device from xs to xxl; col* classes)
+    * _`Gutter space x`_ (select; each device from xs to xxl; g-* classes)
+    * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
+    * _`Align x`_ (select; each device from xs to xxl; alignment classes)
+    * _`Align y`_ (select; each device from xs to xxl; alignment classes)
+* _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 ---
 
 ### Two columns text
-Create fast two columns text.
+Create fast two columns text.  
+CType: `bootstrap_twocolumnstext`
 
 ---
 
 ### Bullets
-A list in Bootstrap-style.
+A list in Bootstrap-style.  
+CType: `bullets`
 
 #### Settings (like Typo3):
-* `unordered`
-* `ordered`
+* `unordered list`
+* `ordered list`
 * `definition list`
 
 ---
 
 ### Div
-Just a line.
+Just a line.  
+CType: `div`
 
 ---
 
 ### Header
-Just a header.
+Just a header.  
+CType: `header`
 
 ---
 
 ### Table
-Adjustable with all the Bootstrap table classes.
+Adjustable with all the Bootstrap table classes.  
+CType: `table`
 
 ---
 
 ### Uploads
 Realized with Bootstrap card component.  
-The default Typo3-fields are available.
+The default Typo3-fields are available.  
+CType: `uploads`
 
 ---
 
 ### Copied `fluid_styled_content` content elements
-* HTML
-* List/Plugin
-* Menu*
-* Shortcut
-* Text
+* HTML  
+CType: `html`
+* List/Plugin  
+CType: `list`
+* Menu*  
+CTypes: 
+    * `menu_abstract`
+    * `menu_categorized_content`
+    * `menu_categorized_pages`
+    * `menu_pages`
+    * `menu_recently_updated`
+    * `menu_related_pages`
+    * `menu_section`
+    * `menu_section_pages`
+    * `menu_sitemap`
+    * `menu_sitemap_pages`
+    * `menu_subpages`
+* Shortcut  
+CType: `shortcut`
+* Text  
+CType: `text`
 
 ---
