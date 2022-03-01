@@ -110,9 +110,6 @@
             <trans-unit id="tt_content.tx_bootstrap_bodytext2">
                 <source>Text</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_bootstrap_text_color">
-                <source>Variante</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_teammember">
                 <source>Team-Mitglieder</source>
             </trans-unit>
