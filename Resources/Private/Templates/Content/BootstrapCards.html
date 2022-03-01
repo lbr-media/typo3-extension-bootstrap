@@ -18,7 +18,6 @@
                 xl:configuration.mediaoptimizing.width.xl,
                 xxl:configuration.mediaoptimizing.width.xxl
             }" />
-            <f:if condition="{configuration.grid.row_space_classes}"><div class="overflow-hidden"></f:if>
             <div class="{configuration.grid.row_classes} {configuration.grid.row_space_classes}">
                 <f:for each="{card_items}" as="cardItem">
                     <div class="{configuration.grid.col_classes} {configuration.grid.col_space_classes}">
@@ -26,12 +25,11 @@
                     </div>
                 </f:for>
             </div>
-            <f:if condition="{configuration.grid.row_space_classes}"></div></f:if>
         </f:if>
     </f:spaceless></f:section>
 
-    <f:section name="_Card"><f:spaceless>
-        <div class="card{f:if(condition:configuration.grid.item_classes, then:' {configuration.grid.item_classes} h-100')}{f:if(condition:configuration.card.bg_color, then:' {configuration.card.bg_color}')}{f:if(condition:configuration.card.text_color, then:' {configuration.card.text_color}')}{f:if(condition:configuration.card.border_color, then:' {configuration.card.border_color}')}">
+    <f:section name="_Card"><f:spaceless>{_all -> f:debug()}
+        <div class="card{f:if(condition:configuration.grid.item_classes, then:' {configuration.grid.item_classes} h-100')}{f:if(condition:configuration.card.bg_color, then:' {configuration.card.bg_color}')}{f:if(condition:configuration.card.text_color, then:' {configuration.card.text_color}')}{f:if(condition:configuration.card.border_color, then:' {configuration.card.border_color}')}{f:if(condition:configuration.card.border_width, then:' {configuration.card.border_width}')}{f:if(condition:configuration.card.shadow, then:' {configuration.card.shadow}')}">
             <f:if condition="{cardItem.image}">
                 <f:then>
                     <f:switch expression="{configuration.card.image_position}">

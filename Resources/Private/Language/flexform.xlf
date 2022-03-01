@@ -392,6 +392,9 @@
             <trans-unit id="border_color">
                 <source>Border color</source>
             </trans-unit>
+            <trans-unit id="border_width">
+                <source>Border width</source>
+            </trans-unit>
             <trans-unit id="button_color">
                 <source>Button color</source>
             </trans-unit>
@@ -412,6 +415,21 @@
             </trans-unit>
             <trans-unit id="image_align.bottom">
                 <source>bottom</source>
+            </trans-unit>
+            <trans-unit id="shadow">
+                <source>Shadow</source>
+            </trans-unit>
+            <trans-unit id="shadow.no_shadow">
+                <source>none</source>
+            </trans-unit>
+            <trans-unit id="shadow.shadow-sm">
+                <source>small</source>
+            </trans-unit>
+            <trans-unit id="shadow.shadow">
+                <source>normal</source>
+            </trans-unit>
+            <trans-unit id="shadow.shadow-lg">
+                <source>large</source>
             </trans-unit>
             
 

@@ -21,6 +21,12 @@ tt_content {
             #         }
             #         card {
             #             image_position = top
+            #             bg_color = bg-light
+            #             text_color = text-dark
+            #             border_color = border-dark
+            #             border_width = border-1
+            #             button_color = btn-outline-primary
+            #             shadow = shadow-sm
             #         }
             #         mediaoptimizing {
             #             width {

@@ -491,6 +491,10 @@
                 <source>Border color</source>
                 <target>Randfarbe</target>
             </trans-unit>
+            <trans-unit id="border_width">
+                <source>Border width</source>
+                <target>Randbreite</target>
+            </trans-unit>
             <trans-unit id="button_color">
                 <source>Button color</source>
                 <target>Button-Farbe</target>
@@ -518,6 +522,26 @@
             <trans-unit id="image_align.bottom">
                 <source>bottom</source>
                 <target>unten</target>
+            </trans-unit>
+            <trans-unit id="shadow">
+                <source>Shadow</source>
+                <target>Schatten</target>
+            </trans-unit>
+            <trans-unit id="shadow.no_shadow">
+                <source>none</source>
+                <target>kein Schatten</target>
+            </trans-unit>
+            <trans-unit id="shadow.shadow-sm">
+                <source>small</source>
+                <target>klein</target>
+            </trans-unit>
+            <trans-unit id="shadow.shadow">
+                <source>normal</source>
+                <target>normal</target>
+            </trans-unit>
+            <trans-unit id="shadow.shadow-lg">
+                <source>large</source>
+                <target>groß</target>
             </trans-unit>
 
             <!--

@@ -59,7 +59,9 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
                 'bg_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.bg_color.vDEF', 'string', '', $this->logger),
                 'text_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.text_color.vDEF', 'string', '', $this->logger),
                 'border_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.border_color.vDEF', 'string', '', $this->logger),
+                'border_width' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.border_width.vDEF', 'string', '', $this->logger),
                 'button_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.button_color.vDEF', 'string', '', $this->logger),
+                'shadow' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.shadow.vDEF', 'string', '', $this->logger),
             ],
             'mediaoptimizing' => [
                 'width' => [

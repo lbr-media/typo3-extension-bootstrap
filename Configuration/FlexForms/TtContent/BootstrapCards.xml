@@ -171,6 +171,46 @@
                             </config>
                         </value>
                     </field>
+                    <field index="border_width">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_width</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Standard</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">0</numIndex>
+                                        <numIndex index="1">border-0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">1</numIndex>
+                                        <numIndex index="1">border-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4">
+                                        <numIndex index="0">2</numIndex>
+                                        <numIndex index="1">border-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5">
+                                        <numIndex index="0">3</numIndex>
+                                        <numIndex index="1">border-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6">
+                                        <numIndex index="0">4</numIndex>
+                                        <numIndex index="1">border-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7">
+                                        <numIndex index="0">5</numIndex>
+                                        <numIndex index="1">border-5</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
                     <field index="button_color">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:button_color</label>
@@ -181,6 +221,34 @@
                                     <numIndex index="1">
                                         <numIndex index="0">Standard</numIndex>
                                         <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="shadow">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:shadow</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:shadow.no_shadow</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:shadow.shadow-sm</numIndex>
+                                        <numIndex index="1">shadow-sm</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:shadow.shadow</numIndex>
+                                        <numIndex index="1">shadow</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:shadow.shadow-lg</numIndex>
+                                        <numIndex index="1">shadow-lg</numIndex>
                                     </numIndex>
                                 </items>
                                 <default></default>
