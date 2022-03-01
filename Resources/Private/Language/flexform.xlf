@@ -389,6 +389,9 @@
             <trans-unit id="text_color">
                 <source>Text color</source>
             </trans-unit>
+            <trans-unit id="border">
+                <source>Border</source>
+            </trans-unit>
             <trans-unit id="border_color">
                 <source>Border color</source>
             </trans-unit>
@@ -431,6 +434,53 @@
             <trans-unit id="shadow.shadow-lg">
                 <source>large</source>
             </trans-unit>
+            <trans-unit id="rounded">
+                <source>Rounded</source>
+            </trans-unit>
+
+            <!-- FormElement: devices -->
+            <trans-unit id="device.xs">
+                <source>XS</source>
+            </trans-unit>
+            <trans-unit id="device.sm">
+                <source>SM</source>
+            </trans-unit>
+            <trans-unit id="device.md">
+                <source>MD</source>
+            </trans-unit>
+            <trans-unit id="device.lg">
+                <source>LG</source>
+            </trans-unit>
+            <trans-unit id="device.xl">
+                <source>XL</source>
+            </trans-unit>
+            <trans-unit id="device.xxl">
+                <source>XXL</source>
+            </trans-unit>
+
+            <!-- FormElement: edges -->
+            <trans-unit id="edge.left">
+                <source>Left</source>
+            </trans-unit>
+            <trans-unit id="edge.right">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="edge.horizontal">
+                <source>Left + right</source>
+            </trans-unit>
+            <trans-unit id="edge.top">
+                <source>Top</source>
+            </trans-unit>
+            <trans-unit id="edge.bottom">
+                <source>Bottom</source>
+            </trans-unit>
+            <trans-unit id="edge.vertical">
+                <source>Top + bottom</source>
+            </trans-unit>
+            <trans-unit id="edge.all">
+                <source>All sides</source>
+            </trans-unit>
+            
             
 
             <!--

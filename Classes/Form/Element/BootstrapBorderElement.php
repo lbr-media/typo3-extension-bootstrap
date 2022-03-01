@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace LBRmedia\Bootstrap\Form\Element;
 
 use LBRmedia\Bootstrap\Service\FlexFormService;
@@ -13,9 +11,9 @@ use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 
 /**
- * This is rendered for type=text, renderType=bootstrapDevices.
+ * This is rendered for type=text, renderType=bootstrapBorderElement.
  */
-class BootstrapDevicesElement extends AbstractFormElement
+class BootstrapBorderElement extends AbstractFormElement
 {
     /**
      * Default field information enabled for this element.
@@ -57,7 +55,7 @@ class BootstrapDevicesElement extends AbstractFormElement
      * @return array As defined in initializeResultArray() of AbstractNode
      * @throws RuntimeException with invalid configuration
      */
-    public function render(): array
+    public function render()
     {
         $resultArray = $this->initializeResultArray();
 
@@ -72,53 +70,65 @@ class BootstrapDevicesElement extends AbstractFormElement
         $fieldWizardHtml = $fieldWizardResult['html'];
         $resultArray = $this->mergeChildReturnIntoExistingResult($resultArray, $fieldWizardResult, false);
 
-        $fieldId = StringUtility::getUniqueId('tceforms-devices-');
+        $fieldId = StringUtility::getUniqueId('tceforms-bootstrapborder-');
 
         // get 'form' plugin settings
-        /** @var FlexFormService $flexformService */
+        /** @var FlexFormService $flexFormService */
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
         $pluginSettings = $flexFormService->getPluginSettings();
 
-        if (!isset($pluginSettings[$config['elementConfiguration'] . '.']) || !is_array($pluginSettings[$config['elementConfiguration'] . '.'])) {
-            throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.' . $config['elementConfiguration'] . ' in TsConfig!', 1495437999);
-        }
-        
         // create html
         $inputHtml = "";
 
-        // create options (equal in each select)
-        $options = implode(LF, FormElementUtility::createOptionTags($pluginSettings[$config['elementConfiguration'] . '.']));
-        
-        // create select tags
+        // create select tags ...
+        // ... border
+        if (!isset($pluginSettings['BootstrapBorder.']) || !is_array($pluginSettings['BootstrapBorder.'])) {
+            throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapBorder in TsSetup!', 1646131737);
+        }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-xs',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xs'),
-            $options
+            $fieldId.'-border',
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorder.']))
         );
+
+        // ... border width
+        if (!isset($pluginSettings['BootstrapBorderWidth.']) || !is_array($pluginSettings['BootstrapBorderWidth.'])) {
+            throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapBorderWidth in TsSetup!', 1646131741);
+        }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-sm',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.sm'),
-            $options
+            $fieldId.'-borderwidth',
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_width'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderWidth.']))
         );
+
+        // ... border color
+        if (!isset($pluginSettings['BootstrapBorderColor.']) || !is_array($pluginSettings['BootstrapBorderColor.'])) {
+            throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapBorderColor in TsSetup!', 1646131738);
+        }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-md',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.md'),
-            $options
+            $fieldId.'-bordercolor',
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_color'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderColor.']))
         );
+
+        // ... rounded
+        if (!isset($pluginSettings['BootstrapRounded.']) || !is_array($pluginSettings['BootstrapRounded.'])) {
+            throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapRounded in TsSetup!', 1646131739);
+        }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-lg',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.lg'),
-            $options
+            $fieldId.'-rounded',
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:rounded'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapRounded.']))
         );
+
+        // ... shadow
+        if (!isset($pluginSettings['BootstrapShadow.']) || !is_array($pluginSettings['BootstrapShadow.'])) {
+            throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapShadow in TsSetup!', 1646131740);
+        }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-xl',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xl'),
-            $options
-        );
-        $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-xxl',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xxl'),
-            $options
+            $fieldId.'-shadow',
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:shadow'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapShadow.']))
         );
 
         // create hidden element with value
@@ -133,7 +143,7 @@ class BootstrapDevicesElement extends AbstractFormElement
 
         // require JS
         $resultArray['requireJsModules'][] = JavaScriptModuleInstruction::forRequireJS(
-            'TYPO3/CMS/Bootstrap/FormEngine/Element/BootstrapDevicesElement'
+            'TYPO3/CMS/Bootstrap/FormEngine/Element/BootstrapBorderElement'
         )->instance($fieldId);
 
         return $resultArray;

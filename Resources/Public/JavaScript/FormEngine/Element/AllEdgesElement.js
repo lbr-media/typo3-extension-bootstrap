@@ -1,56 +1,54 @@
 /**
- * Module: TYPO3/CMS/Bootstrap/FormEngine/Element/SpacesElement Logic for SpacesElement
+ * Module: TYPO3/CMS/Bootstrap/FormEngine/Element/AllEdgesElement
  */
- define(["jquery"], function ($) {
-    /**
-     *
-     * @type {{}}
-     * @exports TYPO3/CMS/Bootstrap/FormEngine/Element/AllEdgesElement
-     */
-    var AllEdgesElement = {};
+define(function() {
+    return class {
+        constructor(id)
+        {
+            this.values = ["", "", "", "", "", "", ""];
 
-    /**
-     * Initializes the SpacesEleemnt
-     *
-     * @param {String} selector
-     */
-    AllEdgesElement.initialize = function (selector) {
-        var updateHidden = function () {
-            var e = [
-                $left.val() !== "default" ? $left.val() : "",
-                $right.val() !== "default" ? $right.val() : "",
-                $horizontal.val() !== "default" ? $horizontal.val() : "",
-                $top.val() !== "default" ? $top.val() : "",
-                $bottom.val() !== "default" ? $bottom.val() : "",
-                $vertical.val() !== "default" ? $vertical.val() : "",
-                $all.val() !== "default" ? $all.val() : ""
-            ];
-            $hidden.val(e.join(";"));
-        };
+            // get hidden element with the value
+            this.hiddenInput = document.getElementById(id + "-hidden");
 
-        var $hidden = $("#" + selector + "-hidden");
-        var $left = $("#" + selector + "-left").on("change", updateHidden);
-        var $right = $("#" + selector + "-right").on("change", updateHidden);
-        var $horizontal = $("#" + selector + "-horizontal").on("change", updateHidden);
-        var $top = $("#" + selector + "-top").on("change", updateHidden);
-        var $bottom = $("#" + selector + "-bottom").on("change", updateHidden);
-        var $vertical = $("#" + selector + "-vertical").on("change", updateHidden);
-        var $all = $("#" + selector + "-all").on("change", updateHidden);
+            // get the selects and bind change event
+            this.selects = [];
+            this.selects.push(document.getElementById(id + "-left"));
+            this.selects.push(document.getElementById(id + "-right"));
+            this.selects.push(document.getElementById(id + "-horizontal"));
+            this.selects.push(document.getElementById(id + "-top"));
+            this.selects.push(document.getElementById(id + "-bottom"));
+            this.selects.push(document.getElementById(id + "-vertical"));
+            this.selects.push(document.getElementById(id + "-all"));
+            
+            let _t = this;
+            for (var i = 0; i < this.selects.length; i++) {
+                this.selects[i].addEventListener("change", function () {
+                    _t.updateHidden();
+                });
+            }
 
-        if ($hidden.val()) {
-            var e = $hidden.val().split(";");
-        } else {
-            var e = ["default", "default", "default", "default", "default", "default", "default"];
+            this.initValues();
         }
 
-        $left.val(e[0] ? e[0] : "default");
-        $right.val(e[1] ? e[1] : "default");
-        $horizontal.val(e[2] ? e[2] : "default");
-        $top.val(e[3] ? e[3] : "default");
-        $bottom.val(e[4] ? e[4] : "default");
-        $vertical.val(e[5] ? e[5] : "default");
-        $all.val(e[6] ? e[6] : "default");
-    };
+        initValues() {
+            if (this.hiddenInput.value) {
+                this.values = this.hiddenInput.value.split(";");
+            }
 
-    return AllEdgesElement;
+            for (var i = 0; i < this.selects.length; i++) {
+                if (typeof this.values[i] === "string") {
+                    this.selects[i].value = this.values[i];
+                }
+            }
+        }
+
+        updateHidden() {
+            this.values = [];
+            for (var i = 0; i < this.selects.length; i++) {
+                this.values.push(this.selects[i].value === "default" ? "" : this.selects[i].value);
+            }
+
+            this.hiddenInput.value = this.values.join(";");
+        };
+    }
 });

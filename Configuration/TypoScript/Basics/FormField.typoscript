@@ -262,6 +262,57 @@ plugin.tx_bootstrap.settings.form.element {
 
     BootstrapGridSpaceX < .BootstrapGridSpace
 
+    BootstrapBorder {
+        default = 
+        border = alle Seiten
+        border-start = links
+        border-right = rechts
+        border-top = oben
+        border-end = unten
+    }
+
+    BootstrapBorderColor {
+        default = 
+        border-primary = Primärfarbe (blau)
+        border-secondary = Sekundärfarbe (grau)
+        border-success = Erfolg (grün)
+        border-danger = Gefahr (rot)
+        border-warning = Warnung (gelb)
+        border-info = Info (dunkeltürkis)
+        border-light = Hell (hellgrau)
+        border-dark = Dunkel (dunkelgrau)
+    }
+
+    BootstrapBorderWidth {
+        default = 
+        border-0 = 0
+        border-1 = 1
+        border-2 = 2
+        border-3 = 3
+        border-4 = 4
+        border-5 = 5
+    }
+
+    BootstrapRounded {
+        default = 
+        rounded-sm = alle Ecken: klein
+        rounded = alle Ecken: normal
+        rounded-lg = alle Ecken: groß
+        rounded-start = links
+        rounded-end = rechts
+        rounded-top = oben
+        rounded-bottom = unten
+        rounded-circle = Kreis
+        rounded-pill = Pille
+    }
+
+    BootstrapShadow {
+        default = 
+        shadow-sm = kleiner Schatten
+        shadow = normaler Schatten
+        shadow-lg = großer Schatten
+    }
+
     # Replacements for tt_content.space_before_class and tt_content.space_after_class.
     # If the replacement is not defined a container class like `container--space-before- + tt_content.space_before_class` will be set.
     # Used in CTypeFrameViewHelper.

@@ -487,6 +487,10 @@
                 <source>Text color</source>
                 <target>Textfarbe</target>
             </trans-unit>
+            <trans-unit id="border">
+                <source>Border</source>
+                <target>Rand</target>
+            </trans-unit>
             <trans-unit id="border_color">
                 <source>Border color</source>
                 <target>Randfarbe</target>
@@ -542,6 +546,10 @@
             <trans-unit id="shadow.shadow-lg">
                 <source>large</source>
                 <target>groß</target>
+            </trans-unit>
+            <trans-unit id="rounded">
+                <source>Rounded</source>
+                <target>Rundung</target>
             </trans-unit>
 
             <!--

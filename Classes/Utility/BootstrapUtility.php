@@ -174,7 +174,7 @@ class BootstrapUtility
     }
 
     /**
-     * @param string $borderOptions border-class;border-color-class;rounded-class;shadow-class
+     * @param string $borderOptions border-class;border-width-class;border-color-class;rounded-class;shadow-class
      */
     public static function getBorderOptionClasses(string $borderOptions): string
     {

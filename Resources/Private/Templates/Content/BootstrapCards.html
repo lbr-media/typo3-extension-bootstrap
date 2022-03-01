@@ -28,8 +28,8 @@
         </f:if>
     </f:spaceless></f:section>
 
-    <f:section name="_Card"><f:spaceless>
-        <div class="card{f:if(condition:configuration.grid.item_classes, then:' {configuration.grid.item_classes} h-100')}{f:if(condition:configuration.card.bg_color, then:' {configuration.card.bg_color}')}{f:if(condition:configuration.card.text_color, then:' {configuration.card.text_color}')}{f:if(condition:configuration.card.border_color, then:' {configuration.card.border_color}')}{f:if(condition:configuration.card.border_width, then:' {configuration.card.border_width}')}{f:if(condition:configuration.card.shadow, then:' {configuration.card.shadow}')}">
+    <f:section name="_Card"><f:spaceless>{_all -> f:debug()}
+        <div class="card{f:if(condition:configuration.grid.item_classes, then:' {configuration.grid.item_classes} h-100')}{f:if(condition:configuration.card.bg_color, then:' {configuration.card.bg_color}')}{f:if(condition:configuration.card.text_color, then:' {configuration.card.text_color}')}{f:if(condition:configuration.card.border_classes, then:' {configuration.card.border_classes}')}">
             <f:if condition="{cardItem.image}">
                 <f:then>
                     <f:switch expression="{configuration.card.image_position}">

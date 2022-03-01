@@ -37,6 +37,8 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
             ]
         );
 
+        $xmlArray['card']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['card']['border']);
+
         // a media item columne
         $xmlArray['grid']['col_classes'] = BootstrapUtility::getColClasses($xmlArray['grid']['col']);
 
@@ -58,10 +60,8 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
                 'image_position' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.image_position.vDEF', 'string', 'above', $this->logger),
                 'bg_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.bg_color.vDEF', 'string', '', $this->logger),
                 'text_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.text_color.vDEF', 'string', '', $this->logger),
-                'border_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.border_color.vDEF', 'string', '', $this->logger),
-                'border_width' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.border_width.vDEF', 'string', '', $this->logger),
+                'border' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
                 'button_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.button_color.vDEF', 'string', '', $this->logger),
-                'shadow' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.shadow.vDEF', 'string', '', $this->logger),
             ],
             'mediaoptimizing' => [
                 'width' => [
