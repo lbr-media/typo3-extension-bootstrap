@@ -84,7 +84,7 @@ class FlexFormProcessor implements DataProcessorInterface
             case "bootstrap_tabs":
                 /** @var FlexFormServiceBootstrapTabs $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTabs::class);
-                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "tablator";
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "tabulator";
                 $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;
             case "bootstrap_carousel":
