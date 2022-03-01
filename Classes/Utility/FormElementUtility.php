@@ -17,7 +17,7 @@ class FormElementUtility
         return <<<EOT
 <div class="form-control-inline-element">
     <label for="{$id}">{$label}</label>
-    <select class="form-control form-control-adapt" id="{$id}">
+    <select class="form-select form-control-adapt" id="{$id}">
         {$options}
     </select>
 </div>
