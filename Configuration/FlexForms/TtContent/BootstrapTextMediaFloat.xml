@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3FlexForms>
     <sheets>
-        <sGENERAL>
+        <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Position und Abstand</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
-                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -20,18 +20,28 @@
                             </config>
                         </value>
                     </field>
+                </el>
+            </ROOT>
+        </sPRESETS>
+        <sGENERAL>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Position und Abstand</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
                     <field index="header_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.above_all</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.above_all</numIndex>
                                         <numIndex index="1">above_all</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.text</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.text</numIndex>
                                         <numIndex index="1">text</numIndex>
                                     </numIndex>
                                 </items>
@@ -63,7 +73,7 @@
                     </field>
                     <field index="space_x">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sGENERAL.space_x</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_x</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -74,7 +84,7 @@
                     </field>
                     <field index="space_y">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sGENERAL.space_y</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_y</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>

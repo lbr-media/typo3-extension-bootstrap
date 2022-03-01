@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3FlexForms>
     <sheets>
-        <sOUTER>
+        <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
-                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -21,18 +20,29 @@
                             </config>
                         </value>
                     </field>
+                </el>
+            </ROOT>
+        </sPRESETS>
+        <sGENERAL>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sGENERAL.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sGENERAL.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
                     <field index="order">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.order</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.order</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.order.text_media</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.order.text_media</numIndex>
                                         <numIndex index="1">text_media</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.order.media_text</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.order.media_text</numIndex>
                                         <numIndex index="1">media_text</numIndex>
                                     </numIndex>
                                 </items>
@@ -42,7 +52,7 @@
                     </field>
                     <field index="device_order">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.device_order</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.device_order</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -53,20 +63,20 @@
                     </field>
                     <field index="header_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.above_all</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.above_all</numIndex>
                                         <numIndex index="1">above_all</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.text</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.text</numIndex>
                                         <numIndex index="1">text</numIndex>
                                     </numIndex>
                                     <numIndex index="3">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.media</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.media</numIndex>
                                         <numIndex index="1">media</numIndex>
                                     </numIndex>
                                 </items>
@@ -76,7 +86,7 @@
                     </field>
                     <field index="overflow_hidden">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.overflow-hidden</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.overflow-hidden</label>
                             <config>
                                 <type>check</type>
                                 <default>1</default>
@@ -107,7 +117,7 @@
                     </field>
                     <field index="space_y">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.space_y</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.space_y</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -118,7 +128,7 @@
                     </field>
                     <field index="space_x">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.space_x</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.space_x</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -129,7 +139,7 @@
                     </field>
                     <field index="align_items">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.align_items</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.align_items</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -140,7 +150,7 @@
                     </field>
                     <field index="justify_content">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sOUTER.justify_content</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.general.justify_content</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -151,18 +161,18 @@
                     </field>
                 </el>
             </ROOT>
-        </sOUTER>
+        </sGENERAL>
         <sTEXT>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sTEXT.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sTEXT.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTEXT.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sTEXT.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="align_self">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sTEXT.align_self</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.align_self</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -173,7 +183,7 @@
                     </field>
                     <field index="space_inner_xs">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xs</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.xs</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -183,7 +193,7 @@
                     </field>
                     <field index="space_inner_sm">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.sm</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.sm</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -193,7 +203,7 @@
                     </field>
                     <field index="space_inner_md">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.md</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.md</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -203,7 +213,7 @@
                     </field>
                     <field index="space_inner_lg">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.lg</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.lg</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -214,7 +224,17 @@
                     </field>
                     <field index="space_inner_xl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.xl</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_xxl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.xxl</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -266,7 +286,7 @@
                     </field>
                     <field index="space_inner_xs">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xs</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.xs</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -276,7 +296,7 @@
                     </field>
                     <field index="space_inner_sm">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.sm</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.sm</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -286,7 +306,7 @@
                     </field>
                     <field index="space_inner_md">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.md</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.md</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -296,7 +316,7 @@
                     </field>
                     <field index="space_inner_lg">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.lg</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.lg</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>
@@ -307,7 +327,17 @@
                     </field>
                     <field index="space_inner_xl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_inner.xl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.xl</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>allEdges</renderType>
+                                <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="space_inner_xxl">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:space_inner.xxl</label>
                             <config>
                                 <type>user</type>
                                 <renderType>allEdges</renderType>

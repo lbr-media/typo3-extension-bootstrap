@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3FlexForms>
     <sheets>
-        <sMEDIA>
+        <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
-                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -21,6 +20,17 @@
                             </config>
                         </value>
                     </field>
+                </el>
+            </ROOT>
+        </sPRESETS>
+        <sMEDIA>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
                     <field index="image_zoom">
                         <value index="TCEforms">
                             <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:image_zoom</label>

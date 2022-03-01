@@ -7,6 +7,8 @@ namespace LBRmedia\Bootstrap\Service;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use TYPO3\CMS\Core\TypoScript\TypoScriptService;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class FlexFormService implements LoggerAwareInterface
@@ -102,5 +104,34 @@ class FlexFormService implements LoggerAwareInterface
         }
 
         return $data;
+    }
+
+    /**
+     * Process presets which overrides some/all settings
+     * 
+     * @param string                $CType              Content element to get the presets from. Must be: tt_content.$CTYPE.flexform_presets.
+     * @param array                 $data               The XML data array.
+     * @param array                 $transformedData    The allready processed data where the presets will be merged and overwritten to.
+     * @param string                $path               The path in $data to get the preset keys.
+     * @param LoggerAwareInterface  $logger
+     */
+    protected static function processPresets(string $CType, array $data, array &$transformedData, string $path = "'data.sPRESETS.lDEF.presets.vDEF'", $logger = null):void {
+        $presets = self::getFlexformValueByPath($data, $path, 'string', '', $logger);
+        if ($presets) {
+            $ts = BootstrapGeneralUtility::getFullTypoScript();
+            if (isset($ts['tt_content.'][$CType . '.']['flexform_presets.']) && is_array($ts['tt_content.'][$CType . '.']['flexform_presets.'])) {
+                /** @var TypoScriptService $typoScriptService */
+                $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
+                $plainTS = $typoScriptService->convertTypoScriptArrayToPlainArray($ts['tt_content.'][$CType . '.']['flexform_presets.']);
+
+                $keys = GeneralUtility::trimExplode(",", $presets, true);
+                foreach ($keys as $key) {
+                    $ts = BootstrapGeneralUtility::getFullTypoScript();
+                    if (isset($plainTS[$key]['configuration']) && is_array($plainTS[$key]['configuration'])) {
+                        ArrayUtility::mergeRecursiveWithOverrule($transformedData, $plainTS[$key]['configuration'], false, true, true);
+                    }
+                }
+            }
+        }
     }
 }

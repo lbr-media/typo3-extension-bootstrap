@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Service;
 
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
-use TYPO3\CMS\Core\TypoScript\TypoScriptService;
-use TYPO3\CMS\Core\Utility\ArrayUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Flexform configurations for content element bootstrap_textmediafloat.
@@ -85,27 +81,10 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
             ],
         ];
 
-        /**
-         * Process presets which overrides some/all settings
-         */
-        $presets = self::getFlexformValueByPath($data, 'data.sOUTER.lDEF.presets.vDEF', 'string', '', $this->logger);
-        if ($presets) {
-            $ts = BootstrapGeneralUtility::getFullTypoScript();
-            if (isset($ts['tt_content.']['bootstrap_textmediafloat.']['flexform_presets.']) && is_array($ts['tt_content.']['bootstrap_textmediafloat.']['flexform_presets.'])) {
-                /** @var TypoScriptService $typoScriptService */
-                $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
-                $plainTS = $typoScriptService->convertTypoScriptArrayToPlainArray($ts['tt_content.']['bootstrap_textmediafloat.']['flexform_presets.']);
+        // Process presets which overrides some/all settings
+        self::processPresets('bootstrap_textmediafloat', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF', $this->logger);
 
-                $keys = GeneralUtility::trimExplode(",", $presets, true);
-                foreach ($keys as $key) {
-                    $ts = BootstrapGeneralUtility::getFullTypoScript();
-                    if (isset($plainTS[$key]['configuration']) && is_array($plainTS[$key]['configuration'])) {
-                        ArrayUtility::mergeRecursiveWithOverrule($transformedData, $plainTS[$key]['configuration'], false, true, true);
-                    }
-                }
-            }
-        }
-
+        // set masonry data attribute
         $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled'] 
             ? ' data-masonry=\'{"percentPosition":true}\''
             : "";

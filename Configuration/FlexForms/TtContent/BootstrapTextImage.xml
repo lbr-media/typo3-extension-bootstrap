@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3FlexForms>
     <sheets>
-        <sGENERAL>
+        <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Bild</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
-                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -20,19 +20,29 @@
                             </config>
                         </value>
                     </field>
+                </el>
+            </ROOT>
+        </sPRESETS>
+        <sGENERAL>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGENERAL.sheetTitle</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
                     <field index="order">
                         <value index="TCEforms">
-                            <label>Reihenfolge </label>
-                            <description>Auf großen Bildschirmen. Auf kleinen Bildschirmen kommt immer erst der Text und dann das Bild.</description>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.order</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.order.description</description>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">Bild links Text rechts</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.order.image_text</numIndex>
                                         <numIndex index="1">image_text</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">Text links Bild rechts</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.ordertext_image</numIndex>
                                         <numIndex index="1">text_image</numIndex>
                                     </numIndex>
                                 </items>
@@ -42,16 +52,16 @@
                     </field>
                     <field index="text_align">
                         <value index="TCEforms">
-                            <label>Ausrichtung des Textes</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_align</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">oben</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_align.top</numIndex>
                                         <numIndex index="1">start</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">unten</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_align.bottom</numIndex>
                                         <numIndex index="1">end</numIndex>
                                     </numIndex>
                                 </items>
@@ -61,16 +71,16 @@
                     </field>
                     <field index="image_align">
                         <value index="TCEforms">
-                            <label>Ausrichtung des Bildes</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_align</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">oben</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_align.top</numIndex>
                                         <numIndex index="1">start</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">unten</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_align.bottom</numIndex>
                                         <numIndex index="1">end</numIndex>
                                     </numIndex>
                                 </items>
@@ -80,20 +90,20 @@
                     </field>
                     <field index="header_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.above_all</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.above_all</numIndex>
                                         <numIndex index="1">above_all</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.text</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.text</numIndex>
                                         <numIndex index="1">text</numIndex>
                                     </numIndex>
                                     <numIndex index="3">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.header_position.media</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.media</numIndex>
                                         <numIndex index="1">media</numIndex>
                                     </numIndex>
                                 </items>

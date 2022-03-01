@@ -146,6 +146,17 @@ TCEFORM.tt_content {
     tx_bootstrap_flexform.bootstrap_textmediafloat.sMEDIA.image_zoom.disabled = 1
     tx_bootstrap_flexform.bootstrap_mediagrid.sMEDIA.image_zoom.disabled = 1
 
+    # = = labels for flexform = =
+    tx_bootstrap_flexform.types {
+        bootstrap_textmediagrid.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediagrid.tx_bootstrap_flexform
+        bootstrap_carousel.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_carousel.tx_bootstrap_flexform
+        bootstrap_cards.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_cards.tx_bootstrap_flexform
+        bootstrap_textimage.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textimage.tx_bootstrap_flexform
+        bootstrap_tabs.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs.tx_bootstrap_flexform
+        bootstrap_accordion.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion.tx_bootstrap_flexform
+        bootstrap_textmediafloat.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediafloat.tx_bootstrap_flexform
+    }
+
     # = = bootstrap_cards = =
     tx_bootstrap_flexform.bootstrap_cards.sCARD.bg_color {
         addItems < lib.bootstrapBackgroundColors

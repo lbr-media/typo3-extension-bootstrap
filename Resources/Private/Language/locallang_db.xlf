@@ -17,6 +17,9 @@
             <trans-unit id="tt_content.CType.bootstrap_accordion.description">
                 <source>Aufklapp-Elemente mit Text/Medien-Inhalten.</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_accordion.tx_bootstrap_flexform">
+                <source>Akkordion-Einstellungen</source>
+            </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_mediagrid">
                 <source>Medien-Raster</source>
             </trans-unit>
@@ -29,17 +32,26 @@
             <trans-unit id="tt_content.CType.bootstrap_tabs.description">
                 <source>Tabulator-Navigation mit Text/Medien-Inhalten.</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_tabs.tx_bootstrap_flexform">
+                <source>Tabulator-Einstellungen</source>
+            </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediafloat">
                 <source>Text &amp; Medien (umfließend)</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediafloat.description">
                 <source>Medienelemente, die mit Text umflossen werden.</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textmediafloat.tx_bootstrap_flexform">
+                <source>Einstellungen für Text &amp; Medien (umfließend)</source>
+            </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediagrid">
                 <source>Text &amp; Medien (Raster)</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediagrid.description">
                 <source>Text und mehrere Medien aufgeteilt in einem Raster-System. Das flexibelste Element, um Text und Medien zu setzen.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textmediagrid.tx_bootstrap_flexform">
+                <source>Einstellungen für Text &amp; Medien (Raster)</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_twocolumnstext">
                 <source>Text + Text</source>
@@ -53,17 +65,26 @@
             <trans-unit id="tt_content.CType.bootstrap_textimage.description">
                 <source>Schnell einen Text mit einem Bild setzen.</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_textimage.tx_bootstrap_flexform">
+                <source>Einstellungen für 'Text + Bild'-Inhaltselement</source>
+            </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel">
                 <source>Bilder-Karusell</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel.description">
                 <source>Eine animierte Bilderstrecke.</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_carousel.tx_bootstrap_flexform">
+                <source>Einstellungen für das Bilder-Karusell</source>
+            </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_cards">
                 <source>Kacheln</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_cards.description">
                 <source>Text-Bild-Elemente als Kacheln in einem Raster-System.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_cards.tx_bootstrap_flexform">
+                <source>Einstellungen für die Kacheln</source>
             </trans-unit>
 
             <!-- tt_content.div -->

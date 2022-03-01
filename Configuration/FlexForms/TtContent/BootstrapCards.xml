@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3FlexForms>
     <sheets>
-        <sGENERAL>
+        <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Allgemein</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
-                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -22,17 +22,17 @@
                     </field>
                 </el>
             </ROOT>
-        </sGENERAL>
+        </sPRESETS>
         <sGRID>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Raster</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="col">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.col</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.col</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -43,7 +43,7 @@
                     </field>
                     <field index="space_y">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_y</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.space_y</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -54,7 +54,7 @@
                     </field>
                     <field index="space_x">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_x</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.space_x</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -65,7 +65,7 @@
                     </field>
                     <field index="align_items">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.align_items</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.align_items</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -76,7 +76,7 @@
                     </field>
                     <field index="justify_content">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.justify_content</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.justify_content</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
@@ -91,31 +91,31 @@
         <sCARD>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Karten</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCARD.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="image_position">
                         <value index="TCEforms">
-                            <label>Bild-Position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">links</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.start</numIndex>
                                         <numIndex index="1">start</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">rechts</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.end</numIndex>
                                         <numIndex index="1">end</numIndex>
                                     </numIndex>
                                     <numIndex index="3">
-                                        <numIndex index="0">oben</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.top</numIndex>
                                         <numIndex index="1">top</numIndex>
                                     </numIndex>
                                     <numIndex index="4">
-                                        <numIndex index="0">unten</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.bottom</numIndex>
                                         <numIndex index="1">bottom</numIndex>
                                     </numIndex>
                                 </items>
@@ -125,7 +125,7 @@
                     </field>
                     <field index="bg_color">
                         <value index="TCEforms">
-                            <label>Hintergrundfarbe</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bg_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -141,7 +141,7 @@
                     </field>
                     <field index="text_color">
                         <value index="TCEforms">
-                            <label>Textfarbe</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -157,7 +157,7 @@
                     </field>
                     <field index="border_color">
                         <value index="TCEforms">
-                            <label>Randfarbe</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -173,7 +173,7 @@
                     </field>
                     <field index="button_color">
                         <value index="TCEforms">
-                            <label>Button-Farbe</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:button_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>

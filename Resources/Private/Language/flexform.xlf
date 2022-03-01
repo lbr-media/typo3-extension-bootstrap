@@ -3,125 +3,11 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2015-09-02T08:47:07Z" product-name="bootstrap">
         <header />
         <body>
-            
-            <!-- FlexForms/TtContent/TextMedia.xml-->
-            <trans-unit id="textmedia.sOUTER.sheetTitle">
-                <source>Basics</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sOUTER.sheetDescription">
-                <source>"Äußere" Einstellungen komplett für Text- und Medienbereich.</source>
-            </trans-unit>
-            <trans-unit id="textmedia.order">
-                <source>Standard-Reihenfolge (und tatsächliche Reihenfolge im Quellcode)</source>
-            </trans-unit>
-            <trans-unit id="textmedia.order.text_media">
-                <source>erst Text dann Medien</source>
-            </trans-unit>
-            <trans-unit id="textmedia.order.media_text">
-                <source>erst Medien dann Text</source>
-            </trans-unit>
-            <trans-unit id="textmedia.device_order">
-                <source>Endgeräteabhängige Reihenfolge (überschreibt vorherigen Parameter)</source>
-            </trans-unit>
-            <trans-unit id="textmedia.header_position">
-                <source>Position der Überschrift</source>
-            </trans-unit>
-            <trans-unit id="textmedia.header_position.above_all">
-                <source>Vor Text und Medien</source>
-            </trans-unit>
-            <trans-unit id="textmedia.header_position.text">
-                <source>Im Textbereich</source>
-            </trans-unit>
-            <trans-unit id="textmedia.header_position.media">
-                <source>Im Medienbereich</source>
-            </trans-unit>
-            <trans-unit id="textmedia.overflow-hidden">
-                <source>Überstehendes verbergen? (sinnvoll z.B. bei Schatten oder zu großen Innenabständen)</source>
-            </trans-unit>
-
-            <trans-unit id="textmedia.media_position">
-                <source>Position der Medien</source>
-            </trans-unit>
-            <trans-unit id="textmedia.media_size">
-                <source>Breite des Medien-Bereichs</source>
-            </trans-unit>
-
-            <trans-unit id="textmedia.sGENERAL.space_y">
-                <source>Abstand zwischen Text- und Medien-Bereich: vertikal</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sGENERAL.space_x">
-                <source>Abstand zwischen Text- und Medien-Bereich: horizontal </source>
-            </trans-unit>
-            
-            <trans-unit id="textmedia.col_text">
-                <source>Rastergröße Textbereich</source>
-            </trans-unit>
-            <trans-unit id="textmedia.col_media">
-                <source>Rastergröße Medienbereich</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sOUTER.space_y">
-                <source>Abstand zwischen den Rasterelementen: vertikal</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sOUTER.space_x">
-                <source>Abstand zwischen den Rasterelementen: horizontal</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sOUTER.align_items">
-                <source>Ausrichtung der Rasterelemente: vertikal</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sOUTER.justify_content">
-                <source>Ausrichtung der Rasterelemente: horizontal</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sTEXT.sheetTitle">
-                <source>Textbereich</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sTEXT.sheetDescription">
-                <source>Einstellungen nur für den Textbereich</source>
-            </trans-unit>
-            <trans-unit id="textmedia.text_color">
-                <source>Text: Farbe</source>
-            </trans-unit>
-            <trans-unit id="textmedia.device_text_alignment">
-                <source>Text: Ausrichtung</source>
-            </trans-unit>
-            <trans-unit id="textmedia.background_color">
-                <source>Hintergrundfarbe</source>
-            </trans-unit>
-            <trans-unit id="textmedia.border">
-                <source>Rand und Schatten</source>
-            </trans-unit>
-            <trans-unit id="textmedia.sTEXT.align_self">
-                <source>Ausrichtung: vertikal</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_inner.xs">
-                <source>Abstand innen: Standard</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_inner.sm">
-                <source>Abstand innen: Klein</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_inner.md">
-                <source>Abstand innen: Mittel</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_inner.lg">
-                <source>Abstand innen: Groß</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_inner.xl">
-                <source>Abstand innen: Extra groß</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_outer.xs">
-                <source>Abstand außen: Standard</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_outer.sm">
-                <source>Abstand außen: Klein</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_outer.md">
-                <source>Abstand außen: Mittel</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_outer.lg">
-                <source>Abstand außen: Groß</source>
-            </trans-unit>
-            <trans-unit id="textmedia.space_outer.xl">
-                <source>Abstand außen: Extra groß</source>
-            </trans-unit>
+            <!--
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapMediaGrid.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
             <trans-unit id="sMEDIA.sheetTitle">
                 <source>Medienbereich</source>
             </trans-unit>
@@ -131,11 +17,28 @@
             <trans-unit id="sMEDIA.align_self">
                 <source>Ausrichtung: vertikal</source>
             </trans-unit>
+
+            <!--
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
+            <trans-unit id="sTEXT.sheetTitle">
+                <source>Textbereich</source>
+            </trans-unit>
+            <trans-unit id="sTEXT.sheetDescription">
+                <source>Einstellungen nur für den Textbereich</source>
+            </trans-unit>
+
+            <!--
+                Media grid
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapMediaGrid.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
             <trans-unit id="sMEDIAITEM.sheetTitle">
                 <source>Einzelne Medien</source>
             </trans-unit>
             <trans-unit id="sMEDIAITEM.sheetDescription">
-                <source>Einstellungen für die einzelnen Medienelemente</source>
+                <source>Einstellungen für die einzelnen Medienelemente.</source>
             </trans-unit>
             <trans-unit id="sMEDIAITEM.col">
                 <source>Rasterbreite einzelnes Medienelement</source>
@@ -152,20 +55,73 @@
             <trans-unit id="sMEDIAITEM.justify_content">
                 <source>Ausrichtung der Medienelemente: horizontal</source>
             </trans-unit>
-            <trans-unit id="sMEDIAITEM.text_color">
-                <source>Farbe der Beschreibung</source>
+
+            <!--
+                Grid
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapCards.xml
+            -->
+            <trans-unit id="sGRID.sheetTitle">
+                <source>Raster</source>
             </trans-unit>
-            <trans-unit id="sMEDIAITEM.background_color">
-                <source>Hintergrundfarbe einzelnes Medienelement</source>
+            <trans-unit id="sGRID.sheetDescription">
+                <source>Einstellungen für die einzelnen Elemente.</source>
             </trans-unit>
-            <trans-unit id="sMEDIAITEM.space_inner_img">
-                <source>Abstand zwischen Medienelement und Rand</source>
+            <trans-unit id="sGRID.col">
+                <source>Rasterbreite einzelnes Element</source>
             </trans-unit>
+            <trans-unit id="sGRID.space_y">
+                <source>Abstand zwischen den Elementen: vertikal</source>
+            </trans-unit>
+            <trans-unit id="sGRID.space_x">
+                <source>Abstand zwischen den Elementen: horizontal</source>
+            </trans-unit>
+            <trans-unit id="sGRID.align_items">
+                <source>Ausrichtung der Elemente: vertikal</source>
+            </trans-unit>
+            <trans-unit id="sGRID.justify_content">
+                <source>Ausrichtung der Elemente: horizontal</source>
+            </trans-unit>
+
+            <!--
+                Media grid
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapMediaGrid.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
+            <trans-unit id="sMEDIAITEM.sheetTitle">
+                <source>Einzelne Medien</source>
+            </trans-unit>
+            <trans-unit id="sMEDIAITEM.sheetDescription">
+                <source>Einstellungen für die einzelnen Medienelemente.</source>
+            </trans-unit>
+            <trans-unit id="sMEDIAITEM.col">
+                <source>Rasterbreite einzelnes Medienelement</source>
+            </trans-unit>
+            <trans-unit id="sMEDIAITEM.space_y">
+                <source>Abstand zwischen den Medienelementen: vertikal</source>
+            </trans-unit>
+            <trans-unit id="sMEDIAITEM.space_x">
+                <source>Abstand zwischen den Medienelementen: horizontal</source>
+            </trans-unit>
+            <trans-unit id="sMEDIAITEM.align_items">
+                <source>Ausrichtung der Medienelemente: vertikal</source>
+            </trans-unit>
+            <trans-unit id="sMEDIAITEM.justify_content">
+                <source>Ausrichtung der Medienelemente: horizontal</source>
+            </trans-unit>
+
+            <!--
+                Media optimizing:
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapCards.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapMediaGrid.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
             <trans-unit id="sMEDIAOPTIMIZING.sheetTitle">
                 <source>Bildoptimierung</source>
             </trans-unit>
             <trans-unit id="sMEDIAOPTIMIZING.sheetDescription">
-                <source>Das CMS kann nicht wissen, wie groß die Bilder tatsächlich ausgegeben werden. Es geht erstmal von 100% Fensterbreite aus, um keine zu kleinen Bilder zu erstellen. Hier kann man die wirkliche Größe pro Endgerät angeben, um passende Bilder generieren zu lassen und somit Speicherbedarf und Ladezeiten der Seite zu optimieren.</source>
+                <source>Das CMS kann nicht wissen, wie groß die Bilder dieses Inhaltselements tatsächlich ausgegeben werden. Es geht erstmal von 100% Fensterbreite aus, um keine zu kleinen Bilder zu erstellen. Hier kann man die wirkliche Größe pro Endgerät angeben, um passende Bilder generieren zu lassen und somit Speicherbedarf und Ladezeiten der Seite zu optimieren.</source>
             </trans-unit>
             <trans-unit id="sMEDIAOPTIMIZING.width_xs">
                 <source>Bildbreite in %: XS (0-576px)</source>
@@ -185,10 +141,11 @@
             <trans-unit id="sMEDIAOPTIMIZING.width_xxl">
                 <source>Bildbreite in %: XXL (1400-*px)</source>
             </trans-unit>
-            <trans-unit id="masonry_enabled">
-                <source>Masonry-Grid aktivieren</source>
-            </trans-unit>
 
+            <!--
+                Accordion
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapAccordion.xml
+            -->
             <trans-unit id="sACCORDION.sheetTitle">
                 <source>Accordion-Einstellungen</source>
             </trans-unit>
@@ -196,6 +153,56 @@
                 <source>Geöffnet lassen beim Öffnen von anderen Accordion-Elemente</source>
             </trans-unit>
 
+            <!--
+                Cards
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapCards.xml
+            -->
+            <trans-unit id="sCARD.sheetTitle">
+                <source>Kacheln</source>
+            </trans-unit>
+
+            <!--
+                Carousel
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapCarousel.xml
+            -->
+            <trans-unit id="sCAROUSEL.sheetTitle">
+                <source>Karussel-Einstellungen</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.animation">
+                <source>Typ</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.animation.slide">
+                <source>slide</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.animation.fade">
+                <source>fade</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.autoplay">
+                <source>Autoplay</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.color_scheme">
+                <source>Farbschema</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.color_scheme.light">
+                <source>hell</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.color_scheme.dark">
+                <source>dunkel</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.controls">
+                <source>Transport-Buttons links und rechts</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.indicators">
+                <source>Indikatoren (Buttons am unteren Rand)</source>
+            </trans-unit>
+            <trans-unit id="sCAROUSEL.interval">
+                <source>Interval (ms)</source>
+            </trans-unit>
+
+            <!--
+                Tabulator
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTabs.xml
+            -->
             <trans-unit id="sTABS.sheetTitle">
                 <source>Tabulator-Einstellungen</source>
             </trans-unit>
@@ -233,12 +240,205 @@
                 <source>aufgeteilt mit selber Button-Breite</source>
             </trans-unit>
 
+            <!--
+                Presets
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapCards.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapMediaGrid.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextImage.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
+            <trans-unit id="sPRESETS.sheetTitle">
+                <source>Einstellungs-Pakete</source>
+            </trans-unit>
+            <trans-unit id="sPRESETS.sheetDescription">
+                <source>Einstellungs-Pakete fassen einzelne oder mehrere Einstellungen zusammen. Sie erleichtern z.B. das Einstellen von Standard-Abständen. Diese Eistellungen können dann aber nicht mehr weiter überschrieben werden.</source>
+            </trans-unit>
             <trans-unit id="presets">
-                <source>Voreinstellungen</source>
+                <source>Pakete auswählen</source>
             </trans-unit>
-            <trans-unit id="presets.description">
-                <source>Voreinstellungen fassen einzelne oder mehrere Einstellungen zusammen.</source>
+
+            <!--
+                Masonry grid
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapMediaGrid.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
+            <trans-unit id="masonry_enabled">
+                <source>Masonry-Grid aktivieren</source>
             </trans-unit>
+
+            <!--
+                Space inner
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
+            <trans-unit id="space_inner.xs">
+                <source>Abstand innen: XS</source>
+            </trans-unit>
+            <trans-unit id="space_inner.sm">
+                <source>Abstand innen: SM</source>
+            </trans-unit>
+            <trans-unit id="space_inner.md">
+                <source>Abstand innen: MD</source>
+            </trans-unit>
+            <trans-unit id="space_inner.lg">
+                <source>Abstand innen: LG</source>
+            </trans-unit>
+            <trans-unit id="space_inner.xl">
+                <source>Abstand innen: XL</source>
+            </trans-unit>
+            <trans-unit id="space_inner.xxl">
+                <source>Abstand innen: XXL</source>
+            </trans-unit>
+
+            <!--
+                Header position
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextImage.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
+            <trans-unit id="header_position">
+                <source>Position der Überschrift</source>
+            </trans-unit>
+            <trans-unit id="header_position.above_all">
+                <source>Vor Text und Medien</source>
+            </trans-unit>
+            <trans-unit id="header_position.text">
+                <source>Im Textbereich</source>
+            </trans-unit>
+            <trans-unit id="header_position.media">
+                <source>Im Medienbereich</source>
+            </trans-unit>
+
+            <!--
+                Additional fields only for text image
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextImage.xml
+            -->
+            <trans-unit id="textimage.order">
+                <source>Reihenfolge</source>
+            </trans-unit>
+            <trans-unit id="textimage.order.description">
+                <source>Auf großen Bildschirmen. Auf kleinen Bildschirmen kommt immer erst der Text und dann das Bild.</source>
+            </trans-unit>
+            <trans-unit id="textimage.order.image_text">
+                <source>Bild links Text rechts</source>
+            </trans-unit>
+            <trans-unit id="textimage.order.text_image">
+                <source>Text links Bild rechts</source>
+            </trans-unit>
+
+            <!--
+                Additional fields only for text media grid and text media float
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaFloat.xml
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml
+            -->
+            <trans-unit id="textmedia.sGENERAL.sheetTitle">
+                <source>Allgemein</source>
+            </trans-unit>
+            <trans-unit id="textmedia.sGENERAL.sheetDescription">
+                <source>"Äußere" Einstellungen komplett für Text- und Medienbereich.</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.order">
+                <source>Standard-Reihenfolge (und tatsächliche Reihenfolge im Quellcode)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.order.text_media">
+                <source>erst Text dann Medien</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.order.media_text">
+                <source>erst Medien dann Text</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.device_order">
+                <source>Endgeräteabhängige Reihenfolge (überschreibt vorherigen Parameter)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.space_y">
+                <source>Abstand zwischen den Rasterelementen: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.space_x">
+                <source>Abstand zwischen den Rasterelementen: horizontal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.align_items">
+                <source>Ausrichtung der Rasterelemente: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.justify_content">
+                <source>Ausrichtung der Rasterelemente: horizontal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.general.overflow-hidden">
+                <source>Überstehendes verbergen? (sinnvoll z.B. bei Schatten oder zu großen Innenabständen)</source>
+            </trans-unit>
+            <trans-unit id="textmedia.media_position">
+                <source>Position der Medien</source>
+            </trans-unit>
+            <trans-unit id="textmedia.media_size">
+                <source>Breite des Medien-Bereichs</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_y">
+                <source>Abstand zwischen Text- und Medien-Bereich: vertikal</source>
+            </trans-unit>
+            <trans-unit id="textmedia.space_x">
+                <source>Abstand zwischen Text- und Medien-Bereich: horizontal </source>
+            </trans-unit>
+            <trans-unit id="textmedia.col_text">
+                <source>Rastergröße Textbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.col_media">
+                <source>Rastergröße Medienbereich</source>
+            </trans-unit>
+            <trans-unit id="textmedia.align_self">
+                <source>Ausrichtung: vertikal</source>
+            </trans-unit>
+
+            <!--
+                Additional fields not specific to flexforms.
+            -->
+            <trans-unit id="sGENERAL.sheetTitle">
+                <source>Allgemein</source>
+            </trans-unit>
+            <trans-unit id="image_position">
+                <source>Bild-Position</source>
+            </trans-unit>
+            <trans-unit id="image_position.start">
+                <source>links</source>
+            </trans-unit>
+            <trans-unit id="image_position.end">
+                <source>rechts</source>
+            </trans-unit>
+            <trans-unit id="image_position.top">
+                <source>oben</source>
+            </trans-unit>
+            <trans-unit id="image_position.bottom">
+                <source>unten</source>
+            </trans-unit>
+            <trans-unit id="bg_color">
+                <source>Hintergrundfarbe</source>
+            </trans-unit>
+            <trans-unit id="text_color">
+                <source>Textfarbe</source>
+            </trans-unit>
+            <trans-unit id="border_color">
+                <source>Randfarbe</source>
+            </trans-unit>
+            <trans-unit id="button_color">
+                <source>Button-Farbe</source>
+            </trans-unit>
+            <trans-unit id="text_align">
+                <source>Ausrichtung: Text</source>
+            </trans-unit>
+            <trans-unit id="text_align.top">
+                <source>oben</source>
+            </trans-unit>
+            <trans-unit id="text_align.bottom">
+                <source>unten</source>
+            </trans-unit>
+            <trans-unit id="image_align">
+                <source>Ausrichtung: Bild</source>
+            </trans-unit>
+            <trans-unit id="image_align.top">
+                <source>oben</source>
+            </trans-unit>
+            <trans-unit id="image_align.bottom">
+                <source>unten</source>
+            </trans-unit>
+            
         </body>
     </file>
 </xliff>
