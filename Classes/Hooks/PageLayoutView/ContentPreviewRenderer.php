@@ -121,9 +121,6 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent("keine Card-Elemente", $record);
                 }
                 break;
-            case 'bootstrap_type6':
-                $out .= $record['tx_bootstrap_teammember'] . " Einträge";
-                break;
             case 'bootstrap_twocolumnstext':
                 $out .= "<strong>Links:</strong><br />";
                 if ($record['tx_bootstrap_bodytext1']) {

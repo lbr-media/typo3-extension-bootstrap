@@ -22,7 +22,6 @@ class NewContentElement
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapCarousel',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTabs',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapAccordion',
-        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapType6',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTwoColumnsText',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTextMediaGrid',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTextMediaFloat',

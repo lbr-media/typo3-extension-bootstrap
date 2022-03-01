@@ -35,11 +35,6 @@ services:
         hidden: false
 
   # dependency injection of classes which could not use @Inject
-  LBRmedia\Bootstrap\DataProcessing\VariousProcessor:
-    public: true
-    arguments:
-      $fileRepository: '@TYPO3\CMS\Core\Resource\FileRepository'
-      $teamMemberRepository: '@LBRmedia\Bootstrap\Domain\Repository\TeamMemberRepository'
   LBRmedia\Bootstrap\DataProcessing\AccordionItemProcessor:
     public: true
     arguments:

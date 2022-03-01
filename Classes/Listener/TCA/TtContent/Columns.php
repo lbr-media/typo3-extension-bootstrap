@@ -252,26 +252,6 @@ class Columns
                     'enableRichtext' => true,
                 ],
             ],
-            'tx_bootstrap_teammember' => [
-                'exclude' => 1,
-                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_teammember',
-                'config' => [
-                    'type' => 'inline',
-                    'foreign_table' => 'tx_bootstrap_domain_model_teammember',
-                    'foreign_field' => 'tt_content_uid',
-                    'maxitems' => 50,
-                    'appearance' => [
-                        'levelLinksPosition' => 'both',
-                        'useSortable' => true,
-                        'showPossibleLocalizationRecords' => false,
-                        'showRemovedLocalizationRecords' => false,
-                        'showSynchronizationLink' => false,
-                        'showAllLocalizationLink' => false,
-                        'collapseAll' => true,
-                        'expandSingle' => true,
-                    ],
-                ],
-            ],
             'tx_bootstrap_accordionitems' => [
                 'exclude' => 1,
                 'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_accordionitems',

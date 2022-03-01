@@ -16,21 +16,6 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['BOOTSTRAP'] = "EXT:bootstrap/Conf
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/User/General.typoscript">');
 
 /*
- * configure plugins
- */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    "Bootstrap",
-    'ItemList',
-    [\LBRmedia\Bootstrap\Controller\ItemController::class => 'overview']
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    "Bootstrap",
-    'ItemDetails',
-    [\LBRmedia\Bootstrap\Controller\ItemController::class => 'details']
-);
-
-/*
  * Add renderTypes
  */
 // Add renderType bootstrapDevices to NodeFactory
