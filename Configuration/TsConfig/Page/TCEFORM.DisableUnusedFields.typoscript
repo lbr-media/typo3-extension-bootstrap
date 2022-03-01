@@ -181,7 +181,7 @@ TCEFORM.tt_content {
     // tx_bootstrap_background_color.disabled = 1
     // space_before_class.disabled = 1
     // space_after_class.disabled = 1
-    tx_bootstrap_flexform.disabled = 1
+    // tx_bootstrap_flexform.disabled = 1
     // sectionIndex.disabled = 1
     linkToTop.disabled = 1
 
