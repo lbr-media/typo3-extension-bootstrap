@@ -25,7 +25,7 @@
             </f:render>
         </f:if>
         <f:if condition="{files -> f:count()} || {data.bodytext}">
-            <f:if condition="{grid.overflow_hidden}"><div class="overflow-hidden"></f:if>
+            <f:if condition="{grid.overflow_hidden}&&{false}"><div class="overflow-hidden"></f:if>
             <div class="{grid.row_classes} {grid.row_space_classes}">
                 <f:switch expression="{grid.order}">
                     <f:case value="text_media">
@@ -38,7 +38,7 @@
                     </f:defaultCase>
                 </f:switch>
             </div>
-            <f:if condition="{grid.overflow_hidden}"></div></f:if>
+            <f:if condition="{grid.overflow_hidden}&&{false}"></div></f:if>
         </f:if>
     </f:spaceless></f:section>
 

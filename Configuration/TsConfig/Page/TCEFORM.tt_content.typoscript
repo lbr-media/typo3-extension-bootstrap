@@ -143,6 +143,7 @@ TCEFORM.tt_content {
     # Disable image zoom on flexforms.
     # There is no lightbox component at this time.
     tx_bootstrap_flexform.bootstrap_textmediagrid.sMEDIA.image_zoom.disabled = 1
+    tx_bootstrap_flexform.bootstrap_textmediagrid.sGENERAL.overflow_hidden.disabled = 1
     tx_bootstrap_flexform.bootstrap_textmediafloat.sMEDIA.image_zoom.disabled = 1
     tx_bootstrap_flexform.bootstrap_mediagrid.sMEDIA.image_zoom.disabled = 1
 
