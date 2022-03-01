@@ -24,20 +24,20 @@ tt_content {
             # }
 
             10 {
-                label = Standard-Abstände
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
                 configuration {
                     space = 3;;4;;;
                 }
             }
             20 {
-                label = Überschrift, Bild links, Text rechts
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.order.header_image_text
                 configuration {
                     order = text_image
                     header_position = above_all
                 }
             }
             30 {
-                label = Überschrift, Text links, Bild rechts
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.order.header_text_image
                 configuration {
                     order = image_text
                     header_position = above_all

@@ -45,19 +45,11 @@ tt_content {
             # }
 
             10 {
-                label = Standard-Abstände
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
                 configuration {
                     mediaitem {
                         space_y = 3;;4;;;
                         space_x = 3;;4;;;
-                    }
-                }
-            }
-            20 {
-                label = Medien zweispaltig
-                configuration {
-                    mediaitem {
-                        col = 6;;;;;
                     }
                 }
             }

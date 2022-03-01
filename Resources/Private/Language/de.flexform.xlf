@@ -519,6 +519,42 @@
                 <source>bottom</source>
                 <target>unten</target>
             </trans-unit>
+
+            <!--
+                Labels for tt_content.[CType].flexform_presets
+            -->
+            <trans-unit id="presets.default_spacing">
+                <source>Spacing: Default</source>
+                <target>Abstand: Standard</target>
+            </trans-unit>
+            <trans-unit id="presets.default_spacing_between_media">
+                <source>Spacing: Default (Between media items)</source>
+                <target>Abstand: Standard (zwischen Medienelementen)</target>
+            </trans-unit>
+            <trans-unit id="presets.order.header_image_text">
+                <source>Order: Header, image, text</source>
+                <target>Reihenfolge: Überschrift, Bild, Text</target>
+            </trans-unit>
+            <trans-unit id="presets.order.header_text_image">
+                <source>Order: Header, text, image</source>
+                <target>Reihenfolge: Überschrift, Text, Bild</target>
+            </trans-unit>
+            <trans-unit id="presets.grid.2xs_3md_4xl">
+                <source>Grid: 2 XS, 3 MD, 4 XL</source>
+                <target>Raster: 2 XS, 3 MD, 4 XL</target>
+            </trans-unit>
+            <trans-unit id="presets.grid.textmedia.text_6sm_media_6sm">
+                <source>Grid: 50% text, 50% media at SM</source>
+                <target>Raster: 50% Text, 50% Medien ab SM</target>
+            </trans-unit>
+            <trans-unit id="presets.grid.textmedia.text_6md_media_6md">
+                <source>Grid: 50% text, 50% media at MD</source>
+                <target>Raster: 50% Text, 50% Medien ab MD</target>
+            </trans-unit>
+            <trans-unit id="presets.image_optimizing.2xs_3md_4xl">
+                <source>Image optimizing: 2 XS, 3 MD, 4 XL</source>
+                <target>Bildoptimierung: 2 XS, 3 MD, 4 XL</target>
+            </trans-unit>
             
         </body>
     </file>

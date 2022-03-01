@@ -70,14 +70,14 @@ tt_content {
             # }
 
             10 {
-                label = Standard-Abstände zwischen Text und Medien
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
                 configuration {
                     space_y = 3;;4;;;
                     space_x = 3;;4;;;
                 }
             }
             20 {
-                label = Standard-Abstände zwischen Medien
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing_between_media
                 configuration {
                     mediaitem {
                         space_y = 3;;4;;;
@@ -86,25 +86,17 @@ tt_content {
                 }
             }
             30 {
-                label = Aufteilung: 50% Text, 50% Medien (ab SM)
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.grid.textmedia.text_6sm_media_6sm
                 configuration {
                     col_text = ;6;;;;
                     col_media = ;6;;;;
                 }
             }
             40 {
-                label = Aufteilung: 50% Text, 50% Medien (ab MD)
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.grid.textmedia.text_6md_media_6md
                 configuration {
                     col_text = ;;6;;;
                     col_media = ;;6;;;
-                }
-            }
-            50 {
-                label = Medien-Raster: zweispaltig
-                configuration {
-                    mediaitem {
-                        col = 6;;;;;
-                    }
                 }
             }
         }

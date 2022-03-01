@@ -36,7 +36,7 @@ tt_content {
             # }
 
             10 {
-                label = Standard-Abstände
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
                 configuration {
                     grid {
                         space_y = 3;;4;;;
@@ -45,23 +45,15 @@ tt_content {
                 }
             }
             20 {
-                label = Raster: 3
-                configuration {
-                    grid {
-                        col = 4;;;;;
-                    }
-                }
-            }
-            30 {
-                label = Raster: 2 XS, 3 MD, 4 XL
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.grid.2xs_3md_4xl
                 configuration {
                     grid {
                         col = 6;;4;3;;
                     }
                 }
             }
-            40 {
-                label = Optimierung: 2 XS, 3 MD, 4 XL
+            30 {
+                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.image_optimizing.2xs_3md_4xl
                 configuration {
                     mediaoptimizing {
                         width {
