@@ -1,6 +1,25 @@
-# Add special content elements for this project
+# common
+mod.wizards.newContentElement.wizardItems.common {
+    header = Text
+    elements {
+        bootstrap_twocolumnstext {
+            iconIdentifier = bootstrap_twocolumnstext
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_twocolumnstext
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_twocolumnstext.description
+            tt_content_defValues {
+                CType = bootstrap_twocolumnstext
+            }
+        }
+        # remove uploads
+        uploads >
+    }
+    
+    show := addToList(bootstrap_twocolumnstext)
+    show := removeFromList(uploads)
+}
+
 mod.wizards.newContentElement.wizardItems.common2 {
-    header = Zusätzlich
+    header = Text & Medien
     elements {
         bootstrap_textimage {
             iconIdentifier = bootstrap_textimage
@@ -16,46 +35,6 @@ mod.wizards.newContentElement.wizardItems.common2 {
             description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_mediagrid.description
             tt_content_defValues {
                 CType = bootstrap_mediagrid
-            }
-        }
-        bootstrap_carousel {
-            iconIdentifier = bootstrap_carousel
-            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_carousel
-            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_carousel.description
-            tt_content_defValues {
-                CType = bootstrap_carousel
-            }
-        }
-        bootstrap_tabs {
-            iconIdentifier = bootstrap_tabs
-            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs
-            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs.description
-            tt_content_defValues {
-                CType = bootstrap_tabs
-            }
-        }
-        bootstrap_accordion {
-            iconIdentifier = bootstrap_accordion
-            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion
-            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion.description
-            tt_content_defValues {
-                CType = bootstrap_accordion
-            }
-        }
-        bootstrap_type6 {
-            iconIdentifier = bootstrap_type6
-            title = Team-Mitglieder
-            description = Eine Liste von Team-Mitgliedern.
-            tt_content_defValues {
-                CType = bootstrap_type6
-            }
-        }
-        bootstrap_twocolumnstext {
-            iconIdentifier = bootstrap_twocolumnstext
-            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_twocolumnstext
-            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_twocolumnstext.description
-            tt_content_defValues {
-                CType = bootstrap_twocolumnstext
             }
         }
         bootstrap_textmediagrid {
@@ -74,6 +53,45 @@ mod.wizards.newContentElement.wizardItems.common2 {
                 CType = bootstrap_textmediafloat
             }
         }
+        bootstrap_carousel {
+            iconIdentifier = bootstrap_carousel
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_carousel
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_carousel.description
+            tt_content_defValues {
+                CType = bootstrap_carousel
+            }
+        }
+    }
+    show := addToList(bootstrap_textimage,bootstrap_mediagrid,bootstrap_textmediagrid,bootstrap_textmediafloat,bootstrap_carousel)
+}
+
+mod.wizards.newContentElement.wizardItems.special {
+    elements {
+        # define uploads in special
+        uploads {
+            iconIdentifier = content-special-uploads
+            title = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_filelinks_title
+            description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_filelinks_description
+            tt_content_defValues {
+                CType = uploads
+            }
+        }
+        bootstrap_tabs {
+            iconIdentifier = bootstrap_tabs
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs.description
+            tt_content_defValues {
+                CType = bootstrap_tabs
+            }
+        }
+        bootstrap_accordion {
+            iconIdentifier = bootstrap_accordion
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion.description
+            tt_content_defValues {
+                CType = bootstrap_accordion
+            }
+        }
         bootstrap_cards {
             iconIdentifier = bootstrap_cards
             title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_cards
@@ -83,5 +101,22 @@ mod.wizards.newContentElement.wizardItems.common2 {
             }
         }
     }
-    show := addToList(bootstrap_textimage,bootstrap_mediagrid,bootstrap_carousel,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_textmediagrid,bootstrap_textmediafloat,bootstrap_cards)
+    show := addToList(bootstrap_tabs,bootstrap_accordion,bootstrap_cards,uploads)
 }
+
+# Add special content elements for this project
+# mod.wizards.newContentElement.wizardItems.common2 {
+#     header = Weitere
+#     elements {
+        
+#         bootstrap_type6 {
+#             iconIdentifier = bootstrap_type6
+#             title = Team-Mitglieder
+#             description = Eine Liste von Team-Mitgliedern.
+#             tt_content_defValues {
+#                 CType = bootstrap_type6
+#             }
+#         }
+#     }
+#     show := addToList(bootstrap_carousel,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_cards)
+# }
