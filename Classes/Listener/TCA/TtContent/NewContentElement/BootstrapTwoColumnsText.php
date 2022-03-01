@@ -26,9 +26,9 @@ class BootstrapTwoColumnsText implements NewContentElementInterface
         $GLOBALS['TCA']['tt_content']['types']['bootstrap_twocolumnstext'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['text']['showitem'])
                 ->addShowitemAfter(implode(',', [
-                    '--div--;Links',
+                    '--div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.div.left',
                     'tx_bootstrap_bodytext1',
-                    '--div--;Rechts',
+                    '--div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.div.right',
                     'tx_bootstrap_bodytext2',
                 ]), 'bodytext')
                 ->removeShowitems(['bodytext'])

@@ -26,7 +26,7 @@
         <sGENERAL>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sGENERAL.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmediagrid.sGENERAL.sheetTitle</sheetTitle>
                     <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.sGENERAL.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>

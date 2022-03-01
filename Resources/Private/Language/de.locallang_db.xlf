@@ -1,246 +1,322 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2021-03-26T11:15:00Z" product-name="bootstrap">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2021-03-26T11:15:00Z" product-name="bootstrap">
         <header />
         <body>
             <trans-unit id="mod.wizards.newContentElement.wizardItems.common.header">
                 <source>Text</source>
+                <target>Text</target>
             </trans-unit>
             <trans-unit id="mod.wizards.newContentElement.wizardItems.common2.header">
                 <source>Text &amp; Media</source>
+                <target>Text &amp; Medien</target>
             </trans-unit>
 
             <!-- tt_content.CType -->
             <trans-unit id="tt_content.CType.bootstrap_accordion">
                 <source>Accordion</source>
+                <target>Akkordion</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_accordion.description">
                 <source>Accordion element with Text/Media content elements.</source>
+                <target>Aufklapp-Elemente mit Text/Medien-Inhalten.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_accordion.tx_bootstrap_flexform">
                 <source>Accordion settings</source>
+                <target>Akkordion-Einstellungen</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_mediagrid">
                 <source>Media grid</source>
+                <target>Medien-Raster</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_mediagrid.description">
                 <source>Media in grid system.</source>
+                <target>Medien im Raster-System.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_tabs">
                 <source>Tabulator</source>
+                <target>Tabulator</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_tabs.description">
                 <source>Tabulator navigation with Text/Media content elements.</source>
+                <target>Tabulator-Navigation mit Text/Medien-Inhalten.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_tabs.tx_bootstrap_flexform">
                 <source>Tabulator settings</source>
+                <target>Tabulator-Einstellungen</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediafloat">
                 <source>Text &amp; Media (float)</source>
+                <target>Text &amp; Medien (umfließend)</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediafloat.description">
                 <source>Media elements floated by text.</source>
+                <target>Medienelemente, die mit Text umflossen werden.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediafloat.tx_bootstrap_flexform">
                 <source>Settings for Text &amp; Media (float)</source>
+                <target>Einstellungen für Text &amp; Medien (umfließend)</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediagrid">
                 <source>Text &amp; Media (grid)</source>
+                <target>Text &amp; Medien (Raster)</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediagrid.description">
                 <source>Text and media in a grid system. The most flexible content element to set text and media elements.</source>
+                <target>Text und mehrere Medien aufgeteilt in einem Raster-System. Das flexibelste Element, um Text und Medien zu setzen.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediagrid.tx_bootstrap_flexform">
                 <source>Settings for Text &amp; Media (grid)</source>
+                <target>Einstellungen für Text &amp; Medien (Raster)</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_twocolumnstext">
                 <source>Text + Text</source>
+                <target>Text + Text</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_twocolumnstext.description">
                 <source>Two columns text</source>
+                <target>Zwei Spalten Text</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textimage">
                 <source>Text + Image</source>
+                <target>Text + Bild</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textimage.description">
                 <source>Set fast a text and one image.</source>
+                <target>Schnell einen Text mit einem Bild setzen.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textimage.tx_bootstrap_flexform">
                 <source>Settings for 'Text + Image'</source>
+                <target>Einstellungen für 'Text + Bild'</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel">
                 <source>Image-Carousel</source>
+                <target>Bilder-Karusell</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel.description">
                 <source>An animated image slider.</source>
+                <target>Eine animierte Bilderstrecke.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel.tx_bootstrap_flexform">
                 <source>Settings for Image-Carousel</source>
+                <target>Einstellungen für das Bilder-Karusell</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_cards">
                 <source>Cards</source>
+                <target>Kacheln</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_cards.description">
                 <source>Text-image-elements as cards in a grid system.</source>
+                <target>Text-Bild-Elemente als Kacheln in einem Raster-System.</target>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_cards.tx_bootstrap_flexform">
                 <source>Settings for the cards</source>
+                <target>Einstellungen für die Kacheln</target>
             </trans-unit>
 
             <!-- tt_content.div -->
             <trans-unit id="tt_content.div.content_elements">
                 <source>Content elements</source>
+                <target>Inhaltselemente</target>
             </trans-unit>
             <trans-unit id="tt_content.div.left">
                 <source>Left</source>
+                <target>Links</target>
             </trans-unit>
             <trans-unit id="tt_content.div.right">
                 <source>Right</source>
+                <target>Rechts</target>
             </trans-unit>
 
             <!-- tt_content columns -->
             <trans-unit id="tt_content.header.description">
                 <source>Use | for hyphenation</source>
+                <target>Nutze | zur Silbentrennung</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_header_layout">
                 <source>Layout</source>
+                <target>Layout</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_header_color">
                 <source>Color</source>
+                <target>Farbe</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_header_predefined">
                 <source>Variant</source>
+                <target>Variante</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_header_additional_styles">
                 <source>Further settings</source>
+                <target>Weitere Einstellungen</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_header_icon">
                 <source>Icon</source>
+                <target>Icon</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_text_color">
                 <source>Text color</source>
+                <target>Textfarbe</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_background_color">
                 <source>Background color</source>
+                <target>Hintergrundfarbe</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_additional_styles">
                 <source>Further settings</source>
+                <target>Weitere Einstellungen</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_inner_frame_class">
                 <source>Frame: inner</source>
+                <target>Rahmen: innen</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_section_index_header">
                 <source>Header</source>
+                <target>Überschrift</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_image1">
                 <source>Image</source>
+                <target>Bild</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_image2">
                 <source>Image</source>
+                <target>Bild</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_bodytext1">
                 <source>Text</source>
+                <target>Text</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_bodytext2">
                 <source>Text</source>
+                <target>Text</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_accordionitems">
                 <source>Accordion items</source>
+                <target>Accordion-Elemente</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_tabulatoritems">
                 <source>Tabulator items</source>
+                <target>Tabulator-Elemente</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_carditems">
                 <source>Card items</source>
+                <target>Kachel-Elemente</target>
             </trans-unit>
 
             <trans-unit id="tx_bootstrap_domain_model_accordionitem">
                 <source>Accordion item</source>
+                <target>Accordion-Element</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_accordionitem.title">
                 <source>Title</source>
+                <target>Titel</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_accordionitem.opened_on_load">
                 <source>Opened on load</source>
+                <target>Geöffnet</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_accordionitem.content_elements">
                 <source>Content elements</source>
+                <target>Inhaltselemente</target>
             </trans-unit>
 
             <trans-unit id="tx_bootstrap_domain_model_tabulatoritem">
                 <source>Tabulator item</source>
+                <target>Tabulator-Element</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.title">
                 <source>Title</source>
+                <target>Titel</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.active">
                 <source>Active</source>
+                <target>Aktiv</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.active.description">
                 <source>Please make sure that only one tabulator element can be active.</source>
+                <target>Bitte darauf achten, dass nur ein Tabulator-Element aktiv sein darf.</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_tabulatoritem.content_elements">
                 <source>Content elements</source>
+                <target>Inhaltselemente</target>
             </trans-unit>
 
             <trans-unit id="tx_bootstrap_domain_model_carditem">
                 <source>Card item</source>
+                <target>Card-Element</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.header">
                 <source>Header</source>
+                <target>Kopfbereich</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.title">
                 <source>Title</source>
+                <target>Titel</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.image">
                 <source>Image</source>
+                <target>Bild</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.text">
                 <source>Text</source>
+                <target>Text</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.typolink">
                 <source>Link</source>
+                <target>Link</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.typolink_text">
                 <source>Link text</source>
+                <target>Link-Text</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.footer">
                 <source>Footer</source>
+                <target>Fußbereich</target>
             </trans-unit>
             
             <trans-unit id="tx_bootstrap_domain_model_contentelement">
                 <source>Content element</source>
+                <target>Inhaltselement</target>
             </trans-unit>
 
             <trans-unit id="cropVariants.default">
                 <source>Standard</source>
+                <target>Standard</target>
             </trans-unit>
             <trans-unit id="cropVariants.xs">
                 <source>XS (&lt;576px)</source>
+                <target>XS (&lt;576px)</target>
             </trans-unit>
             <trans-unit id="cropVariants.sm">
                 <source>SM (>=576px)</source>
+                <target>SM (>=576px)</target>
             </trans-unit>
             <trans-unit id="cropVariants.md">
                 <source>MD (>=768px)</source>
+                <target>MD (>=768px)</target>
             </trans-unit>
             <trans-unit id="cropVariants.lg">
                 <source>LG (>=992px)</source>
+                <target>LG (>=992px)</target>
             </trans-unit>
             <trans-unit id="cropVariants.xl">
                 <source>XL (>=1200px)</source>
+                <target>XL (>=1200px)</target>
             </trans-unit>
             <trans-unit id="cropVariants.xxl">
                 <source>XXL (>=1400px)</source>
+                <target>XXL (>=1400px)</target>
             </trans-unit>
             <trans-unit id="cropVariants.lightbox">
                 <source>Lightbox</source>
+                <target>Lightbox</target>
             </trans-unit>
             <trans-unit id="cropVariants.navigation">
                 <source>Navigation</source>
+                <target>Navigation</target>
             </trans-unit>
             <trans-unit id="cropVariants.social">
                 <source>Social media</source>
+                <target>Social Media</target>
             </trans-unit>
         </body>
     </file>

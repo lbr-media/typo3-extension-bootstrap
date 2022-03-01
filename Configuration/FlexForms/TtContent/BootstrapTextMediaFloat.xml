@@ -26,7 +26,7 @@
         <sGENERAL>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Position und Abstand</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmediafloat.sGENERAL.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>

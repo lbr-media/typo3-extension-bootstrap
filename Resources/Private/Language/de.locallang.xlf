@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2021-03-26T11:15:00Z" product-name="bootstrap">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2021-03-26T11:15:00Z" product-name="bootstrap">
         <header />
         <body>
             <trans-unit id="carousel.previous">
-                <source>Previous</source>
+                <source>Vorheriges Element</source>
             </trans-unit>
             <trans-unit id="carousel.next">
-                <source>Next</source>
+                <source>Nächstes Element</source>
             </trans-unit>
         </body>
     </file>
