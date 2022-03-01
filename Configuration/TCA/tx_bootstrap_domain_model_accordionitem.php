@@ -108,7 +108,6 @@ return [
                     'levelLinksPosition' => 'both',
                     'useSortable' => true,
                     'showPossibleLocalizationRecords' => false,
-                    'showRemovedLocalizationRecords' => false,
                     'showSynchronizationLink' => false,
                     'showAllLocalizationLink' => false,
                     'collapseAll' => true,
