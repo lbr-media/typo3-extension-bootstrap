@@ -552,6 +552,62 @@
                 <target>Rundung</target>
             </trans-unit>
 
+            <!-- FormElement: devices -->
+            <trans-unit id="device.xs">
+                <source>XS</source>
+                <target>XS</target>
+            </trans-unit>
+            <trans-unit id="device.sm">
+                <source>SM</source>
+                <target>SM</target>
+            </trans-unit>
+            <trans-unit id="device.md">
+                <source>MD</source>
+                <target>MD</target>
+            </trans-unit>
+            <trans-unit id="device.lg">
+                <source>LG</source>
+                <target>LG</target>
+            </trans-unit>
+            <trans-unit id="device.xl">
+                <source>XL</source>
+                <target>XL</target>
+            </trans-unit>
+            <trans-unit id="device.xxl">
+                <source>XXL</source>
+                <target>XXL</target>
+            </trans-unit>
+
+            <!-- FormElement: edges -->
+            <trans-unit id="edge.left">
+                <source>Left</source>
+                <target>Links</target>
+            </trans-unit>
+            <trans-unit id="edge.right">
+                <source>Right</source>
+                <target>Rechts</target>
+            </trans-unit>
+            <trans-unit id="edge.horizontal">
+                <source>Left + right</source>
+                <target>Links + rechts</target>
+            </trans-unit>
+            <trans-unit id="edge.top">
+                <source>Top</source>
+                <target>Oben</target>
+            </trans-unit>
+            <trans-unit id="edge.bottom">
+                <source>Bottom</source>
+                <target>Unten</target>
+            </trans-unit>
+            <trans-unit id="edge.vertical">
+                <source>Top + bottom</source>
+                <target>Oben + unten</target>
+            </trans-unit>
+            <trans-unit id="edge.all">
+                <source>All sides</source>
+                <target>Alle Seiten</target>
+            </trans-unit>
+
             <!--
                 Labels for tt_content.[CType].flexform_presets
             -->
