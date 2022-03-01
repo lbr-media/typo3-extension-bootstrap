@@ -28,8 +28,8 @@ page.10 {
         content_main < styles.content.get
         content_main.wrap = <!--TYPO3SEARCH_begin-->|<!--TYPO3SEARCH_end-->
 
-        content_aside < styles.content.get
-        content_aside.select.where = {#colPos}=1
+        // content_aside < styles.content.get
+        // content_aside.select.where = {#colPos}=1
 
         # brand in header section
         header_brand = COA

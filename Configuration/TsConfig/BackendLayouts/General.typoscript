@@ -25,19 +25,14 @@ mod {
                 title = Standard
                 config {
                     backend_layout {
-                        colCount = 3
+                        colCount = 1
                         rowCount = 1
                         rows {
                             1 {
                                 columns {
                                     1 {
-                                        name = Hauptinhalt
+                                        name = Inhalt
                                         colPos = 0
-                                        colspan = 2
-                                    }
-                                    2 {
-                                        name = Inhalt Seite
-                                        colPos = 1
                                     }
                                 }
                             }
