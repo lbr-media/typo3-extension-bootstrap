@@ -244,7 +244,9 @@ In TypoScript `tt_content.bootstrap_cards.flexform_presets` one or more settings
     * _`Background color`_ (select; one of the bg-{color} classes)
     * _`Text color`_ (select; one of the text-{color} classes)
     * _`Border color`_ (select; one of the border-{color} classes)
+    * _`Border width`_ (select; one of the border-{size} classes)
     * _`Button color/style`_ (select; one of the btn-{color} and btn-outline-{color} classes)
+    * _`Shadow`_ (select; one of the shadow classes)
 * _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 
