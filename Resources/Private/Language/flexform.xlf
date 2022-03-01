@@ -414,6 +414,34 @@
                 <source>bottom</source>
             </trans-unit>
             
+
+            <!--
+                Labels for tt_content.[CType].flexform_presets
+            -->
+            <trans-unit id="presets.default_spacing">
+                <source>Spacing: Default</source>
+            </trans-unit>
+            <trans-unit id="presets.default_spacing_between_media">
+                <source>Spacing: Default (Between media items)</source>
+            </trans-unit>
+            <trans-unit id="presets.order.header_image_text">
+                <source>Order: Header, image, text</source>
+            </trans-unit>
+            <trans-unit id="presets.order.header_text_image">
+                <source>Order: Header, text, image</source>
+            </trans-unit>
+            <trans-unit id="presets.grid.2xs_3md_4xl">
+                <source>Grid: 2 XS, 3 MD, 4 XL</source>
+            </trans-unit>
+            <trans-unit id="presets.grid.textmedia.text_6sm_media_6sm">
+                <source>Grid: 50% text, 50% media at SM</source>
+            </trans-unit>
+            <trans-unit id="presets.grid.textmedia.text_6md_media_6md">
+                <source>Grid: 50% text, 50% media at MD</source>
+            </trans-unit>
+            <trans-unit id="presets.image_optimizing.2xs_3md_4xl">
+                <source>Image optimizing: 2 XS, 3 MD, 4 XL</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
