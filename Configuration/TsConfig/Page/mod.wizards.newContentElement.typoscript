@@ -1,6 +1,6 @@
 # common
 mod.wizards.newContentElement.wizardItems.common {
-    header = Text
+    header = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:mod.wizards.newContentElement.wizardItems.common.header
     elements {
         bootstrap_twocolumnstext {
             iconIdentifier = bootstrap_twocolumnstext
@@ -19,7 +19,7 @@ mod.wizards.newContentElement.wizardItems.common {
 }
 
 mod.wizards.newContentElement.wizardItems.common2 {
-    header = Text & Medien
+    header = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:mod.wizards.newContentElement.wizardItems.common2.header
     elements {
         bootstrap_textimage {
             iconIdentifier = bootstrap_textimage
@@ -103,20 +103,3 @@ mod.wizards.newContentElement.wizardItems.special {
     }
     show := addToList(bootstrap_tabs,bootstrap_accordion,bootstrap_cards,uploads)
 }
-
-# Add special content elements for this project
-# mod.wizards.newContentElement.wizardItems.common2 {
-#     header = Weitere
-#     elements {
-        
-#         bootstrap_type6 {
-#             iconIdentifier = bootstrap_type6
-#             title = Team-Mitglieder
-#             description = Eine Liste von Team-Mitgliedern.
-#             tt_content_defValues {
-#                 CType = bootstrap_type6
-#             }
-#         }
-#     }
-#     show := addToList(bootstrap_carousel,bootstrap_tabs,bootstrap_accordion,bootstrap_type6,bootstrap_twocolumnstext,bootstrap_cards)
-# }

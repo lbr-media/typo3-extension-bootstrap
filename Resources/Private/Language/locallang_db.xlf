@@ -3,24 +3,31 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2021-03-26T11:15:00Z" product-name="bootstrap">
         <header />
         <body>
+            <trans-unit id="mod.wizards.newContentElement.wizardItems.common.header">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="mod.wizards.newContentElement.wizardItems.common2.header">
+                <source>Text &amp; Medien</source>
+            </trans-unit>
+
             <!-- tt_content.CType -->
             <trans-unit id="tt_content.CType.bootstrap_accordion">
-                <source>Accordion</source>
+                <source>Akkordion</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_accordion.description">
-                <source>Aufklapp-Elemente</source>
+                <source>Aufklapp-Elemente mit Text/Medien-Inhalten.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_mediagrid">
                 <source>Medien-Raster</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_mediagrid.description">
-                <source>Bilder oder Videos in Raster-System.</source>
+                <source>Medien im Raster-System.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_tabs">
                 <source>Tabulator</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_tabs.description">
-                <source>Tabulator</source>
+                <source>Tabulator-Navigation mit Text/Medien-Inhalten.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textmediafloat">
                 <source>Text &amp; Medien (umfließend)</source>
@@ -44,19 +51,19 @@
                 <source>Text + Bild</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_textimage.description">
-                <source>Auf der einen Seite eine Überschrift mit Text und auf der anderen Seite ein Bild. Die Reihenfolge kann eingestellt werden. Der Text kann oben oder unten ausgerichtet werden.</source>
+                <source>Schnell einen Text mit einem Bild setzen.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel">
-                <source>Bilder-Slider</source>
+                <source>Bilder-Karusell</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_carousel.description">
-                <source></source>
+                <source>Eine animierte Bilderstrecke.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_cards">
-                <source>Karten</source>
+                <source>Kacheln</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.bootstrap_cards.description">
-                <source>Bootstrap Cards-Element in einem Grid-System.</source>
+                <source>Text-Bild-Elemente als Kacheln in einem Raster-System.</source>
             </trans-unit>
 
             <!-- tt_content.div -->
