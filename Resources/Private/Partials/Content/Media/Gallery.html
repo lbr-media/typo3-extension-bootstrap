@@ -3,7 +3,6 @@
     xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
     data-namespace-typo3-fluid="true"><f:spaceless>
     <f:if condition="{files->f:count()}">
-        <f:if condition="{grid.mediaitem.row_space_classes}"><div class="overflow-hidden"></f:if>
         <div class="{grid.mediaitem.row_classes} {grid.mediaitem.row_space_classes}"{grid.media.masonry_data_masonry_attribute -> f:format.raw()}>
             <f:for each="{files}" as="media">
                 <div class="{grid.mediaitem.col_classes} {grid.mediaitem.col_space_classes}">
@@ -20,6 +19,5 @@
                 </div>
             </f:for>
         </div>
-        <f:if condition="{grid.mediaitem.row_space_classes}"></div></f:if>
     </f:if>
 </f:spaceless></html>

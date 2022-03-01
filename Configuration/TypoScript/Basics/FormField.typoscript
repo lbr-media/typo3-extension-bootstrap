@@ -295,9 +295,10 @@ plugin.tx_bootstrap.settings.form.element {
 
     BootstrapRounded {
         default = 
-        rounded-sm = alle Ecken: klein
-        rounded = alle Ecken: normal
-        rounded-lg = alle Ecken: groß
+        rounded-0 = alle Ecken: keine Rundug
+        rounded-1 = alle Ecken: Größe 1
+        rounded-2 = alle Ecken: Größe 2
+        rounded-3 = alle Ecken: Größe 3
         rounded-start = links
         rounded-end = rechts
         rounded-top = oben

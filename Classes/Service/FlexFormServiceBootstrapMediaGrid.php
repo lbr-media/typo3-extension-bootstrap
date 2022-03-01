@@ -23,6 +23,7 @@ class FlexFormServiceBootstrapMediaGrid extends FlexFormService implements FlexF
         $xmlArray = $this->getConfiguration($xmlString);
         
         // mediaitem
+        $xmlArray['mediaitem']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['mediaitem']['border']);
         $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
         $xmlArray['mediaitem']['row_space_classes'] = $mediaSpaceClasses['row'];
         $xmlArray['mediaitem']['col_space_classes'] = $mediaSpaceClasses['col'];
@@ -55,6 +56,7 @@ class FlexFormServiceBootstrapMediaGrid extends FlexFormService implements FlexF
             ],
             'mediaitem' => [
                 'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
+                'border' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
                 'col' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;', $this->logger),
                 'space_y' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),
                 'space_x' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_x.vDEF', 'string', ';;;;;', $this->logger),

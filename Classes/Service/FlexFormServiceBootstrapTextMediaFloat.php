@@ -26,6 +26,7 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
         $xmlArray['media_size_classes'] = BootstrapUtility::getFloatMediaSizeClasses($xmlArray['media_size'], $xmlArray['media_position'], $xmlArray['space_x'], $xmlArray['space_y']);
 
         // mediaitem
+        $xmlArray['mediaitem']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['mediaitem']['border']);
         $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
         $xmlArray['mediaitem']['row_space_classes'] = $mediaSpaceClasses['row'];
         $xmlArray['mediaitem']['col_space_classes'] = $mediaSpaceClasses['col'];
@@ -62,6 +63,7 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
                 'masonry_data_masonry_attribute' => "",
             ],
             'mediaitem' => [
+                'border' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
                 'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
                 'col' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;', $this->logger),
                 'space_y' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),

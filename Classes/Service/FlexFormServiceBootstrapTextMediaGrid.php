@@ -78,6 +78,8 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
         $xmlArray['media']['item_classes'] = count($mediaItemClasses) ? implode(' ', $mediaItemClasses) : '';
 
         // mediaitem
+        $xmlArray['mediaitem']['image_zoom'] = $xmlArray['media']['image_zoom'];
+        $xmlArray['mediaitem']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['mediaitem']['border']);
         $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
         $xmlArray['mediaitem']['row_space_classes'] = $mediaSpaceClasses['row'];
         $xmlArray['mediaitem']['col_space_classes'] = $mediaSpaceClasses['col'];
@@ -115,6 +117,7 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
             'align_items' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.align_items.vDEF', 'string', ';;;;;', $this->logger),
             'justify_content' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.justify_content.vDEF', 'string', ';;;;;', $this->logger),
             'media' => [
+                'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
                 'masonry_enabled' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger),
                 'masonry_data_masonry_attribute' => "",
                 'align_self' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.align_self.vDEF', 'string', ';;;;;', $this->logger),
@@ -148,7 +151,7 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
                 ],
             ],
             'mediaitem' => [
-                'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
+                'border' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
                 'col' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;', $this->logger),
                 'space_y' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),
                 'space_x' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_x.vDEF', 'string', ';;;;;', $this->logger),

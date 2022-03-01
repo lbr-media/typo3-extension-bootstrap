@@ -278,6 +278,12 @@ In TypoScript `tt_content.bootstrap_mediagrid.flexform_presets` one or more sett
     * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
     * _`Align x`_ (select; each device from xs to xxl; alignment classes)
     * _`Align y`_ (select; each device from xs to xxl; alignment classes)
+* Border for each media item:
+    * _`Border edge`_ (select; one of the border-{side} classes)
+    * _`Border width`_ (select; one of the border-{size} classes)
+    * _`Border color`_ (select; one of the border-{color} classes)
+    * _`Rounded`_ (select; one of the rounded classes)
+    * _`Shadow`_ (select; one of the shadow classes)
 * _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 ---
@@ -311,6 +317,12 @@ In TypoScript `tt_content.bootstrap_textimage.flexform_presets` one or more sett
 * _`Text alignment`_ (select; either `top` or `bottom`)
 * _`Header position`_ (select; either `above all`, `above text` or `above image`)
 * _`Space between`_ text and image (select; each device from xs to xxl; g-* classes)
+* Border for the image:
+    * _`Border edge`_ (select; one of the border-{side} classes)
+    * _`Border width`_ (select; one of the border-{size} classes)
+    * _`Border color`_ (select; one of the border-{color} classes)
+    * _`Rounded`_ (select; one of the rounded classes)
+    * _`Shadow`_ (select; one of the shadow classes)
 ---
 
 ### Text & Media (float)
@@ -333,6 +345,12 @@ In TypoScript `tt_content.bootstrap_textmediafloat.flexform_presets` one or more
     * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
     * _`Align x`_ (select; each device from xs to xxl; alignment classes)
     * _`Align y`_ (select; each device from xs to xxl; alignment classes)
+* Border for each media item:
+    * _`Border edge`_ (select; one of the border-{side} classes)
+    * _`Border width`_ (select; one of the border-{size} classes)
+    * _`Border color`_ (select; one of the border-{color} classes)
+    * _`Rounded`_ (select; one of the rounded classes)
+    * _`Shadow`_ (select; one of the shadow classes)
 * _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 ---
@@ -367,6 +385,12 @@ In TypoScript `tt_content.bootstrap_textmediagrid.flexform_presets` one or more 
     * _`Gutter space y`_ (select; each device from xs to xxl; g-* classes)
     * _`Align x`_ (select; each device from xs to xxl; alignment classes)
     * _`Align y`_ (select; each device from xs to xxl; alignment classes)
+* Border for each media item:
+    * _`Border edge`_ (select; one of the border-{side} classes)
+    * _`Border width`_ (select; one of the border-{size} classes)
+    * _`Border color`_ (select; one of the border-{color} classes)
+    * _`Rounded`_ (select; one of the rounded classes)
+    * _`Shadow`_ (select; one of the shadow classes)
 * _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
 ---

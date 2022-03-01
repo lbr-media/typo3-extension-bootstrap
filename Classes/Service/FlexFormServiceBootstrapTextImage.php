@@ -23,6 +23,7 @@ class FlexFormServiceBootstrapTextImage extends FlexFormService implements FlexF
         $xmlArray = $this->getConfiguration($xmlString);
         
         $xmlArray['space_classes'] = BootstrapUtility::getGridSpaceClasses($xmlArray['space']);
+        $xmlArray['mediaitem']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['mediaitem']['border']);
 
         return $xmlArray;
     }
@@ -35,6 +36,9 @@ class FlexFormServiceBootstrapTextImage extends FlexFormService implements FlexF
             'image_align' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.image_align.vDEF', 'string', 'start', $this->logger),
             'header_position' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.header_position.vDEF', 'string', 'above_all', $this->logger),
             'space' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space.vDEF', 'string', ';;;;;', $this->logger),
+            'mediaitem' => [
+                'border' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
+            ],
         ];
 
         // Process presets which overrides some/all settings

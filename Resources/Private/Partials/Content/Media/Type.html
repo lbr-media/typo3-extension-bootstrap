@@ -7,7 +7,7 @@
         <f:render partial="Media/Type/Video" arguments="{file: file, dimensions: dimensions, data: data, grid: grid, settings: settings}" />
     </f:case>
     <f:defaultCase>
-        <f:render partial="Media/Type/Image" arguments="{file: file, dimensions: dimensions, data: data, grid: grid, settings: settings}" />
+        <f:render partial="Media/Type/Image" section="Default" arguments="{file: file, dimensions: dimensions, data: data, grid: grid, settings: settings}" />
     </f:defaultCase>
 </f:switch>
 </html>

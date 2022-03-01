@@ -135,6 +135,16 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
+                    <field index="border">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapBorder</renderType>
+                                <default>;;;;</default>
+                            </config>
+                        </value>
+                    </field>
                     <field index="col">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.col</label>

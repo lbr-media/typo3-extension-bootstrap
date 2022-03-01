@@ -40,7 +40,7 @@
             </f:render>
         </f:if>
         <f:if condition="{files.0}">
-            <figure class="container-app_type2__image">
+            <figure class="mb-0 {f:if(condition:configuration.mediaitem.border_classes, then:' {configuration.mediaitem.border_classes} overflow-hidden')}">
                 <f:if condition="{files.0.properties.copyright}">
                     <f:then>
                         <div class="position-relative">
@@ -69,7 +69,7 @@
                     </f:else>
                 </f:if>
                 
-                <f:if condition="{files.0.description}"><figcaption>{files.0.description -> f:format.nl2br()}</figcaption></f:if>
+                <f:if condition="{files.0.description}"><figcaption class="figure-caption text-start{f:if(condition:configuration.mediaitem.border_classes, then:' p-1 p-lg-2')}">{files.0.description -> f:format.nl2br()}</figcaption></f:if>
             </figure>
         </f:if>
     </f:spaceless></f:section>

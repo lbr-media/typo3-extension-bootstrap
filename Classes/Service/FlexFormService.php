@@ -81,7 +81,7 @@ class FlexFormService implements LoggerAwareInterface
                 if ($logger) {
                     $logger->error("Cannot get path in flexform data: ".$path);
                 }
-                return null;
+                return $defaultValue;
             }
         }
 

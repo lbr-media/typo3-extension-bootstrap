@@ -2,45 +2,62 @@
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
     data-namespace-typo3-fluid="true">
-<f:if condition="{file.description}||{file.properties.copyright}">
-    <f:then><figure{f:if(condition:grid.mediaitem.figure_classes, then:' class="{grid.mediaitem.figure_classes}"')}></f:then>
-    <f:else><f:if condition="{grid.mediaitem.figure_classes}"><div class="grid.mediaitem.figure_classes"></f:if></f:else>
-</f:if>
-    <f:if condition="{file.properties.copyright}"><div class="position-relative"></f:if>
-    <f:if condition="{file.link}">
+
+<f:section name="Default"><f:spaceless>
+    <f:if condition="{file.description}||{file.properties.copyright}">
         <f:then>
-            <f:link.typolink parameter="{file.link}" title="{file.title}">
-                <f:render partial="Media/Rendering/Image" arguments="{file:file, dimensions:dimensions, settings:settings, grid:grid}" />
-            </f:link.typolink>
+            <figure class="mb-0{f:if(condition:grid.mediaitem.figure_classes, then:' {grid.mediaitem.figure_classes}')}{f:if(condition:grid.mediaitem.border_classes, then:' {grid.mediaitem.border_classes} overflow-hidden')}">
         </f:then>
         <f:else>
-            <f:if condition="{grid.mediaitem.image_zoom}">
-                <f:then>
-                    <a class="lightbox" data-toggle="lightbox" data-title="{file.properties.title}" href="{f:uri.image(image:file, maxWidth:'1000', maxHeight:'1000', cropVariant:'lightbox')}" data-gallery="ce-gallery-{data.uid}">
-                        <f:render partial="Media/Rendering/Image" arguments="{file:file, dimensions:dimensions, settings:settings, grid:grid}" />
-                    </a>
-                </f:then>
-                <f:else>
-                    <f:render partial="Media/Rendering/Image" arguments="{file:file, dimensions:dimensions, settings:settings, grid:grid}" />
-                </f:else>
+            <f:if condition="{grid.mediaitem.figure_classes}||{grid.mediaitem.border_classes}">
+                <div class="{f:if(condition:grid.mediaitem.figure_classes, then:' {grid.mediaitem.figure_classes}')}{f:if(condition:grid.mediaitem.border_classes, then:' {grid.mediaitem.border_classes} overflow-hidden')}">
             </f:if>
         </f:else>
     </f:if>
-    <f:if condition="{file.properties.copyright}">
-            <footer>
-                <small class="figure-copyright">
-                    {file.properties.copyright -> f:format.nl2br()}
-                </small>
-            </footer>
-        </div>
+
+        <f:if condition="{file.properties.copyright}"><div class="position-relative"></f:if>
+        <f:if condition="{file.link}">
+            <f:then>
+                <f:link.typolink parameter="{file.link}" title="{file.title}">
+                    <f:render partial="Media/Rendering/Image" arguments="{file:file, dimensions:dimensions, settings:settings, grid:grid}" />
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:if condition="{grid.mediaitem.image_zoom}">
+                    <f:then>
+                        <a class="lightbox" data-toggle="lightbox" data-title="{file.properties.title}" href="{f:uri.image(image:file, maxWidth:'1000', maxHeight:'1000', cropVariant:'lightbox')}" data-gallery="ce-gallery-{data.uid}">
+                            <f:render partial="Media/Rendering/Image" arguments="{file:file, dimensions:dimensions, settings:settings, grid:grid}" />
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Media/Rendering/Image" arguments="{file:file, dimensions:dimensions, settings:settings, grid:grid}" />
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
+        <f:if condition="{file.properties.copyright}">
+                <footer>
+                    <small class="figure-copyright">
+                        {file.properties.copyright -> f:format.nl2br()}
+                    </small>
+                </footer>
+            </div>
+        </f:if>
+        <f:if condition="{file.description}">
+            <figcaption class="figure-caption text-start{f:if(condition:grid.mediaitem.border_classes, then:' p-1 p-lg-2')}">
+                {file.description}
+            </figcaption>
+        </f:if>
+
+    <f:if condition="{file.description}||{file.properties.copyright}">
+        <f:then>
+            </figure>
+        </f:then>
+        <f:else>
+            <f:if condition="{grid.mediaitem.figure_classes}||{grid.mediaitem.border_classes}">
+                </div>
+            </f:if>
+        </f:else>
     </f:if>
-    <f:if condition="{file.description}">
-        <figcaption class="figure-caption text-start">
-            {file.description}
-        </figcaption>
-    </f:if>
-<f:if condition="{file.description}||{file.properties.copyright}">
-    <f:then></figure></f:then>
-    <f:else><f:if condition="{grid.mediaitem.figure_classes}"></div></f:if></f:else>
-</f:if>
+</f:spaceless></f:section>
 </html>

@@ -125,5 +125,26 @@
                 </el>
             </ROOT>
         </sGENERAL>
+        <sMEDIAITEM>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetDescription</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="border">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapBorder</renderType>
+                                <default>;;;;</default>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sMEDIAITEM>
     </sheets>
 </T3FlexForms>
