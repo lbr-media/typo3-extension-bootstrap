@@ -333,11 +333,19 @@ plugin.tx_bootstrap.settings.form.element {
         extra-large = mb-7
     }
 
+    # Settings for the TCA FormElement bootstrapIcons.
     BootstrapIcons {
         10 {
+            # Label for select field
             label = Bootstrap Icons
+
+            # key of the icon set
             key = bsicons
+
+            # Stylesheets to include in backend for the wizard
             includeCss.10 = ../../fileadmin/bootstrap/assets/bsicon/bootstrap-icons.css
+
+            # HTML to show in wizard
             includeHtml = ../../fileadmin/bootstrap/assets/bsicon/BootstrapIconsFormField.html
         }
     }
