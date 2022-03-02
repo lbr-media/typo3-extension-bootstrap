@@ -39,5 +39,12 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1646131736] = [
     'class' => \LBRmedia\Bootstrap\Form\Element\BootstrapBorderElement::class,
 ];
 
+// Add renderType allEdges to NodeFactory
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1646200749] = [
+    'nodeName' => 'bootstrapIcons',
+    'priority' => '70',
+    'class' => \LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement::class,
+];
+
 // Define TypoScript as content rendering template
 $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'bootstrap/Configuration/TypoScript/Content/';

@@ -19,6 +19,7 @@ class UpdateFileadmin extends Command
     // no trailing slashes!
     const JS_DIR = "public/fileadmin/bootstrap/assets/js";
     const CSS_DIR = "public/fileadmin/bootstrap/assets/css";
+    const BS_ICONS_DIR = "public/fileadmin/bootstrap/assets/bsicon";
 
     /**
      * directories to be created after installing this extension with composer.
@@ -28,23 +29,40 @@ class UpdateFileadmin extends Command
         "public/fileadmin/bootstrap",
         "public/fileadmin/bootstrap/assets",
         self::JS_DIR,
-        self::CSS_DIR
+        self::CSS_DIR,
+        self::BS_ICONS_DIR,
+        self::BS_ICONS_DIR . DIRECTORY_SEPARATOR . "fonts",
     ];
 
     /**
      * files to copy from vendor directory after installing this extension with composer.
      */
     const FILES = [
-        "vendor/components/jquery/jquery.min.js" => self::JS_DIR,
-        "vendor/components/jquery/jquery.min.map" => self::JS_DIR,
+        // jquery
+        // "vendor/components/jquery/jquery.min.js" => self::JS_DIR,
+        // "vendor/components/jquery/jquery.min.map" => self::JS_DIR,
+
+        // Twitter Bootstrap
         "vendor/twbs/bootstrap/dist/css/bootstrap.min.css" => self::CSS_DIR,
         "vendor/twbs/bootstrap/dist/css/bootstrap.min.css.map" => self::CSS_DIR,
         "vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js" => self::JS_DIR,
         "vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js.map" => self::JS_DIR,
+
+        // Additional cSS
         // "public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/bootstrap_textmediafloat.css" => self::CSS_DIR,
         // "public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/figure-copyright.css" => self::CSS_DIR,
+
+        // CKEditor
         "public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/CKEditor/CKEditor.css" => self::CSS_DIR,
+
+        // Masonry
         "public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/masonry.pkgd.min.js" => self::JS_DIR,
+
+        // Bootstrap Icons
+        "public/typo3conf/ext/bootstrap/Resources/Public/BootstrapIconsFormField.html" => self::BS_ICONS_DIR,
+        "vendor/twbs/bootstrap-icons/font/bootstrap-icons.css" => self::BS_ICONS_DIR,
+        "vendor/twbs/bootstrap-icons/font/fonts/bootstrap-icons.woff" => self::BS_ICONS_DIR . DIRECTORY_SEPARATOR . "fonts",
+        "vendor/twbs/bootstrap-icons/font/fonts/bootstrap-icons.woff2" => self::BS_ICONS_DIR . DIRECTORY_SEPARATOR . "fonts",
     ];
 
     /**

@@ -89,6 +89,14 @@ class Columns
                     'png,svg,gif', // $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
                 ),
             ],
+            'tx_bootstrap_header_iconset' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_iconset',
+                'config' => [
+                    'type' => 'user',
+                    'renderType' => 'bootstrapIcons',
+                ],
+            ],
             'tx_bootstrap_text_color' => [
                 'exclude' => 1,
                 'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_text_color',
@@ -323,7 +331,7 @@ class Columns
         ExtensionManagementUtility::addFieldsToPalette(
             'tt_content',
             'headers',
-            '--linebreak--,tx_bootstrap_header_additional_styles,--linebreak--,tx_bootstrap_header_icon',
+            '--linebreak--,tx_bootstrap_header_additional_styles,--linebreak--,tx_bootstrap_header_icon,--linebreak--,tx_bootstrap_header_iconset',
             'after:date'
         );
 

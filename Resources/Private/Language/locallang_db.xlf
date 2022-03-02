@@ -117,6 +117,9 @@
             <trans-unit id="tt_content.tx_bootstrap_header_icon">
                 <source>Icon</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_iconset">
+                <source>Icon-Set</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_text_color">
                 <source>Text color</source>
             </trans-unit>

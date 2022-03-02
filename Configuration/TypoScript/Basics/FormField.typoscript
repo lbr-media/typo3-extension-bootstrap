@@ -332,5 +332,14 @@ plugin.tx_bootstrap.settings.form.element {
         large = mb-6
         extra-large = mb-7
     }
+
+    BootstrapIcons {
+        10 {
+            label = Bootstrap Icons
+            key = bsicons
+            includeCss.10 = ../../fileadmin/bootstrap/assets/bsicon/bootstrap-icons.css
+            includeHtml = ../../fileadmin/bootstrap/assets/bsicon/BootstrapIconsFormField.html
+        }
+    }
 }
 
