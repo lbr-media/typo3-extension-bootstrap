@@ -31,9 +31,15 @@ EOT;
     public static function createOptionTags(array $items, bool $prependEmptyOption = false, string $emptyOptionLabel = ""):array {
         $options = [];
         if ($prependEmptyOption) {
+            if (substr($emptyOptionLabel, 0, 4) === "LLL:") {
+                $label = $GLOBALS['LANG']->sL($emptyOptionLabel);
+            }
             $options[] = '<option value="">' . htmlspecialchars($emptyOptionLabel) . '</option>';
         }
         foreach ($items as $value => $label) {
+            if (substr($label, 0, 4) === "LLL:") {
+                $label = $GLOBALS['LANG']->sL($label);
+            }
             $options[] = '<option value="' . htmlspecialchars((string) $value) . '">' . htmlspecialchars((string) $label) . '</option>';
         }
 

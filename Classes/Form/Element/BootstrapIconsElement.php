@@ -133,12 +133,13 @@ class BootstrapIconsElement extends AbstractFormElement
         // $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
         $closeIcon = $this->iconFactory->getIcon('actions-close', Icon::SIZE_SMALL);
         $nameLabel = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.name');
+        $namePlaceholder = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.name.placeholder');
         $inputHtml .= <<<EOT
 <div class="form-control-inline-element me-2">
     <label for="{$fieldId}-value">{$nameLabel}</label>
     <div class="input-group">
         <span class="input-group-text" id="{$fieldId}-icon-preview">–</span>
-        <input type="text" class="form-control" placeholder="Icon class" id="{$fieldId}-value" readonly>
+        <input type="text" class="form-control" placeholder="{$namePlaceholder}" id="{$fieldId}-value" readonly>
         <span class="input-group-text" id="{$fieldId}-remove" style="cursor:pointer;">{$closeIcon}</span>
     </div>
 </div>

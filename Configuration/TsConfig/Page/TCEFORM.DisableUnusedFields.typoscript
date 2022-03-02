@@ -175,8 +175,8 @@ TCEFORM.tt_content {
 
     # = = appearance = =
     // frame_class.disabled = 1
-    tx_bootstrap_inner_frame_class.disabled = 1
-    tx_bootstrap_additional_styles.disabled = 1
+    // tx_bootstrap_inner_frame_class.disabled = 1
+    // tx_bootstrap_additional_styles.disabled = 1
     // tx_bootstrap_text_color.disabled = 1
     // tx_bootstrap_background_color.disabled = 1
     // space_before_class.disabled = 1

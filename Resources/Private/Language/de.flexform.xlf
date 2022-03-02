@@ -176,12 +176,12 @@
                 <target>Typ</target>
             </trans-unit>
             <trans-unit id="sCAROUSEL.animation.slide">
-                <source>slide</source>
-                <target>slide</target>
+                <source>Slide</source>
+                <target>Slide</target>
             </trans-unit>
             <trans-unit id="sCAROUSEL.animation.fade">
-                <source>fade</source>
-                <target>fade</target>
+                <source>Fade</source>
+                <target>Fade</target>
             </trans-unit>
             <trans-unit id="sCAROUSEL.autoplay">
                 <source>Autoplay</source>
@@ -192,12 +192,12 @@
                 <target>Farbschema</target>
             </trans-unit>
             <trans-unit id="sCAROUSEL.color_scheme.light">
-                <source>light</source>
-                <target>hell</target>
+                <source>Light</source>
+                <target>Hell</target>
             </trans-unit>
             <trans-unit id="sCAROUSEL.color_scheme.dark">
-                <source>dark</source>
-                <target>dunkel</target>
+                <source>Dark</source>
+                <target>Dunkel</target>
             </trans-unit>
             <trans-unit id="sCAROUSEL.controls">
                 <source>Transport-Buttons left and right</source>
@@ -245,24 +245,24 @@
                 <target>Nur bei Layout 'Standard' und 'Buttons horizontal'.</target>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.default">
-                <source>left</source>
-                <target>links</target>
+                <source>Left</source>
+                <target>Links</target>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.justify-content-center">
-                <source>centered</source>
-                <target>zentriert</target>
+                <source>Centered</source>
+                <target>Zentriert</target>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.justify-content-end">
-                <source>right</source>
-                <target>rechts</target>
+                <source>Right</source>
+                <target>Rechts</target>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.nav-fill">
-                <source>divided with the same spacing</source>
-                <target>aufgeteilt mit selben Zwischenraum</target>
+                <source>Divided with the same spacing</source>
+                <target>Aufgeteilt mit selben Zwischenraum</target>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.nav-justified">
-                <source>divided with the same button width</source>
-                <target>aufgeteilt mit selber Button-Breite</target>
+                <source>Divided with the same button width</source>
+                <target>Aufgeteilt mit selber Button-Breite</target>
             </trans-unit>
 
             <!--
@@ -362,11 +362,11 @@
                 <target>Auf großen Bildschirmen. Auf kleinen Bildschirmen kommt immer erst der Text und dann das Bild.</target>
             </trans-unit>
             <trans-unit id="textimage.order.image_text">
-                <source>image left text right</source>
+                <source>Image left text right</source>
                 <target>Bild links Text rechts</target>
             </trans-unit>
             <trans-unit id="textimage.order.text_image">
-                <source>text left image right</source>
+                <source>Text left image right</source>
                 <target>Text links Bild rechts</target>
             </trans-unit>
 
@@ -392,12 +392,12 @@
                 <target>Standard-Reihenfolge (und tatsächliche Reihenfolge im Quellcode)</target>
             </trans-unit>
             <trans-unit id="textmedia.general.order.text_media">
-                <source>first text then media</source>
-                <target>erst Text dann Medien</target>
+                <source>First text then media</source>
+                <target>Erst Text dann Medien</target>
             </trans-unit>
             <trans-unit id="textmedia.general.order.media_text">
-                <source>first media then text</source>
-                <target>erst Medien dann Text</target>
+                <source>First media then text</source>
+                <target>Erst Medien dann Text</target>
             </trans-unit>
             <trans-unit id="textmedia.general.device_order">
                 <source>Device-dependent order (overwrites previous parameter)</source>
@@ -464,20 +464,20 @@
                 <target>Bild-Position</target>
             </trans-unit>
             <trans-unit id="image_position.start">
-                <source>left</source>
-                <target>links</target>
+                <source>Left</source>
+                <target>Links</target>
             </trans-unit>
             <trans-unit id="image_position.end">
-                <source>right</source>
-                <target>rechts</target>
+                <source>Right</source>
+                <target>Rechts</target>
             </trans-unit>
             <trans-unit id="image_position.top">
-                <source>top</source>
-                <target>oben</target>
+                <source>Top</source>
+                <target>Oben</target>
             </trans-unit>
             <trans-unit id="image_position.bottom">
-                <source>bottom</source>
-                <target>unten</target>
+                <source>Bottom</source>
+                <target>Unten</target>
             </trans-unit>
             <trans-unit id="bg_color">
                 <source>Background color</source>
@@ -508,44 +508,44 @@
                 <target>Ausrichtung: Text</target>
             </trans-unit>
             <trans-unit id="text_align.top">
-                <source>top</source>
-                <target>oben</target>
+                <source>Top</source>
+                <target>Oben</target>
             </trans-unit>
             <trans-unit id="text_align.bottom">
-                <source>bottom</source>
-                <target>unten</target>
+                <source>Bottom</source>
+                <target>Unten</target>
             </trans-unit>
             <trans-unit id="image_align">
                 <source>Alignment: image</source>
                 <target>Ausrichtung: Bild</target>
             </trans-unit>
             <trans-unit id="image_align.top">
-                <source>top</source>
-                <target>oben</target>
+                <source>Top</source>
+                <target>Oben</target>
             </trans-unit>
             <trans-unit id="image_align.bottom">
-                <source>bottom</source>
-                <target>unten</target>
+                <source>Bottom</source>
+                <target>Unten</target>
             </trans-unit>
             <trans-unit id="shadow">
                 <source>Shadow</source>
                 <target>Schatten</target>
             </trans-unit>
             <trans-unit id="shadow.no_shadow">
-                <source>none</source>
-                <target>kein Schatten</target>
+                <source>None</source>
+                <target>Kein Schatten</target>
             </trans-unit>
             <trans-unit id="shadow.shadow-sm">
-                <source>small</source>
-                <target>klein</target>
+                <source>Small</source>
+                <target>Klein</target>
             </trans-unit>
             <trans-unit id="shadow.shadow">
-                <source>normal</source>
-                <target>normal</target>
+                <source>Regular</source>
+                <target>Regulär</target>
             </trans-unit>
             <trans-unit id="shadow.shadow-lg">
-                <source>large</source>
-                <target>groß</target>
+                <source>Large</source>
+                <target>Groß</target>
             </trans-unit>
             <trans-unit id="rounded">
                 <source>Rounded</source>
@@ -617,6 +617,10 @@
                 <source>Name</source>
                 <target>Name</target>
             </trans-unit>
+            <trans-unit id="bootstrapIcons.name.placeholder">
+                <source>Icon name</source>
+                <target>Icon Name</target>
+            </trans-unit>
             <trans-unit id="bootstrapIcons.position">
                 <source>Position</source>
                 <target>Position</target>
@@ -636,6 +640,308 @@
             <trans-unit id="bootstrapIcons.filter.placeholder">
                 <source>Search for icons...</source>
                 <target>Suche nach Icons...</target>
+            </trans-unit>
+
+            <!-- Some labels in EXT:bootstrap/Configuration/TypoScript/Basics/FormField.typoscript -->
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_uppercase">
+                <source>UPPERCASE</source>
+                <target>VERSALIEN</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_transform_none">
+                <source>No transform</source>
+                <target>Keine Transformierung</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_italic">
+                <source>Italic</source>
+                <target>Kursiv</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_del">
+                <source>-line-through-</source>
+                <target>-durchgestrichen-</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_decoration_underline">
+                <source>_underline_</source>
+                <target>_unterstrichen_</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_decoration_none">
+                <source>No text decoration</source>
+                <target>Keine Textdekoration</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.no_space_below">
+                <source>Ko space below</source>
+                <target>Kein Abstand unten</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.more_space_below">
+                <source>More space below</source>
+                <target>Mehr Abstand unten</target>
+            </trans-unit>
+
+            <trans-unit id="FormField.AdditionalStyles.indent_left">
+                <source>Indent left</source>
+                <target>Einzug links</target>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalStyles.indent_right">
+                <source>Indent right</source>
+                <target>Einzug rechts</target>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.space.0">
+                <source>Kein Abstand</source>
+            </trans-unit>
+
+            <trans-unit id="FormField.BootstrapDeviceOrder.text_media">
+                <source>Text - Media</source>
+                <target>Text - Medien</target>
+            </trans-unit>
+            <trans-unit id="FormField.BootstrapDeviceOrder.media_text">
+                <source>Media - Text</source>
+                <target>Medien - Text</target>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.alignment.left">
+                <source>Left</source>
+                <target>Links</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right">
+                <source>Right</source>
+                <target>Rechts</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.center">
+                <source>Center</source>
+                <target>Zentriert</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.between">
+                <source>Divided 1</source>
+                <target>Aufgeteilt 1</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.around">
+                <source>Divided 2</source>
+                <target>Aufgeteilt 2</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.evenly">
+                <source>Evenly</source>
+                <target>Gleichmäßig</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.top">
+                <source>Top</source>
+                <target>Oben</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom">
+                <source>Bottom</source>
+                <target>Unten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.middle">
+                <source>Middle</source>
+                <target>Mittig</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.baseline">
+                <source>Baseline</source>
+                <target>Grundlinie</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.stretch">
+                <source>Stretch</source>
+                <target>Gestreckt</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.auto">
+                <source>Auto</source>
+                <target>Auto</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.all_sides">
+                <source>All sides</source>
+                <target>Alle Seiten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.centered_above_text">
+                <source>Centered above text</source>
+                <target>Zentriert über dem Text</target>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.shadow.shadow-none">
+                <source>No shadow</source>
+                <target>Kein Schatten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.shadow.shadow-sm">
+                <source>Small shadow</source>
+                <target>Kleiner Schatten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.shadow.shadow">
+                <source>Regular shadow</source>
+                <target>Regulärer Schatten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.shadow.shadow-lg">
+                <source>Large shadow</source>
+                <target>Großer Schatten</target>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.rounded.rounded-0.all_edges">
+                <source>All edges: not rounded</source>
+                <target>Alle Ecken: not rounded</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-1.all_edges">
+                <source>All edges: size 1</source>
+                <target>Alle Ecken: Größe 1</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-2.all_edges">
+                <source>All edges: size 2</source>
+                <target>Alle Ecken: Größe 2</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-3.all_edges">
+                <source>All edges: size 3</source>
+                <target>Alle Ecken: Größe 3</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-start">
+                <source>Left</source>
+                <target>Links</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-end">
+                <source>Right</source>
+                <target>Rechts</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-top">
+                <source>Top</source>
+                <target>Oben</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-bottom">
+                <source>Bottom</source>
+                <target>Unten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-circle">
+                <source>Circle</source>
+                <target>Kreis</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-pill">
+                <source>Pill</source>
+                <target>Pille</target>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.color.primary">
+                <source>Primary</source>
+                <target>Primär</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.secondary">
+                <source>Secondary</source>
+                <target>Sekundär</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.success">
+                <source>Success</source>
+                <target>Erfolg</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.danger">
+                <source>Danger</source>
+                <target>Achtung</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.warning">
+                <source>Warning</source>
+                <target>Warnung</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.info">
+                <source>Info</source>
+                <target>Info</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.light">
+                <source>Light</source>
+                <target>Hell</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.dark">
+                <source>Dark</source>
+                <target>Dunkel</target>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.typography.display-1">
+                <source>Display 1</source>
+                <target>Anzeige 1</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-2">
+                <source>Display 2</source>
+                <target>Anzeige 2</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-3">
+                <source>Display 3</source>
+                <target>Anzeige 3</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-4">
+                <source>Display 4</source>
+                <target>Anzeige 4</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-5">
+                <source>Display 5</source>
+                <target>Anzeige 5</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-6">
+                <source>Display 6</source>
+                <target>Anzeige 6</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h1">
+                <source>Headline 1</source>
+                <target>Überschrift 1</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h2">
+                <source>Headline 2</source>
+                <target>Überschrift 2</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h3">
+                <source>Headline 3</source>
+                <target>Überschrift 3</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h4">
+                <source>Headline 4</source>
+                <target>Überschrift 4</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h5">
+                <source>Headline 5</source>
+                <target>Überschrift 5</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h6">
+                <source>Headline 6</source>
+                <target>Überschrift 6</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.lead">
+                <source>Lead</source>
+                <target>größer als Fließtext</target>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.table.table-bordered">
+                <source>Type: border</source>
+                <target>Typ: Rand</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-borderless">
+                <source>Type: borderless</source>
+                <target>Typ: Randlos</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-striped">
+                <source>Type: striped</source>
+                <target>Typ: gestreift</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-sm">
+                <source>Size: smaller</source>
+                <target>Größe: kleiner</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.text-start">
+                <source>Alignment: left</source>
+                <target>Ausrichtung: links</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.text-center">
+                <source>Alignment: center</source>
+                <target>Ausrichtung: zentriert</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.text-end">
+                <source>Alignment: right</source>
+                <target>Ausrichtung: rechts</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.align-top">
+                <source>Alignment: top</source>
+                <target>Ausrichtung: oben</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.align-middle">
+                <source>Alignment: middle</source>
+                <target>Ausrichtung: mittig</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.align-bottom">
+                <source>Alignment: bottom</source>
+                <target>Ausrichtung: unten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-hover">
+                <source>Effect: hover</source>
+                <target>Effekt: hover</target>
             </trans-unit>
 
             <!--

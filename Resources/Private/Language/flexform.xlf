@@ -44,16 +44,16 @@
                 <source>Grid size</source>
             </trans-unit>
             <trans-unit id="sMEDIAITEM.space_y">
-                <source>Spacing: vertical</source>
+                <source>Spacing: Vertical</source>
             </trans-unit>
             <trans-unit id="sMEDIAITEM.space_x">
-                <source>Spacing: horizontal</source>
+                <source>Spacing: Horizontal</source>
             </trans-unit>
             <trans-unit id="sMEDIAITEM.align_items">
-                <source>Alignment: vertical</source>
+                <source>Alignment: Vertical</source>
             </trans-unit>
             <trans-unit id="sMEDIAITEM.justify_content">
-                <source>Alignment: horizontal</source>
+                <source>Alignment: Horizontal</source>
             </trans-unit>
 
             <!--
@@ -70,16 +70,16 @@
                 <source>Grid size</source>
             </trans-unit>
             <trans-unit id="sGRID.space_y">
-                <source>Spacing: vertical</source>
+                <source>Spacing: Vertical</source>
             </trans-unit>
             <trans-unit id="sGRID.space_x">
-                <source>Spacing: horizontal</source>
+                <source>Spacing: Horizontal</source>
             </trans-unit>
             <trans-unit id="sGRID.align_items">
-                <source>Alignment: vertikal</source>
+                <source>Alignment: Vertikal</source>
             </trans-unit>
             <trans-unit id="sGRID.justify_content">
-                <source>Alignment: horizontal</source>
+                <source>Alignment: Horizontal</source>
             </trans-unit>
 
             <!--
@@ -144,10 +144,10 @@
                 <source>Type</source>
             </trans-unit>
             <trans-unit id="sCAROUSEL.animation.slide">
-                <source>slide</source>
+                <source>Slide</source>
             </trans-unit>
             <trans-unit id="sCAROUSEL.animation.fade">
-                <source>fade</source>
+                <source>Fade</source>
             </trans-unit>
             <trans-unit id="sCAROUSEL.autoplay">
                 <source>Autoplay</source>
@@ -156,10 +156,10 @@
                 <source>Color scheme</source>
             </trans-unit>
             <trans-unit id="sCAROUSEL.color_scheme.light">
-                <source>light</source>
+                <source>Light</source>
             </trans-unit>
             <trans-unit id="sCAROUSEL.color_scheme.dark">
-                <source>dark</source>
+                <source>Dark</source>
             </trans-unit>
             <trans-unit id="sCAROUSEL.controls">
                 <source>Transport-Buttons left and right</source>
@@ -197,19 +197,19 @@
                 <source>Only for layout 'Standard' and 'Buttons horizontal'.</source>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.default">
-                <source>left</source>
+                <source>Left</source>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.justify-content-center">
-                <source>centered</source>
+                <source>Centered</source>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.justify-content-end">
-                <source>right</source>
+                <source>Right</source>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.nav-fill">
-                <source>divided with the same spacing</source>
+                <source>Divided with the same spacing</source>
             </trans-unit>
             <trans-unit id="sTABS.nav_orientation.nav-justified">
-                <source>divided with the same button width</source>
+                <source>Divided with the same button width</source>
             </trans-unit>
 
             <!--
@@ -317,10 +317,10 @@
                 <source>Default order (and actual order in source code)</source>
             </trans-unit>
             <trans-unit id="textmedia.general.order.text_media">
-                <source>first text then media</source>
+                <source>First text then media</source>
             </trans-unit>
             <trans-unit id="textmedia.general.order.media_text">
-                <source>first media then text</source>
+                <source>First media then text</source>
             </trans-unit>
             <trans-unit id="textmedia.general.device_order">
                 <source>Device-dependent order (overwrites previous parameter)</source>
@@ -372,16 +372,16 @@
                 <source>Image position</source>
             </trans-unit>
             <trans-unit id="image_position.start">
-                <source>left</source>
+                <source>Left</source>
             </trans-unit>
             <trans-unit id="image_position.end">
-                <source>right</source>
+                <source>Right</source>
             </trans-unit>
             <trans-unit id="image_position.top">
-                <source>top</source>
+                <source>Top</source>
             </trans-unit>
             <trans-unit id="image_position.bottom">
-                <source>bottom</source>
+                <source>Bottom</source>
             </trans-unit>
             <trans-unit id="bg_color">
                 <source>Background color</source>
@@ -405,34 +405,22 @@
                 <source>Alignment: text</source>
             </trans-unit>
             <trans-unit id="text_align.top">
-                <source>top</source>
+                <source>Top</source>
             </trans-unit>
             <trans-unit id="text_align.bottom">
-                <source>bottom</source>
+                <source>Bottom</source>
             </trans-unit>
             <trans-unit id="image_align">
                 <source>Alignment: image</source>
             </trans-unit>
             <trans-unit id="image_align.top">
-                <source>top</source>
+                <source>Top</source>
             </trans-unit>
             <trans-unit id="image_align.bottom">
-                <source>bottom</source>
+                <source>Bottom</source>
             </trans-unit>
             <trans-unit id="shadow">
                 <source>Shadow</source>
-            </trans-unit>
-            <trans-unit id="shadow.no_shadow">
-                <source>none</source>
-            </trans-unit>
-            <trans-unit id="shadow.shadow-sm">
-                <source>small</source>
-            </trans-unit>
-            <trans-unit id="shadow.shadow">
-                <source>normal</source>
-            </trans-unit>
-            <trans-unit id="shadow.shadow-lg">
-                <source>large</source>
             </trans-unit>
             <trans-unit id="rounded">
                 <source>Rounded</source>
@@ -488,6 +476,9 @@
             <trans-unit id="bootstrapIcons.name">
                 <source>Name</source>
             </trans-unit>
+            <trans-unit id="bootstrapIcons.name.placeholder">
+                <source>Icon name</source>
+            </trans-unit>
             <trans-unit id="bootstrapIcons.position">
                 <source>Position</source>
             </trans-unit>
@@ -503,8 +494,236 @@
             <trans-unit id="bootstrapIcons.filter.placeholder">
                 <source>Search for icons...</source>
             </trans-unit>
-            
-            
+
+            <!-- Some labels in EXT:bootstrap/Configuration/TypoScript/Basics/FormField.typoscript -->
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_uppercase">
+                <source>UPPERCASE</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_transform_none">
+                <source>No transform</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_italic">
+                <source>Italic</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_del">
+                <source>-line-through-</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_decoration_underline">
+                <source>_underline_</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.text_decoration_none">
+                <source>No text decoration</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.no_space_below">
+                <source>No space below</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalHeaderStyles.more_space_below">
+                <source>More space below</source>
+            </trans-unit>
+
+            <trans-unit id="FormField.AdditionalStyles.indent_left">
+                <source>Indent left</source>
+            </trans-unit>
+            <trans-unit id="FormField.AdditionalStyles.indent_right">
+                <source>Indent right</source>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.space.0">
+                <source>No space</source>
+            </trans-unit>
+
+            <trans-unit id="FormField.BootstrapDeviceOrder.text_media">
+                <source>Text - Media</source>
+            </trans-unit>
+            <trans-unit id="FormField.BootstrapDeviceOrder.media_text">
+                <source>Media - Text</source>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.alignment.left">
+                <source>Left</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.center">
+                <source>Center</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.between">
+                <source>Divided 1</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.around">
+                <source>Divided 2</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.evenly">
+                <source>Evenly</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.top">
+                <source>Top</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom">
+                <source>Bottom</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.middle">
+                <source>Middle</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.baseline">
+                <source>Baseline</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.stretch">
+                <source>Stretch</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.auto">
+                <source>Auto</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.all_sides">
+                <source>All sides</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.centered_above_text">
+                <source>Centered above text</source>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.shadow.shadow-none">
+                <source>No shadow</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.shadow.shadow-sm">
+                <source>Small shadow</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.shadow.shadow">
+                <source>Regular shadow</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.shadow.shadow-lg">
+                <source>Large shadow</source>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.rounded.rounded-0.all_edges">
+                <source>All edges: not rounded</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-1.all_edges">
+                <source>All edges: size 1</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-2.all_edges">
+                <source>All edges: size 2</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-3.all_edges">
+                <source>All edges: size 3</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-start">
+                <source>Left</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-end">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-top">
+                <source>Top</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-bottom">
+                <source>Bottom</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-circle">
+                <source>Circle</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.rounded.rounded-pill">
+                <source>Pill</source>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.color.primary">
+                <source>Primary</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.secondary">
+                <source>Secondary</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.success">
+                <source>Success</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.danger">
+                <source>Danger</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.warning">
+                <source>Warning</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.info">
+                <source>Info</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.light">
+                <source>Light</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.color.dark">
+                <source>Dark</source>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.typography.display-1">
+                <source>Display 1</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-2">
+                <source>Display 2</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-3">
+                <source>Display 3</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-4">
+                <source>Display 4</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-5">
+                <source>Display 5</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.display-6">
+                <source>Display 6</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h1">
+                <source>Headline 1</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h2">
+                <source>Headline 2</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h3">
+                <source>Headline 3</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h4">
+                <source>Headline 4</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h5">
+                <source>Headline 5</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.h6">
+                <source>Headline 6</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.typography.lead">
+                <source>Lead</source>
+            </trans-unit>
+
+            <trans-unit id="bootstrap.table.table-bordered">
+                <source>Type: Border</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-borderless">
+                <source>Type: Borderless</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-striped">
+                <source>Type: Striped</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-sm">
+                <source>Size: Smaller</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.text-start">
+                <source>Alignment: Left</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.text-center">
+                <source>Alignment: Center</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.text-end">
+                <source>Alignment: Right</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.align-top">
+                <source>Alignment: Top</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.align-middle">
+                <source>Alignment: Middle</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.align-bottom">
+                <source>Alignment: Bottom</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.table.table-hover">
+                <source>Effect: Hover</source>
+            </trans-unit>
 
             <!--
                 Labels for tt_content.[CType].flexform_presets

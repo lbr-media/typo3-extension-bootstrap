@@ -3,9 +3,9 @@ plugin.tx_bootstrap.settings.form.element {
     # Position of the media container in tt_content.CType=bootstrap_textmediafloat
     TextMediaPositions {
         default = 
-        start = links
-        end = rechts
-        none = zentriert über dem Text
+        start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
+        end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
+        none = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.centered_above_text
     }
 
     # Width of the media container in tt_content.CType=bootstrap_textmediafloat
@@ -39,12 +39,12 @@ plugin.tx_bootstrap.settings.form.element {
     # - additionalOuterAttributes {}
     AdditionalStyles {
         10 {
-            label = Einzug links
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalStyles.indent_left
             value = 10
             innerWrap = <div class="container-indent-left">|</div>
         }
         20 {
-            label = Einzug rechts
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalStyles.indent_right
             value = 20
             innerWrap = <div class="container-indent-right">|</div>
         }
@@ -87,42 +87,42 @@ plugin.tx_bootstrap.settings.form.element {
         //     additionalClass = text-uppercase
         // }
         10 {
-            label = VERSALIEN
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.text_uppercase
             value = 10
             additionalClass = text-uppercase
         }
         20 {
-            label = Mischsatz
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.text_transform_none
             value = 20
             additionalClass = text-transform-none
         }
         30 {
-            label = kursiv
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.text_italic
             value = 30
             innerWrap = <em>|</em>
         }
         60 {
-            label = durchgestrichen
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.text_del
             value = 60
             innerWrap = <del>|</del>
         }
         70 {
-            label = unterstrichen
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.text_decoration_underline
             value = 70
             additionalClass = text-decoration-underline
         }
         80 {
-            label = nicht unterstrichen
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.text_decoration_none
             value = 80
             additionalClass = text-decoration-none
         }
         90 {
-            label = kein Abstand unten
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.no_space_below
             value = 90
             additionalClass = mb-0
         }
         100 {
-            label = größerer Abstand unten
+            label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalHeaderStyles.more_space_below
             value = 100
             additionalClass = mb-3 mb-md-4 mb-xl-5
         }
@@ -131,8 +131,8 @@ plugin.tx_bootstrap.settings.form.element {
     # Ordner of text and media for each device in tt_content.CType=bootstrap_textmediagrid
     BootstrapDeviceOrder {
         default = 
-        text_media = Text - Medien
-        media_text = Medien - Text
+        text_media = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.BootstrapDeviceOrder.text_media
+        media_text = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.BootstrapDeviceOrder.media_text
     }
 
     # Selectable column sizes in tt_content.CType=bootstrap_textmediagrid and bootstrap_textmediafloat
@@ -157,43 +157,43 @@ plugin.tx_bootstrap.settings.form.element {
     # Selectable row/flex align classes (horizontal)
     BootstrapJustifyContent {
         default =
-        start = links
-        end = rechts
-        center = zentriert
-        between = aufgeteilt 1
-        around = aufgeteilt 2
+        start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
+        end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
+        center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.center
+        between = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.between
+        around = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.around
     }
 
     # Selectable row/flex align items classes (vertical)
     BootstrapAlignItems {
         default = 
-        start = oben
-        end = unten
-        center = mittig
-        baseline = Grundlinie
-        stretch = gestreckt
+        start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top
+        end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom
+        center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.middle
+        baseline = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.baseline
+        stretch = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.stretch
     }
 
     # Selectable row/flex alignment self classes (horizontal)
     BootstrapAlignContent {
         default =
-        start = links
-        end = rechts
-        center = zentriert
-        between = aufgeteilt 1
-        around = aufgeteilt 2
-        evenly = gleichmäßig
+        start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
+        end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
+        center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.center
+        between = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.between
+        around = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.around
+        evenly = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.evenly
     }
 
     # Selectable row/flex alignment self classes (vertical)
     BootstrapAlignSelf {
         default =
-        auto = auto 
-        start = oben
-        end = unten
-        center = mittig
-        baseline = Grundlinie
-        stretch = gestreckt
+        auto = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.auto 
+        start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top
+        end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom
+        center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.middle
+        baseline = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.baseline
+        stretch = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.stretch
     }
 
     # selectable paddings
@@ -248,7 +248,7 @@ plugin.tx_bootstrap.settings.form.element {
     # selected gutters in row/flex
     BootstrapGridSpace {
         default =
-        0 = kein Abstand
+        0 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.space.0
         1 = 1
         2 = 2
         3 = 3
@@ -267,23 +267,23 @@ plugin.tx_bootstrap.settings.form.element {
 
     BootstrapBorder {
         default = 
-        border = alle Seiten
-        border-start = links
-        border-right = rechts
-        border-top = oben
-        border-end = unten
+        border = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.all_sides
+        border-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
+        border-right = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
+        border-top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top
+        border-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom
     }
 
     BootstrapBorderColor {
         default = 
-        border-primary = Primärfarbe (blau)
-        border-secondary = Sekundärfarbe (grau)
-        border-success = Erfolg (grün)
-        border-danger = Gefahr (rot)
-        border-warning = Warnung (gelb)
-        border-info = Info (dunkeltürkis)
-        border-light = Hell (hellgrau)
-        border-dark = Dunkel (dunkelgrau)
+        border-primary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.primary
+        border-secondary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.secondary
+        border-success = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.success
+        border-danger = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.danger
+        border-warning = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.warning
+        border-info = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.info
+        border-light = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.light
+        border-dark = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.dark
     }
 
     BootstrapBorderWidth {
@@ -298,23 +298,24 @@ plugin.tx_bootstrap.settings.form.element {
 
     BootstrapRounded {
         default = 
-        rounded-0 = alle Ecken: keine Rundug
-        rounded-1 = alle Ecken: Größe 1
-        rounded-2 = alle Ecken: Größe 2
-        rounded-3 = alle Ecken: Größe 3
-        rounded-start = links
-        rounded-end = rechts
-        rounded-top = oben
-        rounded-bottom = unten
-        rounded-circle = Kreis
-        rounded-pill = Pille
+        rounded-0 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-0.all_edges
+        rounded-1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-1.all_edges
+        rounded-2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-2.all_edges
+        rounded-3 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-3.all_edges
+        rounded-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-start
+        rounded-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-end
+        rounded-top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-top
+        rounded-bottom = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-bottom
+        rounded-circle = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-circle
+        rounded-pill = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-pill
     }
 
     BootstrapShadow {
         default = 
-        shadow-sm = kleiner Schatten
-        shadow = normaler Schatten
-        shadow-lg = großer Schatten
+        shadow-none = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.shadow.shadow-none
+        shadow-sm = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.shadow.shadow-sm
+        shadow = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.shadow.shadow
+        shadow-lg = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.shadow.shadow-lg
     }
 
     # Replacements for tt_content.space_before_class and tt_content.space_after_class.
@@ -354,36 +355,37 @@ plugin.tx_bootstrap.settings.form.element {
     }
 
     BootstrapIconPositions {
-        start = links
-        end = rechts
-        top = oben
-        bottom = unten
+        start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
+        end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
+        top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top
+        bottom = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom
     }
 
     BootstrapIconSize {
-        display-1 = Display 1
-        display-2 = Display 2
-        display-3 = Display 3
-        display-4 = Display 4
-        display-5 = Display 5
-        fs-1 = H1
-        fs-2 = H2
-        fs-3 = H3
-        fs-4 = H4
-        fs-5 = H5
-        small = small
-        lead = lead
+        display-1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-1
+        display-2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-2
+        display-3 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-3
+        display-4 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-4
+        display-5 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-5
+        display-6 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-6
+        h1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h1
+        h2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h2
+        h3 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h3
+        h4 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h4
+        h5 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h5
+        h6 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h6
+        lead = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.lead
     }
 
     BootstrapIconColor {
-        text-primary = Primärfarbe (blau)
-        text-secondary = Sekundärfarbe (grau)
-        text-success = Erfolg (grün)
-        text-danger = Gefahr (rot)
-        text-warning = Warnung (gelb)
-        text-info = Info (dunkeltürkis)
-        text-light = Hell (hellgrau)
-        text-dark = Dunkel (dunkelgrau)
+        text-primary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.primary
+        text-secondary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.secondary
+        text-success = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.success
+        text-info = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.danger
+        text-warning = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.warning
+        text-danger = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.info
+        text-light = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.light
+        text-dark = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.dark
     }
 }
 

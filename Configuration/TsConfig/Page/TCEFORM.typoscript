@@ -1,12 +1,12 @@
 lib.bootstrapColors {
-    primary = primary (blau)
-    secondary = secondary (grau)
-    success = success (grün)
-    info = info (hellblau)
-    warning = warning (orange)
-    danger = danger (rot)
-    light = light (hellgrau)
-    dark = dark (dunkelgrau)
+    primary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.primary
+    secondary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.secondary
+    success = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.success
+    info = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.danger
+    warning = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.warning
+    danger = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.info
+    light = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.light
+    dark = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.dark
 }
 
 lib.bootstrapBackgroundColors {
@@ -61,23 +61,19 @@ lib.bootstrapButtonColors {
 }
 
 lib.bootstrapHeaderLayout {
-    display-1 = Display 1
-    display-2 = Display 2
-    display-3 = Display 3
-    display-4 = Display 4
-    display-5 = Display 5
-    display-6 = Display 6
-    h1 = Überschrift 1
-    h2 = Überschrift 2
-    h3 = Überschrift 3
-    h4 = Überschrift 4
-    h5 = Überschrift 5
-    h6 = Überschrift 6
-    lead = Lead
-}
-
-lib.predefinedHeader {
-    20 = Unterstrichen
+    display-1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-1
+    display-2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-2
+    display-3 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-3
+    display-4 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-4
+    display-5 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-5
+    display-6 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-6
+    h1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h1
+    h2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h2
+    h3 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h3
+    h4 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h4
+    h5 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h5
+    h6 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h6
+    lead = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.lead
 }
 
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/Page/TCEFORM.pages.typoscript">

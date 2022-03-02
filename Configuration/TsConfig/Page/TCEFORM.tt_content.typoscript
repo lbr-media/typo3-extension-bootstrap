@@ -42,9 +42,9 @@ TCEFORM.tt_content {
         // disabled = 1
         removeItems = left,center,right
         addItems {
-            text-start = links
-            text-end = rechts
-            text-center = zentriert
+            text-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
+            text-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
+            text-center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.center
         }
     }
 
@@ -79,7 +79,7 @@ TCEFORM.tt_content {
         disabled = 0
         // keepItems = 
         addItems {
-            text-small-center = Text zentriert nur bei schmalen Endgeräten
+            example = Example
         }
     }
 
@@ -113,29 +113,29 @@ TCEFORM.tt_content {
     table_class {
         keepItems = 
         addItems {
-            table-bordered = Typ: Rahmen
-            table-borderless = Typ: Ohne Rahmen
-            table-striped = Typ: gestreift
+            table-bordered = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-bordered
+            table-borderless = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-borderless
+            table-striped = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-striped
 
-            table-sm = Größe: kleiner
+            table-sm = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-sm
 
-            text-start = Ausrichtung: links
-            text-center = Ausrichtung: zentriert
-            text-end = Ausrichtung: rechts
-            align-top = Ausrichtung: oben
-            align-middle = Ausrichtung: mittig
-            align-bottom = Ausrichtung: unten
+            text-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.text-start
+            text-center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.text-center
+            text-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.text-end
+            align-top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.align-top
+            align-middle = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.align-middle
+            align-bottom = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.align-bottom
 
-            table-primary = Farbe: primary (blau)
-            table-secondary = Farbe: secondary (grau)
-            table-success = Farbe: success (grün)
-            table-info = Farbe: info (hellblau)
-            table-warning = Farbe: warning (orange)
-            table-danger = Farbe: danger (rot)
-            table-light = Farbe: light (hellgrau)
-            table-dark = Farbe: dark (dunkelgrau)
+            table-primary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.primary
+            table-secondary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.secondary
+            table-success = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.success
+            table-info = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.danger
+            table-warning = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.warning
+            table-danger = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.info
+            table-light = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.light
+            table-dark = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.dark
 
-            table-hover = Effekt: Hover
+            table-hover = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-hover
         }
     }
 
