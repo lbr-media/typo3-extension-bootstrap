@@ -107,6 +107,7 @@ define(function() {
             });
         }
 
+        // TODO: Make sure the stylesheet was not load before. (maybe register in window or search before adding.)
         loadStylesheet(file) {
             if (this.loadedStylesheets.indexOf(file) > -1) {
                 return;
