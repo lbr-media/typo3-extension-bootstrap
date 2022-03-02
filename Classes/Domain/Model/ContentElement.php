@@ -92,6 +92,11 @@ class ContentElement extends AbstractEntity
     /**
      * @var string
      */
+    public $txBootstrapHeaderIconSet = "";
+
+    /**
+     * @var string
+     */
     public $txBootstrapFlexform = "";
 
     public function getFiles():\TYPO3\CMS\Extbase\Persistence\ObjectStorage
@@ -118,6 +123,7 @@ class ContentElement extends AbstractEntity
             'tx_bootstrap_header_color' => $this->txBootstrapHeaderColor,
             'tx_bootstrap_header_additional_styles' => $this->txBootstrapHeaderAdditionalStyles,
             'tx_bootstrap_header_icon' => $this->txBootstrapHeaderIcon,
+            'tx_bootstrap_header_iconset' => $this->txBootstrapHeaderIconSet,
             'tx_bootstrap_flexform' => $this->txBootstrapFlexform,
             'frame_class' => "child-content-element",
             'CType' => "child-content-element",

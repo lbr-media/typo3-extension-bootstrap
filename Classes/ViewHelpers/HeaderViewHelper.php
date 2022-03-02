@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use LBRmedia\Bootstrap\Utility\BootstrapUtility;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Resource\FileReference;
@@ -175,7 +176,25 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
                 $headerIconText->addAttribute('class', 'header-icon__text');
                 $headerIconText->setContent($header['between']);
 
-                $headerIconWrap->setContent($headerIconText->render() . $headerIconGfx->render());
+                $headerIconWrap->setContent($headerIconGfx->render() . $headerIconText->render());
+
+                $header['between'] = $headerIconWrap->render();
+            }
+        } else if ($data['tx_bootstrap_header_iconset']) {
+            $iconSetMarkup = BootstrapUtility::getIconSetMarkup($data['tx_bootstrap_header_iconset']);
+            if ($iconSetMarkup) {
+                $headerIconWrap = new TagBuilder('span');
+                $headerIconWrap->addAttribute('class', 'header-icon');
+
+                $headerIconGfx = new TagBuilder('span');
+                $headerIconGfx->addAttribute('class', 'header-icon__iconset');
+                $headerIconGfx->setContent($iconSetMarkup);
+
+                $headerIconText = new TagBuilder('span');
+                $headerIconText->addAttribute('class', 'header-icon__text');
+                $headerIconText->setContent($header['between']);
+
+                $headerIconWrap->setContent($headerIconGfx->render() . $headerIconText->render());
 
                 $header['between'] = $headerIconWrap->render();
             }

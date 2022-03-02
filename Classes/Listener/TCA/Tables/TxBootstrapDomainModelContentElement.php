@@ -62,6 +62,8 @@ class TxBootstrapDomainModelContentElement implements TablesInterface {
                         tx_bootstrap_header_additional_styles,
                         --linebreak--,
                         tx_bootstrap_header_icon,
+                        --linebreak--,
+                        tx_bootstrap_header_iconset,
                         date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel,
                         --linebreak--,
                         header_link;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel,
@@ -114,6 +116,7 @@ class TxBootstrapDomainModelContentElement implements TablesInterface {
                 'tx_bootstrap_header_color' => isset($GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_color']) ? $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_color'] : null,
                 'tx_bootstrap_header_additional_styles' => isset($GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_additional_styles']) ? $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_additional_styles'] : null,
                 'tx_bootstrap_header_icon' => isset($GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_icon']) ? $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_icon'] : null,
+                'tx_bootstrap_header_iconset' => isset($GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_iconset']) ? $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_header_iconset'] : null,
                 'tx_bootstrap_flexform' => [
                     'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:pi_flexform',
                     'config' => [

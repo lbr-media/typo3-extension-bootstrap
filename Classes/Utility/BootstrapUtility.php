@@ -395,4 +395,18 @@ class BootstrapUtility
 
         return implode(' ', $classes);
     }
+
+    public static function getIconSetMarkup(string $value):string {
+        list($iconSet, $iconValue) = explode(";", $value);
+
+        if (!($iconSet && $iconValue)) {
+            return "";
+        }
+
+        if ($iconSet === "bsicons") {
+            return '<i class="bs ' . $iconValue . '"></i>';
+        }
+
+        return "";
+    }
 }
