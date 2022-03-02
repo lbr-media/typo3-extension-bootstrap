@@ -61,18 +61,11 @@ plugin.tx_bootstrap.settings.form.element {
     # - additionalClass = <headline class="[CLASSES] [ADDITIONAL_CLASS]">[LINK_START][ICON1][TEXT][ICON2][LINK_END]</headline>
     PredefinedHeader {
         10 {
-            label = Normal
+            label = Example
             value = 10
             outerWrap = 
             innerWrap = 
-            additionalClass = h--default
-        }
-        20 {
-            label = Unterstrichen
-            value = 20
-            outerWrap = 
-            innerWrap = 
-            additionalClass = h--line
+            additionalClass = bg-dark text-light p-3
         }
     }
 
@@ -114,13 +107,23 @@ plugin.tx_bootstrap.settings.form.element {
             innerWrap = <del>|</del>
         }
         70 {
-            label = kein Abstand unten
+            label = unterstrichen
             value = 70
-            additionalClass = mb-0
+            additionalClass = text-decoration-underline
         }
         80 {
-            label = größerer Abstand unten
+            label = nicht unterstrichen
             value = 80
+            additionalClass = text-decoration-none
+        }
+        90 {
+            label = kein Abstand unten
+            value = 90
+            additionalClass = mb-0
+        }
+        100 {
+            label = größerer Abstand unten
+            value = 100
             additionalClass = mb-3 mb-md-4 mb-xl-5
         }
     }
