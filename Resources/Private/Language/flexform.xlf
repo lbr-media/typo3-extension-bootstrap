@@ -480,6 +480,26 @@
             <trans-unit id="edge.all">
                 <source>All sides</source>
             </trans-unit>
+
+            <!-- FormElement: bootstrapIcons -->
+            <trans-unit id="bootstrapIcons.iconset">
+                <source>Set</source>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.position">
+                <source>Position</source>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.size">
+                <source>Size</source>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.filter">
+                <source>Filter</source>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.filter.placeholder">
+                <source>Search for icons...</source>
+            </trans-unit>
             
             
 

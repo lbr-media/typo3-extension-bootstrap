@@ -116,7 +116,7 @@ class BootstrapIconsElement extends AbstractFormElement
         // ... iconset type
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId.'-iconset',
-            "Icon-Set",
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.iconset'),
             implode(LF, $options),
             "me-2"
         );
@@ -125,9 +125,10 @@ class BootstrapIconsElement extends AbstractFormElement
         /** @var IconFactor $iconFactory */
         // $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
         $closeIcon = $this->iconFactory->getIcon('actions-close', Icon::SIZE_SMALL);
+        $nameLabel = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.name');
         $inputHtml .= <<<EOT
 <div class="form-control-inline-element me-2">
-    <label for="{$fieldId}-value">Icon-Name</label>
+    <label for="{$fieldId}-value">{$nameLabel}</label>
     <div class="input-group">
         <span class="input-group-text" id="{$fieldId}-icon-preview">–</span>
         <input type="text" class="form-control" placeholder="Icon class" id="{$fieldId}-value" readonly>
@@ -145,7 +146,7 @@ EOT;
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconPositions.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId.'-position',
-                "Position",
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.position'),
                 $positionOptions,
                 "me-2"
             );
@@ -160,17 +161,19 @@ EOT;
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconSize.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId.'-size',
-                "Size",
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.size'),
                 $positionOptions,
                 "me-2"
             );
         }
 
         // create input for filter
+        $filterLabel = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.filter');
+        $filterPlaceholder = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.filter.placeholder');
         $inputHtml .= <<<EOT
 <div class="form-control-inline-element">
-    <label for="{$fieldId}-filter">Filter</label>
-    <input type="search" class="form-control" placeholder="Filter" id="{$fieldId}-filter">
+    <label for="{$fieldId}-filter">{$filterLabel}</label>
+    <input type="search" class="form-control" placeholder="{$filterPlaceholder}" id="{$fieldId}-filter">
 </div>
 EOT;
 

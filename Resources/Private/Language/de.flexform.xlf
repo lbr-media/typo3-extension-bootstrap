@@ -608,6 +608,32 @@
                 <target>Alle Seiten</target>
             </trans-unit>
 
+            <!-- FormElement: bootstrapIcons -->
+            <trans-unit id="bootstrapIcons.iconset">
+                <source>Set</source>
+                <target>Set</target>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.name">
+                <source>Name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.position">
+                <source>Position</source>
+                <target>Position</target>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.size">
+                <source>Size</source>
+                <target>Größe</target>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.filter">
+                <source>Filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="bootstrapIcons.filter.placeholder">
+                <source>Search for icons...</source>
+                <target>Suche nach Icons...</target>
+            </trans-unit>
+
             <!--
                 Labels for tt_content.[CType].flexform_presets
             -->
