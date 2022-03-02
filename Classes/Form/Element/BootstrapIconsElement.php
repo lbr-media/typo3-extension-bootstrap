@@ -110,16 +110,26 @@ class BootstrapIconsElement extends AbstractFormElement
             $configurations[] = $typoScriptService->convertTypoScriptArrayToPlainArray($iconSetConfiguration);
         }
 
+        if (count($configurations) === 0) {
+            throw new RuntimeException("Cannot find any configurations in plugin.tx_bootstrap.settings.form.element.BootstrapIcons in TsSetup!", 1646233004);
+        }
+
         // create html ...
         $inputHtml = "";
         
         // ... iconset type
-        $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-iconset',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.iconset'),
-            implode(LF, $options),
-            "me-2"
-        );
+        if (count($configurations) > 1) {
+            // create select when there are more than one configuration
+            $inputHtml .= FormElementUtility::createInlineSelectTag(
+                $fieldId.'-iconset',
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.iconset'),
+                implode(LF, $options),
+                "me-2"
+            );
+        } else {
+            // create hidden element when there is only one configuration
+            $inputHtml .= '<input type="hidden" id="'.$fieldId.'-iconset" value="'.htmlspecialchars((string) $configurations[0]['key']).'">';
+        }
         
         // create input for current selected icon
         /** @var IconFactor $iconFactory */
