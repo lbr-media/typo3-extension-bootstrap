@@ -135,6 +135,14 @@ Each variant has these properties:
     * `outerWrap` (string)
     * `innerWrap` (string)
     * `additionalClass` (string)
+* _`Icon-Set`_  
+A wizard to select bootstrap icons. These properties are available:
+    * `Set` (select; required; at this time only bootstrap icons)
+    * `Name` (string; readonly with visible selected icon)
+    * `Position` (select)
+    * `Size` (select; the bootstrap font sizes or just inherit)
+    * `Filter` (string; to filter the icons)
+    * `Icon list` (table of all icons in the selected icon set; clicking one selects the icon)
 
 Example:
 ``` TypoScript
