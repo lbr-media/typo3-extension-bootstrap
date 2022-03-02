@@ -95,6 +95,7 @@ class Columns
                 'config' => [
                     'type' => 'user',
                     'renderType' => 'bootstrapIcons',
+                    'renderIconPosition' => true,
                 ],
             ],
             'tx_bootstrap_text_color' => [

@@ -14,10 +14,8 @@ define(function() {
             this.configurations = JSON.parse(configurations);
             this.currentConfiguration = null;
             this.currentIconSet = "";
-            this.values = [
-                "", // icon set: key
-                "" // selected icon (classname)
-            ];
+            this.currentValue = "";
+            this.currentPosition = "";
             this.loadedStylesheets = [];
             this.icons = [];
 
@@ -29,6 +27,7 @@ define(function() {
             this.filterInput = document.getElementById(id + "-filter"); // filter icons
             this.container = document.getElementById(id + "-container"); // container with the icons
             this.removeButton = document.getElementById(id + "-remove"); // button to clear value
+            this.positionInput = document.getElementById(id + "-position"); // select with the position
 
             // bind reset/remove current value
             this.removeButton.addEventListener("click", function () {
@@ -43,36 +42,60 @@ define(function() {
                 _t.initIconSet();
             });
 
+            // bind position change
+            if (this.positionInput) {
+                this.positionInput.addEventListener("change", function () {
+                    _t.currentPosition = _t.positionInput.value;
+                    _t.updateValues();
+                });
+            }
+
             this.initValues();
         }
 
         initValues() {
-            if (this.hiddenInput.value) {
-                this.values = this.hiddenInput.value.split(";");
-            }
+            const values = this.hiddenInput.value ? this.hiddenInput.value.split(";") : ["", "", ""];
+            
+
+            this.currentIconSet = typeof values[0] === "string" && values[0] ? values[0] : "";
+            this.currentValue = typeof values[1] === "string" && values[1] ? values[1] : "";
+            this.currentPosition = typeof values[2] === "string" && values[2] ? values[2] : "";
 
             // process icon set
-            if (typeof this.values[0] === "string" && this.values[0]) {
-                // there is an iconset defined
-                this.iconSetInput.value = this.values[0];
-                this.currentIconSet = this.values[0];
-            } else {
-                // there is no iconset defined. Try to get the first set.
+            if (!this.currentIconSet) {
+                // there is no icon set defined. Try to get the first set.
                 if (typeof this.configurations[0].key === "string") {
                     this.currentIconSet = this.configurations[0].key;
                     this.iconSetInput.value = this.currentIconSet;
                 }
             }
 
-            if (typeof this.values[1] === "string" && this.values[1]) {
-                // there is an icon defined
-                this.valueInput.value = this.values[1];
+            // process value
+            if (this.currentValue) {
+                // set value in visible field
+                this.valueInput.value = this.currentValue;
 
-                // make icon visible
-                this.createPreviewIcon(this.values[1]);
+                // set preview icon
+                this.createPreviewIcon();
+            }
+
+            // process position
+            if (this.currentPosition && this.positionInput) {
+                this.positionInput.value = this.currentPosition;
             }
 
             this.initIconSet();
+        }
+
+        updateValues() {
+            // set value in visible field
+            this.valueInput.value = this.currentValue;
+
+            // set value for database
+            this.hiddenInput.value = this.currentIconSet + ";" + this.currentValue + ";" + this.currentPosition;
+
+            // set preview icon
+            this.createPreviewIcon();
         }
 
         initCurrentConfiguration() {
@@ -177,14 +200,8 @@ define(function() {
                         iconElements[i].addEventListener("click", function (evt) {
                             const value = this.getAttribute("data-bsicon-value");
                             if (value) {
-                                // set value in visible field
-                                _t.valueInput.value = value;
-
-                                // set icon
-                                _t.createPreviewIcon(value);
-
-                                // set value for database
-                                _t.hiddenInput.value = _t.currentConfiguration.key + ";" + value;
+                                _t.currentValue = value;
+                                _t.updateValues();
                             }
                         });
                     }
@@ -211,24 +228,20 @@ define(function() {
             });
         }
 
-        createPreviewIcon(value) {
-            if (this.currentIconSet && this.currentIconSet === "bsicons") {
-                // set icon
-                var icon = document.createElement("i");
-                icon.setAttribute("class", "bs " + value);
+        createPreviewIcon() {
+            this.preview.innerHTML = "–";
+            
+            if (this.currentValue && this.currentIconSet) {
+                if (this.currentIconSet === "bsicons") {
+                    this.preview.innerHTML = "";
 
-                this.preview.innerHTML = "";
-                this.preview.appendChild(icon);
+                    // set icon
+                    var icon = document.createElement("i");
+                    icon.setAttribute("class", "bs " + this.currentValue);
+
+                    this.preview.appendChild(icon);
+                }
             }
         }
-
-        updateHidden() {
-            this.values = [];
-            for (let i = 0; i < this.selects.length; i++) {
-                this.values.push(this.selects[i].value === "default" ? "" : this.selects[i].value);
-            }
-
-            this.hiddenInput.value = this.values.join(";");
-        };
     }
 });

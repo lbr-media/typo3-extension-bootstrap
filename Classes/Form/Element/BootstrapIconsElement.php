@@ -7,7 +7,7 @@ use LBRmedia\Bootstrap\Utility\FormElementUtility;
 use RuntimeException;
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Imaging\Icon;
-use TYPO3\CMS\Core\Imaging\IconFactory;
+// use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -69,6 +69,8 @@ class BootstrapIconsElement extends AbstractFormElement
             $itemFormElValue = (string) $parameterArray['itemFormElValue'];
         }
 
+        $renderIconPosition = isset($config['renderIconPosition']) && $config['renderIconPosition'] === true ? true : false;
+
         $fieldWizardResult = $this->renderFieldWizard();
         $fieldWizardHtml = $fieldWizardResult['html'];
         $resultArray = $this->mergeChildReturnIntoExistingResult($resultArray, $fieldWizardResult, false);
@@ -81,7 +83,7 @@ class BootstrapIconsElement extends AbstractFormElement
         $pluginSettings = $flexFormService->getPluginSettings();
 
         if (!isset($pluginSettings['BootstrapIcons.']) || !is_array($pluginSettings['BootstrapIcons.'])) {
-            throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapIcons in TsSetup!', 1646202751);
+            throw new RuntimeException('You have to define icon-set configurations in plugin.tx_bootstrap.settings.form.element.BootstrapIcons in TsSetup!', 1646202751);
         }
 
         
@@ -114,15 +116,16 @@ class BootstrapIconsElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId.'-iconset',
             "Icon-Set",
-            implode(LF, $options)
+            implode(LF, $options),
+            "me-2"
         );
         
         // create input for current selected icon
         /** @var IconFactor $iconFactory */
-        $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
+        // $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
         $closeIcon = $this->iconFactory->getIcon('actions-close', Icon::SIZE_SMALL);
         $inputHtml .= <<<EOT
-<div class="form-control-inline-element" style="margin-left: 0.5rem;">
+<div class="form-control-inline-element me-2">
     <label for="{$fieldId}-value">Icon-Name</label>
     <div class="input-group">
         <span class="input-group-text" id="{$fieldId}-icon-preview">–</span>
@@ -131,9 +134,25 @@ class BootstrapIconsElement extends AbstractFormElement
     </div>
 </div>
 EOT;
+
+        // ... iconset position
+        if ($renderIconPosition) {
+            if (!isset($pluginSettings['BootstrapIconPositions.']) || !is_array($pluginSettings['BootstrapIconPositions.'])) {
+                throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapIconPositions in TsSetup!', 1646218823);
+            }
+
+            $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconPositions.']));
+            $inputHtml .= FormElementUtility::createInlineSelectTag(
+                $fieldId.'-position',
+                "Position",
+                $positionOptions,
+                "me-2"
+            );
+        }
+
         // create input for filter
         $inputHtml .= <<<EOT
-<div class="form-control-inline-element" style="margin-left: 0.5rem;">
+<div class="form-control-inline-element">
     <label for="{$fieldId}-filter">Filter</label>
     <input type="search" class="form-control" placeholder="Filter" id="{$fieldId}-filter">
 </div>

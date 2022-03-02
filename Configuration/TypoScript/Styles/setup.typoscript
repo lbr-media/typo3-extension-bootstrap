@@ -145,4 +145,52 @@ plugin.tx_bootstrap._CSS_DEFAULT_STYLE (
         .float-size-xxl-11 { width: var(--float-size-11); }
         .float-size-xxl-12 { width: var(--float-size-12); }
     }
+
+    /*
+    Icon set
+    */
+    :root {
+        --iconset-space-x: 0.5em;
+        --iconset-space-y: 0.2em;
+    }
+
+    .iconset {
+        display: flex;
+    }
+
+    .iconset.iconset-start,
+    .iconset.iconset-end {
+        flex-direction: row;
+    }
+
+    .iconset.iconset-top,
+    .iconset.iconset-bottom {
+        flex-direction: column;
+    }
+
+    .iconset.iconset-end .iconset__icon,
+    .iconset.iconset-bottom .iconset__icon {
+        order: 1;
+    }
+
+    .iconset.iconset-end .iconset__content,
+    .iconset.iconset-bottom .iconset__content {
+        order: 0;
+    }
+
+    .iconset.iconset-top .iconset__icon {
+        margin-bottom: var(--iconset-space-y);
+    }
+
+    .iconset.iconset-start .iconset__icon {
+        margin-right: var(--iconset-space-x);
+    }
+
+    .iconset.iconset-end .iconset__icon {
+        margin-left: var(--iconset-space-x);
+    }
+
+    .iconset.iconset-bottom .iconset__icon {
+        margin-top: var(--iconset-space-y);
+    }
 )

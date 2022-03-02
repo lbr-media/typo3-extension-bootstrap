@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Utility;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
+
 /**
  * Class to get some css classes from flexform values.
  * Used in bootstrap mode.
@@ -408,5 +410,61 @@ class BootstrapUtility
         }
 
         return "";
+    }
+
+    public static function getIconSetPositionClass(string $value):string {
+        list($iconSet, $iconValue, $position) = explode(";", $value);
+
+        if ($position) {
+            return "iconset-" . $position;
+        }
+
+        return "";
+    }
+
+    /**
+     * Renders something like this:
+     * <span class="iconset iconset-{position}>
+     *      <span class="iconset__icon">
+     *          <i class="bs {iconclass}"></i>
+     *      </span>
+     *      <span class="iconset__content">
+     *          $content
+     *      </span>
+     * </span>
+     * 
+     * @param string $value {iconset};{iconclass};{position}
+     * @param string $content
+     * @return string
+     */
+    public static function renderIconSet(string $value, string $content):string {
+        list($iconSet, $iconValue, $position) = array_merge(explode(";", $value), ["", "", ""]);
+
+        if (!($iconSet && $iconValue)) {
+            return $content;
+        }
+
+        if ($iconSet === "bsicons") {
+            $iconMarkup = '<i class="bs ' . $iconValue . '"></i>';
+        }
+
+        if (!$iconMarkup) {
+            return $content;
+        }
+
+        $iconWrap = new TagBuilder('span');
+        $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : ""));
+
+        $iconGfx = new TagBuilder('span');
+        $iconGfx->addAttribute('class', 'iconset__icon');
+        $iconGfx->setContent($iconMarkup);
+
+        $iconContent = new TagBuilder('span');
+        $iconContent->addAttribute('class', 'iconset__content');
+        $iconContent->setContent($content);
+
+        $iconWrap->setContent($iconGfx->render() . $iconContent->render());
+
+        return $iconWrap->render();
     }
 }

@@ -12,10 +12,10 @@ class FormElementUtility
     /**
      * Creates a select tag with label and an "inline"-wrapper to get some selects in line.
      */
-    public static function createInlineSelectTag(string $id, string $label, string $options):string {
+    public static function createInlineSelectTag(string $id, string $label, string $options, string $additionalClasses = ""):string {
         $label = htmlspecialchars($label);
         return <<<EOT
-<div class="form-control-inline-element">
+<div class="form-control-inline-element {$additionalClasses}">
     <label for="{$id}">{$label}</label>
     <select class="form-select form-control-adapt" id="{$id}">
         {$options}

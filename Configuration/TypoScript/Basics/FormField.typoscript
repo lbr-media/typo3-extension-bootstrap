@@ -349,5 +349,12 @@ plugin.tx_bootstrap.settings.form.element {
             includeHtml = ../../fileadmin/bootstrap/assets/bsicon/BootstrapIconsFormField.html
         }
     }
+
+    BootstrapIconPositions {
+        start = links
+        end = rechts
+        top = oben
+        bottom = unten
+    }
 }
 

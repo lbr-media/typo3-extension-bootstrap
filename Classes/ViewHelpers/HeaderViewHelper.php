@@ -181,23 +181,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
                 $header['between'] = $headerIconWrap->render();
             }
         } else if ($data['tx_bootstrap_header_iconset']) {
-            $iconSetMarkup = BootstrapUtility::getIconSetMarkup($data['tx_bootstrap_header_iconset']);
-            if ($iconSetMarkup) {
-                $headerIconWrap = new TagBuilder('span');
-                $headerIconWrap->addAttribute('class', 'header-icon');
-
-                $headerIconGfx = new TagBuilder('span');
-                $headerIconGfx->addAttribute('class', 'header-icon__iconset');
-                $headerIconGfx->setContent($iconSetMarkup);
-
-                $headerIconText = new TagBuilder('span');
-                $headerIconText->addAttribute('class', 'header-icon__text');
-                $headerIconText->setContent($header['between']);
-
-                $headerIconWrap->setContent($headerIconGfx->render() . $headerIconText->render());
-
-                $header['between'] = $headerIconWrap->render();
-            }
+            $header['between'] = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], $header['between']);
         }
 
         // get default classes
