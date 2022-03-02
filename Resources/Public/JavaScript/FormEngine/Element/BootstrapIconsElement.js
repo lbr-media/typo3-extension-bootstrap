@@ -13,11 +13,14 @@ define(function() {
             let _t = this;
             this.configurations = JSON.parse(configurations);
             this.currentConfiguration = null;
+            this.icons = [];
+
+            // values
             this.currentIconSet = "";
             this.currentValue = "";
             this.currentPosition = "";
-            this.loadedStylesheets = [];
-            this.icons = [];
+            this.currentSize = "";
+            
 
             // get elements
             this.hiddenInput = document.getElementById(id + "-hidden"); // the value "iconset;classname"
@@ -28,6 +31,7 @@ define(function() {
             this.container = document.getElementById(id + "-container"); // container with the icons
             this.removeButton = document.getElementById(id + "-remove"); // button to clear value
             this.positionInput = document.getElementById(id + "-position"); // select with the position
+            this.sizeInput = document.getElementById(id + "-size"); // select with the sizes
 
             // bind reset/remove current value
             this.removeButton.addEventListener("click", function () {
@@ -50,16 +54,24 @@ define(function() {
                 });
             }
 
+            // bind size change
+            if (this.sizeInput) {
+                this.sizeInput.addEventListener("change", function () {
+                    _t.currentSize = _t.sizeInput.value;
+                    _t.updateValues();
+                });
+            }
+
             this.initValues();
         }
 
         initValues() {
-            const values = this.hiddenInput.value ? this.hiddenInput.value.split(";") : ["", "", ""];
-            
+            const values = this.hiddenInput.value ? this.hiddenInput.value.split(";") : ["", "", "", ""];
 
             this.currentIconSet = typeof values[0] === "string" && values[0] ? values[0] : "";
             this.currentValue = typeof values[1] === "string" && values[1] ? values[1] : "";
             this.currentPosition = typeof values[2] === "string" && values[2] ? values[2] : "";
+            this.currentSize = typeof values[3] === "string" && values[3] ? values[3] : "";
 
             // process icon set
             if (!this.currentIconSet) {
@@ -84,6 +96,11 @@ define(function() {
                 this.positionInput.value = this.currentPosition;
             }
 
+            // process position
+            if (this.currentSize && this.sizeInput) {
+                this.sizeInput.value = this.currentSize;
+            }
+
             this.initIconSet();
         }
 
@@ -92,7 +109,7 @@ define(function() {
             this.valueInput.value = this.currentValue;
 
             // set value for database
-            this.hiddenInput.value = this.currentIconSet + ";" + this.currentValue + ";" + this.currentPosition;
+            this.hiddenInput.value = this.currentIconSet + ";" + this.currentValue + ";" + this.currentPosition + ";" + this.currentSize;
 
             // set preview icon
             this.createPreviewIcon();
@@ -130,13 +147,13 @@ define(function() {
             });
         }
 
-        // TODO: Make sure the stylesheet was not load before. (maybe register in window or search before adding.)
         loadStylesheet(file) {
-            if (this.loadedStylesheets.indexOf(file) > -1) {
-                return;
+            const allLinkElements = document.querySelectorAll("link");
+            for (let i = 0; i < allLinkElements.length; i++) {
+                if (allLinkElements[i].hasAttribute("href") && allLinkElements[i].getAttribute("href") === file) {
+                    return;
+                }
             }
-
-            this.loadedStylesheets.push(file);
 
             let link = document.createElement("link");
             link.href = file;

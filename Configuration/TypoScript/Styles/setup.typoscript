@@ -158,9 +158,14 @@ plugin.tx_bootstrap._CSS_DEFAULT_STYLE (
         display: flex;
     }
 
+    .iconset__icon {
+        line-height: 1 !important;
+    }
+
     .iconset.iconset-start,
     .iconset.iconset-end {
         flex-direction: row;
+        align-items: center;
     }
 
     .iconset.iconset-top,

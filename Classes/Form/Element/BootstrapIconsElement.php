@@ -70,6 +70,7 @@ class BootstrapIconsElement extends AbstractFormElement
         }
 
         $renderIconPosition = isset($config['renderIconPosition']) && $config['renderIconPosition'] === true ? true : false;
+        $renderIconSize = isset($config['renderIconSize']) && $config['renderIconSize'] === true ? true : false;
 
         $fieldWizardResult = $this->renderFieldWizard();
         $fieldWizardHtml = $fieldWizardResult['html'];
@@ -141,10 +142,25 @@ EOT;
                 throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapIconPositions in TsSetup!', 1646218823);
             }
 
-            $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconPositions.']));
+            $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconPositions.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId.'-position',
                 "Position",
+                $positionOptions,
+                "me-2"
+            );
+        }
+
+        // ... iconset size
+        if ($renderIconPosition) {
+            if (!isset($pluginSettings['BootstrapIconSize.']) || !is_array($pluginSettings['BootstrapIconSize.'])) {
+                throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapIconSize in TsSetup!', 1646218824);
+            }
+
+            $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconSize.'], true));
+            $inputHtml .= FormElementUtility::createInlineSelectTag(
+                $fieldId.'-size',
+                "Size",
                 $positionOptions,
                 "me-2"
             );

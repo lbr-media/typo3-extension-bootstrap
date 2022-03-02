@@ -28,8 +28,11 @@ EOT;
         return '<input type="hidden" name="'.htmlspecialchars($name).'" value="'.trim(htmlspecialchars($value)).'" id="'.$id.'" />';
     }
 
-    public static function createOptionTags(array $items):array {
+    public static function createOptionTags(array $items, bool $prependEmptyOption = false, string $emptyOptionLabel = ""):array {
         $options = [];
+        if ($prependEmptyOption) {
+            $options[] = '<option value="">' . htmlspecialchars($emptyOptionLabel) . '</option>';
+        }
         foreach ($items as $value => $label) {
             $options[] = '<option value="' . htmlspecialchars((string) $value) . '">' . htmlspecialchars((string) $label) . '</option>';
         }

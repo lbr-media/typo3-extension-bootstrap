@@ -413,7 +413,7 @@ class BootstrapUtility
     }
 
     public static function getIconSetPositionClass(string $value):string {
-        list($iconSet, $iconValue, $position) = explode(";", $value);
+        list(, , $position) = array_merge(explode(";", $value), ["", "", ""]);
 
         if ($position) {
             return "iconset-" . $position;
@@ -422,10 +422,20 @@ class BootstrapUtility
         return "";
     }
 
+    public static function getIconSetSizeClass(string $value):string {
+        list(, , , $size) = array_merge(explode(";", $value), ["", "", "", ""]);
+
+        if ($size) {
+            return $size;
+        }
+
+        return "";
+    }
+
     /**
      * Renders something like this:
      * <span class="iconset iconset-{position}>
-     *      <span class="iconset__icon">
+     *      <span class="iconset__icon {sizeclass}">
      *          <i class="bs {iconclass}"></i>
      *      </span>
      *      <span class="iconset__content">
@@ -433,12 +443,12 @@ class BootstrapUtility
      *      </span>
      * </span>
      * 
-     * @param string $value {iconset};{iconclass};{position}
+     * @param string $value {iconset};{iconclass};{position};{sizeclass}
      * @param string $content
      * @return string
      */
     public static function renderIconSet(string $value, string $content):string {
-        list($iconSet, $iconValue, $position) = array_merge(explode(";", $value), ["", "", ""]);
+        list($iconSet, $iconValue, $position, $size) = array_merge(explode(";", $value), ["", "", "", ""]);
 
         if (!($iconSet && $iconValue)) {
             return $content;
@@ -456,7 +466,7 @@ class BootstrapUtility
         $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : ""));
 
         $iconGfx = new TagBuilder('span');
-        $iconGfx->addAttribute('class', 'iconset__icon');
+        $iconGfx->addAttribute('class', 'iconset__icon' . ($size ? ' ' . $size : ""));
         $iconGfx->setContent($iconMarkup);
 
         $iconContent = new TagBuilder('span');

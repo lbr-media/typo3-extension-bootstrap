@@ -356,5 +356,20 @@ plugin.tx_bootstrap.settings.form.element {
         top = oben
         bottom = unten
     }
+
+    BootstrapIconSize {
+        display-1 = Display 1
+        display-2 = Display 2
+        display-3 = Display 3
+        display-4 = Display 4
+        display-5 = Display 5
+        fs-1 = H1
+        fs-2 = H2
+        fs-3 = H3
+        fs-4 = H4
+        fs-5 = H5
+        small = small
+        lead = lead
+    }
 }
 
