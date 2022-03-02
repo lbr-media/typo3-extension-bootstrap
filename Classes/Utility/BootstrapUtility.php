@@ -432,6 +432,16 @@ class BootstrapUtility
         return "";
     }
 
+    public static function getIconSetColorClass(string $value):string {
+        list(, , , , $color) = array_merge(explode(";", $value), ["", "", "", "", ""]);
+
+        if ($color) {
+            return $color;
+        }
+
+        return "";
+    }
+
     /**
      * Renders something like this:
      * <span class="iconset iconset-{position}>
@@ -448,7 +458,7 @@ class BootstrapUtility
      * @return string
      */
     public static function renderIconSet(string $value, string $content):string {
-        list($iconSet, $iconValue, $position, $size) = array_merge(explode(";", $value), ["", "", "", ""]);
+        list($iconSet, $iconValue, $position, $size, $color) = array_merge(explode(";", $value), ["", "", "", "", ""]);
 
         if (!($iconSet && $iconValue)) {
             return $content;
@@ -466,7 +476,7 @@ class BootstrapUtility
         $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : ""));
 
         $iconGfx = new TagBuilder('span');
-        $iconGfx->addAttribute('class', 'iconset__icon' . ($size ? ' ' . $size : ""));
+        $iconGfx->addAttribute('class', 'iconset__icon' . ($size ? ' ' . $size : "") . ($color ? ' ' . $color : ""));
         $iconGfx->setContent($iconMarkup);
 
         $iconContent = new TagBuilder('span');

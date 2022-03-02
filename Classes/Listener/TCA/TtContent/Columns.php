@@ -97,6 +97,7 @@ class Columns
                     'renderType' => 'bootstrapIcons',
                     'renderIconPosition' => true,
                     'renderIconSize' => true,
+                    'renderIconColor' => true,
                 ],
             ],
             'tx_bootstrap_text_color' => [

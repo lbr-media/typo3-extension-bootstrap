@@ -69,9 +69,6 @@ class BootstrapIconsElement extends AbstractFormElement
             $itemFormElValue = (string) $parameterArray['itemFormElValue'];
         }
 
-        $renderIconPosition = isset($config['renderIconPosition']) && $config['renderIconPosition'] === true ? true : false;
-        $renderIconSize = isset($config['renderIconSize']) && $config['renderIconSize'] === true ? true : false;
-
         $fieldWizardResult = $this->renderFieldWizard();
         $fieldWizardHtml = $fieldWizardResult['html'];
         $resultArray = $this->mergeChildReturnIntoExistingResult($resultArray, $fieldWizardResult, false);
@@ -148,7 +145,7 @@ class BootstrapIconsElement extends AbstractFormElement
 EOT;
 
         // ... iconset position
-        if ($renderIconPosition) {
+        if (isset($config['renderIconPosition']) && $config['renderIconPosition']) {
             if (!isset($pluginSettings['BootstrapIconPositions.']) || !is_array($pluginSettings['BootstrapIconPositions.'])) {
                 throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapIconPositions in TsSetup!', 1646218823);
             }
@@ -163,7 +160,7 @@ EOT;
         }
 
         // ... iconset size
-        if ($renderIconPosition) {
+        if (isset($config['renderIconSize']) && $config['renderIconSize']) {
             if (!isset($pluginSettings['BootstrapIconSize.']) || !is_array($pluginSettings['BootstrapIconSize.'])) {
                 throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapIconSize in TsSetup!', 1646218824);
             }
@@ -172,6 +169,21 @@ EOT;
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId.'-size',
                 $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.size'),
+                $positionOptions,
+                "me-2"
+            );
+        }
+
+        // ... iconset color
+        if (isset($config['renderIconColor']) && $config['renderIconColor']) {
+            if (!isset($pluginSettings['BootstrapIconColor.']) || !is_array($pluginSettings['BootstrapIconColor.'])) {
+                throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.BootstrapIconColor in TsSetup!', 1646233527);
+            }
+
+            $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconColor.'], true));
+            $inputHtml .= FormElementUtility::createInlineSelectTag(
+                $fieldId.'-color',
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.color'),
                 $positionOptions,
                 "me-2"
             );
@@ -189,7 +201,7 @@ EOT;
 
         // create container for selection
         $inputHtml .= <<<EOT
-<div class="form-group" id="{$fieldId}-container" style="max-height: 28em; overflow: auto; margin-top: 0.5rem;">
+<div class="form-group" id="{$fieldId}-container" style="max-height: 20em; overflow: auto; margin-top: 0.5rem;">
     container
 </div>
 EOT;

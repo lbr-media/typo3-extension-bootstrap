@@ -494,6 +494,9 @@
             <trans-unit id="bootstrapIcons.size">
                 <source>Size</source>
             </trans-unit>
+            <trans-unit id="bootstrapIcons.color">
+                <source>Color</source>
+            </trans-unit>
             <trans-unit id="bootstrapIcons.filter">
                 <source>Filter</source>
             </trans-unit>

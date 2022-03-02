@@ -6,7 +6,7 @@ define(function() {
         
         /**
          * @param string id
-         * @param string configurations JSON string with configurations arrays from plugin.tx_bootstrap.settings.form.element.BootstrapIcons
+         * @param string configurations JSON string with configuration arrays from plugin.tx_bootstrap.settings.form.element.BootstrapIcons
          */
         constructor(id, configurations)
         {
@@ -20,44 +20,54 @@ define(function() {
             this.currentValue = "";
             this.currentPosition = "";
             this.currentSize = "";
-            
+            this.currentColor = "";
 
-            // get elements
-            this.hiddenInput = document.getElementById(id + "-hidden"); // the value "iconset;classname"
-            this.iconSetInput = document.getElementById(id + "-iconset"); // select iconset
-            this.valueInput = document.getElementById(id + "-value"); // classname
-            this.preview = document.getElementById(id + "-icon-preview"); // contaiber for preview item
-            this.filterInput = document.getElementById(id + "-filter"); // filter icons
-            this.container = document.getElementById(id + "-container"); // container with the icons
+            // input elements
+            this.userControlFieldValue = document.getElementById(id + "-hidden"); // the value "iconset;classname;position;size;color"
+            this.userControlIconSet = document.getElementById(id + "-iconset"); // select or hidden input for iconSet
+            this.userControlValue = document.getElementById(id + "-value"); // classname readonly
+            this.userControlPosition = document.getElementById(id + "-position"); // select position
+            this.userControlSize = document.getElementById(id + "-size"); // select size
+            this.userControlColor = document.getElementById(id + "-color"); // select color
+            this.userControlFilter = document.getElementById(id + "-filter"); // filter icons
+
+            // other elements
+            this.iconsContainer = document.getElementById(id + "-container"); // container with the icons
+            this.previewContainer = document.getElementById(id + "-icon-preview"); // contaiber for preview item
             this.removeButton = document.getElementById(id + "-remove"); // button to clear value
-            this.positionInput = document.getElementById(id + "-position"); // select with the position
-            this.sizeInput = document.getElementById(id + "-size"); // select with the sizes
 
             // bind reset/remove current value
             this.removeButton.addEventListener("click", function () {
-                _t.preview.innerHTML = "–";
-                _t.valueInput.value = "";
-                _t.hiddenInput.value = _t.currentConfiguration ? _t.currentConfiguration.key = ";" : ";";
+                _t.currentValue = "";
+                _t.updateValues();
             });
 
             // bind iconset change
-            this.iconSetInput.addEventListener("change", function () {
-                _t.currentIconSet = _t.iconSetInput.value;
+            this.userControlIconSet.addEventListener("change", function () {
+                _t.currentIconSet = _t.userControlIconSet.value;
                 _t.initIconSet();
             });
 
             // bind position change
-            if (this.positionInput) {
-                this.positionInput.addEventListener("change", function () {
-                    _t.currentPosition = _t.positionInput.value;
+            if (this.userControlPosition) {
+                this.userControlPosition.addEventListener("change", function () {
+                    _t.currentPosition = _t.userControlPosition.value;
                     _t.updateValues();
                 });
             }
 
             // bind size change
-            if (this.sizeInput) {
-                this.sizeInput.addEventListener("change", function () {
-                    _t.currentSize = _t.sizeInput.value;
+            if (this.userControlSize) {
+                this.userControlSize.addEventListener("change", function () {
+                    _t.currentSize = _t.userControlSize.value;
+                    _t.updateValues();
+                });
+            }
+
+            // bind color change
+            if (this.userControlColor) {
+                this.userControlColor.addEventListener("change", function () {
+                    _t.currentColor = _t.userControlColor.value;
                     _t.updateValues();
                 });
             }
@@ -66,39 +76,45 @@ define(function() {
         }
 
         initValues() {
-            const values = this.hiddenInput.value ? this.hiddenInput.value.split(";") : ["", "", "", ""];
+            const values = this.userControlFieldValue.value ? this.userControlFieldValue.value.split(";") : ["", "", "", "", ""];
 
-            this.currentIconSet = typeof values[0] === "string" && values[0] ? values[0] : "";
-            this.currentValue = typeof values[1] === "string" && values[1] ? values[1] : "";
-            this.currentPosition = typeof values[2] === "string" && values[2] ? values[2] : "";
-            this.currentSize = typeof values[3] === "string" && values[3] ? values[3] : "";
+            this.currentIconSet = typeof values[0] === "string" && values[0] !== "default" ? values[0] : "";
+            this.currentValue = typeof values[1] === "string" && values[1] !== "default" ? values[1] : "";
+            this.currentPosition = typeof values[2] === "string" && values[2] !== "default" ? values[2] : "";
+            this.currentSize = typeof values[3] === "string" && values[3] !== "default" ? values[3] : "";
+            this.currentColor = typeof values[4] === "string" && values[4] !== "default" ? values[4] : "";
 
             // process icon set
             if (!this.currentIconSet) {
                 // there is no icon set defined. Try to get the first set.
                 if (typeof this.configurations[0].key === "string") {
                     this.currentIconSet = this.configurations[0].key;
-                    this.iconSetInput.value = this.currentIconSet;
+                    this.userControlIconSet.value = this.currentIconSet;
                 }
             }
 
             // process value
             if (this.currentValue) {
                 // set value in visible field
-                this.valueInput.value = this.currentValue;
+                this.userControlValue.value = this.currentValue;
 
                 // set preview icon
                 this.createPreviewIcon();
             }
 
             // process position
-            if (this.currentPosition && this.positionInput) {
-                this.positionInput.value = this.currentPosition;
+            if (this.currentPosition && this.userControlPosition) {
+                this.userControlPosition.value = this.currentPosition;
             }
 
-            // process position
-            if (this.currentSize && this.sizeInput) {
-                this.sizeInput.value = this.currentSize;
+            // process size
+            if (this.currentSize && this.userControlSize) {
+                this.userControlSize.value = this.currentSize;
+            }
+
+            // process color
+            if (this.currentColor && this.userControlColor) {
+                this.userControlColor.value = this.currentColor;
             }
 
             this.initIconSet();
@@ -106,10 +122,10 @@ define(function() {
 
         updateValues() {
             // set value in visible field
-            this.valueInput.value = this.currentValue;
+            this.userControlValue.value = this.currentValue;
 
             // set value for database
-            this.hiddenInput.value = this.currentIconSet + ";" + this.currentValue + ";" + this.currentPosition + ";" + this.currentSize;
+            this.userControlFieldValue.value = this.currentIconSet + ";" + this.currentValue + ";" + this.currentPosition + ";" + this.currentSize + ";" + this.currentColor;
 
             // set preview icon
             this.createPreviewIcon();
@@ -139,10 +155,10 @@ define(function() {
             }
 
             // load html into container
-            this.container.innerHTML = "loading";
+            this.iconsContainer.innerHTML = "loading";
             let _t = this;
             this.loadContainerHtml(this.currentConfiguration.includeHtml).then(function (markup) {
-                _t.container.innerHTML = markup;
+                _t.iconsContainer.innerHTML = markup;
                 _t.initFilter()
             });
         }
@@ -188,7 +204,7 @@ define(function() {
 
             if (this.currentConfiguration.key === "bsicons") {
                 // collect icons
-                let iconElements = this.container.querySelectorAll(".bs-icon");
+                let iconElements = this.iconsContainer.querySelectorAll(".bs-icon");
 
                 // build icons list with search values
                 for (var i = 0; i < iconElements.length; i++){
@@ -225,8 +241,8 @@ define(function() {
                 }
             }
             
-            this.filterInput.addEventListener("keydown", function () {
-                const value = _t.filterInput.value.toLowerCase();
+            this.userControlFilter.addEventListener("keydown", function () {
+                const value = _t.userControlFilter.value.toLowerCase();
                 if (value.trim()) {
                     // filter icons
                     for (let i = 0; i < _t.icons.length; i++) {
@@ -238,7 +254,7 @@ define(function() {
                     }
                 } else {
                     // no search: show all
-                    for (let i = 0; i < icons.length; i++) {
+                    for (let i = 0; i < _t.icons.length; i++) {
                         _t.icons[i].iconElement.style.display = "inline-block";
                     }
                 }
@@ -246,17 +262,17 @@ define(function() {
         }
 
         createPreviewIcon() {
-            this.preview.innerHTML = "–";
+            this.previewContainer.innerHTML = "–";
             
             if (this.currentValue && this.currentIconSet) {
                 if (this.currentIconSet === "bsicons") {
-                    this.preview.innerHTML = "";
+                    this.previewContainer.innerHTML = "";
 
                     // set icon
                     var icon = document.createElement("i");
                     icon.setAttribute("class", "bs " + this.currentValue);
 
-                    this.preview.appendChild(icon);
+                    this.previewContainer.appendChild(icon);
                 }
             }
         }

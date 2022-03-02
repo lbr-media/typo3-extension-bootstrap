@@ -625,6 +625,10 @@
                 <source>Size</source>
                 <target>Größe</target>
             </trans-unit>
+            <trans-unit id="bootstrapIcons.color">
+                <source>Color</source>
+                <target>Farbe</target>
+            </trans-unit>
             <trans-unit id="bootstrapIcons.filter">
                 <source>Filter</source>
                 <target>Filter</target>

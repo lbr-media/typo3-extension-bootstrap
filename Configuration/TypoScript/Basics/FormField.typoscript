@@ -374,5 +374,16 @@ plugin.tx_bootstrap.settings.form.element {
         small = small
         lead = lead
     }
+
+    BootstrapIconColor {
+        text-primary = Primärfarbe (blau)
+        text-secondary = Sekundärfarbe (grau)
+        text-success = Erfolg (grün)
+        text-danger = Gefahr (rot)
+        text-warning = Warnung (gelb)
+        text-info = Info (dunkeltürkis)
+        text-light = Hell (hellgrau)
+        text-dark = Dunkel (dunkelgrau)
+    }
 }
 
