@@ -14,19 +14,23 @@
     max-height: 100%;
     overflow: hidden;
     white-space: nowrap;
+
     &--bottom-left {
         right: auto;
         left: 0;
     }
+
     &--top-left {
         right: auto;
         left: 0;
         top: 0;
     }
+
     &--top-right {
         bottom: auto;
         top: 0;
     }
+
     &:before {
         content: "©";
         margin-right: .25em;

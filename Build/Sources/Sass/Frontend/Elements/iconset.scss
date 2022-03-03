@@ -5,9 +5,11 @@
     --iconset-space-x: .5em;
     --iconset-space-y: .2em;
 }
+
 .iconset {
     display: flex;
 }
+
 .iconset__icon {
     line-height: 1 !important;
     margin-bottom: 0 !important;
