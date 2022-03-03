@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LBRmedia\Bootstrap\Hooks\PageLayoutView;
 
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
@@ -12,7 +14,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ContentPreviewRenderer extends StandardContentPreviewRenderer
 {
-
     /**
      * Render a body for the record
      *
