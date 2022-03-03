@@ -136,7 +136,6 @@ Each variant has these properties:
     * `innerWrap` (string)
     * `additionalClass` (string)
 * _`Icon-Set`_  
-A wizard to select bootstrap icons. These properties are available:
     * `Set` (select; required; at this time only bootstrap icons)
     * `Name` (string; readonly with visible selected icon)
     * `Position` (select; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
@@ -250,7 +249,7 @@ In TypoScript `tt_content.bootstrap_cards.flexform_presets` one or more settings
     * _`Image position`_ (select; one of `above`, `below`, `start`, `end`)
     * _`Background color`_ (select; one of the bg-{color} classes)
     * _`Text color`_ (select; one of the text-{color} classes)
-    * Border:
+    * Border-Options:
         * _`Border edge`_ (select; one of the border-{side} classes)
         * _`Border width`_ (select; one of the border-{size} classes)
         * _`Border color`_ (select; one of the border-{color} classes)
@@ -419,13 +418,12 @@ CType: `bootstrap_alert`
 * _`Text Color`_ (select; one of the text-{color} classes)
 * _`Background color`_ (select; one of the bg-{color} classes)
 * _`Icon-Set`_  
-A wizard to select bootstrap icons. These properties are available:
     * `Set` (select; required; at this time only bootstrap icons)
     * `Name` (string; readonly with visible selected icon)
     * `Position` (select; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
     * `Size` (select; the bootstrap font sizes or just inherit)
     * `Icon Color` (select; one of the text-{color} classes)
-* Border:
+* Border-Options:
     * _`Border edge`_ (select; one of the border-{side} classes)
     * _`Border width`_ (select; one of the border-{size} classes)
     * _`Border color`_ (select; one of the border-{color} classes)
