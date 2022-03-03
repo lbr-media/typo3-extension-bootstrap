@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Service;
 
-use TYPO3\CMS\Extbase\Service\ImageService;
-
 class PictureServiceBootstrap extends PictureService
 {
     const DEVICES = [
@@ -56,7 +54,8 @@ class PictureServiceBootstrap extends PictureService
         'xxl' => null,
     ];
 
-    public function __reset(): self {
+    public function __reset(): self
+    {
         $this->fileReference = null;
         $this->image = null;
         $this->displayWidths = self::DISPLAY_WIDTHS;
@@ -78,25 +77,25 @@ class PictureServiceBootstrap extends PictureService
     public function overwriteDisplayWidthsWithViewHelperArgument(array $displayWidthArgument): self
     {
         foreach ($displayWidthArgument as $device => $percentValue) {
-            if (is_numeric($percentValue) && (float) $percentValue > 0 && (float) $percentValue <= 100) {
+            if (is_numeric($percentValue) && (float)$percentValue > 0 && (float)$percentValue <= 100) {
                 switch ($device) {
                     case 'xs':
-                        $this->setDisplayWidth('xs', self::DISPLAY_WIDTH_XS / 100 * (float) $percentValue);
+                        $this->setDisplayWidth('xs', self::DISPLAY_WIDTH_XS / 100 * (float)$percentValue);
                         break;
                     case 'sm':
-                        $this->setDisplayWidth('sm', self::DISPLAY_WIDTH_SM / 100 * (float) $percentValue);
+                        $this->setDisplayWidth('sm', self::DISPLAY_WIDTH_SM / 100 * (float)$percentValue);
                         break;
                     case 'md':
-                        $this->setDisplayWidth('md', self::DISPLAY_WIDTH_MD / 100 * (float) $percentValue);
+                        $this->setDisplayWidth('md', self::DISPLAY_WIDTH_MD / 100 * (float)$percentValue);
                         break;
                     case 'lg':
-                        $this->setDisplayWidth('lg', self::DISPLAY_WIDTH_LG / 100 * (float) $percentValue);
+                        $this->setDisplayWidth('lg', self::DISPLAY_WIDTH_LG / 100 * (float)$percentValue);
                         break;
                     case 'xl':
-                        $this->setDisplayWidth('xl', self::DISPLAY_WIDTH_XL / 100 * (float) $percentValue);
+                        $this->setDisplayWidth('xl', self::DISPLAY_WIDTH_XL / 100 * (float)$percentValue);
                         break;
                     case 'xxl':
-                        $this->setDisplayWidth('xxl', self::DISPLAY_WIDTH_XXL / 100 * (float) $percentValue);
+                        $this->setDisplayWidth('xxl', self::DISPLAY_WIDTH_XXL / 100 * (float)$percentValue);
                         break;
                 }
             }

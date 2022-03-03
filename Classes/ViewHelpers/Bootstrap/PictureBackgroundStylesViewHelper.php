@@ -7,12 +7,12 @@ namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 use LBRmedia\Bootstrap\Service\PictureServiceBackgroundStyles;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Extbase\Service\ImageService;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
 /**
- * Creates background styles for an image. 
+ * Creates background styles for an image.
  * Uses the cropVariants xs-xxl and creates a style for each media.
  */
 class PictureBackgroundStylesViewHelper extends AbstractViewHelper
@@ -34,13 +34,13 @@ class PictureBackgroundStylesViewHelper extends AbstractViewHelper
     /**
      * @var PictureServiceBackgroundStyles
      */
-    protected $pictureServiceBackgroundStyles = null;
+    protected $pictureServiceBackgroundStyles;
 
     // public function __construct(PictureServiceBackgroundStyles $pictureServiceBackgroundStyles) {
     //     $this->pictureServiceBackgroundStyles = $pictureServiceBackgroundStyles;
     // }
-    public function __construct(ImageService $imageService) {
-
+    public function __construct(ImageService $imageService)
+    {
         $this->pictureServiceBackgroundStyles = GeneralUtility::makeInstance(PictureServiceBackgroundStyles::class, $imageService);
     }
 
@@ -69,7 +69,7 @@ class PictureBackgroundStylesViewHelper extends AbstractViewHelper
 
             if ('inline' === $this->arguments['position']) {
                 // build style tag
-                $styleTag =  new TagBuilder("style");
+                $styleTag =  new TagBuilder('style');
                 $styleTag->forceClosingTag(true);
                 //$styleTag->addAttribute("type", "text/css");
                 $styleTag->addAttribute('scoped', null);
@@ -78,12 +78,11 @@ class PictureBackgroundStylesViewHelper extends AbstractViewHelper
                 $styleTag->setContent("\n" . $styles . "\n");
 
                 return $styleTag->render();
-            } else {
-                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-                $pageRenderer->addCssInlineBlock($this->arguments['id'] . ': background_image', $styles);
-
-                return '';
             }
+            $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+            $pageRenderer->addCssInlineBlock($this->arguments['id'] . ': background_image', $styles);
+
+            return '';
         } catch (\Exception $e) {
             return '<!--' . $e->getMessage() . '-->';
         }

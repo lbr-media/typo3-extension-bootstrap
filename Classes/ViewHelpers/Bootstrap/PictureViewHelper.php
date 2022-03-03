@@ -34,9 +34,10 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
     /**
      * @var PictureServiceBootstrap
      */
-    protected $pictureService = null;
+    protected $pictureService;
 
-    public function __construct(PictureServiceBootstrap $pictureService) {
+    public function __construct(PictureServiceBootstrap $pictureService)
+    {
         $this->pictureService = $pictureService;
         $this->pictureService->__reset();
         parent::__construct();
@@ -100,7 +101,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
              * Check for SVG image
              */
             if ('svg' === strtolower($file->getProperty('extension'))) {
-                $imgTag = new TagBuilder("img");
+                $imgTag = new TagBuilder('img');
                 $imgTag->forceClosingTag(false);
                 $imgTag->addAttribute('src', $file->getPublicUrl());
                 $imgTag->addAttribute('alt', $alt ? $alt : $file->getProperty('alternative'));

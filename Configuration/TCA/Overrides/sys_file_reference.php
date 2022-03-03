@@ -9,7 +9,6 @@ $GLOBALS['TCA']['sys_file_reference']['palettes']['tx_bootstrap_meta'] = [
     'showitem' => 'title,alternative,--linebreak--,description',
 ];
 
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_reference', [
     'tx_bootstrap_header' => [
         'label' => 'Überschrift',

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Domain\Model;
 
-use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
@@ -26,8 +25,7 @@ class AccordionItem extends AbstractEntity
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
      */
-    protected $contentElements = null;
-
+    protected $contentElements;
 
     public function getTitle(): string
     {

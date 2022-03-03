@@ -4,7 +4,7 @@ plugin.tx_bootstrap {
         partialRootPath = EXT:bootstrap/Resources/Private/Partials/
         layoutRootPath = EXT:bootstrap/Resources/Private/Layouts/
     }
-    
+
     no_cache = 0
     concatenateCss = 1
     compressCss = 1
@@ -15,7 +15,7 @@ plugin.tx_bootstrap {
 }
 
 [applicationContext == "Development"]
-plugin.tx_bootstrap {    
+plugin.tx_bootstrap {
     no_cache = 1
     concatenateCss = 0
     compressCss = 0
@@ -35,4 +35,3 @@ styles.content {
         keep = path
     }
 }
-

@@ -14,7 +14,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class FlexFormService implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
-    
+
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_GRID = 'tt_content_bootstrap_textmediagrid';
     const TYPE_TT_CONTENT_BOOTSTRAP_TEXT_MEDIA_FLOAT = 'tt_content_bootstrap_textmediafloat';
     const TYPE_TT_CONTENT_BOOTSTRAP_MEDIA_GRID = 'tt_content_bootstrap_mediagrid';
@@ -35,7 +35,7 @@ class FlexFormService implements LoggerAwareInterface
     /**
      * @var array
      */
-    protected $pluginSettings = null;
+    protected $pluginSettings;
 
     /**
      * @return ConfigurationManager
@@ -74,33 +74,33 @@ class FlexFormService implements LoggerAwareInterface
      */
     protected static function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '', $logger = null)
     {
-        $parts = explode(".", $path);
+        $parts = explode('.', $path);
         foreach ($parts as $part) {
             if (isset($data[$part])) {
                 $data = $data[$part];
             } else {
                 if ($logger) {
-                    $logger->error("Cannot get path in flexform data: ".$path);
+                    $logger->error('Cannot get path in flexform data: ' . $path);
                 }
                 return $defaultValue;
             }
         }
 
-        if (trim($data) === "") {
+        if (trim($data) === '') {
             return $defaultValue;
         }
-        
+
         switch ($type) {
             case 'string':
-                return (string) $data;
+                return (string)$data;
                 break;
             case 'boolean':
             case 'bool':
-                return (bool) $data;
+                return (bool)$data;
                 break;
             case 'integer':
             case 'int':
-                return (int) $data;
+                return (int)$data;
                 break;
         }
 
@@ -109,14 +109,15 @@ class FlexFormService implements LoggerAwareInterface
 
     /**
      * Process presets which overrides some/all settings
-     * 
+     *
      * @param string                $CType              Content element to get the presets from. Must be: tt_content.$CTYPE.flexform_presets.
      * @param array                 $data               The XML data array.
      * @param array                 $transformedData    The allready processed data where the presets will be merged and overwritten to.
      * @param string                $path               The path in $data to get the preset keys.
      * @param LoggerAwareInterface  $logger
      */
-    protected static function processPresets(string $CType, array $data, array &$transformedData, string $path = "'data.sPRESETS.lDEF.presets.vDEF'", $logger = null):void {
+    protected static function processPresets(string $CType, array $data, array &$transformedData, string $path = "'data.sPRESETS.lDEF.presets.vDEF'", $logger = null): void
+    {
         $presets = self::getFlexformValueByPath($data, $path, 'string', '', $logger);
         if ($presets) {
             $ts = BootstrapGeneralUtility::getFullTypoScript();
@@ -125,7 +126,7 @@ class FlexFormService implements LoggerAwareInterface
                 $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
                 $plainTS = $typoScriptService->convertTypoScriptArrayToPlainArray($ts['tt_content.'][$CType . '.']['flexform_presets.']);
 
-                $keys = GeneralUtility::trimExplode(",", $presets, true);
+                $keys = GeneralUtility::trimExplode(',', $presets, true);
                 foreach ($keys as $key) {
                     $ts = BootstrapGeneralUtility::getFullTypoScript();
                     if (isset($plainTS[$key]['configuration']) && is_array($plainTS[$key]['configuration'])) {

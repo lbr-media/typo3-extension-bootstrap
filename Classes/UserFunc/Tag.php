@@ -25,9 +25,9 @@ class Tag
     {
         // set some classes always shown in html tag
         $classes = [];
-        $classes[] = 'page-uid-'.$GLOBALS['TSFE']->page['uid'];
-        $classes[] = 'parent-page-uid-'.$GLOBALS['TSFE']->page['pid'];
-        $classes[] = 'language-'.$GLOBALS['TSFE']->page['sys_language_uid'];
+        $classes[] = 'page-uid-' . $GLOBALS['TSFE']->page['uid'];
+        $classes[] = 'parent-page-uid-' . $GLOBALS['TSFE']->page['pid'];
+        $classes[] = 'language-' . $GLOBALS['TSFE']->page['sys_language_uid'];
         if (isset($GLOBALS['TSFE']->page['tx_base_layout_variant']) && $GLOBALS['TSFE']->page['tx_base_layout_variant']) {
             $classes[] = $GLOBALS['TSFE']->page['tx_base_layout_variant'];
         }
@@ -80,10 +80,10 @@ class Tag
     public function tag(string $tagName, string $content = '', array $conf = []): string
     {
         // TODO: implement TagBuilder
-        $tag = '<'.$tagName;
+        $tag = '<' . $tagName;
 
         // set lang attribute
-        $tag .= ' lang="'.(isset($conf['langAttribute']) ? trim($conf['langAttribute']) : $GLOBALS['TSFE']->getLanguage()->getTwoLetterIsoCode()).'"';
+        $tag .= ' lang="' . (isset($conf['langAttribute']) ? trim($conf['langAttribute']) : $GLOBALS['TSFE']->getLanguage()->getTwoLetterIsoCode()) . '"';
 
         // set some classes
         $classes = [];
@@ -97,16 +97,16 @@ class Tag
         }
 
         if (count($classes)) {
-            $tag .= ' class="'.implode(' ', $classes).'"';
+            $tag .= ' class="' . implode(' ', $classes) . '"';
         }
 
         // additional attributes
         if (isset($conf['additionalAttributes.']) && is_array($conf['additionalAttributes.'])) {
             foreach ($conf['additionalAttributes.'] as $attribute => $value) {
-                $tag .= ' '.$attribute.'="'.htmlspecialchars($value).'"';
+                $tag .= ' ' . $attribute . '="' . htmlspecialchars($value) . '"';
             }
         }
 
-        return $tag.'>';
+        return $tag . '>';
     }
 }

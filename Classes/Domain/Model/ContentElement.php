@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Domain\Model;
 
-use Exception;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -18,22 +17,22 @@ class ContentElement extends AbstractEntity
     /**
      * @var string
      */
-    public $header = "";
+    public $header = '';
 
     /**
      * @var string
      */
-    public $headerPosition = "";
+    public $headerPosition = '';
 
     /**
      * @var string
      */
-    public $headerLayout = "";
+    public $headerLayout = '';
 
     /**
      * @var string
      */
-    public $headerLink = "";
+    public $headerLink = '';
 
     /**
      * @var int
@@ -43,68 +42,68 @@ class ContentElement extends AbstractEntity
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
-    public $assets = null;
+    public $assets;
 
     /**
      * @var string
      */
-    public $subheader = "";
+    public $subheader = '';
 
     /**
      * @var string
      */
-    public $bodytext = "";
+    public $bodytext = '';
 
     /**
      * @var string
      */
-    public $spaceBeforeClass = "";
+    public $spaceBeforeClass = '';
 
     /**
      * @var string
      */
-    public $spaceAfterClass = "";
+    public $spaceAfterClass = '';
 
     /**
      * @var string
      */
-    public $txBootstrapHeaderLayout = "";
+    public $txBootstrapHeaderLayout = '';
 
     /**
      * @var string
      */
-    public $txBootstrapHeaderPredefined = "";
+    public $txBootstrapHeaderPredefined = '';
 
     /**
      * @var string
      */
-    public $txBootstrapHeaderColor = "";
+    public $txBootstrapHeaderColor = '';
     /**
      * @var string
      */
-    public $txBootstrapHeaderAdditionalStyles = "";
+    public $txBootstrapHeaderAdditionalStyles = '';
 
     /**
      * @var string
      */
-    public $txBootstrapHeaderIcon = "";
+    public $txBootstrapHeaderIcon = '';
 
     /**
      * @var string
      */
-    public $txBootstrapHeaderIconSet = "";
+    public $txBootstrapHeaderIconSet = '';
 
     /**
      * @var string
      */
-    public $txBootstrapFlexform = "";
+    public $txBootstrapFlexform = '';
 
-    public function getFiles():\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getFiles(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {
         return $this->assets;
     }
 
-    public function getData():array
+    public function getData(): array
     {
         return [
             'uid'=> $this->uid,
@@ -125,18 +124,18 @@ class ContentElement extends AbstractEntity
             'tx_bootstrap_header_icon' => $this->txBootstrapHeaderIcon,
             'tx_bootstrap_header_iconset' => $this->txBootstrapHeaderIconSet,
             'tx_bootstrap_flexform' => $this->txBootstrapFlexform,
-            'frame_class' => "child-content-element",
-            'CType' => "child-content-element",
-            'tx_bootstrap_additional_styles' => "",
-            'tx_bootstrap_inner_frame_class' => "",
-            'tx_bootstrap_text_color' => "",
-            'tx_bootstrap_background_color' => "",
-            'layout' => "",
+            'frame_class' => 'child-content-element',
+            'CType' => 'child-content-element',
+            'tx_bootstrap_additional_styles' => '',
+            'tx_bootstrap_inner_frame_class' => '',
+            'tx_bootstrap_text_color' => '',
+            'tx_bootstrap_background_color' => '',
+            'layout' => '',
         ];
     }
 
-    public function getGrid():array
-    {        
+    public function getGrid(): array
+    {
         /** @var FlexFormServiceBootstrapTextMediaGrid $flexFormService */
         $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapTextMediaGrid::class);
         return $flexFormService->process($this->txBootstrapFlexform);

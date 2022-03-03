@@ -8,9 +8,9 @@ use LBRmedia\Bootstrap\Service\FlexFormService;
 use LBRmedia\Bootstrap\Utility\FormElementUtility;
 use RuntimeException;
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
+use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
-use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 
 /**
  * This is rendered for type=text, renderType=bootstrapDevices.
@@ -63,9 +63,9 @@ class BootstrapDevicesElement extends AbstractFormElement
 
         $parameterArray = $this->data['parameterArray'];
         $config = $parameterArray['fieldConf']['config'];
-        $itemFormElValue = isset($config['default']) ? $config['default'] : "";
+        $itemFormElValue = isset($config['default']) ? $config['default'] : '';
         if (!empty($parameterArray['itemFormElValue'])) {
-            $itemFormElValue = (string) $parameterArray['itemFormElValue'];
+            $itemFormElValue = (string)$parameterArray['itemFormElValue'];
         }
 
         $fieldWizardResult = $this->renderFieldWizard();
@@ -82,41 +82,41 @@ class BootstrapDevicesElement extends AbstractFormElement
         if (!isset($pluginSettings[$config['elementConfiguration'] . '.']) || !is_array($pluginSettings[$config['elementConfiguration'] . '.'])) {
             throw new RuntimeException('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.' . $config['elementConfiguration'] . ' in TsConfig!', 1495437999);
         }
-        
+
         // create html
-        $inputHtml = "";
+        $inputHtml = '';
 
         // create options (equal in each select)
         $options = implode(LF, FormElementUtility::createOptionTags($pluginSettings[$config['elementConfiguration'] . '.']));
-        
+
         // create select tags
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-xs',
+            $fieldId . '-xs',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xs'),
             $options
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-sm',
+            $fieldId . '-sm',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.sm'),
             $options
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-md',
+            $fieldId . '-md',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.md'),
             $options
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-lg',
+            $fieldId . '-lg',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.lg'),
             $options
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-xl',
+            $fieldId . '-xl',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xl'),
             $options
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
-            $fieldId.'-xxl',
+            $fieldId . '-xxl',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xxl'),
             $options
         );
@@ -125,7 +125,7 @@ class BootstrapDevicesElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createHiddenInputTag(
             $this->data['parameterArray']['itemFormElName'],
             $itemFormElValue,
-            $fieldId.'-hidden'
+            $fieldId . '-hidden'
         );
 
         // create final html markup

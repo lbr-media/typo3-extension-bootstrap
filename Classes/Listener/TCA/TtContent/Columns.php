@@ -47,7 +47,7 @@ class Columns
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'itemsProcFunc' => TtContentHeader::class.'->predefinedHeader',
+                    'itemsProcFunc' => TtContentHeader::class . '->predefinedHeader',
                 ],
             ],
             'tx_bootstrap_header_additional_styles' => [
@@ -57,7 +57,7 @@ class Columns
                     'type' => 'select',
                     'renderType' => 'selectMultipleSideBySide',
                     'size' => 3,
-                    'itemsProcFunc' => TtContentHeader::class.'->additionalHeaderStyles',
+                    'itemsProcFunc' => TtContentHeader::class . '->additionalHeaderStyles',
                 ],
             ],
             'tx_bootstrap_header_icon' => [
@@ -129,7 +129,7 @@ class Columns
                     'type' => 'select',
                     'renderType' => 'selectMultipleSideBySide',
                     'size' => 3,
-                    'itemsProcFunc' => TtContent::class.'->additionalStyles',
+                    'itemsProcFunc' => TtContent::class . '->additionalStyles',
                 ],
             ],
             'tx_bootstrap_inner_frame_class' => [

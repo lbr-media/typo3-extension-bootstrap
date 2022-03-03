@@ -21,7 +21,7 @@ class FlexFormServiceBootstrapMediaGrid extends FlexFormService implements FlexF
     public function process(string $xmlString): array
     {
         $xmlArray = $this->getConfiguration($xmlString);
-        
+
         // mediaitem
         $xmlArray['mediaitem']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['mediaitem']['border']);
         $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['mediaitem']['space_x'], $xmlArray['mediaitem']['space_y']);
@@ -52,7 +52,7 @@ class FlexFormServiceBootstrapMediaGrid extends FlexFormService implements FlexF
         $transformedData = [
             'media' => [
                 'masonry_enabled' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger),
-                'masonry_data_masonry_attribute' => "",
+                'masonry_data_masonry_attribute' => '',
             ],
             'mediaitem' => [
                 'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
@@ -79,9 +79,9 @@ class FlexFormServiceBootstrapMediaGrid extends FlexFormService implements FlexF
         self::processPresets('bootstrap_mediagrid', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF', $this->logger);
 
         // set masonry data attribute
-        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled'] 
+        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled']
             ? ' data-masonry=\'{"percentPosition":true}\''
-            : "";
+            : '';
 
         return $transformedData;
     }

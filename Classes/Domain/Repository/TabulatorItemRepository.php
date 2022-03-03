@@ -17,13 +17,13 @@ class TabulatorItemRepository extends Repository
      * @var array
      */
     protected $defaultOrderings = [
-        'sorting' => QueryInterface::ORDER_ASCENDING
+        'sorting' => QueryInterface::ORDER_ASCENDING,
     ];
 
     /**
      * @var Typo3QuerySettings
      */
-    protected $querySettings = null;
+    protected $querySettings;
 
     public function injectQuerySettings(Typo3QuerySettings $querySettings)
     {

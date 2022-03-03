@@ -20,14 +20,14 @@ class PictureService
      *
      * @var FileReference
      */
-    protected $fileReference = null;
+    protected $fileReference;
 
     /**
      * The image to process.
      *
      * @var FileReference
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * @var array
@@ -37,14 +37,16 @@ class PictureService
     /**
      * @var ImageService
      */
-    protected $imageService = null;
+    protected $imageService;
 
-    public function __construct(ImageService $imageService) {
+    public function __construct(ImageService $imageService)
+    {
         $this->imageService = $imageService;
         $this->__reset();
     }
 
-    public function __reset(): self {
+    public function __reset(): self
+    {
         $this->displayWidths = [];
         $this->fileReference = null;
         $this->image = null;
@@ -123,7 +125,7 @@ class PictureService
     public function initializeCropVariantsProcessingInstructions(string $cropVariantToForce = ''): self
     {
         if ($this->fileReference->hasProperty('crop') && $this->fileReference->getProperty('crop')) {
-            $cropVariantCollection = CropVariantCollection::create((string) $this->fileReference->getProperty('crop'));
+            $cropVariantCollection = CropVariantCollection::create((string)$this->fileReference->getProperty('crop'));
             foreach ($this->cropVariantsProcessingInstructions as $device => &$processingInstructions) {
                 $cropArea = $cropVariantCollection->getCropArea($cropVariantToForce ? $cropVariantToForce : $device);
                 $processingInstructions = $cropArea->isEmpty() ? null : $cropArea->makeAbsoluteBasedOnFile($this->fileReference);

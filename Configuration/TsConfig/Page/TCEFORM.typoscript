@@ -19,7 +19,7 @@ lib.bootstrapBackgroundColors {
     bg-light < lib.bootstrapColors.light
     bg-dark < lib.bootstrapColors.dark
 }
-    
+
 lib.bootstrapTextColors {
     text-primary < lib.bootstrapColors.primary
     text-secondary < lib.bootstrapColors.secondary

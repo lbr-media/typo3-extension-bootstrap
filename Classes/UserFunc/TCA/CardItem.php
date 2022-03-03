@@ -18,6 +18,6 @@ class CardItem
         if (isset($record['title']) && $record['title']) {
             $titles[] = $record['title'];
         }
-        $parameters['title'] = implode(", ", $titles);
+        $parameters['title'] = implode(', ', $titles);
     }
 }

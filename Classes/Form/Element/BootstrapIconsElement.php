@@ -64,9 +64,9 @@ class BootstrapIconsElement extends AbstractFormElement
 
         $parameterArray = $this->data['parameterArray'];
         $config = $parameterArray['fieldConf']['config'];
-        $itemFormElValue = isset($config['default']) ? $config['default'] : "";
+        $itemFormElValue = isset($config['default']) ? $config['default'] : '';
         if (!empty($parameterArray['itemFormElValue'])) {
-            $itemFormElValue = (string) $parameterArray['itemFormElValue'];
+            $itemFormElValue = (string)$parameterArray['itemFormElValue'];
         }
 
         $fieldWizardResult = $this->renderFieldWizard();
@@ -84,10 +84,8 @@ class BootstrapIconsElement extends AbstractFormElement
             throw new RuntimeException('You have to define icon-set configurations in plugin.tx_bootstrap.settings.form.element.BootstrapIcons in TsSetup!', 1646202751);
         }
 
-        
-
         // create select tags ...
-        
+
         /** @var TypoScriptService $typoScriptService */
         $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
         $options = [];
@@ -101,33 +99,33 @@ class BootstrapIconsElement extends AbstractFormElement
             }
 
             // create select optione
-            $options[] = '<option value="' . htmlspecialchars((string) $iconSetConfiguration['key']) . '"'.(count($options) === 0 ? ' selected="selected"' : '').'>' . htmlspecialchars((string) $iconSetConfiguration['label']) . '</option>';
+            $options[] = '<option value="' . htmlspecialchars((string)$iconSetConfiguration['key']) . '"' . (count($options) === 0 ? ' selected="selected"' : '') . '>' . htmlspecialchars((string)$iconSetConfiguration['label']) . '</option>';
 
             // get configuration as plain array for JavaScript
             $configurations[] = $typoScriptService->convertTypoScriptArrayToPlainArray($iconSetConfiguration);
         }
 
         if (count($configurations) === 0) {
-            throw new RuntimeException("Cannot find any configurations in plugin.tx_bootstrap.settings.form.element.BootstrapIcons in TsSetup!", 1646233004);
+            throw new RuntimeException('Cannot find any configurations in plugin.tx_bootstrap.settings.form.element.BootstrapIcons in TsSetup!', 1646233004);
         }
 
         // create html ...
-        $inputHtml = "";
-        
+        $inputHtml = '';
+
         // ... iconset type
         if (count($configurations) > 1) {
             // create select when there are more than one configuration
             $inputHtml .= FormElementUtility::createInlineSelectTag(
-                $fieldId.'-iconset',
+                $fieldId . '-iconset',
                 $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.iconset'),
                 implode(LF, $options),
-                "me-2"
+                'me-2'
             );
         } else {
             // create hidden element when there is only one configuration
-            $inputHtml .= '<input type="hidden" id="'.$fieldId.'-iconset" value="'.htmlspecialchars((string) $configurations[0]['key']).'">';
+            $inputHtml .= '<input type="hidden" id="' . $fieldId . '-iconset" value="' . htmlspecialchars((string)$configurations[0]['key']) . '">';
         }
-        
+
         // create input for current selected icon
         /** @var IconFactor $iconFactory */
         // $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
@@ -153,10 +151,10 @@ EOT;
 
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconPositions.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
-                $fieldId.'-position',
+                $fieldId . '-position',
                 $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.position'),
                 $positionOptions,
-                "me-2"
+                'me-2'
             );
         }
 
@@ -168,10 +166,10 @@ EOT;
 
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconSize.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
-                $fieldId.'-size',
+                $fieldId . '-size',
                 $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.size'),
                 $positionOptions,
-                "me-2"
+                'me-2'
             );
         }
 
@@ -183,10 +181,10 @@ EOT;
 
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconColor.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
-                $fieldId.'-color',
+                $fieldId . '-color',
                 $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.color'),
                 $positionOptions,
-                "me-2"
+                'me-2'
             );
         }
 
@@ -211,7 +209,7 @@ EOT;
         $inputHtml .= FormElementUtility::createHiddenInputTag(
             $this->data['parameterArray']['itemFormElName'],
             $itemFormElValue,
-            $fieldId.'-hidden'
+            $fieldId . '-hidden'
         );
 
         // create final html markup

@@ -219,7 +219,7 @@ class BootstrapUtility
 
     /**
      * Generates classes for grid elements to get equal space between columns.
-     * 
+     *
      * @param string $spaceX Six integer values for the devices "xs;sm;md;lg;xl;xxl"
      * @param string $spaceY Six integer values for the devices "xs;sm;md;lg;xl;xxl"
      */
@@ -255,7 +255,7 @@ class BootstrapUtility
 
     /**
      * Generates classes for grid elements to get equal space between columns.
-     * 
+     *
      * @param string $space Six integer values for the devices "xs;sm;md;lg;xl;xxl"
      */
     public static function getGridSpaceClasses(string $space): string
@@ -398,48 +398,52 @@ class BootstrapUtility
         return implode(' ', $classes);
     }
 
-    public static function getIconSetMarkup(string $value):string {
-        list($iconSet, $iconValue) = explode(";", $value);
+    public static function getIconSetMarkup(string $value): string
+    {
+        list($iconSet, $iconValue) = explode(';', $value);
 
         if (!($iconSet && $iconValue)) {
-            return "";
+            return '';
         }
 
-        if ($iconSet === "bsicons") {
+        if ($iconSet === 'bsicons') {
             return '<i class="bs ' . $iconValue . '"></i>';
         }
 
-        return "";
+        return '';
     }
 
-    public static function getIconSetPositionClass(string $value):string {
-        list(, , $position) = array_merge(explode(";", $value), ["", "", ""]);
+    public static function getIconSetPositionClass(string $value): string
+    {
+        list(, , $position) = array_merge(explode(';', $value), ['', '', '']);
 
         if ($position) {
-            return "iconset-" . $position;
+            return 'iconset-' . $position;
         }
 
-        return "";
+        return '';
     }
 
-    public static function getIconSetSizeClass(string $value):string {
-        list(, , , $size) = array_merge(explode(";", $value), ["", "", "", ""]);
+    public static function getIconSetSizeClass(string $value): string
+    {
+        list(, , , $size) = array_merge(explode(';', $value), ['', '', '', '']);
 
         if ($size) {
             return $size;
         }
 
-        return "";
+        return '';
     }
 
-    public static function getIconSetColorClass(string $value):string {
-        list(, , , , $color) = array_merge(explode(";", $value), ["", "", "", "", ""]);
+    public static function getIconSetColorClass(string $value): string
+    {
+        list(, , , , $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
 
         if ($color) {
             return $color;
         }
 
-        return "";
+        return '';
     }
 
     /**
@@ -452,19 +456,20 @@ class BootstrapUtility
      *          $content
      *      </span>
      * </span>
-     * 
+     *
      * @param string $value {iconset};{iconclass};{position};{sizeclass}
      * @param string $content
      * @return string
      */
-    public static function renderIconSet(string $value, string $content):string {
-        list($iconSet, $iconValue, $position, $size, $color) = array_merge(explode(";", $value), ["", "", "", "", ""]);
+    public static function renderIconSet(string $value, string $content): string
+    {
+        list($iconSet, $iconValue, $position, $size, $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
 
         if (!($iconSet && $iconValue)) {
             return $content;
         }
 
-        if ($iconSet === "bsicons") {
+        if ($iconSet === 'bsicons') {
             $iconMarkup = '<i class="bs ' . $iconValue . '"></i>';
         }
 
@@ -473,10 +478,10 @@ class BootstrapUtility
         }
 
         $iconWrap = new TagBuilder('span');
-        $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : ""));
+        $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : ''));
 
         $iconGfx = new TagBuilder('span');
-        $iconGfx->addAttribute('class', 'iconset__icon' . ($size ? ' ' . $size : "") . ($color ? ' ' . $color : ""));
+        $iconGfx->addAttribute('class', 'iconset__icon' . ($size ? ' ' . $size : '') . ($color ? ' ' . $color : ''));
         $iconGfx->setContent($iconMarkup);
 
         $iconContent = new TagBuilder('span');

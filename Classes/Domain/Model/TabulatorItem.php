@@ -25,8 +25,7 @@ class TabulatorItem extends AbstractEntity
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
      */
-    protected $contentElements = null;
-
+    protected $contentElements;
 
     public function getTitle(): string
     {

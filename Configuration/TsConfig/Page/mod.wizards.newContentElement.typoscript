@@ -21,7 +21,7 @@ mod.wizards.newContentElement.wizardItems.common {
         # remove uploads which will be added to special later on this file
         uploads >
     }
-    
+
     show := addToList(bootstrap_twocolumnstext,bootstrap_alert)
     show := removeFromList(uploads)
 }

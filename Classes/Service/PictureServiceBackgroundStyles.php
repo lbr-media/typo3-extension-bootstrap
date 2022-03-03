@@ -44,19 +44,19 @@ class PictureServiceBackgroundStyles extends PictureServiceBootstrap
             $styles[] = $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xs') . "' ); }";
 
             // build SM image
-            $styles[] = '@media '.self::MEDIA_QUERIES['sm'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('sm') . "'); } }";
+            $styles[] = '@media ' . self::MEDIA_QUERIES['sm'] . ' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('sm') . "'); } }";
 
             // build MD image
-            $styles[] = '@media '.self::MEDIA_QUERIES['md'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('md') . "'); } }";
+            $styles[] = '@media ' . self::MEDIA_QUERIES['md'] . ' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('md') . "'); } }";
 
             // build LG image
-            $styles[] = '@media '.self::MEDIA_QUERIES['lg'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('lg') . "'); } }";
+            $styles[] = '@media ' . self::MEDIA_QUERIES['lg'] . ' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('lg') . "'); } }";
 
             // build XL image
-            $styles[] = '@media '.self::MEDIA_QUERIES['xl'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xl') . "'); } }";
+            $styles[] = '@media ' . self::MEDIA_QUERIES['xl'] . ' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xl') . "'); } }";
 
             // build XXL image
-            $styles[] = '@media '.self::MEDIA_QUERIES['xxl'].' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xxl') . "'); } }";
+            $styles[] = '@media ' . self::MEDIA_QUERIES['xxl'] . ' { ' . $cssSelector . " { background-image:url('" . $this->getBackgroundImageSource('xxl') . "'); } }";
 
             // add styles to style-tag
             return implode(LF, $styles);

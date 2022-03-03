@@ -36,7 +36,7 @@ TCEFORM.pages {
     author.disabled = 1
     author_email.disabled = 1
     lastUpdated.disabled = 1
-    
+
     // # = = Erscheinungsbild = =
     layout.disabled = 1
     newUntil.disabled = 1
@@ -133,7 +133,7 @@ TCEFORM.tt_content {
     // CType.disabled = 1
     // colPos.disabled = 1
 
-    # = = headers = = 
+    # = = headers = =
     // header.disabled = 1
     // header_layout.disabled = 1
     // tx_bootstrap_header_layout.disabled = 1

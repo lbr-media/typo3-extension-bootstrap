@@ -63,7 +63,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
      */
     protected $additionalOuterAttributes = [];
 
-    protected $pluginSettings = null;
+    protected $pluginSettings;
 
     protected function getPluginSettings(): array
     {
@@ -106,7 +106,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
         $idPattern = $this->arguments['idPattern'];
 
         if ('none' === $data['frame_class']) {
-            return '<div id="' . str_replace("###ID###", (string) $data['uid'], $idPattern) . '"></div>' . $content;
+            return '<div id="' . str_replace('###ID###', (string)$data['uid'], $idPattern) . '"></div>' . $content;
         }
 
         // AdditionalStyles
@@ -158,12 +158,12 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
 
         // space before class
         if ($data['space_before_class']) {
-            if (!isset($this->getPluginSettings()["SpaceBeforeClassReplacements."]) || !is_array($this->getPluginSettings()["SpaceBeforeClassReplacements."])) {
-                throw new Exception("Cannot find a configuration in plugin.tx_bootstrap.settings.form.element.SpaceBeforeClassReplacements", 1645511421);
+            if (!isset($this->getPluginSettings()['SpaceBeforeClassReplacements.']) || !is_array($this->getPluginSettings()['SpaceBeforeClassReplacements.'])) {
+                throw new Exception('Cannot find a configuration in plugin.tx_bootstrap.settings.form.element.SpaceBeforeClassReplacements', 1645511421);
             }
 
-            if (array_key_exists($data['space_before_class'], $this->getPluginSettings()["SpaceBeforeClassReplacements."])) {
-                $this->classesList[] = $this->getPluginSettings()["SpaceBeforeClassReplacements."][$data['space_before_class']];
+            if (array_key_exists($data['space_before_class'], $this->getPluginSettings()['SpaceBeforeClassReplacements.'])) {
+                $this->classesList[] = $this->getPluginSettings()['SpaceBeforeClassReplacements.'][$data['space_before_class']];
             } else {
                 $this->classesList[] = 'container--space-before-' . $data['space_before_class'];
             }
@@ -171,12 +171,12 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
 
         // space after class
         if ($data['space_after_class']) {
-            if (!isset($this->getPluginSettings()["SpaceAfterClassReplacements."]) || !is_array($this->getPluginSettings()["SpaceAfterClassReplacements."])) {
-                throw new Exception("Cannot find a configuration in plugin.tx_bootstrap.settings.form.element.SpaceAfterClassReplacements", 1645511422);
+            if (!isset($this->getPluginSettings()['SpaceAfterClassReplacements.']) || !is_array($this->getPluginSettings()['SpaceAfterClassReplacements.'])) {
+                throw new Exception('Cannot find a configuration in plugin.tx_bootstrap.settings.form.element.SpaceAfterClassReplacements', 1645511422);
             }
 
-            if (array_key_exists($data['space_after_class'], $this->getPluginSettings()["SpaceAfterClassReplacements."])) {
-                $this->classesList[] = $this->getPluginSettings()["SpaceAfterClassReplacements."][$data['space_after_class']];
+            if (array_key_exists($data['space_after_class'], $this->getPluginSettings()['SpaceAfterClassReplacements.'])) {
+                $this->classesList[] = $this->getPluginSettings()['SpaceAfterClassReplacements.'][$data['space_after_class']];
             } else {
                 $this->classesList[] = 'container--space-after-' . $data['space_after_class'];
             }
@@ -238,7 +238,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
             // generate outer div with classes
             $outerTag = new TagBuilder('div');
             $outerTag->forceClosingTag(true);
-            $outerTag->addAttribute('id', str_replace('###ID###', (string) $data['uid'], $idPattern)); // set id to outer classes element instead to the main tag
+            $outerTag->addAttribute('id', str_replace('###ID###', (string)$data['uid'], $idPattern)); // set id to outer classes element instead to the main tag
             if (count($this->classesOuterList)) {
                 $outerTag->addAttribute('class', BootstrapGeneralUtility::cleanCssClassesString($this->classesOuterList));
             }
@@ -248,7 +248,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
             $outerTag->setContent($tagHtml);
             $tagHtml = $outerTag->render();
         } else {
-            $mainTag->addAttribute('id', str_replace("###ID###", (string) $data['uid'], $idPattern));
+            $mainTag->addAttribute('id', str_replace('###ID###', (string)$data['uid'], $idPattern));
             $tagHtml = $mainTag->render();
 
             // include outerWrap after all inner stuff
@@ -256,7 +256,7 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
         }
 
         // return and build tag and prepend localized id
-        return (isset($data['_LOCALIZED_UID']) && $data['_LOCALIZED_UID'] ? '<div id="' . str_replace("###ID###", (string) $data['_LOCALIZED_UID'], $idPattern) . '"></div>' : '') . $tagHtml;
+        return (isset($data['_LOCALIZED_UID']) && $data['_LOCALIZED_UID'] ? '<div id="' . str_replace('###ID###', (string)$data['_LOCALIZED_UID'], $idPattern) . '"></div>' : '') . $tagHtml;
     }
 
     protected function renderInnerWrap(string &$content): void

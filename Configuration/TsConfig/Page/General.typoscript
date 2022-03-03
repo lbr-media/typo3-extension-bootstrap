@@ -1,6 +1,4 @@
-
-
-# Include RTE-Configuration 
+# Include RTE-Configuration
 RTE.default.preset = BOOTSTRAP
 
 # allowed new tables

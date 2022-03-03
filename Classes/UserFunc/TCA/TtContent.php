@@ -43,8 +43,8 @@ class TtContent
         if (isset($params['config']['CType']) && is_string($params['config']['CType'])) {
             $CType = $params['config']['CType'];
             $ts = BootstrapGeneralUtility::getFullTypoScript();
-            if (isset($ts['tt_content.'][$CType.'.']['flexform_presets.']) && is_array($ts['tt_content.'][$CType.'.']['flexform_presets.'])) {
-                foreach ($ts['tt_content.'][$CType.'.']['flexform_presets.'] as $key => $preset) {
+            if (isset($ts['tt_content.'][$CType . '.']['flexform_presets.']) && is_array($ts['tt_content.'][$CType . '.']['flexform_presets.'])) {
+                foreach ($ts['tt_content.'][$CType . '.']['flexform_presets.'] as $key => $preset) {
                     if (isset($preset['label']) && is_string($preset['label']) && isset($preset['configuration.']) && is_array($preset['configuration.'])) {
                         $params['items'][] = [$preset['label'], substr($key, 0, -1)];
                     }

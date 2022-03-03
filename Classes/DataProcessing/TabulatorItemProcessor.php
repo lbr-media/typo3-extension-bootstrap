@@ -17,16 +17,16 @@ namespace LBRmedia\Bootstrap\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 
+use LBRmedia\Bootstrap\Domain\Repository\TabulatorItemRepository;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
-use LBRmedia\Bootstrap\Domain\Repository\TabulatorItemRepository;
 
 class TabulatorItemProcessor implements DataProcessorInterface
 {
     /**
      * @var TabulatorItemRepository
      */
-    protected $tabulatorItemRepository = null;
+    protected $tabulatorItemRepository;
 
     public function __construct(TabulatorItemRepository $tabulatorItemRepository)
     {
@@ -49,7 +49,7 @@ class TabulatorItemProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "tabulator_items";
+        $as = isset($processorConfiguration['as']) && is_string($processorConfiguration['as']) && trim($processorConfiguration['as']) ? trim($processorConfiguration['as']) : 'tabulator_items';
         $processedData[$as] = [];
         $tabulatorItems = $this->tabulatorItemRepository->findByRelation('tt_content_uid', $processedData['data']['uid']);
         if ($tabulatorItems) {

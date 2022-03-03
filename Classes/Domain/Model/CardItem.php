@@ -25,7 +25,7 @@ class CardItem extends AbstractEntity
     /**
      * @var FileReference
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * @var string
@@ -46,8 +46,6 @@ class CardItem extends AbstractEntity
      * @var string
      */
     protected $footer = '';
-
-    
 
     public function getHeader(): string
     {

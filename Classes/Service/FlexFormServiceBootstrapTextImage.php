@@ -21,7 +21,7 @@ class FlexFormServiceBootstrapTextImage extends FlexFormService implements FlexF
     public function process(string $xmlString): array
     {
         $xmlArray = $this->getConfiguration($xmlString);
-        
+
         $xmlArray['space_classes'] = BootstrapUtility::getGridSpaceClasses($xmlArray['space']);
         $xmlArray['mediaitem']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['mediaitem']['border']);
 

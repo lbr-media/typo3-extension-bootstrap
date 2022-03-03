@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement;
 
 use LBRmedia\Bootstrap\Service\TcaService;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use LBRmedia\Bootstrap\Utility\PictureUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 class BootstrapTextMediaFloat implements NewContentElementInterface
 {

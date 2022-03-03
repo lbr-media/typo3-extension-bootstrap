@@ -1,0 +1,97 @@
+:root {
+  --iconset-space-x: .5em;
+  --iconset-space-y: .2em;
+}
+
+.iconset {
+  display: flex;
+}
+
+.iconset__icon {
+  line-height: 1 !important;
+  margin-bottom: 0 !important;
+}
+
+.iconset.iconset-start,
+.iconset.iconset-start-top,
+.iconset.iconset-start-middle,
+.iconset.iconset-start-bottom,
+.iconset.iconset-end,
+.iconset.iconset-end-top,
+.iconset.iconset-end-middle,
+.iconset.iconset-end-bottom {
+  flex-direction: row;
+}
+
+.iconset.iconset-top,
+.iconset.iconset-top-start,
+.iconset.iconset-top-center,
+.iconset.iconset-top-end,
+.iconset.iconset-bottom,
+.iconset.iconset-bottom-start,
+.iconset.iconset-bottom-center,
+.iconset.iconset-bottom-end {
+  flex-direction: column;
+}
+
+.iconset.iconset-start .iconset__icon,
+.iconset.iconset-start-top .iconset__icon,
+.iconset.iconset-start-middle .iconset__icon,
+.iconset.iconset-start-bottom .iconset__icon {
+  margin-right: var(--iconset-space-x);
+}
+
+.iconset.iconset-end .iconset__icon,
+.iconset.iconset-end-top .iconset__icon,
+.iconset.iconset-end-middle .iconset__icon,
+.iconset.iconset-end-bottom .iconset__icon {
+  order: 1;
+  margin-left: var(--iconset-space-x);
+}
+
+.iconset.iconset-top .iconset__icon,
+.iconset.iconset-top-start .iconset__icon,
+.iconset.iconset-top-center .iconset__icon,
+.iconset.iconset-top-end .iconset__icon {
+  margin-bottom: var(--iconset-space-y);
+}
+
+.iconset.iconset-bottom .iconset__icon,
+.iconset.iconset-bottom-start .iconset__icon,
+.iconset.iconset-bottom-center .iconset__icon,
+.iconset.iconset-bottom-end .iconset__icon {
+  order: 1;
+  margin-top: var(--iconset-space-y);
+}
+
+.iconset.iconset-end .iconset__content,
+.iconset.iconset-end-top .iconset__content,
+.iconset.iconset-end-middle .iconset__content,
+.iconset.iconset-end-bottom .iconset__content,
+.iconset.iconset-bottom .iconset__content,
+.iconset.iconset-bottom-start .iconset__content,
+.iconset.iconset-bottom-center .iconset__content,
+.iconset.iconset-bottom-end .iconset__content {
+  order: 0;
+}
+
+.iconset.iconset-start-middle .iconset__icon,
+.iconset.iconset-end-middle .iconset__icon,
+.iconset.iconset-top-center .iconset__icon,
+.iconset.iconset-bottom-center .iconset__icon {
+  align-self: center;
+}
+
+.iconset.iconset-start-top .iconset__icon,
+.iconset.iconset-end-top .iconset__icon,
+.iconset.iconset-top-start .iconset__icon,
+.iconset.iconset-bottom-start .iconset__icon {
+  align-self: start;
+}
+
+.iconset.iconset-start-bottom .iconset__icon,
+.iconset.iconset-end-bottom .iconset__icon,
+.iconset.iconset-top-end .iconset__icon,
+.iconset.iconset-bottom-end .iconset__icon {
+  align-self: end;
+}

@@ -24,13 +24,5 @@ config {
     debug = {$plugin.tx_bootstrap.no_cache}
 
     # Additional Header-Comment
-    headerComment (
-This site was made with -`ღ´- by:
-                                    ___   ___ ___  ___  
-               -`ღ´-               |__ \ / _ \__ \|__ \ 
- ___ _   _ _ __  ___  __ _______     ) | | | | ) |  ) |
-/ __| | | | '_ \| \ \/ /|_  / __|   / /| | | |/ /  / / 
-\__ \ |_| | | | | |>  <  / /\__ \  / /_| |_| / /_ / /_ 
-|___/\__,_|_| |_|_/_/\_\/___|___/ |____|\___/____|____|
-)
+    headerComment = This site was made with -`ღ´- by sunixzs 2022
 }

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Utility;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility as CoreGeneralUtility;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\GeneralUtility as CoreGeneralUtility;
 
 class PictureUtility
 {
@@ -16,15 +16,15 @@ class PictureUtility
         'md',
         'lg',
         'xl',
-        'xxl'
+        'xxl',
     ];
-    
+
     const CROP_VARIANTS_DEFAULT = [
-        'default'
+        'default',
     ];
-    
+
     const CROP_VARIANTS_SOCIAL_MEDIA = [
-        'social'
+        'social',
     ];
 
     const CROP_VARIANTS_PAGES_MEDIA = [
@@ -42,12 +42,12 @@ class PictureUtility
     public static function getTcaCropVariantsOverridePid(): int
     {
         if (isset($GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'])) {
-            return (int) $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'];
+            return (int)$GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'];
         }
 
         $extConf = CoreGeneralUtility::makeInstance(ExtensionConfiguration::class)->get('bootstrap');
         if (isset($extConf['tcaCropVariantsOverridePid']) && is_numeric($extConf['tcaCropVariantsOverridePid'])) {
-            $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'] = (int) $extConf['tcaCropVariantsOverridePid'];
+            $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'] = (int)$extConf['tcaCropVariantsOverridePid'];
         } else {
             $GLOBALS['tx_bootstrap_tcaCropVariantsOverridePid'] = 1;
         }

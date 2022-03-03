@@ -9,10 +9,10 @@ defined('TYPO3') or die();
  * Add styles for backend
  */
 $GLOBALS['TBE_STYLES']['skins']['app'] = [
-    'name' => "bootstrap",
+    'name' => 'bootstrap',
     'stylesheetDirectories' => [
         'structure' => 'EXT:bootstrap/Resources/Public/Stylesheets/Backend/',
-    ]
+    ],
 ];
 
 /**

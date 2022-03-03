@@ -219,7 +219,7 @@
             <trans-unit id="tx_bootstrap_domain_model_carditem.footer">
                 <source>Footer</source>
             </trans-unit>
-            
+
             <trans-unit id="tx_bootstrap_domain_model_contentelement">
                 <source>Content element</source>
             </trans-unit>

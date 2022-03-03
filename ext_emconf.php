@@ -7,7 +7,7 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '11.5.0-11.5.99',
-            'seo' => '11.5.0-11.5.99'
+            'seo' => '11.5.0-11.5.99',
         ],
         'conflicts' => [
             'fluid_styled_content' => '*',
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'LBRmedia\\Bootstrap\\' => 'Classes'
+            'LBRmedia\\Bootstrap\\' => 'Classes',
         ],
     ],
     'state' => 'stable',

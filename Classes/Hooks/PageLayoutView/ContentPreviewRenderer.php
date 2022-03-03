@@ -5,10 +5,10 @@ namespace LBRmedia\Bootstrap\Hooks\PageLayoutView;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
 class ContentPreviewRenderer extends StandardContentPreviewRenderer
 {
@@ -22,8 +22,8 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $record = $item->getRecord();
-        $out = "";
-        switch ($record["CType"]) {
+        $out = '';
+        switch ($record['CType']) {
             case 'bootstrap_textimage':
                 if ($record['image']) {
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
@@ -32,7 +32,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
                 }
                 break;
-            case "bootstrap_mediagrid":
+            case 'bootstrap_mediagrid':
                 if ($record['assets']) {
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'assets'), $record) . '<br />';
                 }
@@ -42,9 +42,9 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'image'), $record) . '<br />';
                 }
                 break;
-            case "bootstrap_tabs":
+            case 'bootstrap_tabs':
                 if ($record['tx_bootstrap_tabulatoritems']) {
-                    $table = "tx_bootstrap_domain_model_tabulatoritem";
+                    $table = 'tx_bootstrap_domain_model_tabulatoritem';
                     $queryBuilder = $this->getQueryBuilderForTable($table);
                     $queryBuilder->select('uid', 'title', 'active')
                         ->from($table)
@@ -54,21 +54,21 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                                 $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
                             )
                         )
-                        ->orderBy("sorting", "ASC");
+                        ->orderBy('sorting', 'ASC');
                     $statement = $queryBuilder->executeQuery();
                     $list = '<ul>';
                     while ($row = $statement->fetchAssociative()) {
-                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['active'] ? " (aktiv)" : "")), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
+                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['active'] ? ' (aktiv)' : '')), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
                     }
                     $list .= '</ul>';
                     $out .= $list;
                 } else {
-                    $out .= $this->linkEditContent("keine Tabulator-Elemente", $record);
+                    $out .= $this->linkEditContent('keine Tabulator-Elemente', $record);
                 }
                 break;
-            case "bootstrap_accordion":
+            case 'bootstrap_accordion':
                 if ($record['tx_bootstrap_accordionitems']) {
-                    $table = "tx_bootstrap_domain_model_accordionitem";
+                    $table = 'tx_bootstrap_domain_model_accordionitem';
                     $queryBuilder = $this->getQueryBuilderForTable($table);
                     $queryBuilder->select('uid', 'title', 'opened_on_load')
                         ->from($table)
@@ -78,21 +78,21 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                                 $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
                             )
                         )
-                        ->orderBy("sorting", "ASC");
+                        ->orderBy('sorting', 'ASC');
                     $statement = $queryBuilder->executeQuery();
                     $list = '<ul>';
                     while ($row = $statement->fetchAssociative()) {
-                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['opened_on_load'] ? " (geöffnet)" : " (geschlossen)")), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
+                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['opened_on_load'] ? ' (geöffnet)' : ' (geschlossen)')), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
                     }
                     $list .= '</ul>';
                     $out .= $list;
                 } else {
-                    $out .= $this->linkEditContent("keine Accordion-Elemente", $record);
+                    $out .= $this->linkEditContent('keine Accordion-Elemente', $record);
                 }
                 break;
-            case "bootstrap_cards":
+            case 'bootstrap_cards':
                 if ($record['tx_bootstrap_carditems']) {
-                    $table = "tx_bootstrap_domain_model_carditem";
+                    $table = 'tx_bootstrap_domain_model_carditem';
                     $queryBuilder = $this->getQueryBuilderForTable($table);
                     $queryBuilder->select('uid', 'header', 'title')
                         ->from($table)
@@ -102,7 +102,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                                 $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
                             )
                         )
-                        ->orderBy("sorting", "ASC");
+                        ->orderBy('sorting', 'ASC');
                     $statement = $queryBuilder->executeQuery();
                     $list = '<ul>';
                     while ($row = $statement->fetchAssociative()) {
@@ -113,20 +113,20 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         if ($row['title']) {
                             $titles[] = $row['title'];
                         }
-                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(implode(", ", $titles), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
+                        $list .= '<li>' . $this->linkEditContent(htmlspecialchars(implode(', ', $titles), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
                     }
                     $list .= '</ul>';
                     $out .= $list;
                 } else {
-                    $out .= $this->linkEditContent("keine Card-Elemente", $record);
+                    $out .= $this->linkEditContent('keine Card-Elemente', $record);
                 }
                 break;
             case 'bootstrap_twocolumnstext':
-                $out .= "<strong>Links:</strong><br />";
+                $out .= '<strong>Links:</strong><br />';
                 if ($record['tx_bootstrap_bodytext1']) {
                     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext1']), $record) . '<br />';
                 }
-                $out .= "<strong>Rechts:</strong><br />";
+                $out .= '<strong>Rechts:</strong><br />';
                 if ($record['tx_bootstrap_bodytext2']) {
                     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext2']), $record) . '<br />';
                 }
@@ -186,7 +186,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
         $info = [];
         $record = $item->getRecord();
 
-        // `CType`, `list_type` and `frame_class` are the only differences to the parent class` method: 
+        // `CType`, `list_type` and `frame_class` are the only differences to the parent class` method:
         $this->getProcessedValue($item, 'CType,list_type,starttime,endtime,fe_group,frame_class,space_before_class,space_after_class', $info);
 
         if (!empty($GLOBALS['TCA']['tt_content']['ctrl']['descriptionColumn']) && !empty($record[$GLOBALS['TCA']['tt_content']['ctrl']['descriptionColumn']])) {

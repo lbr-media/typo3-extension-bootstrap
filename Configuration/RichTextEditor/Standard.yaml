@@ -22,7 +22,7 @@ editor:
 
   config:
     contentsCss: 
-      - "../../fileadmin/bootstrap/assets/css/CKEditor.css"
+      - "../../fileadmin/bootstrap/assets/css/CKEditor.min.css"
       - "../../fileadmin/bootstrap/assets/css/bootstrap.min.css"
     # will be overridden by the record (if a language is set)
     defaultContentLanguage: "de"

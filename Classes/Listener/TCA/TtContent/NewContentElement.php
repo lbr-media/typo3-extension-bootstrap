@@ -30,10 +30,10 @@ class NewContentElement
 
         // This default content element must be modified at the very last element b/c other ce copies it!
         // It is disabled by default and only used to be a fallback of the BootstrapTextMediaFloat content element.
-        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\TextMedia', 
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\TextMedia',
     ];
 
-    protected $tcaService = null;
+    protected $tcaService;
 
     public function injectTcaService(TcaService $tcaService)
     {
@@ -44,10 +44,10 @@ class NewContentElement
     {
         foreach (self::NEW_CONTENT_ELEMENT_CLASSES as $className) {
             if (!in_array(NewContentElementInterface::class, class_implements($className), true)) {
-                throw new InvalidArgumentException($className.' does not implement NewContentElementInterface!', 1626331595);
+                throw new InvalidArgumentException($className . ' does not implement NewContentElementInterface!', 1626331595);
             }
 
-            call_user_func($className.'::addPlugin', $this->tcaService);
+            call_user_func($className . '::addPlugin', $this->tcaService);
         }
 
         $event->setTca($GLOBALS['TCA']);

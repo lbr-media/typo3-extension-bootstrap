@@ -21,7 +21,7 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
     public function process(string $xmlString): array
     {
         $xmlArray = $this->getConfiguration($xmlString);
-        
+
         $xmlArray['float_classes'] = BootstrapUtility::getFloatClasses($xmlArray['media_position']);
         $xmlArray['media_size_classes'] = BootstrapUtility::getFloatMediaSizeClasses($xmlArray['media_size'], $xmlArray['media_position'], $xmlArray['space_x'], $xmlArray['space_y']);
 
@@ -60,7 +60,7 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
             'space_y' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),
             'media' => [
                 'masonry_enabled' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger),
-                'masonry_data_masonry_attribute' => "",
+                'masonry_data_masonry_attribute' => '',
             ],
             'mediaitem' => [
                 'border' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
@@ -87,9 +87,9 @@ class FlexFormServiceBootstrapTextMediaFloat extends FlexFormService implements 
         self::processPresets('bootstrap_textmediafloat', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF', $this->logger);
 
         // set masonry data attribute
-        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled'] 
+        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled']
             ? ' data-masonry=\'{"percentPosition":true}\''
-            : "";
+            : '';
 
         return $transformedData;
     }

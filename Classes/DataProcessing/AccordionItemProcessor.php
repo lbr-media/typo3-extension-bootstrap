@@ -17,16 +17,16 @@ namespace LBRmedia\Bootstrap\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 
+use LBRmedia\Bootstrap\Domain\Repository\AccordionItemRepository;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
-use LBRmedia\Bootstrap\Domain\Repository\AccordionItemRepository;
 
 class AccordionItemProcessor implements DataProcessorInterface
 {
     /**
      * @var AccordionItemRepository
      */
-    protected $accordionItemRepository = null;
+    protected $accordionItemRepository;
 
     public function __construct(
         AccordionItemRepository $accordionItemRepository
@@ -50,7 +50,7 @@ class AccordionItemProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "accordion_items";
+        $as = isset($processorConfiguration['as']) && is_string($processorConfiguration['as']) && trim($processorConfiguration['as']) ? trim($processorConfiguration['as']) : 'accordion_items';
         $processedData[$as] = [];
         $accordionItems = $this->accordionItemRepository->findByRelation('tt_content_uid', $processedData['data']['uid']);
         if ($accordionItems) {

@@ -6,8 +6,8 @@ namespace LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement;
 
 use LBRmedia\Bootstrap\Service\TcaService;
 use LBRmedia\Bootstrap\Utility\PictureUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 class BootstrapTextImage implements NewContentElementInterface
 {

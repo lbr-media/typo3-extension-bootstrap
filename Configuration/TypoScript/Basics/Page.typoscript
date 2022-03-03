@@ -17,25 +17,24 @@ page {
         #isFamilyFriendly = True
         #isFamilyFriendly.attribute = itemprop
         viewport = width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes
-        author = 
-        #abstract = 
-        #page-topic = 
-        classification = 
-        copyright = 
+        author =
+        #abstract =
+        #page-topic =
+        classification =
+        copyright =
         robots = index, follow
         distribution = global
         audience = all
         cache-control = no-cache
         rating = general
-        #creator = 
+        #creator =
         #identifier.data = site:base
         format-detection = telephone=no
     }
 }
 
-/*
-Set doctype and change html tag
-*/
+
+# Set doctype and change html tag
 config {
     doctype = html5
     htmlTag_stdWrap >

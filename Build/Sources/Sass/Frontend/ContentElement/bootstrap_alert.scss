@@ -1,0 +1,12 @@
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Styles for content element 'bootstrap_alert'.
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+.alert > *:last-child,
+.alert .iconset__content > *:last-child {
+    margin-bottom: 0;
+}
+
+// get the icon to the right side
+.alert .iconset {
+    justify-content: space-between;
+}

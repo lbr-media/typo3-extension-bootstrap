@@ -77,7 +77,7 @@ TCEFORM.tt_content {
 
     tx_bootstrap_inner_frame_class {
         disabled = 0
-        // keepItems = 
+        // keepItems =
         addItems {
             example = Example
         }
@@ -111,7 +111,7 @@ TCEFORM.tt_content {
 
     # = = CType=table = =
     table_class {
-        keepItems = 
+        keepItems =
         addItems {
             table-bordered = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-bordered
             table-borderless = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-borderless

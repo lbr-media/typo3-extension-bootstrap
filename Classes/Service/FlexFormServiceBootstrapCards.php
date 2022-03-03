@@ -21,7 +21,7 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
     public function process(string $xmlString): array
     {
         $xmlArray = $this->getConfiguration($xmlString);
-        
+
         // mediaitem
         $mediaSpaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['grid']['space_x'], $xmlArray['grid']['space_y']);
         $xmlArray['grid']['row_space_classes'] = $mediaSpaceClasses['row'];

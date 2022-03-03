@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
+use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
-use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -82,17 +82,17 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
     /**
      * @var ImageService
      */
-    protected $imageService = null;
+    protected $imageService;
 
     /**
      * @var ContentObjectRenderer
      */
-    protected $contentObject = null;
+    protected $contentObject;
 
     /**
      * @var FileRepository
      */
-    protected $fileRepository = null;
+    protected $fileRepository;
 
     public function injections(
         ImageService $imageService,
@@ -117,7 +117,8 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         // determine visibility and tag name
         if ('100' === $data['header_layout'] || '' === $data['header']) {
             return '';
-        } elseif ('0' !== $data['header_layout']) {
+        }
+        if ('0' !== $data['header_layout']) {
             $this->tagName = 'h' . $data['header_layout'];
         }
 
@@ -180,7 +181,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
 
                 $header['between'] = $headerIconWrap->render();
             }
-        } else if ($data['tx_bootstrap_header_iconset']) {
+        } elseif ($data['tx_bootstrap_header_iconset']) {
             $header['between'] = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], $header['between']);
         }
 
@@ -331,7 +332,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
          */
         $processingInstructions = '';
         if ($file->hasProperty('crop') && $file->getProperty('crop')) {
-            $cropVariantCollection = CropVariantCollection::create((string) $file->getProperty('crop'));
+            $cropVariantCollection = CropVariantCollection::create((string)$file->getProperty('crop'));
             $cropArea = $cropVariantCollection->getCropArea('default');
             $processingInstructions = $cropArea->isEmpty() ? null : $cropArea->makeAbsoluteBasedOnFile($this->file);
         }

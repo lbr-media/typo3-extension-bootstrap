@@ -50,17 +50,17 @@ class GeneralUtility
     {
         $contents = [];
         foreach ($data as $key => $value) {
-            $contents[] = $key.'='.$value;
+            $contents[] = $key . '=' . $value;
         }
 
-        $fileContents = PHP_EOL.PHP_EOL.'-=-=-=-=-=-=- '.date('Y-m-d H:i:s').' -=-=-=-=-=-=-'.PHP_EOL.implode(PHP_EOL, $contents);
+        $fileContents = PHP_EOL . PHP_EOL . '-=-=-=-=-=-=- ' . date('Y-m-d H:i:s') . ' -=-=-=-=-=-=-' . PHP_EOL . implode(PHP_EOL, $contents);
 
-        $filename = Environment::getProjectPath().'/var/log/tx_bootstrap_mail_'.$suffix.'.log';
+        $filename = Environment::getProjectPath() . '/var/log/tx_bootstrap_mail_' . $suffix . '.log';
 
         try {
             $handle = fopen($filename, 'a');
         } catch (\Exception $e) {
-            throw new Exception("Could not open $filename for writing log! ".$e->getMessage(), 1589265756);
+            throw new Exception("Could not open $filename for writing log! " . $e->getMessage(), 1589265756);
         }
 
         fwrite($handle, $fileContents);

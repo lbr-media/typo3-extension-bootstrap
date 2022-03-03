@@ -7,7 +7,8 @@ namespace LBRmedia\Bootstrap\Listener\TCA\Tables;
 use LBRmedia\Bootstrap\Service\TcaService;
 use LBRmedia\Bootstrap\Utility\PictureUtility;
 
-class TxBootstrapDomainModelContentElement implements TablesInterface {
+class TxBootstrapDomainModelContentElement implements TablesInterface
+{
     public static function process(TcaService $tcaService): void
     {
         $GLOBALS['TCA']['tx_bootstrap_domain_model_contentelement'] = [
@@ -123,7 +124,7 @@ class TxBootstrapDomainModelContentElement implements TablesInterface {
                         'type' => 'flex',
                         // 'ds_pointerField' => '*',
                         'ds' => [
-                            'default' => 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml'
+                            'default' => 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapTextMediaGrid.xml',
                         ],
                     ],
                 ],

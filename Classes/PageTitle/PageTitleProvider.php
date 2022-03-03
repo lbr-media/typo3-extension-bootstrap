@@ -13,7 +13,7 @@ class PageTitleProvider extends AbstractPageTitleProvider
     public function __construct()
     {
         if ($GLOBALS['TSFE']->page['seo_title']) {
-            $this->title = (string) $GLOBALS['TSFE']->page['seo_title'];
+            $this->title = (string)$GLOBALS['TSFE']->page['seo_title'];
         } else {
             /**
              * When seo_title isn't set, prefix and suffix the title with the content objects defined in config.seo_title_is_empty.prefix and config.seo_title_is_empty.suffix.
@@ -46,10 +46,10 @@ class PageTitleProvider extends AbstractPageTitleProvider
 
             // prepend context string when not in production to see it in the browser tab
             $context = 'Production' !== \TYPO3\CMS\Core\Core\Environment::getContext()->__toString()
-                ? '('.\TYPO3\CMS\Core\Core\Environment::getContext()->__toString().') '
+                ? '(' . \TYPO3\CMS\Core\Core\Environment::getContext()->__toString() . ') '
                 : '';
 
-            $this->title = (string) $context.$prefix.$GLOBALS['TSFE']->page['title'].$suffix;
+            $this->title = (string)$context . $prefix . $GLOBALS['TSFE']->page['title'] . $suffix;
         }
     }
 

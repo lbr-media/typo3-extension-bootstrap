@@ -285,7 +285,7 @@
                 <source>Footer</source>
                 <target>Fußbereich</target>
             </trans-unit>
-            
+
             <trans-unit id="tx_bootstrap_domain_model_contentelement">
                 <source>Content element</source>
                 <target>Inhaltselement</target>

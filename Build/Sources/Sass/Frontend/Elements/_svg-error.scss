@@ -1,0 +1,112 @@
+// SVG iMac Icon on error pages
+
+// <svg id="svgerror" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 678">
+//     <title>Error search engine</title>
+//     <rect class="svgerror__stand-bottom" x="176" y="655" width="398" height="10" rx="5" />
+//     <polygon class="svgerror__stand" points="479.481 546 270.519 546 229 655 521 655 479.481 546" />
+//     <rect class="svgerror__body" width="750" height="546" rx="40" />
+//     <rect class="svgerror__glass" x="15" y="15" width="720" height="480" rx="30" />
+//     <rect class="svgerror__screen" x="30" y="30" width="690" height="450" />
+//     <text class="svgerror__font" x="40" y="55">Determine state ...</text>
+//     <text class="svgerror__font" x="40" y="85">State is '<tspan class="svgerror__error">Error 404 - Page not found</tspan>'.</text>
+//     <text class="svgerror__font" x="40" y="115">Starting subroutine with <tspan class="svgerror__name">404</tspan> and <tspan class="svgerror__name">hero</tspan> ...</text>
+//     <text class="svgerror__font" x="40" y="145">&gt; Invoke search engine ...</text>
+//     <text class="svgerror__font" x="40" y="175">&gt; Private call <tspan class="svgerror__name">Chuck Norris</tspan> ...</text>
+//     <text class="svgerror__font" x="40" y="205">&gt; Search engine loaded.</text>
+//     <text class="svgerror__font" x="40" y="235">&gt; Waiting until <tspan class="svgerror__name">Chuck</tspan> picks up the phone <tspan class="svgerror__point1">.</tspan><tspan class="svgerror__point2">.</tspan><tspan class="svgerror__point3">.</tspan></text>
+//     <text class="svgerror__font" x="40" y="265">http-se:bin sun$ <tspan class="svgerror__block"> &#818;</tspan></text>
+//     <text class="svgerror__logo" x="710" y="525" text-anchor="end">search engine powered by sunixzs</text>
+//     <rect class="svgerror__reflection-line1" x="708" y="50" width="7" height="400" />
+//     <rect class="svgerror__reflection-line2" x="50" y="468" width="600" height="7" />
+// </svg>
+//
+//<script>
+//(function (w, d) {
+//    var svg = d.querySelector("#svgerror"),
+//        fic = "svgerror__font--inactive"; // font inactive class
+//        tu = 400; // time unit - one animation step
+//
+//    // animate block
+//    var b = svg.querySelector(".svgerror__block");
+//    b.style.transition = "ease-in-out 0.3s";
+//    w.setInterval(function () {
+//        b.classList.toggle(fic);
+//    }, tu * 3);
+//
+//    // animate points
+//    var pts = [
+//        svg.querySelector(".svgerror__point1"),
+//        svg.querySelector(".svgerror__point2"),
+//        svg.querySelector(".svgerror__point3")
+//    ];
+//
+//    var animatePoints = function () {
+//        for (var p = 0; p < pts.length; p++) {
+//            // hide
+//            pts[p].classList.add(fic);
+//
+//            // show again after a while
+//            w.setTimeout(function (pt) {
+//                pt.classList.remove(fic);
+//            }, (p + 1) * tu, pts[p]);
+//        }
+//
+//        w.setTimeout(animatePoints, tu * 5);
+//    };
+//    animatePoints();
+//
+//})(window, document);
+//</script>
+#svgerror-wrap {
+    // get full size of svg in old browsers like IE11
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100% / 750 * 678;
+    svg {
+        position: absolute;
+    }
+}
+.svgerror {
+    &__body {
+        fill: #c0c0c0;
+    }
+    &__stand-bottom {
+        fill: #bbbbbb;
+    }
+    &__stand {
+        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23777777'/><stop offset='70%' stop-color='%23c0c0c0'/><stop offset='100%' stop-color='%23cccccc'/></linearGradient></svg>#grad") #888888;
+    }
+    &__glass {
+        fill: #333333;
+    }
+    &__screen {
+        fill: #000000;
+    }
+    &__font {
+        font-family: monospace;
+        font-size: 140%;
+        fill: #48c721;
+        &--inactive {
+            fill: transparent;
+        }
+    }
+    &__name {
+        fill: #429cd7;
+        font-style: italic;
+    }
+    &__error {
+        fill: orangered;
+    }
+    &__reflection-line1 {
+        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad") rgba(255, 255, 255, .3);
+    }
+    &__reflection-line2 {
+        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad") rgba(255, 255, 255, .3);
+    }
+    &__logo {
+        font-family: monospace;
+        font-size: 100%;
+        fill: #d8d8d8;
+    }
+}

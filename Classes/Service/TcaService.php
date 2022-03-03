@@ -52,10 +52,10 @@ class TcaService
                 $this->showitems[end($parts)] = $showitem;
             } elseif ('--div--' === substr($showitem, 0, 7)) {
                 ++$divs;
-                $this->showitems['--div--'.$divs] = $showitem;
+                $this->showitems['--div--' . $divs] = $showitem;
             } elseif ('--linebreak--' === substr($showitem, 0, 13)) {
                 ++$linebreaks;
-                $this->showitems['--linebreak--'.$linebreaks] = $showitem;
+                $this->showitems['--linebreak--' . $linebreaks] = $showitem;
             } else {
                 $parts = GeneralUtility::trimExplode(';', $showitem, true);
                 $this->showitems[$parts[0]] = $showitem;
@@ -96,7 +96,7 @@ class TcaService
             $tmpShowitems[$key] = $showitem;
             if ($key == $keyOfPreviousShowitem) {
                 ++$this->addedShowItems;
-                $tmpShowitems['addedShowItem'.$this->addedShowItems] = $showitemToAdd;
+                $tmpShowitems['addedShowItem' . $this->addedShowItems] = $showitemToAdd;
             }
         }
         $this->showitems = $tmpShowitems;
@@ -110,7 +110,7 @@ class TcaService
         foreach ($this->showitems as $key => $showitem) {
             if ($key == $keyOfNextShowitem) {
                 ++$this->addedShowItems;
-                $tmpShowitems['addedShowItem'.$this->addedShowItems] = $showitemToAdd;
+                $tmpShowitems['addedShowItem' . $this->addedShowItems] = $showitemToAdd;
             }
             $tmpShowitems[$key] = $showitem;
         }
@@ -128,7 +128,7 @@ class TcaService
             if ($key == $keyOfPreviousShowitem) {
                 foreach ($showitemsToAdd as $showitemToAdd) {
                     ++$this->addedShowItems;
-                    $tmpShowitems['addedShowItem'.$this->addedShowItems] = $showitemToAdd;
+                    $tmpShowitems['addedShowItem' . $this->addedShowItems] = $showitemToAdd;
                 }
             }
         }
@@ -143,7 +143,7 @@ class TcaService
         foreach ($this->showitems as $key => $showitem) {
             if ($key == $showitemToBeReplaced) {
                 ++$this->replacedShowItems;
-                $tmpShowitems['replacedShowItem'.$this->replacedShowItems] = $showitemToReplace;
+                $tmpShowitems['replacedShowItem' . $this->replacedShowItems] = $showitemToReplace;
             } else {
                 $tmpShowitems[$key] = $showitem;
             }

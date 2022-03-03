@@ -2,7 +2,7 @@
 plugin.tx_bootstrap.settings.form.element {
     # Position of the media container in tt_content.CType=bootstrap_textmediafloat
     TextMediaPositions {
-        default = 
+        default =
         start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
         end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
         none = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.centered_above_text
@@ -10,7 +10,7 @@ plugin.tx_bootstrap.settings.form.element {
 
     # Width of the media container in tt_content.CType=bootstrap_textmediafloat
     TextMediaSizes {
-        default = 
+        default =
         1 = 1/12
         2 = 2/12
         3 = 3/12 (25%)
@@ -27,16 +27,16 @@ plugin.tx_bootstrap.settings.form.element {
 
     # Configuration used in field tt_content.tx_bootstrap_additional_styles.
     # When selected the content elements frame element will be modified.
-    # 
+    #
     # Properties:
     # - label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContent->additionalStyles()
     # - value = key in AdditionalStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\CTypeFrameViewHelper->render()
-    # - outerWrap = 
-    # - innerWrap = 
-    # - additionalClass = 
+    # - outerWrap =
+    # - innerWrap =
+    # - additionalClass =
     # - additionalAttributes {}
-    # - additionalOuterClass = 
-    # - additionalOuterAttributes {}
+    # - additionalOuterClass =
+    # - additionalOuterAttributes = {}
     AdditionalStyles {
         10 {
             label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.AdditionalStyles.indent_left
@@ -52,7 +52,7 @@ plugin.tx_bootstrap.settings.form.element {
 
     # Configuration used in field tt_content.tx_bootstrap_header_predefined.
     # When selected the content elements header element will be modified.
-    # 
+    #
     # Properties:
     # - label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->predefinedHeader()
     # - value = key in PredefinedHeader which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
@@ -63,15 +63,15 @@ plugin.tx_bootstrap.settings.form.element {
         10 {
             label = Example
             value = 10
-            outerWrap = 
-            innerWrap = 
+            outerWrap =
+            innerWrap =
             additionalClass = bg-dark text-light p-3
         }
     }
 
     # Configuration used in field tt_content.tx_bootstrap_header_additional_styles.
     # When selected the content elements header element will be modified.
-    # 
+    #
     # Properties:
     # - label = Label used in \LBRmedia\Bootstrap\UserFunc\TCA\TtContentHeader->additionalHeaderStyles()
     # - value = key in AdditionalHeaderStyles which is used for reference in \LBRmedia\Bootstrap\ViewHelpers\HeaderViewHelper->render()
@@ -82,8 +82,8 @@ plugin.tx_bootstrap.settings.form.element {
         // 10 {
         //     label = VERSALIEN
         //     value = 10
-        //     outerWrap = 
-        //     innerWrap = 
+        //     outerWrap =
+        //     innerWrap =
         //     additionalClass = text-uppercase
         // }
         10 {
@@ -130,7 +130,7 @@ plugin.tx_bootstrap.settings.form.element {
 
     # Ordner of text and media for each device in tt_content.CType=bootstrap_textmediagrid
     BootstrapDeviceOrder {
-        default = 
+        default =
         text_media = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.BootstrapDeviceOrder.text_media
         media_text = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:FormField.BootstrapDeviceOrder.media_text
     }
@@ -138,7 +138,7 @@ plugin.tx_bootstrap.settings.form.element {
     # Selectable column sizes in tt_content.CType=bootstrap_textmediagrid and bootstrap_textmediafloat
     # Used for media items and for text/media containers.
     BootstrapColumns {
-        default = 
+        default =
         auto = auto
         1 = 1/12
         2 = 2/12
@@ -166,7 +166,7 @@ plugin.tx_bootstrap.settings.form.element {
 
     # Selectable row/flex align items classes (vertical)
     BootstrapAlignItems {
-        default = 
+        default =
         start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top
         end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom
         center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.middle
@@ -188,7 +188,7 @@ plugin.tx_bootstrap.settings.form.element {
     # Selectable row/flex alignment self classes (vertical)
     BootstrapAlignSelf {
         default =
-        auto = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.auto 
+        auto = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.auto
         start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top
         end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom
         center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.middle
@@ -198,7 +198,7 @@ plugin.tx_bootstrap.settings.form.element {
 
     # selectable paddings
     BootstrapPaddingSpaces {
-        default = 
+        default =
         0 = 0
         1 = 1
         2 = 2
@@ -220,7 +220,7 @@ plugin.tx_bootstrap.settings.form.element {
 
     # selectable margins
     BootstrapMarginSpaces {
-        default = 
+        default =
         n5 = -5
         n4 = -4
         n3 = -3
@@ -244,7 +244,7 @@ plugin.tx_bootstrap.settings.form.element {
         # 15 = 15
         auto = auto
     }
-    
+
     # selected gutters in row/flex
     BootstrapGridSpace {
         default =
@@ -266,7 +266,7 @@ plugin.tx_bootstrap.settings.form.element {
     BootstrapGridSpaceX < .BootstrapGridSpace
 
     BootstrapBorder {
-        default = 
+        default =
         border = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.all_sides
         border-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
         border-right = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
@@ -275,7 +275,7 @@ plugin.tx_bootstrap.settings.form.element {
     }
 
     BootstrapBorderColor {
-        default = 
+        default =
         border-primary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.primary
         border-secondary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.secondary
         border-success = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.success
@@ -287,7 +287,7 @@ plugin.tx_bootstrap.settings.form.element {
     }
 
     BootstrapBorderWidth {
-        default = 
+        default =
         border-0 = 0
         border-1 = 1
         border-2 = 2
@@ -297,7 +297,7 @@ plugin.tx_bootstrap.settings.form.element {
     }
 
     BootstrapRounded {
-        default = 
+        default =
         rounded-0 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-0.all_edges
         rounded-1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-1.all_edges
         rounded-2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.rounded.rounded-2.all_edges
@@ -311,7 +311,7 @@ plugin.tx_bootstrap.settings.form.element {
     }
 
     BootstrapShadow {
-        default = 
+        default =
         shadow-none = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.shadow.shadow-none
         shadow-sm = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.shadow.shadow-sm
         shadow = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.shadow.shadow
@@ -400,4 +400,3 @@ plugin.tx_bootstrap.settings.form.element {
         text-dark = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.dark
     }
 }
-

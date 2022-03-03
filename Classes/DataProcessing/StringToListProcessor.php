@@ -43,22 +43,22 @@ class StringToListProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        if (!isset($processorConfiguration["field"])) {
+        if (!isset($processorConfiguration['field'])) {
             throw new Exception("You have to define a 'field' to process on", 1645523447);
         }
 
-        if (!isset($processorConfiguration["as"])) {
+        if (!isset($processorConfiguration['as'])) {
             throw new Exception("You have to define an 'as' variable.", 1645523448);
         }
 
-        if (!isset($processorConfiguration["splitChar"])) {
+        if (!isset($processorConfiguration['splitChar'])) {
             throw new Exception("You have to define the 'splitChar'.", 1645523449);
         }
 
-        $processedData[$processorConfiguration["as"]] = GeneralUtility::trimExplode($processorConfiguration["splitChar"], $processedData['data'][$processorConfiguration["field"]], true);
+        $processedData[$processorConfiguration['as']] = GeneralUtility::trimExplode($processorConfiguration['splitChar'], $processedData['data'][$processorConfiguration['field']], true);
 
-        if (isset($processorConfiguration["implodeChar"])) {
-            $processedData[$processorConfiguration["as"]] = implode($processorConfiguration["implodeChar"] === ":space:" ? " " : $processorConfiguration["implodeChar"], $processedData[$processorConfiguration["as"]]);
+        if (isset($processorConfiguration['implodeChar'])) {
+            $processedData[$processorConfiguration['as']] = implode($processorConfiguration['implodeChar'] === ':space:' ? ' ' : $processorConfiguration['implodeChar'], $processedData[$processorConfiguration['as']]);
         }
 
         return $processedData;

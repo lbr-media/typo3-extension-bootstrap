@@ -21,7 +21,7 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
     public function process(string $xmlString): array
     {
         $xmlArray = $this->getConfiguration($xmlString);
-        
+
         $spaceClasses = BootstrapUtility::getGridSpaceXYClasses($xmlArray['space_x'], $xmlArray['space_y']);
         $xmlArray['row_space_classes'] = $spaceClasses['row'];
         $xmlArray['col_space_classes'] = $spaceClasses['col'];
@@ -119,7 +119,7 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
             'media' => [
                 'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
                 'masonry_enabled' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger),
-                'masonry_data_masonry_attribute' => "",
+                'masonry_data_masonry_attribute' => '',
                 'align_self' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.align_self.vDEF', 'string', ';;;;;', $this->logger),
                 'space_inner' => [
                     'xs' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;', $this->logger),
@@ -164,10 +164,10 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
         self::processPresets('bootstrap_textmediagrid', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF', $this->logger);
 
         // set masonry data attribute
-        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled'] 
+        $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled']
             ? ' data-masonry=\'{"percentPosition":true}\''
-            : "";
-        
+            : '';
+
         return $transformedData;
     }
 }
