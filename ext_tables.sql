@@ -70,6 +70,7 @@ CREATE TABLE tx_bootstrap_domain_model_contentelement (
     tx_bootstrap_header_color varchar(255) DEFAULT '' NOT NULL,
     tx_bootstrap_header_additional_styles varchar(255) DEFAULT '' NOT NULL,
     tx_bootstrap_header_icon int(11) DEFAULT '0' NOT NULL,
+    tx_bootstrap_header_iconset varchar(128) DEFAULT '' NOT NULL,
     tx_bootstrap_flexform mediumtext,
     accordionitem_uid int(11) DEFAULT '0' NOT NULL,
     tabulatoritem_uid int(11) DEFAULT '0' NOT NULL,

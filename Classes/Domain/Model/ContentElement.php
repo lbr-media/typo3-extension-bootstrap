@@ -91,7 +91,7 @@ class ContentElement extends AbstractEntity
     /**
      * @var string
      */
-    public $txBootstrapHeaderIconSet = '';
+    public $txBootstrapHeaderIconset = '';
 
     /**
      * @var string
@@ -122,7 +122,7 @@ class ContentElement extends AbstractEntity
             'tx_bootstrap_header_color' => $this->txBootstrapHeaderColor,
             'tx_bootstrap_header_additional_styles' => $this->txBootstrapHeaderAdditionalStyles,
             'tx_bootstrap_header_icon' => $this->txBootstrapHeaderIcon,
-            'tx_bootstrap_header_iconset' => $this->txBootstrapHeaderIconSet,
+            'tx_bootstrap_header_iconset' => $this->txBootstrapHeaderIconset,
             'tx_bootstrap_flexform' => $this->txBootstrapFlexform,
             'frame_class' => 'child-content-element',
             'CType' => 'child-content-element',
