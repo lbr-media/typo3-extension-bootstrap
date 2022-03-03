@@ -139,7 +139,7 @@ Each variant has these properties:
 A wizard to select bootstrap icons. These properties are available:
     * `Set` (select; required; at this time only bootstrap icons)
     * `Name` (string; readonly with visible selected icon)
-    * `Position` (select)
+    * `Position` (select; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
     * `Size` (select; the bootstrap font sizes or just inherit)
     * `Filter` (string; to filter the icons)
     * `Icon list` (table of all icons in the selected icon set; clicking one selects the icon)

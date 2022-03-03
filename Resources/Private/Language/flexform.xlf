@@ -553,8 +553,26 @@
             <trans-unit id="bootstrap.alignment.left">
                 <source>Left</source>
             </trans-unit>
+            <trans-unit id="bootstrap.alignment.left.top">
+                <source>Left top</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.left.middle">
+                <source>Left middle</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.left.bottom">
+                <source>Left bottom</source>
+            </trans-unit>
             <trans-unit id="bootstrap.alignment.right">
                 <source>Right</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right.top">
+                <source>Right top</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right.middle">
+                <source>Right middle</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right.bottom">
+                <source>Right bottom</source>
             </trans-unit>
             <trans-unit id="bootstrap.alignment.center">
                 <source>Center</source>
@@ -571,8 +589,26 @@
             <trans-unit id="bootstrap.alignment.top">
                 <source>Top</source>
             </trans-unit>
+            <trans-unit id="bootstrap.alignment.top.left">
+                <source>Top left</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.top.center">
+                <source>Top center</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.top.right">
+                <source>Top right</source>
+            </trans-unit>
             <trans-unit id="bootstrap.alignment.bottom">
                 <source>Bottom</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom.left">
+                <source>Bottom left</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom.center">
+                <source>Bottom center</source>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom.right">
+                <source>Bottom right</source>
             </trans-unit>
             <trans-unit id="bootstrap.alignment.middle">
                 <source>Middle</source>
@@ -607,16 +643,16 @@
             </trans-unit>
 
             <trans-unit id="bootstrap.rounded.rounded-0.all_edges">
-                <source>All edges: not rounded</source>
+                <source>All edges: Not rounded</source>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-1.all_edges">
-                <source>All edges: size 1</source>
+                <source>All edges: Size 1</source>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-2.all_edges">
-                <source>All edges: size 2</source>
+                <source>All edges: Size 2</source>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-3.all_edges">
-                <source>All edges: size 3</source>
+                <source>All edges: Size 3</source>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-start">
                 <source>Left</source>

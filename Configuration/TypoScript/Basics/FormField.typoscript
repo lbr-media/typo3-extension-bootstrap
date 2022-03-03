@@ -356,9 +356,21 @@ plugin.tx_bootstrap.settings.form.element {
 
     BootstrapIconPositions {
         start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
+        start-top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left.top
+        start-middle = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left.middle
+        start-bottom = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left.bottom
         end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
+        end-top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right.top
+        end-middle = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right.middle
+        end-bottom = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right.bottom
         top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top
+        top-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top.left
+        top-center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top.center
+        top-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.top.right
         bottom = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom
+        bottom-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom.left
+        bottom-center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom.center
+        bottom-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.bottom.right
     }
 
     BootstrapIconSize {

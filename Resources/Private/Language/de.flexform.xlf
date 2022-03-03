@@ -715,9 +715,33 @@
                 <source>Left</source>
                 <target>Links</target>
             </trans-unit>
+            <trans-unit id="bootstrap.alignment.left.top">
+                <source>Left top</source>
+                <target>Links oben</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.left.middle">
+                <source>Left middle</source>
+                <target>Links mittig</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.left.bottom">
+                <source>Left bottom</source>
+                <target>Links unten</target>
+            </trans-unit>
             <trans-unit id="bootstrap.alignment.right">
                 <source>Right</source>
                 <target>Rechts</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right.top">
+                <source>Right top</source>
+                <target>Rechts oben</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right.middle">
+                <source>Right middle</source>
+                <target>Rechts mittig</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.right.bottom">
+                <source>Right bottom</source>
+                <target>Rechts unten</target>
             </trans-unit>
             <trans-unit id="bootstrap.alignment.center">
                 <source>Center</source>
@@ -739,9 +763,33 @@
                 <source>Top</source>
                 <target>Oben</target>
             </trans-unit>
+            <trans-unit id="bootstrap.alignment.top.left">
+                <source>Top left</source>
+                <target>Oben links</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.top.center">
+                <source>Top center</source>
+                <target>Oben zentriert</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.top.right">
+                <source>Top right</source>
+                <target>Oben rechts</target>
+            </trans-unit>
             <trans-unit id="bootstrap.alignment.bottom">
                 <source>Bottom</source>
                 <target>Unten</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom.left">
+                <source>Bottom left</source>
+                <target>Unten links</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom.center">
+                <source>Bottom center</source>
+                <target>Unten zentriert</target>
+            </trans-unit>
+            <trans-unit id="bootstrap.alignment.bottom.right">
+                <source>Bottom right</source>
+                <target>Unten rechts</target>
             </trans-unit>
             <trans-unit id="bootstrap.alignment.middle">
                 <source>Middle</source>
@@ -786,19 +834,19 @@
             </trans-unit>
 
             <trans-unit id="bootstrap.rounded.rounded-0.all_edges">
-                <source>All edges: not rounded</source>
-                <target>Alle Ecken: not rounded</target>
+                <source>All edges: Not rounded</source>
+                <target>Alle Ecken: Keine Rundung</target>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-1.all_edges">
-                <source>All edges: size 1</source>
+                <source>All edges: Size 1</source>
                 <target>Alle Ecken: Größe 1</target>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-2.all_edges">
-                <source>All edges: size 2</source>
+                <source>All edges: Size 2</source>
                 <target>Alle Ecken: Größe 2</target>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-3.all_edges">
-                <source>All edges: size 3</source>
+                <source>All edges: Size 3</source>
                 <target>Alle Ecken: Größe 3</target>
             </trans-unit>
             <trans-unit id="bootstrap.rounded.rounded-start">

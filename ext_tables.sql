@@ -8,7 +8,7 @@ CREATE TABLE tt_content (
     tx_bootstrap_header_predefined varchar(48) DEFAULT '' NOT NULL,
     tx_bootstrap_header_additional_styles varchar(48) DEFAULT '' NOT NULL,
     tx_bootstrap_header_icon int(11) unsigned NOT NULL default '0',
-    tx_bootstrap_header_iconset varchar(48) DEFAULT '' NOT NULL,
+    tx_bootstrap_header_iconset varchar(128) DEFAULT '' NOT NULL,
     tx_bootstrap_text_color varchar(48) DEFAULT '' NOT NULL,
     tx_bootstrap_background_color varchar(48) DEFAULT '' NOT NULL,
     tx_bootstrap_additional_styles varchar(1048) DEFAULT '' NOT NULL,
