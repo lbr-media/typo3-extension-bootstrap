@@ -156,6 +156,7 @@ TCEFORM.tt_content {
         bootstrap_tabs.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_tabs.tx_bootstrap_flexform
         bootstrap_accordion.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_accordion.tx_bootstrap_flexform
         bootstrap_textmediafloat.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_textmediafloat.tx_bootstrap_flexform
+        bootstrap_alert.label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_alert.tx_bootstrap_flexform
     }
 
     # = = bootstrap_cards = =
@@ -170,6 +171,20 @@ TCEFORM.tt_content {
     }
     tx_bootstrap_flexform.bootstrap_cards.sCARD.button_color {
         addItems < lib.bootstrapButtonColors
+    }
+
+    # = = bootstrap_alert = =
+    tx_bootstrap_flexform.bootstrap_alert.sALERT.bg_color {
+        addItems < lib.bootstrapBackgroundColors
+    }
+    tx_bootstrap_flexform.bootstrap_alert.sALERT.text_color {
+        addItems < lib.bootstrapTextColors
+    }
+    tx_bootstrap_flexform.bootstrap_alert.sALERT.border_color {
+        addItems < lib.bootstrapBorderColors
+    }
+    tx_bootstrap_flexform.bootstrap_alert.sALERT.alert_type {
+        addItems < lib.bootstrapAlertTypes
     }
 }
 

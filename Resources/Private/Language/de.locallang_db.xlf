@@ -113,6 +113,19 @@
                 <source>Settings for the cards</source>
                 <target>Einstellungen für die Kacheln</target>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_alert">
+                <source>Alert</source>
+                <target>Alarm</target>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_alert.description">
+                <source>A colored box.</source>
+                <target>Eine farbige Box.</target>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_alert.tx_bootstrap_flexform">
+                <source>Settings for the alert</source>
+                <target>Einstellungen für Alarm</target>
+            </trans-unit>
+
 
             <!-- tt_content.div -->
             <trans-unit id="tt_content.div.content_elements">

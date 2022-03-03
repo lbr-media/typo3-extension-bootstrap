@@ -159,7 +159,15 @@ buttons:
     properties:
       class:
         allowedClasses: '
-          text-decoration-none, 
+          text-decoration-none,
+          link-primary,
+          link-secondary,
+          link-success,
+          link-danger,
+          link-warning,
+          link-info,
+          link-light,
+          link-dark,
           btn-primary,
           btn-secondary,
           btn-light,
@@ -218,6 +226,22 @@ classesAnchor:
 classes:
   text-decoration-none:
     name: "Nicht unterstrichen"
+  link-primary:
+    name: "Link: Primary"
+  link-secondary:
+    name: "Link: Secondary"
+  link-success:
+    name: "Link: Success"
+  link-danger:
+    name: "Link: Danger"
+  link-warning:
+    name: "Link: Warning"
+  link-info:
+    name: "Link: Info"
+  link-light:
+    name: "Link: Light"
+  link-dark:
+    name: "Link: Dark"
   btn-primary:
     name: "Button: Primary"
   btn-secondary:

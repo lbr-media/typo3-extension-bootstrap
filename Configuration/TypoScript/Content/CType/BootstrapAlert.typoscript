@@ -1,0 +1,9 @@
+tt_content {
+    bootstrap_alert =< lib.contentElement
+    bootstrap_alert {
+        templateName = BootstrapAlert
+        dataProcessing {
+            10 = LBRmedia\Bootstrap\DataProcessing\FlexFormProcessor
+        }
+    }
+}

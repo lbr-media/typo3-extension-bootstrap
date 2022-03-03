@@ -1,0 +1,20 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    CType = bootstrap_alert
+    -->
+    <f:layout name="WithoutHeader" />
+
+    <f:section name="Main"><f:spaceless>
+        <div class="alert {configuration.alert_type}{f:if(condition:configuration.bg_color, then:' {configuration.bg_color}')}{f:if(condition:configuration.text_color, then:' {configuration.text_color}')}{f:if(condition:configuration.border_classes, then:' {configuration.border_classes}')}" role="alert">
+            <bs:IconSet value="{data.tx_bootstrap_header_iconset}">
+                <f:if condition="{data.header}"><h4 class="alert-heading">{data.header}</h4></f:if>
+                {data.bodytext -> f:format.html()}
+            </bs:IconSet>
+        </div>
+    </f:spaceless></f:section>
+
+</html>

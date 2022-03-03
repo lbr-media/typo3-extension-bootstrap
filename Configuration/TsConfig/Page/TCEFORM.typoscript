@@ -41,6 +41,7 @@ lib.bootstrapBorderColors {
     border-light < lib.bootstrapColors.light
     border-dark < lib.bootstrapColors.dark
 }
+
 lib.bootstrapButtonColors {
     btn-primary < lib.bootstrapColors.primary
     btn-secondary < lib.bootstrapColors.secondary
@@ -58,6 +59,17 @@ lib.bootstrapButtonColors {
     btn-outline-danger = danger outline (rot)
     btn-outline-light = light outline (hellgrau)
     btn-outline-dark = dark outline (dunkelgrau)
+}
+
+lib.bootstrapAlertTypes {
+    alert-primary < lib.bootstrapColors.primary
+    alert-secondary < lib.bootstrapColors.secondary
+    alert-success < lib.bootstrapColors.success
+    alert-info < lib.bootstrapColors.info
+    alert-warning < lib.bootstrapColors.warning
+    alert-danger < lib.bootstrapColors.danger
+    alert-light < lib.bootstrapColors.light
+    alert-dark < lib.bootstrapColors.dark
 }
 
 lib.bootstrapHeaderLayout {

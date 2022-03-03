@@ -28,6 +28,7 @@ use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapCarousel;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextImage;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapCards;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapAlert;
 
 /**
  * Class for data processing for various content elements which use the flexform field tx_bootstap_flexform.
@@ -102,6 +103,12 @@ class FlexFormProcessor implements DataProcessorInterface
             case "bootstrap_cards":
                 /** @var FlexFormServiceBootstrapCards $flexFormService */
                 $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapCards::class);
+                $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "configuration";
+                $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
+                break;
+            case "bootstrap_alert":
+                /** @var FlexFormServiceBootstrapAlert $flexFormService */
+                $flexFormService = GeneralUtility::makeInstance(FlexFormServiceBootstrapAlert::class);
                 $as = isset($processorConfiguration["as"]) && is_string($processorConfiguration["as"]) && trim($processorConfiguration["as"]) ? trim($processorConfiguration["as"]) : "configuration";
                 $processedData[$as] = $flexFormService->process($processedData['data']['tx_bootstrap_flexform']);
                 break;

@@ -34,6 +34,6 @@ class BootstrapCards implements NewContentElementInterface
         ];
 
         // Icon in backend page view
-        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_tabs'] = 'bootstrap_cards';
+        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['bootstrap_cards'] = 'bootstrap_cards';
     }
 }

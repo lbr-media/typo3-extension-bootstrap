@@ -134,6 +134,14 @@
             </trans-unit>
 
             <!--
+                Alert
+                EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapAlert.xml
+            -->
+            <trans-unit id="sALERT.sheetTitle">
+                <source>Alert</source>
+            </trans-unit>
+
+            <!--
                 Carousel
                 EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapCarousel.xml
             -->
@@ -382,6 +390,9 @@
             </trans-unit>
             <trans-unit id="image_position.bottom">
                 <source>Bottom</source>
+            </trans-unit>
+            <trans-unit id="alert_type">
+                <source>Alert type</source>
             </trans-unit>
             <trans-unit id="bg_color">
                 <source>Background color</source>

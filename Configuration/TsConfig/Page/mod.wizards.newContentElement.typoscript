@@ -10,11 +10,19 @@ mod.wizards.newContentElement.wizardItems.common {
                 CType = bootstrap_twocolumnstext
             }
         }
-        # remove uploads
+        bootstrap_alert {
+            iconIdentifier = bootstrap_alert
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_alert
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_alert.description
+            tt_content_defValues {
+                CType = bootstrap_alert
+            }
+        }
+        # remove uploads which will be added to special later on this file
         uploads >
     }
     
-    show := addToList(bootstrap_twocolumnstext)
+    show := addToList(bootstrap_twocolumnstext,bootstrap_alert)
     show := removeFromList(uploads)
 }
 

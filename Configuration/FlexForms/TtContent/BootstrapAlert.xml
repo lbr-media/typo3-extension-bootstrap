@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3FlexForms>
+    <sheets>
+        <sALERT>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sALERT.sheetTitle</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <field index="alert_type">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:alert_type</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="bg_color">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bg_color</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Standard</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="text_color">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_color</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Standard</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="border">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapBorder</renderType>
+                                <default>;;;;</default>
+                            </config>
+                        </value>
+                    </field>
+                </el>
+            </ROOT>
+        </sALERT>
+    </sheets>
+</T3FlexForms>

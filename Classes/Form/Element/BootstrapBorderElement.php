@@ -88,7 +88,8 @@ class BootstrapBorderElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId.'-border',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorder.']))
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorder.'])),
+            'me-2'
         );
 
         // ... border width
@@ -98,7 +99,8 @@ class BootstrapBorderElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId.'-borderwidth',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_width'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderWidth.']))
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderWidth.'])),
+            'me-2'
         );
 
         // ... border color
@@ -108,7 +110,8 @@ class BootstrapBorderElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId.'-bordercolor',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_color'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderColor.']))
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderColor.'])),
+            'me-2'
         );
 
         // ... rounded
@@ -118,7 +121,8 @@ class BootstrapBorderElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId.'-rounded',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:rounded'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapRounded.']))
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapRounded.'])),
+            'me-2'
         );
 
         // ... shadow

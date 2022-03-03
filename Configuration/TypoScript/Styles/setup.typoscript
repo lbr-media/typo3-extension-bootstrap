@@ -198,4 +198,14 @@ plugin.tx_bootstrap._CSS_DEFAULT_STYLE (
     .iconset.iconset-bottom .iconset__icon {
         margin-top: var(--iconset-space-y);
     }
+
+
+    /*
+    Styles for content element 'bootstrap_alert'.
+    */
+
+    .alert > *:last-child,
+    .alert .iconset__content > *:last-child {
+        margin-bottom: 0;
+    }
 )
