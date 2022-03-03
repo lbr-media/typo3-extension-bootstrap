@@ -141,8 +141,7 @@ A wizard to select bootstrap icons. These properties are available:
     * `Name` (string; readonly with visible selected icon)
     * `Position` (select; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
     * `Size` (select; the bootstrap font sizes or just inherit)
-    * `Filter` (string; to filter the icons)
-    * `Icon list` (table of all icons in the selected icon set; clicking one selects the icon)
+    * `Icon Color` (select; one of the text-{color} classes)
 
 Example:
 ``` TypoScript
@@ -408,6 +407,30 @@ Create fast two columns text.
 CType: `bootstrap_twocolumnstext`
 
 ---
+
+### Alert
+Bootstrap alert boxes.  
+CType: `bootstrap_alert`
+
+#### Settings:
+* _`Header`_ (string)
+* _`Text`_ (multiline string, RTE)
+* _`Alert Color`_ (select; one of the alert-{color} classes)
+* _`Text Color`_ (select; one of the text-{color} classes)
+* _`Background color`_ (select; one of the bg-{color} classes)
+* _`Icon-Set`_  
+A wizard to select bootstrap icons. These properties are available:
+    * `Set` (select; required; at this time only bootstrap icons)
+    * `Name` (string; readonly with visible selected icon)
+    * `Position` (select; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
+    * `Size` (select; the bootstrap font sizes or just inherit)
+    * `Icon Color` (select; one of the text-{color} classes)
+* Border:
+    * _`Border edge`_ (select; one of the border-{side} classes)
+    * _`Border width`_ (select; one of the border-{size} classes)
+    * _`Border color`_ (select; one of the border-{color} classes)
+    * _`Rounded`_ (select; one of the rounded classes)
+    * _`Shadow`_ (select; one of the shadow classes)
 
 ### Bullets
 A list in Bootstrap-style.  
