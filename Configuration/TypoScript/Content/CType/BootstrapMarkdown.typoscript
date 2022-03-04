@@ -1,0 +1,9 @@
+tt_content {
+    bootstrap_markdown =< lib.contentElement
+    bootstrap_markdown {
+        templateName = BootstrapMarkdown
+        dataProcessing {
+            1 = LBRmedia\Bootstrap\DataProcessing\MarkdownProcessor
+        }
+    }
+}

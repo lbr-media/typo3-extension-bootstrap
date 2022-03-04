@@ -95,6 +95,12 @@
             <trans-unit id="tt_content.CType.bootstrap_alert.tx_bootstrap_flexform">
                 <source>Settings for the alert</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_markdown">
+                <source>Markdown</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_markdown.description">
+                <source>Use Markdown as content.</source>
+            </trans-unit>
 
             <!-- tt_content.div -->
             <trans-unit id="tt_content.div.content_elements">

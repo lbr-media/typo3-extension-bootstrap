@@ -36,6 +36,8 @@ module.exports = function (grunt) {
                 '<%= paths.css %>Frontend/ContentElement/bootstrap_alert.min.css',
                 '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.css',
                 '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.min.css',
+                '<%= paths.css %>Frontend/ContentElement/bootstrap_markdown.css',
+                '<%= paths.css %>Frontend/ContentElement/bootstrap_markdown.min.css',
             ],
             typescript: [
                 '<%= paths.js %>SvgError.js',
@@ -83,6 +85,8 @@ module.exports = function (grunt) {
                         '<%= paths.css %>Frontend/ContentElement/bootstrap_alert.min.css',
                         '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.css',
                         '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.min.css',
+                        '<%= paths.css %>Frontend/ContentElement/bootstrap_markdown.css',
+                        '<%= paths.css %>Frontend/ContentElement/bootstrap_markdown.min.css',
                     ]
                 }
             },
@@ -158,7 +162,11 @@ module.exports = function (grunt) {
             ce_bootstrap_textmediafloat: {
                 src: '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.css',
                 dest: '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.min.css'
-            }
+            },
+            ce_bootstrap_markdown: {
+                src: '<%= paths.css %>Frontend/ContentElement/bootstrap_markdown.css',
+                dest: '<%= paths.css %>Frontend/ContentElement/bootstrap_markdown.min.css'
+            },
         },
         sass: {
             options: {
@@ -201,7 +209,12 @@ module.exports = function (grunt) {
                 files: {
                     '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.css': '<%= paths.sass %>Frontend/ContentElement/bootstrap_textmediafloat.scss'
                 }
-            }
+            },
+            ce_bootstrap_markdown: {
+                files: {
+                    '<%= paths.css %>Frontend/ContentElement/bootstrap_markdown.css': '<%= paths.sass %>Frontend/ContentElement/bootstrap_markdown.scss'
+                }
+            },
         },
         eslint: {
             options: {

@@ -1,0 +1,12 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+    <!--
+    CType = bootstrap_markdown
+    -->
+    <f:layout name="Default" />
+
+    <f:section name="Main">{markdown -> f:format.raw()}</f:section>
+</html>

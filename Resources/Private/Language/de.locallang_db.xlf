@@ -125,6 +125,14 @@
                 <source>Settings for the alert</source>
                 <target>Einstellungen für Alarm</target>
             </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_markdown">
+                <source>Markdown</source>
+                <target>Markdown</target>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.bootstrap_markdown.description">
+                <source>Use Markdown as content.</source>
+                <target>Nutze Markdown als Inhalt.</target>
+            </trans-unit>
 
 
             <!-- tt_content.div -->

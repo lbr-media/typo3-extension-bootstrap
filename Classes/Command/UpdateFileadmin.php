@@ -55,6 +55,7 @@ class UpdateFileadmin extends Command
         // Additional CSS
         'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_alert.min.css' => self::CSS_DIR,
         'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_textmediafloat.min.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_markdown.min.css' => self::CSS_DIR,
         'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/Elements/figure-copyright.min.css' => self::CSS_DIR,
         'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/Elements/iconset.min.css' => self::CSS_DIR,
 

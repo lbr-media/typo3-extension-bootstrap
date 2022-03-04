@@ -27,6 +27,7 @@ class NewContentElement
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapTextMediaFloat',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapCards',
         '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapAlert',
+        '\LBRmedia\Bootstrap\Listener\TCA\TtContent\NewContentElement\BootstrapMarkdown',
 
         // This default content element must be modified at the very last element b/c other ce copies it!
         // It is disabled by default and only used to be a fallback of the BootstrapTextMediaFloat content element.

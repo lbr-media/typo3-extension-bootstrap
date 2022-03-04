@@ -45,6 +45,10 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_alert.svg',
     ],
+    'bootstrap_markdown' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/bootstrap_markdown.svg',
+    ],
 
     // ... for tables
     'tx_bootstrap_domain_model_item' => [

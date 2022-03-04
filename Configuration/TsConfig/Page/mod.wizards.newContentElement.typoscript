@@ -108,6 +108,14 @@ mod.wizards.newContentElement.wizardItems.special {
                 CType = bootstrap_cards
             }
         }
+        bootstrap_markdown {
+            iconIdentifier = bootstrap_markdown
+            title = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_markdown
+            description = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.bootstrap_markdown.description
+            tt_content_defValues {
+                CType = bootstrap_markdown
+            }
+        }
     }
-    show := addToList(bootstrap_tabs,bootstrap_accordion,bootstrap_cards,uploads)
+    show := addToList(bootstrap_tabs,bootstrap_accordion,bootstrap_cards,uploads,bootstrap_markdown)
 }

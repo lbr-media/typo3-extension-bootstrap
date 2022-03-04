@@ -186,6 +186,9 @@ TCEFORM.tt_content {
     tx_bootstrap_flexform.bootstrap_alert.sALERT.alert_type {
         addItems < lib.bootstrapAlertTypes
     }
+
+    # = = CType=bootstrap_markdown = =
+    bodytext.types.bootstrap_markdown.label = Markdown
 }
 
 # enable frame_class/container for layout homepage
