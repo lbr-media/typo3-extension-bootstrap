@@ -1,3 +1,23 @@
+/**
+ * Package: typo3-extension-bootstrap - Version 1.1.x-dev
+ * Typo3 template extension with Twitter Bootstrap 5 package.
+ * Author: Marcel <mb@lbrmedia.de>
+ * Build date: 2022-03-04 07:51:38
+ * Copyright (c) 2022 LBRmedia
+ * Released under the GPL-2.0-or-later license
+ * https://github.com/lbr-media/typo3-extension-bootstrap
+ */
+
+/**
+ * Package: typo3-extension-bootstrap - Version 1.1.x-dev
+ * Typo3 template extension with Twitter Bootstrap 5 package.
+ * Author: Marcel <mb@lbrmedia.de>
+ * Build date: 2022-03-04 07:51:09
+ * Copyright (c) 2022 LBRmedia
+ * Released under the GPL-2.0-or-later license
+ * https://github.com/lbr-media/typo3-extension-bootstrap
+ */
+
 "use strict";
 /**
  * Animation used in for the SVG:

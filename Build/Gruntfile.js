@@ -1,6 +1,8 @@
-const sass = require('node-sass');
 
-module.exports = function(grunt) {
+
+module.exports = function (grunt) {
+    const sass = require('node-sass');
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -15,31 +17,93 @@ module.exports = function(grunt) {
             typescript: '<%= paths.sources %>TypeScript/',
             js: '<%= paths.resources %>Public/JavaScript/'
         },
-
-        // TODO: move uglify to terser
-        uglify: {
+        clean: {
+            build: [
+                '.cache',
+            ],
+            css: [
+                '<%= paths.css %>Backend/FormElements.css',
+                '<%= paths.css %>Backend/FormElements.min.css',
+                '<%= paths.css %>CKEditor/CKEditor.css',
+                '<%= paths.css %>CKEditor/CKEditor.min.css',
+                '<%= paths.css %>Frontend/error-page.css',
+                '<%= paths.css %>Frontend/error-page.min.css',
+                '<%= paths.css %>Frontend/Elements/figure-copyright.css',
+                '<%= paths.css %>Frontend/Elements/figure-copyright.min.css',
+                '<%= paths.css %>Frontend/Elements/iconset.css',
+                '<%= paths.css %>Frontend/Elements/iconset.min.css',
+                '<%= paths.css %>Frontend/ContentElement/bootstrap_alert.css',
+                '<%= paths.css %>Frontend/ContentElement/bootstrap_alert.min.css',
+                '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.css',
+                '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.min.css',
+            ],
+            typescript: [
+                '<%= paths.js %>SvgError.js',
+                '<%= paths.js %>SvgError.min.js',
+            ],
+            javascript: [
+                '<%= paths.js %>FormEngine/Element/AllEdgesElement.js',
+                '<%= paths.js %>FormEngine/Element/BootstrapBorderElement.js',
+                '<%= paths.js %>FormEngine/Element/BootstrapDevicesElement.js',
+                '<%= paths.js %>FormEngine/Element/BootstrapIconsElement.js',
+            ],
+            copy: [
+                '<%= paths.js %>lib/masonry.pkgd.min.js',
+            ],
+        },
+        banner: '/**\n' +
+            ' * Package: <%= pkg.name %> - Version <%= pkg.version %>\n' +
+            ' * <%= pkg.description %>\n' +
+            ' * Author: <%= pkg.author.name %> <<%= pkg.author.email %>>\n' +
+            ' * Build date: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>\n' +
+            ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.company %>\n' +
+            ' * Released under the <%= pkg.license %> license\n' +
+            ' * https://github.com/lbr-media/typo3-extension-bootstrap\n' +
+            ' */\n',
+        usebanner: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-                output: {
-                    comments: false
+                position: 'top',
+                banner: '<%= banner %>',
+                linebreak: true
+            },
+            css: {
+                files: {
+                    src: [
+                        '<%= paths.css %>Backend/FormElements.css',
+                        '<%= paths.css %>Backend/FormElements.min.css',
+                        '<%= paths.css %>CKEditor/CKEditor.css',
+                        '<%= paths.css %>CKEditor/CKEditor.min.css',
+                        '<%= paths.css %>Frontend/error-page.css',
+                        '<%= paths.css %>Frontend/error-page.min.css',
+                        '<%= paths.css %>Frontend/Elements/figure-copyright.css',
+                        '<%= paths.css %>Frontend/Elements/figure-copyright.min.css',
+                        '<%= paths.css %>Frontend/Elements/iconset.css',
+                        '<%= paths.css %>Frontend/Elements/iconset.min.css',
+                        '<%= paths.css %>Frontend/ContentElement/bootstrap_alert.css',
+                        '<%= paths.css %>Frontend/ContentElement/bootstrap_alert.min.css',
+                        '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.css',
+                        '<%= paths.css %>Frontend/ContentElement/bootstrap_textmediafloat.min.css',
+                    ]
                 }
             },
-            AllEdgesElement: {
-                src: '<%= paths.js_source %>FormEngine/Element/AllEdgesElement.js',
-                dest: '<%= paths.js %>FormEngine/Element/AllEdgesElement.js'
+            typescript: {
+                files: {
+                    src: [
+                        // '<%= paths.js %>SvgError.js',
+                        '<%= paths.js %>SvgError.min.js',
+                    ]
+                }
             },
-            BootstrapBorderElement: {
-                src: '<%= paths.js_source %>FormEngine/Element/BootstrapBorderElement.js',
-                dest: '<%= paths.js %>FormEngine/Element/BootstrapBorderElement.js'
+            javascript: {
+                files: {
+                    src: [
+                        '<%= paths.js %>FormEngine/Element/AllEdgesElement.js',
+                        '<%= paths.js %>FormEngine/Element/BootstrapBorderElement.js',
+                        '<%= paths.js %>FormEngine/Element/BootstrapDevicesElement.js',
+                        '<%= paths.js %>FormEngine/Element/BootstrapIconsElement.js',
+                    ]
+                }
             },
-            BootstrapDevicesElement: {
-                src: '<%= paths.js_source %>FormEngine/Element/BootstrapDevicesElement.js',
-                dest: '<%= paths.js %>FormEngine/Element/BootstrapDevicesElement.js'
-            },
-            BootstrapIconsElement: {
-                src: '<%= paths.js_source %>FormEngine/Element/BootstrapIconsElement.js',
-                dest: '<%= paths.js %>FormEngine/Element/BootstrapIconsElement.js'
-            }
         },
         rebase: {
             error_page: {
@@ -51,6 +115,16 @@ module.exports = function(grunt) {
                     '<%= paths.css %>Frontend/error-page.css': '<%= paths.css %>Frontend/error-page.css'
                 }
             },
+        },
+        formatsass: {
+            sass: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= paths.sass %>',
+                    src: ['**/*.scss'],
+                    dest: '<%= paths.sass %>'
+                }]
+            }
         },
         cssmin: {
             options: {
@@ -170,16 +244,6 @@ module.exports = function(grunt) {
                 ]
             }
         },
-        formatsass: {
-            sass: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= paths.sass %>',
-                    src: ['**/*.scss'],
-                    dest: '<%= paths.sass %>'
-                }]
-            }
-        },
         exec: {
             ts: ((process.platform === 'win32') ? 'node_modules\\.bin\\tsc.cmd' : './node_modules/.bin/tsc') + ' --project tsconfig.json'
         },
@@ -187,19 +251,19 @@ module.exports = function(grunt) {
             // JavaScript
             AllEdgesElement: {
                 files: '<%= paths.js_source %>FormEngine/Element/AllEdgesElement.js',
-                tasks: 'uglify:AllEdgesElement'
+                tasks: ['terser:javascript','newer:usebanner:javascript']
             },
             BootstrapBorderElement: {
                 files: '<%= paths.js_source %>FormEngine/Element/BootstrapBorderElement.js',
-                tasks: 'uglify:BootstrapBorderElement'
+                tasks: ['terser:javascript','newer:usebanner:javascript']
             },
             BootstrapDevicesElement: {
                 files: '<%= paths.js_source %>FormEngine/Element/BootstrapDevicesElement.js',
-                tasks: 'uglify:BootstrapDevicesElement'
+                tasks: ['terser:javascript','newer:usebanner:javascript']
             },
             BootstrapIconsElement: {
                 files: '<%= paths.js_source %>FormEngine/Element/BootstrapIconsElement.js',
-                tasks: 'uglify:BootstrapIconsElement'
+                tasks: ['terser:javascript','newer:usebanner:javascript']
             },
 
             // SCSS
@@ -237,13 +301,21 @@ module.exports = function(grunt) {
                     '<%= paths.js %>SvgError.min.js': ['<%= paths.js %>SvgError.js'],
                 }
             },
+            javascript: {
+                files: {
+                    '<%= paths.js %>FormEngine/Element/AllEdgesElement.js': ['<%= paths.js_source %>FormEngine/Element/AllEdgesElement.js'],
+                    '<%= paths.js %>FormEngine/Element/BootstrapBorderElement.js': ['<%= paths.js_source %>FormEngine/Element/BootstrapBorderElement.js'],
+                    '<%= paths.js %>FormEngine/Element/BootstrapDevicesElement.js': ['<%= paths.js_source %>FormEngine/Element/BootstrapDevicesElement.js'],
+                    '<%= paths.js %>FormEngine/Element/BootstrapIconsElement.js': ['<%= paths.js_source %>FormEngine/Element/BootstrapIconsElement.js'],
+                }
+            },
         }
     });
 
     /**
      * Grunt correct scss urls
      */
-     grunt.registerMultiTask('rebase', 'Grunt task to rebase urls after sass processing', function () {
+    grunt.registerMultiTask('rebase', 'Grunt task to rebase urls after sass processing', function () {
         var options = this.options(),
             done = this.async(),
             postcss = require('postcss'),
@@ -296,11 +368,11 @@ module.exports = function(grunt) {
     });
 
     /**
-     * Register tasks
+     * Register grunt tasks
      */
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-terser');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
@@ -308,11 +380,52 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-stylelint');
     grunt.loadNpmTasks('grunt-lintspaces');
     grunt.loadNpmTasks('grunt-exec');
+    grunt.loadNpmTasks('grunt-newer');
+    grunt.loadNpmTasks('grunt-banner');
 
-    grunt.registerTask('compile-typescript', ['eslint', 'exec:ts', 'terser:typescript']);
-    grunt.registerTask('css', ['formatsass', 'sass', 'rebase', 'cssmin']);
-    grunt.registerTask('js', ['uglify']);
+    /**
+     * Register main tasks
+     */
+    // typescript
+    grunt.registerTask('compile-typescript', ['eslint', 'exec:ts', 'terser:typescript','newer:usebanner:typescript']);
+
+    // javascript
+    grunt.registerTask('js', ['terser:javascript','newer:usebanner:javascript']);
+
+    // stylesheets
+    grunt.registerTask('css', ['formatsass', 'newer:sass', 'newer:rebase', 'newer:cssmin', 'newer:usebanner:css']);
+
+    // linting
     grunt.registerTask('lint', ['eslint', 'stylelint', 'lintspaces']);
+
+    // build
     grunt.registerTask('build', ['css', 'js', 'compile-typescript', 'copy']);
     grunt.registerTask('default', ['build']);
+
+    /**
+     * Show some help about the available tasks
+     */
+    grunt.registerTask('help', function () {
+        grunt.log.subhead('Available main tasks:');
+        grunt.log.ok("grunt clear --force");
+        grunt.log.writeln("   Removes the built assets in Resource/Public/...");
+        grunt.log.writeln("   Sub-tasks:");
+        grunt.log.writeln("   - grunt clear:build --force");
+        grunt.log.writeln("   - grunt css:build --force");
+        grunt.log.writeln("   - grunt javascript:build --force");
+        grunt.log.writeln("   - grunt typescript:build --force");
+        grunt.log.writeln("   - grunt copy:build --force");
+        grunt.log.ok("grunt build");
+        grunt.log.writeln("   Compile and build all the assets.");
+        grunt.log.ok("grunt compile-typescript");
+        grunt.log.writeln("   Compile and minify TypeScript.");
+        grunt.log.ok("grunt js");
+        grunt.log.writeln("   Minify JavaScript.");
+        grunt.log.ok("grunt css");
+        grunt.log.writeln("   Compile SASS/SCSS to CSS and minify.");
+        grunt.log.ok("grunt lint");
+        grunt.log.writeln("   Show lints for typescript, stylesheets and spaces");
+        grunt.log.ok("grunt watch");
+        grunt.log.writeln("   Watch for changes in sources and builds the assets again.");
+    });
 };

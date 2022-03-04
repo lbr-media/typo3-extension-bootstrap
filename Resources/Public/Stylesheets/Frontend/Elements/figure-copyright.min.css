@@ -1,1 +1,11 @@
+/**
+ * Package: typo3-extension-bootstrap - Version 1.1.x-dev
+ * Typo3 template extension with Twitter Bootstrap 5 package.
+ * Author: Marcel <mb@lbrmedia.de>
+ * Build date: 2022-03-04 08:21:33
+ * Copyright (c) 2022 LBRmedia
+ * Released under the GPL-2.0-or-later license
+ * https://github.com/lbr-media/typo3-extension-bootstrap
+ */
+
 @charset "UTF-8";.figure-copyright{position:absolute;bottom:0;right:0;padding:.35em .5em;color:rgba(255,255,255,.8)!important;background-color:rgba(55,55,55,.7)!important;font-size:10px;line-height:12px;max-width:100%;max-height:100%;overflow:hidden;white-space:nowrap}.figure-copyright--bottom-left{right:auto;left:0}.figure-copyright--top-left{right:auto;left:0;top:0}.figure-copyright--top-right{bottom:auto;top:0}.figure-copyright:before{content:"©";margin-right:.25em}

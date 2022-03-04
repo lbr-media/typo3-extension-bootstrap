@@ -1,7 +1,7 @@
 {
     "name": "lbr-media/typo3-extension-bootstrap",
     "type": "typo3-cms-extension",
-    "description": "Twitter Bootstrap package",
+    "description": "Typo3 template extension with Twitter Bootstrap 5 package.",
     "homepage": "https://github.com/lbr-media/typo3-extension-bootstrap",
     "license": "GPL-2.0-or-later",
     "authors": [
