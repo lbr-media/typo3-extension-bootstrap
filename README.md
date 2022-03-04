@@ -430,6 +430,14 @@ CType: `bootstrap_alert`
     * _`Rounded`_ (select; one of the rounded classes)
     * _`Shadow`_ (select; one of the shadow classes)
 
+---
+
+### Markdown
+Just like the regular text content element - but instead using a rich text editor you use Markdown markup. In frontend it will be transformed to HTML.  
+CType: `bootstrap_markdown`
+
+---
+
 ### Bullets
 A list in Bootstrap-style.  
 CType: `bullets`
