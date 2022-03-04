@@ -407,14 +407,14 @@ module.exports = function (grunt) {
      */
     grunt.registerTask('help', function () {
         grunt.log.subhead('Available main tasks:');
-        grunt.log.ok("grunt clear --force");
+        grunt.log.ok("grunt clean --force");
         grunt.log.writeln("   Removes the built assets in Resource/Public/...");
         grunt.log.writeln("   Sub-tasks:");
-        grunt.log.writeln("   - grunt clear:build --force");
-        grunt.log.writeln("   - grunt css:build --force");
-        grunt.log.writeln("   - grunt javascript:build --force");
-        grunt.log.writeln("   - grunt typescript:build --force");
-        grunt.log.writeln("   - grunt copy:build --force");
+        grunt.log.writeln("   - grunt clean:build --force");
+        grunt.log.writeln("   - grunt clean:css --force");
+        grunt.log.writeln("   - grunt clean:javascript --force");
+        grunt.log.writeln("   - grunt clean:typescript --force");
+        grunt.log.writeln("   - grunt clean:copy --force");
         grunt.log.ok("grunt build");
         grunt.log.writeln("   Compile and build all the assets.");
         grunt.log.ok("grunt compile-typescript");
