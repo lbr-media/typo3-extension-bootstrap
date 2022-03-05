@@ -315,7 +315,7 @@ class Columns
                         'showPossibleLocalizationRecords' => false,
                         'showSynchronizationLink' => false,
                         'showAllLocalizationLink' => false,
-                        'collapseAll' => false,
+                        'collapseAll' => true,
                         'expandSingle' => true,
                     ],
                 ],
