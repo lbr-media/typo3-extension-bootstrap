@@ -80,7 +80,7 @@ class FlexFormServiceBootstrapMediaGrid extends FlexFormService implements FlexF
 
         // set masonry data attribute
         $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled']
-            ? ' data-masonry=\'{"percentPosition":true}\''
+            ? ' data-bs-masonry=\'{"percentPosition":true}\''
             : '';
 
         return $transformedData;
