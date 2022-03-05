@@ -461,7 +461,7 @@ class BootstrapUtility
      * @param string $content
      * @return string
      */
-    public static function renderIconSet(string $value, string $content): string
+    public static function renderIconSet(string $value, string $content, string $additionalClass = ""): string
     {
         list($iconSet, $iconValue, $position, $size, $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
 
@@ -478,7 +478,7 @@ class BootstrapUtility
         }
 
         $iconWrap = new TagBuilder('span');
-        $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : ''));
+        $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : '') . ($additionalClass ? ' ' . $additionalClass : ''));
 
         $iconGfx = new TagBuilder('span');
         $iconGfx->addAttribute('class', 'iconset__icon' . ($size ? ' ' . $size : '') . ($color ? ' ' . $color : ''));
