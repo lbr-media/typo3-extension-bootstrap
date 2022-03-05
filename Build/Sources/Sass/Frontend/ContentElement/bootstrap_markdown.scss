@@ -2,7 +2,21 @@
 // Styles for content element 'bootstrap_markdown'.
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-.container-bootstrap_markdown pre {
-    padding: .5em;
-    background-color: rgba(0, 0, 0, .1);
+:root {
+    --bs-markdown-bg-color: rgba(0, 0, 0, .1);
+    --bs-markdown-border-color: rgba(0, 0, 0, .3);
+}
+
+.container-bootstrap_markdown {
+    pre {
+        padding: .5em;
+        background-color: var(--bs-markdown-bg-color);
+    }
+
+    blockquote {
+        border-left-style: solid;
+        border-left-width: .3em;
+        border-left-color: var(--bs-markdown-border-color);
+        padding-left: .5em;
+    }
 }
