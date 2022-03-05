@@ -14,7 +14,7 @@
 }
 
 .iconset {
-  display: inline-flex;
+  display: flex;
 }
 
 .iconset__icon {
