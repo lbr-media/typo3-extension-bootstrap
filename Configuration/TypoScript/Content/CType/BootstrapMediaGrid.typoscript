@@ -43,8 +43,8 @@ tt_content {
                 label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
                 configuration {
                     mediaitem {
-                        space_y = {$styles.bootstrap.grid.spacing.regular.form_element.y}
-                        space_x = {$styles.bootstrap.grid.spacing.regular.form_element.x}
+                        space_y = {$styles.bootstrap.grid.spacing.media.form_element.y}
+                        space_x = {$styles.bootstrap.grid.spacing.media.form_element.x}
                     }
                 }
             }
