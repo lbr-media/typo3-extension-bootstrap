@@ -95,7 +95,16 @@
                 <div class="card-text">{cardItem.text -> f:format.html()}</div>
             </f:if>
             <f:if condition="{cardItem.typolink}">
-                <f:link.typolink parameter="{cardItem.typolink}" class="btn {f:if(condition:configuration.card.button_color, then:configuration.card.button_color, else:'btn-primary')} btn-sm stretched-link">{f:if(condition:cardItem.typolinkText, then:cardItem.typolinkText)}</f:link.typolink>
+                <f:if condition="{cardItem.typolinkText}">
+                    <f:then>
+                        <f:comment><!-- Create a button when there is a text --></f:comment>
+                        <f:link.typolink parameter="{cardItem.typolink}" class="btn {f:if(condition:configuration.card.button_color, then:configuration.card.button_color, else:'btn-primary')} btn-sm">{cardItem.typolinkText}</f:link.typolink>
+                    </f:then>
+                    <f:else>
+                        <f:comment><!-- Create an empty stretched-link when there is no text --></f:comment>
+                        <f:link.typolink parameter="{cardItem.typolink}" class="stretched-link"><!-- --></f:link.typolink>
+                    </f:else>
+                </f:if>
             </f:if>
         </div>
     </f:spaceless></f:section>
