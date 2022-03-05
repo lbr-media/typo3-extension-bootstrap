@@ -146,8 +146,8 @@ class BootstrapUtility
 
         $classes = [];
         $keys = [
-            0 => 'l', // left
-            1 => 'r', // right
+            0 => 's', // left
+            1 => 'e', // right
             2 => 'x', // horizontal
             3 => 't', // top
             4 => 'b', // bottom
