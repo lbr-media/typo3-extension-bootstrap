@@ -66,7 +66,7 @@ class TagViewHelper extends AbstractTagBasedViewHelper
         // set additional attributes (only when not empty)
         if (is_array($this->arguments['additionalAttributesIfNotEmpty'])) {
             foreach ($this->arguments['additionalAttributesIfNotEmpty'] as $attributeName => $value) {
-                if ('' !== trim($value)) {
+                if ($value && '' !== trim((string) $value)) {
                     $this->tag->addAttribute($attributeName, trim($value));
                 }
             }
