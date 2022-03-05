@@ -44,7 +44,7 @@
             </div>
         </f:if>
         <f:if condition="{file.description}">
-            <figcaption class="figure-caption text-start{f:if(condition:grid.mediaitem.border_classes, then:' p-1 p-lg-2')}">
+            <figcaption class="{settings.bootstrap.figcaption_classes}{f:if(condition:grid.mediaitem.border_classes, then:' p-1 p-lg-2')}">
                 {file.description}
             </figcaption>
         </f:if>

@@ -21,7 +21,7 @@
                         <div class="text-center py-7 py-md-9 bg-light p-3 position-relative">
                             <a href="{videoUrl}" target="_blank" title="VIMEO-Video &quot;{file.title}&quot; in einem neuen Fenster öffnen" class="btn btn-white font-weight-normal stretched-link py-3 px-4 px-lg-5">Externer Link zu VIMEO</a>
                         </div>
-                        <figcaption>{description -> f:format.nl2br()}</figcaption>
+                        <figcaption class="{settings.bootstrap.figcaption_classes}">{description -> f:format.nl2br()}</figcaption>
                     </figure>
                 </f:then>
                 <f:else>
@@ -53,7 +53,7 @@
                         <div class="text-center py-7 py-md-9 bg-light p-3 position-relative">
                             <a href="{videoUrl}" target="_blank" title="YouTube-Video &quot;{file.title}&quot; in einem neuen Fenster öffnen" class="btn btn-white font-weight-normal stretched-link py-3 px-4 px-lg-5">Externer Link zu YouTube</a>
                         </div>
-                        <figcaption>{description -> f:format.nl2br()}</figcaption>
+                        <figcaption class="{settings.bootstrap.figcaption_classes}">{description -> f:format.nl2br()}</figcaption>
                     </figure>
                 </f:then>
                 <f:else>
@@ -95,7 +95,7 @@
                                 poster:'assets/gfx/video_poster.jpg'
                             }" />
                     </div>
-                    <figcaption>{description -> f:format.nl2br()}</figcaption>
+                    <figcaption class="{settings.bootstrap.figcaption_classes}">{description -> f:format.nl2br()}</figcaption>
                 </figure>
             </f:then>
             <f:else>

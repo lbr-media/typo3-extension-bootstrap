@@ -72,16 +72,16 @@ tt_content {
             10 {
                 label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
                 configuration {
-                    space_y = 3;;4;;;
-                    space_x = 3;;4;;;
+                    space_y = {$styles.bootstrap.grid.spacing.regular.form_element.y}
+                    space_x = {$styles.bootstrap.grid.spacing.regular.form_element.x}
                 }
             }
             20 {
                 label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing_between_media
                 configuration {
                     mediaitem {
-                        space_y = 3;;4;;;
-                        space_x = 3;;4;;;
+                        space_y = {$styles.bootstrap.grid.spacing.media.form_element.y}
+                        space_x = {$styles.bootstrap.grid.spacing.media.form_element.x}
                     }
                 }
             }

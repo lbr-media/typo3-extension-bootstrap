@@ -8,7 +8,7 @@
             <f:then>
                 <figure>
                     <f:render section="_Picture" arguments="{image:image, image_section:'_ImageSmall'}" />
-                    <figcaption>
+                    <figcaption class="{settings.bootstrap.figcaption_classes}">
                         {image.description -> f:format.nl2br()}
                     </figcaption>
                 </figure>
@@ -24,7 +24,7 @@
             <f:then>
                 <figure>
                     <f:render section="_Picture" arguments="{image:image, image_section:'_ImageMiddle'}" />
-                    <figcaption>
+                    <figcaption class="{settings.bootstrap.figcaption_classes}">
                         {image.description -> f:format.nl2br()}
                     </figcaption>
                 </figure>
@@ -40,7 +40,7 @@
             <f:then>
                 <figure>
                     <f:render section="_Picture" arguments="{image:image, image_section:'_ImageLarge'}" />
-                    <figcaption>
+                    <figcaption class="{settings.bootstrap.figcaption_classes}">
                         {image.description -> f:format.nl2br()}
                     </figcaption>
                 </figure>
@@ -56,7 +56,7 @@
             <f:then>
                 <figure>
                     <f:render section="_Picture" arguments="{image:image, image_section:'_ImageSmall'}" />
-                    <figcaption>
+                    <figcaption class="{settings.bootstrap.figcaption_classes}">
                         {image.description -> f:format.nl2br()}
                     </figcaption>
                 </figure>

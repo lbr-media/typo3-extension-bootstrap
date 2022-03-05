@@ -14,9 +14,7 @@ lib.contentElement {
         100 = {$plugin.tx_bootstrap.view.templateRootPath}Content/
     }
 
-    settings {
-        defaultHeaderType = 2
-    }
+    settings < plugin.tx_bootstrap.settings
 }
 
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Content/ParseFunc.typoscript">

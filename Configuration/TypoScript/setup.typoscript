@@ -10,6 +10,12 @@ plugin.tx_bootstrap {
     }
 }
 
+# Prepare settings from some styling constants
+plugin.tx_bootstrap.settings {
+    bootstrap.figcaption_classes = {$styles.bootstrap.figcaption_classes}
+    bootstrap.ce_div_hr_classes = {$styles.bootstrap.ce_div_hr_classes}
+}
+
 
 # include all the basics
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TypoScript/Basics/Config.typoscript">

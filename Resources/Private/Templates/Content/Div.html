@@ -2,6 +2,6 @@
 <f:layout name="Default" />
 <f:section name="Header" />
 <f:section name="Main">
-    <hr />
+    <hr{f:if(condition:settings.bootstrap.ce_div_hr_classes, then:' class="{settings.bootstrap.ce_div_hr_classes}"')} />
 </f:section>
 </html>

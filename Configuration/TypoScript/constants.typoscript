@@ -1,3 +1,7 @@
+# customcategory=bootstrap=Bootstrap
+# customsubcategory=styling=Styling
+# customsubcategory=grid=Grid
+
 plugin.tx_bootstrap {
     view {
         templateRootPath = EXT:bootstrap/Resources/Private/Templates/
@@ -33,5 +37,46 @@ styles.content {
         extTarget = _blank
         # cat=content/links/l3; type=string; label=Parts to keep when building links: Comma separated list of the link parts to show when building the link-text: scheme,path,query. Example: "" (empty) => www.example.com, "scheme,path" => http://www.example.com
         keep = path
+    }
+}
+
+styles.bootstrap {
+    # cat=bootstrap/styling/s0; type=string; label=CSS-Classes for figcaption tags
+    figcaption_classes = figure-caption text-start
+
+    # cat=bootstrap/styling/s0; type=string; label=CSS-Classes for the HR tag in content element Division
+    ce_div_hr_classes = bg-dark opacity-75 my-3 my-md-4
+
+    grid {
+        spacing {
+            regular {
+                form_element {
+                    # cat=bootstrap/grid/g0; type=small; label=Preset value for regular grid space X + Y
+                    xy = 3;;4;;;
+                    # cat=bootstrap/grid/g1; type=small; label=Preset value for regular grid space X
+                    x = 3;;4;;;
+                    # cat=bootstrap/grid/g2; type=small; label=Preset value for regular grid space Y
+                    y = 3;;4;;;
+                }
+            }
+            media {
+                form_element {
+                    # cat=bootstrap/grid/g3; type=small; label=Preset value for media grid space X + Y
+                    xy = 2;3;4;;;
+                    # cat=bootstrap/grid/g4; type=small; label=Preset value for media grid space X
+                    x = 2;3;4;;;
+                    # cat=bootstrap/grid/g5; type=small; label=Preset value for media grid space X
+                    y = 2;3;4;;;
+                }
+            }
+            cards {
+                form_element {
+                    # cat=bootstrap/grid/g6; type=small; label=Preset value for Cards content element grid space X
+                    x = 2;3;4;;;
+                    # cat=bootstrap/grid/g7; type=small; label=Preset value for Cards content element grid space X
+                    y = 2;3;4;;;
+                }
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@
     <f:section name="Vimeo">
         <figure class="figure figure--video figure--video-vimeo d-block {additionalClasses}">
             <div class="embed-responsive embed-responsive-16by9" data-toggle="video-opt-in" data-video="{f:media(class:'embed-responsive-item', file:file, alt:alternative, title:title, additionalConfig:'{showinfo:1}') -> f:format.urlencode()}" data-service="vimeo"></div>
-            <f:if condition="{description}"><figcaption class="figure-caption">{description -> f:format.nl2br()}</figcaption></f:if>
+            <f:if condition="{description}"><figcaption class="{settings.bootstrap.figcaption_classes}">{description -> f:format.nl2br()}</figcaption></f:if>
         </figure>
     </f:section>
 
@@ -31,7 +31,7 @@
     <f:section name="Youtube">
         <figure class="figure figure--video figure--video-youtube d-block {additionalClasses}">
             <div class="embed-responsive embed-responsive-16by9" data-toggle="video-opt-in" data-video="{f:media(class:'embed-responsive-item', file:file, alt:alternative, title:title, additionalConfig:'{showinfo:1}') -> f:format.urlencode()}" data-service="youtube"></div>
-            <f:if condition="{description}"><figcaption class="figure-caption">{description -> f:format.nl2br()}</figcaption></f:if>
+            <f:if condition="{description}"><figcaption class="{settings.bootstrap.figcaption_classes}">{description -> f:format.nl2br()}</figcaption></f:if>
         </figure>
     </f:section>
 
@@ -49,7 +49,7 @@
             <div class="embed-responsive embed-responsive-16by9" id="{f:if(condition:id, then:id, else:'embedded-video-{file.uid}')}">
                 <f:media class="embed-responsive-item" file="{file}" alt="{alternative}" title="{title}" additionalConfig="{showinfo:1}" />
             </div>
-            <f:if condition="{description}"><figcaption class="figure-caption">{description -> f:format.nl2br()}</figcaption></f:if>
+            <f:if condition="{description}"><figcaption class="{settings.bootstrap.figcaption_classes}">{description -> f:format.nl2br()}</figcaption></f:if>
         </figure>
     </f:section>
 

@@ -69,7 +69,7 @@
                     </f:else>
                 </f:if>
 
-                <f:if condition="{files.0.description}"><figcaption class="figure-caption text-start{f:if(condition:configuration.mediaitem.border_classes, then:' p-1 p-lg-2')}">{files.0.description -> f:format.nl2br()}</figcaption></f:if>
+                <f:if condition="{files.0.description}"><figcaption class="{settings.bootstrap.figcaption_classes}{f:if(condition:configuration.mediaitem.border_classes, then:' p-1 p-lg-2')}">{files.0.description -> f:format.nl2br()}</figcaption></f:if>
             </figure>
         </f:if>
     </f:spaceless></f:section>

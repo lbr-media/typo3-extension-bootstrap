@@ -26,7 +26,7 @@ tt_content {
             10 {
                 label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
                 configuration {
-                    space = 3;;4;;;
+                    space = {$styles.content.grid.spacing.regular.form_element.xy}
                 }
             }
             20 {
