@@ -151,8 +151,8 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
             // build fallback image and tag
             $imgTag = new TagBuilder('img');
             $imgTag->forceClosingTag(false);
-            //$imgTag->addAttribute("src", $this->getImageSource($defaultImage, 768));
-            $imgTag->addAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+            $imgTag->addAttribute("src", $this->pictureService->getImageSource($device, 575));
+            // $imgTag->addAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
             $imgTag->addAttribute('alt', $alt ? $alt : $file->getProperty('alternative'));
             if ($title) {
                 $imgTag->addAttribute('title', $title);
