@@ -13,6 +13,7 @@ plugin.tx_bootstrap {
 # Prepare settings from some styling constants
 plugin.tx_bootstrap.settings {
     bootstrap.figcaption_classes = {$styles.bootstrap.figcaption_classes}
+    bootstrap.figcaption_classes_onBorderOrShadow = {$styles.bootstrap.figcaption_classes_onBorderOrShadow}
     bootstrap.ce_div_hr_classes = {$styles.bootstrap.ce_div_hr_classes}
 }
 

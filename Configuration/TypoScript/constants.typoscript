@@ -44,7 +44,10 @@ styles.bootstrap {
     # cat=bootstrap/styling/s0; type=string; label=CSS-Classes for figcaption tags
     figcaption_classes = figure-caption text-start
 
-    # cat=bootstrap/styling/s0; type=string; label=CSS-Classes for the HR tag in content element Division
+    # cat=bootstrap/styling/s1; type=string; label=CSS-Classes for figcaption tags when the figure has a border or shadow
+    figcaption_classes_onBorderOrShadow = figure-caption text-start p-1 p-lg-2
+
+    # cat=bootstrap/styling/s2; type=string; label=CSS-Classes for the HR tag in content element Division
     ce_div_hr_classes = bg-dark opacity-75 my-3 my-md-4
 
     grid {
