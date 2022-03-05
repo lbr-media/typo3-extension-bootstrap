@@ -236,8 +236,8 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
          */
         $this->classesList = [
             $data['tx_bootstrap_header_layout'],
-            $data['tx_bootstrap_header_color'],
-            $data['header_position'],
+            // $data['tx_bootstrap_header_color'],
+            // $data['header_position'],
         ];
 
         /**
@@ -284,24 +284,14 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             $headerParts['between'] = implode('', $this->innerWrap['before']) . $headerParts['between'] . implode('', array_reverse($this->innerWrap['after']));
         }
 
-        /**
-         * Build css classes string and add to h-tag.
-         */
-        $classesStr = BootstrapGeneralUtility::cleanCssClassesString($this->classesList);
-        if ($classesStr) {
-            $this->tag->addAttribute('class', $classesStr);
-        }
-
-        /**
-         * Render the h-tag.
-         */
-        $this->tag->setContent($headerParts['between']);
-        $hTag = $headerParts['before'] . $this->tag->render() . $headerParts['after'];
+        
 
         /**
          * Process the icons.
          * The h-tag is the content. The outerWrap is the parent.
+         * When there is an icon, the alignment and color class is applied to an outer wrap. Otherwise it is applied to the h-tag
          */
+        $iconMarkup = '';
         if ($data['tx_bootstrap_header_icon']) {
             // Process file icon
             $files = $this->_getFiles('tx_bootstrap_header_icon', $data, true);
@@ -315,15 +305,61 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
 
                 $headerIconText = new TagBuilder('span');
                 $headerIconText->addAttribute('class', 'header-icon__text');
-                $headerIconText->setContent($hTag);
+                $headerIconText->setContent('###HEADER_CONTENT###');
 
                 $headerIconWrap->setContent($headerIconGfx->render() . $headerIconText->render());
 
-                $hTag = $headerIconWrap->render();
+                $iconMarkup = $headerIconWrap->render();
             }
         } elseif ($data['tx_bootstrap_header_iconset']) {
             // Process icon set
-            $hTag = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], $hTag);
+            $iconMarkup = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], '###HEADER_CONTENT###');
+        }
+
+        if ($iconMarkup) {
+            /**
+             * Build css classes string and add to h-tag.
+             */
+            $classesStr = BootstrapGeneralUtility::cleanCssClassesString($this->classesList);
+            if ($classesStr) {
+                $this->tag->addAttribute('class', $classesStr);
+            }
+
+            /**
+             * Render the h-tag.
+             */
+            $this->tag->setContent($headerParts['between']);
+            $hTag = $headerParts['before'] . $this->tag->render() . $headerParts['after'];
+
+            /**
+             * create outer wrap
+             */
+            $iconWrap = new TagBuilder("div");
+            $classesStr = BootstrapGeneralUtility::cleanCssClassesString([
+                $data['tx_bootstrap_header_color'],
+                $data['header_position'],
+            ]);
+            if ($classesStr) {
+                $iconWrap->addAttribute('class', $classesStr);
+            }
+            $iconWrap->setContent(str_replace('###HEADER_CONTENT###', $hTag, $iconMarkup));
+            $hTag = $iconWrap->render();
+        } else {
+            /**
+             * Build css classes string and add to h-tag.
+             */
+            $this->classesList[] = $data['tx_bootstrap_header_color'];
+            $this->classesList[] = $data['header_position'];
+            $classesStr = BootstrapGeneralUtility::cleanCssClassesString($this->classesList);
+            if ($classesStr) {
+                $this->tag->addAttribute('class', $classesStr);
+            }
+
+            /**
+             * Render the h-tag.
+             */
+            $this->tag->setContent($headerParts['between']);
+            $hTag = $headerParts['before'] . $this->tag->render() . $headerParts['after'];
         }
 
         /**
