@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
-use LBRmedia\Bootstrap\Utility\DateUtility;
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
+use LBRmedia\Bootstrap\Utility\DateUtility;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileReference;
@@ -15,7 +15,6 @@ use TYPO3\CMS\Extbase\Service\ImageService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
-
 
 /**
  * Builds main headlines in content elements while using fields header, subheader, date, header_layout, tx_bootstrap_header_layout, header_position and header_link.
@@ -186,13 +185,13 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         $SUBHEADER = str_replace(chr(124), '&shy;', nl2br(htmlspecialchars($data['subheader'], ENT_HTML5, 'UTF-8')));
 
         // ###DATE### and ###DATE_DATETIME###
-        $DATE = "";
-        $DATE_DATETIME = "";
+        $DATE = '';
+        $DATE_DATETIME = '';
         if ($data['date']) {
-            $dateTime = DateUtility::dateTimeFromTimestamp((string) $data['date']);
+            $dateTime = DateUtility::dateTimeFromTimestamp((string)$data['date']);
             if ($dateTime) {
                 $DATE = DateUtility::toLocale($dateTime, DateUtility::getIntlDateFormatterConstant($this->arguments['dateDateType']), DateUtility::getIntlDateFormatterConstant($this->arguments['dateTimeType']));
-                $DATE_DATETIME = $dateTime->format("Y-m-d");
+                $DATE_DATETIME = $dateTime->format('Y-m-d');
             }
         }
 
@@ -203,9 +202,9 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         $finalPattern = $this->arguments['headerPattern'];
         if ($HEADER && $SUBHEADER && $DATE) {
             $finalPattern = $this->arguments['headerSubheaderDatePattern'];
-        } else if ($HEADER && $SUBHEADER) {
+        } elseif ($HEADER && $SUBHEADER) {
             $finalPattern = $this->arguments['headerSubheaderPattern'];
-        } else if ($HEADER && $DATE) {
+        } elseif ($HEADER && $DATE) {
             $finalPattern = $this->arguments['headerDatePattern'];
         }
 
@@ -251,7 +250,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         /**
          * Get the TS setup for further use ...
          * [1] Process predefined header.
-         * [2] Process additional styles. 
+         * [2] Process additional styles.
          */
         $pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
 

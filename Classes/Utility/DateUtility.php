@@ -44,7 +44,7 @@ class DateUtility
         } catch (Exception $exception) {
             throw new Exception('"' . $date . '" could not be parsed by DateTime constructor: ' . $exception->getMessage(), 1646498123);
         }
-        
+
         return $date;
     }
 
@@ -59,9 +59,9 @@ class DateUtility
         $locale = '';
         if ($GLOBALS['TSFE']->getLanguage()->getLocale()) {
             $locale = $GLOBALS['TSFE']->getLanguage()->getLocale(); // de_DE.UTF-8
-        } else if ($GLOBALS['TSFE']->getLanguage()->getHreflang()) {
+        } elseif ($GLOBALS['TSFE']->getLanguage()->getHreflang()) {
             $locale = $GLOBALS['TSFE']->getLanguage()->getHreflang(); // de-de
-        } else if ($GLOBALS['TSFE']->getLanguage()->getTwoLetterIsoCode()) {
+        } elseif ($GLOBALS['TSFE']->getLanguage()->getTwoLetterIsoCode()) {
             $locale = $GLOBALS['TSFE']->getLanguage()->getTwoLetterIsoCode(); // de
         }
         $df = new IntlDateFormatter(
@@ -78,21 +78,21 @@ class DateUtility
     public static function getIntlDateFormatterConstant(string $type): ?int
     {
         switch ($type) {
-            case "FULL":
+            case 'FULL':
                 return IntlDateFormatter::FULL;
-            case "LONG":
+            case 'LONG':
                 return IntlDateFormatter::LONG;
-            case "MEDIUM":
+            case 'MEDIUM':
                 return IntlDateFormatter::MEDIUM;
-            case "SHORT":
+            case 'SHORT':
                 return IntlDateFormatter::SHORT;
-            case "RELATIVE_FULL":
+            case 'RELATIVE_FULL':
                 return IntlDateFormatter::RELATIVE_FULL;
-            case "RELATIVE_MEDIUM":
+            case 'RELATIVE_MEDIUM':
                 return IntlDateFormatter::RELATIVE_MEDIUM;
-            case "RELATIVE_SHORT":
+            case 'RELATIVE_SHORT':
                 return IntlDateFormatter::RELATIVE_SHORT;
-            case "NONE":
+            case 'NONE':
                 return IntlDateFormatter::NONE;
         }
 

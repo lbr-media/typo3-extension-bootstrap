@@ -49,4 +49,4 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1646200749] = [
 $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'bootstrap/Configuration/TypoScript/Content/';
 
 // Get the context and make it visible in backend
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = '('.(string) \TYPO3\CMS\Core\Core\Environment::getContext()->__toString().') '.$GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'];
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = '(' . (string)\TYPO3\CMS\Core\Core\Environment::getContext()->__toString() . ') ' . $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'];
