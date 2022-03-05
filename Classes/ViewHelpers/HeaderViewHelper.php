@@ -181,6 +181,11 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         // ###HEADER###
         $HEADER = str_replace(chr(124), '&shy;', nl2br(htmlspecialchars($data['header'], ENT_HTML5, 'UTF-8')));
 
+        // Process the link which wraps only the real header
+        if ($data['header_link']) {
+            $HEADER = $this->createTypolink($HEADER, $data['header_link']);
+        }
+
         // ###SUBHEADER###
         $SUBHEADER = str_replace(chr(124), '&shy;', nl2br(htmlspecialchars($data['subheader'], ENT_HTML5, 'UTF-8')));
 
@@ -236,16 +241,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
          */
         $this->classesList = [
             $data['tx_bootstrap_header_layout'],
-            // $data['tx_bootstrap_header_color'],
-            // $data['header_position'],
         ];
-
-        /**
-         * Process the link which wraps the whole inner part.
-         */
-        if ($data['header_link']) {
-            $headerParts['between'] = $this->createTypolink($headerParts['between'], $data['header_link']);
-        }
 
         /**
          * Get the TS setup for further use ...
@@ -284,8 +280,6 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             $headerParts['between'] = implode('', $this->innerWrap['before']) . $headerParts['between'] . implode('', array_reverse($this->innerWrap['after']));
         }
 
-        
-
         /**
          * Process the icons.
          * The h-tag is the content. The outerWrap is the parent.
@@ -297,7 +291,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             $files = $this->_getFiles('tx_bootstrap_header_icon', $data, true);
             if (isset($files[0]) && $files[0]) {
                 $headerIconWrap = new TagBuilder('span');
-                $headerIconWrap->addAttribute('class', 'header-icon');
+                $headerIconWrap->addAttribute('class', 'header-icon d-inline-flex');
 
                 $headerIconGfx = new TagBuilder('span');
                 $headerIconGfx->addAttribute('class', 'header-icon__gfx');
@@ -313,7 +307,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             }
         } elseif ($data['tx_bootstrap_header_iconset']) {
             // Process icon set
-            $iconMarkup = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], '###HEADER_CONTENT###');
+            $iconMarkup = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], '###HEADER_CONTENT###', 'd-inline-flex');
         }
 
         if ($iconMarkup) {
