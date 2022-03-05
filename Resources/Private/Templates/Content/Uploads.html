@@ -4,19 +4,19 @@
 
 <f:section name="Main">
     <f:if condition="{files}">
-        <ul class="list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 align-items-stretch">
+        <ul class="{settings.bootstrap.ce_uploads_row_classes}">
             <f:for each="{files}" as="file" iteration="fileIterator">
-                <li class="col">
+                <li class="{settings.bootstrap.ce_uploads_col_classes}">
                     <f:switch expression="{data.uploads_type}">
                         <f:case value="0">
                             <f:comment><!-- Nur Dateiname --></f:comment>
-                            <div class="card h-100 position-relative">
+                            <div class="{settings.bootstrap.ce_uploads_card_classes}">
                                 <f:render section="_Body" arguments="{_all}" />
                             </div>
                         </f:case>
                         <f:case value="1">
                             <f:comment><!-- Dateiname und Dateierweiterungssymbol --></f:comment>
-                            <div class="card h-100 position-relative">
+                            <div class="{settings.bootstrap.ce_uploads_card_classes}">
                                 <div class="row g-0 h-100">
                                     <div class="col-3">
                                         <div class="ps-3 py-3">
@@ -31,7 +31,7 @@
                         </f:case>
                         <f:case value="2">
                             <f:comment><!-- Dateiname und Vorschaubild (wenn möglich) --></f:comment>
-                            <div class="card h-100 position-relative">
+                            <div class="{settings.bootstrap.ce_uploads_card_classes}">
                                 <div class="row g-0 h-100">
                                     <div class="col-3">
                                         <div class="ps-3 py-3">

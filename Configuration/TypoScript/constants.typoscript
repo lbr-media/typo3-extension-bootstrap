@@ -1,5 +1,10 @@
 # customcategory=bootstrap=Bootstrap
-# customsubcategory=styling=Styling
+# customsubcategory=styling_header=Styling: Header
+# customsubcategory=styling_figcaption=Styling: Figcaption
+# customsubcategory=styling_nav=Styling: Navigation
+# customsubcategory=styling_ce_div=Styling: Content element "Div"
+# customsubcategory=styling_ce_uploads=Styling: Content element "Uploads/File list"
+# customsubcategory=styling_ce_bootstrap_twocolumnstext=Styling: Content element "Text + Text"
 # customsubcategory=grid=Grid
 
 plugin.tx_bootstrap {
@@ -41,36 +46,63 @@ styles.content {
 }
 
 styles.bootstrap {
-    # cat=bootstrap/styling/s0; type=string; label=CSS-Classes: figcaption tags
+    # cat=bootstrap/styling_header/a; type=string; label=Header: Header pattern
+    header_pattern = ###TAG_START######HEADER######TAG_END###
+    # cat=bootstrap/styling_header/b; type=string; label=Header: Header subheader pattern
+    header_subheader_pattern = ###TAG_START######HEADER###<small class="d-block text-muted">###SUBHEADER###</small>###TAG_END###
+    # cat=bootstrap/styling_header/c; type=string; label=Header: Header date pattern
+    header_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER######TAG_END###
+    # cat=bootstrap/styling_header/d; type=string; label=Header: Header subheader date pattern
+    header_subheader_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block text-muted">###SUBHEADER###</small>###TAG_END###
+    # cat=bootstrap/styling_header/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header: Date format. See: https://www.php.net/manual/de/class.intldateformatter.php
+    header_date_datetype = FULL
+    # cat=bootstrap/styling_header/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header: Time format. See: https://www.php.net/manual/de/class.intldateformatter.php
+    header_date_timetype = NONE
+
+    # cat=bootstrap/styling_figcaption/a; type=string; label=CSS-Classes: figcaption tags
     figcaption_classes = figure-caption text-start
 
-    # cat=bootstrap/styling/s1; type=string; label=CSS-Classes: figcaption tags when the figure has a border or shadow
+    # cat=bootstrap/styling_figcaption/b; type=string; label=CSS-Classes: figcaption tags when the figure has a border or shadow
     figcaption_classes_onBorderOrShadow = figure-caption text-start p-1 p-lg-2
 
-    # cat=bootstrap/styling/s2; type=string; label=CSS-Classes: HR-tag in content element Division
+    # cat=bootstrap/styling_ce_div/a; type=string; label=CSS-Classes: Content element "Division": HR-tag
     ce_div_hr_classes = bg-dark opacity-75 my-3 my-md-4
 
-    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation UL-tag (flat navigation)
+    # cat=bootstrap/styling_ce_uploads/a; type=string; label=CSS-Classes: Content element "Uploads": grid row-tag
+    ce_uploads_row_classes = list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 align-items-stretch
+    # cat=bootstrap/styling_ce_uploads/b; type=string; label=CSS-Classes: Content element "Uploads": grid col-tag
+    ce_uploads_col_classes = col
+    # cat=bootstrap/styling_ce_uploads/c; type=string; label=CSS-Classes: Content element "Uploads": grid col-tag
+    ce_uploads_card_classes = card h-100
+
+    # cat=bootstrap/styling_ce_bootstrap_twocolumnstext/a; type=string; label=CSS-Classes: Content element "Text + Text": grid row-tag
+    ce_bootstrap_twocolumnstext_row_classes = row g-0 g-sm-3 g-md-4
+    # cat=bootstrap/styling_ce_bootstrap_twocolumnstext/b; type=string; label=CSS-Classes: Content element "Text + Text": grid col-tag
+    ce_bootstrap_twocolumnstext_col_classes = col-sm-6
+    
+
+    # cat=bootstrap/styling_nav/nav0; type=string; label=CSS-Classes: Navigation UL-tag (flat navigation)
     nav_ul_classes = list-unstyled
-    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation LI-tag (flat navigation)
+    # cat=bootstrap/styling_nav/nav1; type=string; label=CSS-Classes: Navigation LI-tag (flat navigation)
     nav_li_classes = nav-item
-    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Spacer (flat navigation)
+    # cat=bootstrap/styling_nav/nav2; type=string; label=CSS-Classes: Navigation link: Spacer (flat navigation)
     nav_link_spacer_classes = nav-link spacer
-    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Current (flat navigation)
+    # cat=bootstrap/styling_nav/nav3; type=string; label=CSS-Classes: Navigation link: Current (flat navigation)
     nav_link_current_classes = nav-link active
-    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Active (flat navigation)
+    # cat=bootstrap/styling_nav/nav4; type=string; label=CSS-Classes: Navigation link: Active (flat navigation)
     nav_link_active_classes = nav-link active
-    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Inactive (flat navigation)
+    # cat=bootstrap/styling_nav/nav5; type=string; label=CSS-Classes: Navigation link: Inactive (flat navigation)
     nav_link_inactive_classes = nav-link inactive
 
-    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Spacer (tree navigation)
+    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Spacer (tree navigation)
     # nav_tree_link_spacer_classes = nav-link
-    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Current (tree navigation)
+    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Current (tree navigation)
     # nav_tree_link_current_classes = nav-link
-    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Active (tree navigation)
+    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Active (tree navigation)
     # nav_tree_link_active_classes = nav-link
-    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Inactive (tree navigation)
+    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Inactive (tree navigation)
     # nav_tree_link_inactive_classes = nav-link
+
 
     grid {
         spacing {

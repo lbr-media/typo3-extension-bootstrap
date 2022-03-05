@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
+use LBRmedia\Bootstrap\Utility\DateUtility;
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
@@ -15,15 +16,15 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
+
 /**
- * Builds main headlines in content elements while using fields header, subheader, header_layout, tx_bootstrap_header_layout, header_position and header_link.
+ * Builds main headlines in content elements while using fields header, subheader, date, header_layout, tx_bootstrap_header_layout, header_position and header_link.
  *
  * Examples
  * ========
  *
  * ::
- *
- *    {bs:Header(data:data)}.
+ *    {bs:Header(contentElementData:data)}.
  */
 class HeaderViewHelper extends AbstractTagBasedViewHelper
 {
@@ -106,15 +107,62 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
 
     public function initializeArguments(): void
     {
-        $this->registerArgument('contentElementData', 'array', 'data from content element');
-        $this->registerArgument('headerSubheaderPattern', 'string', 'Provides placeholder for ###TAG_START###, ###HEADER###, ###SUBHEADER###, ###TAG_END###', false, '###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###');
+        $this->registerArgument(
+            'contentElementData',
+            'array',
+            'data from content element'
+        );
+        $this->registerArgument(
+            'headerPattern',
+            'string',
+            'Provides placeholder for ###TAG_START###, ###HEADER###, ###TAG_END###',
+            false,
+            '###TAG_START######HEADER######TAG_END###'
+        );
+        $this->registerArgument(
+            'headerSubheaderPattern',
+            'string',
+            'Provides placeholder for ###TAG_START###, ###HEADER###, ###SUBHEADER###, ###TAG_END###',
+            false,
+            '###TAG_START######HEADER###<small class="d-block text-muted">###SUBHEADER###</small>###TAG_END###'
+        );
+        $this->registerArgument(
+            'headerDatePattern',
+            'string',
+            'Provides placeholder for ###TAG_START###, ###HEADER###, ###DATE###, ###DATE_DATETIME###, ###TAG_END###',
+            false,
+            '<span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER######TAG_END###'
+        );
+        $this->registerArgument(
+            'headerSubheaderDatePattern',
+            'string',
+            'Provides placeholder for ###TAG_START###, ###HEADER###, ###SUBHEADER###, ###DATE###, ###DATE_DATETIME###, ###TAG_END###',
+            false,
+            '<span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block text-muted">###SUBHEADER###</small>###TAG_END###'
+        );
+        $this->registerArgument(
+            'dateDateType',
+            'string',
+            'IntlDateFormatter constant name: NONE, FULL, LONG, MEDIUM, SHORT, RELATIVE_FULL, RELATIVE_MEDIUM, RELATIVE_SHORT',
+            false,
+            'FULL'
+        );
+        $this->registerArgument(
+            'dateTimeType',
+            'string',
+            'IntlDateFormatter constant name: NONE, FULL, LONG, MEDIUM, SHORT, RELATIVE_FULL, RELATIVE_MEDIUM, RELATIVE_SHORT',
+            false,
+            'NONE'
+        );
     }
 
     public function render(): string
     {
         $data = $this->arguments['contentElementData'];
 
-        // determine visibility and tag name
+        /**
+         * determine visibility and tag name
+         */
         if ('100' === $data['header_layout'] || '' === $data['header']) {
             return '';
         }
@@ -122,85 +170,92 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             $this->tagName = 'h' . $data['header_layout'];
         }
 
-        $headerSubheaderPattern = $this->arguments['headerSubheaderPattern'];
-
-        // create tag
+        /**
+         * Create tag
+         */
         $this->tag = new TagBuilder($this->tagName);
         $this->tag->forceClosingTag(true);
 
-        // render the header content
-        $header = [
-            'before' => '',
-            'between' => str_replace(chr(124), '&shy;', nl2br(htmlspecialchars($data['header'], ENT_HTML5, 'UTF-8'))),
-            'after' => '',
-        ];
+        /**
+         * Create contents for placeholders
+         */
+        // ###HEADER###
+        $HEADER = str_replace(chr(124), '&shy;', nl2br(htmlspecialchars($data['header'], ENT_HTML5, 'UTF-8')));
 
-        // process subheader
-        if (trim($data['subheader'])) {
-            // get the parts out of pattern
-            $startPos = strpos($headerSubheaderPattern, '###TAG_START###');
-            $endPos = strpos($headerSubheaderPattern, '###TAG_END###');
-            $pattern = [
-                'before' => false !== $startPos && $startPos > 0 ? substr($headerSubheaderPattern, 0, $startPos) : '',
-                'between' => substr($headerSubheaderPattern, $startPos + 15, $endPos - $startPos - 15),
-                'after' => false !== $endPos && $endPos + $endPos + 13 > mb_strlen($headerSubheaderPattern) ? substr($headerSubheaderPattern, $endPos + 13) : '',
-            ];
+        // ###SUBHEADER###
+        $SUBHEADER = str_replace(chr(124), '&shy;', nl2br(htmlspecialchars($data['subheader'], ENT_HTML5, 'UTF-8')));
 
-            $subheader = str_replace(chr(124), '&shy;', nl2br(htmlspecialchars($data['subheader'], ENT_HTML5, 'UTF-8')));
-
-            $header = [
-                'before' => str_replace(['###HEADER###', '###SUBHEADER###'], [$header['between'], $subheader], $pattern['before']),
-                'between' => str_replace(['###HEADER###', '###SUBHEADER###'], [$header['between'], $subheader], $pattern['between']),
-                'after' => str_replace(['###HEADER###', '###SUBHEADER###'], [$header['between'], $subheader], $pattern['after']),
-            ];
-        }
-
-        // get default classes
-        $this->classesList = [
-            $data['tx_bootstrap_header_layout'],
-            $data['tx_bootstrap_header_color'],
-            $data['header_position'],
-        ];
-
-        // prepend between with icon
-        if ($data['tx_bootstrap_header_icon']) {
-            $files = $this->_getFiles('tx_bootstrap_header_icon', $data, true);
-            if (isset($files[0]) && $files[0]) {
-                $headerIconWrap = new TagBuilder('span');
-                $headerIconWrap->addAttribute('class', 'header-icon');
-
-                $headerIconGfx = new TagBuilder('span');
-                $headerIconGfx->addAttribute('class', 'header-icon__gfx');
-                $headerIconGfx->setContent($this->_renderIcon($files[0]));
-
-                $headerIconText = new TagBuilder('span');
-                $headerIconText->addAttribute('class', 'header-icon__text');
-                $headerIconText->setContent($header['between']);
-
-                $headerIconWrap->setContent($headerIconGfx->render() . $headerIconText->render());
-
-                $header['between'] = $headerIconWrap->render();
+        // ###DATE### and ###DATE_DATETIME###
+        $DATE = "";
+        $DATE_DATETIME = "";
+        if ($data['date']) {
+            $dateTime = DateUtility::dateTimeFromTimestamp((string) $data['date']);
+            if ($dateTime) {
+                $DATE = DateUtility::toLocale($dateTime, DateUtility::getIntlDateFormatterConstant($this->arguments['dateDateType']), DateUtility::getIntlDateFormatterConstant($this->arguments['dateTimeType']));
+                $DATE_DATETIME = $dateTime->format("Y-m-d");
             }
-        } elseif ($data['tx_bootstrap_header_iconset']) {
-            $header['between'] = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], $header['between']);
         }
 
-        // get default classes
+        /**
+         * Render the header parts
+         */
+        // Determine the used pattern
+        $finalPattern = $this->arguments['headerPattern'];
+        if ($HEADER && $SUBHEADER && $DATE) {
+            $finalPattern = $this->arguments['headerSubheaderDatePattern'];
+        } else if ($HEADER && $SUBHEADER) {
+            $finalPattern = $this->arguments['headerSubheaderPattern'];
+        } else if ($HEADER && $DATE) {
+            $finalPattern = $this->arguments['headerDatePattern'];
+        }
+
+        // Divide pattern into before, between and after the h-tag.
+        $startPos = strpos($finalPattern, '###TAG_START###');
+        $endPos = strpos($finalPattern, '###TAG_END###');
+        $pattern = [
+            'before' => false !== $startPos && $startPos > 0 ? substr($finalPattern, 0, $startPos) : '',
+            'between' => substr($finalPattern, $startPos + 15, $endPos - $startPos - 15),
+            'after' => false !== $endPos && $endPos + $endPos + 13 > mb_strlen($finalPattern) ? substr($finalPattern, $endPos + 13) : '',
+        ];
+
+        // Replace placeholders with the contents.
+        $replacements = [
+            '###HEADER###' => $HEADER,
+            '###SUBHEADER###' => $SUBHEADER,
+            '###DATE###' => $DATE,
+            '###DATE_DATETIME###' => $DATE_DATETIME,
+        ];
+        $headerParts = [
+            'before' => str_replace(array_keys($replacements), $replacements, $pattern['before']),
+            'between' => str_replace(array_keys($replacements), $replacements, $pattern['between']),
+            'after' => str_replace(array_keys($replacements), $replacements, $pattern['after']),
+        ];
+
+        /**
+         * Get the default classes.
+         * They may be extended later with the predefined or additionalStyles stuff.
+         */
         $this->classesList = [
             $data['tx_bootstrap_header_layout'],
             $data['tx_bootstrap_header_color'],
             $data['header_position'],
         ];
 
-        // render link
+        /**
+         * Process the link which wraps the whole inner part.
+         */
         if ($data['header_link']) {
-            $header['between'] = $this->createTypolink($header['between'], $data['header_link']);
+            $headerParts['between'] = $this->createTypolink($headerParts['between'], $data['header_link']);
         }
 
-        // get the TS setup for further use ...
+        /**
+         * Get the TS setup for further use ...
+         * [1] Process predefined header.
+         * [2] Process additional styles. 
+         */
         $pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
 
-        // ... predefined header
+        // [1]
         if ($data['tx_bootstrap_header_predefined']) {
             if (isset($pluginSettings['PredefinedHeader.']) && is_array($pluginSettings['PredefinedHeader.'])) {
                 $tsConfigKey = $data['tx_bootstrap_header_predefined'] . '.';
@@ -210,7 +265,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             }
         }
 
-        // ... additional_styles
+        // [2]
         if ($data['tx_bootstrap_header_additional_styles']) {
             $additionalStyles = explode(',', $data['tx_bootstrap_header_additional_styles']);
             if (isset($pluginSettings['AdditionalHeaderStyles.']) && count($additionalStyles)) {
@@ -223,35 +278,69 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             }
         }
 
-        // include innerWrap
+        /**
+         * Include processed innerWraps
+         */
         if (count($this->innerWrap['before'])) {
-            $header['between'] = implode('', $this->innerWrap['before']) . $header['between'] . implode('', array_reverse($this->innerWrap['after']));
+            $headerParts['between'] = implode('', $this->innerWrap['before']) . $headerParts['between'] . implode('', array_reverse($this->innerWrap['after']));
         }
 
-        // build css classes string
+        /**
+         * Build css classes string and add to h-tag.
+         */
         $classesStr = BootstrapGeneralUtility::cleanCssClassesString($this->classesList);
         if ($classesStr) {
             $this->tag->addAttribute('class', $classesStr);
         }
 
-        // render tag
-        $this->tag->setContent($header['between']);
-        $hTag = $header['before'] . $this->tag->render() . $header['after'];
+        /**
+         * Render the h-tag.
+         */
+        $this->tag->setContent($headerParts['between']);
+        $hTag = $headerParts['before'] . $this->tag->render() . $headerParts['after'];
 
-        // include outerWrap
+        /**
+         * Process the icons.
+         * The h-tag is the content. The outerWrap is the parent.
+         */
+        if ($data['tx_bootstrap_header_icon']) {
+            // Process file icon
+            $files = $this->_getFiles('tx_bootstrap_header_icon', $data, true);
+            if (isset($files[0]) && $files[0]) {
+                $headerIconWrap = new TagBuilder('span');
+                $headerIconWrap->addAttribute('class', 'header-icon');
+
+                $headerIconGfx = new TagBuilder('span');
+                $headerIconGfx->addAttribute('class', 'header-icon__gfx');
+                $headerIconGfx->setContent($this->_renderIcon($files[0]));
+
+                $headerIconText = new TagBuilder('span');
+                $headerIconText->addAttribute('class', 'header-icon__text');
+                $headerIconText->setContent($hTag);
+
+                $headerIconWrap->setContent($headerIconGfx->render() . $headerIconText->render());
+
+                $hTag = $headerIconWrap->render();
+            }
+        } elseif ($data['tx_bootstrap_header_iconset']) {
+            // Process icon set
+            $hTag = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], $hTag);
+        }
+
+        /**
+         * Include processed outerWraps
+         */
         if (count($this->outerWrap['before'])) {
             $hTag = implode('', $this->outerWrap['before']) . $hTag . implode('', array_reverse($this->outerWrap['after']));
         }
 
-        // finally return the headline
+        /**
+         * Finally return the headline
+         */
         return $hTag;
     }
 
-    /**
-     * @param string $content
-     * @param string $parameter
-     */
-    protected function createTypolink($content, $parameter): string
+    protected function createTypolink(string $content, string $parameter): string
     {
         $this->contentObject->start([], '');
         $content = $this->contentObject->stdWrap($content, [
@@ -264,7 +353,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
     }
 
     /**
-     * prepares predefined and additional styles.
+     * Prepares predefined and additional styles.
      */
     protected function prepareAdditionals(array $config): void
     {
@@ -328,7 +417,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         }
 
         /*
-         * not a SVG
+         * Not a SVG
          */
         $processingInstructions = '';
         if ($file->hasProperty('crop') && $file->getProperty('crop')) {
@@ -337,7 +426,9 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             $processingInstructions = $cropArea->isEmpty() ? null : $cropArea->makeAbsoluteBasedOnFile($this->file);
         }
 
-        // render image
+        /**
+         * Render image
+         */
         $processedImage = $this->imageService->applyProcessingInstructions(
             $this->imageService->getImage('', $file, true),
             [

@@ -7,12 +7,13 @@
             <f:if condition="{data.header} || {data.subheader} || {data.date}">
                 <bs:Header
                     contentElementData="{data}"
-                    headerSubheaderPattern="###TAG_START######HEADER###<small class=\"d-block text-muted\">###SUBHEADER###</small>###TAG_END###"
+                    headerPattern="{settings.bootstrap.header_}"
+                    headerSubheaderPattern="{settings.bootstrap.header_subheader_pattern}"
+                    headerDatePattern="{settings.bootstrap.header_date_pattern}"
+                    headerSubheaderDatePattern="{settings.bootstrap.header_subheader_date_pattern}"
+                    dateDateType="{settings.bootstrap.header_date_datetype}"
+                    dateTimeType="{settings.bootstrap.header_date_timetype}"
                     />
-
-                <f:render partial="Header/Date" arguments="{
-                    date: data.date,
-                    positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" />
             </f:if>
         </f:if>
     </f:spaceless>

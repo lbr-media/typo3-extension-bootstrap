@@ -13,12 +13,29 @@ plugin.tx_bootstrap {
 # Prepare settings from some styling constants
 plugin.tx_bootstrap.settings {
     bootstrap {
-        # figcaption
+        # Styling
+        header_pattern = {$styles.bootstrap.header_pattern}
+        header_subheader_pattern = {$styles.bootstrap.header_subheader_pattern}
+        header_date_pattern = {$styles.bootstrap.header_date_pattern}
+        header_subheader_date_pattern = {$styles.bootstrap.header_subheader_date_pattern}
+        header_date_datetype = {$styles.bootstrap.header_date_datetype}
+        header_date_timetype = {$styles.bootstrap.header_date_timetype}
+
+        # Figcaption
         figcaption_classes = {$styles.bootstrap.figcaption_classes}
         figcaption_classes_onBorderOrShadow = {$styles.bootstrap.figcaption_classes_onBorderOrShadow}
 
         # CType=div
         bootstrap.ce_div_hr_classes = {$styles.bootstrap.ce_div_hr_classes}
+
+        # CType=uploads
+        ce_uploads_row_classes = {$styles.bootstrap.ce_uploads_row_classes}
+        ce_uploads_col_classes = {$styles.bootstrap.ce_uploads_col_classes}
+        ce_uploads_card_classes = {$styles.bootstrap.ce_uploads_card_classes}
+
+        # CType=uploads
+        ce_bootstrap_twocolumnstext_row_classes = {$styles.bootstrap.ce_bootstrap_twocolumnstext_row_classes}
+        ce_bootstrap_twocolumnstext_col_classes = {$styles.bootstrap.ce_bootstrap_twocolumnstext_col_classes}
 
         # nav
         nav_ul_classes = {$styles.bootstrap.nav_ul_classes}
