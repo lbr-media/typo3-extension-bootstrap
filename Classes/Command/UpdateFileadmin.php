@@ -63,6 +63,7 @@ class UpdateFileadmin extends Command
         'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/CKEditor/CKEditor.min.css' => self::CSS_DIR,
 
         // Masonry
+        'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/lib/imagesloaded.pkgd.min.js' => self::JS_DIR,
         'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/lib/masonry.pkgd.min.js' => self::JS_DIR,
 
         // Bootstrap Icons
@@ -70,6 +71,9 @@ class UpdateFileadmin extends Command
         'vendor/twbs/bootstrap-icons/font/bootstrap-icons.css' => self::BS_ICONS_DIR,
         'vendor/twbs/bootstrap-icons/font/fonts/bootstrap-icons.woff' => self::BS_ICONS_DIR . DIRECTORY_SEPARATOR . 'fonts',
         'vendor/twbs/bootstrap-icons/font/fonts/bootstrap-icons.woff2' => self::BS_ICONS_DIR . DIRECTORY_SEPARATOR . 'fonts',
+
+        // App
+        'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/App.js' => self::JS_DIR,
     ];
 
     /**
@@ -130,9 +134,9 @@ class UpdateFileadmin extends Command
             $filename = $fileinfo['basename'];
 
             if (copy($sourceAbs, $baseDir . DIRECTORY_SEPARATOR . $target . DIRECTORY_SEPARATOR . $filename)) {
-                $io->writeln("copy $source to $target$filename.");
+                $io->writeln("copy $source to $target/$filename.");
             } else {
-                $io->writeln("<error>cannot copy $source to $target$filename.</error>");
+                $io->writeln("<error>cannot copy $source to $target/$filename.</error>");
             }
         }
     }

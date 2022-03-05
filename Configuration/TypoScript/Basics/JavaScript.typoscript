@@ -10,5 +10,7 @@ config {
 
 page.includeJSFooterlibs {
     bootstrap = fileadmin/bootstrap/assets/js/bootstrap.bundle.min.js
+    imagesloaded = fileadmin/bootstrap/assets/js/imagesloaded.pkgd.min.js
     masonry = fileadmin/bootstrap/assets/js/masonry.pkgd.min.js
+    App = fileadmin/bootstrap/assets/js/App.js
 }

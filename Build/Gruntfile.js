@@ -44,6 +44,7 @@ module.exports = function (grunt) {
                 '<%= paths.js %>SvgError.min.js',
             ],
             javascript: [
+                '<%= paths.js %>App.js',
                 '<%= paths.js %>FormEngine/Element/AllEdgesElement.js',
                 '<%= paths.js %>FormEngine/Element/BootstrapBorderElement.js',
                 '<%= paths.js %>FormEngine/Element/BootstrapDevicesElement.js',
@@ -101,6 +102,7 @@ module.exports = function (grunt) {
             javascript: {
                 files: {
                     src: [
+                        '<%= paths.js %>App.js',
                         '<%= paths.js %>FormEngine/Element/AllEdgesElement.js',
                         '<%= paths.js %>FormEngine/Element/BootstrapBorderElement.js',
                         '<%= paths.js %>FormEngine/Element/BootstrapDevicesElement.js',
@@ -262,6 +264,10 @@ module.exports = function (grunt) {
         },
         watch: {
             // JavaScript
+            App: {
+                files: '<%= paths.js_source %>App.js',
+                tasks: ['terser:javascript','newer:usebanner:javascript']
+            },
             AllEdgesElement: {
                 files: '<%= paths.js_source %>FormEngine/Element/AllEdgesElement.js',
                 tasks: ['terser:javascript','newer:usebanner:javascript']
@@ -299,6 +305,12 @@ module.exports = function (grunt) {
                         src: 'masonry.pkgd.min.js',
                         dest: '<%= paths.js %>lib/',
                         expand: true
+                    },
+                    {
+                        cwd: '<%= paths.node %>imagesloaded/',
+                        src: 'imagesloaded.pkgd.min.js',
+                        dest: '<%= paths.js %>lib/',
+                        expand: true
                     }
                 ]
             }
@@ -316,6 +328,7 @@ module.exports = function (grunt) {
             },
             javascript: {
                 files: {
+                    '<%= paths.js %>App.js': ['<%= paths.js_source %>App.js'],
                     '<%= paths.js %>FormEngine/Element/AllEdgesElement.js': ['<%= paths.js_source %>FormEngine/Element/AllEdgesElement.js'],
                     '<%= paths.js %>FormEngine/Element/BootstrapBorderElement.js': ['<%= paths.js_source %>FormEngine/Element/BootstrapBorderElement.js'],
                     '<%= paths.js %>FormEngine/Element/BootstrapDevicesElement.js': ['<%= paths.js_source %>FormEngine/Element/BootstrapDevicesElement.js'],
