@@ -49,11 +49,11 @@ styles.bootstrap {
     # cat=bootstrap/styling_header/a; type=string; label=Header: Header pattern
     header_pattern = ###TAG_START######HEADER######TAG_END###
     # cat=bootstrap/styling_header/b; type=string; label=Header: Header subheader pattern
-    header_subheader_pattern = ###TAG_START######HEADER###<small class="d-block text-muted">###SUBHEADER###</small>###TAG_END###
+    header_subheader_pattern = ###TAG_START######HEADER###<small class="d-block>###SUBHEADER###</small>###TAG_END###
     # cat=bootstrap/styling_header/c; type=string; label=Header: Header date pattern
     header_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER######TAG_END###
     # cat=bootstrap/styling_header/d; type=string; label=Header: Header subheader date pattern
-    header_subheader_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block text-muted">###SUBHEADER###</small>###TAG_END###
+    header_subheader_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###
     # cat=bootstrap/styling_header/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header: Date format. See: https://www.php.net/manual/de/class.intldateformatter.php
     header_date_datetype = FULL
     # cat=bootstrap/styling_header/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header: Time format. See: https://www.php.net/manual/de/class.intldateformatter.php
