@@ -119,7 +119,7 @@
                                         <numIndex index="1">bottom</numIndex>
                                     </numIndex>
                                 </items>
-                                <default>above</default>
+                                <default>top</default>
                             </config>
                         </value>
                     </field>
