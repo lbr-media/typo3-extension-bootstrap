@@ -5,23 +5,23 @@
     <f:section name="Default">
         <f:if condition="{item.spacer}">
             <f:then>
-                <span class="nav-link spacer" title="{item.title}">{item.title}</span>
+                <span class="{settings.bootstrap.nav_link_spacer_classes}" title="{item.title}">{item.title}</span>
             </f:then>
             <f:else if="{item.current}">
-                <a href="{item.link}" class="nav-link active current" target="{item.target}" title="{item.title}">{item.title}</a>
+                <a href="{item.link}" class="{settings.bootstrap.nav_link_current_classes}" target="{item.target}" title="{item.title}">{item.title}</a>
             </f:else>
             <f:else if="{item.active}">
-                <a href="{item.link}" class="nav-link active" target="{item.target}" title="{item.title}">{item.title}</a>
+                <a href="{item.link}" class="{settings.bootstrap.nav_link_active_classes}" target="{item.target}" title="{item.title}">{item.title}</a>
             </f:else>
             <f:else>
-                <a href="{item.link}" class="nav-link inactive" target="{item.target}" title="{item.title}">{item.title}</a>
+                <a href="{item.link}" class="{settings.bootstrap.nav_link_inactive_classes}" target="{item.target}" title="{item.title}">{item.title}</a>
             </f:else>
         </f:if>
     </f:section>
 
     <f:section name="TreeLink">
         <f:variable name="dropdownToggleAttributes"><f:if condition="{isDropdownToggle}"> id="link-{item.data.uid}" role="button" data-bs-toggle="dropdown" aria-expanded="false"</f:if></f:variable>
-        <f:variable name="linkClass"><f:if condition="{isDropdown}"><f:then>dropdown-item</f:then><f:else>nav-link</f:else></f:if></f:variable>
+        <f:variable name="linkClass"><f:if condition="{isDropdown}"><f:then>text-nowrap dropdown-item</f:then><f:else>text-nowrap nav-link</f:else></f:if></f:variable>
         <f:variable name="activeClass"><f:if condition="{item.current}||{item.active}"> active</f:if></f:variable>
         <f:variable name="dropdownToggleClass"><f:if condition="{isDropdownToggle}"> dropdown-toggle</f:if></f:variable>
 

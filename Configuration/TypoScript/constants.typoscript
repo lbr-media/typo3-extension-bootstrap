@@ -41,14 +41,36 @@ styles.content {
 }
 
 styles.bootstrap {
-    # cat=bootstrap/styling/s0; type=string; label=CSS-Classes for figcaption tags
+    # cat=bootstrap/styling/s0; type=string; label=CSS-Classes: figcaption tags
     figcaption_classes = figure-caption text-start
 
-    # cat=bootstrap/styling/s1; type=string; label=CSS-Classes for figcaption tags when the figure has a border or shadow
+    # cat=bootstrap/styling/s1; type=string; label=CSS-Classes: figcaption tags when the figure has a border or shadow
     figcaption_classes_onBorderOrShadow = figure-caption text-start p-1 p-lg-2
 
-    # cat=bootstrap/styling/s2; type=string; label=CSS-Classes for the HR tag in content element Division
+    # cat=bootstrap/styling/s2; type=string; label=CSS-Classes: HR-tag in content element Division
     ce_div_hr_classes = bg-dark opacity-75 my-3 my-md-4
+
+    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation UL-tag (flat navigation)
+    nav_ul_classes = list-unstyled
+    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation LI-tag (flat navigation)
+    nav_li_classes = nav-item
+    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Spacer (flat navigation)
+    nav_link_spacer_classes = nav-link spacer
+    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Current (flat navigation)
+    nav_link_current_classes = nav-link active
+    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Active (flat navigation)
+    nav_link_active_classes = nav-link active
+    # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Inactive (flat navigation)
+    nav_link_inactive_classes = nav-link inactive
+
+    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Spacer (tree navigation)
+    # nav_tree_link_spacer_classes = nav-link
+    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Current (tree navigation)
+    # nav_tree_link_current_classes = nav-link
+    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Active (tree navigation)
+    # nav_tree_link_active_classes = nav-link
+    # # cat=bootstrap/styling/s3; type=string; label=CSS-Classes: Navigation link: Inactive (tree navigation)
+    # nav_tree_link_inactive_classes = nav-link
 
     grid {
         spacing {

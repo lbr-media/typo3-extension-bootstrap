@@ -12,9 +12,22 @@ plugin.tx_bootstrap {
 
 # Prepare settings from some styling constants
 plugin.tx_bootstrap.settings {
-    bootstrap.figcaption_classes = {$styles.bootstrap.figcaption_classes}
-    bootstrap.figcaption_classes_onBorderOrShadow = {$styles.bootstrap.figcaption_classes_onBorderOrShadow}
-    bootstrap.ce_div_hr_classes = {$styles.bootstrap.ce_div_hr_classes}
+    bootstrap {
+        # figcaption
+        figcaption_classes = {$styles.bootstrap.figcaption_classes}
+        figcaption_classes_onBorderOrShadow = {$styles.bootstrap.figcaption_classes_onBorderOrShadow}
+
+        # CType=div
+        bootstrap.ce_div_hr_classes = {$styles.bootstrap.ce_div_hr_classes}
+
+        # nav
+        nav_ul_classes = {$styles.bootstrap.nav_ul_classes}
+        nav_li_classes = {$styles.bootstrap.nav_li_classes}
+        nav_link_spacer_classes = {$styles.bootstrap.nav_link_spacer_classes}
+        nav_link_current_classes = {$styles.bootstrap.nav_link_current_classes}
+        nav_link_active_classes = {$styles.bootstrap.nav_link_active_classes}
+        nav_link_inactive_classes = {$styles.bootstrap.nav_link_inactive_classes}
+    }
 }
 
 

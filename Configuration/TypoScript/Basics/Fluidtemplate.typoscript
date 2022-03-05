@@ -49,7 +49,7 @@ page.10 {
         # footer copyright with year
         footer_copyright = COA
         footer_copyright {
-            wrap = <div class="page__footer__copyright">|</div>
+            wrap = <div class="page__footer__copyright ms-3">|</div>
 
             10 = TEXT
             10 {
@@ -67,7 +67,7 @@ page.10 {
         # footer creator
         footer_creator = COA
         footer_creator {
-            wrap = <div class="page__footer__creator">|</div>
+            wrap = <div class="page__footer__creator ms-3">|</div>
             10 = TEXT
             10 {
                 value = Design &amp; concept by
