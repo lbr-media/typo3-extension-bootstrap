@@ -93,27 +93,32 @@ class BootstrapDevicesElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-xs',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xs'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-sm',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.sm'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-md',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.md'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-lg',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.lg'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-xl',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xl'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-xxl',

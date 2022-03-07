@@ -92,32 +92,38 @@ class AllEdgesElement extends AbstractFormElement
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-left',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.left'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-right',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.right'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-horizontal',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.horizontal'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-top',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.top'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-bottom',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.bottom'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-vertical',
             $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.vertical'),
-            $options
+            $options,
+            'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-all',
