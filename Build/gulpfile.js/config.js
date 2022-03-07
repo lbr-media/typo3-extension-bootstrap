@@ -54,6 +54,7 @@ module.exports = (ENV) => {
             generateSourcemap: false,
             files: {
                 [paths.css.src + 'Backend/FormElements.scss']: paths.css.dist + 'Backend/',
+                [paths.css.src + 'Backend/T3Page.scss']: paths.css.dist + 'Backend/',
                 [paths.css.src + 'CKEditor/CKEditor.scss']: paths.css.dist + 'CKEditor/',
                 [paths.css.src + 'Frontend/error-page.scss']: paths.css.dist + 'Frontend/',
                 [paths.css.src + 'Frontend/Elements/figure-copyright.scss']: paths.css.dist + 'Frontend/Elements/',

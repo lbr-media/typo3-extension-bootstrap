@@ -57,7 +57,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
             $outHeader .= '<strong>' . $this->linkEditContent($this->renderText($record['header']), $record) . $hiddenHeaderNote . '</strong><br />';
 
             if ($outInfo) {
-                $outHeader .= '<div class="t3-page-ce-footer">' . $outInfo . '</div>';
+                $outHeader .= '<div class="t3-page-ce-header-info text-monospace">' . $outInfo . '</div>';
             }
         }
 
@@ -107,7 +107,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         )
                         ->orderBy('sorting', 'ASC');
                     $statement = $queryBuilder->executeQuery();
-                    $list = '<ul>';
+                    $list = '<ul class="mb-0">';
                     while ($row = $statement->fetchAssociative()) {
                         $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['active'] ? ' (aktiv)' : '')), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
                     }
@@ -131,7 +131,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         )
                         ->orderBy('sorting', 'ASC');
                     $statement = $queryBuilder->executeQuery();
-                    $list = '<ul>';
+                    $list = '<ul class="mb-0">';
                     while ($row = $statement->fetchAssociative()) {
                         $list .= '<li>' . $this->linkEditContent(htmlspecialchars(trim($row['title'] . ($row['opened_on_load'] ? ' (geöffnet)' : ' (geschlossen)')), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
                     }
@@ -155,7 +155,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         )
                         ->orderBy('sorting', 'ASC');
                     $statement = $queryBuilder->executeQuery();
-                    $list = '<ul>';
+                    $list = '<ul class="mb-0">';
                     while ($row = $statement->fetchAssociative()) {
                         $titles = [];
                         if ($row['header']) {
@@ -182,26 +182,6 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->renderText($record['tx_bootstrap_bodytext2']), $record) . '<br />';
                 }
                 break;
-            case 'html':
-                if ($record['bodytext']) {
-                    $out .= $this->linkEditContent($this->renderText(htmlspecialchars($record['bodytext'])), $record) . '<br />';
-                }
-                break;
-            case 'shortcut':
-                if ($record['records']) {
-                    $out .= $this->linkEditContent('Inhaltselement-IDs: ' . $this->renderText($record['records']), $record) . '<br />';
-                }
-                break;
-            case 'bullets':
-                if ($record['bodytext']) {
-                    $out .= $this->linkEditContent($this->renderText(htmlspecialchars($record['bodytext'])), $record) . '<br />';
-                }
-                break;
-            case 'table':
-                if ($record['bodytext']) {
-                    $out .= $this->linkEditContent($this->renderText(htmlspecialchars($record['bodytext'])), $record) . '<br />';
-                }
-                break;
             case 'bootstrap_textmediagrid':
                 if ($record['assets']) {
                     $out .= $this->linkEditContent($this->getThumbCodeUnlinked($record, 'tt_content', 'assets'), $record) . '<br />';
@@ -221,6 +201,31 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
             case 'bootstrap_alert':
                 if ($record['bodytext']) {
                     $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
+                }
+                break;
+            case 'text':
+                if ($record['bodytext']) {
+                    $out .= 'FOO'.$this->linkEditContent($this->renderText($record['bodytext']), $record) . 'xx<br />';
+                }
+                break;
+            case 'html':
+                if ($record['bodytext']) {
+                    $out .= $this->linkEditContent($this->renderText(htmlspecialchars($record['bodytext'])), $record) . '<br />';
+                }
+                break;
+            case 'shortcut':
+                if ($record['records']) {
+                    $out .= $this->linkEditContent('Inhaltselement-IDs: ' . $this->renderText($record['records']), $record) . '<br />';
+                }
+                break;
+            case 'bullets':
+                if ($record['bodytext']) {
+                    $out .= $this->linkEditContent($this->renderText(htmlspecialchars($record['bodytext'])), $record) . '<br />';
+                }
+                break;
+            case 'table':
+                if ($record['bodytext']) {
+                    $out .= $this->linkEditContent($this->renderText(htmlspecialchars($record['bodytext'])), $record) . '<br />';
                 }
                 break;
             default:
