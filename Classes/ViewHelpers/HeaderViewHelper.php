@@ -328,7 +328,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             /**
              * create outer wrap
              */
-            $iconWrap = new TagBuilder("div");
+            $iconWrap = new TagBuilder('div');
             $classesStr = BootstrapGeneralUtility::cleanCssClassesString([
                 $data['tx_bootstrap_header_color'],
                 $data['header_position'],

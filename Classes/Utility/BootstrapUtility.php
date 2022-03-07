@@ -461,7 +461,7 @@ class BootstrapUtility
      * @param string $content
      * @return string
      */
-    public static function renderIconSet(string $value, string $content, string $additionalClass = ""): string
+    public static function renderIconSet(string $value, string $content, string $additionalClass = ''): string
     {
         list($iconSet, $iconValue, $position, $size, $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
 
