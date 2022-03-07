@@ -1,92 +1,10 @@
-"use strict";
 /**
- * Animation used in for the SVG:
- * app/public/typo3conf/ext/base_app/Resources/Private/Templates/Page/403.html
- * app/public/typo3conf/ext/base_app/Resources/Private/Templates/Page/404.html
+ * @package typo3-extension-bootstrap - Typo3 template extension with Twitter Bootstrap 5 package.
+ * @version v1.0.13
+ * @author Marcel <mb@lbrmedia.de>
+ * @date Mon, 07 Mar 2022 10:32:08 GMT
+ * @copyright 2022 LBRmedia
+ * @link https://github.com/lbr-media/typo3-extension-bootstrap
+ * @license GPL-2.0-or-later
  */
-class SvgError {
-    constructor() {
-        // svg element
-        this.svg = null;
-        this.lines = null;
-        // blinking block at the end of the text
-        this.block = null;
-        this.points = [];
-        // font inactive class
-        this.fontInactiveClass = 'svgerror__font--inactive';
-        // time unit - one animation step
-        this.timeUnit = 400;
-        this.waitTime = 1500;
-        this.svg = document.querySelector('#svgerror');
-        this.lines = this.svg.querySelectorAll('.svgerror__font');
-        this.block = this.svg.querySelector('.svgerror__block');
-        this.points = [
-            this.svg.querySelector('.svgerror__point1'),
-            this.svg.querySelector('.svgerror__point2'),
-            this.svg.querySelector('.svgerror__point3'),
-        ];
-        this.animateLines();
-        this.animateBlock();
-        this.animatePoints();
-    }
-    animateLines() {
-        let waitTime = this.waitTime;
-        for (let l = 0; l < this.lines.length; l++) {
-            this.lines[l].style.display = 'none';
-            switch (l) {
-                default:
-                case 0: // Determine state ...
-                    waitTime += 0;
-                    break;
-                case 1: // State is 'Error 404 - Page not found'.
-                    waitTime += 800;
-                    break;
-                case 2: // Starting subroutine with 404 and superhero ...
-                    waitTime += 800;
-                    break;
-                case 3: // > Invoke search engine ...
-                    waitTime += 300;
-                    break;
-                case 4: // > Invoke private call to Chuck Norris ...
-                    waitTime += 200;
-                    break;
-                case 5: // > Search engine loaded
-                    waitTime += 1000;
-                    break;
-                case 6: // > Waiting until Chuck picks up the phone ...
-                    waitTime += 200;
-                    break;
-                case 7: // > http-se:bin sun$ _
-                    waitTime += 200;
-                    break;
-            }
-            window.setTimeout(function (line) {
-                line.style.display = 'block';
-            }, waitTime, this.lines[l]);
-        }
-    }
-    animateBlock() {
-        this.block.style.transition = 'ease-in-out 0.3s';
-        let _this = this;
-        window.setInterval(function () {
-            if (_this.block.classList && _this.block.classList.toggle) {
-                _this.block.classList.toggle(_this.fontInactiveClass);
-            }
-        }, this.timeUnit * 3);
-    }
-    animatePoints() {
-        let _this = this;
-        for (let p = 0; p < this.points.length; p++) {
-            // hide
-            this.points[p].classList.add(this.fontInactiveClass);
-            // show again after a while
-            window.setTimeout(function (point) {
-                point.classList.remove(_this.fontInactiveClass);
-            }, (p + 1) * this.timeUnit, this.points[p]);
-        }
-        window.setTimeout(function () {
-            _this.animatePoints();
-        }, this.timeUnit * 5);
-    }
-}
-new SvgError();
+function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var i=0;i<t.length;i++){var s=t[i];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(e,s.key,s)}}function _createClass(e,t,i){return t&&_defineProperties(e.prototype,t),i&&_defineProperties(e,i),Object.defineProperty(e,"prototype",{writable:!1}),e}!function e(t,i,s){function n(o,a){if(!i[o]){if(!t[o]){var l="function"==typeof require&&require;if(!a&&l)return l(o,!0);if(r)return r(o,!0);var c=new Error("Cannot find module '"+o+"'");throw c.code="MODULE_NOT_FOUND",c}var u=i[o]={exports:{}};t[o][0].call(u.exports,(function(e){return n(t[o][1][e]||e)}),u,u.exports,e,t,i,s)}return i[o].exports}for(var r="function"==typeof require&&require,o=0;o<s.length;o++)n(s[o]);return n}({1:[function(e,t,i){new(function(){function e(){_classCallCheck(this,e),this.svg=null,this.lines=null,this.block=null,this.points=[],this.fontInactiveClass="svgerror__font--inactive",this.timeUnit=400,this.waitTime=1500,this.svg=document.querySelector("#svgerror"),this.lines=this.svg.querySelectorAll(".svgerror__font"),this.block=this.svg.querySelector(".svgerror__block"),this.points=[this.svg.querySelector(".svgerror__point1"),this.svg.querySelector(".svgerror__point2"),this.svg.querySelector(".svgerror__point3")],this.animateLines(),this.animateBlock(),this.animatePoints()}return _createClass(e,[{key:"animateLines",value:function(){for(var e=this.waitTime,t=0;t<this.lines.length;t++){switch(this.lines[t].style.display="none",t){default:case 0:e+=0;break;case 1:case 2:e+=800;break;case 3:e+=300;break;case 4:case 6:case 7:e+=200;break;case 5:e+=1e3}window.setTimeout((function(e){e.style.display="block"}),e,this.lines[t])}}},{key:"animateBlock",value:function(){this.block.style.transition="ease-in-out 0.3s";var e=this;window.setInterval((function(){e.block.classList&&e.block.classList.toggle&&e.block.classList.toggle(e.fontInactiveClass)}),3*this.timeUnit)}},{key:"animatePoints",value:function(){for(var e=this,t=0;t<this.points.length;t++)this.points[t].classList.add(this.fontInactiveClass),window.setTimeout((function(t){t.classList.remove(e.fontInactiveClass)}),(t+1)*this.timeUnit,this.points[t]);window.setTimeout((function(){e.animatePoints()}),5*this.timeUnit)}}]),e}())},{}]},{},[1]);

@@ -4,9 +4,9 @@ config {
     removeDefaultJS = external
 }
 
-// page.includeJSLibs {
-//     polyfills = fileadmin/bootstrap/assets/js/Polyfills.js
-// }
+page.includeJSLibs {
+    polyfills = fileadmin/bootstrap/assets/js/Polyfills.js
+}
 
 page.includeJSFooterlibs {
     bootstrap = fileadmin/bootstrap/assets/js/bootstrap.bundle.min.js

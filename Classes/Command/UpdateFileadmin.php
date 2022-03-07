@@ -38,10 +38,6 @@ class UpdateFileadmin extends Command
      * files to copy from vendor directory after installing this extension with composer.
      */
     const FILES = [
-        // jquery
-        // "vendor/components/jquery/jquery.min.js" => self::JS_DIR,
-        // "vendor/components/jquery/jquery.min.map" => self::JS_DIR,
-
         // Twitter Bootstrap
         'vendor/twbs/bootstrap/dist/css/bootstrap.min.css' => self::CSS_DIR,
         'vendor/twbs/bootstrap/dist/css/bootstrap.min.css.map' => self::CSS_DIR,
@@ -49,18 +45,18 @@ class UpdateFileadmin extends Command
         'vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js.map' => self::JS_DIR,
 
         // Error Page
-        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/error-page.min.css' => self::CSS_DIR,
-        'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/SvgError.min.js' => self::JS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/error-page.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/SvgError.js' => self::JS_DIR,
 
         // Additional CSS
-        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_alert.min.css' => self::CSS_DIR,
-        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_textmediafloat.min.css' => self::CSS_DIR,
-        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_markdown.min.css' => self::CSS_DIR,
-        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/Elements/figure-copyright.min.css' => self::CSS_DIR,
-        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/Elements/iconset.min.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_alert.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_textmediafloat.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/ContentElement/bootstrap_markdown.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/Elements/figure-copyright.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/Frontend/Elements/iconset.css' => self::CSS_DIR,
 
         // CKEditor
-        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/CKEditor/CKEditor.min.css' => self::CSS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/Stylesheets/CKEditor/CKEditor.css' => self::CSS_DIR,
 
         // Masonry
         'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/lib/imagesloaded.pkgd.min.js' => self::JS_DIR,
@@ -74,6 +70,8 @@ class UpdateFileadmin extends Command
 
         // App
         'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/App.js' => self::JS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/Polyfills.js' => self::JS_DIR,
+        'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/lib/picturefill.min.js' => self::JS_DIR,
     ];
 
     /**

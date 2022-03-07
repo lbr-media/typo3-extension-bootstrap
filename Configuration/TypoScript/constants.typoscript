@@ -79,7 +79,7 @@ styles.bootstrap {
     ce_bootstrap_twocolumnstext_row_classes = row g-0 g-sm-3 g-md-4
     # cat=bootstrap/styling_ce_bootstrap_twocolumnstext/b; type=string; label=CSS-Classes: Content element "Text + Text": grid col-tag
     ce_bootstrap_twocolumnstext_col_classes = col-sm-6
-    
+
 
     # cat=bootstrap/styling_nav/nav0; type=string; label=CSS-Classes: Navigation UL-tag (flat navigation)
     nav_ul_classes = list-unstyled

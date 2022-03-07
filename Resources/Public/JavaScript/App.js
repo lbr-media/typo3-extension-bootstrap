@@ -1,11 +1,10 @@
 /**
- * Package: typo3-extension-bootstrap - Version 1.0.13
- * Typo3 template extension with Twitter Bootstrap 5 package.
- * Author: Marcel <mb@lbrmedia.de>
- * Build date: 2022-03-05 10:58:30
- * Copyright (c) 2022 LBRmedia
- * Released under the GPL-2.0-or-later license
- * https://github.com/lbr-media/typo3-extension-bootstrap
+ * @package typo3-extension-bootstrap - Typo3 template extension with Twitter Bootstrap 5 package.
+ * @version v1.0.13
+ * @author Marcel <mb@lbrmedia.de>
+ * @date Mon, 07 Mar 2022 10:32:08 GMT
+ * @copyright 2022 LBRmedia
+ * @link https://github.com/lbr-media/typo3-extension-bootstrap
+ * @license GPL-2.0-or-later
  */
-
-const grids=document.querySelectorAll("[data-bs-masonry]");grids.forEach((t=>{const e=t.getAttribute("data-bs-masonry");let o={percentPosition:!0};e.trim()&&(o=JSON.parse(e)),imagesLoaded(t,(function(){new Masonry(t,o)}))}));
+var grids=document.querySelectorAll("[data-bs-masonry]");grids.forEach((function(r){var a=r.getAttribute("data-bs-masonry"),t={percentPosition:!0};a.trim()&&(t=JSON.parse(a)),imagesLoaded(r,(function(){new Masonry(r,t)}))}));

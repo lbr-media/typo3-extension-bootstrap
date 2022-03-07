@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // SVG iMac Icon on error pages
 
 // <svg id="svgerror" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 678">
@@ -62,7 +64,7 @@
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 100% / 750 * 678;
+    padding-bottom: math.div(100%, 750) * 678;
     svg {
         position: absolute;
     }
@@ -75,7 +77,8 @@
         fill: #bbbbbb;
     }
     &__stand {
-        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23777777'/><stop offset='70%' stop-color='%23c0c0c0'/><stop offset='100%' stop-color='%23cccccc'/></linearGradient></svg>#grad") #888888;
+        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23777777'/><stop offset='70%' stop-color='%23c0c0c0'/><stop offset='100%' stop-color='%23cccccc'/></linearGradient></svg>#grad")
+            #888888;
     }
     &__glass {
         fill: #333333;
@@ -99,10 +102,12 @@
         fill: orangered;
     }
     &__reflection-line1 {
-        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad") rgba(255, 255, 255, .3);
+        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' x2='0' y2='1'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad")
+            rgba(255, 255, 255, 0.3);
     }
     &__reflection-line2 {
-        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad") rgba(255, 255, 255, .3);
+        fill: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad'><stop offset='0%' stop-color='%23ffffff20'/><stop offset='90%' stop-color='%23ffffff50'/><stop offset='100%' stop-color='%23ffffff10'/></linearGradient></svg>#grad")
+            rgba(255, 255, 255, 0.3);
     }
     &__logo {
         font-family: monospace;

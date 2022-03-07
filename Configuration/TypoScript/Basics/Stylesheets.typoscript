@@ -6,9 +6,9 @@ config {
 page.includeCSS {
     bootstrap = fileadmin/bootstrap/assets/css/bootstrap.min.css
     bootstrap_icons = fileadmin/bootstrap/assets/bsicon/bootstrap-icons.css
-    iconset = fileadmin/bootstrap/assets/css/iconset.min.css
-    figure_copyright = fileadmin/bootstrap/assets/css/figure-copyright.min.css
-    bootstrap_textmediafloat = fileadmin/bootstrap/assets/css/bootstrap_textmediafloat.min.css
-    bootstrap_alert = fileadmin/bootstrap/assets/css/bootstrap_alert.min.css
-    bootstrap_markdown = fileadmin/bootstrap/assets/css/bootstrap_markdown.min.css
+    iconset = fileadmin/bootstrap/assets/css/iconset.css
+    figure_copyright = fileadmin/bootstrap/assets/css/figure-copyright.css
+    bootstrap_textmediafloat = fileadmin/bootstrap/assets/css/bootstrap_textmediafloat.css
+    bootstrap_alert = fileadmin/bootstrap/assets/css/bootstrap_alert.css
+    bootstrap_markdown = fileadmin/bootstrap/assets/css/bootstrap_markdown.css
 }

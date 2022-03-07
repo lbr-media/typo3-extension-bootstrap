@@ -1,11 +1,10 @@
 /**
- * Package: typo3-extension-bootstrap - Version 1.0.13
- * Typo3 template extension with Twitter Bootstrap 5 package.
- * Author: Marcel <mb@lbrmedia.de>
- * Build date: 2022-03-04 08:27:17
- * Copyright (c) 2022 LBRmedia
- * Released under the GPL-2.0-or-later license
- * https://github.com/lbr-media/typo3-extension-bootstrap
+ * @package typo3-extension-bootstrap - Typo3 template extension with Twitter Bootstrap 5 package.
+ * @version v1.0.13
+ * @author Marcel <mb@lbrmedia.de>
+ * @date Mon, 07 Mar 2022 10:32:08 GMT
+ * @copyright 2022 LBRmedia
+ * @link https://github.com/lbr-media/typo3-extension-bootstrap
+ * @license GPL-2.0-or-later
  */
-
-define((function(){return class{constructor(e){this.values=["","","","","","",""],this.hiddenInput=document.getElementById(e+"-hidden"),this.selects=[],this.selects.push(document.getElementById(e+"-left")),this.selects.push(document.getElementById(e+"-right")),this.selects.push(document.getElementById(e+"-horizontal")),this.selects.push(document.getElementById(e+"-top")),this.selects.push(document.getElementById(e+"-bottom")),this.selects.push(document.getElementById(e+"-vertical")),this.selects.push(document.getElementById(e+"-all"));let t=this;for(var s=0;s<this.selects.length;s++)this.selects[s].addEventListener("change",(function(){t.updateHidden()}));this.initValues()}initValues(){this.hiddenInput.value&&(this.values=this.hiddenInput.value.split(";"));for(var e=0;e<this.selects.length;e++)"string"==typeof this.values[e]&&(this.selects[e].value=this.values[e])}updateHidden(){this.values=[];for(var e=0;e<this.selects.length;e++)this.values.push("default"===this.selects[e].value?"":this.selects[e].value);this.hiddenInput.value=this.values.join(";")}}}));
+function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var s=0;s<t.length;s++){var n=t[s];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function _createClass(e,t,s){return t&&_defineProperties(e.prototype,t),s&&_defineProperties(e,s),Object.defineProperty(e,"prototype",{writable:!1}),e}define((function(){return function(){function e(t){_classCallCheck(this,e),this.values=["","","","","","",""],this.hiddenInput=document.getElementById(t+"-hidden"),this.selects=[],this.selects.push(document.getElementById(t+"-left")),this.selects.push(document.getElementById(t+"-right")),this.selects.push(document.getElementById(t+"-horizontal")),this.selects.push(document.getElementById(t+"-top")),this.selects.push(document.getElementById(t+"-bottom")),this.selects.push(document.getElementById(t+"-vertical")),this.selects.push(document.getElementById(t+"-all"));for(var s=this,n=0;n<this.selects.length;n++)this.selects[n].addEventListener("change",(function(){s.updateHidden()}));this.initValues()}return _createClass(e,[{key:"initValues",value:function(){this.hiddenInput.value&&(this.values=this.hiddenInput.value.split(";"));for(var e=0;e<this.selects.length;e++)"string"==typeof this.values[e]&&(this.selects[e].value=this.values[e])}},{key:"updateHidden",value:function(){this.values=[];for(var e=0;e<this.selects.length;e++)this.values.push("default"===this.selects[e].value?"":this.selects[e].value);this.hiddenInput.value=this.values.join(";")}}]),e}()}));
