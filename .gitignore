@@ -1,4 +1,5 @@
 node_modules/
 .DS_Store
 Build/.cache
+Build/*.log
 .php-cs-fixer.cache
