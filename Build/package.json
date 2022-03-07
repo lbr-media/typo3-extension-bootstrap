@@ -4,12 +4,15 @@
     "version": "1.0.14",
     "main": "gulpfile.js",
     "license": "GPL-2.0-or-later",
+    "homepage": "https://github.com/lbr-media/typo3-extension-bootstrap",
     "author": {
         "name": "Marcel",
         "email": "mb@lbrmedia.de",
         "company": "LBRmedia"
     },
-    "homepage": "https://github.com/lbr-media/typo3-extension-bootstrap",
+    "scripts": {
+        "build": "gulp build"
+    },
     "devDependencies": {
         "@babel/core": "^7.17.5",
         "@babel/preset-env": "^7.16.11",
