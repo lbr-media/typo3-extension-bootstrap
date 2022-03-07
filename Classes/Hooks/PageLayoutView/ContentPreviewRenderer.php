@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Hooks\PageLayoutView;
 
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
@@ -14,6 +15,55 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ContentPreviewRenderer extends StandardContentPreviewRenderer
 {
+    /**
+     * Like the parent method but with some more informations.
+     */
+    public function renderPageModulePreviewHeader(GridColumnItem $item): string
+    {
+        $record = $item->getRecord();
+
+        $outHeader = '';
+        if ($record['header']) {
+            $itemLabels = $item->getContext()->getItemLabels();
+
+            // header_layout info
+            $info = [];
+            $outInfo = '';
+
+            if (!in_array($record['CType'], [
+                'html',
+                'bootstrap_alert',
+            ])) {
+                if ((int)$record['header_layout'] === 0) {
+                    $info[] = '<strong>' . htmlspecialchars((string)($itemLabels['header_layout'] ?? '')) . '</strong> ' . htmlspecialchars('<h1>');
+                } else {
+                    $this->getProcessedValue($item, 'header_layout,tx_bootstrap_header_layout', $info);
+                }
+
+                if (!empty($info)) {
+                    $outInfo = ' ' . implode('<br>', $info);
+                }
+            }
+
+            // If header layout is set to 'hidden', display an accordant note:
+            $hiddenHeaderNote = '';
+            if ($record['header_layout'] == 100) {
+                $hiddenHeaderNote = ' <em>[' . htmlspecialchars($this->getLanguageService()->sL('LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6')) . ']</em>';
+            }
+
+            $outHeader = $record['date']
+                ? htmlspecialchars($itemLabels['date'] . ' ' . BackendUtility::date($record['date'])) . '<br />'
+                : '';
+            $outHeader .= '<strong>' . $this->linkEditContent($this->renderText($record['header']), $record) . $hiddenHeaderNote . '</strong><br />';
+
+            if ($outInfo) {
+                $outHeader .= '<div class="t3-page-ce-footer">' . $outInfo . '</div>';
+            }
+        }
+
+        return $outHeader;
+    }
+
     /**
      * Render a body for the record
      *
@@ -168,6 +218,11 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
                 }
                 break;
+            case 'bootstrap_alert':
+                if ($record['bodytext']) {
+                    $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
+                }
+                break;
             default:
                 return parent::renderPageModulePreviewContent($item);
         }
@@ -203,6 +258,32 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
         }
 
         return $content;
+    }
+
+    /**
+     * Overwrites parent method to use the PID of the record to get the TSConfig values.
+     */
+    protected function getProcessedValue(GridColumnItem $item, string $fieldList, array &$info): void
+    {
+        $itemLabels = $item->getContext()->getItemLabels();
+        $record = $item->getRecord();
+        $fieldArr = explode(',', $fieldList);
+        foreach ($fieldArr as $field) {
+            if ($record[$field]) {
+                $fieldValue = BackendUtility::getProcessedValue(
+                    'tt_content',
+                    $field,
+                    $record[$field],
+                    0,
+                    false,
+                    false,
+                    $record['uid'] ?? 0,
+                    true,
+                    $record['pid'] ?? 0 // additional info which is missing in parent method
+                ) ?? '';
+                $info[] = '<strong>' . htmlspecialchars((string)($itemLabels[$field] ?? '')) . '</strong> ' . htmlspecialchars($fieldValue);
+            }
+        }
     }
 
     protected function getQueryBuilderForTable($table): QueryBuilder
