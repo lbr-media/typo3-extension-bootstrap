@@ -37,7 +37,7 @@ module.exports = (ENV) => {
             banner: [
                 '/**',
                 ' * @package <%= pkg.name %> - <%= pkg.description %>',
-                ' * @version v<%= pkg.version %>',
+                ' * @version <%= pkg.version %>',
                 ' * @author <%= pkg.author.name %> <<%= pkg.author.email %>>',
                 ' * @date <%= date.toUTCString() %>',
                 ' * @copyright <%= date.getFullYear() %> <%= pkg.author.company %>',

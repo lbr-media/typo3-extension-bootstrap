@@ -1,7 +1,7 @@
 {
     "name": "typo3-extension-bootstrap",
     "description": "Typo3 template extension with Twitter Bootstrap 5 package.",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "main": "gulpfile.js",
     "license": "GPL-2.0-or-later",
     "author": {
