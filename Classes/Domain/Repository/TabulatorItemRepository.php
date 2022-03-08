@@ -9,7 +9,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * The repository for content element bootstrap_tabs
+ * The repository for content element bootstrap_tabs.
  */
 class TabulatorItemRepository extends Repository
 {
@@ -25,6 +25,10 @@ class TabulatorItemRepository extends Repository
      */
     protected $querySettings;
 
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings $querySettings
+     * @return void
+     */
     public function injectQuerySettings(Typo3QuerySettings $querySettings)
     {
         $this->querySettings = $querySettings;
@@ -32,6 +36,7 @@ class TabulatorItemRepository extends Repository
 
     /**
      * initializes this repository.
+     * @return void
      */
     public function initializeObject(): void
     {

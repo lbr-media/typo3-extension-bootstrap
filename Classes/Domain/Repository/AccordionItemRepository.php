@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 
 /**
- * The repository for content element bootstrap_accordion
+ * The repository for content element bootstrap_accordion.
  */
 class AccordionItemRepository extends Repository
 {
@@ -25,13 +25,16 @@ class AccordionItemRepository extends Repository
      */
     protected $querySettings;
 
-    public function injectQuerySettings(Typo3QuerySettings $querySettings)
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings $querySettings
+     */
+    public function injectQuerySettings(Typo3QuerySettings $querySettings): void
     {
         $this->querySettings = $querySettings;
     }
 
     /**
-     * initializes this repository.
+     * Initializes this repository.
      */
     public function initializeObject(): void
     {
@@ -40,6 +43,9 @@ class AccordionItemRepository extends Repository
     }
 
     /**
+     * @param string $relationFieldName
+     * @param int  $relationUid
+     * 
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResult<\LBRmedia\Bootstrap\Domain\Model\AccordionItem>
      */
     public function findByRelation(string $relationFieldName, int $relationUid): ?object

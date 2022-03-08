@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Domain\Model;
 
-use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 
 /**
  * This content element simulates bootstrap_textmediagrid.
@@ -98,11 +98,17 @@ class ContentElement extends AbstractEntity
      */
     public $txBootstrapFlexform = '';
 
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
     public function getFiles(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {
         return $this->assets;
     }
 
+    /**
+     * @return array
+     */
     public function getData(): array
     {
         return [

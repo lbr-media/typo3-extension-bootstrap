@@ -17,10 +17,13 @@ namespace LBRmedia\Bootstrap\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 
-use LBRmedia\Bootstrap\Domain\Repository\CardItemRepository;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use LBRmedia\Bootstrap\Domain\Repository\CardItemRepository;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
+/**
+ * Data processor to get tt_content related LBRmedia\Bootstrap\Model\CardItem.
+ */
 class CardItemProcessor implements DataProcessorInterface
 {
     /**
@@ -28,6 +31,9 @@ class CardItemProcessor implements DataProcessorInterface
      */
     protected $cardItemRepository;
 
+    /**
+     * @param CardItemRepository $cardItemRepository
+     */
     public function __construct(CardItemRepository $cardItemRepository)
     {
         $this->cardItemRepository = $cardItemRepository;

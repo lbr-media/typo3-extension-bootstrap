@@ -17,10 +17,13 @@ namespace LBRmedia\Bootstrap\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 
-use LBRmedia\Bootstrap\Domain\Repository\TabulatorItemRepository;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
+use LBRmedia\Bootstrap\Domain\Repository\TabulatorItemRepository;
 
+/**
+ * Data processor to get tt_content related LBRmedia\Bootstrap\Model\TabulatorItem.
+ */
 class TabulatorItemProcessor implements DataProcessorInterface
 {
     /**
@@ -28,6 +31,9 @@ class TabulatorItemProcessor implements DataProcessorInterface
      */
     protected $tabulatorItemRepository;
 
+    /**
+     * @param TabulatorItemRepository $tabulatorItemRepository
+     */
     public function __construct(TabulatorItemRepository $tabulatorItemRepository)
     {
         $this->tabulatorItemRepository = $tabulatorItemRepository;

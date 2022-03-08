@@ -20,7 +20,8 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
 /**
- * Class for data processing for the content element "bootstrap_markdown"
+ * Class for data processing of the content element "bootstrap_markdown".
+ * Compiles tt_content.bodytext to HTML markup.
  */
 class MarkdownProcessor implements DataProcessorInterface
 {

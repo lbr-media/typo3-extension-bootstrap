@@ -7,7 +7,7 @@ namespace LBRmedia\Bootstrap\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Items for the accordion content element
+ * Items for the content element bootstrap_accordion.
  */
 class AccordionItem extends AbstractEntity
 {
@@ -27,16 +27,25 @@ class AccordionItem extends AbstractEntity
      */
     protected $contentElements;
 
+    /**
+     * @return string
+     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
+    /**
+     * @return bool
+     */
     public function getOpenedOnLoad(): bool
     {
         return $this->openedOnLoad;
     }
 
+    /**
+     * @return bool
+     */
     public function isOpenedOnLoad(): bool
     {
         return $this->getOpenedOnLoad();

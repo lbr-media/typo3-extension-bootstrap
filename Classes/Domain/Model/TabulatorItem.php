@@ -7,13 +7,12 @@ namespace LBRmedia\Bootstrap\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Items for the tabulator content element
+ * Items for the content element bootstrap_tabulator.
  */
 class TabulatorItem extends AbstractEntity
 {
     /**
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $title = '';
 
@@ -27,21 +26,35 @@ class TabulatorItem extends AbstractEntity
      */
     protected $contentElements;
 
+    /**
+     * @return string
+     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
+    /**
+     * @return bool
+     */
     public function getActive(): bool
     {
         return $this->active;
     }
 
+    /**
+     * @return bool
+     */
     public function isActive(): bool
     {
         return $this->getActive();
     }
 
+    /**
+     * @param bool $active
+     * 
+     * @return void
+     */
     public function setActive(bool $active): void
     {
         $this->active = $active;

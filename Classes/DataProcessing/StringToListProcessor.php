@@ -23,7 +23,18 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
 /**
- * Converts a string into a list.
+ * Explodes a string of $processedData['data'][$field] by $splitChar and stores it as $processedData[$as].
+ * If $implodeChar is set, the array will be imploded.
+ * 
+ * P.e. '1,2,3' will be transformed to [1, 2, 3] or '1 2 3'.
+ * 
+ * Required parameters in $processorConfiguration:
+ * - field
+ * - as
+ * - splitChar
+ * 
+ * Additional parameters in $processorConfiguration:
+ * - implodeChar (:space: will be transformed to ' ')
  */
 class StringToListProcessor implements DataProcessorInterface
 {

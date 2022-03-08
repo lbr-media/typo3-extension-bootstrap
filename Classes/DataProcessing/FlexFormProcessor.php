@@ -33,6 +33,20 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 /**
  * Class for data processing for various content elements which use the flexform field tx_bootstap_flexform.
  * Converts the flexform data into useable values in fluid template.
+ * 
+ * If $processorConfiguration['CType'] is set, the given flexform transform will be used. Otherwise the content elements CType will be used.
+ * Optionally $processorConfiguration['as'] can be used to define $processedData[$as].
+ * 
+ * The following CType flexforms are supported:
+ * - bootstrap_textmediagrid
+ * - bootstrap_textmediafloat
+ * - bootstrap_mediagrid
+ * - bootstrap_accordion
+ * - bootstrap_tabs
+ * - bootstrap_carousel
+ * - bootstrap_textimage
+ * - bootstrap_cards
+ * - bootstrap_alert
  */
 class FlexFormProcessor implements DataProcessorInterface
 {

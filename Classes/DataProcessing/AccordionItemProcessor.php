@@ -17,10 +17,13 @@ namespace LBRmedia\Bootstrap\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 
-use LBRmedia\Bootstrap\Domain\Repository\AccordionItemRepository;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
+use LBRmedia\Bootstrap\Domain\Repository\AccordionItemRepository;
 
+/**
+ * Data processor to get tt_content related LBRmedia\Bootstrap\Model\AccordionItem.
+ */
 class AccordionItemProcessor implements DataProcessorInterface
 {
     /**
@@ -28,6 +31,9 @@ class AccordionItemProcessor implements DataProcessorInterface
      */
     protected $accordionItemRepository;
 
+    /**
+     * @param AccordionItemRepository $accordionItemRepository
+     */
     public function __construct(
         AccordionItemRepository $accordionItemRepository
     ) {

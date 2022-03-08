@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Command;
 
+use TYPO3\CMS\Core\Core\Environment;
 use Symfony\Component\Console\Command\Command;
-// use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
-use TYPO3\CMS\Core\Core\Environment;
 
 /**
  * Methods which are called by composer.
@@ -87,6 +86,7 @@ class UpdateFileadmin extends Command
      *
      * @param InputInterface $input
      * @param OutputInterface $output
+     * 
      * @return int error code
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -100,6 +100,13 @@ class UpdateFileadmin extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * Creates the directories defined in self::DIRS.
+     * 
+     * @param SymfonyStyle $io
+     * 
+     * @return void
+     */
     protected static function createDirectories(SymfonyStyle $io): void
     {
         $baseDir = self::getBaseDir();
@@ -113,6 +120,14 @@ class UpdateFileadmin extends Command
         }
     }
 
+    /**
+     * Copies the fields defined in self::FILES.
+     * Should be called after self::createDirectories().
+     * 
+     * @param SymfonyStyle $io
+     * 
+     * @return void
+     */
     protected static function copyFiles(SymfonyStyle $io): void
     {
         $baseDir = self::getBaseDir();
@@ -139,6 +154,9 @@ class UpdateFileadmin extends Command
         }
     }
 
+    /**
+     * @return string
+     */
     protected static function getBaseDir(): string
     {
         return Environment::getProjectPath();
