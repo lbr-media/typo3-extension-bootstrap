@@ -1,42 +1,176 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:bs="http://typo3.org/ns/LBRmedia/Bootstrap/ViewHelpers"
     data-namespace-typo3-fluid="true">
 
+    <!--
+    Link for a regular navigation.
+    -->
     <f:section name="Default">
         <f:if condition="{item.spacer}">
             <f:then>
-                <span class="{settings.bootstrap.nav_link_spacer_classes}" title="{item.title}">{item.title}</span>
+                <hr class="{settings.bootstrap.nav_link_spacer_classes}" title="{item.title}" />
             </f:then>
             <f:else if="{item.current}">
-                <a href="{item.link}" class="{settings.bootstrap.nav_link_current_classes}" target="{item.target}" title="{item.title}">{item.title}</a>
+                <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                    href: item.link,
+                    class: settings.bootstrap.nav_link_current_classes,
+                    target: item.target,
+                    rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                }">{item.title}</bs:Tag>
             </f:else>
             <f:else if="{item.active}">
-                <a href="{item.link}" class="{settings.bootstrap.nav_link_active_classes}" target="{item.target}" title="{item.title}">{item.title}</a>
+                <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                    href: item.link,
+                    class: settings.bootstrap.nav_link_active_classes,
+                    target: item.target,
+                    rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                }">{item.title}</bs:Tag>
             </f:else>
             <f:else>
-                <a href="{item.link}" class="{settings.bootstrap.nav_link_inactive_classes}" target="{item.target}" title="{item.title}">{item.title}</a>
+                <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                    href: item.link,
+                    class: settings.bootstrap.nav_link_inactive_classes,
+                    target: item.target,
+                    rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                }">{item.title}</bs:Tag>
             </f:else>
         </f:if>
     </f:section>
 
-    <f:section name="TreeLink">
-        <f:variable name="dropdownToggleAttributes"><f:if condition="{isDropdownToggle}"> id="link-{item.data.uid}" role="button" data-bs-toggle="dropdown" aria-expanded="false"</f:if></f:variable>
-        <f:variable name="linkClass"><f:if condition="{isDropdown}"><f:then>text-nowrap dropdown-item</f:then><f:else>text-nowrap nav-link</f:else></f:if></f:variable>
-        <f:variable name="activeClass"><f:if condition="{item.current}||{item.active}"> active</f:if></f:variable>
-        <f:variable name="dropdownToggleClass"><f:if condition="{isDropdownToggle}"> dropdown-toggle</f:if></f:variable>
-
+    <!--
+    Special link for a tree navigation with dropdown.
+    @param bool {isDropdownToggle} The item is a button in level 0.
+    @param bool {isDropdownTarget} The item is a link in level 1.
+    -->
+    <f:section name="DropdownLink">
         <f:if condition="{item.spacer}">
             <f:then>
-                <span class="{linkClass}{activeClass}{dropdownToggleClass}" title="{item.title}"{dropdownToggleAttributes -> f:format.raw()}>{item.title}</span>
+                <f:if condition="{isDropdownToggle}">
+                    <f:then>
+                        <bs:Tag tag="span" forceClosingTag="true" title="{item.title}"
+                            id="link-{item.data.uid}"
+                            additionalAttributesIfNotEmpty="{
+                                class: settings.bootstrap.nav_dropdown_toggle_spacer_classes,
+                                role: 'button'
+                            }"
+                            aria="{expanded: 'false'}"
+                            data="{bs-toggle: 'dropdown'}"
+                        >{item.title}</bs:Tag>
+                    </f:then>
+                    <f:else if="{isDropdownTarget}">
+                        <bs:Tag tag="hr" forceClosingTag="false" additionalAttributesIfNotEmpty="{
+                            class: settings.bootstrap.nav_dropdown_child_spacer_classes
+                        }"></bs:Tag>
+                    </f:else>
+                    <f:else>
+                        <bs:Tag tag="hr" forceClosingTag="false" additionalAttributesIfNotEmpty="{
+                            class: settings.bootstrap.nav_dropdown_spacer_classes
+                        }"></bs:Tag>
+                    </f:else>
+                </f:if>
             </f:then>
             <f:else if="{item.current}">
-                <a href="{item.link}" class="{linkClass}{activeClass}{dropdownToggleClass}" target="{item.target}" title="{item.title}"{dropdownToggleAttributes -> f:format.raw()}>{item.title}</a>
+                <f:if condition="{isDropdownToggle}">
+                    <f:then>
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}"
+                            id="link-{item.data.uid}"
+                            additionalAttributesIfNotEmpty="{
+                                href: item.link,
+                                class: settings.bootstrap.nav_dropdown_toggle_current_classes,
+                                target: item.target,
+                                rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}',
+                                role: 'button'
+                            }"
+                            aria="{expanded: 'false'}"
+                            data="{bs-toggle: 'dropdown'}"
+                            >{item.title}</bs:Tag>
+                    </f:then>
+                    <f:else if="{isDropdownTarget}">
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                            href: item.link,
+                            class: settings.bootstrap.nav_dropdown_child_current_classes,
+                            target: item.target,
+                            rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                        }">{item.title}</bs:Tag>
+                    </f:else>
+                    <f:else>
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                            href: item.link,
+                            class: settings.bootstrap.nav_dropdown_current_classes,
+                            target: item.target,
+                            rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                        }">{item.title}</bs:Tag>
+                    </f:else>
+                </f:if>
             </f:else>
             <f:else if="{item.active}">
-                <a href="{item.link}" class="{linkClass}{activeClass}{dropdownToggleClass}" target="{item.target}" title="{item.title}"{dropdownToggleAttributes -> f:format.raw()}>{item.title}</a>
+                <f:if condition="{isDropdownToggle}">
+                    <f:then>
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}"
+                            id="link-{item.data.uid}"
+                            additionalAttributesIfNotEmpty="{
+                                href: item.link,
+                                class: settings.bootstrap.nav_dropdown_toggle_active_classes,
+                                target: item.target,
+                                rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}',
+                                role: 'button'
+                            }"
+                            aria="{expanded: 'false'}"
+                            data="{bs-toggle: 'dropdown'}"
+                            >{item.title}</bs:Tag>
+                    </f:then>
+                    <f:else if="{isDropdownTarget}">
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                            href: item.link,
+                            class: settings.bootstrap.nav_dropdown_child_active_classes,
+                            target: item.target,
+                            rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                        }">{item.title}</bs:Tag>
+                    </f:else>
+                    <f:else>
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                            href: item.link,
+                            class: settings.bootstrap.nav_dropdown_active_classes,
+                            target: item.target,
+                            rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                        }">{item.title}</bs:Tag>
+                    </f:else>
+                </f:if>
             </f:else>
             <f:else>
-                <a href="{item.link}" class="{linkClass}{activeClass}{dropdownToggleClass}" target="{item.target}" title="{item.title}"{dropdownToggleAttributes -> f:format.raw()}>{item.title}</a>
+                <f:if condition="{isDropdownToggle}">
+                    <f:then>
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}"
+                            id="link-{item.data.uid}"
+                            additionalAttributesIfNotEmpty="{
+                                href: item.link,
+                                class: settings.bootstrap.nav_dropdown_toggle_inactive_classes,
+                                target: item.target,
+                                rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}',
+                                role: 'button'
+                            }"
+                            aria="{expanded: 'false'}"
+                            data="{bs-toggle: 'dropdown'}"
+                            >{item.title}</bs:Tag>
+                    </f:then>
+                    <f:else if="{isDropdownTarget}">
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                            href: item.link,
+                            class: settings.bootstrap.nav_dropdown_child_inactive_classes,
+                            target: item.target,
+                            rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                        }">{item.title}</bs:Tag>
+                    </f:else>
+                    <f:else>
+                        <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+                            href: item.link,
+                            class: settings.bootstrap.nav_dropdown_inactive_classes,
+                            target: item.target,
+                            rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+                        }">{item.title}</bs:Tag>
+                    </f:else>
+                </f:if>
             </f:else>
         </f:if>
     </f:section>

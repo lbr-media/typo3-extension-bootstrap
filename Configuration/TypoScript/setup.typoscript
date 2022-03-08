@@ -44,6 +44,31 @@ plugin.tx_bootstrap.settings {
         nav_link_current_classes = {$styles.bootstrap.nav_link_current_classes}
         nav_link_active_classes = {$styles.bootstrap.nav_link_active_classes}
         nav_link_inactive_classes = {$styles.bootstrap.nav_link_inactive_classes}
+
+        # nav dropdown ul + li
+        nav_dropdown_ul_classes = {$styles.bootstrap.nav_dropdown_ul_classes}
+        nav_dropdown_ul_target_classes = {$styles.bootstrap.nav_dropdown_ul_target_classes}
+        nav_dropdown_li_dropdown_classes = {$styles.bootstrap.nav_dropdown_li_dropdown_classes}
+        nav_dropdown_li_dropdown_toggle_classes = {$styles.bootstrap.nav_dropdown_li_dropdown_toggle_classes}
+        nav_dropdown_li_dropdown_target_classes = {$styles.bootstrap.nav_dropdown_li_dropdown_target_classes}
+
+        # nav dropdown: link regular
+        nav_dropdown_spacer_classes = {$styles.bootstrap.nav_dropdown_spacer_classes}
+        nav_dropdown_current_classes = {$styles.bootstrap.nav_dropdown_current_classes}
+        nav_dropdown_active_classes = {$styles.bootstrap.nav_dropdown_active_classes}
+        nav_dropdown_inactive_classes = {$styles.bootstrap.nav_dropdown_inactive_classes}
+
+        # nav dropdown: toggle button in level 0
+        nav_dropdown_toggle_spacer_classes = {$styles.bootstrap.nav_dropdown_toggle_spacer_classes}
+        nav_dropdown_toggle_current_classes = {$styles.bootstrap.nav_dropdown_toggle_current_classes}
+        nav_dropdown_toggle_active_classes = {$styles.bootstrap.nav_dropdown_toggle_active_classes}
+        nav_dropdown_toggle_inactive_classes = {$styles.bootstrap.nav_dropdown_toggle_inactive_classes}
+
+        # nav dropdown: child link in level 1
+        nav_dropdown_child_spacer_classes = {$styles.bootstrap.nav_dropdown_child_spacer_classes}
+        nav_dropdown_child_current_classes = {$styles.bootstrap.nav_dropdown_child_current_classes}
+        nav_dropdown_child_active_classes = {$styles.bootstrap.nav_dropdown_child_active_classes}
+        nav_dropdown_child_inactive_classes = {$styles.bootstrap.nav_dropdown_child_inactive_classes}
     }
 }
 

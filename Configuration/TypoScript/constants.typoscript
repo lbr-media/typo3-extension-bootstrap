@@ -1,11 +1,22 @@
-# customcategory=bootstrap=Bootstrap
-# customsubcategory=styling_header=Styling: Header
-# customsubcategory=styling_figcaption=Styling: Figcaption
-# customsubcategory=styling_nav=Styling: Navigation
-# customsubcategory=styling_ce_div=Styling: Content element "Div"
-# customsubcategory=styling_ce_uploads=Styling: Content element "Uploads/File list"
-# customsubcategory=styling_ce_bootstrap_twocolumnstext=Styling: Content element "Text + Text"
-# customsubcategory=grid=Grid
+# customcategory=bootstrap_header=Plugin.Bootstrap: Header
+# customsubcategory=bootstrap_header_pattern=Pattern
+# customsubcategory=bootstrap_header_date=Date Format
+
+# customcategory=bootstrap_figcaption=Plugin.Bootstrap: Figcaption
+# customsubcategory=bootstrap_figcaption_classes=CSS-classes
+
+# customcategory=bootstrap_navigation=Plugin.Bootstrap: Navigation
+# customsubcategory=bootstrap_navigation_regular=Navigation: Regular
+# customsubcategory=bootstrap_navigation_dropdown=Navigation: Dropdown: Main
+# customsubcategory=bootstrap_navigation_dropdown_link=Navigation: Dropdown: Links
+
+# customcategory=bootstrap_ce=Plugin.Bootstrap: Content Elements
+# customsubcategory=bootstrap_ce_div=Content element "Div"
+# customsubcategory=bootstrap_ce_uploads=Content element "Uploads/File list"
+# customsubcategory=bootstrap_ce_bootstrap_twocolumnstext=Content element "Text + Text"
+
+# customcategory=bootstrap_preset=Plugin.Bootstrap: Presets
+# customsubcategory=bootstrap_preset_grid=Grid
 
 plugin.tx_bootstrap {
     view {
@@ -46,91 +57,123 @@ styles.content {
 }
 
 styles.bootstrap {
-    # cat=bootstrap/styling_header/a; type=string; label=Header: Header pattern
+    # cat=bootstrap_header/bootstrap_header_pattern/a; type=string; label=Header pattern
     header_pattern = ###TAG_START######HEADER######TAG_END###
-    # cat=bootstrap/styling_header/b; type=string; label=Header: Header subheader pattern
+    # cat=bootstrap_header/bootstrap_header_pattern/b; type=string; label=Header subheader pattern
     header_subheader_pattern = ###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###
-    # cat=bootstrap/styling_header/c; type=string; label=Header: Header date pattern
+    # cat=bootstrap_header/bootstrap_header_pattern/c; type=string; label=Header date pattern
     header_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER######TAG_END###
-    # cat=bootstrap/styling_header/d; type=string; label=Header: Header subheader date pattern
+    # cat=bootstrap_header/bootstrap_header_pattern/d; type=string; label=Header subheader date pattern
     header_subheader_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###
-    # cat=bootstrap/styling_header/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header: Date format. See: https://www.php.net/manual/de/class.intldateformatter.php
+    # cat=bootstrap_header/bootstrap_header_date/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header date format.: See https://www.php.net/manual/de/class.intldateformatter.php
     header_date_datetype = FULL
-    # cat=bootstrap/styling_header/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header: Time format. See: https://www.php.net/manual/de/class.intldateformatter.php
+    # cat=bootstrap_header/bootstrap_header_date/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header time format.: See https://www.php.net/manual/de/class.intldateformatter.php
     header_date_timetype = NONE
 
-    # cat=bootstrap/styling_figcaption/a; type=string; label=CSS-Classes: figcaption tags
+    # cat=bootstrap_figcaption/bootstrap_figcaption_classes/a; type=string; label=CSS-classes FIGCAPTION
     figcaption_classes = figure-caption text-start
-
-    # cat=bootstrap/styling_figcaption/b; type=string; label=CSS-Classes: figcaption tags when the figure has a border or shadow
+    # cat=bootstrap_figcaption/bootstrap_figcaption_classes/b; type=string; label=CSS-classes FIGCAPTION when the figure has a border or shadow
     figcaption_classes_onBorderOrShadow = figure-caption text-start p-1 p-lg-2
 
-    # cat=bootstrap/styling_ce_div/a; type=string; label=CSS-Classes: Content element "Division": HR-tag
+    # cat=bootstrap_ce/bootstrap_ce_div/a; type=string; label=CSS-classes HR-tag
     ce_div_hr_classes = bg-dark opacity-75 my-3 my-md-4
 
-    # cat=bootstrap/styling_ce_uploads/a; type=string; label=CSS-Classes: Content element "Uploads": grid row-tag
+    # cat=bootstrap_ce/bootstrap_ce_uploads/a; type=string; label=CSS-classes GRID-ROW
     ce_uploads_row_classes = list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 align-items-stretch
-    # cat=bootstrap/styling_ce_uploads/b; type=string; label=CSS-Classes: Content element "Uploads": grid col-tag
+    # cat=bootstrap_ce/bootstrap_ce_uploads/b; type=string; label=CSS-classes GRID-COL
     ce_uploads_col_classes = col
-    # cat=bootstrap/styling_ce_uploads/c; type=string; label=CSS-Classes: Content element "Uploads": grid col-tag
+    # cat=bootstrap_ce/bootstrap_ce_uploads/c; type=string; label=CSS-classes CARD
     ce_uploads_card_classes = card h-100
 
-    # cat=bootstrap/styling_ce_bootstrap_twocolumnstext/a; type=string; label=CSS-Classes: Content element "Text + Text": grid row-tag
+    # cat=bootstrap_ce/bootstrap_ce_bootstrap_twocolumnstext/a; type=string; label=CSS-classes GRID-ROW
     ce_bootstrap_twocolumnstext_row_classes = row g-0 g-sm-3 g-md-4
-    # cat=bootstrap/styling_ce_bootstrap_twocolumnstext/b; type=string; label=CSS-Classes: Content element "Text + Text": grid col-tag
+    # cat=bootstrap_ce/bootstrap_ce_bootstrap_twocolumnstext/b; type=string; label=CSS-classes GRID-COL
     ce_bootstrap_twocolumnstext_col_classes = col-sm-6
 
 
-    # cat=bootstrap/styling_nav/nav0; type=string; label=CSS-Classes: Navigation UL-tag (flat navigation)
+    # cat=bootstrap_navigation/bootstrap_navigation_regular/nav0; type=string; label=CSS-classes UL
     nav_ul_classes = list-unstyled
-    # cat=bootstrap/styling_nav/nav1; type=string; label=CSS-Classes: Navigation LI-tag (flat navigation)
+    # cat=bootstrap_navigation/bootstrap_navigation_regular/nav1; type=string; label=CSS-classes LI
     nav_li_classes = nav-item
-    # cat=bootstrap/styling_nav/nav2; type=string; label=CSS-Classes: Navigation link: Spacer (flat navigation)
+    # cat=bootstrap_navigation/bootstrap_navigation_regular/nav2; type=string; label=CSS-classes LINK: Spacer
     nav_link_spacer_classes = nav-link spacer
-    # cat=bootstrap/styling_nav/nav3; type=string; label=CSS-Classes: Navigation link: Current (flat navigation)
+    # cat=bootstrap_navigation/bootstrap_navigation_regular/nav3; type=string; label=CSS-classes LINK: Current
     nav_link_current_classes = nav-link active
-    # cat=bootstrap/styling_nav/nav4; type=string; label=CSS-Classes: Navigation link: Active (flat navigation)
+    # cat=bootstrap_navigation/bootstrap_navigation_regular/nav4; type=string; label=CSS-classes LINK: Active
     nav_link_active_classes = nav-link active
-    # cat=bootstrap/styling_nav/nav5; type=string; label=CSS-Classes: Navigation link: Inactive (flat navigation)
+    # cat=bootstrap_navigation/bootstrap_navigation_regular/nav5; type=string; label=CSS-classes LINK: Inactive
     nav_link_inactive_classes = nav-link inactive
 
-    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Spacer (tree navigation)
-    # nav_tree_link_spacer_classes = nav-link
-    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Current (tree navigation)
-    # nav_tree_link_current_classes = nav-link
-    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Active (tree navigation)
-    # nav_tree_link_active_classes = nav-link
-    # # cat=bootstrap/styling_nav/s3; type=string; label=CSS-Classes: Navigation link: Inactive (tree navigation)
-    # nav_tree_link_inactive_classes = nav-link
+
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown/nav_dropdown00; type=string; label=Page-UIDs to exclude (excludeUidList)
+    nav_dropdown_excludeUidList = 
+
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown/nav_dropdown00; type=string; label=CSS-classes UL in level 0
+    nav_dropdown_ul_classes = navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown/nav_dropdown01; type=string; label=CSS-classes UL target in level 1 containing the children
+    nav_dropdown_ul_target_classes = dropdown-menu dropdown-menu-dark dropdown-menu-end
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown/nav_dropdown02; type=string; label=CSS-classes LI regular (which has no children and it is not in a dropdown)
+    nav_dropdown_li_dropdown_classes = nav-item
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown/nav_dropdown03; type=string; label=CSS-classes LI toggle (which has children)
+    nav_dropdown_li_dropdown_toggle_classes = nav-item dropdown
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown/nav_dropdown04; type=string; label=CSS-classes LI target (which is a child in dropdown)
+    nav_dropdown_li_dropdown_target_classes = 
+
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown10; type=string; label=CSS-classes LINK REGULAR: Spacer
+    nav_dropdown_spacer_classes = nav-link text-nowrap
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown11; type=string; label=CSS-classes LINK REGULAR: Current
+    nav_dropdown_current_classes = nav-link text-nowrap active
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown12; type=string; label=CSS-classes LINK REGULAR: Active
+    nav_dropdown_active_classes = nav-link text-nowrap active
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown13; type=string; label=CSS-classes LINK REGULAR: Inactive
+    nav_dropdown_inactive_classes = nav-link text-nowrap
+
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown20; type=string; label=CSS-classes LINK TOGGLE: Spacer in level 0 with children
+    nav_dropdown_toggle_spacer_classes = nav-link text-nowrap dropdown-toggle
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown21; type=string; label=CSS-classes LINK TOGGLE: Current in level 0 with children
+    nav_dropdown_toggle_current_classes = nav-link text-nowrap active dropdown-toggle
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown22; type=string; label=CSS-classes LINK TOGGLE: Active in level 0 with children
+    nav_dropdown_toggle_active_classes = nav-link text-nowrap active dropdown-toggle
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown23; type=string; label=CSS-classes LINK TOGGLE: Inactive in level 0 with children
+    nav_dropdown_toggle_inactive_classes = nav-link text-nowrap dropdown-toggle
+
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown30; type=string; label=CSS-classes LINK CHILD: Spacer in level 1 in dropdown
+    nav_dropdown_child_spacer_classes = dropdown-divider
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown31; type=string; label=CSS-classes LINK CHILD: Current in level 1 in dropdown
+    nav_dropdown_child_current_classes = dropdown-item text-nowrap active
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown32; type=string; label=CSS-classes LINK CHILD: Active in level 1 in dropdown
+    nav_dropdown_child_active_classes = dropdown-item text-nowrap active
+    # cat=bootstrap_navigation/bootstrap_navigation_dropdown_link/nav_dropdown33; type=string; label=CSS-classes LINK CHILD: Inactive in level 1 in dropdown
+    nav_dropdown_child_inactive_classes = dropdown-item text-nowrap
 
 
     grid {
         spacing {
             regular {
                 form_element {
-                    # cat=bootstrap/grid/g0; type=small; label=Preset value for regular grid space X + Y
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g0; type=small; label=Preset value for regular grid space X + Y
                     xy = 3;;4;;;
-                    # cat=bootstrap/grid/g1; type=small; label=Preset value for regular grid space X
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g1; type=small; label=Preset value for regular grid space X
                     x = 3;;4;;;
-                    # cat=bootstrap/grid/g2; type=small; label=Preset value for regular grid space Y
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g2; type=small; label=Preset value for regular grid space Y
                     y = 3;;4;;;
                 }
             }
             media {
                 form_element {
-                    # cat=bootstrap/grid/g3; type=small; label=Preset value for media grid space X + Y
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g3; type=small; label=Preset value for media grid space X + Y
                     xy = 2;3;4;;;
-                    # cat=bootstrap/grid/g4; type=small; label=Preset value for media grid space X
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g4; type=small; label=Preset value for media grid space X
                     x = 2;3;4;;;
-                    # cat=bootstrap/grid/g5; type=small; label=Preset value for media grid space X
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g5; type=small; label=Preset value for media grid space X
                     y = 2;3;4;;;
                 }
             }
             cards {
                 form_element {
-                    # cat=bootstrap/grid/g6; type=small; label=Preset value for Cards content element grid space X
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g6; type=small; label=Preset value for Cards content element grid space X
                     x = 2;3;4;;;
-                    # cat=bootstrap/grid/g7; type=small; label=Preset value for Cards content element grid space X
+                    # cat=bootstrap_preset/bootstrap_preset_grid/g7; type=small; label=Preset value for Cards content element grid space X
                     y = 2;3;4;;;
                 }
             }

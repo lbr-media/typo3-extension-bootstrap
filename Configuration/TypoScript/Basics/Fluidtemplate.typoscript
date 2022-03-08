@@ -90,6 +90,8 @@ page.10 {
             special = directory
             special.value = 1
             levels = 2
+            includeSpacer = 1
+            excludeUidList = {$styles.bootstrap.nav_dropdown_excludeUidList}
             as = header_menu_main
         }
     }
