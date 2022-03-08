@@ -213,6 +213,11 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             $finalPattern = $this->arguments['headerDatePattern'];
         }
 
+        // on clearing cache the finalPattern is null. This prevents throwing an error:
+        if (!$finalPattern) {
+            $finalPattern = '###TAG_START######HEADER######TAG_END###';
+        }
+
         // Divide pattern into before, between and after the h-tag.
         $startPos = strpos($finalPattern, '###TAG_START###');
         $endPos = strpos($finalPattern, '###TAG_END###');
