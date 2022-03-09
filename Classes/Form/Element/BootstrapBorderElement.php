@@ -3,6 +3,7 @@
 namespace LBRmedia\Bootstrap\Form\Element;
 
 use LBRmedia\Bootstrap\Service\FlexFormService;
+use LBRmedia\Bootstrap\Utility\BootstrapUtility;
 use LBRmedia\Bootstrap\Utility\FormElementUtility;
 use RuntimeException;
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
@@ -18,7 +19,7 @@ class BootstrapBorderElement extends AbstractFormElement
     /**
      * Default field information enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldInformation
      */
     protected $defaultFieldInformation = [
         'tcaDescription' => [
@@ -29,7 +30,7 @@ class BootstrapBorderElement extends AbstractFormElement
     /**
      * Default field wizards enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldWizard
      */
     protected $defaultFieldWizard = [
         'localizationStateSelector' => [
@@ -50,8 +51,39 @@ class BootstrapBorderElement extends AbstractFormElement
     ];
 
     /**
-     * Render single element.
+     * Renders select fields for:
+     * - borderclass
+     * - borderwidth
+     * - bordercolor
+     * - rounded
+     * - shadow
      *
+     * Stores the values in a semicolon separated string: '{borderclass};{borderwidth};{bordercolor};{rounded};{shadow}'
+     *
+     * Requires configuration parameters in TypoScript Setup: plugin.tx_bootstrap.settings.form.element.
+     * - BootstrapBorder
+     * - BootstrapBorderWidth
+     * - BootstrapBorderColor
+     * - BootstrapRounded
+     * - BootstrapShadow
+     *
+     * Example TCA
+     * ===========
+     *
+     * @code{.xml}
+     * <field index="border">
+     *     <value index="TCEforms">
+     *         <label>Border</label>
+     *         <config>
+     *             <type>user</type>
+     *             <renderType>bootstrapBorder</renderType>
+     *             <default>;;;;</default>
+     *         </config>
+     *     </value>
+     * </field>
+     * @encode
+     *
+     * @see BootstrapUtility::getBorderOptionClasses()
      * @return array As defined in initializeResultArray() of AbstractNode
      * @throws RuntimeException with invalid configuration
      */

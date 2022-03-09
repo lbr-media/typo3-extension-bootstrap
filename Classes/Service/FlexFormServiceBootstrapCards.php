@@ -7,10 +7,16 @@ namespace LBRmedia\Bootstrap\Service;
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
 
 /**
- * Flexform configurations for content element bootstrap_cards.
+ * Flexform configuration for content element bootstrap_cards.
  */
 class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormServiceInterface
 {
+    /**
+     * Gets the flexform configuration for this service and transforms it to a raw array.
+     *
+     * @param string $xmlString
+     * @return array
+     */
     public function getConfiguration(string $xmlString): array
     {
         $this->initData($xmlString, self::TYPE_TT_CONTENT_BOOTSTRAP_CARDS);
@@ -18,6 +24,12 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
         return $this->getConfigurationArray($this->data[self::TYPE_TT_CONTENT_BOOTSTRAP_CARDS]);
     }
 
+    /**
+     * Uses the raw flexform array and builds a modified array which can be used in templates.
+     *
+     * @param string $xmlString
+     * @return array
+     */
     public function process(string $xmlString): array
     {
         $xmlArray = $this->getConfiguration($xmlString);
@@ -45,6 +57,12 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
         return $xmlArray;
     }
 
+    /**
+     * Reads the flexform array and transforms the values to a raw array for futher processing.
+     *
+     * @param array $data
+     * @return array
+     */
     protected function getConfigurationArray(array $data): array
     {
         $transformedData = [

@@ -17,13 +17,29 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
 /**
- * Builds main headlines in content elements while using fields header, subheader, date, header_layout, tx_bootstrap_header_layout, header_position and header_link.
+ * Builds main headlines in content elements while using fields like:
+ * - header
+ * - subheader
+ * - date
+ * - header_layout
+ * - tx_bootstrap_header_layout
+ * - header_position
+ * - header_link.
  *
  * Examples
  * ========
  *
- * ::
- *    {bs:Header(contentElementData:data)}.
+ * @code{.html}
+ * <bs:Header
+ *     contentElementData="{data}"
+ *     headerPattern="{settings.bootstrap.header_pattern}"
+ *     headerSubheaderPattern="{settings.bootstrap.header_subheader_pattern}"
+ *     headerDatePattern="{settings.bootstrap.header_date_pattern}"
+ *     headerSubheaderDatePattern="{settings.bootstrap.header_subheader_date_pattern}"
+ *     dateDateType="{settings.bootstrap.header_date_datetype}"
+ *     dateTimeType="{settings.bootstrap.header_date_timetype}"
+ *     />
+ * @endcode
  */
 class HeaderViewHelper extends AbstractTagBasedViewHelper
 {
@@ -40,12 +56,12 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
     /**
      * main tag name.
      *
-     * @var string
+     * @var string $tagName
      */
     protected $tagName = 'h1';
 
     /**
-     * @var array
+     * @var array $outerWrap
      */
     protected $outerWrap = [
         'before' => [],
@@ -53,7 +69,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
     ];
 
     /**
-     * @var array
+     * @var array $innerWrap
      */
     protected $innerWrap = [
         'before' => [],
@@ -61,39 +77,44 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
     ];
 
     /**
-     * @var array
+     * @var array $classesList
      */
     protected $classesList = [];
 
     /**
      * Children must not be escaped, to be able to pass {bodytext} directly to it.
      *
-     * @var bool
+     * @var bool $escapeChildren
      */
     protected $escapeChildren = false;
 
     /**
      * The output may contain HTML and can not be escaped.
      *
-     * @var bool
+     * @var bool $escapeOutput
      */
     protected $escapeOutput = false;
 
     /**
-     * @var ImageService
+     * @var ImageService $imageService
      */
     protected $imageService;
 
     /**
-     * @var ContentObjectRenderer
+     * @var ContentObjectRenderer $contentObject
      */
     protected $contentObject;
 
     /**
-     * @var FileRepository
+     * @var FileRepository $fileRepository
      */
     protected $fileRepository;
 
+    /**
+     * @param ImageService $imageService
+     * @param ContentObjectRenderer $contentObject
+     * @param FileRepository $fileRepository
+     */
     public function injections(
         ImageService $imageService,
         ContentObjectRenderer $contentObject,
@@ -104,6 +125,16 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         $this->fileRepository = $fileRepository;
     }
 
+    /**
+     * Arguments for this view helper:
+     * - contentElementData
+     * - headerPattern
+     * - headerSubheaderPattern
+     * - headerDatePattern
+     * - headerSubheaderDatePattern
+     * - dateDateType
+     * - dateTimeType
+     */
     public function initializeArguments(): void
     {
         $this->registerArgument(
@@ -155,6 +186,11 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         );
     }
 
+    /**
+     * Renders the headline.
+     *
+     * @return string The header html.
+     */
     public function render(): string
     {
         $data = $this->arguments['contentElementData'];
@@ -374,6 +410,13 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         return $hTag;
     }
 
+    /**
+     * Creates a link by using typolink.parameters.
+     *
+     * @param string $content
+     * @param string $parameter
+     * @return string HTML markup
+     */
     protected function createTypolink(string $content, string $parameter): string
     {
         $this->contentObject->start([], '');
@@ -388,6 +431,9 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
 
     /**
      * Prepares predefined and additional styles.
+     * They are defined in TypoScript Setup in plugin.tx_bootstrap.settings.form.element.*
+     *
+     * @param array $config
      */
     protected function prepareAdditionals(array $config): void
     {
@@ -408,6 +454,14 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         }
     }
 
+    /**
+     * Helper to get file relations (for the icon)
+     *
+     * @param string $field
+     * @param array $data
+     * @param bool $onlyFirstFile
+     * @return array
+     */
     private function _getFiles(string $field, array $data, bool $onlyFirstFile = false): array
     {
         $files = [];
@@ -429,6 +483,12 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         return $files;
     }
 
+    /**
+     * Helper function to render a file relation in header.
+     *
+     * @param FileReference $file
+     * @return string
+     */
     private function _renderIcon($file): string
     {
         if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {

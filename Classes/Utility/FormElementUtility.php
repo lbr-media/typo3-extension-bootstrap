@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Utility;
 
 /**
- * Helper utility class for \LBRmedia\Bootstrap\Form\Element\*
+ * Helper utility class for form elements.
  */
 class FormElementUtility
 {

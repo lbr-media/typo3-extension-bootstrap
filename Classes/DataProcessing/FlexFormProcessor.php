@@ -4,19 +4,6 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\DataProcessing;
 
-/*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
- */
-
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapAccordion;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapAlert;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapCards;
@@ -33,10 +20,10 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 /**
  * Class for data processing for various content elements which use the flexform field tx_bootstap_flexform.
  * Converts the flexform data into useable values in fluid template.
- * 
+ *
  * If $processorConfiguration['CType'] is set, the given flexform transform will be used. Otherwise the content elements CType will be used.
  * Optionally $processorConfiguration['as'] can be used to define $processedData[$as].
- * 
+ *
  * The following CType flexforms are supported:
  * - bootstrap_textmediagrid
  * - bootstrap_textmediafloat
@@ -57,8 +44,7 @@ class FlexFormProcessor implements DataProcessorInterface
      * @param array                 $contentObjectConfiguration The configuration of Content Object
      * @param array                 $processorConfiguration     The configuration of this processor
      * @param array                 $processedData              Key/value store of processed data (e.g. to be passed to a Fluid View)
-     *
-     * @return array the processed data as key/value store
+     * @return array The processed data as key/value store
      */
     public function process(
         ContentObjectRenderer $cObj,

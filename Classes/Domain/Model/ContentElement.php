@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Domain\Model;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * This content element simulates bootstrap_textmediagrid.
@@ -15,93 +17,93 @@ use LBRmedia\Bootstrap\Service\FlexFormServiceBootstrapTextMediaGrid;
 class ContentElement extends AbstractEntity
 {
     /**
-     * @var string
+     * @var string $header
      */
     public $header = '';
 
     /**
-     * @var string
+     * @var string $headerPosition
      */
     public $headerPosition = '';
 
     /**
-     * @var string
+     * @var string $headerLayout
      */
     public $headerLayout = '';
 
     /**
-     * @var string
+     * @var string $headerLink
      */
     public $headerLink = '';
 
     /**
-     * @var int
+     * @var int $date
      */
     public $date = 0;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference> $assets
      */
     public $assets;
 
     /**
-     * @var string
+     * @var string $subheader
      */
     public $subheader = '';
 
     /**
-     * @var string
+     * @var string $bodytext
      */
     public $bodytext = '';
 
     /**
-     * @var string
+     * @var string $spaceBeforeClass
      */
     public $spaceBeforeClass = '';
 
     /**
-     * @var string
+     * @var string $spaceAfterClass
      */
     public $spaceAfterClass = '';
 
     /**
-     * @var string
+     * @var string $txBootstrapHeaderLayout
      */
     public $txBootstrapHeaderLayout = '';
 
     /**
-     * @var string
+     * @var string $txBootstrapHeaderPredefined
      */
     public $txBootstrapHeaderPredefined = '';
 
     /**
-     * @var string
+     * @var string $txBootstrapHeaderColor
      */
     public $txBootstrapHeaderColor = '';
     /**
-     * @var string
+     * @var string $txBootstrapHeaderAdditionalStyles
      */
     public $txBootstrapHeaderAdditionalStyles = '';
 
     /**
-     * @var string
+     * @var string $txBootstrapHeaderIcon
      */
     public $txBootstrapHeaderIcon = '';
 
     /**
-     * @var string
+     * @var string $txBootstrapHeaderIconset
      */
     public $txBootstrapHeaderIconset = '';
 
     /**
-     * @var string
+     * @var string $txBootstrapFlexform
      */
     public $txBootstrapFlexform = '';
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return ObjectStorage
      */
-    public function getFiles(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getFiles(): ObjectStorage
     {
         return $this->assets;
     }

@@ -13,7 +13,7 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 class ContentElementRepository extends Repository
 {
     /**
-     * @var array
+     * @var array $defaultOrderings
      */
     protected $defaultOrderings = [
         'sorting' => QueryInterface::ORDER_ASCENDING,

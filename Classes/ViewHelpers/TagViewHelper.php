@@ -7,48 +7,83 @@ namespace LBRmedia\Bootstrap\ViewHelpers;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 /**
- * Builds main headlines in content elements while using fields header, subheader, header_layout, tx_bootstrap_header_layout, header_position and header_link.
+ * Builds a html tag.
+ * Inherits from TagBasedViewHelper. All its arguments are available.
  *
  * Examples
  * ========
  *
- * ::
+ * @code{.html}
+ * {bs:Tag(tag:'span', forceClosingTag:'true', content:'foo')}.
+ * @encode
  *
- *    {bs:Tag(tag:'span', forceClosingTag:'true', content:'foo')}.
+ * ... will produce:
+ *
+ * @code{.html}
+ * <span>foo</span>
+ * @encode
+ *
+ * You can use 'additionalAttributesIfNotEmpty' which will only be set when there is a value.
+ * In p.e target- and rel-attributes are only set when they are set.
+ *
+ * @code{.html}
+ * <bs:Tag tag="a" forceClosingTag="true" title="{item.title}" additionalAttributesIfNotEmpty="{
+ *     href: item.link,
+ *     class: settings.bootstrap.nav_link_active_classes,
+ *     target: item.target,
+ *     rel: '{f:if(condition:item.data.no_follow, then:\'nofollow\')}'
+ * }">{item.title}</bs:Tag>
+ * @encode
  */
 class TagViewHelper extends AbstractTagBasedViewHelper
 {
     /**
-     * main tag name.
+     * Main tag name.
      *
-     * @var string
+     * @var string $tagName
      */
     protected $tagName = 'div';
 
     /**
      * Children must not be escaped, to be able to pass {bodytext} directly to it.
      *
-     * @var bool
+     * @var bool $escapeChildren
      */
     protected $escapeChildren = false;
 
     /**
      * The output may contain HTML and can not be escaped.
      *
-     * @var bool
+     * @var bool $escapeOutput
      */
     protected $escapeOutput = false;
 
+    /**
+     * Additional arguments for this view helper:
+     * - tag
+     * The tag to create.
+     * - content
+     * The content html.
+     * - forceClosingTag
+     * Should the tag to be forced to close.
+     * - additionalAttributesIfNotEmpty
+     * Additional tag attributes which are only set when not empty. This is to avoid produce unnessecary output.
+     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerUniversalTagAttributes();
-        $this->registerArgument('tag', 'string', 'the tag to create', false, 'div');
+        $this->registerArgument('tag', 'string', 'The tag to create.', false, 'div');
         $this->registerArgument('content', 'string', '', false, '', false);
         $this->registerArgument('forceClosingTag', 'bool', '', false, true);
         $this->registerArgument('additionalAttributesIfNotEmpty', 'array', 'Additional tag attributes which are only set when not empty. This is to avoid produce unnessecary output.', false);
     }
 
+    /**
+     * Renders the tag.
+     *
+     * @return string
+     */
     public function render(): string
     {
         // change tag name

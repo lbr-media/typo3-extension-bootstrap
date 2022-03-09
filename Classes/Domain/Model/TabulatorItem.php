@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Items for the content element bootstrap_tabulator.
@@ -12,17 +13,17 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class TabulatorItem extends AbstractEntity
 {
     /**
-     * @var string
+     * @var string $title
      */
     protected $title = '';
 
     /**
-     * @var bool
+     * @var bool $active
      */
     protected $active = false;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
+     * @var ObjectStorage<ContentElement> $contentElements
      */
     protected $contentElements;
 
@@ -52,8 +53,6 @@ class TabulatorItem extends AbstractEntity
 
     /**
      * @param bool $active
-     * 
-     * @return void
      */
     public function setActive(bool $active): void
     {
@@ -61,9 +60,9 @@ class TabulatorItem extends AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
+     * @return ObjectStorage<ContentElement>
      */
-    public function getContentElements(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getContentElements(): ObjectStorage
     {
         return $this->contentElements;
     }

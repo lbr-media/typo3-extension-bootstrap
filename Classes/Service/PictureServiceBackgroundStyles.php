@@ -66,7 +66,10 @@ class PictureServiceBackgroundStyles extends PictureServiceBootstrap
     }
 
     /**
-     * creates an image while pay attention to crop and max-width.
+     * Creates an image while pay attention to crop and max-width.
+     *
+     * @param string $device
+     * @return string
      */
     protected function getBackgroundImageSource(string $device): string
     {

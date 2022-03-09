@@ -3,11 +3,11 @@
 namespace LBRmedia\Bootstrap\Form\Element;
 
 use LBRmedia\Bootstrap\Service\FlexFormService;
+use LBRmedia\Bootstrap\Utility\BootstrapUtility;
 use LBRmedia\Bootstrap\Utility\FormElementUtility;
 use RuntimeException;
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Imaging\Icon;
-// use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -21,7 +21,7 @@ class BootstrapIconsElement extends AbstractFormElement
     /**
      * Default field information enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldInformation
      */
     protected $defaultFieldInformation = [
         'tcaDescription' => [
@@ -32,7 +32,7 @@ class BootstrapIconsElement extends AbstractFormElement
     /**
      * Default field wizards enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldWizard
      */
     protected $defaultFieldWizard = [
         'localizationStateSelector' => [
@@ -53,8 +53,39 @@ class BootstrapIconsElement extends AbstractFormElement
     ];
 
     /**
-     * Render single element.
+     * Renders input fields for:
+     * - iconset (select; will be shown only when there is more than one icon set)
+     * - icon (a combined field for preview, icon class name and a reset button)
+     * - icon position (select)
+     * - icon size (select)
+     * - icon color (select)
+     * - filter (search field)
      *
+     * Stores the values in a semicolon separated string: '{iconset};{iconclass};{position};{sizeclass}'
+     *
+     * Configuration parameters in TypoScript Setup: plugin.tx_bootstrap.settings.form.element.
+     * - BootstrapIcons
+     * - BootstrapIconPositions
+     * - BootstrapIconSize
+     * - BootstrapIconColor
+     *
+     * Example TCA
+     * ===========
+     *
+     * @code{.php}
+     * 'iconset' => [
+     *     'label' => 'Icon set',
+     *     'config' => [
+     *         'type' => 'user',
+     *         'renderType' => 'bootstrapIcons',
+     *         'renderIconPosition' => true,
+     *         'renderIconSize' => true,
+     *         'renderIconColor' => true,
+     *     ],
+     * ],
+     * @endcode
+     *
+     * @see BootstrapUtility::renderIconSet()
      * @return array As defined in initializeResultArray() of AbstractNode
      * @throws RuntimeException with invalid configuration
      */

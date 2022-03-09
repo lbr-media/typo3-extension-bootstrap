@@ -4,30 +4,17 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\DataProcessing;
 
-/*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
- */
-
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use LBRmedia\Bootstrap\Domain\Repository\CardItemRepository;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
 /**
- * Data processor to get tt_content related LBRmedia\Bootstrap\Model\CardItem.
+ * Data processor to get tt_content related card items.
  */
 class CardItemProcessor implements DataProcessorInterface
 {
     /**
-     * @var TabulatorItemRepository
+     * @var TabulatorItemRepository $cardItemRepository
      */
     protected $cardItemRepository;
 
@@ -46,8 +33,7 @@ class CardItemProcessor implements DataProcessorInterface
      * @param array                 $contentObjectConfiguration The configuration of Content Object
      * @param array                 $processorConfiguration     The configuration of this processor
      * @param array                 $processedData              Key/value store of processed data (e.g. to be passed to a Fluid View)
-     *
-     * @return array the processed data as key/value store
+     * @return array The processed data as key/value store
      */
     public function process(
         ContentObjectRenderer $cObj,

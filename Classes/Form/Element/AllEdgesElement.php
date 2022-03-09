@@ -20,7 +20,7 @@ class AllEdgesElement extends AbstractFormElement
     /**
      * Default field information enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldInformation
      */
     protected $defaultFieldInformation = [
         'tcaDescription' => [
@@ -31,7 +31,7 @@ class AllEdgesElement extends AbstractFormElement
     /**
      * Default field wizards enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldWizard
      */
     protected $defaultFieldWizard = [
         'localizationStateSelector' => [
@@ -52,7 +52,36 @@ class AllEdgesElement extends AbstractFormElement
     ];
 
     /**
-     * Render single element.
+     * Renders select fields for each edges/sides:
+     * - left
+     * - right
+     * - horizontal
+     * - top
+     * - bottom
+     * - vertical
+     * - all
+     *
+     * Stores the values in a semicolon separated string: '{left};{right};{horizontal};{top};{bottom};{vertical};{all}'
+     *
+     * Requires a configuration parameter 'elementConfiguration' which points to a path in TypoScript Setup:
+     * plugin.tx_bootstrap.settings.form.element.{elementConfiguration}
+     *
+     * Example TCA
+     * ===========
+     *
+     * @code{.xml}
+     * <field index="space_inner_xs">
+     *     <value index="TCEforms">
+     *         <label>Space inner XS</label>
+     *         <config>
+     *             <type>user</type>
+     *             <renderType>allEdges</renderType>
+     *             <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+     *         </config>
+     *     </value>
+     * </field>
+     * @endcode
+     *
      *
      * @return array As defined in initializeResultArray() of AbstractNode
      * @throws RuntimeException with invalid configuration

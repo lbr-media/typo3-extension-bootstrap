@@ -40,10 +40,13 @@ class PictureServiceBootstrap extends PictureService
         'xxl' => self::DISPLAY_WIDTH_XXL,
     ];
 
+    /**
+     * @var array $displayWidths
+     */
     public $displayWidths = self::DISPLAY_WIDTHS;
 
     /**
-     * @var array
+     * @var array $cropVariantsProcessingInstructions
      */
     public $cropVariantsProcessingInstructions = [
         'xs' => null,
@@ -54,6 +57,12 @@ class PictureServiceBootstrap extends PictureService
         'xxl' => null,
     ];
 
+    /**
+     * Resets displayWidth, fileReference, image and cropVariantsProcessingInstructions.
+     * Must be used when generating new images.
+     *
+     * @return self
+     */
     public function __reset(): self
     {
         $this->fileReference = null;
@@ -73,6 +82,7 @@ class PictureServiceBootstrap extends PictureService
 
     /**
      * @param array $displayWidthArgument array with keys xs, sm, md, lg and xl with percent values of the full window width of each device.
+     * @return self
      */
     public function overwriteDisplayWidthsWithViewHelperArgument(array $displayWidthArgument): self
     {

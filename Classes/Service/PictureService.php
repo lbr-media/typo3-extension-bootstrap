@@ -11,40 +11,49 @@ use TYPO3\CMS\Extbase\Service\ImageService;
 class PictureService
 {
     /**
-     * @var array
+     * @var array $displayWidths
      */
     public $displayWidths = [];
 
     /**
      * The fileReference to process.
      *
-     * @var FileReference
+     * @var FileReference $fileReference
      */
     protected $fileReference;
 
     /**
      * The image to process.
      *
-     * @var FileReference
+     * @var FileReference $image
      */
     protected $image;
 
     /**
-     * @var array
+     * @var array $cropVariantsProcessingInstructions
      */
     public $cropVariantsProcessingInstructions = [];
 
     /**
-     * @var ImageService
+     * @var ImageService $imageService
      */
     protected $imageService;
 
+    /**
+     * @param ImageService $imageService
+     */
     public function __construct(ImageService $imageService)
     {
         $this->imageService = $imageService;
         $this->__reset();
     }
 
+    /**
+     * Resets displayWidth, fileReference, image and cropVariantsProcessingInstructions.
+     * Must be used when generating new images.
+     *
+     * @return self
+     */
     public function __reset(): self
     {
         $this->displayWidths = [];
@@ -60,7 +69,7 @@ class PictureService
      *
      * @return FileReference
      */
-    public function getFileReference()
+    public function getFileReference(): ?FileReference
     {
         return $this->fileReference;
     }
@@ -93,6 +102,8 @@ class PictureService
 
     /**
      * Returns the displayWidths for each device.
+     *
+     * @return array
      */
     public function getDisplayWidths(): array
     {
@@ -101,6 +112,8 @@ class PictureService
 
     /**
      * Returns the displayWidth for one device.
+     *
+     * @return float
      */
     public function getDisplayWidth($device): float
     {
@@ -108,7 +121,9 @@ class PictureService
     }
 
     /**
-     * Sets a display width for a device,.
+     * Sets a display width for a device.
+     *
+     * @return self
      */
     public function setDisplayWidth(string $device, float $width): self
     {
@@ -120,7 +135,8 @@ class PictureService
     /**
      * Fetches the cropVariants from image/fileReference and builds an array for the devices.
      *
-     * @param string $cropVariantToForce If this key is set (xs, sm, md...) the cropVariant of this key is used for all
+     * @param string $cropVariantToForce If this key is set (xs, sm, md...) the cropVariant of this key is used for all.
+     * @return self
      */
     public function initializeCropVariantsProcessingInstructions(string $cropVariantToForce = ''): self
     {
@@ -138,6 +154,8 @@ class PictureService
     /**
      * Returns the cropVariants processing instructions for each device.
      * Run initializeCropVariantsProcessingInstructions() before!
+     *
+     * @return array
      */
     public function getCropVariantsProcessingInstructions(): array
     {
@@ -145,7 +163,11 @@ class PictureService
     }
 
     /**
-     * creates an image while pay attention to crop and max-width.
+     * Creates an image while pay attention to crop and max-width.
+     *
+     * @param string $device Device from xs to xxl.
+     * @param int $maxWidth  Max width of the image. If not set the displayWidth for the device will be used.
+     * @return string
      */
     public function getImageSource(string $device, int $maxWidth = 0): string
     {

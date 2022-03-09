@@ -8,34 +8,68 @@ use LBRmedia\Bootstrap\Service\PictureServiceBootstrap;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
+/**
+ * Creates a picture-tag with source-tags. Each source has a srcset- and media-attribute related to a crop-variant and bootstrap breakpoint from xs till xxl.
+ *
+ * It will produce something like this:
+ *
+ * @code{.html}
+ * <picture>
+ *      <source media="(max-width: 575.98px)" srcset="...">
+ *      <source media="(min-width: 576px) and (max-width: 767.98px)" srcset="...">
+ *      <source media="(min-width: 768px) and (max-width: 991.98px)" srcset="...">
+ *      <source media="(min-width: 992px) and (max-width: 1199.98px)" srcset="...">
+ *      <source media="(min-width: 1200px) and (max-width: 1499.98px)" srcset="...">
+ *      <source media="(min-width: 1400px)" srcset="...">
+ *      <img src="..." alt="..." title="..." class="...">
+ * </picture>
+ * @endcode
+ *
+ * Examples
+ * ========
+ *
+ * @code{.html}
+ * {bs:Bootstrap.Picture(file:fileReference, displayWidth:'{
+ *      xs:100,
+ *      sm:50,
+ *      md:33,
+ *      lg:25,
+ *      xl:25,
+ *      xxl:25
+ * }', additionalImgTagParams:'img-fluid')}
+ * @endcode
+ */
 class PictureViewHelper extends AbstractTagBasedViewHelper
 {
     /**
      * main tag name.
      *
-     * @var string
+     * @var string $tagName
      */
     protected $tagName = 'picture';
 
     /**
      * Children must not be escaped, to be able to pass {bodytext} directly to it.
      *
-     * @var bool
+     * @var bool $escapeChildren
      */
     protected $escapeChildren = false;
 
     /**
      * The output may contain HTML and can not be escaped.
      *
-     * @var bool
+     * @var bool $escapeOutput
      */
     protected $escapeOutput = false;
 
     /**
-     * @var PictureServiceBootstrap
+     * @var PictureServiceBootstrap $pictureService
      */
     protected $pictureService;
 
+    /**
+     * @param PictureServiceBootstrap $pictureService
+     */
     public function __construct(PictureServiceBootstrap $pictureService)
     {
         $this->pictureService = $pictureService;
@@ -44,7 +78,14 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
     }
 
     /**
-     * Undocumented function.
+     * Arguments for this view helper:
+     * - file
+     * - title
+     * - forceCropVariant
+     * - alt
+     * - additionalParams
+     * - additionalImgTagParams
+     * - displayWidth
      */
     public function initializeArguments(): void
     {
@@ -63,10 +104,6 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
      * Creates an picture-tag with some sources related to the alternative images append as child of a FileReference.
      *
      * @return string HTML
-     *
-     * @author Marcel Briefs <marcel.briefs@lbrmedia.de>
-     *
-     * @api
      */
     public function render(): string
     {
@@ -180,6 +217,10 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
      * Creates source- and media params for source-tag.
      * Also creates the needed images.
      * The source image is the default image.
+     *
+     * @param string $device One of xs to xxl.
+     * @param string $media Media query string.
+     * @return array Array with keys 'source' and 'media'
      */
     protected function buildSourceTagParams(string $device, string $media): array
     {

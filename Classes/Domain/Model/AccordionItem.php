@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Items for the content element bootstrap_accordion.
@@ -12,18 +13,17 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class AccordionItem extends AbstractEntity
 {
     /**
-     * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @var string $title
      */
     protected $title = '';
 
     /**
-     * @var bool
+     * @var bool $openedOnLoad
      */
     protected $openedOnLoad = false;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
+     * @var ObjectStorage<ContentElement> $contentElements
      */
     protected $contentElements;
 
@@ -52,9 +52,9 @@ class AccordionItem extends AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LBRmedia\Bootstrap\Domain\Model\ContentElement>
+     * @return ObjectStorage<ContentElement>
      */
-    public function getContentElements(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getContentElements(): ObjectStorage
     {
         return $this->contentElements;
     }

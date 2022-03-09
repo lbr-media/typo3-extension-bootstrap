@@ -20,46 +20,49 @@ class PictureBackgroundStylesViewHelper extends AbstractViewHelper
     /**
      * Children must not be escaped, to be able to pass {bodytext} directly to it.
      *
-     * @var bool
+     * @var bool $escapeChildren
      */
     protected $escapeChildren = false;
 
     /**
      * The output may contain HTML and can not be escaped.
      *
-     * @var bool
+     * @var bool $escapeOutput
      */
     protected $escapeOutput = false;
 
     /**
-     * @var PictureServiceBackgroundStyles
+     * @var PictureServiceBackgroundStyles $pictureServiceBackgroundStyles
      */
     protected $pictureServiceBackgroundStyles;
 
-    // public function __construct(PictureServiceBackgroundStyles $pictureServiceBackgroundStyles) {
-    //     $this->pictureServiceBackgroundStyles = $pictureServiceBackgroundStyles;
-    // }
+    /**
+     * @param ImageService $imageService
+     */
     public function __construct(ImageService $imageService)
     {
         $this->pictureServiceBackgroundStyles = GeneralUtility::makeInstance(PictureServiceBackgroundStyles::class, $imageService);
     }
 
+    /**
+     * Arguments for this view helper:
+     * - file           The original FileReference with some alternative images
+     * - id             CSS selector
+     * - position       Place the styles in 'head' tag or 'inline'?
+     * - displayWidth   Array with keys xs, sm, md, lg and xl with percent values of the full window width.
+     */
     public function initializeArguments(): void
     {
         $this->registerArgument('file', 'object', 'The original FileReference with some alternative images', true);
-        $this->registerArgument('id', 'string', 'css selector', true, '');
+        $this->registerArgument('id', 'string', 'CSS selector', true, '');
         $this->registerArgument('position', 'string', 'Place the styles in \'head\' tag or \'inline\'?', false, 'head');
-        $this->registerArgument('displayWidth', 'array', 'array with keys xs, sm, md, lg and xl with percent values of the full window width', false, []);
+        $this->registerArgument('displayWidth', 'array', 'Array with keys xs, sm, md, lg and xl with percent values of the full window width', false, []);
     }
 
     /**
-     * Creates an picture-tag with some sources related to the alternative images append as child of a FileReference.
+     * Creates a style tag with background-image definitions for each Bootstrap breakpoint.
      *
      * @return string HTML Style-Tag
-     *
-     * @author Marcel Briefs <marcel.briefs@lbrmedia.de>
-     *
-     * @api
      */
     public function render(): string
     {

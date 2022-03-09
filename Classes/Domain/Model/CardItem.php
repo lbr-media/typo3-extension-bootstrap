@@ -13,37 +13,37 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class CardItem extends AbstractEntity
 {
     /**
-     * @var string
+     * @var string $header
      */
     protected $header = '';
 
     /**
-     * @var string
+     * @var string $title
      */
     protected $title = '';
 
     /**
-     * @var FileReference
+     * @var FileReference $image
      */
     protected $image;
 
     /**
-     * @var string
+     * @var string $typolink
      */
     protected $typolink = '';
 
     /**
-     * @var string
+     * @var string $typolinkText
      */
     protected $typolinkText = '';
 
     /**
-     * @var string
+     * @var string $text
      */
     protected $text = '';
 
     /**
-     * @var string
+     * @var string $footer
      */
     protected $footer = '';
 

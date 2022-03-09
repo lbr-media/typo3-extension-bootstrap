@@ -205,7 +205,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                 break;
             case 'text':
                 if ($record['bodytext']) {
-                    $out .= 'FOO'.$this->linkEditContent($this->renderText($record['bodytext']), $record) . 'xx<br />';
+                    $out .= 'FOO' . $this->linkEditContent($this->renderText($record['bodytext']), $record) . 'xx<br />';
                 }
                 break;
             case 'html':

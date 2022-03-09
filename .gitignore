@@ -3,3 +3,4 @@ node_modules/
 Build/.cache
 Build/*.log
 .php-cs-fixer.cache
+docs/html/

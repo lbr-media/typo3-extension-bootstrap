@@ -13,24 +13,27 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class TcaService
 {
     /**
-     * @var array
+     * @var array $showitems
      */
     protected $showitems = [];
 
     /**
      * Counter for added showitems.
      *
-     * @var int
+     * @var int $addedShowItems
      */
     protected $addedShowItems = 0;
 
     /**
      * Counter for replaced showitems.
      *
-     * @var int
+     * @var int $replacedShowItems
      */
     protected $replacedShowItems = 0;
 
+    /**
+     * @param string $showitemsString
+     */
     public function __construct(string $showitemsString = '')
     {
         if ($showitemsString) {
@@ -38,6 +41,12 @@ class TcaService
         }
     }
 
+    /**
+     * Sets the showitems string to modify.
+     *
+     * @param string $showitemsString
+     * @return self
+     */
     public function setShowitems(string $showitemsString): self
     {
         $this->addedShowItems = 0;
@@ -68,16 +77,32 @@ class TcaService
         return $this;
     }
 
+    /**
+     * Gets the showitems array while processing.
+     *
+     * @return array
+     */
     public function getShowitems(): array
     {
         return $this->showitems;
     }
 
+    /**
+     * Final method to get the modified showitems string.
+     *
+     * @return string
+     */
     public function getShowitemsString(): string
     {
         return implode(',', $this->showitems);
     }
 
+    /**
+     * Removes showitems.
+     *
+     * @param array $keysToBeRemoved
+     * @return self
+     */
     public function removeShowitems(array $keysToBeRemoved): self
     {
         foreach ($keysToBeRemoved as $key) {
@@ -89,6 +114,13 @@ class TcaService
         return $this;
     }
 
+    /**
+     * Adds a showitem after another.
+     *
+     * @param string $showitemToAdd
+     * @param string $keyOfPreviousShowitem
+     * @return self
+     */
     public function addShowitemAfter(string $showitemToAdd, string $keyOfPreviousShowitem): self
     {
         $tmpShowitems = [];
@@ -104,6 +136,13 @@ class TcaService
         return $this;
     }
 
+    /**
+     * Adds a showitem before another.
+     *
+     * @param string $showitemToAdd
+     * @param string $keyOfNextShowitem
+     * @return self
+     */
     public function addShowitemBefore(string $showitemToAdd, string $keyOfNextShowitem): self
     {
         $tmpShowitems = [];
@@ -119,6 +158,13 @@ class TcaService
         return $this;
     }
 
+    /**
+     * Adds showitems after another.
+     *
+     * @param array $showitemsToAdd
+     * @param string $keyOfPreviousShowitem
+     * @return self
+     */
     public function addShowitemsAfter(array $showitemsToAdd, string $keyOfPreviousShowitem): self
     {
         $tmpShowitems = [];
@@ -137,6 +183,13 @@ class TcaService
         return $this;
     }
 
+    /**
+     * Replaces a showitem.
+     *
+     * @param string $showitemToBeReplaced
+     * @param string $showitemToReplace
+     * @return self
+     */
     public function replaceShowitem(string $showitemToBeReplaced, string $showitemToReplace): self
     {
         $tmpShowitems = [];

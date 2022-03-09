@@ -7,6 +7,7 @@ namespace LBRmedia\Bootstrap\Service;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use TYPO3\CMS\Core\Log\Logger;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -28,12 +29,12 @@ class FlexFormService implements LoggerAwareInterface
      * Array with the flexform configuration converted from XML string.
      * Each configuration is in a sub array with the constant as key.
      *
-     * @var array
+     * @var array $data
      */
     protected $data = [];
 
     /**
-     * @var array
+     * @var array $pluginSettings
      */
     protected $pluginSettings;
 
@@ -45,6 +46,11 @@ class FlexFormService implements LoggerAwareInterface
         return GeneralUtility::makeInstance(ConfigurationManager::class);
     }
 
+    /**
+     * Returns the TypoScript configuration in path: plugin.tx_bootstrap.settings.form.element as array.
+     *
+     * @return array
+     */
     public function getPluginSettings(): array
     {
         if (null === $this->pluginSettings) {
@@ -71,8 +77,15 @@ class FlexFormService implements LoggerAwareInterface
 
     /**
      * Helper function to get a value from the flexform array.
+     *
+     * @param array $data
+     * @param string $path
+     * @param string $type
+     * @param string $defaultValue
+     * @param Logger $logger
+     * @return mixed
      */
-    protected static function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '', $logger = null)
+    protected static function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '', ?Logger $logger = null)
     {
         $parts = explode('.', $path);
         foreach ($parts as $part) {
@@ -110,13 +123,13 @@ class FlexFormService implements LoggerAwareInterface
     /**
      * Process presets which overrides some/all settings
      *
-     * @param string                $CType              Content element to get the presets from. Must be: tt_content.$CTYPE.flexform_presets.
-     * @param array                 $data               The XML data array.
-     * @param array                 $transformedData    The allready processed data where the presets will be merged and overwritten to.
-     * @param string                $path               The path in $data to get the preset keys.
-     * @param LoggerAwareInterface  $logger
+     * @param string $CType           Content element to get the presets from. Must be: tt_content.$CTYPE.flexform_presets.
+     * @param array  $data            The XML data array.
+     * @param array  $transformedData The allready processed data where the presets will be merged and overwritten to.
+     * @param string $path            The path in $data to get the preset keys.
+     * @param Logger $logger
      */
-    protected static function processPresets(string $CType, array $data, array &$transformedData, string $path = "'data.sPRESETS.lDEF.presets.vDEF'", $logger = null): void
+    protected static function processPresets(string $CType, array $data, array &$transformedData, string $path = "'data.sPRESETS.lDEF.presets.vDEF'", ?Logger $logger = null): void
     {
         $presets = self::getFlexformValueByPath($data, $path, 'string', '', $logger);
         if ($presets) {

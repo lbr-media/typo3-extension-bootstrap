@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Utility;
 
+use LBRmedia\Bootstrap\Form\Element\AllEdgesElement;
+use LBRmedia\Bootstrap\Form\Element\BootstrapBorderElement;
+use LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
 /**
- * Class to get some css classes from flexform values.
- * Used in bootstrap mode.
+ * Utility class to get some css classes from flexform values.
+ * It also creates some HTML markup when processing flexform values.
  */
 class BootstrapUtility
 {
@@ -32,9 +35,9 @@ class BootstrapUtility
 
     /**
      * Creates col-* classes for each device from xs to xxl.
-     * 
+     *
      * @param string $widths Semicolon divided string for xs, sm, md, lg, xl, xxl
-     * @return string The classes imploded by space.
+     * @return string A CSS classes string.
      */
     public static function getColClasses(string $widths): string
     {
@@ -57,10 +60,10 @@ class BootstrapUtility
 
     /**
      * Creates padding classes for all devices from xs to xxl.
-     * 
+     *
      * @param string $paddings       Semicolon divided string for xs, sm, md, lg, xl, xxl
      * @param string $directionInfix just an empty string for all directions or the other bootstrap directions like x, y, l, t, r, b
-     * @return string The classes imploded by space.
+     * @return string A CSS classes string.
      */
     public static function getDevicePaddingClasses(string $paddings, string $directionInfix = ''): string
     {
@@ -83,8 +86,8 @@ class BootstrapUtility
 
     /**
      * @param string $margins        Semicolon divided string for xs, sm, md, lg, xl, xxl
-     * @param string $directionInfix just an empty string for all directions or the other bootstrap directions like x, y, l, t, r, b
-     * @return string The classes imploded by space.
+     * @param string $directionInfix Just an empty string for all directions or the other bootstrap directions like x, y, l, t, r, b
+     * @return string A CSS classes string.
      */
     public static function getDeviceMarginClasses(string $margins, string $directionInfix = ''): string
     {
@@ -107,8 +110,9 @@ class BootstrapUtility
 
     /**
      * Creates margin classes for all devices and sides.
-     * 
-     * @param array $margins [
+     *
+     * @code{.php}
+     * $margins = [
      *     'xs' => 'left;right;horizontal;top;bottom;vertical;all',
      *     'sm' => ';;;;;;',
      *     'md' => ';;;;;;',
@@ -116,7 +120,11 @@ class BootstrapUtility
      *     'xl' => ';;;;;;',
      *     'xxl' => ';;;;;;',
      * ]
-     * @return string The classes imploded by space.
+     * @endcode
+     *
+     * @see AllEdgesElement::render()
+     * @param array $margins
+     * @return string A CSS classes string.
      */
     public static function getMarginClasses(array $margins): string
     {
@@ -125,16 +133,21 @@ class BootstrapUtility
 
     /**
      * Creates padding classes for all devices and sides.
-     * 
-     * @param array $paddings [
+     *
+     * @code{.php}
+     * $paddings [
      *     'xs' => 'left;right;horizontal;top;bottom;vertical;all',
-     *     'sm' => ';;;',
-     *     'md' => ';;;',
-     *     'lg' => ';;;',
-     *     'xl' => ';;;',
-     *     'xxl' => ';;;',
+     *     'sm' => ';;;;;;',
+     *     'md' => ';;;;;;',
+     *     'lg' => ';;;;;;',
+     *     'xl' => ';;;;;;',
+     *     'xxl' => ';;;;;;',
      * ]
-     * @return string The classes imploded by space.
+     * @endcode
+     *
+     * @see AllEdgesElement::render()
+     * @param array $paddings
+     * @return string A CSS classes string.
      */
     public static function getPaddingClasses(array $paddings): string
     {
@@ -143,16 +156,22 @@ class BootstrapUtility
 
     /**
      * Creates margin classes for all devices.
-     * 
-     * @param array $spaces [
-     *    'xs' => 'left;right;horizontal;top;bottom;vertical;all',
-     *    'sm' => ';;;',
-     *    'md' => ';;;',
-     *    'lg' => ';;;',
-     *    'xl' => ';;;',
-     *    'xxl' => ';;;',
+     *
+     * @code{.php}
+     * $spaces [
+     *     'xs' => 'left;right;horizontal;top;bottom;vertical;all',
+     *     'sm' => ';;;;;;',
+     *     'md' => ';;;;;;',
+     *     'lg' => ';;;;;;',
+     *     'xl' => ';;;;;;',
+     *     'xxl' => ';;;;;;',
      * ]
-     * @return string The classes imploded by space.
+     * @endcode
+     *
+     * @see AllEdgesElement::render()
+     * @param array $spaces
+     * @param string $prefix
+     * @return string A CSS classes string.
      */
     public static function getSpaceClasses(array $spaces, string $prefix): string
     {
@@ -193,9 +212,10 @@ class BootstrapUtility
 
     /**
      * Transforms border option classes from semicolon separated list to space separated classes list.
-     * Used for the flexform value from LBRmedia\Bootstrap\Form\Element\BootstrapBorderElement.
-     * 
+     *
+     * @see BootstrapBorderElement::render()
      * @param string $borderOptions border-class;border-width-class;border-color-class;rounded-class;shadow-class
+     * @return string A CSS classes string.
      */
     public static function getBorderOptionClasses(string $borderOptions): string
     {
@@ -216,7 +236,7 @@ class BootstrapUtility
 
     /**
      * Creates bootstrap alignment classes for all devices from xs to xxl.
-     * 
+     *
      * @param string $alignments Semicolon separated list of values: xs;sm;md;lg;xl;xxl => start;end;;center;
      * @param string $prefix     Something like 'text-', 'justify-content-' or 'align-items-'
      * @return string The classes imploded by space.
@@ -242,8 +262,8 @@ class BootstrapUtility
     /**
      * Generates bootstrap gutter classes for grid elements to get equal space between columns.
      * Here x and y values will be processed.
-     * 
-     * @see self::getGridSpaceClasses() to get one value for x and y.
+     *
+     * @see BootstrapUtility::getGridSpaceClasses() to get one value for x and y.
      * @param string $spaceX Six integer values for the devices "xs;sm;md;lg;xl;xxl"
      * @param string $spaceY Six integer values for the devices "xs;sm;md;lg;xl;xxl"
      * @return array
@@ -281,8 +301,8 @@ class BootstrapUtility
     /**
      * Generates bootstrap gutter classes for grid elements to get equal space between columns.
      * Here x and y will get the same value.
-     * 
-     * @see self::getGridSpaceXYClasses() for separated x and y values.
+     *
+     * @see BootstrapUtility::getGridSpaceXYClasses() for separated x and y values
      * @param string $space Six integer values for the devices "xs;sm;md;lg;xl;xxl"
      * @return string The classes imploded by space.
      */
@@ -304,12 +324,14 @@ class BootstrapUtility
     }
 
     /**
-     * Generates classes for grid elements to set the order.
-     * Used in tx_base_flexform_grid in Bootstrap environment.
+     * Generates classes for grid elements to set the order related to the devices.
+     *
+     * @code{html}
      * <div class="row">
      *      <div class="col-text col order-[0|1]">
      *      <div class="col-media col order-[0|1]">
-     * </div>.
+     * </div>
+     * @endcode
      *
      * @param string $orderClasses Five string values either "", "text_media" or "media_text" for the devices "xs;sm;md;lg;xl;xxl"
      * @return array Array with text and media keys which holds each a class string.
@@ -340,7 +362,7 @@ class BootstrapUtility
 
     /**
      * Creates float-* classes for the content element bootstrap_textmediafloat.
-     * 
+     *
      * @param string $floats Five string values (left|none|right) for the devices "xs;sm;md;lg;xl;xxl"
      * @return string The classes.
      */
@@ -370,11 +392,11 @@ class BootstrapUtility
 
     /**
      * Creates size classes for the content element bootstrap_textmediafloat.
-     * 
-     * @param string $widths   Five int values from 1 to 12 for the devices "xs;sm;md;lg;xl;xxl"
-     * @param string $floats   Five string values (left|none|right) for the devices "xs;sm;md;lg;xl;xxl"
-     * @param string $spaces_x Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl;xxl"
-     * @param string $spaces_y Five int values from 1 to 15(?) for the devices "xs;sm;md;lg;xl;xxl"
+     *
+     * @param string $widths   Six int values from 1 to 12 or empty strings for the devices "xs;sm;md;lg;xl;xxl"
+     * @param string $floats   Six string values (left|none|right) for the devices "xs;sm;md;lg;xl;xxl"
+     * @param string $spaces_x Six int values from 1 to 5(?) or empty strings for the devices "xs;sm;md;lg;xl;xxl"
+     * @param string $spaces_y Six int values from 1 to 5(?) or empty strings for the devices "xs;sm;md;lg;xl;xxl"
      * @return string The classes.
      */
     public static function getFloatMediaSizeClasses(string $widths, string $floats, string $spaces_x, string $spaces_y): string
@@ -435,9 +457,9 @@ class BootstrapUtility
 
     /**
      * Builds the icon markup from iconset.
-     * Used for the flexform value from LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement.
      *
-     * @param string $value
+     * @see BootstrapIconsElement::render()
+     * @param string $value '{iconset};{iconclass};;;'
      * @return string
      */
     public static function getIconSetMarkup(string $value): string
@@ -457,14 +479,14 @@ class BootstrapUtility
 
     /**
      * Builds the position class from iconset.
-     * Used for the flexform value from LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement.
      *
-     * @param string $value
+     * @see BootstrapIconsElement::render()
+     * @param string $value ';;{position};;'
      * @return string
      */
     public static function getIconSetPositionClass(string $value): string
     {
-        list(,, $position) = array_merge(explode(';', $value), ['', '', '']);
+        list(, , $position) = array_merge(explode(';', $value), ['', '', '']);
 
         if ($position) {
             return 'iconset-' . $position;
@@ -475,14 +497,14 @@ class BootstrapUtility
 
     /**
      * Builds the size class from iconset.
-     * Used for the flexform value from LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement.
      *
-     * @param string $value
+     * @see BootstrapIconsElement::render()
+     * @param string $value ';;;{sizeclass};'
      * @return string
      */
     public static function getIconSetSizeClass(string $value): string
     {
-        list(,,, $size) = array_merge(explode(';', $value), ['', '', '', '']);
+        list(, , , $size) = array_merge(explode(';', $value), ['', '', '', '']);
 
         if ($size) {
             return $size;
@@ -493,14 +515,14 @@ class BootstrapUtility
 
     /**
      * Gets the color class from iconset.
-     * Used for the flexform value from LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement.
      *
-     * @param string $value
+     * @see BootstrapIconsElement::render()
+     * @param string $value ';;;;{color}'
      * @return string
      */
     public static function getIconSetColorClass(string $value): string
     {
-        list(,,,, $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
+        list(, , , , $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
 
         if ($color) {
             return $color;
@@ -510,7 +532,9 @@ class BootstrapUtility
     }
 
     /**
-     * Renders a complete iconset this:
+     * Renders a complete iconset like this:
+     *
+     * @code{.html}
      * <span class="iconset iconset-{position}>
      *      <span class="iconset__icon {sizeclass}">
      *          <i class="bs {iconclass}"></i>
@@ -519,11 +543,12 @@ class BootstrapUtility
      *          $content
      *      </span>
      * </span>
-     * 
-     * Used for the flexform value from LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement.
+     * @endcode
      *
-     * @param string $value {iconset};{iconclass};{position};{sizeclass}
-     * @param string $content
+     * @see BootstrapIconsElement::render()
+     * @param string $value           '{iconset};{iconclass};{position};{sizeclass};{color}'
+     * @param string $content         The html markup beneath the icon.
+     * @param string $additionalClass An optional additional CSS class in the wrapper.
      * @return string
      */
     public static function renderIconSet(string $value, string $content, string $additionalClass = ''): string
@@ -534,6 +559,7 @@ class BootstrapUtility
             return $content;
         }
 
+        $iconMarkup = '';
         if ($iconSet === 'bsicons') {
             $iconMarkup = '<i class="bs ' . $iconValue . '"></i>';
         }

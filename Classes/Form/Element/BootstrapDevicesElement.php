@@ -20,7 +20,7 @@ class BootstrapDevicesElement extends AbstractFormElement
     /**
      * Default field information enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldInformation
      */
     protected $defaultFieldInformation = [
         'tcaDescription' => [
@@ -31,7 +31,7 @@ class BootstrapDevicesElement extends AbstractFormElement
     /**
      * Default field wizards enabled for this element.
      *
-     * @var array
+     * @var array $defaultFieldWizard
      */
     protected $defaultFieldWizard = [
         'localizationStateSelector' => [
@@ -52,7 +52,35 @@ class BootstrapDevicesElement extends AbstractFormElement
     ];
 
     /**
-     * Render single element.
+     * Renders select fields for each Bootstrap device:
+     * - xs
+     * - sm
+     * - md
+     * - lg
+     * - xl
+     * - xxl
+     *
+     * Stores the values in a semicolon separated string: 'xs;sm;md;lg;xl;xxl'.
+     *
+     * Requires a configuration parameter 'elementConfiguration' which points to a path in TypoScript Setup:
+     * plugin.tx_bootstrap.settings.form.element.{elementConfiguration}
+     *
+     * Example TCA
+     * ===========
+     *
+     * @code{.xml}
+     * <field index="col">
+     *     <value index="TCEforms">
+     *         <label>Columns</label>
+     *         <config>
+     *             <type>user</type>
+     *             <renderType>bootstrapDevices</renderType>
+     *             <default>2;3;4;;;</default>
+     *             <elementConfiguration>BootstrapColumns</elementConfiguration>
+     *         </config>
+     *     </value>
+     * </field>
+     * @encode
      *
      * @return array As defined in initializeResultArray() of AbstractNode
      * @throws RuntimeException with invalid configuration

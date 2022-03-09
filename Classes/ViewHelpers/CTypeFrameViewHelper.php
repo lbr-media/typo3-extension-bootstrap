@@ -13,58 +13,112 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 /**
  * Builds the main frame elements for content elements.
  *
+ * Processes the data like:
+ * - frame_class
+ * - tx_bootstrap_inner_frame_class
+ * - tx_bootstrap_additional_styles
+ * - space_before_class
+ * - space_after_class
+ * - tx_bootstrap_text_color
+ * - tx_bootstrap_background_color
+ *
  * Examples
  * ========
  *
- * ::
- *
- *    {bs:CTypeFrame(contentElementData:data, content:'foo')}.
+ * @code{.html}
+ * <bs:CTypeFrame contentElementData="{data}" idPattern="c###ID###">{inner frame content...}</bs:CtypeFrame>
+ * @endcode
  */
 class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
 {
     /**
      * main tag name.
      *
-     * @var string
+     * @var string $tagName
      */
     protected $tagName = 'div';
 
     /**
      * Children must not be escaped, to be able to pass {bodytext} directly to it.
      *
-     * @var bool
+     * @var bool $escapeChildren
      */
     protected $escapeChildren = false;
 
     /**
      * The output may contain HTML and can not be escaped.
      *
-     * @var bool
+     * @var bool $escapeOutput
      */
     protected $escapeOutput = false;
 
     /**
      * List of classes to add to the container.
+     *
+     * @var array $classesList
      */
     protected $classesList = [];
 
     /**
      * List of classes to add to an additional element outside the container (parent element).
+     *
+     * @var array $classesOuterList
      */
     protected $classesOuterList = [];
 
     /**
      * List of params (property=>value) to add to main tag.
+     *
+     * @var array $additionalAttributes
      */
     protected $additionalAttributes = [];
 
     /**
      * List of params (property=>value) to add to an additional element outside the container (parent element).
+     *
+     * @var array $additionalOuterAttributes
      */
     protected $additionalOuterAttributes = [];
 
+    /**
+     * @var array $pluginSettings
+     */
     protected $pluginSettings;
 
+    /**
+     * @var array $outerWrap
+     */
+    protected $outerWrap = [
+        'before' => [],
+        'after' => [],
+    ];
+
+    /**
+     * @var array $innerWrap
+     */
+    protected $innerWrap = [
+        'before' => [],
+        'after' => [],
+    ];
+
+    /**
+     * Arguments for this view helper:
+     * - contentElementData Data from content element.
+     * - content            The content html.
+     * - idPattern          String used as pattern in id-attributes.
+     */
+    public function initializeArguments(): void
+    {
+        $this->registerArgument('contentElementData', 'array', 'data from content element');
+        $this->registerArgument('content', 'string', '');
+        $this->registerArgument('idPattern', 'string', 'String used as pattern in id-attributes.', false, 'c###ID###');
+    }
+
+    /**
+     * Get the TypoScript setup for path plugin.tx_bootstrap.settings.form.element.
+     *
+     * @return array
+     */
     protected function getPluginSettings(): array
     {
         if ($this->pluginSettings !== null) {
@@ -77,28 +131,10 @@ class CTypeFrameViewHelper extends AbstractTagBasedViewHelper
     }
 
     /**
-     * @var array
+     * Renders the frame tags including the content.
+     *
+     * @return string The rendered HTML markup.
      */
-    protected $outerWrap = [
-        'before' => [],
-        'after' => [],
-    ];
-
-    /**
-     * @var array
-     */
-    protected $innerWrap = [
-        'before' => [],
-        'after' => [],
-    ];
-
-    public function initializeArguments(): void
-    {
-        $this->registerArgument('contentElementData', 'array', 'data from content element');
-        $this->registerArgument('content', 'string', '');
-        $this->registerArgument('idPattern', 'string', 'String used as pattern in id-attributes.', false, 'c###ID###');
-    }
-
     public function render(): string
     {
         $data = $this->arguments['contentElementData'];
