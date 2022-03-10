@@ -43,7 +43,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * @code
  * bsicon;bi-info-circle;start;fs-3;text-primary
  * @endcode
- * 
+ *
  * The 'additionalConfiguration' array has at this time two keys:
  * - 'additionalClasses' to add CSS classes to the wrapper
  * - 'positionClasses' to overwrite the default 'iconset-{position}' class. It can be used for device position settings.
@@ -90,10 +90,10 @@ class IconSetViewHelper extends AbstractViewHelper
             if (!isset($this->arguments['additionalConfiguration']['positionClasses'])) {
                 $this->arguments['additionalConfiguration']['positionClasses'] = BootstrapUtility::getDeviceClasses($this->arguments['alignment'], 'iconset-');
             } else {
-                $this->arguments['additionalConfiguration']['positionClasses'] .= ' '. BootstrapUtility::getDeviceClasses($this->arguments['alignment'], 'iconset-');
+                $this->arguments['additionalConfiguration']['positionClasses'] .= ' ' . BootstrapUtility::getDeviceClasses($this->arguments['alignment'], 'iconset-');
             }
         }
-        
+
         return BootstrapUtility::renderIconSet(
             $this->arguments['value'],
             $this->arguments['content'] ? $this->arguments['content'] : $this->renderChildren(),

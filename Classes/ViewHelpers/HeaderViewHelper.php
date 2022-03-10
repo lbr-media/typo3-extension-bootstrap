@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
 use Exception;
-use TYPO3\CMS\Core\Resource\FileReference;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use LBRmedia\Bootstrap\Utility\DateUtility;
-use TYPO3\CMS\Core\Resource\FileRepository;
-use TYPO3\CMS\Extbase\Service\ImageService;
 use LBRmedia\Bootstrap\Utility\BootstrapUtility;
-use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
+use LBRmedia\Bootstrap\Utility\DateUtility;
+use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
+use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Core\Resource\FileRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Service\ImageService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
-use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
 /**
  * Builds main headlines in content elements while using fields like:
@@ -339,12 +339,12 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
                     [
                         'additionalClasses' => 'd-inline-flex iconset--header iconset--image',
                         'sizeClasses' => $data['tx_bootstrap_header_icon_size'],
-                        'positionClasses' => BootstrapUtility::getDeviceClasses($data['tx_bootstrap_header_icon_alignment'], 'iconset-')
+                        'positionClasses' => BootstrapUtility::getDeviceClasses($data['tx_bootstrap_header_icon_alignment'], 'iconset-'),
                     ]
                 );
             }
         }
-        
+
         if ($data['tx_bootstrap_header_iconset']) {
             // Process icon set
             $iconFrameMarkup = BootstrapUtility::renderIconSet(
@@ -352,7 +352,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
                 $iconFrameMarkup ? $iconFrameMarkup : '###HEADER_CONTENT###', // if there is already a file icon keep care to not have more than one placeholder
                 [
                     'additionalClasses' => 'd-inline-flex iconset--header ',
-                    'positionClasses' => BootstrapUtility::getDeviceClasses($data['tx_bootstrap_header_iconset_alignment'], 'iconset-')
+                    'positionClasses' => BootstrapUtility::getDeviceClasses($data['tx_bootstrap_header_iconset_alignment'], 'iconset-'),
                 ]
             );
         }
@@ -364,7 +364,6 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
          * [3] Icons are set but it is not outside or inside. Throw an error.
          * [4] There are no icons. Render regular.
          */
-
         $iconWrap = isset($pluginSettings['plugin.']['tx_bootstrap.']['settings.']['bootstrap.']['header_icon_wrap'])
             ? $pluginSettings['plugin.']['tx_bootstrap.']['settings.']['bootstrap.']['header_icon_wrap']
             : 'outside';
@@ -399,7 +398,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             }
             $iconWrap->setContent(str_replace('###HEADER_CONTENT###', $hTag, $iconFrameMarkup));
             $hTag = $iconWrap->render();
-        } else if ($iconFrameMarkup && $iconWrap === 'inside') {
+        } elseif ($iconFrameMarkup && $iconWrap === 'inside') {
             // [2]
 
             /**
@@ -417,7 +416,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
              */
             $this->tag->setContent(str_replace('###HEADER_CONTENT###', $headerParts['between'], $iconFrameMarkup));
             $hTag = $headerParts['before'] . $this->tag->render() . $headerParts['after'];
-        } else if ($iconFrameMarkup) {
+        } elseif ($iconFrameMarkup) {
             // [3]
             throw new Exception('The icon wrap information is neither \'outside\' or \'inside\'. Set TypoScript Constant styles.bootstrap.header_icon_wrap.', 1646915524);
         } else {

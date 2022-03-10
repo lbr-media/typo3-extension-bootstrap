@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Utility;
 
+use LBRmedia\Bootstrap\Form\Element\AllEdgesElement;
+use LBRmedia\Bootstrap\Form\Element\BootstrapBorderElement;
+use LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
-use LBRmedia\Bootstrap\Form\Element\AllEdgesElement;
-use LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement;
-use LBRmedia\Bootstrap\Form\Element\BootstrapBorderElement;
 
 /**
  * Utility class to get some css classes from flexform values.
@@ -520,7 +520,7 @@ class BootstrapUtility
         if (!($iconSet && $iconValue)) {
             return $contentMarkup;
         }
-        
+
         /*
          * hook: renderIconSet: Gets the icon HTML markup.
          */
@@ -590,7 +590,7 @@ class BootstrapUtility
         $iconGfx = new TagBuilder('span');
         $iconGfx->addAttribute(
             'class',
-            'iconset__icon' . 
+            'iconset__icon' .
             (isset($configuration['sizeClasses']) && $configuration['sizeClasses'] ? ' ' . $configuration['sizeClasses'] : '') .
             (isset($configuration['colorClasses']) && $configuration['colorClasses'] ? ' ' . $configuration['colorClasses'] : '')
         );

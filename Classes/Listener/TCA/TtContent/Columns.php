@@ -397,7 +397,7 @@ class Columns
                 'tx_bootstrap_header_icon_size',
                 '--linebreak--',
                 'tx_bootstrap_header_icon_alignment',
-            ])
+            ]),
         ];
         $GLOBALS['TCA']['tt_content']['palettes']['headers_iconset'] = [
             'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.palette.headers_iconset',
@@ -405,7 +405,7 @@ class Columns
                 'tx_bootstrap_header_iconset',
                 '--linebreak--',
                 'tx_bootstrap_header_iconset_alignment',
-            ])
+            ]),
         ];
         ExtensionManagementUtility::addToAllTCAtypes(
             'tt_content',

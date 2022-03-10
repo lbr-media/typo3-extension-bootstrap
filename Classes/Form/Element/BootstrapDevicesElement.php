@@ -116,7 +116,7 @@ class BootstrapDevicesElement extends AbstractFormElement
         $inputHtml = '';
 
         // create options (equal in each select)
-        $prependEmptyOption = isset($config['prependEmptyOption']) && ($config['prependEmptyOption'] === true || $config['prependEmptyOption'] === "true" || $config['prependEmptyOption'] === "1" || $config['prependEmptyOption'] === 1) ? true : false;
+        $prependEmptyOption = isset($config['prependEmptyOption']) && ($config['prependEmptyOption'] === true || $config['prependEmptyOption'] === 'true' || $config['prependEmptyOption'] === '1' || $config['prependEmptyOption'] === 1) ? true : false;
         $options = implode(LF, FormElementUtility::createOptionTags($pluginSettings[$config['elementConfiguration'] . '.'], $prependEmptyOption));
 
         // create select tags

@@ -11,7 +11,7 @@ class Text implements NewContentElementInterface
     public static function addPlugin(TcaService $tcaService): void
     {
         // Prepend bodytext with a div
-        $GLOBALS['TCA']['tt_content']['types']['text']['showitem'] = 
+        $GLOBALS['TCA']['tt_content']['types']['text']['showitem'] =
             $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['text']['showitem'])
                 ->replaceShowItem('bodytext', '--div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.div.bodytext,bodytext')
                 ->getShowitemsString();
