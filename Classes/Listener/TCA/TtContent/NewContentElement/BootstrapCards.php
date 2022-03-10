@@ -28,7 +28,8 @@ class BootstrapCards implements NewContentElementInterface
         // Configure TCA
         $GLOBALS['TCA']['tt_content']['types']['bootstrap_cards'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['text']['showitem'])
-                ->addShowitemAfter('tx_bootstrap_flexform,tx_bootstrap_carditems', 'bodytext')
+                ->addShowitemAfter('--div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.div.cards,tx_bootstrap_carditems', 'bodytext')
+                ->addShowitemAfter('tx_bootstrap_flexform', 'frames')
                 ->removeShowitems(['bodytext'])
                 ->getShowitemsString(),
         ];

@@ -148,6 +148,10 @@
                 <source>Right</source>
                 <target>Rechts</target>
             </trans-unit>
+            <trans-unit id="tt_content.div.cards">
+                <source>Cards</source>
+                <target>Kacheln</target>
+            </trans-unit>
 
             <!-- tt_content columns -->
             <trans-unit id="tt_content.header.description">

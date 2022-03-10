@@ -112,6 +112,9 @@
             <trans-unit id="tt_content.div.right">
                 <source>Right</source>
             </trans-unit>
+            <trans-unit id="tt_content.div.cards">
+                <source>Cards</source>
+            </trans-unit>
 
             <!-- tt_content columns -->
             <trans-unit id="tt_content.header.description">
