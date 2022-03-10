@@ -334,8 +334,14 @@ class Columns
         ExtensionManagementUtility::addFieldsToPalette(
             'tt_content',
             'headers',
-            '--linebreak--,tx_bootstrap_header_additional_styles,--linebreak--,tx_bootstrap_header_icon,--linebreak--,tx_bootstrap_header_iconset',
+            '--linebreak--,tx_bootstrap_header_additional_styles,--linebreak--',
             'after:date'
+        );
+        ExtensionManagementUtility::addFieldsToPalette(
+            'tt_content',
+            'headers',
+            '--linebreak--,tx_bootstrap_header_icon,--linebreak--,tx_bootstrap_header_iconset',
+            'after:subheader'
         );
 
         ExtensionManagementUtility::addFieldsToPalette(
