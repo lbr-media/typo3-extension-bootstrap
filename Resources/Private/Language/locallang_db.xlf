@@ -116,6 +116,14 @@
                 <source>Cards</source>
             </trans-unit>
 
+            <!-- tt_content.palette -->
+            <trans-unit id="tt_content.palette.headers_icon">
+                <source>Headline: Icon</source>
+            </trans-unit>
+            <trans-unit id="tt_content.palette.headers_iconset">
+                <source>Headline: Icon-Set</source>
+            </trans-unit>
+
             <!-- tt_content columns -->
             <trans-unit id="tt_content.header.description">
                 <source>Use | for hyphenation</source>
@@ -135,8 +143,17 @@
             <trans-unit id="tt_content.tx_bootstrap_header_icon">
                 <source>Icon</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_icon_size">
+                <source>Icon: Size</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_icon_alignment">
+                <source>Icon: Alignment</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_header_iconset">
                 <source>Icon-Set</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_iconset_alignment">
+                <source>Icon-Set: Alignment</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_text_color">
                 <source>Text color</source>

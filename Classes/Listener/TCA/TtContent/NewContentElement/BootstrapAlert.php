@@ -25,15 +25,15 @@ class BootstrapAlert implements NewContentElementInterface
         // Add flexform
         $GLOBALS['TCA']['tt_content']['columns']['tx_bootstrap_flexform']['config']['ds']['*,bootstrap_alert'] = 'FILE:EXT:bootstrap/Configuration/FlexForms/TtContent/BootstrapAlert.xml';
         $GLOBALS['TCA']['tt_content']['palettes']['headers_bootstrap_alert'] = [
-            'showitem' => 'header,--linebreak--,tx_bootstrap_header_iconset',
+            'showitem' => 'header',
         ];
 
         // Configure TCA
         $GLOBALS['TCA']['tt_content']['types']['bootstrap_alert'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['text']['showitem'])
-                ->addShowitemAfter('tx_bootstrap_flexform', 'bodytext')
+                ->addShowitemAfter('tx_bootstrap_header_iconset,--linebreak--,tx_bootstrap_header_iconset_alignment,--linebreak--,tx_bootstrap_flexform', 'frames')
                 ->addShowitemAfter('--palette--;;headers_bootstrap_alert', 'headers')
-                ->removeShowitems(['headers'])
+                ->removeShowitems(['headers', 'headers_icon', 'headers_iconset'])
                 ->getShowitemsString(),
             'columnsOverrides' => [
                 'bodytext' => [

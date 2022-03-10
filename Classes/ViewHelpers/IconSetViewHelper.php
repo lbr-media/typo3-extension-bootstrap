@@ -45,7 +45,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * @endcode
  * 
  * The 'additionalConfiguration' array has at this time two keys:
- * - 'additionalClass' to add CSS classes to the wrapper
+ * - 'additionalClasses' to add CSS classes to the wrapper
  * - 'positionClasses' to overwrite the default 'iconset-{position}' class. It can be used for device position settings.
  */
 class IconSetViewHelper extends AbstractViewHelper
@@ -68,13 +68,15 @@ class IconSetViewHelper extends AbstractViewHelper
      * Arguments for this view helper:
      * - value (Icon set configuration: iconset;classname;position;size;color.)
      * - content (The html markup beneath the icon.)
-     * - additionalConfiguration (Additional parameters like 'additionalClass' in the wrapper or overwriting the 'positionClasses'.)
+     * - additionalConfiguration (Additional parameters like 'additionalClasses' in the wrapper or overwriting the 'positionClasses'.)
+     * - alignment (If set the value of the *_alignment fields is expected. Something like: 'top-center;;middle-left;;;'. They will be transformed to icon position classes.)
      */
     public function initializeArguments(): void
     {
         $this->registerArgument('value', 'string', 'Icon set configuration: iconset;classname;position;size;color.', true, '');
         $this->registerArgument('content', 'string', 'The html markup beneath the icon.', false, '', false);
         $this->registerArgument('additionalConfiguration', 'array', 'Additional parameters like \'additionalClass\' in the wrapper or overwriting the \'positionClasses\'.', false, [], false);
+        $this->registerArgument('alignment', 'string', 'If set the value of the *_alignment fields is expected. Something like: \'top-center;;middle-left;;;\'. They will be transformed to icon position classes.', false, '', false);
     }
 
     /**
@@ -84,6 +86,14 @@ class IconSetViewHelper extends AbstractViewHelper
      */
     public function render(): string
     {
+        if ($this->arguments['alignment']) {
+            if (!isset($this->arguments['additionalConfiguration']['positionClasses'])) {
+                $this->arguments['additionalConfiguration']['positionClasses'] = BootstrapUtility::getDeviceClasses($this->arguments['alignment'], 'iconset-');
+            } else {
+                $this->arguments['additionalConfiguration']['positionClasses'] .= ' '. BootstrapUtility::getDeviceClasses($this->arguments['alignment'], 'iconset-');
+            }
+        }
+        
         return BootstrapUtility::renderIconSet(
             $this->arguments['value'],
             $this->arguments['content'] ? $this->arguments['content'] : $this->renderChildren(),

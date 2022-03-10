@@ -20,6 +20,7 @@ plugin.tx_bootstrap.settings {
         header_subheader_date_pattern = {$styles.bootstrap.header_subheader_date_pattern}
         header_date_datetype = {$styles.bootstrap.header_date_datetype}
         header_date_timetype = {$styles.bootstrap.header_date_timetype}
+        header_icon_wrap = {$styles.bootstrap.header_icon_wrap}
 
         # Figcaption
         figcaption_classes = {$styles.bootstrap.figcaption_classes}

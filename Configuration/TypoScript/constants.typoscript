@@ -1,6 +1,7 @@
 # customcategory=bootstrap_header=Plugin.Bootstrap: Header
 # customsubcategory=bootstrap_header_pattern=Pattern
 # customsubcategory=bootstrap_header_date=Date Format
+# customsubcategory=bootstrap_header_others=Others
 
 # customcategory=bootstrap_figcaption=Plugin.Bootstrap: Figcaption
 # customsubcategory=bootstrap_figcaption_classes=CSS-classes
@@ -69,6 +70,8 @@ styles.bootstrap {
     header_date_datetype = FULL
     # cat=bootstrap_header/bootstrap_header_date/d; type=options[NONE=NONE,FULL=FULL,LONG=LONG,MEDIUM=MEDIUM,SHORT=SHORT,RELATIVE_FULL=RELATIVE_FULL,RELATIVE_LONG=RELATIVE_LONG,RELATIVE_MEDIUM=RELATIVE_MEDIUM,RELATIVE_SHORT=RELATIVE_SHORT]; label=Header time format.: See https://www.php.net/manual/de/class.intldateformatter.php
     header_date_timetype = NONE
+    # cat=bootstrap_header/bootstrap_header_others/d; type=options[outside=outside,inside=inside; label=Header icon wrap: Should the icons be 'outside' the h-tag or 'inside'?
+    header_icon_wrap = outside
 
     # cat=bootstrap_figcaption/bootstrap_figcaption_classes/a; type=string; label=CSS-classes FIGCAPTION
     figcaption_classes = figure-caption text-start

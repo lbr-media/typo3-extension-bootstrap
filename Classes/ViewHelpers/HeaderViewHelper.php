@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
-use LBRmedia\Bootstrap\Utility\BootstrapUtility;
-use LBRmedia\Bootstrap\Utility\DateUtility;
-use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
-use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
+use Exception;
 use TYPO3\CMS\Core\Resource\FileReference;
-use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use LBRmedia\Bootstrap\Utility\DateUtility;
+use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Extbase\Service\ImageService;
+use LBRmedia\Bootstrap\Utility\BootstrapUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
+use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
+use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 
 /**
  * Builds main headlines in content elements while using fields like:
@@ -289,14 +290,15 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
          * [1] Process predefined header.
          * [2] Process additional styles.
          */
-        $pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
+        $pluginSettings = BootstrapGeneralUtility::getFullTypoScript();
+        $formElementPluginSettings = isset($pluginSettings['plugin.']['tx_bootstrap.']['settings.']['form.']['element.']) ? $pluginSettings['plugin.']['tx_bootstrap.']['settings.']['form.']['element.'] : [];
 
         // [1]
         if ($data['tx_bootstrap_header_predefined']) {
-            if (isset($pluginSettings['PredefinedHeader.']) && is_array($pluginSettings['PredefinedHeader.'])) {
+            if (isset($formElementPluginSettings['PredefinedHeader.']) && is_array($formElementPluginSettings['PredefinedHeader.'])) {
                 $tsConfigKey = $data['tx_bootstrap_header_predefined'] . '.';
-                if (isset($pluginSettings['PredefinedHeader.'][$tsConfigKey])) {
-                    $this->prepareAdditionals($pluginSettings['PredefinedHeader.'][$tsConfigKey]);
+                if (isset($formElementPluginSettings['PredefinedHeader.'][$tsConfigKey])) {
+                    $this->prepareAdditionals($formElementPluginSettings['PredefinedHeader.'][$tsConfigKey]);
                 }
             }
         }
@@ -304,11 +306,11 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         // [2]
         if ($data['tx_bootstrap_header_additional_styles']) {
             $additionalStyles = explode(',', $data['tx_bootstrap_header_additional_styles']);
-            if (isset($pluginSettings['AdditionalHeaderStyles.']) && count($additionalStyles)) {
+            if (isset($formElementPluginSettings['AdditionalHeaderStyles.']) && count($additionalStyles)) {
                 foreach ($additionalStyles as $key) {
                     $tsConfigKey = $key . '.';
-                    if (isset($pluginSettings['AdditionalHeaderStyles.'][$tsConfigKey])) {
-                        $this->prepareAdditionals($pluginSettings['AdditionalHeaderStyles.'][$tsConfigKey]);
+                    if (isset($formElementPluginSettings['AdditionalHeaderStyles.'][$tsConfigKey])) {
+                        $this->prepareAdditionals($formElementPluginSettings['AdditionalHeaderStyles.'][$tsConfigKey]);
                     }
                 }
             }
@@ -326,32 +328,50 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
          * The h-tag is the content. The outerWrap is the parent.
          * When there is an icon, the alignment and color class is applied to an outer wrap. Otherwise it is applied to the h-tag
          */
-        $iconMarkup = '';
+        $iconFrameMarkup = '';
         if ($data['tx_bootstrap_header_icon']) {
             // Process file icon
             $files = $this->_getFiles('tx_bootstrap_header_icon', $data, true);
             if (isset($files[0]) && $files[0]) {
-                $headerIconWrap = new TagBuilder('span');
-                $headerIconWrap->addAttribute('class', 'header-icon d-inline-flex');
-
-                $headerIconGfx = new TagBuilder('span');
-                $headerIconGfx->addAttribute('class', 'header-icon__gfx');
-                $headerIconGfx->setContent($this->_renderIcon($files[0]));
-
-                $headerIconText = new TagBuilder('span');
-                $headerIconText->addAttribute('class', 'header-icon__text');
-                $headerIconText->setContent('###HEADER_CONTENT###');
-
-                $headerIconWrap->setContent($headerIconGfx->render() . $headerIconText->render());
-
-                $iconMarkup = $headerIconWrap->render();
+                $iconFrameMarkup = BootstrapUtility::renderIconFrame(
+                    $this->_renderIcon($files[0]),
+                    '###HEADER_CONTENT###',
+                    [
+                        'additionalClasses' => 'd-inline-flex iconset--header iconset--image',
+                        'sizeClasses' => $data['tx_bootstrap_header_icon_size'],
+                        'positionClasses' => BootstrapUtility::getDeviceClasses($data['tx_bootstrap_header_icon_alignment'], 'iconset-')
+                    ]
+                );
             }
-        } elseif ($data['tx_bootstrap_header_iconset']) {
+        }
+        
+        if ($data['tx_bootstrap_header_iconset']) {
             // Process icon set
-            $iconMarkup = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], '###HEADER_CONTENT###', ['additionalClass' => 'd-inline-flex']);
+            $iconFrameMarkup = BootstrapUtility::renderIconSet(
+                $data['tx_bootstrap_header_iconset'],
+                $iconFrameMarkup ? $iconFrameMarkup : '###HEADER_CONTENT###', // if there is already a file icon keep care to not have more than one placeholder
+                [
+                    'additionalClasses' => 'd-inline-flex iconset--header ',
+                    'positionClasses' => BootstrapUtility::getDeviceClasses($data['tx_bootstrap_header_iconset_alignment'], 'iconset-')
+                ]
+            );
         }
 
-        if ($iconMarkup) {
+        /**
+         * Build the final header:
+         * [1] Icons are set and the icon-frame should include the whole h-tag (header_icon_wrap=outside).
+         * [2] Icons are set and the icon-frame is inside the h-tag. Only the content is inside the icon-frame (header_icon_wrap=inside)
+         * [3] Icons are set but it is not outside or inside. Throw an error.
+         * [4] There are no icons. Render regular.
+         */
+
+        $iconWrap = isset($pluginSettings['plugin.']['tx_bootstrap.']['settings.']['bootstrap.']['header_icon_wrap'])
+            ? $pluginSettings['plugin.']['tx_bootstrap.']['settings.']['bootstrap.']['header_icon_wrap']
+            : 'outside';
+
+        if ($iconFrameMarkup && $iconWrap === 'outside') {
+            // [1]
+
             /**
              * Build css classes string and add to h-tag.
              */
@@ -377,9 +397,32 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             if ($classesStr) {
                 $iconWrap->addAttribute('class', $classesStr);
             }
-            $iconWrap->setContent(str_replace('###HEADER_CONTENT###', $hTag, $iconMarkup));
+            $iconWrap->setContent(str_replace('###HEADER_CONTENT###', $hTag, $iconFrameMarkup));
             $hTag = $iconWrap->render();
+        } else if ($iconFrameMarkup && $iconWrap === 'inside') {
+            // [2]
+
+            /**
+             * Build css classes string and add to h-tag.
+             */
+            $this->classesList[] = $data['tx_bootstrap_header_color'];
+            $this->classesList[] = $data['header_position'];
+            $classesStr = BootstrapGeneralUtility::cleanCssClassesString($this->classesList);
+            if ($classesStr) {
+                $this->tag->addAttribute('class', $classesStr);
+            }
+
+            /**
+             * Render the h-tag.
+             */
+            $this->tag->setContent(str_replace('###HEADER_CONTENT###', $headerParts['between'], $iconFrameMarkup));
+            $hTag = $headerParts['before'] . $this->tag->render() . $headerParts['after'];
+        } else if ($iconFrameMarkup) {
+            // [3]
+            throw new Exception('The icon wrap information is neither \'outside\' or \'inside\'. Set TypoScript Constant styles.bootstrap.header_icon_wrap.', 1646915524);
         } else {
+            // [4]
+
             /**
              * Build css classes string and add to h-tag.
              */
@@ -494,7 +537,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
         if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
             $file = $file->getOriginalResource();
         } elseif (!$file instanceof \TYPO3\CMS\Core\Resource\FileReference) {
-            throw new \Exception('The image file must be an instance of \\TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference or \\TYPO3\\CMS\\Core\\Resource\\FileReference', 1509795323);
+            throw new Exception('The image file must be an instance of \\TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference or \\TYPO3\\CMS\\Core\\Resource\\FileReference', 1509795323);
         }
 
         /*

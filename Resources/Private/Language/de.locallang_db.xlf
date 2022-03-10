@@ -153,6 +153,16 @@
                 <target>Kacheln</target>
             </trans-unit>
 
+            <!-- tt_content.palette -->
+            <trans-unit id="tt_content.palette.headers_icon">
+                <source>Headline: Icon</source>
+                <target>Überschrift: Icon</target>
+            </trans-unit>
+            <trans-unit id="tt_content.palette.headers_iconset">
+                <source>Headline: Icon-Set</source>
+                <target>Überschrift: Icon-Set</target>
+            </trans-unit>
+
             <!-- tt_content columns -->
             <trans-unit id="tt_content.header.description">
                 <source>Use | for hyphenation</source>
@@ -178,9 +188,21 @@
                 <source>Icon</source>
                 <target>Icon</target>
             </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_icon_size">
+                <source>Icon: Size</source>
+                <target>Icon: Größe</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_icon_alignment">
+                <source>Icon: Alignment</source>
+                <target>Icon: Ausrichtung</target>
+            </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_header_iconset">
                 <source>Icon-Set</source>
                 <target>Icon-Set</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_iconset_alignment">
+                <source>Icon-Set: Alignment</source>
+                <target>Icon-Set: Ausrichtung</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_text_color">
                 <source>Text color</source>

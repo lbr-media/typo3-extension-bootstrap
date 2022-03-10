@@ -3,19 +3,67 @@
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 :root {
-    --iconset-space-x: .5em;
-    --iconset-space-y: .2em;
+    --iconset-space-s: .5em; // space between icon and content when icon is on the left side
+    --iconset-space-e: .5em; // space between icon and content when icon is on the right side
+    --iconset-space-t: .2em; // space between icon and content when icon is on above the content
+    --iconset-space-b: .2em; // space between icon and content when icon is on below the content
+
+    --file-icon-height-lead: 1.25rem;
+    --file-icon-height-display-1: calc(1.625rem + 4.5vw);
+    --file-icon-height-display-2: calc(1.575rem + 3.9vw);
+    --file-icon-height-display-3: calc(1.525rem + 3.3vw);
+    --file-icon-height-display-4: calc(1.475rem + 2.7vw);
+    --file-icon-height-display-5: calc(1.425rem + 2.1vw);
+    --file-icon-height-display-6: calc(1.375rem + 1.5vw);
+    --file-icon-height-h1: calc(1.375rem + 1.5vw);
+    --file-icon-height-h2: calc(1.325rem + .9vw);
+    --file-icon-height-h3: calc(1.3rem + .6vw);
+    --file-icon-height-h4: calc(1.275rem + .3vw);
+    --file-icon-height-h5: 1.25rem;
+    --file-icon-height-h6: 1rem;
+
+    --file-icon-max-height-lead: 1.25rem;
+    --file-icon-max-height-display-1: 5rem;
+    --file-icon-max-height-display-2: 4.5rem;
+    --file-icon-max-height-display-3: 4rem;
+    --file-icon-max-height-display-4: 3.5rem;
+    --file-icon-max-height-display-5: 3rem;
+    --file-icon-max-height-display-6: 2.5rem;
+    --file-icon-max-height-h1: 2.5rem;
+    --file-icon-max-height-h2: 2rem;
+    --file-icon-max-height-h3: 1.75rem;
+    --file-icon-max-height-h4: 1.55rem;
+    --file-icon-max-height-h5: 1.25rem;
+    --file-icon-max-height-h6: 1rem;
 }
 
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// overwrite spaces for headers
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+.iconset--header {
+    --iconset-space-s: .5em;
+    --iconset-space-e: .5em;
+    --iconset-space-t: .2em;
+    --iconset-space-b: .2em;
+}
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 // overwrite spaces for content element bootstrap_cards
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 .iconset--card {
-    --iconset-space-x: .5rem;
-    --iconset-space-y: .5rem;
+    --iconset-space-s: .5rem;
+    --iconset-space-e: .5rem;
+    --iconset-space-t: .5rem;
+    --iconset-space-b: .5rem;
 }
 
 // .iconset--card-outside {
-//     --iconset-space-x: 1rem;
-//     --iconset-space-y: 1rem;
+//     --iconset-space-s: 1rem;
+//     --iconset-space-e: 1rem;
+//     --iconset-space-t: 1rem;
+//     --iconset-space-b: 1rem;
 // }
 
 .iconset--card-inside {
@@ -23,20 +71,178 @@
     --iconset-space-y: 1rem;
 }
 
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Common styles
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 .iconset {
     display: flex;
 }
 
 // remove space and set line-height to the icon itself
-.iconset__icon > * {
+.iconset__icon>* {
     display: block;
     line-height: 1 !important;
     margin-bottom: 0 !important;
 }
 
+.iconset__content {
+    width: 100%;
+}
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// file icon sizes
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+.iconset__icon img {
+    width: auto;
+}
+
+.iconset__icon {
+    .lead & img,
+    &.lead img {
+        height: var(--file-icon-height-lead);
+    }
+
+    .display-1 & img,
+    &.display-1 img {
+        height: var(--file-icon-height-display-1);
+    }
+
+    .display-2 & img,
+    &.display-2 img {
+        height: var(--file-icon-height-display-2);
+    }
+
+    .display-3 & img,
+    &.display-3 img {
+        height: var(--file-icon-height-display-3);
+    }
+
+    .display-4 & img,
+    &.display-4 img {
+        height: var(--file-icon-height-display-4);
+    }
+
+    .display-5 & img,
+    &.display-5 img {
+        height: var(--file-icon-height-display-5);
+    }
+
+    .display-6 & img,
+    &.display-6 img {
+        height: var(--file-icon-height-display-6);
+    }
+
+    .h1 & img,
+    &.h1 img {
+        height: var(--file-icon-height-h1);
+    }
+
+    .h2 & img,
+    &.h2 img {
+        height: var(--file-icon-height-h2);
+    }
+
+    .h3 & img,
+    &.h3 img {
+        height: var(--file-icon-height-h3);
+    }
+
+    .h4 & img,
+    &.h4 img {
+        height: var(--file-icon-height-h4);
+    }
+
+    .h5 & img,
+    &.h5 img {
+        height: var(--file-icon-height-h5);
+    }
+
+    .h6 & img,
+    &.h6 img {
+        height: var(--file-icon-height-h6);
+    }
+}
+
+@media (min-width: 1200px) {
+    .iconset__icon {
+        .lead & img,
+        &.lead img {
+            height: var(--file-icon-max-height-lead);
+        }
+
+        .display-1 & img,
+        &.display-1 img {
+            height: var(--file-icon-max-height-display-1);
+        }
+
+        .display-2 & img,
+        &.display-2 img {
+            height: var(--file-icon-max-height-display-2);
+        }
+
+        .display-3 & img,
+        &.display-3 img {
+            height: var(--file-icon-max-height-display-3);
+        }
+
+        .display-4 & img,
+        &.display-4 img {
+            height: var(--file-icon-max-height-display-4);
+        }
+
+        .display-5 & img,
+        &.display-5 img {
+            height: var(--file-icon-max-height-display-5);
+        }
+
+        .display-6 & img,
+        &.display-6 img {
+            height: var(--file-icon-max-height-display-6);
+        }
+
+        .h1 & img,
+        &.h1 img {
+            height: var(--file-icon-max-height-h1);
+        }
+
+        .h2 & img,
+        &.h2 img {
+            height: var(--file-icon-max-height-h2);
+        }
+
+        .h3 & img,
+        &.h3 img {
+            height: var(--file-icon-max-height-h3);
+        }
+
+        .h4 & img,
+        &.h4 img {
+            height: var(--file-icon-max-height-h4);
+        }
+
+        .h5 & img,
+        &.h5 img {
+            height: var(--file-icon-max-height-h5);
+        }
+
+        .h6 & img,
+        &.h6 img {
+            height: var(--file-icon-max-height-h6);
+        }
+    }
+}
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Mixin to create positions and spaces
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 @mixin iconset-position($infix) {
+
     // horizontal
     .iconset {
+
         &.iconset#{$infix}-start,
         &.iconset#{$infix}-start-top,
         &.iconset#{$infix}-start-middle,
@@ -59,93 +265,97 @@
         &.iconset#{$infix}-bottom-end {
             flex-direction: column;
         }
-    
+
         // icon on left side
-        &.iconset#{$infix}-start .iconset__icon,
-        &.iconset#{$infix}-start-top .iconset__icon,
-        &.iconset#{$infix}-start-middle .iconset__icon,
-        &.iconset#{$infix}-start-bottom .iconset__icon {
-            margin-right: var(--iconset-space-x);
+        &.iconset#{$infix}-start>.iconset__icon,
+        &.iconset#{$infix}-start-top>.iconset__icon,
+        &.iconset#{$infix}-start-middle>.iconset__icon,
+        &.iconset#{$infix}-start-bottom>.iconset__icon {
+            margin: 0 var(--iconset-space-s) 0 0;
         }
 
         // icon on right side
-        &.iconset#{$infix}-end .iconset__icon,
-        &.iconset#{$infix}-end-top .iconset__icon,
-        &.iconset#{$infix}-end-middle .iconset__icon,
-        &.iconset#{$infix}-end-bottom .iconset__icon {
+        &.iconset#{$infix}-end>.iconset__icon,
+        &.iconset#{$infix}-end-top>.iconset__icon,
+        &.iconset#{$infix}-end-middle>.iconset__icon,
+        &.iconset#{$infix}-end-bottom>.iconset__icon {
             order: 1;
-            margin-left: var(--iconset-space-x);
+            margin: 0 0 0 var(--iconset-space-e);
         }
 
         // icon above content
-        &.iconset#{$infix}-top .iconset__icon,
-        &.iconset#{$infix}-top-start .iconset__icon,
-        &.iconset#{$infix}-top-center .iconset__icon,
-        &.iconset#{$infix}-top-end .iconset__icon {
-            margin-bottom: var(--iconset-space-y);
+        &.iconset#{$infix}-top>.iconset__icon,
+        &.iconset#{$infix}-top-start>.iconset__icon,
+        &.iconset#{$infix}-top-center>.iconset__icon,
+        &.iconset#{$infix}-top-end>.iconset__icon {
+            margin: 0 0 var(--iconset-space-t) 0;
         }
 
         // icon below content
-        &.iconset#{$infix}-bottom .iconset__icon,
-        &.iconset#{$infix}-bottom-start .iconset__icon,
-        &.iconset#{$infix}-bottom-center .iconset__icon,
-        &.iconset#{$infix}-bottom-end .iconset__icon {
+        &.iconset#{$infix}-bottom>.iconset__icon,
+        &.iconset#{$infix}-bottom-start>.iconset__icon,
+        &.iconset#{$infix}-bottom-center>.iconset__icon,
+        &.iconset#{$infix}-bottom-end>.iconset__icon {
             order: 1;
-            margin-top: var(--iconset-space-y);
+            margin: var(--iconset-space-b) 0 0 0;
         }
 
         // set first content and then icon when icon is on the right side or below content
-        &.iconset#{$infix}-end .iconset__content,
-        &.iconset#{$infix}-end-top .iconset__content,
-        &.iconset#{$infix}-end-middle .iconset__content,
-        &.iconset#{$infix}-end-bottom .iconset__content,
-        &.iconset#{$infix}-bottom .iconset__content,
-        &.iconset#{$infix}-bottom-start .iconset__content,
-        &.iconset#{$infix}-bottom-center .iconset__content,
-        &.iconset#{$infix}-bottom-end .iconset__content {
+        &.iconset#{$infix}-end>.iconset__content,
+        &.iconset#{$infix}-end-top>.iconset__content,
+        &.iconset#{$infix}-end-middle>.iconset__content,
+        &.iconset#{$infix}-end-bottom>.iconset__content,
+        &.iconset#{$infix}-bottom>.iconset__content,
+        &.iconset#{$infix}-bottom-start>.iconset__content,
+        &.iconset#{$infix}-bottom-center>.iconset__content,
+        &.iconset#{$infix}-bottom-end>.iconset__content {
             order: 0;
         }
 
         // icon is -hcentered or in the v-middled
-        &.iconset#{$infix}-start-middle .iconset__icon,
-        &.iconset#{$infix}-end-middle .iconset__icon,
-        &.iconset#{$infix}-top-center .iconset__icon,
-        &.iconset#{$infix}-bottom-center .iconset__icon {
+        &.iconset#{$infix}-start-middle>.iconset__icon,
+        &.iconset#{$infix}-end-middle>.iconset__icon,
+        &.iconset#{$infix}-top-center>.iconset__icon,
+        &.iconset#{$infix}-bottom-center>.iconset__icon {
             align-self: center;
         }
 
         // icon is top or left
-        &.iconset#{$infix}-start-top .iconset__icon,
-        &.iconset#{$infix}-end-top .iconset__icon,
-        &.iconset#{$infix}-top-start .iconset__icon,
-        &.iconset#{$infix}-bottom-start .iconset__icon {
+        &.iconset#{$infix}-start-top>.iconset__icon,
+        &.iconset#{$infix}-end-top>.iconset__icon,
+        &.iconset#{$infix}-top-start>.iconset__icon,
+        &.iconset#{$infix}-bottom-start>.iconset__icon {
             align-self: start;
         }
 
         // icon is right or bottom
-        &.iconset#{$infix}-start-bottom .iconset__icon,
-        &.iconset#{$infix}-end-bottom .iconset__icon,
-        &.iconset#{$infix}-top-end .iconset__icon,
-        &.iconset#{$infix}-bottom-end .iconset__icon {
+        &.iconset#{$infix}-start-bottom>.iconset__icon,
+        &.iconset#{$infix}-end-bottom>.iconset__icon,
+        &.iconset#{$infix}-top-end>.iconset__icon,
+        &.iconset#{$infix}-bottom-end>.iconset__icon {
             align-self: end;
         }
     }
 }
 
-
 @include iconset-position("");
+
 @media (min-width: 576px) {
     @include iconset-position("-sm");
 }
+
 @media (min-width: 768px) {
     @include iconset-position("-md");
 }
+
 @media (min-width: 992px) {
     @include iconset-position("-lg");
 }
+
 @media (min-width: 1200px) {
     @include iconset-position("-xl");
 }
+
 @media (min-width: 1400px) {
     @include iconset-position("-xxl");
 }

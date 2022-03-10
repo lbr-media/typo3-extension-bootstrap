@@ -89,15 +89,46 @@ class Columns
                     'png,svg,gif', // $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
                 ),
             ],
+            'tx_bootstrap_header_icon_size' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_icon_size',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        ['', ''],
+                    ],
+                ],
+            ],
+            'tx_bootstrap_header_icon_alignment' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_icon_alignment',
+                'config' => [
+                    'type' => 'user',
+                    'renderType' => 'bootstrapDevices',
+                    'elementConfiguration' => 'BootstrapIconPositions',
+                    'default' => ';;;;;',
+                ],
+            ],
             'tx_bootstrap_header_iconset' => [
                 'exclude' => 1,
                 'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_iconset',
                 'config' => [
                     'type' => 'user',
                     'renderType' => 'bootstrapIcons',
-                    'renderIconPosition' => true,
+                    'renderIconPosition' => false,
                     'renderIconSize' => true,
                     'renderIconColor' => true,
+                ],
+            ],
+            'tx_bootstrap_header_iconset_alignment' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_header_iconset_alignment',
+                'config' => [
+                    'type' => 'user',
+                    'renderType' => 'bootstrapDevices',
+                    'elementConfiguration' => 'BootstrapIconPositions',
+                    'default' => ';;;;;',
                 ],
             ],
             'tx_bootstrap_text_color' => [
@@ -334,14 +365,8 @@ class Columns
         ExtensionManagementUtility::addFieldsToPalette(
             'tt_content',
             'headers',
-            '--linebreak--,tx_bootstrap_header_additional_styles,--linebreak--',
+            '--linebreak--,tx_bootstrap_header_additional_styles',
             'after:date'
-        );
-        ExtensionManagementUtility::addFieldsToPalette(
-            'tt_content',
-            'headers',
-            '--linebreak--,tx_bootstrap_header_icon,--linebreak--,tx_bootstrap_header_iconset',
-            'after:subheader'
         );
 
         ExtensionManagementUtility::addFieldsToPalette(
@@ -357,6 +382,34 @@ class Columns
             'tablelayout',
             '--linebreak--',
             'after:table_class'
+        );
+
+        /**
+         * Create pallettes for header icons and add them after headers
+         */
+        $GLOBALS['TCA']['tt_content']['palettes']['headers_icon'] = [
+            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.palette.headers_icon',
+            'showitem' => implode(',', [
+                'tx_bootstrap_header_icon',
+                '--linebreak--',
+                'tx_bootstrap_header_icon_size',
+                '--linebreak--',
+                'tx_bootstrap_header_icon_alignment',
+            ])
+        ];
+        $GLOBALS['TCA']['tt_content']['palettes']['headers_iconset'] = [
+            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.palette.headers_iconset',
+            'showitem' => implode(',', [
+                'tx_bootstrap_header_iconset',
+                '--linebreak--',
+                'tx_bootstrap_header_iconset_alignment',
+            ])
+        ];
+        ExtensionManagementUtility::addToAllTCAtypes(
+            'tt_content',
+            '--palette--;;headers_icon,--palette--;;headers_iconset',
+            '',
+            'after:--palette--;;headers'
         );
 
         /*

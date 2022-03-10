@@ -506,17 +506,17 @@ class BootstrapUtility
      * @endcode
      *
      * @see BootstrapIconsElement::render()
-     * @param string $value                   '{iconset};{iconclass};{position};{sizeclass};{color}'
-     * @param string $content                 The html markup beneath the icon.
-     * @param array  $additionalConfiguration Additional parameters like 'additionalClass' in the wrapper or overwriting the 'positionClasses'.
+     * @param string $value        '{iconset};{iconclass};{position};{sizeclass};{color}'
+     * @param string $contentMarkup The html markup beneath the icon.
+     * @param array  $configuration Additional parameters like 'additionalClasses' in the wrapper or overwriting the 'positionClasses'.
      * @return string
      */
-    public static function renderIconSet(string $value, string $content, array $additionalConfiguration = []): string
+    public static function renderIconSet(string $value, string $contentMarkup, array $configuration = []): string
     {
-        list($iconSet, $iconValue, $position, $size, $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
+        list($iconSet, $iconValue, $position, $sizeClasses, $colorClasses) = array_merge(explode(';', $value), ['', '', '', '', '']);
 
         if (!($iconSet && $iconValue)) {
-            return $content;
+            return $contentMarkup;
         }
 
         $iconMarkup = '';
@@ -525,31 +525,70 @@ class BootstrapUtility
         }
 
         if (!$iconMarkup) {
-            return $content;
+            return $contentMarkup;
         }
 
-        $positionClasses = isset($additionalConfiguration['positionClasses']) && $additionalConfiguration['positionClasses']
-            ? $additionalConfiguration['positionClasses']
+        $positionClasses = isset($configuration['positionClasses']) && $configuration['positionClasses']
+            ? $configuration['positionClasses']
             : ($position ? ' iconset-' . $position : '');
 
+        return self::renderIconFrame($iconMarkup, $contentMarkup, [
+            'positionClasses' => $positionClasses,
+            'additionalClasses' => isset($configuration['additionalClasses']) ? 'iconset--font ' . $configuration['additionalClasses'] : 'iconset--font',
+            'sizeClasses' => $sizeClasses,
+            'colorClasses' => $colorClasses,
+        ]);
+    }
+
+    /**
+     * Renders a complete iconset like this:
+     *
+     * @code{.html}
+     * <span class="iconset {positionClasses} {additionalClasses}">
+     *      <span class="iconset__icon {sizeClasses} {colorClasses}">
+     *          {iconMarkup}
+     *      </span>
+     *      <span class="iconset__content">
+     *          {contentMarkup}
+     *      </span>
+     * </span>
+     * @endcode
+     *
+     * @see BootstrapIconsElement::render()
+     * @param string $iconMarkup    The html markup for the icon
+     * @param string $content       The html markup beneath the icon.
+     * @param array  $configuration Additional stuff like 'positionClasses' and 'additionalClasses' in the outer wrapper or 'sizeClasses' and 'colorClasses' in the icon wrapper.
+     * @return string
+     */
+    public static function renderIconFrame(string $iconMarkup, string $contentMarkup, array $configuration = []): string
+    {
+        if (!$iconMarkup) {
+            return $contentMarkup;
+        }
+
+        // Create the outer wrap
         $iconWrap = new TagBuilder('span');
         $iconWrap->addAttribute(
             'class',
-            'iconset' . ($positionClasses ? ' ' . $positionClasses : '') .
-            (isset($additionalConfiguration['additionalClass']) && $additionalConfiguration['additionalClass'] ? ' ' . $additionalConfiguration['additionalClass'] : '')
+            'iconset' .
+            (isset($configuration['positionClasses']) && $configuration['positionClasses'] ? ' ' . $configuration['positionClasses'] : '') .
+            (isset($configuration['additionalClasses']) && $configuration['additionalClasses'] ? ' ' . $configuration['additionalClasses'] : '')
         );
 
+        // Create the icon wrap
         $iconGfx = new TagBuilder('span');
         $iconGfx->addAttribute(
             'class',
             'iconset__icon' . 
-            ($size ? ' ' . $size : '') . ($color ? ' ' . $color : '')
+            (isset($configuration['sizeClasses']) && $configuration['sizeClasses'] ? ' ' . $configuration['sizeClasses'] : '') .
+            (isset($configuration['colorClasses']) && $configuration['colorClasses'] ? ' ' . $configuration['colorClasses'] : '')
         );
         $iconGfx->setContent($iconMarkup);
 
+        // Create the content wrap
         $iconContent = new TagBuilder('span');
         $iconContent->addAttribute('class', 'iconset__content');
-        $iconContent->setContent($content);
+        $iconContent->setContent($contentMarkup);
 
         $iconWrap->setContent($iconGfx->render() . $iconContent->render());
 
