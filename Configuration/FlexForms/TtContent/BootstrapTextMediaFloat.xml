@@ -4,14 +4,14 @@
         <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -26,22 +26,22 @@
         <sGENERAL>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmediafloat.sGENERAL.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textmediafloat.sGENERAL.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="header_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:header_position</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.above_all</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:header_position.above_all</numIndex>
                                         <numIndex index="1">above_all</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.text</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:header_position.text</numIndex>
                                         <numIndex index="1">text</numIndex>
                                     </numIndex>
                                 </items>
@@ -51,45 +51,49 @@
                     </field>
                     <field index="media_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.media_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textmedia.media_position</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>none;end;;;;</default>
                                 <elementConfiguration>TextMediaPositions</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>none;end;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="media_size">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.media_size</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textmedia.media_size</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>12;4;6;;;</default>
                                 <elementConfiguration>TextMediaSizes</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>12;4;6;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="space_x">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_x</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textmedia.space_x</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>3;;4;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>3;;4;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="space_y">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textmedia.space_y</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textmedia.space_y</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>3;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>3;;;;;</default>
                             </config>
                         </value>
                     </field>
@@ -99,8 +103,8 @@
         <sMEDIA>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIA.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIA.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIA.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
@@ -116,7 +120,7 @@
                     </field>
                     <field index="masonry_enabled">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:masonry_enabled</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:masonry_enabled</label>
                             <config>
                                 <type>check</type>
                                 <renderType>checkboxToggle</renderType>
@@ -130,14 +134,14 @@
         <sMEDIAITEM>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="border">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:border</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapBorder</renderType>
@@ -147,56 +151,61 @@
                     </field>
                     <field index="col">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.col</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.col</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>12;;;;;</default>
                                 <elementConfiguration>BootstrapColumns</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>12;;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="space_y">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_y</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.space_y</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>3;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>3;;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="space_x">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.space_x</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.space_x</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>3;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>3;;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="align_items">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.align_items</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.align_items</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapAlignItems</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>;;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="justify_content">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.justify_content</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.justify_content</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapJustifyContent</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>;;;;;</default>
                             </config>
                         </value>
                     </field>
@@ -206,14 +215,14 @@
         <sMEDIAOPTIMIZING>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="width_xs">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xs</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_xs</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -231,7 +240,7 @@
                     </field>
                     <field index="width_sm">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_sm</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_sm</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -249,7 +258,7 @@
                     </field>
                     <field index="width_md">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_md</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_md</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -267,7 +276,7 @@
                     </field>
                     <field index="width_lg">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_lg</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_lg</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -285,7 +294,7 @@
                     </field>
                     <field index="width_xl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_xl</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -303,7 +312,7 @@
                     </field>
                     <field index="width_xxl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xxl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_xxl</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>

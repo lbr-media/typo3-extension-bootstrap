@@ -40,7 +40,7 @@ tt_content {
             # }
 
             10 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.default_spacing
                 configuration {
                     mediaitem {
                         space_y = {$styles.bootstrap.grid.spacing.media.form_element.y}
@@ -49,7 +49,7 @@ tt_content {
                 }
             }
             20 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.grid.2xs_3md_4xl
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.grid.2xs_3md_4xl
                 configuration {
                     mediaitem {
                         col = 6;;4;3;;
@@ -57,7 +57,7 @@ tt_content {
                 }
             }
             30 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.image_optimizing.2xs_3md_4xl
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.image_optimizing.2xs_3md_4xl
                 configuration {
                     mediaoptimizing {
                         width {

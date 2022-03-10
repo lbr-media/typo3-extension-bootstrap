@@ -4,13 +4,13 @@
         <sALERT>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sALERT.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sALERT.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="alert_type">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:alert_type</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:alert_type</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -20,7 +20,7 @@
                     </field>
                     <field index="bg_color">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bg_color</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bg_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -36,7 +36,7 @@
                     </field>
                     <field index="text_color">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_color</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:text_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -52,7 +52,7 @@
                     </field>
                     <field index="border">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:border</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapBorder</renderType>

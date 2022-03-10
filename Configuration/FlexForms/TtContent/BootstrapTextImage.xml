@@ -4,14 +4,14 @@
         <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -26,23 +26,23 @@
         <sGENERAL>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGENERAL.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sGENERAL.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="order">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.order</label>
-                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.order.description</description>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textimage.order</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textimage.order.description</description>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.order.image_text</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textimage.order.image_text</numIndex>
                                         <numIndex index="1">image_text</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:textimage.ordertext_image</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:textimage.ordertext_image</numIndex>
                                         <numIndex index="1">text_image</numIndex>
                                     </numIndex>
                                 </items>
@@ -52,16 +52,16 @@
                     </field>
                     <field index="text_align">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_align</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:text_align</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_align.top</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:text_align.top</numIndex>
                                         <numIndex index="1">start</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_align.bottom</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:text_align.bottom</numIndex>
                                         <numIndex index="1">end</numIndex>
                                     </numIndex>
                                 </items>
@@ -71,16 +71,16 @@
                     </field>
                     <field index="image_align">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_align</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_align</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_align.top</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_align.top</numIndex>
                                         <numIndex index="1">start</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_align.bottom</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_align.bottom</numIndex>
                                         <numIndex index="1">end</numIndex>
                                     </numIndex>
                                 </items>
@@ -90,20 +90,20 @@
                     </field>
                     <field index="header_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:header_position</label>
                             <config>
                                 <type>radio</type>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.above_all</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:header_position.above_all</numIndex>
                                         <numIndex index="1">above_all</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.text</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:header_position.text</numIndex>
                                         <numIndex index="1">text</numIndex>
                                     </numIndex>
                                     <numIndex index="3">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:header_position.media</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:header_position.media</numIndex>
                                         <numIndex index="1">media</numIndex>
                                     </numIndex>
                                 </items>
@@ -117,8 +117,9 @@
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapGridSpace</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>;;;;;</default>
                             </config>
                         </value>
                     </field>
@@ -128,14 +129,14 @@
         <sMEDIAITEM>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAITEM.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAITEM.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="border">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:border</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapBorder</renderType>

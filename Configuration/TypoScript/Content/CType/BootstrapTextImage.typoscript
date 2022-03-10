@@ -24,20 +24,20 @@ tt_content {
             # }
 
             10 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.default_spacing
                 configuration {
                     space = {$styles.content.grid.spacing.regular.form_element.xy}
                 }
             }
             20 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.order.header_image_text
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.order.header_image_text
                 configuration {
                     order = text_image
                     header_position = above_all
                 }
             }
             30 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.order.header_text_image
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.order.header_text_image
                 configuration {
                     order = image_text
                     header_position = above_all

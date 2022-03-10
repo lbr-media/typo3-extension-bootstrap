@@ -107,6 +107,7 @@ class Columns
                     'type' => 'user',
                     'renderType' => 'bootstrapDevices',
                     'elementConfiguration' => 'BootstrapIconPositions',
+                    'prependEmptyOption' => true,
                     'default' => ';;;;;',
                 ],
             ],
@@ -128,6 +129,7 @@ class Columns
                     'type' => 'user',
                     'renderType' => 'bootstrapDevices',
                     'elementConfiguration' => 'BootstrapIconPositions',
+                    'prependEmptyOption' => true,
                     'default' => ';;;;;',
                 ],
             ],
@@ -138,7 +140,7 @@ class Columns
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['Standard', ''],
+                        ['', ''],
                     ],
                 ],
             ],
@@ -149,7 +151,7 @@ class Columns
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['Standard', ''],
+                        ['', ''],
                     ],
                 ],
             ],
@@ -170,7 +172,7 @@ class Columns
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['Standard', ''],
+                        ['', ''],
                     ],
                 ],
             ],

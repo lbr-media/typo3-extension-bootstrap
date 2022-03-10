@@ -148,7 +148,7 @@ class BootstrapIconsElement extends AbstractFormElement
             // create select when there are more than one configuration
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId . '-iconset',
-                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.iconset'),
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.iconset'),
                 implode(LF, $options),
                 'me-2'
             );
@@ -161,8 +161,8 @@ class BootstrapIconsElement extends AbstractFormElement
         /** @var IconFactor $iconFactory */
         // $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
         $closeIcon = $this->iconFactory->getIcon('actions-close', Icon::SIZE_SMALL);
-        $nameLabel = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.name');
-        $namePlaceholder = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.name.placeholder');
+        $nameLabel = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.name');
+        $namePlaceholder = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.name.placeholder');
         $inputHtml .= <<<EOT
 <div class="form-control-inline-element me-2">
     <label for="{$fieldId}-value">{$nameLabel}</label>
@@ -183,7 +183,7 @@ EOT;
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconPositions.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId . '-position',
-                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.position'),
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.position'),
                 $positionOptions,
                 'me-2'
             );
@@ -198,7 +198,7 @@ EOT;
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconSize.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId . '-size',
-                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.size'),
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.size'),
                 $positionOptions,
                 'me-2'
             );
@@ -213,15 +213,15 @@ EOT;
             $positionOptions = implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapIconColor.'], true));
             $inputHtml .= FormElementUtility::createInlineSelectTag(
                 $fieldId . '-color',
-                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.color'),
+                $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.color'),
                 $positionOptions,
                 'me-2'
             );
         }
 
         // create input for filter
-        $filterLabel = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.filter');
-        $filterPlaceholder = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrapIcons.filter.placeholder');
+        $filterLabel = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.filter');
+        $filterPlaceholder = $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrapIcons.filter.placeholder');
         $inputHtml .= <<<EOT
 <div class="form-control-inline-element">
     <label for="{$fieldId}-filter">{$filterLabel}</label>

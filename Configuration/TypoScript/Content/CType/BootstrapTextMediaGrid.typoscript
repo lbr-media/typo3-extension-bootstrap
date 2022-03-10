@@ -70,14 +70,14 @@ tt_content {
             # }
 
             10 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.default_spacing
                 configuration {
                     space_y = {$styles.bootstrap.grid.spacing.regular.form_element.y}
                     space_x = {$styles.bootstrap.grid.spacing.regular.form_element.x}
                 }
             }
             20 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.default_spacing_between_media
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.default_spacing_between_media
                 configuration {
                     mediaitem {
                         space_y = {$styles.bootstrap.grid.spacing.media.form_element.y}
@@ -86,14 +86,14 @@ tt_content {
                 }
             }
             30 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.grid.textmedia.text_6sm_media_6sm
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.grid.textmedia.text_6sm_media_6sm
                 configuration {
                     col_text = ;6;;;;
                     col_media = ;6;;;;
                 }
             }
             40 {
-                label = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets.grid.textmedia.text_6md_media_6md
+                label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets.grid.textmedia.text_6md_media_6md
                 configuration {
                     col_text = ;;6;;;
                     col_media = ;;6;;;

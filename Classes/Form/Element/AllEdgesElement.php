@@ -77,6 +77,7 @@ class AllEdgesElement extends AbstractFormElement
      *             <type>user</type>
      *             <renderType>allEdges</renderType>
      *             <elementConfiguration>BootstrapPaddingSpaces</elementConfiguration>
+     *             <prependEmptyOption>1</prependEmptyOption>
      *         </config>
      *     </value>
      * </field>
@@ -115,48 +116,49 @@ class AllEdgesElement extends AbstractFormElement
         $inputHtml = '';
 
         // create options (equal in each select)
-        $options = implode(LF, FormElementUtility::createOptionTags($pluginSettings[$config['elementConfiguration'] . '.']));
+        $prependEmptyOption = isset($config['prependEmptyOption']) && ($config['prependEmptyOption'] === true || $config['prependEmptyOption'] === "true" || $config['prependEmptyOption'] === "1" || $config['prependEmptyOption'] === 1) ? true : false;
+        $options = implode(LF, FormElementUtility::createOptionTags($pluginSettings[$config['elementConfiguration'] . '.'], $prependEmptyOption));
 
         // create select tags
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-left',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.left'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:edge.left'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-right',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.right'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:edge.right'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-horizontal',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.horizontal'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:edge.horizontal'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-top',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.top'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:edge.top'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-bottom',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.bottom'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:edge.bottom'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-vertical',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.vertical'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:edge.vertical'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-all',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:edge.all'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:edge.all'),
             $options
         );
 

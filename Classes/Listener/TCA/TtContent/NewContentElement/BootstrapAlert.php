@@ -31,7 +31,7 @@ class BootstrapAlert implements NewContentElementInterface
         // Configure TCA
         $GLOBALS['TCA']['tt_content']['types']['bootstrap_alert'] = [
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['text']['showitem'])
-                ->addShowitemAfter('tx_bootstrap_header_iconset,--linebreak--,tx_bootstrap_header_iconset_alignment,--linebreak--,tx_bootstrap_flexform', 'frames')
+                ->addShowitemAfter('tx_bootstrap_flexform,tx_bootstrap_header_iconset,--linebreak--,tx_bootstrap_header_iconset_alignment', 'frames')
                 ->addShowitemAfter('--palette--;;headers_bootstrap_alert', 'headers')
                 ->removeShowitems(['headers', 'headers_icon', 'headers_iconset'])
                 ->getShowitemsString(),

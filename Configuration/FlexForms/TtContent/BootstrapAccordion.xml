@@ -4,13 +4,13 @@
         <sACCORDION>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sACCORDION.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sACCORDION.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="keep_open">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sACCORDION.keep_open</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sACCORDION.keep_open</label>
                             <config>
                                 <type>check</type>
                                 <renderType>checkboxToggle</renderType>

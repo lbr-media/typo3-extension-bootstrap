@@ -76,6 +76,7 @@ class BootstrapDevicesElement extends AbstractFormElement
      *             <type>user</type>
      *             <renderType>bootstrapDevices</renderType>
      *             <default>2;3;4;;;</default>
+     *             <prependEmptyOption>1</prependEmptyOption>
      *             <elementConfiguration>BootstrapColumns</elementConfiguration>
      *         </config>
      *     </value>
@@ -115,42 +116,43 @@ class BootstrapDevicesElement extends AbstractFormElement
         $inputHtml = '';
 
         // create options (equal in each select)
-        $options = implode(LF, FormElementUtility::createOptionTags($pluginSettings[$config['elementConfiguration'] . '.']));
+        $prependEmptyOption = isset($config['prependEmptyOption']) && ($config['prependEmptyOption'] === true || $config['prependEmptyOption'] === "true" || $config['prependEmptyOption'] === "1" || $config['prependEmptyOption'] === 1) ? true : false;
+        $options = implode(LF, FormElementUtility::createOptionTags($pluginSettings[$config['elementConfiguration'] . '.'], $prependEmptyOption));
 
         // create select tags
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-xs',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xs'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:device.xs'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-sm',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.sm'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:device.sm'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-md',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.md'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:device.md'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-lg',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.lg'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:device.lg'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-xl',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xl'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:device.xl'),
             $options,
             'me-2'
         );
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-xxl',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:device.xxl'),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:device.xxl'),
             $options
         );
 

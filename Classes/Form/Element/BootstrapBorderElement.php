@@ -119,8 +119,8 @@ class BootstrapBorderElement extends AbstractFormElement
         }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-border',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorder.'])),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:border'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorder.'], true)),
             'me-2'
         );
 
@@ -130,8 +130,8 @@ class BootstrapBorderElement extends AbstractFormElement
         }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-borderwidth',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_width'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderWidth.'])),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:border_width'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderWidth.'], true)),
             'me-2'
         );
 
@@ -141,8 +141,8 @@ class BootstrapBorderElement extends AbstractFormElement
         }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-bordercolor',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border_color'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderColor.'])),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:border_color'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapBorderColor.'], true)),
             'me-2'
         );
 
@@ -152,8 +152,8 @@ class BootstrapBorderElement extends AbstractFormElement
         }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-rounded',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:rounded'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapRounded.'])),
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:rounded'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapRounded.'], true)),
             'me-2'
         );
 
@@ -163,8 +163,8 @@ class BootstrapBorderElement extends AbstractFormElement
         }
         $inputHtml .= FormElementUtility::createInlineSelectTag(
             $fieldId . '-shadow',
-            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:shadow'),
-            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapShadow.']))
+            $this->getLanguageService()->sL('LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:shadow'),
+            implode(LF, FormElementUtility::createOptionTags($pluginSettings['BootstrapShadow.'], true))
         );
 
         // create hidden element with value

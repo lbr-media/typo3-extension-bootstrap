@@ -32,6 +32,7 @@ class BootstrapTextImage implements NewContentElementInterface
             'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'])
                 ->addShowitemAfter('tx_bootstrap_flexform', 'frames')
                 ->removeShowitems(['mediaAdjustments', 'gallerySettings', 'imagelinks'])
+                ->replaceShowItem('bodytext', '--div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.div.bodytext,bodytext')
                 ->getShowitemsString(),
             'columnsOverrides' => [
                 'bodytext' => [

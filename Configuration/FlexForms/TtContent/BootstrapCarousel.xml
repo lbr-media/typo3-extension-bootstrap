@@ -4,23 +4,23 @@
         <sCAROUSEL>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="animation">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.animation</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.animation</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.animation.slide</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.animation.slide</numIndex>
                                         <numIndex index="1">slide</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.animation.fade</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.animation.fade</numIndex>
                                         <numIndex index="1">slide carousel-fade</numIndex>
                                     </numIndex>
                                 </items>
@@ -30,7 +30,7 @@
                     </field>
                     <field index="autoplay">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.autoplay</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.autoplay</label>
                             <config>
                                 <type>check</type>
                                 <renderType>checkboxToggle</renderType>
@@ -40,17 +40,17 @@
                     </field>
                     <field index="color_scheme">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.color_scheme</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.color_scheme</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.color_scheme.light</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.color_scheme.light</numIndex>
                                         <numIndex index="1"></numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.color_scheme.dark</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.color_scheme.dark</numIndex>
                                         <numIndex index="1">dark</numIndex>
                                     </numIndex>
                                 </items>
@@ -60,7 +60,7 @@
                     </field>
                     <field index="controls">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.controls</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.controls</label>
                             <config>
                                 <type>check</type>
                                 <renderType>checkboxToggle</renderType>
@@ -70,7 +70,7 @@
                     </field>
                     <field index="indicators">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.indicators</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.indicators</label>
                             <config>
                                 <type>check</type>
                                 <renderType>checkboxToggle</renderType>
@@ -80,7 +80,7 @@
                     </field>
                     <field index="interval">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCAROUSEL.interval</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCAROUSEL.interval</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>

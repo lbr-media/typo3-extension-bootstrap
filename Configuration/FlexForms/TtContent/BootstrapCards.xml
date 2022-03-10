@@ -4,14 +4,14 @@
         <sPRESETS>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sPRESETS.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sPRESETS.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sPRESETS.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="presets">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:presets</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:presets</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -26,62 +26,67 @@
         <sGRID>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sGRID.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="col">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.col</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sGRID.col</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapColumns</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>;;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="space_y">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.space_y</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sGRID.space_y</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>3;;4;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceY</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>3;;4;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="space_x">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.space_x</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sGRID.space_x</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>3;;4;;;</default>
                                 <elementConfiguration>BootstrapGridSpaceX</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>3;;4;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="align_items">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.align_items</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sGRID.align_items</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapAlignItems</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>;;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="justify_content">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sGRID.justify_content</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sGRID.justify_content</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapJustifyContent</elementConfiguration>
+                                <prependEmptyOption>1</prependEmptyOption>
+                                <default>;;;;;</default>
                             </config>
                         </value>
                     </field>
@@ -91,31 +96,31 @@
         <sCARD>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sCARD.sheetTitle</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sCARD.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="image_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_position</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.start</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_position.start</numIndex>
                                         <numIndex index="1">start</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.end</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_position.end</numIndex>
                                         <numIndex index="1">end</numIndex>
                                     </numIndex>
                                     <numIndex index="3">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.top</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_position.top</numIndex>
                                         <numIndex index="1">top</numIndex>
                                     </numIndex>
                                     <numIndex index="4">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:image_position.bottom</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:image_position.bottom</numIndex>
                                         <numIndex index="1">bottom</numIndex>
                                     </numIndex>
                                 </items>
@@ -125,29 +130,30 @@
                     </field>
                     <field index="icon_position">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:icon_position</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
-                                <default>;;;;;</default>
                                 <elementConfiguration>BootstrapIconPositions</elementConfiguration>
+                                <prependEmptyOption>0</prependEmptyOption>
+                                <default>;;;;;</default>
                             </config>
                         </value>
                     </field>
                     <field index="icon_position_wrap">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap</label>
-                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap.description</description>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:icon_position_wrap</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:icon_position_wrap.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
                                 <items>
                                     <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap.outside</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:icon_position_wrap.outside</numIndex>
                                         <numIndex index="1">outside</numIndex>
                                     </numIndex>
                                     <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap.inside</numIndex>
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:icon_position_wrap.inside</numIndex>
                                         <numIndex index="1">inside</numIndex>
                                     </numIndex>
                                 </items>
@@ -157,7 +163,7 @@
                     </field>
                     <field index="bg_color">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bg_color</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bg_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -173,7 +179,7 @@
                     </field>
                     <field index="text_color">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:text_color</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:text_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -189,7 +195,7 @@
                     </field>
                     <field index="border">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:border</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:border</label>
                             <config>
                                 <type>user</type>
                                 <renderType>bootstrapBorder</renderType>
@@ -199,7 +205,7 @@
                     </field>
                     <field index="button_color">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:button_color</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:button_color</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -219,14 +225,14 @@
         <sMEDIAOPTIMIZING>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
-                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
+                    <sheetTitle>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.sheetTitle</sheetTitle>
+                    <sheetDescription>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.sheetDescription</sheetDescription>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <field index="width_xs">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xs</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_xs</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -244,7 +250,7 @@
                     </field>
                     <field index="width_sm">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_sm</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_sm</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -262,7 +268,7 @@
                     </field>
                     <field index="width_md">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_md</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_md</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -280,7 +286,7 @@
                     </field>
                     <field index="width_lg">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_lg</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_lg</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -298,7 +304,7 @@
                     </field>
                     <field index="width_xl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_xl</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>
@@ -316,7 +322,7 @@
                     </field>
                     <field index="width_xxl">
                         <value index="TCEforms">
-                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:sMEDIAOPTIMIZING.width_xxl</label>
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:sMEDIAOPTIMIZING.width_xxl</label>
                             <config>
                                 <type>input</type>
                                 <eval>int</eval>

@@ -1,12 +1,12 @@
 lib.bootstrapColors {
-    primary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.primary
-    secondary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.secondary
-    success = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.success
-    info = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.danger
-    warning = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.warning
-    danger = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.info
-    light = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.light
-    dark = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.dark
+    primary = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.primary
+    secondary = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.secondary
+    success = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.success
+    info = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.danger
+    warning = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.warning
+    danger = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.info
+    light = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.light
+    dark = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.dark
 }
 
 lib.bootstrapBackgroundColors {
@@ -73,19 +73,19 @@ lib.bootstrapAlertTypes {
 }
 
 lib.bootstrapHeaderLayout {
-    display-1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-1
-    display-2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-2
-    display-3 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-3
-    display-4 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-4
-    display-5 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-5
-    display-6 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.display-6
-    h1 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h1
-    h2 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h2
-    h3 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h3
-    h4 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h4
-    h5 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h5
-    h6 = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.h6
-    lead = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.typography.lead
+    display-1 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.display-1
+    display-2 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.display-2
+    display-3 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.display-3
+    display-4 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.display-4
+    display-5 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.display-5
+    display-6 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.display-6
+    h1 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.h1
+    h2 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.h2
+    h3 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.h3
+    h4 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.h4
+    h5 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.h5
+    h6 = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.h6
+    lead = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.typography.lead
 }
 
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap/Configuration/TsConfig/Page/TCEFORM.pages.typoscript">

@@ -46,9 +46,9 @@ TCEFORM.tt_content {
         // disabled = 1
         removeItems = left,center,right
         addItems {
-            text-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.left
-            text-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.right
-            text-center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.alignment.center
+            text-start = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.alignment.left
+            text-end = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.alignment.right
+            text-center = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.alignment.center
         }
     }
 
@@ -66,7 +66,7 @@ TCEFORM.tt_content {
     layout.disabled = 1
     frame_class {
         disabled = 0
-        label = Rahmen: außen
+        label = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.frame_class
         removeItems = ruler-before, ruler-after, indent, indent-left, indent-right, none
         addItems {
             container = Container 100% XS
@@ -117,29 +117,29 @@ TCEFORM.tt_content {
     table_class {
         keepItems =
         addItems {
-            table-bordered = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-bordered
-            table-borderless = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-borderless
-            table-striped = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-striped
+            table-bordered = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.table-bordered
+            table-borderless = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.table-borderless
+            table-striped = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.table-striped
 
-            table-sm = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-sm
+            table-sm = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.table-sm
 
-            text-start = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.text-start
-            text-center = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.text-center
-            text-end = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.text-end
-            align-top = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.align-top
-            align-middle = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.align-middle
-            align-bottom = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.align-bottom
+            text-start = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.text-start
+            text-center = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.text-center
+            text-end = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.text-end
+            align-top = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.align-top
+            align-middle = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.align-middle
+            align-bottom = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.align-bottom
 
-            table-primary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.primary
-            table-secondary = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.secondary
-            table-success = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.success
-            table-info = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.danger
-            table-warning = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.warning
-            table-danger = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.info
-            table-light = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.light
-            table-dark = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.color.dark
+            table-primary = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.primary
+            table-secondary = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.secondary
+            table-success = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.success
+            table-info = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.danger
+            table-warning = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.warning
+            table-danger = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.info
+            table-light = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.light
+            table-dark = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.color.dark
 
-            table-hover = LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bootstrap.table.table-hover
+            table-hover = LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:bootstrap.table.table-hover
         }
     }
 

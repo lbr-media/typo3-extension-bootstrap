@@ -24,7 +24,9 @@ class BootstrapMarkdown implements NewContentElementInterface
 
         // Configure TCA
         $GLOBALS['TCA']['tt_content']['types']['bootstrap_markdown'] = [
-            'showitem' => $GLOBALS['TCA']['tt_content']['types']['text']['showitem'],
+            'showitem' => $tcaService->setShowitems($GLOBALS['TCA']['tt_content']['types']['text']['showitem'])
+                ->replaceShowItem('bodytext', '--div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.div.markdown,bodytext')
+                ->getShowitemsString(),
             'columnsOverrides' => [
                 'bodytext' => [
                     'config' => [
