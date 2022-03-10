@@ -34,6 +34,31 @@ class BootstrapUtility
     ];
 
     /**
+     * Creates classes for all devices from xs to xxl.
+     *
+     * @param string $values  Semicolon separated list of values: xs;sm;md;lg;xl;xxl => start;end;;center;
+     * @param string $prefix Something like 'col-', 'text-', 'justify-content-', 'align-items-', 'iconset-'
+     * @return string The classes imploded by space.
+     */
+    public static function getDeviceClasses(string $values, string $prefix = ''): string
+    {
+        if (!trim($values)) {
+            return '';
+        }
+
+        $e = explode(';', $values);
+        $classes = [];
+
+        foreach (self::DEVICE_INFIXES as $pos => $infix) {
+            if (isset($e[$pos]) && $e[$pos]) {
+                $classes[] = $prefix . $infix . $e[$pos];
+            }
+        }
+
+        return implode(' ', $classes);
+    }
+
+    /**
      * Creates col-* classes for each device from xs to xxl.
      *
      * @param string $widths Semicolon divided string for xs, sm, md, lg, xl, xxl
@@ -41,71 +66,31 @@ class BootstrapUtility
      */
     public static function getColClasses(string $widths): string
     {
-        if (!trim($widths)) {
-            return '';
-        }
+        $classes = self::getDeviceClasses($widths, 'col-');
 
-        $e = explode(';', $widths);
-
-        $classes = [];
-
-        foreach (self::DEVICE_INFIXES as $pos => $device) {
-            if (isset($e[$pos]) && $e[$pos]) {
-                $classes[] = 'col-' . $device . $e[$pos];
-            }
-        }
-
-        return count($classes) ? implode(' ', $classes) : 'col';
+        return $classes ? $classes : 'col';
     }
 
     /**
      * Creates padding classes for all devices from xs to xxl.
      *
      * @param string $paddings       Semicolon divided string for xs, sm, md, lg, xl, xxl
-     * @param string $directionInfix just an empty string for all directions or the other bootstrap directions like x, y, l, t, r, b
+     * @param string $directionInfix just an empty string for all directions or the other bootstrap directions like x, y, s, t, e, b
      * @return string A CSS classes string.
      */
     public static function getDevicePaddingClasses(string $paddings, string $directionInfix = ''): string
     {
-        if (!trim($paddings)) {
-            return '';
-        }
-
-        $e = explode(';', $paddings);
-
-        $classes = [];
-
-        foreach (self::DEVICE_INFIXES as $pos => $device) {
-            if (isset($e[$pos]) && is_numeric($e[$pos])) {
-                $classes[] = 'p' . $directionInfix . '-' . $device . $e[$pos];
-            }
-        }
-
-        return implode(' ', $classes);
+        return self::getDeviceClasses($paddings, 'p' . $directionInfix . '-');
     }
 
     /**
      * @param string $margins        Semicolon divided string for xs, sm, md, lg, xl, xxl
-     * @param string $directionInfix Just an empty string for all directions or the other bootstrap directions like x, y, l, t, r, b
+     * @param string $directionInfix Just an empty string for all directions or the other bootstrap directions like x, y, s, t, e, b
      * @return string A CSS classes string.
      */
     public static function getDeviceMarginClasses(string $margins, string $directionInfix = ''): string
     {
-        if (!trim($margins)) {
-            return '';
-        }
-
-        $e = explode(';', $margins);
-
-        $classes = [];
-
-        foreach (self::DEVICE_INFIXES as $pos => $device) {
-            if (isset($e[$pos]) && is_numeric($e[$pos])) {
-                $classes[] = 'm' . $directionInfix . '-' . $device . $e[$pos];
-            }
-        }
-
-        return implode(' ', $classes);
+        return self::getDeviceClasses($margins, 'm' . $directionInfix . '-');
     }
 
     /**
@@ -228,31 +213,6 @@ class BootstrapUtility
         foreach ($sections as $section) {
             if ($section) {
                 $classes[] = $section;
-            }
-        }
-
-        return implode(' ', $classes);
-    }
-
-    /**
-     * Creates bootstrap alignment classes for all devices from xs to xxl.
-     *
-     * @param string $alignments Semicolon separated list of values: xs;sm;md;lg;xl;xxl => start;end;;center;
-     * @param string $prefix     Something like 'text-', 'justify-content-' or 'align-items-'
-     * @return string The classes imploded by space.
-     */
-    public static function getAlignmentClasses(string $alignments, string $prefix): string
-    {
-        if (!trim($alignments)) {
-            return '';
-        }
-
-        $e = explode(';', $alignments);
-        $classes = [];
-
-        foreach (self::DEVICE_INFIXES as $pos => $device) {
-            if (isset($e[$pos]) && $e[$pos]) {
-                $classes[] = $prefix . $device . $e[$pos];
             }
         }
 
@@ -546,12 +506,12 @@ class BootstrapUtility
      * @endcode
      *
      * @see BootstrapIconsElement::render()
-     * @param string $value           '{iconset};{iconclass};{position};{sizeclass};{color}'
-     * @param string $content         The html markup beneath the icon.
-     * @param string $additionalClass An optional additional CSS class in the wrapper.
+     * @param string $value                   '{iconset};{iconclass};{position};{sizeclass};{color}'
+     * @param string $content                 The html markup beneath the icon.
+     * @param array  $additionalConfiguration Additional parameters like 'additionalClass' in the wrapper or overwriting the 'positionClasses'.
      * @return string
      */
-    public static function renderIconSet(string $value, string $content, string $additionalClass = ''): string
+    public static function renderIconSet(string $value, string $content, array $additionalConfiguration = []): string
     {
         list($iconSet, $iconValue, $position, $size, $color) = array_merge(explode(';', $value), ['', '', '', '', '']);
 
@@ -568,11 +528,23 @@ class BootstrapUtility
             return $content;
         }
 
+        $positionClasses = isset($additionalConfiguration['positionClasses']) && $additionalConfiguration['positionClasses']
+            ? $additionalConfiguration['positionClasses']
+            : ($position ? ' iconset-' . $position : '');
+
         $iconWrap = new TagBuilder('span');
-        $iconWrap->addAttribute('class', 'iconset' . ($position ? ' iconset-' . $position : '') . ($additionalClass ? ' ' . $additionalClass : ''));
+        $iconWrap->addAttribute(
+            'class',
+            'iconset' . ($positionClasses ? ' ' . $positionClasses : '') .
+            (isset($additionalConfiguration['additionalClass']) && $additionalConfiguration['additionalClass'] ? ' ' . $additionalConfiguration['additionalClass'] : '')
+        );
 
         $iconGfx = new TagBuilder('span');
-        $iconGfx->addAttribute('class', 'iconset__icon' . ($size ? ' ' . $size : '') . ($color ? ' ' . $color : ''));
+        $iconGfx->addAttribute(
+            'class',
+            'iconset__icon' . 
+            ($size ? ' ' . $size : '') . ($color ? ' ' . $color : '')
+        );
         $iconGfx->setContent($iconMarkup);
 
         $iconContent = new TagBuilder('span');

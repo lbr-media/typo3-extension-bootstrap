@@ -14,14 +14,14 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * ========
  *
  * @code{.html}
- *    {bs:IconSet(value:'iconset;classname;position;size;color', content:'foo')}.
- *    {bs:IconSet(value:'bsicon;bi-info-circle;start;fs-3;text-primary', content:'foo')}.
+ *    {bs:IconSet(value:'iconset;classname;position;size;color', content:'foo', additionalConfiguration:"{additionalClass:'d-inline-flex', positionClasses:'iconset-top-center iconset-md-top-left'}")}.
+ *    {bs:IconSet(value:'bsicon;bi-info-circle;start;fs-3;text-primary', content:'foo', additionalConfiguration:"{additionalClass:'d-inline-flex'}")}.
  * @endcode
  *
  * Will produce something like this:
  *
  * @code{.html}
- * <span class="iconset iconset-{position}>
+ * <span class="iconset iconset-{position}|{positionClasses} {additionalClass}>
  *      <span class="iconset__icon {sizeclass}">
  *          <i class="bs {iconclass}"></i>
  *      </span>
@@ -43,6 +43,10 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * @code
  * bsicon;bi-info-circle;start;fs-3;text-primary
  * @endcode
+ * 
+ * The 'additionalConfiguration' array has at this time two keys:
+ * - 'additionalClass' to add CSS classes to the wrapper
+ * - 'positionClasses' to overwrite the default 'iconset-{position}' class. It can be used for device position settings.
  */
 class IconSetViewHelper extends AbstractViewHelper
 {
@@ -62,13 +66,15 @@ class IconSetViewHelper extends AbstractViewHelper
 
     /**
      * Arguments for this view helper:
-     * - value
-     * - content
+     * - value (Icon set configuration: iconset;classname;position;size;color.)
+     * - content (The html markup beneath the icon.)
+     * - additionalConfiguration (Additional parameters like 'additionalClass' in the wrapper or overwriting the 'positionClasses'.)
      */
     public function initializeArguments(): void
     {
-        $this->registerArgument('value', 'string', 'Icon set configuration: iconset;classname;position;size;color', true, '');
-        $this->registerArgument('content', 'string', '', false, '', false);
+        $this->registerArgument('value', 'string', 'Icon set configuration: iconset;classname;position;size;color.', true, '');
+        $this->registerArgument('content', 'string', 'The html markup beneath the icon.', false, '', false);
+        $this->registerArgument('additionalConfiguration', 'array', 'Additional parameters like \'additionalClass\' in the wrapper or overwriting the \'positionClasses\'.', false, [], false);
     }
 
     /**
@@ -78,6 +84,10 @@ class IconSetViewHelper extends AbstractViewHelper
      */
     public function render(): string
     {
-        return BootstrapUtility::renderIconSet($this->arguments['value'], $this->arguments['content'] ? $this->arguments['content'] : $this->renderChildren());
+        return BootstrapUtility::renderIconSet(
+            $this->arguments['value'],
+            $this->arguments['content'] ? $this->arguments['content'] : $this->renderChildren(),
+            $this->arguments['additionalConfiguration']
+        );
     }
 }

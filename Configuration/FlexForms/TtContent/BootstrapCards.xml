@@ -123,6 +123,38 @@
                             </config>
                         </value>
                     </field>
+                    <field index="icon_position">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position</label>
+                            <config>
+                                <type>user</type>
+                                <renderType>bootstrapDevices</renderType>
+                                <default>;;;;;</default>
+                                <elementConfiguration>BootstrapIconPositions</elementConfiguration>
+                            </config>
+                        </value>
+                    </field>
+                    <field index="icon_position_wrap">
+                        <value index="TCEforms">
+                            <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap</label>
+                            <description>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap.description</description>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap.outside</numIndex>
+                                        <numIndex index="1">outside</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:icon_position_wrap.inside</numIndex>
+                                        <numIndex index="1">inside</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>outside</default>
+                            </config>
+                        </value>
+                    </field>
                     <field index="bg_color">
                         <value index="TCEforms">
                             <label>LLL:EXT:bootstrap/Resources/Private/Language/flexform.xlf:bg_color</label>

@@ -28,6 +28,11 @@ class CardItem extends AbstractEntity
     protected $image;
 
     /**
+     * @var string $iconset
+     */
+    protected $iconset = ';;;;';
+
+    /**
      * @var string $typolink
      */
     protected $typolink = '';
@@ -69,6 +74,14 @@ class CardItem extends AbstractEntity
     public function getImage(): ?FileReference
     {
         return $this->image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIconset(): string
+    {
+        return $this->iconset;
     }
 
     /**

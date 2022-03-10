@@ -45,8 +45,8 @@ class FlexFormServiceBootstrapMediaGrid extends FlexFormService implements FlexF
             ' ',
             [
                 'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
             ]
         );
 

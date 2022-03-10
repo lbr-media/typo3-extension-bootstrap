@@ -30,12 +30,13 @@ return [
                 header,
                 --linbreak--,
                 title,
-                --linbreak--,
-                image,
                 --linebreak--,
                 text,
                 --palette--;;typolink_palette,
                 footer,
+                --div--;LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_carditem.div.image_iconset,
+                image,
+                iconset,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                 hidden,--palette--;;timeRestriction,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
@@ -82,7 +83,6 @@ return [
                 'default' => 0,
             ],
         ],
-
         'header' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_carditem.header',
@@ -128,6 +128,17 @@ return [
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
+        ],
+        'iconset' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_carditem.iconset',
+            'config' => [
+                'type' => 'user',
+                'renderType' => 'bootstrapIcons',
+                'renderIconPosition' => false,
+                'renderIconSize' => true,
+                'renderIconColor' => true,
+            ],
         ],
         'text' => [
             'exclude' => true,

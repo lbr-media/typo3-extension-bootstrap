@@ -488,6 +488,26 @@
                 <source>Bottom</source>
                 <target>Unten</target>
             </trans-unit>
+            <trans-unit id="icon_position">
+                <source>Icon alignment</source>
+                <target>Icon-Ausrichtung</target>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap">
+                <source>Icon position</source>
+                <target>Icon-Position</target>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap.description">
+                <source>The icon is 'inside' the card body. So borders, shadows, etc. are around. Or the icon is 'outside' and the complete card is the content of the iconset.</source>
+                <target>Das Icon ist 'innen' im Inhalt. Rand, Schatten, usw. sind drumherum. Oder das Icon is 'außen' und die komplette Kachel ist der Inhalt des Icon-Sets.</target>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap.outside">
+                <source>Outside</source>
+                <target>Außen</target>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap.inside">
+                <source>Inside</source>
+                <target>Innen</target>
+            </trans-unit>
             <trans-unit id="alert_type">
                 <source>Alert type</source>
                 <target>Typ</target>

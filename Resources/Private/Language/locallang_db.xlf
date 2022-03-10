@@ -210,8 +210,14 @@
             <trans-unit id="tx_bootstrap_domain_model_carditem.title">
                 <source>Title</source>
             </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.div.image_iconset">
+                <source>Image/Icon-Set</source>
+            </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.image">
                 <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.iconset">
+                <source>Icon-Set</source>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.text">
                 <source>Text</source>

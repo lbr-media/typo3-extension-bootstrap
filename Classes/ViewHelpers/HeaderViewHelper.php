@@ -348,7 +348,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             }
         } elseif ($data['tx_bootstrap_header_iconset']) {
             // Process icon set
-            $iconMarkup = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], '###HEADER_CONTENT###', 'd-inline-flex');
+            $iconMarkup = BootstrapUtility::renderIconSet($data['tx_bootstrap_header_iconset'], '###HEADER_CONTENT###', ['additionalClass' => 'd-inline-flex']);
         }
 
         if ($iconMarkup) {

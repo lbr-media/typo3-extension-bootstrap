@@ -42,19 +42,19 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
             ' ',
             [
                 'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['justify_content'], 'justify-content-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['align_items'], 'align-items-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['justify_content'], 'justify-content-'),
             ]
         );
 
         $xmlArray['col_text_classes'] = BootstrapUtility::getColClasses($xmlArray['col_text']);
-        $textAlignSelfClasses = BootstrapUtility::getAlignmentClasses($xmlArray['text']['align_self'], 'align-self-');
+        $textAlignSelfClasses = BootstrapUtility::getDeviceClasses($xmlArray['text']['align_self'], 'align-self-');
         if (trim($textAlignSelfClasses)) {
             $xmlArray['col_text_classes'] .= ' ' . $textAlignSelfClasses;
         }
 
         $xmlArray['col_media_classes'] = BootstrapUtility::getColClasses($xmlArray['col_media']);
-        $mediaAlignSelfClasses = BootstrapUtility::getAlignmentClasses($xmlArray['media']['align_self'], 'align-self-');
+        $mediaAlignSelfClasses = BootstrapUtility::getDeviceClasses($xmlArray['media']['align_self'], 'align-self-');
         if (trim($mediaAlignSelfClasses)) {
             $xmlArray['col_media_classes'] .= ' ' . $mediaAlignSelfClasses;
         }
@@ -101,8 +101,8 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
             ' ',
             [
                 'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['mediaitem']['align_items'], 'align-items-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['mediaitem']['justify_content'], 'justify-content-'),
             ]
         );
 

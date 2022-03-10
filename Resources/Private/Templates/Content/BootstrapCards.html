@@ -21,13 +21,37 @@
             <div class="{configuration.grid.row_classes} {configuration.grid.row_space_classes}">
                 <f:for each="{card_items}" as="cardItem">
                     <div class="{configuration.grid.col_classes} {configuration.grid.col_space_classes}">
-                        <f:render section="_Card" arguments="{_all}" />
+                        <f:render section="_CardWrapper" arguments="{_all}" />
                     </div>
                 </f:for>
             </div>
         </f:if>
     </f:spaceless></f:section>
 
+    <!--
+        In relation to the iconset outside/inside setting the card will be wrapped or not with the iconset.
+        Call this instead of the _Card section directly!
+    -->
+    <f:section name="_CardWrapper"><f:spaceless>
+        <f:if condition="{configuration.card.icon_position_wrap}=='inside'">
+            <f:then>
+                <f:render section="_Card" arguments="{_all}" />
+            </f:then>
+            <f:else>
+                <bs:IconSet value="{cardItem.iconset}" additionalConfiguration="{
+                    additionalClass:'iconset--card iconset--card-outside',
+                    positionClasses:configuration.card.icon_position_classes
+                }">
+                    <f:render section="_Card" arguments="{_all}" />
+                </bs:IconSet>
+            </f:else>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <!--
+        The card itself.
+        Should be called by _CardWrapper section.
+    -->
     <f:section name="_Card"><f:spaceless>
         <div class="card h-100{f:if(condition:configuration.grid.item_classes, then:' {configuration.grid.item_classes} h-100')}{f:if(condition:configuration.card.bg_color, then:' {configuration.card.bg_color}')}{f:if(condition:configuration.card.text_color, then:' {configuration.card.text_color}')}{f:if(condition:configuration.card.border_classes, then:' {configuration.card.border_classes}')}">
             <f:if condition="{cardItem.image}">
@@ -36,12 +60,12 @@
                         <f:case value="top">
                             {bs:Bootstrap.Picture(file:cardItem.image, displayWidth:displayWidth, additionalImgTagParams:"{class:'card-img-top'}")}
                             <f:render section="_CardHeader" arguments="{_all}" />
-                            <f:render section="_CardBody" arguments="{_all}" />
+                            <f:render section="_CardBodyWrapper" arguments="{_all}" />
                             <f:render section="_CardFooter" arguments="{_all}" />
                         </f:case>
                         <f:case value="bottom">
                             <f:render section="_CardHeader" arguments="{_all}" />
-                            <f:render section="_CardBody" arguments="{_all}" />
+                            <f:render section="_CardBodyWrapper" arguments="{_all}" />
                             <f:render section="_CardFooter" arguments="{_all}" />
                             {bs:Bootstrap.Picture(file:cardItem.image, displayWidth:displayWidth, additionalImgTagParams:"{class:'card-img-bottom'}")}
                         </f:case>
@@ -52,7 +76,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <f:render section="_CardHeader" arguments="{_all}" />
-                                    <f:render section="_CardBody" arguments="{_all}" />
+                                    <f:render section="_CardBodyWrapper" arguments="{_all}" />
                                     <f:render section="_CardFooter" arguments="{_all}" />
                                 </div>
                             </div>
@@ -64,7 +88,7 @@
                                 </div>
                                 <div class="col-md-8 order-md-0">
                                     <f:render section="_CardHeader" arguments="{_all}" />
-                                    <f:render section="_CardBody" arguments="{_all}" />
+                                    <f:render section="_CardBodyWrapper" arguments="{_all}" />
                                     <f:render section="_CardFooter" arguments="{_all}" />
                                 </div>
                             </div>
@@ -73,42 +97,74 @@
                 </f:then>
                 <f:else>
                     <f:render section="_CardHeader" arguments="{_all}" />
-                    <f:render section="_CardBody" arguments="{_all}" />
+                    <f:render section="_CardBodyWrapper" arguments="{_all}" />
                     <f:render section="_CardFooter" arguments="{_all}" />
                 </f:else>
             </f:if>
         </div>
     </f:spaceless></f:section>
 
+    <!--
+        The card header.
+    -->
     <f:section name="_CardHeader"><f:spaceless>
         <f:if condition="{cardItem.header}">
             <div class="card-header">{cardItem.header}</div>
         </f:if>
     </f:spaceless></f:section>
 
-    <f:section name="_CardBody"><f:spaceless>
-        <div class="card-body">
-            <f:if condition="{cardItem.title}">
-                <h5 class="card-title">{cardItem.title}</h5>
-            </f:if>
-            <f:if condition="{cardItem.text}">
-                <div class="card-text">{cardItem.text -> f:format.html()}</div>
-            </f:if>
-            <f:if condition="{cardItem.typolink}">
-                <f:if condition="{cardItem.typolinkText}">
-                    <f:then>
-                        <f:comment><!-- Create a button when there is a text --></f:comment>
-                        <f:link.typolink parameter="{cardItem.typolink}" class="btn {f:if(condition:configuration.card.button_color, then:configuration.card.button_color, else:'btn-primary')} btn-sm">{cardItem.typolinkText}</f:link.typolink>
-                    </f:then>
-                    <f:else>
-                        <f:comment><!-- Create an empty stretched-link when there is no text --></f:comment>
-                        <f:link.typolink parameter="{cardItem.typolink}" class="stretched-link"><!-- --></f:link.typolink>
-                    </f:else>
-                </f:if>
-            </f:if>
-        </div>
+    <!--
+        In relation to the iconset outside/inside setting the body will be wrapped or not with the iconset.
+        Call this instead of the _CardBody section directly!
+    -->
+    <f:section name="_CardBodyWrapper"><f:spaceless>
+        <f:if condition="{configuration.card.icon_position_wrap}=='inside'">
+            <f:then>
+                <div class="card-body">
+                    <bs:IconSet value="{cardItem.iconset}" additionalConfiguration="{
+                        additionalClass:'iconset--card iconset--card-inside',
+                        positionClasses:configuration.card.icon_position_classes
+                    }">
+                        <f:render section="_CardBody" arguments="{_all}" />
+                    </bs:IconSet>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="card-body">
+                    <f:render section="_CardBody" arguments="{_all}" />
+                </div>
+            </f:else>
+        </f:if>
     </f:spaceless></f:section>
 
+    <!--
+        The card body.
+        Should be called by _CardBodyWrapper section.
+    -->
+    <f:section name="_CardBody"><f:spaceless>
+        <f:if condition="{cardItem.title}">
+            <h5 class="card-title">{cardItem.title}</h5>
+        </f:if>
+        <f:if condition="{cardItem.text}">
+            <div class="card-text">{cardItem.text -> f:format.html()}</div>
+        </f:if>
+        <f:if condition="{cardItem.typolink}">
+            <f:if condition="{cardItem.typolinkText}">
+                <f:then>
+                    <f:comment><!-- Create a button when there is a text --></f:comment>
+                    <f:link.typolink parameter="{cardItem.typolink}" class="btn {f:if(condition:configuration.card.button_color, then:configuration.card.button_color, else:'btn-primary')} btn-sm">{cardItem.typolinkText}</f:link.typolink>
+                </f:then>
+                <f:else>
+                    <f:comment><!-- Create an empty stretched-link when there is no text --></f:comment>
+                    <f:link.typolink parameter="{cardItem.typolink}" class="stretched-link"><!-- --></f:link.typolink>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:spaceless></f:section>
+
+    <!--
+        The card footer.
+    -->
     <f:section name="_CardFooter"><f:spaceless>
         <f:if condition="{cardItem.footer}">
             <div class="card-footer">{cardItem.footer}</div>

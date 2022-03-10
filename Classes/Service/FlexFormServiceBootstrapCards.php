@@ -44,12 +44,13 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
             ' ',
             [
                 'row',
-                BootstrapUtility::getAlignmentClasses($xmlArray['grid']['align_items'], 'align-items-'),
-                BootstrapUtility::getAlignmentClasses($xmlArray['grid']['justify_content'], 'justify-content-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['grid']['align_items'], 'align-items-'),
+                BootstrapUtility::getDeviceClasses($xmlArray['grid']['justify_content'], 'justify-content-'),
             ]
         );
 
         $xmlArray['card']['border_classes'] = BootstrapUtility::getBorderOptionClasses($xmlArray['card']['border']);
+        $xmlArray['card']['icon_position_classes'] = BootstrapUtility::getDeviceClasses($xmlArray['card']['icon_position'], 'iconset-');
 
         // a media item columne
         $xmlArray['grid']['col_classes'] = BootstrapUtility::getColClasses($xmlArray['grid']['col']);
@@ -72,10 +73,11 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
                 'space_x' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.space_x.vDEF', 'string', ';;;;;', $this->logger),
                 'align_items' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.align_items.vDEF', 'string', ';;;;;', $this->logger),
                 'justify_content' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.justify_content.vDEF', 'string', ';;;;;', $this->logger),
-                'image_position' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.image_position.vDEF', 'string', 'above', $this->logger),
             ],
             'card' => [
                 'image_position' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.image_position.vDEF', 'string', 'above', $this->logger),
+                'icon_position' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.icon_position.vDEF', 'string', ';;;;;', $this->logger),
+                'icon_position_wrap' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.icon_position_wrap.vDEF', 'string', 'outside', $this->logger),
                 'bg_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.bg_color.vDEF', 'string', '', $this->logger),
                 'text_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.text_color.vDEF', 'string', '', $this->logger),
                 'border' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.border.vDEF', 'string', ';;;;', $this->logger),

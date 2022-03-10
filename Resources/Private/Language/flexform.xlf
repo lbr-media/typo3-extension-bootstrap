@@ -391,6 +391,21 @@
             <trans-unit id="image_position.bottom">
                 <source>Bottom</source>
             </trans-unit>
+            <trans-unit id="icon_position">
+                <source>Icon alignment</source>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap">
+                <source>Icon position</source>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap.description">
+                <source>The icon is 'inside' the card body. So borders, shadows, etc. are around. Or the icon is 'outside' and the complete card is the content of the iconset.</source>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap.outside">
+                <source>Outside</source>
+            </trans-unit>
+            <trans-unit id="icon_position_wrap.inside">
+                <source>Inside</source>
+            </trans-unit>
             <trans-unit id="alert_type">
                 <source>Alert type</source>
             </trans-unit>

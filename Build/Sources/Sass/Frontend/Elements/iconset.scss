@@ -1,110 +1,151 @@
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 // Icon set
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 :root {
     --iconset-space-x: .5em;
     --iconset-space-y: .2em;
+}
+
+// overwrite spaces for content element bootstrap_cards
+.iconset--card {
+    --iconset-space-x: .5rem;
+    --iconset-space-y: .5rem;
+}
+
+// .iconset--card-outside {
+//     --iconset-space-x: 1rem;
+//     --iconset-space-y: 1rem;
+// }
+
+.iconset--card-inside {
+    --iconset-space-x: 1rem;
+    --iconset-space-y: 1rem;
 }
 
 .iconset {
     display: flex;
 }
 
-.iconset__icon {
+// remove space and set line-height to the icon itself
+.iconset__icon > * {
+    display: block;
     line-height: 1 !important;
     margin-bottom: 0 !important;
 }
 
-// horizontal
-.iconset.iconset-start,
-.iconset.iconset-start-top,
-.iconset.iconset-start-middle,
-.iconset.iconset-start-bottom,
-.iconset.iconset-end,
-.iconset.iconset-end-top,
-.iconset.iconset-end-middle,
-.iconset.iconset-end-bottom {
-    flex-direction: row;
+@mixin iconset-position($infix) {
+    // horizontal
+    .iconset {
+        &.iconset#{$infix}-start,
+        &.iconset#{$infix}-start-top,
+        &.iconset#{$infix}-start-middle,
+        &.iconset#{$infix}-start-bottom,
+        &.iconset#{$infix}-end,
+        &.iconset#{$infix}-end-top,
+        &.iconset#{$infix}-end-middle,
+        &.iconset#{$infix}-end-bottom {
+            flex-direction: row;
+        }
+
+        // vertical
+        &.iconset#{$infix}-top,
+        &.iconset#{$infix}-top-start,
+        &.iconset#{$infix}-top-center,
+        &.iconset#{$infix}-top-end,
+        &.iconset#{$infix}-bottom,
+        &.iconset#{$infix}-bottom-start,
+        &.iconset#{$infix}-bottom-center,
+        &.iconset#{$infix}-bottom-end {
+            flex-direction: column;
+        }
+    
+        // icon on left side
+        &.iconset#{$infix}-start .iconset__icon,
+        &.iconset#{$infix}-start-top .iconset__icon,
+        &.iconset#{$infix}-start-middle .iconset__icon,
+        &.iconset#{$infix}-start-bottom .iconset__icon {
+            margin-right: var(--iconset-space-x);
+        }
+
+        // icon on right side
+        &.iconset#{$infix}-end .iconset__icon,
+        &.iconset#{$infix}-end-top .iconset__icon,
+        &.iconset#{$infix}-end-middle .iconset__icon,
+        &.iconset#{$infix}-end-bottom .iconset__icon {
+            order: 1;
+            margin-left: var(--iconset-space-x);
+        }
+
+        // icon above content
+        &.iconset#{$infix}-top .iconset__icon,
+        &.iconset#{$infix}-top-start .iconset__icon,
+        &.iconset#{$infix}-top-center .iconset__icon,
+        &.iconset#{$infix}-top-end .iconset__icon {
+            margin-bottom: var(--iconset-space-y);
+        }
+
+        // icon below content
+        &.iconset#{$infix}-bottom .iconset__icon,
+        &.iconset#{$infix}-bottom-start .iconset__icon,
+        &.iconset#{$infix}-bottom-center .iconset__icon,
+        &.iconset#{$infix}-bottom-end .iconset__icon {
+            order: 1;
+            margin-top: var(--iconset-space-y);
+        }
+
+        // set first content and then icon when icon is on the right side or below content
+        &.iconset#{$infix}-end .iconset__content,
+        &.iconset#{$infix}-end-top .iconset__content,
+        &.iconset#{$infix}-end-middle .iconset__content,
+        &.iconset#{$infix}-end-bottom .iconset__content,
+        &.iconset#{$infix}-bottom .iconset__content,
+        &.iconset#{$infix}-bottom-start .iconset__content,
+        &.iconset#{$infix}-bottom-center .iconset__content,
+        &.iconset#{$infix}-bottom-end .iconset__content {
+            order: 0;
+        }
+
+        // icon is -hcentered or in the v-middled
+        &.iconset#{$infix}-start-middle .iconset__icon,
+        &.iconset#{$infix}-end-middle .iconset__icon,
+        &.iconset#{$infix}-top-center .iconset__icon,
+        &.iconset#{$infix}-bottom-center .iconset__icon {
+            align-self: center;
+        }
+
+        // icon is top or left
+        &.iconset#{$infix}-start-top .iconset__icon,
+        &.iconset#{$infix}-end-top .iconset__icon,
+        &.iconset#{$infix}-top-start .iconset__icon,
+        &.iconset#{$infix}-bottom-start .iconset__icon {
+            align-self: start;
+        }
+
+        // icon is right or bottom
+        &.iconset#{$infix}-start-bottom .iconset__icon,
+        &.iconset#{$infix}-end-bottom .iconset__icon,
+        &.iconset#{$infix}-top-end .iconset__icon,
+        &.iconset#{$infix}-bottom-end .iconset__icon {
+            align-self: end;
+        }
+    }
 }
 
-// vertical
-.iconset.iconset-top,
-.iconset.iconset-top-start,
-.iconset.iconset-top-center,
-.iconset.iconset-top-end,
-.iconset.iconset-bottom,
-.iconset.iconset-bottom-start,
-.iconset.iconset-bottom-center,
-.iconset.iconset-bottom-end {
-    flex-direction: column;
-}
 
-// icon on left side
-.iconset.iconset-start .iconset__icon,
-.iconset.iconset-start-top .iconset__icon,
-.iconset.iconset-start-middle .iconset__icon,
-.iconset.iconset-start-bottom .iconset__icon {
-    margin-right: var(--iconset-space-x);
+@include iconset-position("");
+@media (min-width: 576px) {
+    @include iconset-position("-sm");
 }
-
-// icon on right side
-.iconset.iconset-end .iconset__icon,
-.iconset.iconset-end-top .iconset__icon,
-.iconset.iconset-end-middle .iconset__icon,
-.iconset.iconset-end-bottom .iconset__icon {
-    order: 1;
-    margin-left: var(--iconset-space-x);
+@media (min-width: 768px) {
+    @include iconset-position("-md");
 }
-
-// icon above content
-.iconset.iconset-top .iconset__icon,
-.iconset.iconset-top-start .iconset__icon,
-.iconset.iconset-top-center .iconset__icon,
-.iconset.iconset-top-end .iconset__icon {
-    margin-bottom: var(--iconset-space-y);
+@media (min-width: 992px) {
+    @include iconset-position("-lg");
 }
-
-// icon below content
-.iconset.iconset-bottom .iconset__icon,
-.iconset.iconset-bottom-start .iconset__icon,
-.iconset.iconset-bottom-center .iconset__icon,
-.iconset.iconset-bottom-end .iconset__icon {
-    order: 1;
-    margin-top: var(--iconset-space-y);
+@media (min-width: 1200px) {
+    @include iconset-position("-xl");
 }
-
-// set first content and then icon when icon is on the right side or below content
-.iconset.iconset-end .iconset__content,
-.iconset.iconset-end-top .iconset__content,
-.iconset.iconset-end-middle .iconset__content,
-.iconset.iconset-end-bottom .iconset__content,
-.iconset.iconset-bottom .iconset__content,
-.iconset.iconset-bottom-start .iconset__content,
-.iconset.iconset-bottom-center .iconset__content,
-.iconset.iconset-bottom-end .iconset__content {
-    order: 0;
-}
-
-// icon is -hcentered or in the v-middled
-.iconset.iconset-start-middle .iconset__icon,
-.iconset.iconset-end-middle .iconset__icon,
-.iconset.iconset-top-center .iconset__icon,
-.iconset.iconset-bottom-center .iconset__icon {
-    align-self: center;
-}
-
-// icon is top or left
-.iconset.iconset-start-top .iconset__icon,
-.iconset.iconset-end-top .iconset__icon,
-.iconset.iconset-top-start .iconset__icon,
-.iconset.iconset-bottom-start .iconset__icon {
-    align-self: start;
-}
-
-// icon is right or bottom
-.iconset.iconset-start-bottom .iconset__icon,
-.iconset.iconset-end-bottom .iconset__icon,
-.iconset.iconset-top-end .iconset__icon,
-.iconset.iconset-bottom-end .iconset__icon {
-    align-self: end;
+@media (min-width: 1400px) {
+    @include iconset-position("-xxl");
 }

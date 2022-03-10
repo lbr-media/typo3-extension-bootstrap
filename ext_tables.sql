@@ -83,6 +83,7 @@ CREATE TABLE tx_bootstrap_domain_model_carditem (
     header varchar(255) DEFAULT '' NOT NULL,
     title varchar(255) DEFAULT '' NOT NULL,
     image int(11) DEFAULT '0' NOT NULL,
+    iconset varchar(128) DEFAULT '' NOT NULL,
     text text,
     typolink varchar(1048) DEFAULT '' NOT NULL,
     typolink_text varchar(255) DEFAULT '' NOT NULL,

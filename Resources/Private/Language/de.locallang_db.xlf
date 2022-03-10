@@ -174,6 +174,10 @@
                 <source>Icon</source>
                 <target>Icon</target>
             </trans-unit>
+            <trans-unit id="tt_content.tx_bootstrap_header_iconset">
+                <source>Icon-Set</source>
+                <target>Icon-Set</target>
+            </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_text_color">
                 <source>Text color</source>
                 <target>Textfarbe</target>
@@ -273,9 +277,17 @@
                 <source>Title</source>
                 <target>Titel</target>
             </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.div.image_iconset">
+                <source>Image/Icon-Set</source>
+                <target>Bild/Icon-Set</target>
+            </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.image">
                 <source>Image</source>
                 <target>Bild</target>
+            </trans-unit>
+            <trans-unit id="tx_bootstrap_domain_model_carditem.iconset">
+                <source>Icon-Set</source>
+                <target>Icon-Set</target>
             </trans-unit>
             <trans-unit id="tx_bootstrap_domain_model_carditem.text">
                 <source>Text</source>
