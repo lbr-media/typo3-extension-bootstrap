@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Utility;
 
-use LBRmedia\Bootstrap\Form\Element\AllEdgesElement;
-use LBRmedia\Bootstrap\Form\Element\BootstrapBorderElement;
-use LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
+use LBRmedia\Bootstrap\Form\Element\AllEdgesElement;
+use LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement;
+use LBRmedia\Bootstrap\Form\Element\BootstrapBorderElement;
 
 /**
  * Utility class to get some css classes from flexform values.
@@ -506,6 +507,7 @@ class BootstrapUtility
      * @endcode
      *
      * @see BootstrapIconsElement::render()
+     * @see self::renderIconFrame()
      * @param string $value        '{iconset};{iconclass};{position};{sizeclass};{color}'
      * @param string $contentMarkup The html markup beneath the icon.
      * @param array  $configuration Additional parameters like 'additionalClasses' in the wrapper or overwriting the 'positionClasses'.
@@ -518,10 +520,19 @@ class BootstrapUtility
         if (!($iconSet && $iconValue)) {
             return $contentMarkup;
         }
-
+        
+        /*
+         * hook: renderIconSet: Gets the icon HTML markup.
+         */
         $iconMarkup = '';
-        if ($iconSet === 'bsicons') {
-            $iconMarkup = '<i class="bs ' . $iconValue . '"></i>';
+        if (is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\LBRmedia\Bootstrap\Utility\BootstrapUtility::class]['renderIconSet'] ?? null)) {
+            $params = [
+                'set' => $iconSet,
+                'value' => $iconValue,
+            ];
+            foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\LBRmedia\Bootstrap\Utility\BootstrapUtility::class]['renderIconSet'] as $hookMethod) {
+                $iconMarkup .= GeneralUtility::callUserFunction($hookMethod, $params, null);
+            }
         }
 
         if (!$iconMarkup) {

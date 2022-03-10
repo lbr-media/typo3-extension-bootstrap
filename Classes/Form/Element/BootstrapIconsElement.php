@@ -247,9 +247,16 @@ EOT;
         $resultArray['html'] = FormElementUtility::createFormControlWrap($inputHtml, $fieldWizardHtml);
 
         // require JS
+        $hooks = [];
+        if (is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement::class]['formElement'] ?? null)) {
+            foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement::class]['formElement'] as $hook) {
+                $hooks[] = $hook;
+            }
+        }
+
         $resultArray['requireJsModules'][] = JavaScriptModuleInstruction::forRequireJS(
             'TYPO3/CMS/Bootstrap/FormEngine/Element/BootstrapIconsElement'
-        )->instance($fieldId, json_encode($configurations, JSON_PRETTY_PRINT));
+        )->instance($fieldId, json_encode($configurations, JSON_PRETTY_PRINT), $hooks);
 
         return $resultArray;
     }

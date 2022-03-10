@@ -86,6 +86,7 @@ module.exports = (ENV) => {
                 [paths.js.src + 'FormEngine/Element/BootstrapBorderElement.js']: paths.js.dist + 'FormEngine/Element/',
                 [paths.js.src + 'FormEngine/Element/BootstrapDevicesElement.js']: paths.js.dist + 'FormEngine/Element/',
                 [paths.js.src + 'FormEngine/Element/BootstrapIconsElement.js']: paths.js.dist + 'FormEngine/Element/',
+                [paths.js.src + 'FormEngine/Element/BootstrapIconsElementBootstrapIconsHook.js']: paths.js.dist + 'FormEngine/Element/',
             },
 
             // bundle and minify a group of files to one file

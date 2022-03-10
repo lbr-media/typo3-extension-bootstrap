@@ -322,6 +322,19 @@ plugin.tx_bootstrap.settings.form.element {
     }
 
     # Settings for the TCA FormElement bootstrapIcons.
+    # Usually used to render an icon with a content area. P.e. used in headers, alerts and card elements.
+    # 
+    # Each child represents an 'iconset configuration':
+    # {
+    #   label = Visible label in select field; required
+    #   key = Stored in database and is used to identify the set in frontend output.
+    #   includeCss = Array with file pathes to include in backend for the overview.
+    #   includeHtml = Path to a file which will be loaded in backend. the overview table.
+    # }
+    # At this time only bootstrap icons are implemented.
+    # When you add an iconset the FormElement script in backend and the output method in frontend has to be extended:
+    # Script in backend: EXT:bootstrap/Resources/Public/JavaScript/FormEngine/Element/BootstrapIconsElement.js
+    # Method for frontend: LBRmedia\Bootstrap\Utility\BootstrapUtility::renderIconSet()
     BootstrapIcons {
         10 {
             # Label for select field

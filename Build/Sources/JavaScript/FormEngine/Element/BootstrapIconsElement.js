@@ -8,12 +8,14 @@ define(function() {
          * @param string id
          * @param string configurations JSON string with configuration arrays from plugin.tx_bootstrap.settings.form.element.BootstrapIcons
          */
-        constructor(id, configurations)
+        constructor(id, configurations, hooks)
         {
             let _t = this;
             this.configurations = JSON.parse(configurations);
             this.currentConfiguration = null;
             this.icons = [];
+            this.hooks = {}; // holds all child classes by key
+            this.allHooksLoaded = false;
 
             // values
             this.currentIconSet = "";
@@ -45,7 +47,9 @@ define(function() {
             // bind iconset change
             this.userControlIconSet.addEventListener("change", function () {
                 _t.currentIconSet = _t.userControlIconSet.value;
-                _t.initIconSet();
+                if (_t.allHooksLoaded) {
+                    _t.initIconSet();
+                }
             });
 
             // bind position change
@@ -72,9 +76,29 @@ define(function() {
                 });
             }
 
-            this.initValues();
+            // make hook instances and after that init values and icon set
+            if (Array.isArray(hooks)) {
+                for (let i = 0; i < hooks.length; i++) {
+                    require([hooks[i]], function (childClass) {
+                        let instance = new childClass(_t);
+                        _t.hooks[instance.getKey()] = instance;
+
+                        // all children are loaded
+                        if (i + 1 === hooks.length) {
+                            _t.allHooksLoaded = true;
+                            _t.initValues();
+                        }
+                    })
+                }
+            }
         }
 
+        /**
+         * Takes the field value and sets runtime values.
+         * After that the current icon set will be initialized.
+         * 
+         * @return void
+         */
         initValues() {
             const values = this.userControlFieldValue.value ? this.userControlFieldValue.value.split(";") : ["", "", "", "", ""];
 
@@ -120,6 +144,11 @@ define(function() {
             this.initIconSet();
         }
 
+        /**
+         * Updates the field value by using the runtime values.
+         * 
+         * @return void
+         */
         updateValues() {
             // set value in visible field
             this.userControlValue.value = this.currentValue;
@@ -131,6 +160,11 @@ define(function() {
             this.createPreviewIcon();
         }
 
+        /**
+         * Set the configuration of the currently selected icon set.
+         * 
+         * @return void
+         */
         initCurrentConfiguration() {
             this.currentConfiguration = null;
             for (let i = 0; i < this.configurations.length; i++) {
@@ -141,6 +175,13 @@ define(function() {
             }
         }
 
+        /**
+         * Initializes the currently select icon set.
+         * Loads CSS and HTML files from the configuration.
+         * Waits for hte HTML being loaded and triggers initFilter().
+         * 
+         * @return void
+         */
         initIconSet() {
             this.initCurrentConfiguration();
 
@@ -163,7 +204,13 @@ define(function() {
             });
         }
 
+        /**
+         * Loads a stylesheet file.
+         * 
+         * @return void
+         */
         loadStylesheet(file) {
+            // prevent loading a file twice
             const allLinkElements = document.querySelectorAll("link");
             for (let i = 0; i < allLinkElements.length; i++) {
                 if (allLinkElements[i].hasAttribute("href") && allLinkElements[i].getAttribute("href") === file) {
@@ -180,6 +227,11 @@ define(function() {
             document.getElementsByTagName("head")[0].appendChild(link);
         }
 
+        /**
+         * Loads the html icon preview file for the container.
+         * 
+         * @return Promise
+         */
         loadContainerHtml(file) {
             return new Promise(function(resolve, reject) {
                 let xhr = new XMLHttpRequest();
@@ -198,83 +250,61 @@ define(function() {
             });
         }
 
+        /**
+         * Initializes the filter for the current configuration.
+         * Calls the proper method in the hook classes.
+         * 
+         * @return void
+         */
         initFilter() {
-            let _t = this;
-            this.icons = [];
-
-            if (this.currentConfiguration.key === "bsicons") {
-                // collect icons
-                let iconElements = this.iconsContainer.querySelectorAll(".bs-icon");
-
-                // build icons list with search values
-                for (var i = 0; i < iconElements.length; i++){
-                    let search = [];
-                    let value = "";
-
-                    const labelTag = iconElements[i].querySelector(".bs-label");
-                    if (labelTag) {
-                        search.push(labelTag.innerHTML.toLowerCase());
-                    }
-
-                    const iTag = iconElements[i].querySelector(".bi");
-                    if (iTag) {
-                        value = iTag.getAttribute("class").replace("bi ", "");
-                        search.push(value.toLowerCase());
-                    }
-
-                    if (search.length && value) {
-                        this.icons.push({
-                            iconElement: iconElements[i],
-                            search: search.join(" "),
-                            value: value
-                        });
-
-                        iconElements[i].setAttribute("data-bsicon-value", value);
-                        iconElements[i].addEventListener("click", function (evt) {
-                            const value = this.getAttribute("data-bsicon-value");
-                            if (value) {
-                                _t.currentValue = value;
-                                _t.updateValues();
-                            }
-                        });
-                    }
-                }
+            let hook = this.getCurrentHook();
+            if (!hook) {
+                return;
             }
-            
+
+            if (typeof hook.initFilter === 'function') {
+                hook.initFilter();
+            } else {
+                console.error(`Cannot call 'initFilter()' in hook instance for icon set ${this.currentIconSet}.`);
+            }
+
+            let _t = this;
             this.userControlFilter.addEventListener("keydown", function () {
-                const value = _t.userControlFilter.value.toLowerCase();
-                if (value.trim()) {
-                    // filter icons
-                    for (let i = 0; i < _t.icons.length; i++) {
-                        if (_t.icons[i].search.indexOf(value) > -1) {
-                            _t.icons[i].iconElement.style.display = "inline-block";
-                        } else {
-                            _t.icons[i].iconElement.style.display = "none";
-                        }
-                    }
+                const value = _t.userControlFilter.value.toLowerCase().trim();
+
+                if (typeof hook.runFilter === 'function') {
+                    hook.runFilter(value);
                 } else {
-                    // no search: show all
-                    for (let i = 0; i < _t.icons.length; i++) {
-                        _t.icons[i].iconElement.style.display = "inline-block";
-                    }
+                    console.error(`Cannot call 'runFilter()' in hook instance for icon set ${_t.currentIconSet}.`);
                 }
             });
         }
 
+        /**
+         * Create the preview icon when an icon is selected.
+         * Calls the proper method in the hook classes.
+         */
         createPreviewIcon() {
             this.previewContainer.innerHTML = "–";
             
             if (this.currentValue && this.currentIconSet) {
-                if (this.currentIconSet === "bsicons") {
-                    this.previewContainer.innerHTML = "";
-
-                    // set icon
-                    var icon = document.createElement("i");
-                    icon.setAttribute("class", "bs " + this.currentValue);
-
-                    this.previewContainer.appendChild(icon);
+                let hook = this.getCurrentHook()
+                if (hook) {
+                    if (typeof hook.createPreviewIcon === 'function') {
+                        hook.createPreviewIcon();
+                    } else {
+                        console.error(`Cannot call 'createPreviewIcon()' in hook instance for icon set ${this.currentIconSet}.`);
+                    }
                 }
             }
+        }
+
+        getCurrentHook() {
+            if (!this.hooks[this.currentIconSet]) {
+                console.error(`Cannot get the hook instance for icon set ${this.currentIconSet}.`);
+            }
+
+            return this.hooks[this.currentIconSet];
         }
     }
 });

@@ -50,3 +50,9 @@ $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'bootstrap/Co
 
 // Get the context and make it visible in backend
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = '(' . (string)\TYPO3\CMS\Core\Core\Environment::getContext()->__toString() . ') ' . $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'];
+
+// Register icon set hook for frontend
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\LBRmedia\Bootstrap\Utility\BootstrapUtility::class]['renderIconSet'][] = \LBRmedia\Bootstrap\Hooks\IconSet::class . '->getBootstrapIconMarkup';
+
+// Register icon set hook for backend javascript
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\LBRmedia\Bootstrap\Form\Element\BootstrapIconsElement::class]['formElement'][] = 'TYPO3/CMS/Bootstrap/FormEngine/Element/BootstrapIconsElementBootstrapIconsHook';
