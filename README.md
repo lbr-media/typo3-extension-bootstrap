@@ -429,6 +429,11 @@ In TypoScript `tt_content.bootstrap_textmediagrid.flexform_presets` one or more 
 Create fast two columns text.  
 CType: `bootstrap_twocolumnstext`
 
+* **label=CSS-classes GRID-ROW**  
+`ce_bootstrap_twocolumnstext_row_classes = row g-0 g-sm-3 g-md-4`
+* **label=CSS-classes GRID-COL**  
+`ce_bootstrap_twocolumnstext_col_classes = col-sm-6`
+
 ---
 
 ### Alert
@@ -477,6 +482,11 @@ CType: `bullets`
 Just a line.  
 CType: `div`
 
+#### Constants
+
+* **CSS-classes HR-tag**  
+`ce_div_hr_classes = bg-dark opacity-75 my-3 my-md-4`
+
 ---
 
 ### Header
@@ -495,6 +505,15 @@ CType: `table`
 Realized with Bootstrap card component.  
 The default Typo3-fields are available.  
 CType: `uploads`
+
+#### Constants
+
+* **CSS-classes GRID-ROW**  
+`ce_uploads_row_classes = list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 align-items-stretch`
+* **CSS-classes GRID-COL**  
+`ce_uploads_col_classes = col`
+* **CSS-classes CARD**  
+`ce_uploads_card_classes = card h-100`
 
 ---
 
@@ -522,6 +541,64 @@ CType: `shortcut`
 CType: `text`
 
 ---
+
+## Navigation
+
+### Constants
+
+* **CSS-classes UL**  
+`nav_ul_classes = list-unstyled`
+* **CSS-classes LI**  
+`nav_li_classes = nav-item`
+* **CSS-classes LINK: Spacer**  
+`nav_link_spacer_classes = nav-link spacer`
+* **CSS-classes LINK: Current**  
+`nav_link_current_classes = nav-link active`
+* **CSS-classes LINK: Active**  
+`nav_link_active_classes = nav-link active`
+* **CSS-classes LINK: Inactive**  
+`nav_link_inactive_classes = nav-link inactive`
+
+* **Page-UIDs to exclude (excludeUidList)**  
+`nav_dropdown_excludeUidList = `
+
+* **CSS-classes UL in level 0**  
+`nav_dropdown_ul_classes = navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end`
+* **CSS-classes UL target in level 1 containing the children**  
+`nav_dropdown_ul_target_classes = dropdown-menu dropdown-menu-dark dropdown-menu-end`
+* **CSS-classes LI regular (which has no children and it is not in a dropdown)**  
+`nav_dropdown_li_dropdown_classes = nav-item`
+* **CSS-classes LI toggle (which has children)**  
+`nav_dropdown_li_dropdown_toggle_classes = nav-item dropdown`
+* **CSS-classes LI target (which is a child in dropdown)**  
+`nav_dropdown_li_dropdown_target_classes = `
+
+* **CSS-classes LINK REGULAR: Spacer**  
+`nav_dropdown_spacer_classes = nav-link text-nowrap`
+* **CSS-classes LINK REGULAR: Current**  
+`nav_dropdown_current_classes = nav-link text-nowrap active`
+* **CSS-classes LINK REGULAR: Active**  
+`nav_dropdown_active_classes = nav-link text-nowrap active`
+* **CSS-classes LINK REGULAR: Inactive**  
+`nav_dropdown_inactive_classes = nav-link text-nowrap`
+
+* **CSS-classes LINK TOGGLE: Spacer in level 0 with children**  
+`nav_dropdown_toggle_spacer_classes = nav-link text-nowrap dropdown-toggle`
+* **CSS-classes LINK TOGGLE: Current in level 0 with children**  
+`nav_dropdown_toggle_current_classes = nav-link text-nowrap active dropdown-toggle`
+* **CSS-classes LINK TOGGLE: Active in level 0 with children**  
+`nav_dropdown_toggle_active_classes = nav-link text-nowrap active dropdown-toggle`
+* **CSS-classes LINK TOGGLE: Inactive in level 0 with children**  
+`nav_dropdown_toggle_inactive_classes = nav-link text-nowrap dropdown-toggle`
+
+* **CSS-classes LINK CHILD: Spacer in level 1 in dropdown**  
+`nav_dropdown_child_spacer_classes = dropdown-divider`
+* **CSS-classes LINK CHILD: Current in level 1 in dropdown**  
+`nav_dropdown_child_current_classes = dropdown-item text-nowrap active`
+* **CSS-classes LINK CHILD: Active in level 1 in dropdown**  
+`nav_dropdown_child_active_classes = dropdown-item text-nowrap active`
+* **CSS-classes LINK CHILD: Inactive in level 1 in dropdown**  
+`nav_dropdown_child_inactive_classes = dropdown-item text-nowrap`
 
 ## Credits
 
