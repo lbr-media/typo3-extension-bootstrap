@@ -1,10 +1,10 @@
 /**
  * @package typo3-extension-bootstrap - Typo3 template extension with Twitter Bootstrap 5 package.
- * @version 1.0.15
+ * @version 1.0.16
  * @author Marcel <mb@lbrmedia.de>
- * @date Wed, 09 Mar 2022 09:17:33 GMT
+ * @date Fri, 11 Mar 2022 10:36:31 GMT
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
  * @license GPL-2.0-or-later
  */
-:root{--bs-markdown-bg-color: rgba(0, 0, 0, .1);--bs-markdown-border-color: rgba(0, 0, 0, .3)}.container-bootstrap_markdown pre{padding:.5em;background-color:var(--bs-markdown-bg-color)}.container-bootstrap_markdown blockquote{border-left:.3em solid var(--bs-markdown-border-color);padding-left:.5em}
+:root{--bs-markdown-bg-color: rgba(0, 0, 0, .1);--bs-markdown-border-color: rgba(0, 0, 0, .3)}.container-bootstrap_markdown pre{padding:.5em;background-color:var(--bs-markdown-bg-color)}.container-bootstrap_markdown blockquote{border-left:.3em solid var(--bs-markdown-border-color);padding-left:.5em}.container-bootstrap_markdown table{--bs-table-bg: transparent;--bs-table-accent-bg: transparent;--bs-table-striped-color: #212529;--bs-table-striped-bg: rgba(0, 0, 0, 0.05);--bs-table-active-color: #212529;--bs-table-active-bg: rgba(0, 0, 0, 0.1);--bs-table-hover-color: #212529;--bs-table-hover-bg: rgba(0, 0, 0, 0.075);width:100%;margin-bottom:1rem;color:#212529;vertical-align:top;border-color:#dee2e6}.container-bootstrap_markdown table>thead{vertical-align:bottom}.container-bootstrap_markdown table>:not(caption)>*>*{padding:.5rem .5rem;background-color:var(--bs-table-bg);border-bottom-width:1px;-webkit-box-shadow:inset 0 0 0 9999px var(--bs-table-accent-bg);box-shadow:inset 0 0 0 9999px var(--bs-table-accent-bg)}.container-bootstrap_markdown table>:not(:first-child){border-top:2px solid currentColor}.container-bootstrap_markdown tbody,.container-bootstrap_markdown td,.container-bootstrap_markdown tfoot,.container-bootstrap_markdown th,.container-bootstrap_markdown thead,.container-bootstrap_markdown tr{border-color:inherit;border-style:solid;border-width:0}
