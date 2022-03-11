@@ -232,10 +232,6 @@
                 <source>Frame: Inner</source>
                 <target>Rahmen: Innen</target>
             </trans-unit>
-            <trans-unit id="tt_content.tx_bootstrap_section_index_header">
-                <source>Header</source>
-                <target>Überschrift</target>
-            </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_image1">
                 <source>Image</source>
                 <target>Bild</target>

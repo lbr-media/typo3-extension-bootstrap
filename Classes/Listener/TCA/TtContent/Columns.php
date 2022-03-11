@@ -176,15 +176,6 @@ class Columns
                     ],
                 ],
             ],
-            'tx_bootstrap_section_index_header' => [
-                'exclude' => 1,
-                'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrap_section_index_header',
-                'config' => [
-                    'type' => 'text',
-                    'rows' => 3,
-                    'cols' => 20,
-                ],
-            ],
             'tx_bootstrap_flexform' => [
                 'exclude' => 1,
                 'l10n_display' => 'hideDiff',

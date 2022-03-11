@@ -176,9 +176,6 @@
             <trans-unit id="tt_content.tx_bootstrap_inner_frame_class">
                 <source>Frame: Inner</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_bootstrap_section_index_header">
-                <source>Header</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_bootstrap_image1">
                 <source>Image</source>
             </trans-unit>
