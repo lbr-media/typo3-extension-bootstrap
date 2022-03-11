@@ -56,6 +56,10 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                 : '';
             $outHeader .= '<strong>' . $this->linkEditContent($this->renderText($record['header']), $record) . $hiddenHeaderNote . '</strong><br />';
 
+            if ($record['subheader']) {
+                $outHeader .= '<em>' . $this->linkEditContent($this->renderText($record['subheader']), $record) . '</em><br />';
+            }
+
             if ($outInfo) {
                 $outHeader .= '<div class="t3-page-ce-header-info text-monospace">' . $outInfo . '</div>';
             }
@@ -203,9 +207,13 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                     $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . '<br />';
                 }
                 break;
+            case 'header':
+                $out .= '';
+                break;
             case 'text':
+                // Failure: text does not trigger. Why?
                 if ($record['bodytext']) {
-                    $out .= 'FOO' . $this->linkEditContent($this->renderText($record['bodytext']), $record) . 'xx<br />';
+                    $out .= $this->linkEditContent($this->renderText($record['bodytext']), $record) . 'xx<br />';
                 }
                 break;
             case 'html':
