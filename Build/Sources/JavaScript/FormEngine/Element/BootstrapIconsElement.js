@@ -109,7 +109,10 @@ define(function() {
             this.currentColor = typeof values[4] === "string" && values[4] !== "default" ? values[4] : "";
 
             // process icon set
-            if (!this.currentIconSet) {
+            if (this.currentIconSet) {
+                // set value in visible field
+                this.userControlIconSet.value = this.currentIconSet;
+            } else {
                 // there is no icon set defined. Try to get the first set.
                 if (typeof this.configurations[0].key === "string") {
                     this.currentIconSet = this.configurations[0].key;
