@@ -20,7 +20,7 @@ The basis of the content elements is fluid_styled_content (many are copied from 
       - [Fields](#fields)
     - [All headers](#all-headers)
       - [Fields](#fields-1)
-      - [Available constants](#available-constants)
+      - [TypoScript constants](#typoscript-constants)
     - [Accordion](#accordion)
       - [Settings for all items:](#settings-for-all-items)
       - [Settings each item:](#settings-each-item)
@@ -28,34 +28,35 @@ The basis of the content elements is fluid_styled_content (many are copied from 
       - [Settings:](#settings)
       - [Image properties:](#image-properties)
     - [Cards](#cards)
-      - [Settings:](#settings-1)
-      - [Card-item properties:](#card-item-properties)
+      - [Settings](#settings-1)
+      - [Card-item properties](#card-item-properties)
     - [Media grid](#media-grid)
-      - [Settings:](#settings-2)
+      - [Settings](#settings-2)
     - [Tabulator](#tabulator)
-      - [Settings for all items:](#settings-for-all-items-1)
-      - [Settings each item:](#settings-each-item-1)
+      - [Settings for all items](#settings-for-all-items-1)
+      - [Settings each item](#settings-each-item-1)
     - [Text + Image](#text--image)
-      - [Settings:](#settings-3)
+      - [Settings](#settings-3)
     - [Text & Media (float)](#text--media-float)
-      - [Settings:](#settings-4)
+      - [Settings](#settings-4)
     - [Text & Media (grid)](#text--media-grid)
-      - [Settings:](#settings-5)
+      - [Settings](#settings-5)
     - [Two columns text](#two-columns-text)
+      - [TypoScript constants](#typoscript-constants-1)
     - [Alert](#alert)
-      - [Settings:](#settings-6)
+      - [Settings](#settings-6)
     - [Markdown](#markdown)
     - [Bullets](#bullets)
-      - [Settings (like Typo3):](#settings-like-typo3)
+      - [Settings (like Typo3)](#settings-like-typo3)
     - [Div](#div)
-      - [TypoScript Constants](#typoscript-constants)
+      - [TypoScript Constants](#typoscript-constants-2)
     - [Header](#header)
     - [Table](#table)
     - [Uploads](#uploads)
-      - [TypoScript Constants](#typoscript-constants-1)
+      - [TypoScript Constants](#typoscript-constants-3)
     - [Copied `fluid_styled_content` content elements](#copied-fluid_styled_content-content-elements)
   - [Navigation](#navigation)
-    - [TypoScript Constants](#typoscript-constants-2)
+    - [TypoScript Constants](#typoscript-constants-4)
       - [PID](#pid)
       - [Regular nav](#regular-nav)
       - [Dropdown main](#dropdown-main)
@@ -104,6 +105,7 @@ Now you should be able to call the frontend of the page.
 All content elements have extra or modified fields.
 
 #### Fields
+
 * _`Frame class`_ (select)  
 Here you'll find the Bootstrap container* classes like `container-xl` or `container-float`.
 * _`Inner frame class`_ (select)  
@@ -130,6 +132,7 @@ Each variant has these properties:
     * `additionalOuterAttributes` (array; key value pairs)
 
 Example:
+
 ``` TypoScript
 plugin.tx_bootstrap.settings.form.element.AdditionalStyles {
     10 {
@@ -143,6 +146,7 @@ plugin.tx_bootstrap.settings.form.element.AdditionalStyles {
     }
 }
 ```
+
 * _`Color`_ (select; one of the text-{color} classes)
 * _`Background color`_ (select; one of the bg-{color} classes)
 * _`Space before`_ (select; one of the space_before_class')
@@ -151,6 +155,7 @@ plugin.tx_bootstrap.settings.form.element.AdditionalStyles {
 The defaults of `space_before_class` and `space_after_class` will be replaced with Bootstrap space classes. So you don't need extra classes for the space between content elements.
 
 Adjust to your needs:
+
 ``` TypoScript
 plugin.tx_bootstrap.settings.form.element {
     SpaceBeforeClassReplacements {
@@ -178,6 +183,7 @@ plugin.tx_bootstrap.settings.form.element {
 All headers of all content elements have extra or modified fields.
 
 #### Fields
+
 * _`Header`_ (multiline string)
 * _`Header layout`_ aka _`Type`_ (select)  
 The tag that will be generated (`h1` to `h5`).
@@ -196,6 +202,7 @@ Each variant has these properties:
     * `additionalClass` (string)
 
 Example:
+
 ``` TypoScript
 plugin.tx_bootstrap.settings.form.element.PredefinedHeader {
     10 {
@@ -223,6 +230,7 @@ Each variant has these properties:
     * `additionalClass` (string)
 
 Example:
+
 ``` TypoScript
 plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles {
     10 {
@@ -256,28 +264,22 @@ plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles {
     * `Size` (select; the bootstrap font sizes or just inherit)
     * `Color` (select; one of the text-{color} classes)
 
-#### Available constants
+#### TypoScript constants
 
-* **Header pattern**  
-`header_pattern = ###TAG_START######HEADER######TAG_END###`
-* **Header subheader pattern**  
-`header_subheader_pattern = ###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###`
-* **Header date pattern**  
-`header_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER######TAG_END###`
-* **Header subheader date pattern**  
-`header_subheader_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###`
-* **Header date format**  
-See https://www.php.net/manual/de/class.intldateformatter.php  
-`header_date_datetype = FULL`
-* **Header time format**  
-`header_date_timetype = NONE`
-* **Header icon wrap**  
-Should the icons be 'outside' the h-tag or 'inside'?  
-`header_icon_wrap = outside`
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `header_pattern` | `###TAG_START######HEADER######TAG_END###` | Header pattern |
+| `header_subheader_pattern` | `###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###` | Header subheader pattern |
+| `header_date_pattern` | `<span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER######TAG_END###` | Header date pattern |
+| `header_subheader_date_pattern` | `<span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###` | Header subheader date pattern |
+| `header_date_datetype` | `FULL` | Header date format<br />See: https://www.php.net/manual/de/class.intldateformatter.php |
+| `header_date_timetype` | `NONE` | Header time format |
+| `header_icon_wrap` | `outside` | Header icon wrap.<br />Should the icons be 'outside' the h-tag or 'inside'? |
 
 ---
 
 ### Accordion
+
 Bootstrap styled Accordion component.  
 CType: `bootstrap_accordion`
 
@@ -285,18 +287,22 @@ One accordion content element has one or many accordion items.
 Each accordion item may have one or many `Text & media (grid)` content elements.
 
 #### Settings for all items:
+
 * _`Keep items open on opening other items`_ (boolean)
 
 #### Settings each item:
+
 * _`Opened on load`_ (boolean)
 
 ---
 
 ### Carousel
+
 Bootstrap styled Carousel component with images.  
 CType: `bootstrap_carousel`
 
 #### Settings:
+
 * _`Animation`_ (select; either `slide` or `fade`)
 * _`Autoplay`_ (boolean)
 * _`Color scheme`_ (select; either `light`, `dark`)
@@ -305,6 +311,7 @@ CType: `bootstrap_carousel`
 * _`Interval`_ (int; required; milliseconds)
 
 #### Image properties:
+
 * _`Header`_ (string)
 * _`Title`_ (string)
 * _`Alternative`_ (string)
@@ -316,10 +323,12 @@ CType: `bootstrap_carousel`
 ---
 
 ### Cards
+
 Bootstrap styled Cards component in a grid system.  
 CType: `bootstrap_cards`
 
-#### Settings:
+#### Settings
+
 * _`Presets`_ (select multiple)  
 In TypoScript `tt_content.bootstrap_cards.flexform_presets` one or more settings could be grouped and labeled for selection.
 * Grid:
@@ -341,8 +350,8 @@ In TypoScript `tt_content.bootstrap_cards.flexform_presets` one or more settings
     * _`Button color/style`_ (select; one of the btn-{color} and btn-outline-{color} classes)
 * _`Image optimizing`_ (produced percentual window width from xs to xxl)
 
+#### Card-item properties
 
-#### Card-item properties:
 * _`Header`_ (string)
 * _`Title`_ (string)
 * _`Image`_ (File reference)
@@ -354,10 +363,12 @@ In TypoScript `tt_content.bootstrap_cards.flexform_presets` one or more settings
 ---
 
 ### Media grid
+
 Images and videos in an adjustable grid system. Masonry is also provided.  
 CType: `bootstrap_mediagrid`
 
-#### Settings:
+#### Settings
+
 * _`Presets`_ (select multiple)  
 In TypoScript `tt_content.bootstrap_mediagrid.flexform_presets` one or more settings could be grouped and labeled for selection.
 * Use _`masonry grid`_ (boolean)
@@ -378,27 +389,32 @@ In TypoScript `tt_content.bootstrap_mediagrid.flexform_presets` one or more sett
 ---
 
 ### Tabulator
+
 Bootstrap styled Tabulator component.  
 CType: `bootstrap_tabs`
 
 One tabulator content element has one or many tabulator items.  
 Each tabulator item may have one or many `Text & media (grid)` content elements.  
 
-#### Settings for all items:
+#### Settings for all items
+
 * _`Layout`_ (select; either `default`, `pills horizontal` or `pills vertical`)
 * _`Navigation alignment`_ (select; only on horizontal; one of `start`, `center`, `end`, `nav fill`, `nav justified`)
 
-#### Settings each item:
+#### Settings each item
+
 * _`active`_ (boolean)  
 Only one can be active. The first found with active state is used. If no one is active, the first item is marked as active.
 
 ---
 
 ### Text + Image
+
 A content element to create fast a grid with one image and text. Positions, space and alignment is adjustable.  
 CType: `bootstrap_textimage`
 
-#### Settings:
+#### Settings
+
 * _`Presets`_ (select multiple)  
 In TypoScript `tt_content.bootstrap_textimage.flexform_presets` one or more settings could be grouped and labeled for selection.
 * _`Order`_ (select; either `first image` or `first text`)
@@ -412,13 +428,16 @@ In TypoScript `tt_content.bootstrap_textimage.flexform_presets` one or more sett
     * _`Border color`_ (select; one of the border-{color} classes)
     * _`Rounded`_ (select; one of the rounded classes)
     * _`Shadow`_ (select; one of the shadow classes)
+
 ---
 
 ### Text & Media (float)
+
 A text which floats a media grid. Full adjustable grid and floating settings. Some presets are available to the editor.  
 CType: `bootstrap_textmediafloat`
 
-#### Settings:
+#### Settings
+
 * _`Presets`_ (select multiple)  
 In TypoScript `tt_content.bootstrap_textmediafloat.flexform_presets` one or more settings could be grouped and labeled for selection.
 * _`Header position`_ (`above all` or `above text`)
@@ -445,10 +464,12 @@ In TypoScript `tt_content.bootstrap_textmediafloat.flexform_presets` one or more
 ---
 
 ### Text & Media (grid)
+
 A text column and a media grid column. The most flexible content element.  
 CType: `bootstrap_textmediagrid`
 
-#### Settings:
+#### Settings
+
 * _`Presets`_ (select multiple)  
 In TypoScript `tt_content.bootstrap_textmediagrid.flexform_presets` one or more settings could be grouped and labeled for selection.
 * _`Default order`_ of text- and media-area (select; either `first image` or `first text`)
@@ -485,21 +506,26 @@ In TypoScript `tt_content.bootstrap_textmediagrid.flexform_presets` one or more 
 ---
 
 ### Two columns text
+
 Create fast two columns text.  
 CType: `bootstrap_twocolumnstext`
 
-* **label=CSS-classes GRID-ROW**  
-`ce_bootstrap_twocolumnstext_row_classes = row g-0 g-sm-3 g-md-4`
-* **label=CSS-classes GRID-COL**  
-`ce_bootstrap_twocolumnstext_col_classes = col-sm-6`
+#### TypoScript constants
+
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `ce_bootstrap_twocolumnstext_row_classes` | `row g-0 g-sm-3 g-md-4` | CSS-classes GRID-ROW |
+| `ce_bootstrap_twocolumnstext_col_classes` | `col-sm-6` | CSS-classes GRID-COL |
 
 ---
 
 ### Alert
+
 Bootstrap alert boxes.  
 CType: `bootstrap_alert`
 
-#### Settings:
+#### Settings
+
 * _`Header`_ (string)
 * _`Text`_ (multiline string, RTE)
 * _`Alert Color`_ (select; one of the alert-{color} classes)
@@ -521,16 +547,19 @@ CType: `bootstrap_alert`
 ---
 
 ### Markdown
+
 Just like the regular text content element - but instead using a rich text editor you use Markdown markup. In frontend it will be transformed to HTML.  
 CType: `bootstrap_markdown`
 
 ---
 
 ### Bullets
+
 A list in Bootstrap-style.  
 CType: `bullets`
 
-#### Settings (like Typo3):
+#### Settings (like Typo3)
+
 * `unordered list`
 * `ordered list`
 * `definition list`
@@ -538,6 +567,7 @@ CType: `bullets`
 ---
 
 ### Div
+
 Just a line.  
 CType: `div`
 
@@ -550,18 +580,21 @@ CType: `div`
 ---
 
 ### Header
+
 Just a header.  
 CType: `header`
 
 ---
 
 ### Table
+
 Adjustable with all the Bootstrap table classes.  
 CType: `table`
 
 ---
 
 ### Uploads
+
 Realized with Bootstrap card component.  
 The default Typo3-fields are available.  
 CType: `uploads`
@@ -577,6 +610,7 @@ CType: `uploads`
 ---
 
 ### Copied `fluid_styled_content` content elements
+
 * HTML  
 CType: `html`
 * List/Plugin  
@@ -598,8 +632,6 @@ CTypes:
 CType: `shortcut`
 * Text  
 CType: `text`
-
----
 
 ## Navigation
 
