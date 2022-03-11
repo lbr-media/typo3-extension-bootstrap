@@ -197,6 +197,25 @@ plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles {
     * `Size` (select; the bootstrap font sizes or just inherit)
     * `Color` (select; one of the text-{color} classes)
 
+#### Available constants
+
+* **Header pattern**  
+`header_pattern = ###TAG_START######HEADER######TAG_END###`
+* **Header subheader pattern**  
+`header_subheader_pattern = ###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###`
+* **Header date pattern**  
+`header_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER######TAG_END###`
+* **Header subheader date pattern**  
+`header_subheader_date_pattern = <span class="d-block" datetime="###DATE_DATETIME###">###DATE###</span>###TAG_START######HEADER###<small class="d-block">###SUBHEADER###</small>###TAG_END###`
+* **Header date format**  
+See https://www.php.net/manual/de/class.intldateformatter.php  
+`header_date_datetype = FULL`
+* **Header time format**  
+`header_date_timetype = NONE`
+* **Header icon wrap**  
+Should the icons be 'outside' the h-tag or 'inside'?  
+`header_icon_wrap = outside`
+
 ---
 
 ### Accordion
