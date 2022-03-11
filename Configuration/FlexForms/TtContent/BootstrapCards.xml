@@ -135,7 +135,7 @@
                                 <type>user</type>
                                 <renderType>bootstrapDevices</renderType>
                                 <elementConfiguration>BootstrapIconPositions</elementConfiguration>
-                                <prependEmptyOption>0</prependEmptyOption>
+                                <prependEmptyOption>1</prependEmptyOption>
                                 <default>;;;;;</default>
                             </config>
                         </value>
