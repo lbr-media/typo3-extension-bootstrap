@@ -1,6 +1,24 @@
 This extension is based on the Typo3 project which could be found on https://typo3.org and is also GPL.
-It implements the Twitter Bootstrap for the Typo3 back- and frontend. It is not part of this software (it is required and will be loaded by composer). You'll find it on https://getbootstrap.com with a MIT license.
-For the media grids Masonry is used. You'll find it here on https://masonry.desandro.com with a MIT license. It is also not part of this software (it is required and will be loaded by composer).
+
+It implements the Twitter Bootstrap for the Typo3 back- and frontend.
+Twitter Bootstrap is not part of this software (it is required and will be loaded by composer).
+You'll find it on https://getbootstrap.com using a MIT license.
+
+For the icon set Bootstrap Icons is used.
+Twitter Bootstrap Icons is not part of this software (it is required and will be loaded by composer).
+You'll find it on https://github.com/twbs/icons using a MIT license.
+
+For the media grids Masonry is used.
+You'll find it here on https://masonry.desandro.com using a MIT license.
+A copy of the minified JavaScript code is included in this extension.
+
+Also for the media grids and Masonry imagesloaded is used.
+You'll find it here on https://github.com/desandro/imagesloaded using a MIT license.
+A copy of the minified JavaScript code is included in this extension.
+
+To provide pictures to IE11 picturefill is used.
+You'll find it here on https://scottjehl.github.io/picturefill/ using a MIT license.
+A copy of the minified JavaScript code is included in this extension.
 
 ---------------------------------
 
