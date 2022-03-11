@@ -325,7 +325,7 @@
         &.iconset#{$infix}-end-top>.iconset__icon,
         &.iconset#{$infix}-top-start>.iconset__icon,
         &.iconset#{$infix}-bottom-start>.iconset__icon {
-            align-self: start;
+            align-self: flex-start;
         }
 
         // icon is right or bottom
@@ -333,7 +333,7 @@
         &.iconset#{$infix}-end-bottom>.iconset__icon,
         &.iconset#{$infix}-top-end>.iconset__icon,
         &.iconset#{$infix}-bottom-end>.iconset__icon {
-            align-self: end;
+            align-self: flex-end;
         }
     }
 }
