@@ -5,6 +5,65 @@ Typo3 template extension with Twitter Bootstrap 5 package.
 Provides page templates and many content elements modified or build for Bootstrap 5.  
 The basis of the content elements is fluid_styled_content (many are copied from this extension).
 
+## Table of contents
+
+- [typo3 extension: bootstrap](#typo3-extension-bootstrap)
+  - [Table of contents](#table-of-contents)
+  - [Install](#install)
+    - [1. Install typo3 as usual with composer.](#1-install-typo3-as-usual-with-composer)
+    - [2. Install this package.](#2-install-this-package)
+    - [3. Run the command to copy some assets to fileadmin.](#3-run-the-command-to-copy-some-assets-to-fileadmin)
+    - [4. Clear the cache](#4-clear-the-cache)
+    - [5. Go to the backend, create a new template and include static files from extension](#5-go-to-the-backend-create-a-new-template-and-include-static-files-from-extension)
+  - [Content elements](#content-elements)
+    - [All content elements](#all-content-elements)
+      - [Fields](#fields)
+    - [All headers](#all-headers)
+      - [Fields](#fields-1)
+      - [Available constants](#available-constants)
+    - [Accordion](#accordion)
+      - [Settings for all items:](#settings-for-all-items)
+      - [Settings each item:](#settings-each-item)
+    - [Carousel](#carousel)
+      - [Settings:](#settings)
+      - [Image properties:](#image-properties)
+    - [Cards](#cards)
+      - [Settings:](#settings-1)
+      - [Card-item properties:](#card-item-properties)
+    - [Media grid](#media-grid)
+      - [Settings:](#settings-2)
+    - [Tabulator](#tabulator)
+      - [Settings for all items:](#settings-for-all-items-1)
+      - [Settings each item:](#settings-each-item-1)
+    - [Text + Image](#text--image)
+      - [Settings:](#settings-3)
+    - [Text & Media (float)](#text--media-float)
+      - [Settings:](#settings-4)
+    - [Text & Media (grid)](#text--media-grid)
+      - [Settings:](#settings-5)
+    - [Two columns text](#two-columns-text)
+    - [Alert](#alert)
+      - [Settings:](#settings-6)
+    - [Markdown](#markdown)
+    - [Bullets](#bullets)
+      - [Settings (like Typo3):](#settings-like-typo3)
+    - [Div](#div)
+      - [TypoScript Constants](#typoscript-constants)
+    - [Header](#header)
+    - [Table](#table)
+    - [Uploads](#uploads)
+      - [TypoScript Constants](#typoscript-constants-1)
+    - [Copied `fluid_styled_content` content elements](#copied-fluid_styled_content-content-elements)
+  - [Navigation](#navigation)
+    - [TypoScript Constants](#typoscript-constants-2)
+      - [PID](#pid)
+      - [Regular nav](#regular-nav)
+      - [Dropdown main](#dropdown-main)
+      - [Dropdown link regular](#dropdown-link-regular)
+      - [Dropdown toggle link/button](#dropdown-toggle-linkbutton)
+      - [Dropdown link in dropdown](#dropdown-link-in-dropdown)
+  - [Credits](#credits)
+
 ## Install
 
 There is a basic package at https://github.com/lbr-media/typo3-bootstrap-base which also loads a distribution extension. Maybe use it to get an example page with content or follow these steps to get a fresh and empty installation:
@@ -482,10 +541,11 @@ CType: `bullets`
 Just a line.  
 CType: `div`
 
-#### Constants
+#### TypoScript Constants
 
-* **CSS-classes HR-tag**  
-`ce_div_hr_classes = bg-dark opacity-75 my-3 my-md-4`
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `ce_div_hr_classes` | `bg-dark opacity-75 my-3 my-md-4` | CSS-classes HR-tag |
 
 ---
 
@@ -506,14 +566,13 @@ Realized with Bootstrap card component.
 The default Typo3-fields are available.  
 CType: `uploads`
 
-#### Constants
+#### TypoScript Constants
 
-* **CSS-classes GRID-ROW**  
-`ce_uploads_row_classes = list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 align-items-stretch`
-* **CSS-classes GRID-COL**  
-`ce_uploads_col_classes = col`
-* **CSS-classes CARD**  
-`ce_uploads_card_classes = card h-100`
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `ce_uploads_row_classes` | `list-unstyled row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 align-items-stretch` | CSS-classes GRID-ROW |
+| `ce_uploads_col_classes` | `col` | CSS-classes GRID-COL |
+| `ce_uploads_card_classes` | `card h-100` | CSS-classes CARD |
 
 ---
 
@@ -544,61 +603,61 @@ CType: `text`
 
 ## Navigation
 
-### Constants
+### TypoScript Constants
 
-* **CSS-classes UL**  
-`nav_ul_classes = list-unstyled`
-* **CSS-classes LI**  
-`nav_li_classes = nav-item`
-* **CSS-classes LINK: Spacer**  
-`nav_link_spacer_classes = nav-link spacer`
-* **CSS-classes LINK: Current**  
-`nav_link_current_classes = nav-link active`
-* **CSS-classes LINK: Active**  
-`nav_link_active_classes = nav-link active`
-* **CSS-classes LINK: Inactive**  
-`nav_link_inactive_classes = nav-link inactive`
+#### PID
 
-* **Page-UIDs to exclude (excludeUidList)**  
-`nav_dropdown_excludeUidList = `
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `nav_dropdown_excludeUidList` | | Page-UIDs to exclude (excludeUidList) |
 
-* **CSS-classes UL in level 0**  
-`nav_dropdown_ul_classes = navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end`
-* **CSS-classes UL target in level 1 containing the children**  
-`nav_dropdown_ul_target_classes = dropdown-menu dropdown-menu-dark dropdown-menu-end`
-* **CSS-classes LI regular (which has no children and it is not in a dropdown)**  
-`nav_dropdown_li_dropdown_classes = nav-item`
-* **CSS-classes LI toggle (which has children)**  
-`nav_dropdown_li_dropdown_toggle_classes = nav-item dropdown`
-* **CSS-classes LI target (which is a child in dropdown)**  
-`nav_dropdown_li_dropdown_target_classes = `
+#### Regular nav
 
-* **CSS-classes LINK REGULAR: Spacer**  
-`nav_dropdown_spacer_classes = nav-link text-nowrap`
-* **CSS-classes LINK REGULAR: Current**  
-`nav_dropdown_current_classes = nav-link text-nowrap active`
-* **CSS-classes LINK REGULAR: Active**  
-`nav_dropdown_active_classes = nav-link text-nowrap active`
-* **CSS-classes LINK REGULAR: Inactive**  
-`nav_dropdown_inactive_classes = nav-link text-nowrap`
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+`nav_ul_classes` | `list-unstyled` | CSS-classes UL |
+`nav_li_classes` | `nav-item` | CSS-classes LI |
+`nav_link_spacer_classes` | `nav-link spacer` | CSS-classes LINK: Spacer |
+`nav_link_current_classes` | `nav-link active` | CSS-classes LINK: Current |
+`nav_link_active_classes` | `nav-link active` | CSS-classes LINK: Active |
+`nav_link_inactive_classes` | `nav-link inactive` | CSS-classes LINK: Inactive |
 
-* **CSS-classes LINK TOGGLE: Spacer in level 0 with children**  
-`nav_dropdown_toggle_spacer_classes = nav-link text-nowrap dropdown-toggle`
-* **CSS-classes LINK TOGGLE: Current in level 0 with children**  
-`nav_dropdown_toggle_current_classes = nav-link text-nowrap active dropdown-toggle`
-* **CSS-classes LINK TOGGLE: Active in level 0 with children**  
-`nav_dropdown_toggle_active_classes = nav-link text-nowrap active dropdown-toggle`
-* **CSS-classes LINK TOGGLE: Inactive in level 0 with children**  
-`nav_dropdown_toggle_inactive_classes = nav-link text-nowrap dropdown-toggle`
+#### Dropdown main
 
-* **CSS-classes LINK CHILD: Spacer in level 1 in dropdown**  
-`nav_dropdown_child_spacer_classes = dropdown-divider`
-* **CSS-classes LINK CHILD: Current in level 1 in dropdown**  
-`nav_dropdown_child_current_classes = dropdown-item text-nowrap active`
-* **CSS-classes LINK CHILD: Active in level 1 in dropdown**  
-`nav_dropdown_child_active_classes = dropdown-item text-nowrap active`
-* **CSS-classes LINK CHILD: Inactive in level 1 in dropdown**  
-`nav_dropdown_child_inactive_classes = dropdown-item text-nowrap`
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `nav_dropdown_ul_classes` | `navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end` | CSS-classes UL in level 0 |
+| `nav_dropdown_ul_target_classes` | `dropdown-menu dropdown-menu-dark dropdown-menu-end` | CSS-classes UL target in level 1 containing the children |
+| `nav_dropdown_li_dropdown_classes` | `nav-item` | CSS-classes LI regular (which has no children and it is not in a dropdown) |
+| `nav_dropdown_li_dropdown_toggle_classes` | `nav-item dropdown` | CSS-classes LI toggle (which has children) |
+| `nav_dropdown_li_dropdown_target_classes` | | CSS-classes LI target (which is a child in dropdown) |
+
+#### Dropdown link regular
+
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `nav_dropdown_spacer_classes`| `nav-link text-nowrap` | CSS-classes LINK REGULAR: Spacer |
+| `nav_dropdown_current_classes`| `nav-link text-nowrap active` | CSS-classes LINK REGULAR: Current |
+| `nav_dropdown_active_classes`| `nav-link text-nowrap active` | CSS-classes LINK REGULAR: Active |
+| `nav_dropdown_inactive_classes`| `nav-link text-nowrap` | CSS-classes LINK REGULAR: Inactive |
+
+#### Dropdown toggle link/button
+
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+`nav_dropdown_toggle_spacer_classes` | `nav-link text-nowrap dropdown-toggle` | CSS-classes LINK TOGGLE: Spacer in level 0 with children |
+`nav_dropdown_toggle_current_classes` | `nav-link text-nowrap active dropdown-toggle` | CSS-classes LINK TOGGLE: Current in level 0 with children |
+`nav_dropdown_toggle_active_classes` | `nav-link text-nowrap active dropdown-toggle` | CSS-classes LINK TOGGLE: Active in level 0 with children |
+`nav_dropdown_toggle_inactive_classes` | `nav-link text-nowrap dropdown-toggle` | CSS-classes LINK TOGGLE: Inactive in level 0 with children |
+
+#### Dropdown link in dropdown
+
+| Key | Default | Desription |
+| --- | ------- | ---------- |
+| `nav_dropdown_child_spacer_classes` | `dropdown-divider` | CSS-classes LINK CHILD: Spacer in level 1 in dropdown |
+| `nav_dropdown_child_current_classes` | `dropdown-item text-nowrap active` | CSS-classes LINK CHILD: Current in level 1 in dropdown |
+| `nav_dropdown_child_active_classes` | `dropdown-item text-nowrap active` | CSS-classes LINK CHILD: Active in level 1 in dropdown |
+| `nav_dropdown_child_inactive_classes` | `dropdown-item text-nowrap` | CSS-classes LINK CHILD: Inactive in level 1 in dropdown |
 
 ## Credits
 
