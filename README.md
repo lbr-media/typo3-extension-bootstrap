@@ -135,12 +135,6 @@ Each variant has these properties:
     * `outerWrap` (string)
     * `innerWrap` (string)
     * `additionalClass` (string)
-* _`Icon-Set`_  
-    * `Set` (select; required; at this time only bootstrap icons)
-    * `Name` (string; readonly with visible selected icon)
-    * `Position` (select; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
-    * `Size` (select; the bootstrap font sizes or just inherit)
-    * `Icon Color` (select; one of the text-{color} classes)
 
 Example:
 ``` TypoScript
@@ -154,6 +148,7 @@ plugin.tx_bootstrap.settings.form.element.PredefinedHeader {
     }
 }
 ```
+
 * _`Color`_ (select; one of the text-{color} classes)
 * _`Position`_ (select; either `start`, `center` or `end`)
 * _`Date`_ (Date)
@@ -188,9 +183,19 @@ plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles {
     }
 }
 ```
-* _`Icon`_ (FAL)
+
 * _`Link`_ (TypoLink)
 * _`Subheader`_ (string)
+* _`File icon`_  
+    * `Icon` (File reference)
+    * `Size` (select; the bootstrap font sizes or just inherit)
+    * `Alignment` (select; each device from xs to xxl; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
+* _`Icon-Set`_  
+    * `Set` (select; required; at this time only bootstrap icons)
+    * `Name` (string; readonly with visible selected icon)
+    * `Alignment` (select; each device from xs to xxl; `top`, `top-left`, `top-center`, `top-right`, `left`, `left-top`, `left-middle`, `left-bottom`, etc.)
+    * `Size` (select; the bootstrap font sizes or just inherit)
+    * `Color` (select; one of the text-{color} classes)
 
 ---
 
@@ -262,7 +267,7 @@ In TypoScript `tt_content.bootstrap_cards.flexform_presets` one or more settings
 #### Card-item properties:
 * _`Header`_ (string)
 * _`Title`_ (string)
-* _`Image`_ (FAL)
+* _`Image`_ (File reference)
 * _`Text`_ (multiline string, RTE)
 * _`Link`_ (TypoLink)
 * _`Link text`_ (string)
