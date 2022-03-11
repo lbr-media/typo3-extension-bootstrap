@@ -698,8 +698,12 @@ Many thanks to the people of:
 * https://typo3.org  
 This extension is based on the Typo3 project.
 * https://getbootstrap.com  
-It implements the Twitter Bootstrap for the Typo3 back- and frontend. Bootstrap is not part of this software but is required and will be loaded by composer.
-* https://masonry.desandro.com  
+It implements the Twitter Bootstrap for the Typo3 back- and frontend.
+* https://github.com/twbs/icons  
+For the icon set Twitter Bootstrap Icons is used.
+* https://masonry.desandro.com + https://github.com/desandro/imagesloaded  
 For the media grids Masonry can be used. It is also not part of this software. Masonry is also required and will be loaded by composer.
+* https://scottjehl.github.io/picturefill/  
+To provide pictures to IE11 picturefill is used.
 
 The world would be a sadder place without them.
