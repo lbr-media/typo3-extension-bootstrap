@@ -149,7 +149,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                 if ($record['tx_bootstrap_carditems']) {
                     $table = 'tx_bootstrap_domain_model_carditem';
                     $queryBuilder = $this->getQueryBuilderForTable($table);
-                    $queryBuilder->select('uid', 'header', 'title')
+                    $queryBuilder->select('uid', 'header', 'title', 'footer')
                         ->from($table)
                         ->where(
                             $queryBuilder->expr()->eq(
@@ -165,8 +165,13 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         if ($row['header']) {
                             $titles[] = $row['header'];
                         }
+
                         if ($row['title']) {
                             $titles[] = $row['title'];
+                        }
+                        
+                        if (empty($titles) && $row['footer']) {
+                            $titles[] = $row['footer'];
                         }
                         $list .= '<li>' . $this->linkEditContent(htmlspecialchars(implode(', ', $titles), ENT_QUOTES, 'UTF-8', false), $record) . '</li>';
                     }
