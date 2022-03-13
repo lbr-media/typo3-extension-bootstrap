@@ -77,11 +77,9 @@
             </f:if>
 
             <f:if condition="{file.properties.copyright}">
-                <footer>
-                    <small class="figure-copyright">
-                        {file.properties.copyright -> f:format.nl2br()}
-                    </small>
-                </footer>
+                <small class="figure-copyright">
+                    {file.properties.copyright -> f:format.nl2br()}
+                </small>
             </f:if>
 
         <f:if condition="{file.properties.tx_bootstrap_header}||{file.description}||{file.properties.tx_bootstrap_link_text}||{file.properties.copyright}">
