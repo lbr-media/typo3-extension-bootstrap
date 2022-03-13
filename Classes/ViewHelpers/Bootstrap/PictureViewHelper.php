@@ -98,6 +98,7 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('additionalParams', 'array', '', false, []);
         $this->registerArgument('additionalImgTagParams', 'array', '', false, []);
         $this->registerArgument('displayWidth', 'array', 'array with keys xs, sm, md, lg, xl and xxl with percent values of the full window width', false, []);
+        $this->registerArgument('useSizes', 'boolean', 'Use sizes attribute in source tags instead of density.', false, true);
     }
 
     /**
@@ -181,6 +182,9 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
                     $sourceTag->forceClosingTag(false);
                     $sourceTag->addAttribute('media', $source['media']);
                     $sourceTag->addAttribute('srcset', $source['source']);
+                    if ($this->arguments['useSizes']) {
+                        $sourceTag->addAttribute('sizes', $source['sizes']);
+                    }
                     $pictureContent[] = '<!--' . $device . ' cdw:' . $this->pictureService->getDisplayWidth($device) . 'px -->' . $sourceTag->render();
                 }
             }
@@ -230,24 +234,43 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
             $targetWidth += 575;
         }
 
-        // build 1x source
-        $sources = [
-            $this->pictureService->getImageSource($device, $targetWidth) . ' 1x',
-        ];
+        if ($this->arguments['useSizes']) {
+            // build 1x source
+            $sources = [
+                $this->pictureService->getImageSource($device, $targetWidth) . ' '. $targetWidth . 'w',
+            ];
 
-        // build 2x source
-        if ($targetWidth * 2 <= 575 * 4) {
-            $sources[] = $this->pictureService->getImageSource($device, $targetWidth * 2) . ' 2x';
+            // build 2x source
+            if ($targetWidth * 2 <= 575 * 4) {
+                $sources[] = $this->pictureService->getImageSource($device, $targetWidth) . ' '. ($targetWidth * 2) . 'w';
+            }
+
+            // create sizes attribute
+            // $size = ($this->arguments['displayWidth'] && isset($this->arguments['displayWidth'][$device]) && is_numeric($this->arguments['displayWidth'][$device]))
+            //     ? (string) round((float) $this->arguments['displayWidth'][$device], 2)
+            //     : '100';
+
+            return [
+                'source' => implode(', ', $sources),
+                'media' => $media,
+                // 'sizes' => $size . 'vw'
+                'sizes' => $this->pictureService::DISPLAY_WIDTHS[$device] . 'px'
+            ];
+        } else {
+            // build 1x source
+            $sources = [
+                $this->pictureService->getImageSource($device, $targetWidth) . ' 1x',
+            ];
+
+            // build 2x source
+            if ($targetWidth * 2 <= 575 * 4) {
+                $sources[] = $this->pictureService->getImageSource($device, $targetWidth * 2) . ' 2x';
+            }
+
+            return [
+                'source' => 1 === count($sources) ? substr(implode(', ', $sources), 0, -3) : implode(', ', $sources),
+                'media' => $media,
+            ];
         }
-
-        // build 3x source
-        //if ($targetWidth * 3 <= 480 * 3) {
-        //    $sources[] = $this->getImageSource($device, $targetWidth * 3) . " 3x";
-        //}
-
-        return [
-            'source' => 1 === count($sources) ? substr(implode(', ', $sources), 0, -3) : implode(', ', $sources),
-            'media' => $media,
-        ];
     }
 }
