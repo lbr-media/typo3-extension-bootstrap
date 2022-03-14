@@ -20,6 +20,27 @@ if (PHP_SAPI !== 'cli') {
     die('This script supports command line usage only. Please check your command.');
 }
 
+// Create header
+$_EXTKEY = 'bootstrap';
+require_once(realpath(__DIR__) .'/ext_emconf.php');
+
+$title = $EM_CONF[$_EXTKEY]['title'];
+$description = $EM_CONF[$_EXTKEY]['description'];
+$version = $EM_CONF[$_EXTKEY]['version'];
+$author = $EM_CONF[$_EXTKEY]['author'];
+$author_email = $EM_CONF[$_EXTKEY]['author_email'];
+$author_company = $EM_CONF[$_EXTKEY]['author_company'];
+$year = date('Y');
+
+$header = <<<EOL
+@package $title - $description
+@version $version
+@author $author <$author_email>
+@copyright $year $author_company
+@link https://github.com/lbr-media/typo3-extension-bootstrap
+@license GPL-2.0-or-later
+EOL;
+
 // Define in which folders to search and which folders to exclude
 // Exclude all files and directories from .gitignore
 $finder = (new PhpCsFixer\Finder())
@@ -86,5 +107,8 @@ return (new \PhpCsFixer\Config())
         'single_trait_insert_per_statement' => true,
         'trailing_comma_in_multiline' => ['elements' => ['arrays']],
         'whitespace_after_comma_in_array' => true,
+        'header_comment' => [
+            'header' => $header,
+        ],
     ])
     ->setFinder($finder);

@@ -2,6 +2,15 @@
 
 declare(strict_types=1);
 
+/*
+ * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
+ * @version 1.0.17
+ * @author Marcel Briefs <mb@lbrmedia.de>
+ * @copyright 2022 LBRmedia
+ * @link https://github.com/lbr-media/typo3-extension-bootstrap
+ * @license GPL-2.0-or-later
+ */
+
 namespace LBRmedia\Bootstrap\Utility;
 
 use DateTime;
@@ -42,10 +51,10 @@ class DateUtility
             $date = new DateTime('@' . $dateTimestamp);
             $date->setTimezone(
                 new DateTimeZone(
-                isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']) && $GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']
+                    isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']) && $GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']
                     ? $GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']
                     : date_default_timezone_get()
-            )
+                )
             );
         } catch (Exception $exception) {
             throw new Exception('"' . $date . '" could not be parsed by DateTime constructor: ' . $exception->getMessage(), 1646498123);
