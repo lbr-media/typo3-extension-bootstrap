@@ -39,7 +39,7 @@ module.exports = (ENV) => {
                 ' * @package <%= pkg.name %> - <%= pkg.description %>',
                 ' * @version <%= pkg.version %>',
                 ' * @author <%= pkg.author.name %> <<%= pkg.author.email %>>',
-                ' * @date <%= date.toUTCString() %>',
+                // ' * @date <%= date.toUTCString() %>',
                 ' * @copyright <%= date.getFullYear() %> <%= pkg.author.company %>',
                 ' * @link <%= pkg.homepage %>',
                 ' * @license <%= pkg.license %>',
