@@ -12,7 +12,6 @@ class CardItem
      * Gets the title in TCA for CardItems.
      *
      * @param array $parameters
-     * @return void
      */
     public function title(&$parameters)
     {

@@ -237,12 +237,12 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
         if ($this->arguments['useSizes']) {
             // build 1x source
             $sources = [
-                $this->pictureService->getImageSource($device, $targetWidth) . ' '. $targetWidth . 'w',
+                $this->pictureService->getImageSource($device, $targetWidth) . ' ' . $targetWidth . 'w',
             ];
 
             // build 2x source
             if ($targetWidth * 2 <= 575 * 4) {
-                $sources[] = $this->pictureService->getImageSource($device, $targetWidth) . ' '. ($targetWidth * 2) . 'w';
+                $sources[] = $this->pictureService->getImageSource($device, $targetWidth) . ' ' . ($targetWidth * 2) . 'w';
             }
 
             // create sizes attribute
@@ -254,23 +254,22 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
                 'source' => implode(', ', $sources),
                 'media' => $media,
                 // 'sizes' => $size . 'vw'
-                'sizes' => $this->pictureService::DISPLAY_WIDTHS[$device] . 'px'
+                'sizes' => $this->pictureService::DISPLAY_WIDTHS[$device] . 'px',
             ];
-        } else {
-            // build 1x source
-            $sources = [
+        }
+        // build 1x source
+        $sources = [
                 $this->pictureService->getImageSource($device, $targetWidth) . ' 1x',
             ];
 
-            // build 2x source
-            if ($targetWidth * 2 <= 575 * 4) {
-                $sources[] = $this->pictureService->getImageSource($device, $targetWidth * 2) . ' 2x';
-            }
+        // build 2x source
+        if ($targetWidth * 2 <= 575 * 4) {
+            $sources[] = $this->pictureService->getImageSource($device, $targetWidth * 2) . ' 2x';
+        }
 
-            return [
+        return [
                 'source' => 1 === count($sources) ? substr(implode(', ', $sources), 0, -3) : implode(', ', $sources),
                 'media' => $media,
             ];
-        }
     }
 }

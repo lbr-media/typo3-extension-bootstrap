@@ -169,7 +169,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         if ($row['title']) {
                             $titles[] = $row['title'];
                         }
-                        
+
                         if (empty($titles) && $row['footer']) {
                             $titles[] = $row['footer'];
                         }

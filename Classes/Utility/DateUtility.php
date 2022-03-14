@@ -40,11 +40,12 @@ class DateUtility
             $base = $base instanceof DateTimeInterface ? (int)$base->format('U') : (int)strtotime((MathUtility::canBeInterpretedAsInteger($base) ? '@' : '') . $base);
             $dateTimestamp = strtotime('@' . $timestamp, $base);
             $date = new DateTime('@' . $dateTimestamp);
-            $date->setTimezone(new DateTimeZone(
+            $date->setTimezone(
+                new DateTimeZone(
                 isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']) && $GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']
                     ? $GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']
                     : date_default_timezone_get()
-                )
+            )
             );
         } catch (Exception $exception) {
             throw new Exception('"' . $date . '" could not be parsed by DateTime constructor: ' . $exception->getMessage(), 1646498123);
