@@ -9,26 +9,26 @@ page {
     meta {
         X-UA-Compatible = IE=edge
         X-UA-Compatible.attribute = http-equiv
-        #date.data = date:U
-        #date.strftime = %Y-%m-%d
-        expires = 0
+        # date.data = date:U
+        # date.strftime = %Y-%m-%d
+        # expires = 0
         revisit-after = 14 days
-        #revisit-after.httpEquivalent = 1
-        #isFamilyFriendly = True
-        #isFamilyFriendly.attribute = itemprop
+        # revisit-after.httpEquivalent = 1
+        # isFamilyFriendly = True
+        # isFamilyFriendly.attribute = itemprop
         viewport = width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes
-        author =
-        #abstract =
-        #page-topic =
-        classification =
-        copyright =
-        robots = index, follow
+        # author =
+        # abstract =
+        # page-topic =
+        # classification =
+        # copyright =
+        # robots = index, follow
         distribution = global
         audience = all
-        cache-control = no-cache
+        # cache-control = no-cache
         rating = general
-        #creator =
-        #identifier.data = site:base
+        # creator =
+        # identifier.data = site:base
         format-detection = telephone=no
     }
 }

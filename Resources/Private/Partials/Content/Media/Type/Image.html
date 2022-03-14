@@ -36,9 +36,11 @@
             </f:else>
         </f:if>
         <f:if condition="{file.properties.copyright}">
-                <small class="figure-copyright">
-                    {file.properties.copyright -> f:format.nl2br()}
-                </small>
+                <p class="m-0">
+                    <small class="figure-copyright">
+                        {file.properties.copyright -> f:format.nl2br()}
+                    </small>
+                </p>
             </div>
         </f:if>
         <f:if condition="{file.description}">
