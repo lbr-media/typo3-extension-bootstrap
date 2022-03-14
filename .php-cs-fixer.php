@@ -19,11 +19,12 @@
 if (PHP_SAPI !== 'cli') {
     die('This script supports command line usage only. Please check your command.');
 }
+
 // Define in which folders to search and which folders to exclude
 // Exclude all files and directories from .gitignore
 $finder = (new PhpCsFixer\Finder())
     ->ignoreVCSIgnored(true)
-    ->in(realpath(__DIR__ . '/../'));
+    ->in(realpath(__DIR__ . '/'));
 // Return a Code Sniffing configuration using
 // all sniffers needed for PSR-2
 // and additionally:
