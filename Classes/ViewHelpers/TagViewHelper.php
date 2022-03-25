@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers;
 
+use LBRmedia\Bootstrap\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 /**
@@ -77,6 +78,8 @@ class TagViewHelper extends AbstractTagBasedViewHelper
      * Should the tag to be forced to close.
      * - additionalAttributesIfNotEmpty
      * Additional tag attributes which are only set when not empty. This is to avoid produce unnessecary output.
+     * - classes
+     * CSS-classes array to merge with class atribute.
      */
     public function initializeArguments(): void
     {
@@ -86,6 +89,7 @@ class TagViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('content', 'string', '', false, '', false);
         $this->registerArgument('forceClosingTag', 'bool', '', false, true);
         $this->registerArgument('additionalAttributesIfNotEmpty', 'array', 'Additional tag attributes which are only set when not empty. This is to avoid produce unnessecary output.', false);
+        $this->registerArgument('classes', 'array', 'CSS-classes array to merge with class atribute.', false);
     }
 
     /**
@@ -114,6 +118,13 @@ class TagViewHelper extends AbstractTagBasedViewHelper
                     $this->tag->addAttribute($attributeName, trim($value));
                 }
             }
+        }
+
+        if (is_array($this->arguments['classes'])) {
+            $classes = $this->tag->getAttribute('class')
+                ? array_merge([$this->tag->getAttribute('class')], $this->arguments['classes'])
+                : $this->arguments['classes'];
+            $this->tag->addAttribute('class', GeneralUtility::cleanCssClassesString($classes));
         }
 
         return $this->tag->render();
