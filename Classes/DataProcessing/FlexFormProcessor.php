@@ -61,7 +61,7 @@ class FlexFormProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        if (!trim($processedData['data']['tx_bootstrap_flexform'])) {
+        if (!isset($processedData['data']['tx_bootstrap_flexform']) || !trim($processedData['data']['tx_bootstrap_flexform'])) {
             return $processedData;
         }
 
