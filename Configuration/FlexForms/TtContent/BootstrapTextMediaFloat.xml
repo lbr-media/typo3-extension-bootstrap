@@ -15,7 +15,7 @@
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
-                                <itemsProcFunc>LBRmedia\Bootstrap\UserFunc\Tca\TtContent->itemsProcFunc</itemsProcFunc>
+                                <itemsProcFunc>LBRmedia\Bootstrap\UserFunc\TCA\TtContent->itemsProcFunc</itemsProcFunc>
                                 <CType>bootstrap_textmediafloat</CType>
                             </config>
                         </value>

@@ -34,5 +34,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Marcel Briefs',
     'author_email' => 'mb@lbrmedia.de',
     'author_company' => 'LBRmedia',
-    'version' => '1.0.20',
+    'version' => '1.0.21',
 ];
