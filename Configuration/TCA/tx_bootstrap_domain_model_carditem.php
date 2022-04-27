@@ -15,7 +15,7 @@ return [
     'ctrl' => [
         'title' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_carditem',
         'label' => 'header',
-        'label_userFunc' => \LBRmedia\Bootstrap\UserFunc\Tca\CardItem::class . '->title',
+        'label_userFunc' => \LBRmedia\Bootstrap\UserFunc\TCA\CardItem::class . '->title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',

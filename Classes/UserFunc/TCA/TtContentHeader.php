@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @license GPL-2.0-or-later
  */
 
-namespace LBRmedia\Bootstrap\UserFunc\Tca;
+namespace LBRmedia\Bootstrap\UserFunc\TCA;
 
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 
