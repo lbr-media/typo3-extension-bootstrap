@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -46,6 +46,13 @@ class FlexFormService implements LoggerAwareInterface
      * @var array $pluginSettings
      */
     protected $pluginSettings;
+
+    /**
+     * Additional informations which might be usefull in getFlexformValueByPath()
+     *
+     * @var array
+     */
+    public array $additionalLoggerInfo = [];
 
     /**
      * @return ConfigurationManager
@@ -94,15 +101,20 @@ class FlexFormService implements LoggerAwareInterface
      * @param Logger $logger
      * @return mixed
      */
-    protected static function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '', ?Logger $logger = null)
+    protected function getFlexformValueByPath(array $data, string $path, string $type = 'string', $defaultValue = '', ?Logger $logger = null)
     {
         $parts = explode('.', $path);
         foreach ($parts as $part) {
             if (isset($data[$part])) {
                 $data = $data[$part];
             } else {
-                if ($logger) {
-                    $logger->error('Cannot get path in flexform data: ' . $path);
+                if ($this->logger) {
+                    $this->logger->error(
+                        'Cannot get path in flexform data.',
+                        count($this->additionalLoggerInfo)
+                                ? array_merge(['path' => $path], $this->additionalLoggerInfo)
+                                : ['path' => $path]
+                    );
                 }
                 return $defaultValue;
             }
@@ -138,9 +150,9 @@ class FlexFormService implements LoggerAwareInterface
      * @param string $path            The path in $data to get the preset keys.
      * @param Logger $logger
      */
-    protected static function processPresets(string $CType, array $data, array &$transformedData, string $path = "'data.sPRESETS.lDEF.presets.vDEF'", ?Logger $logger = null): void
+    protected function processPresets(string $CType, array $data, array &$transformedData, string $path = "'data.sPRESETS.lDEF.presets.vDEF'", ?Logger $logger = null): void
     {
-        $presets = self::getFlexformValueByPath($data, $path, 'string', '', $logger);
+        $presets = $this->getFlexformValueByPath($data, $path, 'string', '', $logger);
         if ($presets) {
             $ts = BootstrapGeneralUtility::getFullTypoScript();
             if (isset($ts['tt_content.'][$CType . '.']['flexform_presets.']) && is_array($ts['tt_content.'][$CType . '.']['flexform_presets.'])) {

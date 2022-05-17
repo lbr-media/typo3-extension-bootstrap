@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -51,7 +51,7 @@ class FlexFormServiceBootstrapAccordion extends FlexFormService implements FlexF
     protected function getConfigurationArray(array $data): array
     {
         return [
-            'keep_open' => self::getFlexformValueByPath($data, 'data.sACCORDION.lDEF.keep_open.vDEF', 'bool', false, $this->logger),
+            'keep_open' => $this->getFlexformValueByPath($data, 'data.sACCORDION.lDEF.keep_open.vDEF', 'bool', false),
         ];
     }
 }

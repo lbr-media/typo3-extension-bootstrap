@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -51,12 +51,12 @@ class FlexFormServiceBootstrapCarousel extends FlexFormService implements FlexFo
     protected function getConfigurationArray(array $data): array
     {
         return [
-            'animation' => self::getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.animation.vDEF', 'string', 'slide', $this->logger),
-            'autoplay' => self::getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.autoplay.vDEF', 'bool', true, $this->logger),
-            'color_scheme' => self::getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.color_scheme.vDEF', 'string', '', $this->logger),
-            'controls' => self::getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.controls.vDEF', 'bool', true, $this->logger),
-            'indicators' => self::getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.indicators.vDEF', 'bool', true, $this->logger),
-            'interval' => self::getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.interval.vDEF', 'int', 2000, $this->logger),
+            'animation' => $this->getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.animation.vDEF', 'string', 'slide'),
+            'autoplay' => $this->getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.autoplay.vDEF', 'bool', true),
+            'color_scheme' => $this->getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.color_scheme.vDEF', 'string', ''),
+            'controls' => $this->getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.controls.vDEF', 'bool', true),
+            'indicators' => $this->getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.indicators.vDEF', 'bool', true),
+            'interval' => $this->getFlexformValueByPath($data, 'data.sCAROUSEL.lDEF.interval.vDEF', 'int', 2000),
         ];
     }
 }

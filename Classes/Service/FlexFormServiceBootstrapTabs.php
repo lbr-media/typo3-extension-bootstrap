@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -51,8 +51,8 @@ class FlexFormServiceBootstrapTabs extends FlexFormService implements FlexFormSe
     protected function getConfigurationArray(array $data): array
     {
         return [
-            'layout' => self::getFlexformValueByPath($data, 'data.sTABS.lDEF.layout.vDEF', 'string', 'default', $this->logger),
-            'nav_orientation' => self::getFlexformValueByPath($data, 'data.sTABS.lDEF.nav_orientation.vDEF', 'string', '', $this->logger),
+            'layout' => $this->getFlexformValueByPath($data, 'data.sTABS.lDEF.layout.vDEF', 'string', 'default'),
+            'nav_orientation' => $this->getFlexformValueByPath($data, 'data.sTABS.lDEF.nav_orientation.vDEF', 'string', ''),
         ];
     }
 }

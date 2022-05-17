@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -58,18 +58,18 @@ class FlexFormServiceBootstrapTextImage extends FlexFormService implements FlexF
     protected function getConfigurationArray(array $data): array
     {
         $transformedData = [
-            'order' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.order.vDEF', 'string', 'text_image', $this->logger),
-            'text_align' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.text_align.vDEF', 'string', 'start', $this->logger),
-            'image_align' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.image_align.vDEF', 'string', 'start', $this->logger),
-            'header_position' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.header_position.vDEF', 'string', 'above_all', $this->logger),
-            'space' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space.vDEF', 'string', ';;;;;', $this->logger),
+            'order' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.order.vDEF', 'string', 'text_image'),
+            'text_align' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.text_align.vDEF', 'string', 'start'),
+            'image_align' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.image_align.vDEF', 'string', 'start'),
+            'header_position' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.header_position.vDEF', 'string', 'above_all'),
+            'space' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space.vDEF', 'string', ';;;;;'),
             'mediaitem' => [
-                'border' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
+                'border' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;'),
             ],
         ];
 
         // Process presets which overrides some/all settings
-        self::processPresets('bootstrap_textimage', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF', $this->logger);
+        $this->processPresets('bootstrap_textimage', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF');
 
         return $transformedData;
     }

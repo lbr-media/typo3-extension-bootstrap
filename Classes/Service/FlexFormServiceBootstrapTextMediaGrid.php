@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -133,62 +133,62 @@ class FlexFormServiceBootstrapTextMediaGrid extends FlexFormService implements F
     protected function getConfigurationArray(array $data): array
     {
         $transformedData = [
-            'order' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.order.vDEF', 'string', 'text_media', $this->logger),
-            'header_position' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.header_position.vDEF', 'string', 'above_all', $this->logger),
-            'device_order' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.device_order.vDEF', 'string', ';;;;;', $this->logger),
-            'overflow_hidden' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.overflow_hidden.vDEF', 'bool', true, $this->logger),
-            'col_text' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.col_text.vDEF', 'string', ';;;;;', $this->logger),
-            'col_media' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.col_media.vDEF', 'string', ';;;;;', $this->logger),
-            'space_y' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),
-            'space_x' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_x.vDEF', 'string', ';;;;;', $this->logger),
-            'align_items' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.align_items.vDEF', 'string', ';;;;;', $this->logger),
-            'justify_content' => self::getFlexformValueByPath($data, 'data.sGENERAL.lDEF.justify_content.vDEF', 'string', ';;;;;', $this->logger),
+            'order' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.order.vDEF', 'string', 'text_media'),
+            'header_position' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.header_position.vDEF', 'string', 'above_all'),
+            'device_order' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.device_order.vDEF', 'string', ';;;;;'),
+            'overflow_hidden' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.overflow_hidden.vDEF', 'bool', true),
+            'col_text' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.col_text.vDEF', 'string', ';;;;;'),
+            'col_media' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.col_media.vDEF', 'string', ';;;;;'),
+            'space_y' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_y.vDEF', 'string', ';;;;;'),
+            'space_x' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.space_x.vDEF', 'string', ';;;;;'),
+            'align_items' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.align_items.vDEF', 'string', ';;;;;'),
+            'justify_content' => $this->getFlexformValueByPath($data, 'data.sGENERAL.lDEF.justify_content.vDEF', 'string', ';;;;;'),
             'media' => [
-                'image_zoom' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false, $this->logger),
-                'masonry_enabled' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false, $this->logger),
+                'image_zoom' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.image_zoom.vDEF', 'bool', false),
+                'masonry_enabled' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.masonry_enabled.vDEF', 'bool', false),
                 'masonry_data_masonry_attribute' => '',
-                'align_self' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.align_self.vDEF', 'string', ';;;;;', $this->logger),
+                'align_self' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.align_self.vDEF', 'string', ';;;;;'),
                 'space_inner' => [
-                    'xs' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;', $this->logger),
-                    'sm' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_sm.vDEF', 'string', ';;;;;;', $this->logger),
-                    'md' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_md.vDEF', 'string', ';;;;;;', $this->logger),
-                    'lg' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_lg.vDEF', 'string', ';;;;;;', $this->logger),
-                    'xl' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xl.vDEF', 'string', ';;;;;;', $this->logger),
-                    'xxl' => self::getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xxl.vDEF', 'string', ';;;;;;', $this->logger),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;'),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_sm.vDEF', 'string', ';;;;;;'),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_md.vDEF', 'string', ';;;;;;'),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_lg.vDEF', 'string', ';;;;;;'),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xl.vDEF', 'string', ';;;;;;'),
+                    'xxl' => $this->getFlexformValueByPath($data, 'data.sMEDIA.lDEF.space_inner_xxl.vDEF', 'string', ';;;;;;'),
                 ],
             ],
             'mediaoptimizing' => [
                 'width' => [
-                    'xs' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xs.vDEF', 'int', 100, $this->logger),
-                    'sm' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_sm.vDEF', 'int', 100, $this->logger),
-                    'md' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_md.vDEF', 'int', 100, $this->logger),
-                    'lg' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_lg.vDEF', 'int', 100, $this->logger),
-                    'xl' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xl.vDEF', 'int', 100, $this->logger),
-                    'xxl' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100, $this->logger),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xs.vDEF', 'int', 100),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_sm.vDEF', 'int', 100),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_md.vDEF', 'int', 100),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_lg.vDEF', 'int', 100),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xl.vDEF', 'int', 100),
+                    'xxl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100),
                 ],
             ],
             'text' => [
-                'align_self' => self::getFlexformValueByPath($data, 'data.sTEXT.lDEF.align_self.vDEF', 'string', ';;;;;', $this->logger),
+                'align_self' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.align_self.vDEF', 'string', ';;;;;'),
                 'space_inner' => [
-                    'xs' => self::getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;', $this->logger),
-                    'sm' => self::getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_sm.vDEF', 'string', ';;;;;;', $this->logger),
-                    'md' => self::getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_md.vDEF', 'string', ';;;;;;', $this->logger),
-                    'lg' => self::getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_lg.vDEF', 'string', ';;;;;;', $this->logger),
-                    'xl' => self::getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_xl.vDEF', 'string', ';;;;;;', $this->logger),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_xs.vDEF', 'string', ';;;;;;'),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_sm.vDEF', 'string', ';;;;;;'),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_md.vDEF', 'string', ';;;;;;'),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_lg.vDEF', 'string', ';;;;;;'),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sTEXT.lDEF.space_inner_xl.vDEF', 'string', ';;;;;;'),
                 ],
             ],
             'mediaitem' => [
-                'border' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
-                'col' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;', $this->logger),
-                'space_y' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),
-                'space_x' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_x.vDEF', 'string', ';;;;;', $this->logger),
-                'align_items' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.align_items.vDEF', 'string', ';;;;;', $this->logger),
-                'justify_content' => self::getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.justify_content.vDEF', 'string', ';;;;;', $this->logger),
+                'border' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.border.vDEF', 'string', ';;;;'),
+                'col' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.col.vDEF', 'string', ';;;;;'),
+                'space_y' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_y.vDEF', 'string', ';;;;;'),
+                'space_x' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.space_x.vDEF', 'string', ';;;;;'),
+                'align_items' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.align_items.vDEF', 'string', ';;;;;'),
+                'justify_content' => $this->getFlexformValueByPath($data, 'data.sMEDIAITEM.lDEF.justify_content.vDEF', 'string', ';;;;;'),
             ],
         ];
 
         // Process presets which overrides some/all settings
-        self::processPresets('bootstrap_textmediagrid', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF', $this->logger);
+        $this->processPresets('bootstrap_textmediagrid', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF');
 
         // set masonry data attribute
         $transformedData['media']['masonry_data_masonry_attribute'] = $transformedData['media']['masonry_enabled']

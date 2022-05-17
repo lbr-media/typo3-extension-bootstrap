@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -77,35 +77,35 @@ class FlexFormServiceBootstrapCards extends FlexFormService implements FlexFormS
     {
         $transformedData = [
             'grid' => [
-                'col' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.col.vDEF', 'string', ';;;;;', $this->logger),
-                'space_y' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.space_y.vDEF', 'string', ';;;;;', $this->logger),
-                'space_x' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.space_x.vDEF', 'string', ';;;;;', $this->logger),
-                'align_items' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.align_items.vDEF', 'string', ';;;;;', $this->logger),
-                'justify_content' => self::getFlexformValueByPath($data, 'data.sGRID.lDEF.justify_content.vDEF', 'string', ';;;;;', $this->logger),
+                'col' => $this->getFlexformValueByPath($data, 'data.sGRID.lDEF.col.vDEF', 'string', ';;;;;'),
+                'space_y' => $this->getFlexformValueByPath($data, 'data.sGRID.lDEF.space_y.vDEF', 'string', ';;;;;'),
+                'space_x' => $this->getFlexformValueByPath($data, 'data.sGRID.lDEF.space_x.vDEF', 'string', ';;;;;'),
+                'align_items' => $this->getFlexformValueByPath($data, 'data.sGRID.lDEF.align_items.vDEF', 'string', ';;;;;'),
+                'justify_content' => $this->getFlexformValueByPath($data, 'data.sGRID.lDEF.justify_content.vDEF', 'string', ';;;;;'),
             ],
             'card' => [
-                'image_position' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.image_position.vDEF', 'string', 'above', $this->logger),
-                'icon_position' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.icon_position.vDEF', 'string', ';;;;;', $this->logger),
-                'icon_position_wrap' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.icon_position_wrap.vDEF', 'string', 'outside', $this->logger),
-                'bg_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.bg_color.vDEF', 'string', '', $this->logger),
-                'text_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.text_color.vDEF', 'string', '', $this->logger),
-                'border' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
-                'button_color' => self::getFlexformValueByPath($data, 'data.sCARD.lDEF.button_color.vDEF', 'string', '', $this->logger),
+                'image_position' => $this->getFlexformValueByPath($data, 'data.sCARD.lDEF.image_position.vDEF', 'string', 'above'),
+                'icon_position' => $this->getFlexformValueByPath($data, 'data.sCARD.lDEF.icon_position.vDEF', 'string', ';;;;;'),
+                'icon_position_wrap' => $this->getFlexformValueByPath($data, 'data.sCARD.lDEF.icon_position_wrap.vDEF', 'string', 'outside'),
+                'bg_color' => $this->getFlexformValueByPath($data, 'data.sCARD.lDEF.bg_color.vDEF', 'string', ''),
+                'text_color' => $this->getFlexformValueByPath($data, 'data.sCARD.lDEF.text_color.vDEF', 'string', ''),
+                'border' => $this->getFlexformValueByPath($data, 'data.sCARD.lDEF.border.vDEF', 'string', ';;;;'),
+                'button_color' => $this->getFlexformValueByPath($data, 'data.sCARD.lDEF.button_color.vDEF', 'string', ''),
             ],
             'mediaoptimizing' => [
                 'width' => [
-                    'xs' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xs.vDEF', 'int', 100, $this->logger),
-                    'sm' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_sm.vDEF', 'int', 100, $this->logger),
-                    'md' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_md.vDEF', 'int', 100, $this->logger),
-                    'lg' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_lg.vDEF', 'int', 100, $this->logger),
-                    'xl' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xl.vDEF', 'int', 100, $this->logger),
-                    'xxl' => self::getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100, $this->logger),
+                    'xs' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xs.vDEF', 'int', 100),
+                    'sm' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_sm.vDEF', 'int', 100),
+                    'md' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_md.vDEF', 'int', 100),
+                    'lg' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_lg.vDEF', 'int', 100),
+                    'xl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xl.vDEF', 'int', 100),
+                    'xxl' => $this->getFlexformValueByPath($data, 'data.sMEDIAOPTIMIZING.lDEF.width_xxl.vDEF', 'int', 100),
                 ],
             ],
         ];
 
         // Process presets which overrides some/all settings
-        self::processPresets('bootstrap_cards', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF', $this->logger);
+        $this->processPresets('bootstrap_cards', $data, $transformedData, 'data.sPRESETS.lDEF.presets.vDEF');
 
         return $transformedData;
     }

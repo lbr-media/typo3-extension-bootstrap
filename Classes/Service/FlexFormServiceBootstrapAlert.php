@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.17
+ * @version 1.0.22
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -57,10 +57,10 @@ class FlexFormServiceBootstrapAlert extends FlexFormService implements FlexFormS
     protected function getConfigurationArray(array $data): array
     {
         $transformedData = [
-            'alert_type' => self::getFlexformValueByPath($data, 'data.sALERT.lDEF.alert_type.vDEF', 'string', '', $this->logger),
-            'bg_color' => self::getFlexformValueByPath($data, 'data.sALERT.lDEF.bg_color.vDEF', 'string', '', $this->logger),
-            'text_color' => self::getFlexformValueByPath($data, 'data.sALERT.lDEF.text_color.vDEF', 'string', '', $this->logger),
-            'border' => self::getFlexformValueByPath($data, 'data.sALERT.lDEF.border.vDEF', 'string', ';;;;', $this->logger),
+            'alert_type' => $this->getFlexformValueByPath($data, 'data.sALERT.lDEF.alert_type.vDEF', 'string', ''),
+            'bg_color' => $this->getFlexformValueByPath($data, 'data.sALERT.lDEF.bg_color.vDEF', 'string', ''),
+            'text_color' => $this->getFlexformValueByPath($data, 'data.sALERT.lDEF.text_color.vDEF', 'string', ''),
+            'border' => $this->getFlexformValueByPath($data, 'data.sALERT.lDEF.border.vDEF', 'string', ';;;;'),
         ];
 
         return $transformedData;
