@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\Service;
 
 use Exception;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 
 class PictureServiceBackgroundStyles extends PictureServiceBootstrap
 {
@@ -31,7 +32,7 @@ class PictureServiceBackgroundStyles extends PictureServiceBootstrap
     public function render($file, string $cssSelector, array $displayWidthArguments = []): string
     {
         try {
-            if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
+            if ($file instanceof FileReference) {
                 $file = $file->getOriginalResource();
             } elseif (!$file instanceof \TYPO3\CMS\Core\Resource\FileReference) {
                 throw new Exception('The image file must be an instance of \\TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference or \\TYPO3\\CMS\\Core\\Resource\\FileReference', 1509795323);

@@ -78,7 +78,7 @@ class Columns
                         'minitems' => 0,
                         'maxitems' => 1,
                         'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                         ],
                         'overrideChildTca' => [
                             'types' => [
@@ -227,7 +227,7 @@ class Columns
                         'minitems' => 0,
                         'maxitems' => 1,
                         'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                         ],
                         'overrideChildTca' => [
                             'types' => [
@@ -256,7 +256,7 @@ class Columns
                         'minitems' => 0,
                         'maxitems' => 1,
                         'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                         ],
                         'overrideChildTca' => [
                             'types' => [

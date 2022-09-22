@@ -14,6 +14,8 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
 use LBRmedia\Bootstrap\Service\PictureServiceBootstrap;
+use TYPO3\CMS\Core\Resource\FileReference as CoreFileReference;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference as ExtbaseFileReference;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
@@ -120,9 +122,9 @@ class PictureViewHelper extends AbstractTagBasedViewHelper
         try {
             $file = $this->arguments['file'];
 
-            if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
+            if ($file instanceof ExtbaseFileReference) {
                 $file = $file->getOriginalResource();
-            } elseif (!$file instanceof \TYPO3\CMS\Core\Resource\FileReference) {
+            } elseif (!$file instanceof CoreFileReference) {
                 throw new \Exception('The image file must be an instance of \\TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference or \\TYPO3\\CMS\\Core\\Resource\\FileReference', 1509795323);
             }
 

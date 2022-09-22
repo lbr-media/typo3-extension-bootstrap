@@ -14,12 +14,13 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\UserFunc\TCA;
 
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
+use TYPO3\CMS\Backend\Form\FormDataProvider\AbstractItemProvider;
 
 class TtContent
 {
     /**
-     * @param array                                                         $configuration
-     * @param \TYPO3\CMS\Backend\Form\FormDataProvider\AbstractItemProvider $abstractItemProvider
+     * @param array                $configuration
+     * @param AbstractItemProvider $abstractItemProvider
      *
      * @return string
      */

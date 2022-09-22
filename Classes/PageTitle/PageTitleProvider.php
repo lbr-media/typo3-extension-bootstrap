@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace LBRmedia\Bootstrap\PageTitle;
 
 use LBRmedia\Bootstrap\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\PageTitle\AbstractPageTitleProvider;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 
@@ -54,8 +55,8 @@ class PageTitleProvider extends AbstractPageTitleProvider
             }
 
             // prepend context string when not in production to see it in the browser tab
-            $context = 'Production' !== \TYPO3\CMS\Core\Core\Environment::getContext()->__toString()
-                ? '(' . \TYPO3\CMS\Core\Core\Environment::getContext()->__toString() . ') '
+            $context = 'Production' !== Environment::getContext()->__toString()
+                ? '(' . Environment::getContext()->__toString() . ') '
                 : '';
 
             $this->title = (string)$context . $prefix . $GLOBALS['TSFE']->page['title'] . $suffix;

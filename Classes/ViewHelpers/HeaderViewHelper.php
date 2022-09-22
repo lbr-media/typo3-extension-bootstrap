@@ -18,9 +18,10 @@ use LBRmedia\Bootstrap\Utility\BootstrapUtility;
 use LBRmedia\Bootstrap\Utility\DateUtility;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
-use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Core\Resource\FileReference as CoreFileReference;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference as ExtbaseFileReference;
 use TYPO3\CMS\Extbase\Service\ImageService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
@@ -511,7 +512,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
      * @param string $field
      * @param array $data
      * @param bool $onlyFirstFile
-     * @return array
+     * @return array<CoreFileReference>
      */
     private function _getFiles(string $field, array $data, bool $onlyFirstFile = false): array
     {
@@ -521,7 +522,7 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
             $fileObjects = $this->fileRepository->findByRelation('tt_content', $field, $data['uid']);
 
             foreach ($fileObjects as $fileObject) {
-                /** @var FileReference $fileObject */
+                /** @var CoreFileReference $fileObject */
                 if (!$fileObject->isMissing()) {
                     $files[] = $fileObject;
                     if ($onlyFirstFile) {
@@ -537,14 +538,14 @@ class HeaderViewHelper extends AbstractTagBasedViewHelper
     /**
      * Helper function to render a file relation in header.
      *
-     * @param FileReference $file
+     * @param CoreFileReference $file
      * @return string
      */
     private function _renderIcon($file): string
     {
-        if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
+        if ($file instanceof ExtbaseFileReference) {
             $file = $file->getOriginalResource();
-        } elseif (!$file instanceof \TYPO3\CMS\Core\Resource\FileReference) {
+        } elseif (!$file instanceof CoreFileReference) {
             throw new Exception('The image file must be an instance of \\TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference or \\TYPO3\\CMS\\Core\\Resource\\FileReference', 1509795323);
         }
 
