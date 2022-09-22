@@ -1,6 +1,6 @@
 /**
  * @package typo3-extension-bootstrap - Typo3 template extension with Twitter Bootstrap 5 package.
- * @version 1.0.17
+ * @version 1.0.23
  * @author Marcel <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap

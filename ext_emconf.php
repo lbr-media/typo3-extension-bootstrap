@@ -2,7 +2,7 @@
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.22
+ * @version 1.0.23
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -34,5 +34,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Marcel Briefs',
     'author_email' => 'mb@lbrmedia.de',
     'author_company' => 'LBRmedia',
-    'version' => '1.0.22',
+    'version' => '1.0.23',
 ];
