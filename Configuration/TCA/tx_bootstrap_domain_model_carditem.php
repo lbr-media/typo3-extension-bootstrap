@@ -11,11 +11,16 @@ declare(strict_types=1);
  * @license GPL-2.0-or-later
  */
 
+use LBRmedia\Bootstrap\UserFunc\TCA\CardItem;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\File;
+use LBRmedia\Bootstrap\Utility\PictureUtility;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_carditem',
         'label' => 'header',
-        'label_userFunc' => \LBRmedia\Bootstrap\UserFunc\TCA\CardItem::class . '->title',
+        'label_userFunc' => CardItem::class . '->title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -115,21 +120,21 @@ return [
         'image' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_carditem.image',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
                 [
                     'minitems' => 0,
                     'maxitems' => 1,
                     'overrideChildTca' => [
                         'types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => 'title,alternative,crop,--palette--;;filePalette',
                             ],
                         ],
                         'columns' => [
                             'crop' => [
                                 'config' => [
-                                    'cropVariants' => \LBRmedia\Bootstrap\Utility\PictureUtility::getTcaCropVariantsOverride(\LBRmedia\Bootstrap\Utility\PictureUtility::CROP_VARIANTS_BOOTSTRAP),
+                                    'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_BOOTSTRAP),
                                 ],
                             ],
                         ],

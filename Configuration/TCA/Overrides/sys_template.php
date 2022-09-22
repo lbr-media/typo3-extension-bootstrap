@@ -11,13 +11,15 @@ declare(strict_types=1);
  * @license GPL-2.0-or-later
  */
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+ExtensionManagementUtility::addStaticFile(
     'bootstrap',
     'Configuration/TypoScript',
     'General'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+ExtensionManagementUtility::addStaticFile(
     'bootstrap',
     'Configuration/TypoScript/Content',
     'Content elements'

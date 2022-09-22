@@ -11,4 +11,6 @@ declare(strict_types=1);
  * @license GPL-2.0-or-later
  */
 
-$GLOBALS['TCA']['tt_content']['ctrl']['previewRenderer'] = \LBRmedia\Bootstrap\Hooks\PageLayoutView\ContentPreviewRenderer::class;
+use LBRmedia\Bootstrap\Hooks\PageLayoutView\ContentPreviewRenderer;
+
+$GLOBALS['TCA']['tt_content']['ctrl']['previewRenderer'] = ContentPreviewRenderer::class;
