@@ -1,16 +1,16 @@
 <?php
 
 /*
-* @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
-* @version 1.0.22
-* @author Marcel Briefs <mb@lbrmedia.de>
-* @copyright 2022 LBRmedia
-* @link https://github.com/lbr-media/typo3-extension-bootstrap
-* @license GPL-2.0-or-later
-*/
+ * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
+ * @version 1.0.22
+ * @author Marcel Briefs <mb@lbrmedia.de>
+ * @copyright 2022 LBRmedia
+ * @link https://github.com/lbr-media/typo3-extension-bootstrap
+ * @license GPL-2.0-or-later
+ */
 
-use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 use TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 return [
     // ... for content elements

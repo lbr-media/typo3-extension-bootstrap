@@ -11,9 +11,9 @@ declare(strict_types=1);
  * @license GPL-2.0-or-later
  */
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Resource\File;
 use LBRmedia\Bootstrap\Utility\PictureUtility;
+use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 ExtensionManagementUtility::registerPageTSConfigFile(
     'bootstrap',
