@@ -2,7 +2,7 @@
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.23
+ * @version 12.0.0
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -15,8 +15,8 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-11.5.99',
-            'seo' => '11.5.0-11.5.99',
+            'typo3' => '12.0.0-12.5.99',
+            'seo' => '12.0.0-12.5.99',
         ],
         'conflicts' => [
             'fluid_styled_content' => '*',
@@ -28,11 +28,9 @@ $EM_CONF[$_EXTKEY] = [
         ],
     ],
     'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 1,
+    'clearCacheOnLoad' => true,
     'author' => 'Marcel Briefs',
     'author_email' => 'mb@lbrmedia.de',
     'author_company' => 'LBRmedia',
-    'version' => '1.0.23',
+    'version' => '12.0.0',
 ];
