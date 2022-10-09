@@ -11,8 +11,6 @@ declare(strict_types=1);
  * @license GPL-2.0-or-later
  */
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 defined('TYPO3') or die();
 
 /**
@@ -24,11 +22,3 @@ $GLOBALS['TBE_STYLES']['skins']['app'] = [
         'structure' => 'EXT:bootstrap/Resources/Public/Stylesheets/Backend/',
     ],
 ];
-
-/**
- * Allow tables
- */
-ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_accordionitem');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_tabulatoritem');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_contentelement');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_bootstrap_domain_model_carditem');

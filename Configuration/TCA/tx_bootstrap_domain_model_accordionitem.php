@@ -29,6 +29,9 @@ return [
         'typeicon_classes' => [
             'default' => 'tx_bootstrap_domain_model_accordionitem',
         ],
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ]
     ],
     'types' => [
         '1' => [
