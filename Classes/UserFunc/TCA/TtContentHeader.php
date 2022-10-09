@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\UserFunc\TCA;
 
+use Exception;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Backend\Form\FormDataProvider\AbstractItemProvider;
 
@@ -28,7 +29,7 @@ class TtContentHeader
     {
         $pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
         if (!is_array($pluginSettings['PredefinedHeader.'])) {
-            throw new \Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.PredefinedHeader in TsSetup!', 1616740168);
+            throw new Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.PredefinedHeader in TsSetup!', 1616740168);
         }
 
         $configuration['items'][] = [
@@ -55,7 +56,7 @@ class TtContentHeader
     {
         $pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
         if (!is_array($pluginSettings['AdditionalHeaderStyles.'])) {
-            throw new \Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles in TsSetup!', 1616740169);
+            throw new Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.AdditionalHeaderStyles in TsSetup!', 1616740169);
         }
 
         foreach ($pluginSettings['AdditionalHeaderStyles.'] as $key => $itemConfiguration) {

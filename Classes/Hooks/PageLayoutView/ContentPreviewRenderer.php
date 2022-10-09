@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Hooks\PageLayoutView;
 
+use PDO;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
@@ -115,7 +116,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         ->where(
                             $queryBuilder->expr()->eq(
                                 'tt_content_uid',
-                                $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                                $queryBuilder->createNamedParameter($record['uid'], PDO::PARAM_INT)
                             )
                         )
                         ->orderBy('sorting', 'ASC');
@@ -139,7 +140,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         ->where(
                             $queryBuilder->expr()->eq(
                                 'tt_content_uid',
-                                $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                                $queryBuilder->createNamedParameter($record['uid'], PDO::PARAM_INT)
                             )
                         )
                         ->orderBy('sorting', 'ASC');
@@ -163,7 +164,7 @@ class ContentPreviewRenderer extends StandardContentPreviewRenderer
                         ->where(
                             $queryBuilder->expr()->eq(
                                 'tt_content_uid',
-                                $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                                $queryBuilder->createNamedParameter($record['uid'], PDO::PARAM_INT)
                             )
                         )
                         ->orderBy('sorting', 'ASC');

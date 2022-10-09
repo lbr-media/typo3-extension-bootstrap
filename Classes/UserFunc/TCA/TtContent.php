@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\UserFunc\TCA;
 
+use Exception;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use TYPO3\CMS\Backend\Form\FormDataProvider\AbstractItemProvider;
 
@@ -28,7 +29,7 @@ class TtContent
     {
         $pluginSettings = BootstrapGeneralUtility::getFormElementPluginSettings();
         if (!is_array($pluginSettings['AdditionalStyles.'])) {
-            throw new \Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.AdditionalStyles in TsSetup!', 1621602708);
+            throw new Exception('You have to define key values pairs in plugin.tx_bootstrap.settings.form.element.AdditionalStyles in TsSetup!', 1621602708);
         }
 
         foreach ($pluginSettings['AdditionalStyles.'] as $key => $itemConfiguration) {

@@ -23,7 +23,6 @@ return [
         'label_userFunc' => CardItem::class . '->title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'delete' => 'deleted',
         'hideTable' => true,
         'enablecolumns' => [

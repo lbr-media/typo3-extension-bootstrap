@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\Service;
 
+use Exception;
 use LBRmedia\Bootstrap\Utility\GeneralUtility as BootstrapGeneralUtility;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
@@ -86,8 +87,8 @@ class FlexFormService implements LoggerAwareInterface
         // get the configuration from xml
         try {
             $this->data[$configurationType] = GeneralUtility::xml2array($xmlString);
-        } catch (\Exception $e) {
-            throw new \Exception('Could not convert xml to array.', 1495663497);
+        } catch (Exception $e) {
+            throw new Exception('Could not convert xml to array.', 1495663497);
         }
     }
 

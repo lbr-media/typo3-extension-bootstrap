@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace LBRmedia\Bootstrap\ViewHelpers\Bootstrap;
 
+use Exception;
 use LBRmedia\Bootstrap\Service\PictureServiceBackgroundStyles;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -95,7 +96,7 @@ class PictureBackgroundStylesViewHelper extends AbstractViewHelper
             $pageRenderer->addCssInlineBlock($this->arguments['id'] . ': background_image', $styles);
 
             return '';
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return '<!--' . $e->getMessage() . '-->';
         }
     }
