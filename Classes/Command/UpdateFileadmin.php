@@ -18,6 +18,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use TYPO3\CMS\Core\Core\Environment;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 /**
  * Methods which are called by composer.
@@ -25,14 +26,14 @@ use TYPO3\CMS\Core\Core\Environment;
 class UpdateFileadmin extends Command
 {
     // no trailing slashes!
-    const JS_DIR = 'public/fileadmin/bootstrap/assets/js';
-    const CSS_DIR = 'public/fileadmin/bootstrap/assets/css';
-    const BS_ICONS_DIR = 'public/fileadmin/bootstrap/assets/bsicon';
+    public const JS_DIR = 'public/fileadmin/bootstrap/assets/js';
+    public const CSS_DIR = 'public/fileadmin/bootstrap/assets/css';
+    public const BS_ICONS_DIR = 'public/fileadmin/bootstrap/assets/bsicon';
 
     /**
      * directories to be created after installing this extension with composer.
      */
-    const DIRS = [
+    public const DIRS = [
         'public/fileadmin',
         'public/fileadmin/bootstrap',
         'public/fileadmin/bootstrap/assets',
@@ -45,7 +46,7 @@ class UpdateFileadmin extends Command
     /**
      * files to copy from vendor directory after installing this extension with composer.
      */
-    const FILES = [
+    public const FILES = [
         // Twitter Bootstrap
         'vendor/twbs/bootstrap/dist/css/bootstrap.min.css' => self::CSS_DIR,
         'vendor/twbs/bootstrap/dist/css/bootstrap.min.css.map' => self::CSS_DIR,
@@ -82,6 +83,8 @@ class UpdateFileadmin extends Command
         'public/typo3conf/ext/bootstrap/Resources/Public/JavaScript/lib/picturefill.min.js' => self::JS_DIR,
     ];
 
+    private bool $_isTypo3Version12 = false;
+
     /**
      * Configure the command by defining the name, options and arguments
      */
@@ -103,8 +106,12 @@ class UpdateFileadmin extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title($this->getDescription());
 
-        self::createDirectories($io);
-        self::copyFiles($io);
+        $this->_isTypo3Version12 = VersionNumberUtility::convertVersionNumberToInteger(VersionNumberUtility::getNumericTypo3Version()) >= 12000000 ? true : false;
+
+        $this->_createDirectories($io);
+        $this->_copyFiles($io);
+
+        // debug(VersionNumberUtility::convertVersionNumberToInteger(VersionNumberUtility::getNumericTypo3Version()));
 
         return Command::SUCCESS;
     }
@@ -114,10 +121,16 @@ class UpdateFileadmin extends Command
      *
      * @param SymfonyStyle $io
      */
-    protected static function createDirectories(SymfonyStyle $io): void
+    private function _createDirectories(SymfonyStyle $io): void
     {
         $baseDir = self::getBaseDir();
+
+
         foreach (self::DIRS as $dir) {
+            if ($this->_isTypo3Version12) {
+                $dir = str_replace('public/typo3conf/ext/bootstrap/', 'vendor/lbr-media/typo3-extension-bootstrap/', $dir);
+            }
+
             if (!is_dir($baseDir . DIRECTORY_SEPARATOR . $dir)) {
                 $io->writeln("creating directory $dir.");
                 mkdir($baseDir . DIRECTORY_SEPARATOR . $dir, 0777, true);
@@ -133,10 +146,15 @@ class UpdateFileadmin extends Command
      *
      * @param SymfonyStyle $io
      */
-    protected static function copyFiles(SymfonyStyle $io): void
+    private function _copyFiles(SymfonyStyle $io): void
     {
         $baseDir = self::getBaseDir();
         foreach (self::FILES as $source => $target) {
+            if ($this->_isTypo3Version12) {
+                $source = str_replace('public/typo3conf/ext/bootstrap/', 'vendor/lbr-media/typo3-extension-bootstrap/', $source);
+                $target = str_replace('public/typo3conf/ext/bootstrap/', 'vendor/lbr-media/typo3-extension-bootstrap/', $target);
+            }
+
             $sourceAbs = $baseDir . DIRECTORY_SEPARATOR . $source;
             if (!is_file($sourceAbs)) {
                 $io->writeln("<error>cannot copy $source. File does not exist!</error>");
