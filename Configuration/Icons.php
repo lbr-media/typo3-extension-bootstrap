@@ -9,7 +9,6 @@
  * @license GPL-2.0-or-later
  */
 
-use TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider;
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 return [
@@ -61,28 +60,20 @@ return [
 
     // ... for tables
     'tx_bootstrap_domain_model_item' => [
-        'provider' => FontawesomeIconProvider::class,
-        'name' => 'exclamation-triangle',
-        'additionalClasses' => '',
-        'spinning' => false,
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/triangle-exclamation-solid.svg',
     ],
     'tx_bootstrap_domain_model_accordionitem' => [
-        'provider' => FontawesomeIconProvider::class,
-        'name' => 'folder-o',
-        'additionalClasses' => '',
-        'spinning' => false,
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/folder-open-solid.svg',
     ],
     'tx_bootstrap_domain_model_tabulatoritem' => [
-        'provider' => FontawesomeIconProvider::class,
-        'name' => 'folder-o',
-        'additionalClasses' => '',
-        'spinning' => false,
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/folder-open-solid.svg',
     ],
     'tx_bootstrap_domain_model_carditem' => [
-        'provider' => FontawesomeIconProvider::class,
-        'name' => 'folder-o',
-        'additionalClasses' => '',
-        'spinning' => false,
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bootstrap/Resources/Public/Icons/TCA/folder-open-solid.svg',
     ],
     'tx_bootstrap_domain_model_contentelement' => [
         'provider' => SvgIconProvider::class,
