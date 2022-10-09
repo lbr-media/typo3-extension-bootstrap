@@ -19,7 +19,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility as CoreGeneralUtility;
 
 class PictureUtility
 {
-    const CROP_VARIANTS_BOOTSTRAP = [
+    public const CROP_VARIANTS_BOOTSTRAP = [
         'xs',
         'sm',
         'md',
@@ -28,15 +28,15 @@ class PictureUtility
         'xxl',
     ];
 
-    const CROP_VARIANTS_DEFAULT = [
+    public const CROP_VARIANTS_DEFAULT = [
         'default',
     ];
 
-    const CROP_VARIANTS_SOCIAL_MEDIA = [
+    public const CROP_VARIANTS_SOCIAL_MEDIA = [
         'social',
     ];
 
-    const CROP_VARIANTS_PAGES_MEDIA = [
+    public const CROP_VARIANTS_PAGES_MEDIA = [
         'pages_media_xs',
         'pages_media_sm',
         'pages_media_md',
@@ -66,21 +66,22 @@ class PictureUtility
 
     /**
      * Filters and returns all cropVariants by the given one (enables only the given one).
+     * TODO@sunixzs https://github.com/lbr-media/typo3-extension-bootstrap/issues/12 Adjust to v12
      */
     public static function getTcaCropVariantsOverride(array $enabledCropVariants): array
     {
-        $pageTsConfig = BackendUtility::getPagesTSconfig(self::getTcaCropVariantsOverridePid());
+        // $pageTsConfig = BackendUtility::getPagesTSconfig(self::getTcaCropVariantsOverridePid());
 
-        $cropVariants = [];
-        if (
-            isset($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.']) &&
-            is_array($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.'])
-        ) {
-            foreach ($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.'] as $cropVariant => $config) {
-                $cropVariant = rtrim($cropVariant, '.');
-                $cropVariants[$cropVariant]['disabled'] = in_array($cropVariant, $enabledCropVariants) ? false : true;
-            }
-        }
+        $cropVariants = ['default'];
+        // if (
+        //     isset($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.']) &&
+        //     is_array($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.'])
+        // ) {
+        //     foreach ($pageTsConfig['TCEFORM.']['sys_file_reference.']['crop.']['config.']['cropVariants.'] as $cropVariant => $config) {
+        //         $cropVariant = rtrim($cropVariant, '.');
+        //         $cropVariants[$cropVariant]['disabled'] = in_array($cropVariant, $enabledCropVariants) ? false : true;
+        //     }
+        // }
 
         return $cropVariants;
     }

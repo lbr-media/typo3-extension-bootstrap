@@ -24,8 +24,9 @@ defined('TYPO3') or die();
 
 /**
  * add RTE configuration
+ * TODO@sunixzs https://github.com/lbr-media/typo3-extension-bootstrap/issues/13 Check RTE configuration for v12
  */
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['BOOTSTRAP'] = 'EXT:bootstrap/Configuration/RichTextEditor/Standard.yaml';
+// $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['BOOTSTRAP'] = 'EXT:bootstrap/Configuration/RichTextEditor/Standard.yaml';
 
 /**
  * add User TsConfig
