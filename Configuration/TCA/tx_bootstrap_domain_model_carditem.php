@@ -14,7 +14,6 @@ declare(strict_types=1);
 use LBRmedia\Bootstrap\UserFunc\TCA\CardItem;
 use LBRmedia\Bootstrap\Utility\PictureUtility;
 use TYPO3\CMS\Core\Resource\File;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 return [
     'ctrl' => [
@@ -145,7 +144,7 @@ return [
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         'iconset' => [
             'exclude' => 1,

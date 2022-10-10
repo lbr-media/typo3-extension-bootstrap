@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.23
+ * @version 12.0.0
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -76,6 +76,15 @@ class Columns
                     'type' => 'file',
                     'maxitems' => 1,
                     'allowed' => 'png,svg,gif',
+                    'foreign_field' => 'uid_foreign',
+                    'foreign_label' => 'uid_local',
+                    'foreign_match_fields' => [
+                        'fieldname' => 'image',
+                    ],
+                    'foreign_selector' => 'uid_local',
+                    'foreign_sortby' => 'sorting_foreign',
+                    'foreign_table' => 'sys_file_reference',
+                    'foreign_table_field' => 'tablenames',
                     'overrideChildTca' => [
                         'types' => [
                             File::FILETYPE_IMAGE => [
@@ -90,32 +99,7 @@ class Columns
                             ],
                         ],
                     ],
-                ]
-                // 'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                //     'tx_bootstrap_header_icon',
-                //     [
-                //         'minitems' => 0,
-                //         'maxitems' => 1,
-                //         'appearance' => [
-                //             'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                //         ],
-                //         'overrideChildTca' => [
-                //             'types' => [
-                //                 File::FILETYPE_IMAGE => [
-                //                     'showitem' => 'title,alternative,crop,--palette--;;filePalette',
-                //                 ],
-                //             ],
-                //             'columns' => [
-                //                 'crop' => [
-                //                     'config' => [
-                //                         'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_DEFAULT),
-                //                     ],
-                //                 ],
-                //             ],
-                //         ],
-                //     ],
-                //     'png,svg,gif', // $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-                // ),
+                ],
             ],
             'tx_bootstrap_header_icon_size' => [
                 'exclude' => 1,
@@ -244,6 +228,15 @@ class Columns
                     'type' => 'file',
                     'maxitems' => 1,
                     'allowed' => 'common-image-types',
+                    'foreign_field' => 'uid_foreign',
+                    'foreign_label' => 'uid_local',
+                    'foreign_match_fields' => [
+                        'fieldname' => 'image',
+                    ],
+                    'foreign_selector' => 'uid_local',
+                    'foreign_sortby' => 'sorting_foreign',
+                    'foreign_table' => 'sys_file_reference',
+                    'foreign_table_field' => 'tablenames',
                     'overrideChildTca' => [
                         'types' => [
                             File::FILETYPE_IMAGE => [
@@ -258,32 +251,7 @@ class Columns
                             ],
                         ],
                     ],
-                ]
-                // 'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                //     'tx_bootstrap_image1',
-                //     [
-                //         'minitems' => 0,
-                //         'maxitems' => 1,
-                //         'appearance' => [
-                //             'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                //         ],
-                //         'overrideChildTca' => [
-                //             'types' => [
-                //                 File::FILETYPE_IMAGE => [
-                //                     'showitem' => 'title,alternative,description,link,crop,--palette--;;filePalette',
-                //                 ],
-                //             ],
-                //             'columns' => [
-                //                 'crop' => [
-                //                     'config' => [
-                //                         'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_BOOTSTRAP),
-                //                     ],
-                //                 ],
-                //             ],
-                //         ],
-                //     ],
-                //     $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-                // ),
+                ],
             ],
             'tx_bootstrap_image2' => [
                 'exclude' => 1,
@@ -292,6 +260,15 @@ class Columns
                     'type' => 'file',
                     'maxitems' => 1,
                     'allowed' => 'common-image-types',
+                    'foreign_field' => 'uid_foreign',
+                    'foreign_label' => 'uid_local',
+                    'foreign_match_fields' => [
+                        'fieldname' => 'image',
+                    ],
+                    'foreign_selector' => 'uid_local',
+                    'foreign_sortby' => 'sorting_foreign',
+                    'foreign_table' => 'sys_file_reference',
+                    'foreign_table_field' => 'tablenames',
                     'overrideChildTca' => [
                         'types' => [
                             File::FILETYPE_IMAGE => [
@@ -306,32 +283,7 @@ class Columns
                             ],
                         ],
                     ],
-                ]
-                // 'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                //     'tx_bootstrap_image2',
-                //     [
-                //         'minitems' => 0,
-                //         'maxitems' => 1,
-                //         'appearance' => [
-                //             'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                //         ],
-                //         'overrideChildTca' => [
-                //             'types' => [
-                //                 File::FILETYPE_IMAGE => [
-                //                     'showitem' => 'title,alternative,description,link,crop,--palette--;;filePalette',
-                //                 ],
-                //             ],
-                //             'columns' => [
-                //                 'crop' => [
-                //                     'config' => [
-                //                         'cropVariants' => PictureUtility::getTcaCropVariantsOverride(PictureUtility::CROP_VARIANTS_BOOTSTRAP),
-                //                     ],
-                //                 ],
-                //             ],
-                //         ],
-                //     ],
-                //     $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-                // ),
+                ],
             ],
             'tx_bootstrap_bodytext1' => [
                 'exclude' => 1,
