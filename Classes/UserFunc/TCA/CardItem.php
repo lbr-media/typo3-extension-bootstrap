@@ -24,7 +24,9 @@ class CardItem
      */
     public function title(&$parameters)
     {
-        $record = BackendUtility::getRecord($parameters['table'], $parameters['row']['uid']);
+        if (isset($parameters['table']) && isset($parameters['row']['uid'])) {
+            $record = BackendUtility::getRecord($parameters['table'], $parameters['row']['uid']);
+        }
         $titles = [];
 
         if (isset($record['header']) && $record['header']) {
