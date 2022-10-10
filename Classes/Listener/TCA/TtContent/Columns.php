@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 12.0.0
+ * @version 1.0.23
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
