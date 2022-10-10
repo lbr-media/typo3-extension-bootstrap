@@ -39,6 +39,9 @@ class TxBootstrapDomainModelContentElement implements TablesInterface
                 'typeicon_classes' => [
                     'default' => 'tx_bootstrap_domain_model_contentelement',
                 ],
+                'security' => [
+                    'ignorePageTypeRestriction' => true,
+                ],
             ],
             'types' => [
                 '1' => [
