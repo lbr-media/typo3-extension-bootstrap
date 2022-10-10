@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 /*
  * @package LBRmedia Bootstrap Template - Provides Twitter Bootstrap 5 and some content elements.
- * @version 1.0.23
+ * @version 12.0.0
  * @author Marcel Briefs <mb@lbrmedia.de>
  * @copyright 2022 LBRmedia
  * @link https://github.com/lbr-media/typo3-extension-bootstrap
@@ -124,7 +124,6 @@ class UpdateFileadmin extends Command
     private function _createDirectories(SymfonyStyle $io): void
     {
         $baseDir = self::getBaseDir();
-
 
         foreach (self::DIRS as $dir) {
             if ($this->_isTypo3Version12) {
