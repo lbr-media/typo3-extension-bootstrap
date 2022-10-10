@@ -24,7 +24,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'delete' => 'deleted',
-        'hideTable' => true,
+        'hideTable' => false,
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -170,9 +170,9 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:bootstrap/Resources/Private/Language/locallang_db.xlf:tx_bootstrap_domain_model_carditem.typolink',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
-                'eval' => 'trim',
+                'type' => 'link',
+                'nullable' => 'true',
+                'allowedTypes' => ['page', 'url', 'file', 'email', 'telephone', 'record'],
             ],
         ],
         'typolink_text' => [
